@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Your app title -->
+    <title>多彩缤纷</title>
+
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/flat-ui.min.css">
+    <link rel="stylesheet" href="../../css/common.min.css">
+</head>
+
+<body>
+
+    <div id="js-depRech">
+
+        <!-- 头部 -->
+        <div class="headerWrap">
+            <div class="header">
+                <div class="c-logo">
+                    <h1 class="img">多彩缤纷</h1>
+                </div>
+                <div class="c-search">
+                    <input type="text" placeholder="请输入搜索内容" />
+                    <button>搜索</button>
+                </div>
+                <div class="c-info">
+                    <template v-if="!!!userInfo">
+                        <a href="./login.html">
+                            <i></i>请登录</a>
+                        <a href="./register.html">
+                            <i></i>免费注册</a>
+                        <a href="./resetPass.html">
+                            <i></i>找回密码</a>
+                    </template>
+                    <template v-else>
+                        <a href="./order.html">
+                            <i></i>{{decodeURI(userInfo.nickName)}}</a>
+                        <a href="./order.html">
+                            <i></i>个人中心
+                        </a>
+                        <a @click="userLogout">
+                            <i></i>退出登录</a>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <div class="c-nav">
+                <div class="navlist">
+                    <div class="navItem selectMenu">选择彩票
+                        <!-- 左侧菜单 -->
+                        <div class="c-menu">
+                            <div class="mMenu">
+                                <a href="../buy/football.html">
+                                    <img src="/assets/img/deticon/football.png" />竞彩足球
+                                    <span>官方返奖率73%</span>
+                                </a>
+                                <a href="../buy/basketball.html">
+                                    <img src="/assets/img/deticon/basketball.png" />竞彩篮球
+                                    <span>猜胜负中奖很容易</span>
+                                </a>
+                            </div>
+                            <div class="menulist">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="title">数字彩</td>
+                                            <td class="item">
+                                                <a href="../buy/ssq.html">双色球</a>
+                                                <a href="../buy/dlt.html">大乐透</a>
+                                                <a href="../buy/qxc.html">七星彩</a>
+                                                <a href="../buy/qcl.html">七乐彩</a>
+                                                <a href="../buy/fc3d.html">福彩3D</a>
+                                                <a href="../buy/pl3.html">排列3</a>
+                                                <a href="../buy/pl5.html">排列5</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="menulist">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="title">竞技彩</td>
+                                            <td class="item item-b">
+                                                <a href="../buy/sf14.html">足球14场</a>
+                                                <a href="../buy/rs9.html">任选九</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="navItem" href="../../index.html">首页</a>
+                    <a class="navItem" href="../hall.html">购彩大厅</a>
+                    <a class="navItem" href="../prize.html">开奖公告</a>
+                    <a class="navItem">中奖排行</a>
+                    <a class="navItem">赛事数据</a>
+                    <a class="navItem">神算</a>
+                    <span class="clear"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bread">
+            <p>
+                <span>当前位置：</span>
+                <span>多彩缤纷</span>
+                <span>></span>
+                <span>安全设置</span>
+            </p>
+        </div>
+
+        <!-- 主要内容 -->
+        <div class="main">
+            <div class="slider">
+                <div class="userInfo">
+                    <p>
+                        <span>
+                            <img :src="userInfo.headImageUrl||'../../img/img02.png'" />
+                        </span>
+                        <i v-text="decodeURI(userInfo.nickName)"></i>
+                    </p>
+                </div>
+                <div class="accountInfo">
+                    <p class="account">总余额:
+                        <strong v-text="userInfo.totalMoney+' 元'"></strong>
+                    </p>
+                    <p class="account">提现余额:
+                        <strong v-text="userInfo.cashMoneyLeft+' 元'"></strong>
+                    </p>
+                    <p class="account">赠送余额:
+                        <strong v-text="userInfo.giftMoneyLeft+' 元'"></strong>
+                    </p>
+                    <p class="account">冻结金额:
+                        <strong v-text="userInfo.lockedMoney+' 元'"></strong>
+                    </p>
+                    <p class="account">金币：
+                        <strong v-text="userInfo.coinNum+' 个'"></strong>
+                    </p>
+                    <p>
+                        <a href="./recharge.html" class="btn btn-danger">充值</a>
+                        <a href="./deposit.html" class="btn btn-info">提现</a>
+                    </p>
+                </div>
+                <div class="menuInfo">
+                    <p class="label">交易管理</p>
+                    <p class="item">
+                        <a href="./order.html">我的彩票</a>
+                    </p>
+                    <p class="item active">
+                        <a href="./depRech.html">充值提现明细</a>
+                    </p>
+                    <p class="item">
+                        <a href="./kingBi.html">金币明细</a>
+                    </p>
+                </div>
+                <div class="menuInfo">
+                    <p class="label">系统管理</p>
+                    <p class="item">
+                        <a href="./message.html">站内通知</a>
+                    </p>
+                </div>
+                <div class="menuInfo">
+                    <p class="label">个人账户</p>
+                    <p class="item">
+                        <a href="./info.html">基本资料</a>
+                    </p>
+                    <p class="item">
+                        <a href="./security.html">安全设置</a>
+                    </p>
+                </div>
+            </div>
+            <div class="contentWrap">
+                <div class="infoTable">
+                    <div class="tabType">
+                        <div class="tabbox">
+                            <div class="tabs">
+                                <ul>
+                                    <li @click="switchType(0)" :class="type==0?'active':''">
+                                        <span>充值</span>
+                                    </li>
+                                    <li @click="switchType(1)" :class="type==1?'active':''">
+                                        <span>提现</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <template v-if="type==0">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>时间</th>
+                                    <th>流水号</th>
+                                    <th>类型</th>
+                                    <th>金额</th>
+                                    <!-- <th>操作后余额</th> -->
+                                    <th>状态</th>
+                                    <!-- <th>来源</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template v-for="item in rechargeInfo.data">
+                                    <tr>
+                                        <td>
+                                            <p v-text="item.rechargeTime"></p>
+                                        </td>
+                                        <td>
+                                            <p v-text="item.rechargeOrderCode"></p>
+                                        </td>
+                                        <td>
+                                            <p v-text="rechargeType['type'+item.payPlatformId]+item.rechargeMoney+'元'"></p>
+                                        </td>
+                                        <td>
+                                            <p v-text="item.rechargeMoney+'元'"></p>
+                                        </td>
+                                        <td>
+                                            <p v-text="rechargeStatu['statu'+item.resultStatus]"></p>
+                                        </td>
+                                        <!-- <td>
+                                            <p>微信支付</p>
+                                        </td> -->
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                        <template v-if="depositInfo.count > 10">
+                            <div class="pagination">
+                                <ul>
+                                    <li class="previous">
+                                        <a href="#">
+                                            << </a>
+                                    </li>
+                                    <template v-for="item in Math.floor(depositInfo.count/10)">
+                                        <li>
+                                            <a href="#">1</a>
+                                        </li>
+                                    </template>
+                                    <li class="next">
+                                        <a href="#">
+                                            >>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </template>
+                    </template>
+
+
+                    <template v-if="type==1">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>时间</th>
+                                    <th>流水号</th>
+                                    <th>类型</th>
+                                    <th>金额</th>
+                                    <th>操作后余额</th>
+                                    <th>状态</th>
+                                    <th>提现账户</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template v-for="item in depositInfo.data">
+                                    <tr>
+                                        <td>
+                                            <p>2018-07-24 10:00:00</p>
+                                        </td>
+                                        <td>
+                                            <p v-text="item.rechargeOrderCode"></p>
+                                        </td>
+                                        <td>
+                                            <p>充值</p>
+                                        </td>
+                                        <td>
+                                            <p>+2000.00元</p>
+                                        </td>
+                                        <td>
+                                            <p>57564.49元</p>
+                                        </td>
+                                        <td>
+                                            <p>成功</p>
+                                        </td>
+                                        <td>
+                                            <p>尾号 6400 中国银行</p>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+
+                        <template v-if="rechargeInfo.count > 10">
+                            <div class="pagination">
+                                <ul>
+                                    <li class="previous">
+                                        <a href="#">
+                                            << </a>
+                                    </li>
+                                    <template v-for="item in Math.floor(rechargeInfo.count/10)">
+                                        <li>
+                                            <a href="#">1</a>
+                                        </li>
+                                    </template>
+                                    <li class="next">
+                                        <a href="#">
+                                            >>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer">
+            <div class="copyright">
+                <p>版权所有：粤ICP备18070257号</p>
+                <p>客服热线：020-89853112 (8:30-12:00 14:30-18:00)</p>
+                <p>彩票票提示您：理性购彩，健康生活。不向未满18周岁的青少年出售彩票。</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/assets/jquery-3.2.2.min.js"></script>
+    <script type="text/javascript" src="/assets/vue.min.js"></script>
+    <script type="text/javascript" src="/assets/vender/Flat-UI-master/scripts/flat-ui.min.js"></script>
+    <script type="text/javascript" src="/assets/md5.min.js"></script>
+    <script type="text/javascript" src="/assets/config.js?v=03939"></script>
+    <script type="text/javascript" src="/assets/utility.js?v=03939"></script>
+    <script type="text/javascript" src="../../js/app.min.js?v=0948483939"></script>
+    <script type="text/javascript" src="../../action/user/depRech.min.js?v=0948483939"></script>
+
+</body>
+
+</html>

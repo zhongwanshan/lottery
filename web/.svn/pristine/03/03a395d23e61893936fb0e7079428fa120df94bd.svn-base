@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Required meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- Your app title -->
+  <title>多彩缤纷</title>
+  <!-- Path to Framework7 iOS CSS theme styles-->
+  <link rel="stylesheet" href="/assets/vender/Framework7-1.2.0/css/framework7.ios.min.css">
+  <!-- Path to Framework7 iOS related color styles -->
+  <link rel="stylesheet" href="/assets/vender/Framework7-1.2.0/css/framework7.ios.colors.min.css">
+  <!-- Path to your custom app styles-->
+  <link rel="stylesheet" href="/app/css/app.min.css">
+</head>
+
+<body>
+  <!-- Status bar overlay for full screen mode (PhoneGap) -->
+  <div class="statusbar-overlay"></div>
+
+  <!-- Views -->
+  <div class="views" id="js-cashier">
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main">
+
+      <!-- Top Navbar-->
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="left"></div>
+          <div class="center">收银台</div>
+          <div class="right"></div>
+        </div>
+      </div>
+
+      <div class="pages navbar-through toolbar-through">
+
+        <div class="page no-toolbar" data-page="cashier">
+          <div class="page-content listBlock">
+
+            <div style="text-align: center; background-color: #fff; padding: .5rem;">
+              <p style="font-size: 1rem; margin: 0; color: #999;">支付金额</p>
+              <p style="margin: 0; padding: .5rem 0;">
+                <span style="font-size: 1.8rem; font-weight: bold; color: #6F00BD;" v-text="amount"></span> 元
+              </p>
+            </div>
+
+            <div class="content-block-title" style="padding-top: 1rem;">选择支付方式</div>
+
+            <div class="list-block">
+              <ul>
+                <template v-for="item in payChannelList">
+                  <li @click="setPayChannelId(item.payChannelId)">
+                    <label class="label-checkbox item-content">
+                      <input type="radio" name="payChannelId" :value="item.payChannelId">
+                      <div class="item-media">
+                        <i class="icon icon-form-checkbox"></i>
+                      </div>
+                      <div class="item-inner">
+                        <div class="bankItem">
+                          <img :src="item.logoUrl" style="width: 6rem;" />
+                          <span v-text="item.payChannelName" style="position: relative;top: .25rem;"></span>
+                          <template v-if="item.payChannelId=='wallet'">
+                            <span v-text="'(余额'+item.walletLeftCash+'元)'" style="position: relative;top: .25rem; color: #999;"></span>
+                          </template>
+                        </div>
+                      </div>
+                    </label>
+                  </li>
+                </template>
+              </ul>
+            </div>
+
+            <template v-if="payChannelId=='wallet'">
+              <div class="list-block">
+                <ul>
+                  <li class="item">
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title">支付密码:</div>
+                        <div class="item-input">
+                          <input type="password" v-model="payPwd" placeholder="请输入支付密码">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="list-block-label">
+                  <label>
+                    没有支付密码？
+                    <template v-if="queryInfo.appType==1">
+                      <a href="#" class="open-popup">设置支付密码</a>
+                    </template>
+                    <template v-else>
+                      <a :href="location+'/www//app/view/user/payPass.html'" class="external">设置支付密码</a>
+                    </template>
+                  </label>
+                </div>
+              </div>
+            </template>
+
+            <div class="action">
+              <button @click="payAction" class="button button-fill">确认支付</button>
+            </div>
+
+            <div class="popup popup-about listBlock inputInfoBlock" style="background-color: white;">
+              <div class="list-block">
+                <ul>
+                  <li class="item">
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title">
+                          <img src="/app/img/icon/phone.png" style="width: .75rem; height: 1.2rem;" />
+                        </div>
+                        <div class="item-input">
+                          <input type="tel" v-model="userAccount" placeholder="请输入手机号">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title">
+                          <i class="glyphicon glyphicon-picture"></i>
+                        </div>
+                        <div class="item-input">
+                          <input type="text" v-model="imgCode" placeholder="请输入图片验证码">
+                        </div>
+                        <div class="item-after">
+                          <img @click="getImgCode" :src="imgSrc" style="height: 1.5rem;" />
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title">
+                          <img src="/app/img/icon/check.png" style="width: .8rem; height: 1.1rem;" />
+                        </div>
+                        <div class="item-input">
+                          <input type="text" v-model="paramInfo.smsCode" placeholder="请输入验证码">
+                        </div>
+                        <div class="item-after" @click="getSmsCode" v-text="smsTxt"></div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="item">
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title">
+                          <img src="/app/img/icon/pass.png" style="width: 1rem; height: 1rem;" />
+                        </div>
+                        <div class="item-input">
+                          <input type="text" v-model="payPwd" placeholder="密码由6-16个数字、字母、英文字母组成">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                </ul>
+              </div>
+              <div class="action">
+                <div class="row">
+                  <div class="col-50 theme-gray">
+                    <button class="button button-fill close-popup">取消</button>
+                  </div>
+                  <div class="col-50 theme-pink">
+                    <button @click="doAction" class="button button-fill">设置新的支付密码</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Path to Framework7 Library JS-->
+  <script type="text/javascript" src="/assets/vender/Framework7-1.2.0/js/framework7.min.js"></script>
+  <!-- Path to your app js-->
+  <script type="text/javascript" src="/assets/LAB.min.js"></script>
+  <script type="text/javascript" src="/assets/md5.min.js"></script>
+  <script type="text/javascript" src="/assets/vue.min.js"></script>
+  <script type="text/javascript" src="/assets/config.min.js?v=03939"></script>
+  <script type="text/javascript" src="/assets/utility.min.js?v=03939"></script>
+  <script type="text/javascript">
+    $LAB.script(CONFIG.HOST+"/app/js/cashier.min.js?v=" + Date.parse(new Date()));
+  </script>
+
+</body>
+
+</html>

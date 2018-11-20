@@ -1,0 +1,87 @@
+(function () {
+    var pageVue = new Vue({
+        el: "#js-depRech",
+        data: {
+            type: 0, // 0:充值，1：提现
+            userInfo: USERINFO,
+            rechargeStatu: CONFIG.RECHARGESTATU,
+            rechargeType: CONFIG.RECHARGETYPE,
+            depositInfo: [],
+            rechargeInfo: []
+        },
+        methods: {
+            switchType: function(type) {
+                var self = this;
+                self.type = type;
+            },
+            // 退出登录
+            userLogout: function() {
+                utility.userLogout(function() {
+                    window.location.replace(CONFIG.HOST + "/www/index.html");
+                });
+            },
+
+            // 提现列表
+            getDepositList: function () {
+                var self = this;
+
+                utility.interactWithServer({
+                    headerInfo: {
+                        appType: "2",
+                        userId: !!USERINFO ? USERINFO["userId"] : "",
+                        userToken: !!USERINFO ? USERINFO["userToken"] : "",
+                        actionUrl: utility.formatActionUrl(CONFIG.SERVICE.walletService, CONFIG.ACTION.getWithdrawCashList, {
+                            action: CONFIG.ACTION.getWithdrawCashList
+                        }),
+                    },
+                    url: CONFIG.HOST + CONFIG.SERVICE.walletService,
+                    dataObj: {
+                        action: CONFIG.ACTION.getWithdrawCashList
+                    },
+                    successCallback: function (data) {
+                        if (data.code == 200) {
+                            self.depositInfo = data;
+                        } else {
+                            alert(data.message);
+                        }
+                    },
+                });
+            },
+            // 获取充值列表
+            getRrechargeList: function () {
+                var self = this;
+
+                utility.interactWithServer({
+                    headerInfo: {
+                        appType: "2",
+                        userId: !!USERINFO ? USERINFO["userId"] : "",
+                        userToken: !!USERINFO ? USERINFO["userToken"] : "",
+                        actionUrl: utility.formatActionUrl(CONFIG.SERVICE.walletService, CONFIG.ACTION.getRrechargeList, {
+                            action: CONFIG.ACTION.getRrechargeList
+                        }),
+                    },
+                    url: CONFIG.HOST + CONFIG.SERVICE.walletService,
+                    dataObj: {
+                        action: CONFIG.ACTION.getRrechargeList
+                    },
+                    successCallback: function (data) {
+                        if (data.code == 200) {
+                            self.rechargeInfo = data;
+                        } else {
+                            alert(data.message);
+                        }
+                    },
+                });
+            }
+        },
+        created: function () {
+            var self = this;
+
+            // 获取提现列表
+            self.getDepositList();
+
+            // 获取充值列表
+            self.getRrechargeList();
+        }
+    });
+}())

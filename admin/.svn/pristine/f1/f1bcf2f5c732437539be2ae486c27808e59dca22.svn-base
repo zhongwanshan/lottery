@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<link rel="stylesheet" href="/lottery/css/common.css">
+	<script src="/lottery/js/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+	<div id="topArea">
+		<h1><img src="/lottery/logo.png"/></h1>
+		<ul>
+			<li>欢迎，[[${userBaseInfoList.sysUserName}]]！</li>
+			<li><a onclick="loginOut()">退出!</a></li>
+		</ul>
+		<span hidden="true">[[${userBaseInfoList.id}]]</span>
+	</div>
+	<div id="centerArea">
+		<div id="leftArea">
+			<ul id="firstUl">
+				<li class="info">
+					<span>今日订单总量:<i>[[${orderCount}]]</i></span>
+					<span>今日付款订单总量:<i>[[${orderPayCount}]]</i></span>
+				</li>
+				<li>
+					<ul>
+						<li class="label">交易管理</li>
+						<li class="addColor"><a href="/lottery/lotteryMainOrder/lotteryMainOrderPath" target="myiframe">订单管理</a></li>
+						<li><a href="/lottery/userWithdrawnOrder/userWithdrawnOrderHomePath" target="myiframe">提现审核</a></li>
+						<!-- 	<li><a href="/lottery/userRechargeOrder/userRechargeOrderHomePath"
+							target="myiframe">充值管理</a></li> -->
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li class="label">系统管理</li>
+						<li><a href="/lottery/userBaseInfo/userHome" target="myiframe">用户管理</a></li>
+						<li><a href="/lottery/lotteryOrderRoute/lotteryOrderRoutePath" target="myiframe">分发规则管理</a></li>
+						<li><a href="/lottery/basePushMsg/basePushMsgPath" target="myiframe">消息管理</a></li>
+						<li><a href="/lottery/baseAdminUser/baseAdminUserHome" target="myiframe">管理员账号管理</a></li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li class="label">彩票数据管理</li>
+						<li><a href="/lottery/lotteryIssue/lotteryIssuePath" target="myiframe">数字彩期数</a></li>
+						<li><a href="/lottery/betMatchfb/betMatchfbPath" target="myiframe">竞彩足球比赛管理</a></li>
+						<li><a href="/lottery/betMatchbk/betMatchbkPath" target="myiframe">篮球比赛管理</a></li>
+						<li><a href="/lottery/betFbLottery/betFbLotteryPath" target="myiframe">传统足球比赛管理</a></li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li class="label">系统分析</li>
+						<li><a href="/lottery/lotteryMainOrder/orderStatisticsPath" target="myiframe">订单统计</a></li>
+						<li><a href="/lottery/betFbLotteryPrize/betFbLotteryPrizePath" target="myiframe">传统足球开奖信息</a></li>
+						<li><a href="/lottery/lotteryMainOrder/orderUserFlowStatisticsPath" target="myiframe">用戶流水统计</a></li>
+						<li><a href="/lottery/lotteryMainOrder/orderLotteryShopFlowStatisticsPath" target="myiframe">彩票店流水统计</li>
+						<li><a href="/lottery/lotteryMainOrder/orderPlatformFlowStatisticsPath" target="myiframe">平台流水统计</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="rightArea">
+			<iframe src="/lottery/lotteryMainOrder/lotteryMainOrderPath" name="myiframe" frameborder="0"></iframe>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function () {
+			$("#saveSetting").attr(
+				"href",
+				"/lottery/userBaseInfo/userBaseInfoSaveSetting?id="
+				+ $("#topArea span").text())
+		})
+
+		$("#firstUl ul li a").click(function () {
+			var checkmenu = $(this).text();
+			$("#topArea ul li:nth-child(3)").html(checkmenu);
+			$("#firstUl ul li").each(function () {
+				$(this).removeClass("addColor");
+			})
+			$(this).parent().addClass("addColor");
+
+		})
+
+		function loginOut() {
+			var truthBeTold = window.confirm("确定要退出吗？");
+			if (truthBeTold) {
+				$.ajax({
+					type: "Post",
+					url: "/lottery/login/loginOut",
+					data: {},
+					success: function (data) {
+						if ("sucess" == data) {
+							location.href = "/lottery/login/loginHome"
+
+						} else {
+							alert("退出失败!");
+						}
+					}
+				})
+			}
+		}
+	</script>
+</body>
+
+</html>

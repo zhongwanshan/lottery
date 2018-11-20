@@ -1,0 +1,82 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="../index.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">提现历史</div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="account-depHistory">
+    <div id="js-pageDepositHistory" class="page-content">
+        <div id="mescroll" class="mescroll listBlock">
+            <div class="hTitle accountTitle">
+                <p>
+                    <span>开始时间：</span>
+                    <input type="text" placeholder="开始时间" readonly id="startTime" />
+                </p>
+                <p>
+                    <span>结束时间：</span>
+                    <input type="text" placeholder="结束时间" readonly id="endTime" />
+                </p>
+                <p>
+                    <span>审核状态：</span>
+                    <select v-model="authState" style="float: none; width: 10rem;">
+                        <option value="">全部</option>
+                        <template v-for="(item, index) in state">
+                            <template>
+                                <option :value="index.split('_')[1]" v-text="item"></option>
+                            </template>
+                        </template>
+                    </select>
+                </p>
+            </div>
+            <table>
+                <tbody>
+                    <template v-for="item in historyList">
+                        <tr>
+                            <td>
+                                <span v-text="item.applyTime.split(' ')[1]"></span>
+                                <span v-text="item.applyTime.split(' ')[0]"></span>
+                            </td>
+                            <td style="text-align: left; padding: 5px 10px;">
+                                <span v-text="'提现金额：'+item.amountStr+'元'" style="color: #6F00BD;"></span>
+                                <span v-text="item.bankName+'('+item.cardNo+')'"></span>
+                                <span v-text="item.withdrawnOrderCode"></span>
+                            </td>
+                            <td style="width: 45px; padding: 0 10px;">
+                                <template v-if="item.resultStatus==0">
+                                    <span v-text="resultState['state_'+item.resultStatus]" style="background-color: #e51f42; color: white;"></span>
+                                </template>
+                                <template v-if="item.resultStatus==1">
+                                    <span v-text="resultState['state_'+item.resultStatus]" style="background-color: #f59a4f; color: white;"></span>
+                                </template>
+                                <template v-if="item.resultStatus==2">
+                                    <span v-text="resultState['state_'+item.resultStatus]" style="background-color: #41d494; color: white;"></span>
+                                </template>
+                                <span style="padding: 2px;"></span>
+                                <template v-if="item.authState==0">
+                                    <span v-text="state['state_'+item.authState]" style="background-color: #e51f42; color: white;"></span>
+                                </template>
+                                <template v-if="item.authState==1">
+                                    <span v-text="state['state_'+item.authState]" style="background-color: #41d494; color: white;"></span>
+                                </template>
+                                <template v-if="item.authState==2">
+                                    <span v-text="state['state_'+item.authState]" style="background-color: #e51f42; color: white;"></span>
+                                </template>
+                                <template v-if="item.authState==3">
+                                    <span v-text="state['state_'+item.authState]" style="background-color: #f59a4f; color: white;"></span>
+                                </template>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            <template v-if="historyList.length==0">
+                <p class="noData">暂无数据</p>
+            </template>
+        </div>
+    </div>
+</div>

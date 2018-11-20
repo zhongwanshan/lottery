@@ -1,0 +1,52 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="view/index.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">我的消息</div>
+    </div>
+</div>
+<div class="page" data-page="user-message">
+    <div id="js-message" class="page-content tabTop">
+        <!-- <div id="page-user-message"> -->
+        <!-- <div class="mainWrap"> -->
+        <div class="content-block">
+            <!-- tabs控制面板 -->
+            <div class="buttons-row">
+                <a href="#tab1" @click="messageInfo.type=0" :class="messageInfo.type==0?'active':''" class="tab-link button">全部</a>
+                <a href="#tab2" @click="messageInfo.type=1" :class="messageInfo.type==1?'active':''" class="tab-link button">特惠</a>
+                <a href="#tab3" @click="messageInfo.type=2" :class="messageInfo.type==2?'active':''" class="tab-link button">中奖通知</a>
+                <a href="#tab4" @click="messageInfo.type=3" :class="messageInfo.type==3?'active':''" class="tab-link button">活动</a>
+                <a href="#tab5" @click="messageInfo.type=4" :class="messageInfo.type==4?'active':''" class="tab-link button">其它</a>
+            </div>
+        </div>
+        <div class="tabs" style="position: relative; height: 100%;">
+            <div id="mescroll" class="mescroll">
+                <template v-for="(item, index) in messageList">
+                    <div @click="modifySiteMessage(item.id, index)" class="card">
+                        <div class="card-header">
+                            <span v-text="item.msgTitle"></span>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-content-inner">
+                                <div v-text="item.msgContent"></div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="link" v-text="item.sendTime"></a>
+                            <a href="#" class="link" v-text="readStatusStr[item.readStatus]"></a>
+                        </div>
+                    </div>
+                </template>
+                <template v-if="messageList.length==0">
+                    <p class="noData">暂无{{typeStr[messageInfo.type]}}消息</p>
+                </template>
+            </div>
+        </div>
+        <!-- </div> -->
+        <!-- </div> -->
+    </div>
+</div>

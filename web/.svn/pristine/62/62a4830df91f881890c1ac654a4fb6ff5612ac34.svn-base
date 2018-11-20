@@ -1,0 +1,73 @@
+(function () {
+    var pageVue = new Vue({
+        el: "#js-pageMe",
+        data: {
+            userInfo: USERINFO,
+            menberLevel: {
+
+            }
+        },
+        methods: {
+            // 退出登录
+            userLogout: function() {
+                var self = this;
+
+                utility.interactWithServer({
+                    headerInfo: {
+                        userId: !!USERINFO ? USERINFO["userId"] : "",
+                        userToken: !!USERINFO ? USERINFO["userToken"] : "",
+                        actionUrl: utility.formatActionUrl(CONFIG.SERVICE.commonService, CONFIG.ACTION.userLogout, {
+                            action: CONFIG.ACTION.userLogout
+                        }),
+                    },
+                    url: CONFIG.HOST + CONFIG.SERVICE.commonService,
+                    dataObj: {
+                        action: CONFIG.ACTION.userLogout
+                    },
+                    beforeSendCallback: function () {
+                        app.showIndicator()
+                    },
+                    completeCallback: function (XMLHttpRequest, textStatus) {
+                        app.hideIndicator();
+                        self.isAction = false;
+                    },
+                    successCallback: function (data) {
+                        if (data.code == 200) {
+                            var remember = utility.getLocalStorage("remember");
+                            // 如果登录成功，则把用户信息保存在本地
+                            utility.cleanLocalStorage();
+                            utility.cleanSessionStorage();
+                            utility.setLocalStorage("remember", {
+                                phone: remember.phone,
+                                pwd: remember.pwd,
+                            });
+
+                            setTimeout(function() {
+                                mainView.router.reloadPage("/app/view/me.html");
+                            },500);
+                        } else {
+                            app.showPreloader(data.message);
+                            setTimeout(function () {
+                                app.hidePreloader();
+                            }, 1000);
+                        }
+                    },
+                });
+            },
+            // 检测是否已经登录
+            checkLoginStatu: function() {
+                var self = this;
+
+                if(!!!self.userInfo) {
+                    app.showPreloader("请登录");
+                    setTimeout(function () {
+                        app.hidePreloader();
+                    }, 1000);
+                }
+            }
+        },
+        created: function () {
+            var self = this;
+        }
+    });
+}())

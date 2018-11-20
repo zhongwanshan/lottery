@@ -1,0 +1,70 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="../prize.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">开奖历史</div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="history-digital">
+    <div id="js-historyDigital" class="page-content">
+        <div id="page-history-digital">
+            <div class="mainWrap">
+                <div class="lotteryType lotteryListType">
+
+                    <template v-for="(item, index) in digitalData">
+                        <template v-if="item.lottoId">
+                            <template v-if="!!item.winNumber">
+                                <div class="item">
+                                    <div class="header">
+                                        <span class="label">{{item.lottoName}} {{item.issueName}}</span>
+                                    </div>
+                                    <div>
+                                        <div class="content">
+                                            <p class="numberType">
+                                                <template v-for="rItem in item.winNumber.split(',')">
+                                                    <span class="circle redBall" v-text="rItem"></span>
+                                                </template>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </template>
+                        <template v-else>
+                            <div class="item">
+                                <div class="header">
+                                    <span class="label">{{item.lottoName}} {{item.issueName}}</span>
+                                </div>
+                                <a :href="'view/detail/digital.html?lottoid='+item.lottoid+'&issueno='+item.issueno">
+                                    <div class="content">
+                                        <p class="numberType">
+                                            <template v-for="rItem in item.number.split(',')">
+                                                <span class="circle redBall" v-text="rItem"></span>
+                                            </template>
+
+                                            <template v-if="!!item.refernumber">
+                                                <span v-for="bItem in item.refernumber.split(',')" class="circle blueBall" v-text="bItem"></span>
+                                            </template>
+                                        </p>
+                                    </div>
+                                    <span class="toword glyphicon glyphicon-menu-right"></span>
+                                </a>
+                            </div>
+                        </template>
+                    </template>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="buyAction">
+            <p class="theme-yellow">
+                <a :href="'view/buy/'+type['lottoId'+lottoid]+'.html'" class="button button-big button-round active">投注</a>
+            </p>
+        </div>
+    </div>
+</div>

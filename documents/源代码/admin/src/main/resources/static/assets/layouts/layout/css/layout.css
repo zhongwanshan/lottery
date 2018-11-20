@@ -1,0 +1,390 @@
+html, body {
+    height: 100%;
+    font-family: "Microsoft YaHei";
+}
+
+select {
+    /*很关键：将默认的select选择框样式清除*/
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("/assets/global/img/arrow.png") no-repeat scroll 99% center transparent !important;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 14px;
+    line-height: normal !important;
+}
+
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand {
+    display: none;
+}
+
+.form-group .form-circular, button.btn {
+}
+
+.page-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+}
+
+.page-wrapper .page-wrapper-row {
+    width: 100%;
+    display: table-row;
+}
+
+.page-wrapper .page-wrapper-top {
+    width: 100%;
+    display: table-cell;
+}
+
+.page-header {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    width: 100%;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+    height: 60px;
+    background-color: rgba(41, 50, 57, 1);
+}
+
+.top-menu-title a {
+    /*font-family: "Microsoft YaHei";*/
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    color: #0099FF !important;
+}
+
+.search-box a .input-group input.form-control {
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    box-shadow: none;
+    border: 2px solid #848392;
+    border-right: none;
+    background-color: transparent;
+    color: #999999;
+}
+
+.search-box a .input-group-sm {
+    width: 195px !important;
+}
+
+.search-box a .input-group input.form-control:focus {
+    border-color: #848392;
+}
+
+.search-box a .input-group div.input-group-addon {
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #000033;
+    padding: 4.5px 10px;
+    border-width: 2px;
+    border-color: #848392;
+    color: #999999;
+}
+
+.search-box a {
+    margin: 10px 15px 0 0;
+    padding: 0 !important;
+}
+
+.search-box a:hover {
+    background-color: transparent !important;
+}
+
+.top-menu .top-menu-text a {
+    color: #eee;
+}
+
+.top-menu .active > a {
+    color: #f08200;
+}
+
+.page-bar a {
+    color: #333;
+}
+
+.page-right-text {
+    line-height: 50px;
+    color: #F08200;
+}
+
+.page-bar a.selected {
+    color: #F08200;
+}
+
+.user-email a {
+    font-size: 20px;
+    color: #eee !important;
+}
+
+.user-photo {
+    position: relative;
+}
+
+.user-photo a.dropdown-toggle {
+    padding: 0px !important;
+    margin: 0 15px;
+}
+
+.user-photo .dropdown-menu {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    box-shadow: 5px 5px rgba(102, 102, 102, .1);
+    border-top-left-radius: 4px !important;
+    border-top-right-radius: 4px !important;
+}
+
+.user-photo .dropdown-menu li a {
+    padding: 6px 20px !important;
+}
+
+.user-photo .dropdown-menu:before {
+    position: absolute;
+    top: -7px;
+    right: 19px;
+    display: inline-block !important;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #eee;
+    border-left: 7px solid transparent;
+    border-bottom-color: rgba(0, 0, 0, .2);
+    content: '';
+}
+
+.user-photo .dropdown-menu:after {
+    position: absolute;
+    top: -6px;
+    right: 20px;
+    display: inline-block !important;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #fff;
+    border-left: 6px solid transparent;
+    content: '';
+}
+
+.navbar-nav > li > a:focus, .navbar-nav > li > a:hover {
+    background-color: transparent !important;
+}
+
+.page-wrapper .page-wrapper-middle {
+    width: 100%;
+    display: table-cell;
+    height: 100%;
+    padding: 0 15px 15px 15px;
+    box-sizing: border-box;
+}
+
+.page-wrapper .page-wrapper-content {
+    position: relative;
+    height: calc(100% - 50px);
+    background-color: #f2f2f2;
+    padding: 15px 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.text-green {
+    color: #00cc66;
+}
+
+.text-blue {
+    color: #0099ff;
+}
+
+.text-red {
+    color: #ff6666;
+}
+
+/*消息侧边栏*/
+.page-sidebar-msg {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    bottom: 0;
+    width: 320px;
+    background: #21282e;
+    z-index: 999;
+}
+
+.page-sidebar-msg .sidebar-toggler {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    z-index: 1000;
+    color: #99a8b5;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.page-sidebar-msg .sidebar-toggler i:hover {
+    color: #fff;
+}
+
+.page-sidebar-msg .message-list {
+
+}
+
+.list-heading {
+    font-size: 16px;
+    margin: 10px;
+    color: #6c8296;
+}
+
+.page-sidebar-msg .message-list li {
+    padding: 15px;
+    border-bottom: 1px solid #273037;
+}
+
+.page-sidebar-msg .message-list li .media-heading {
+    padding-right: 40px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #99a8b5;
+}
+
+.page-sidebar-msg .message-list li .media-heading small {
+    margin-left: 10px;
+    font-size: 12px;
+    color: #657b8d;
+}
+
+.page-sidebar-msg .message-list li .media-content {
+    padding: 10px;
+    font-size: 12px;
+    color: #90a1af;
+    background-color: #36424c;
+}
+
+.page-sidebar-msg .message-list li .action {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #99a8b5;
+    cursor: pointer;
+}
+
+.page-sidebar-msg .message-list li .action i:nth-child(1) {
+    position: relative;
+    top: 1px;
+    margin-right: 5px;
+}
+
+.page-sidebar-msg .nav-tabs {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.page-sidebar-msg .nav-tabs > li {
+    display: table-cell !important;
+    width: 1% !important;
+    padding: 0;
+    margin: 0;
+    float: none;
+}
+
+.page-sidebar-msg .nav-tabs > li.active > a, .page-sidebar-msg .nav-tabs > li:hover > a {
+    border: 0;
+    border-bottom: 3px solid #f3565d;
+    background: 0 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+.page-sidebar-msg .nav-tabs > li > a {
+    position: relative;
+    display: block;
+    text-align: center;
+    height: auto;
+    font-size: 14px;
+    padding: 45px 15px 8px;
+    text-transform: uppercase;
+    background: 0 0;
+    margin-right: 0;
+    color: #90a1af;
+    border: 0;
+    border-bottom: 3px solid rgba(243, 86, 93, .3);
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    outline: 0 !important;
+}
+
+.page-sidebar-msg .nav-tabs > li > a > .badge {
+    position: absolute;
+    top: 45px;
+    right: 3px;
+    margin-top: -6px;
+}
+
+.page-sidebar-msg .badge {
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 3px 6px 3px;
+}
+
+.page-sidebar-msg .badge-all {
+    background-color: #ed6b75;
+}
+
+.page-sidebar-msg .badge-unread {
+    background-color: #36c6d3;
+}
+
+.page-sidebar-msg .badge-read {
+    background-color: #F1C40F;
+}
+
+.page-sidebar-msg .msg-paging {
+    position: absolute;
+    bottom: -12px;
+    right: 15px;
+}
+
+.page-sidebar-msg .msg-paging .pagination > li > a {
+    color: #90a1af;
+    background-color: #36424c;
+    border: 1px solid #273037;
+}
+
+.page-sidebar-msg .msg-paging .pagination > li > a:hover {
+    background-color: #273037;
+}
+
+.not-order {
+    margin: 30px;
+    font-size: 20px;
+    color: #808080;
+    text-align: center;
+}
+
+/*去除选择框的outline*/
+.bootstrap-select .dropdown-toggle:focus {
+    outline: none !important;
+}
+
+/*去除选项的outline*/
+a:focus {
+    outline: none !important;
+}
+
+.btn-load-more {
+    padding: 15px 0;
+}
+
+.btn-load-more a {
+    color: #999;
+}
+
+.btn-load-more a:hover {
+    color: #009dc7;
+    text-decoration: underline !important;
+}

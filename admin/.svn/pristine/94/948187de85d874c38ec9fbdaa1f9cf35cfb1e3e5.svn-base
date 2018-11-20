@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<!-- <style type="text/css">
+		/*初始化页面  */
+		body,
+		ol,
+		ul,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		th,
+		td,
+		dl,
+		dd,
+		form,
+		fieldset,
+		legend,
+		input,
+		textarea,
+		select {
+			margin: 0;
+			padding: 0
+		}
+
+		body {
+			font: 14px "微软雅黑", "Arial Narrow", HELVETICA;
+			background: #fff;
+			-webkit-text-size-adjust: 100%;
+		}
+
+		a {
+			color: #2d374b;
+			text-decoration: none
+		}
+
+		a:hover {
+			color: #cd0200;
+			text-decoration: underline
+		}
+
+		em {
+			font-style: normal
+		}
+
+		li {
+			list-style: none
+		}
+
+		img {
+			border: 0;
+			vertical-align: middle
+		}
+
+		table {
+			border-collapse: collapse;
+			border-spacing: 0
+		}
+
+		p {
+			word-wrap: break-word
+		}
+
+		/*页面css  */
+		#centerArea div {
+			float: left;
+		}
+
+		#centerArea #leftArea ul li a {
+			text-align: center;
+			font-size: 15px;
+			color: black;
+			margin: auto;
+			padding: aut;
+			vertical-align: middle
+		}
+
+		#topArea ul li {
+			float: left;
+		}
+
+		#centerArea {
+			clear: both;
+			margin-left: 37px;
+		}
+
+		#rightArea {
+			margin-left: 11px;
+		}
+
+		#searchCondition ul li input#cx {
+			display: inline-block;
+			width: 143px;
+			height: 28px;
+			background-color: #5978A6;
+			color: white;
+		}
+
+		#topArea ul li {
+			display: inline-block;
+			height: 53;
+			line-height: 53px;
+			text-align: left;
+		}
+
+		#topArea {
+			margin-left: 37px;
+		}
+
+		#leftArea {
+			border: 1px solid #BDBFBE;
+		}
+
+		#leftArea ul li:first-child {
+			height: 130px;
+			border-bottom: 1px solid #BDBFBE;
+		}
+
+		#leftArea ul li span {
+			display: block;
+			margin-left: 23px;
+			height: 24px;
+			line-height: 24px;
+		}
+
+		#leftArea #firstUl li ul li {
+			height: 30px;
+			line-height: 30px;
+			border-bottom: 1px solid #BDBFBE;
+			text-align: center;
+		}
+
+		#firstUl ul li:hover {
+			cursor: pointer;
+			background-color: #F2F2F2;
+		}
+
+		#topArea ul li:nth-child(4) {
+			float: right;
+			margin-right: 80px;
+		}
+
+		#topArea ul li:last-child {
+			float: right;
+			margin-right: 10px;
+		}
+
+		#topArea ul li:nth-child(4):hover {
+			cursor: pointer;
+		}
+
+		.addColor {
+			background-color: #DFDFD0;
+		}
+	</style> -->
+	<link rel="stylesheet" href="/lottery/css/common.css">
+	<script src="/lottery/js/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+	<div id="topArea">
+		<h1><img src="/lottery/logo.png"/></h1>
+		<ul>
+			<li>欢迎，[[${userBaseInfoList.sysUserName}]]！</li>
+			<li><a onclick="loginOut()">退出!</a></li>
+		</ul>
+		<span hidden="true">[[${userBaseInfoList.id}]]</span>
+	</div>
+	<div id="centerArea">
+		<div id="leftArea">
+			<ul id="firstUl">
+				<li class="info">
+					<span>今日订单总量:<i>[[${orderCount}]]</i></span>
+					<span>今日付款订单总量:<i>[[${orderPayCount}]]</i></span>
+				</li>
+				<li>
+					<ul>
+						<li class="label">交易管理</li>
+						<li class="addColor"><a href="/lottery/lotteryMainOrder/lotteryMainOrderPath" target="myiframe">订单管理</a></li>
+						<li><a href="/lottery/userWithdrawnOrder/userWithdrawnOrderHomePath" target="myiframe">提现审核</a></li>
+						<!-- 	<li><a href="/lottery/userRechargeOrder/userRechargeOrderHomePath"
+							target="myiframe">充值管理</a></li> -->
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li class="label">系统管理</li>
+						<li><a href="/lottery/userBaseInfo/userHome" target="myiframe">用户管理</a></li>
+						<li><a href="/lottery/lotteryOrderRoute/lotteryOrderRoutePath" target="myiframe">分发规则管理</a></li>
+						<li><a href="/lottery/basePushMsg/basePushMsgPath" target="myiframe">消息管理</a></li>
+						<li><a href="/lottery/baseAdminUser/baseAdminUserHome" target="myiframe">管理员账号管理</a></li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li class="label">彩票数据管理</li>
+						<li><a href="/lottery/lotteryIssue/lotteryIssuePath" target="myiframe">数字彩期数</a></li>
+						<li><a href="/lottery/betMatchfb/betMatchfbPath" target="myiframe">竞彩足球比赛管理</a></li>
+						<li><a href="/lottery/betMatchbk/betMatchbkPath" target="myiframe">篮球比赛管理</a></li>
+						<li><a href="/lottery/betFbLottery/betFbLotteryPath" target="myiframe">传统足球比赛管理</a></li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li class="label">系统分析</li>
+						<li><a href="/lottery/lotteryMainOrder/orderStatisticsPath" target="myiframe">订单统计</a></li>
+						<li><a href="/lottery/betFbLotteryPrize/betFbLotteryPrizePath" target="myiframe">传统足球开奖信息</a></li>
+						<li><a href="/lottery/lotteryMainOrder/orderUserFlowStatisticsPath" target="myiframe">用戶流水统计</a></li>
+						<li><a href="/lottery/lotteryMainOrder/orderLotteryShopFlowStatisticsPath" target="myiframe">彩票店流水统计</li>
+						<li><a href="/lottery/lotteryMainOrder/orderPlatformFlowStatisticsPath" target="myiframe">平台流水统计</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="rightArea">
+			<iframe src="/lottery/lotteryMainOrder/lotteryMainOrderPath" name="myiframe" frameborder="0"></iframe>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function () {
+			$("#saveSetting").attr(
+				"href",
+				"/lottery/userBaseInfo/userBaseInfoSaveSetting?id="
+				+ $("#topArea span").text())
+		})
+
+		$("#firstUl ul li a").click(function () {
+			var checkmenu = $(this).text();
+			$("#topArea ul li:nth-child(3)").html(checkmenu);
+			$("#firstUl ul li").each(function () {
+				$(this).removeClass("addColor");
+			})
+			$(this).parent().addClass("addColor");
+
+		})
+
+		function loginOut() {
+			var truthBeTold = window.confirm("确定要退出吗？");
+			if (truthBeTold) {
+				$.ajax({
+					type: "Post",
+					url: "/lottery/login/loginOut",
+					data: {},
+					success: function (data) {
+						if ("sucess" == data) {
+							location.href = "/lottery/login/loginHome"
+
+						} else {
+							alert("退出失败!");
+						}
+					}
+				})
+			}
+		}
+	</script>
+</body>
+
+</html>

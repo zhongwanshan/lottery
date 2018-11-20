@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Your app title -->
+    <title>多彩缤纷</title>
+
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/flat-ui.min.css">
+    <link rel="stylesheet" href="../../css/common.min.css">
+</head>
+
+<body>
+
+    <div id="js-message">
+
+        <!-- 头部 -->
+        <div class="headerWrap">
+            <div class="header">
+                <div class="c-logo">
+                    <h1 class="img">多彩缤纷</h1>
+                </div>
+                <div class="c-info">
+                    <template v-if="!!!userInfo">
+                        <a href="./login.html">
+                            <i></i>请登录</a>
+                        <a href="./register.html">
+                            <i></i>免费注册</a>
+                        <a href="./resetPass.html">
+                            <i></i>找回密码</a>
+                    </template>
+                    <template v-else>
+                        <a href="./info.html">
+                            <i></i>{{decodeURI(userInfo.nickName)}}</a>
+                        <a href="./info.html">
+                            <i></i>个人中心
+                        </a>
+                        <a href="./message.html">
+                            <i></i>消息通知
+                            <span class="babo"></span>
+                        </a>
+                        <a @click="userLogout">
+                            <i></i>退出登录</a>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <div class="bread">
+            <p>
+                <span>当前位置：</span>
+                <span>多彩缤纷</span>
+                <span>></span>
+                <span>系统管理></span>
+                <span>站内通知</span>
+            </p>
+        </div>
+
+        <!-- 主要内容 -->
+        <div class="main">
+            <div class="slider">
+                <div class="userInfo">
+                    <p>
+                        <span>
+                            <img :src="userInfo.headImageUrl||'../../img/img02.png'" />
+                        </span>
+                        <i v-text="decodeURI(userInfo.nickName)"></i>
+                    </p>
+                </div>
+                <div class="accountInfo">
+                    <p class="account">账户余额：
+                        <strong v-text="userInfo.totalMoney+' 元'"></strong>
+                    </p>
+                    <p class="account">总订单数：
+                        <strong v-text="userInfo.totalOrders"></strong>
+                    </p>
+                    <p class="account">今日接单：
+                        <strong v-text="userInfo.totalReceivedOrders"></strong>
+                    </p>
+                    <p class="account">今日打单：
+                        <strong v-text="userInfo.totalPrintedOrders"></strong>
+                    </p>
+                    <p class="account">今日回退：
+                        <strong v-text="userInfo.totalRejectedOrders"></strong>
+                    </p>
+                    <p class="account">未处理单：
+                        <strong v-text="userInfo.totalUntreatedOrders"></strong>
+                    </p>
+                    <p>
+                        <a href="./recharge.html" class="btn btn-danger">充值</a>
+                        <a href="./deposit.html" class="btn btn-info">提现</a>
+                    </p>
+                </div>
+                <div class="menuInfo">
+                    <p class="label">交易管理</p>
+                    <p class="item">
+                        <a href="./order.html">我的订单</a>
+                    </p>
+                    <p class="item">
+                        <a href="./depRech.html">充值提现明细</a>
+                    </p>
+                    <p class="item">
+                        <a href="./kingBi.html">钱包流水</a>
+                    </p>
+                </div>
+                <div class="menuInfo">
+                    <p class="label">系统管理</p>
+                    <p class="item active">
+                        <a href="./message.html">站内通知</a>
+                    </p>
+                </div>
+                <div class="menuInfo">
+                    <p class="label">个人账户</p>
+                    <p class="item">
+                        <a href="./info.html">基本资料</a>
+                    </p>
+                    <p class="item">
+                        <a href="./security.html">安全设置</a>
+                    </p>
+                </div>
+            </div>
+            <div class="contentWrap">
+                <div class="infoTable">
+                    <div class="tabType">
+                        <div class="tabbox">
+                            <div class="tabs">
+                                <ul>
+                                    <li @click="messageInfo.type=0" :class="messageInfo.type==0?'active':''">
+                                        <span>全部</span>
+                                    </li>
+                                    <li @click="messageInfo.type=1" :class="messageInfo.type==1?'active':''">
+                                        <span>特惠</span>
+                                    </li>
+                                    <li @click="messageInfo.type=2" :class="messageInfo.type==2?'active':''">
+                                        <span>中奖通知</span>
+                                    </li>
+                                    <li @click="messageInfo.type=3" :class="messageInfo.type==3?'active':''">
+                                        <span>活动</span>
+                                    </li>
+                                    <li @click="messageInfo.type=4" :class="messageInfo.type==4?'active':''">
+                                        <span>其它</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="searc">
+                        <select v-model="messageInfo.readStatus">
+                            <option value="2">全部</option>
+                            <option value="1">已读</option>
+                            <option value="0">未读</option>
+                        </select>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 160px;">时间</th>
+                                <th style="width: 60px;">状态</th>
+                                <th style="width: 100px;">类型</th>
+                                <th style="width: 100px;">标题</th>
+                                <th>正文</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template v-for="item in messageList">
+                                <tr>
+                                    <td>
+                                        <p v-text="item.sendTime"></p>
+                                    </td>
+                                    <td>
+                                        <p v-text="readStatusStr[item.readStatus]"></p>
+                                    </td>
+                                    <td>
+                                        <p v-text="typeStr[item.contentType]"></p>
+                                    </td>
+                                    <td>
+                                        <p v-text="item.msgTitle"></p>
+                                    </td>
+                                    <td>
+                                        <p v-text="item.msgContent"></p>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                        <ul>
+                            <li class="previous">
+                                <a @click="getPreViewData">
+                                    << </a>
+                            </li>
+                            <template v-for="i in pageCount">
+                                <li :class="messageInfo.curPage==i?'active': ''">
+                                    <a @click="getByPage(i)" v-text="i"></a>
+                                </li>
+                            </template>
+                            <li class="next">
+                                <a @click="getNextData">
+                                    >>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer">
+            <div class="copyright">
+                <p>版权所有：粤ICP备18070257号</p>
+                <p>客服热线：020-89853112 (8:30-12:00 14:30-18:00)</p>
+                <p>彩票票提示您：理性购彩，健康生活。不向未满18周岁的青少年出售彩票。</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/assets/jquery-3.2.2.min.js"></script>
+    <script type="text/javascript" src="/assets/vue.min.js"></script>
+    <script type="text/javascript" src="/assets/vender/Flat-UI-master/scripts/flat-ui.min.js"></script>
+    <script type="text/javascript" src="/assets/md5.min.js"></script>
+    <script type="text/javascript" src="/assets/config.min.js?v=03939"></script>
+    <script type="text/javascript" src="/assets/utility.min.js?v=03939"></script>
+    <script type="text/javascript" src="../../js/app.min.js?v=0948483939"></script>
+    <script type="text/javascript" src="../../action/user/message.min.js?v=0948483939"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lottery.dao.TblBaseAdminButtonMapper">
+	<resultMap id="BaseResultMap" type="com.lottery.entity.TblBaseAdminButton">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="button_name" jdbcType="VARCHAR" property="buttonName" />
+		<result column="button_code" jdbcType="VARCHAR" property="buttonCode" />
+		<result column="is_del" jdbcType="INTEGER" property="isDel" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id, button_name, button_code, is_del
+	</sql>
+	<!-- 根据条件查询角色记录集合 -->
+
+	<select id="searchAllBaseAdminButton" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from base_admin_button
+	</select>
+	<!-- 插入用户 -->
+	<insert id="addButton" parameterType="com.lottery.entity.TblBaseAdminButton"
+		keyProperty="id">
+		insert into base_admin_button(button_name, button_code,
+		is_del)
+		values(#{buttonName},#{buttonCode},#{isDel})
+	</insert>
+	<!-- 根据用户id查询 -->
+	<select id="queryButtonById" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from base_admin_button where id=#{id}
+	</select>
+
+
+	<!-- 根据id更新用户信息 -->
+
+	<update id="updateButtonData" parameterType="com.lottery.entity.TblBaseAdminButton">
+		update
+		base_admin_button set button_name=#{buttonName} ,
+		button_code=#{buttonCode},is_del=#{isDel}
+		where id=#{id}
+	</update>
+
+
+
+
+	<!-- 根据id集合删除用户信息 -->
+	<delete id="deleteButtonDataByIds" parameterType="java.util.List">
+		delete
+		from base_admin_button where id in
+		<foreach collection="idList" index="index" item="item" open="("
+			separator="," close=")"> #{item} </foreach>
+	</delete>
+	
+
+
+
+	<!-- 查询角色总数量 -->
+	<!-- <select id="searchTotallPageNum" parameterType="com.lottery.entity.TblBaseAdminRole" 
+		resultType="java.lang.Integer"> select count(*) from base_admin_role where 
+		1=1 <if test="roleName != null or roleStatus != null or roleName !='' or 
+		roleStatus!=''"> <if test="roleName != null and sysUserName !=''"> and role_name=#{roleName} 
+		</if> <if test="roleStatus != null and roleStatus !='' and roleStatus !=2"> 
+		and role_status=#{roleStatus} </if> </if> </select> -->
+
+
+
+
+</mapper>

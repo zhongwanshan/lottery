@@ -1,0 +1,141 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="../hall.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">十四场胜负</div>
+        <div class="right">
+            <span class="js-showMenu">
+                <i class="glyphicon glyphicon-option-vertical"></i>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="buy-sf14">
+    <div id="js-pageSf14" class="page-content buyWrap">
+        <div id="page-buy-sf14">
+            <div class="mainWrap">
+                <template v-if="matchData.length>0">
+                    <p class="hTitle accountTitle">
+                        &nbsp;&nbsp;&nbsp;期数：
+                        <select v-model="num" style="float: none;">
+                            <template v-for="item in numList">
+                                <option v-if="!!item" :value="item" v-text="'第'+item+'期'"></option>
+                            </template>
+                        </select>
+                    </p>
+                    <template v-for="(item, index) in matchData">
+                        <div class="matchList">
+                            <div class="item">
+                                <div class="info" style="width: 30%;">
+                                    <div class="detail">
+                                        <p v-text="item.lottoid"></p>
+                                        <p class="type">
+                                            <span v-text="item.league"></span>
+                                        </p>
+                                        <p v-text="item.date + ' ' + (item.time||'')"></p>
+                                    </div>
+                                    <!-- <a :href="'view/detail/football.html?mid='+item.lottoid" class="toPage">查看数据</a> -->
+                                </div>
+                                <div class="record" style="width: 70%;">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th v-text="item.h_cn" style="width: 35%;"></th>
+                                                <th style="width: 30%;">VS</th>
+                                                <th v-text="item.a_cn" style="width: 35%;"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td @click="bindClickEvent(index)">
+                                                    <label class="check" :class="item.matchInfo.sf.indexOf('s')!=-1?'active':''">
+                                                        胜{{item.h}}
+                                                        <input type="checkbox" v-model="item.matchInfo.sf" value="s" />
+                                                    </label>
+                                                </td>
+                                                <td @click="bindClickEvent(index)">
+                                                    <label class="check" :class="item.matchInfo.sf.indexOf('p')!=-1?'active':''">
+                                                        平{{item.d}}
+                                                        <input type="checkbox" v-model="item.matchInfo.sf" value="p" />
+                                                    </label>
+                                                </td>
+                                                <td @click="bindClickEvent(index)">
+                                                    <label class="check" :class="item.matchInfo.sf.indexOf('f')!=-1?'active':''">
+                                                        负{{item.a}}
+                                                        <input type="checkbox" v-model="item.matchInfo.sf" value="f" />
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                </template>
+                <template v-else>
+                    <p class="noData">没有比赛</p>
+                </template>
+
+                <div class="matchTip">胜负彩竞猜国家体彩中心指定的足彩14场比赛。</div>
+            </div>
+        </div>
+
+
+        <!-- 下拉菜单 -->
+        <template v-if="isShowMenu">
+            <div @click="showMenu()" class="maskerLayer"></div>
+            <div class="menuFixed">
+                <div class="menuList">
+                    <span class="triangle"></span>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="view/history/trFootball.html">开奖历史</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="view/magic.html">最新资讯</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="view/rules/trFootball.html">玩法说明</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </template>
+
+        <template v-if="selectItem.num>=14">
+            <div class="fixedAction">
+                <div class="times">
+                    <span class="button button-fill">投
+                        <input type="tel" v-model="buyInfo.multipleNum" />倍</span>
+                </div>
+            </div>
+        </template>
+
+        <div class="buyAction">
+            <div class="row">
+                <div class="col-80">
+                    {{betNum}}注 {{betNum*buyInfo.multipleNum*2}}元 已选 {{matchNum}} 场 &nbsp;&nbsp;&nbsp;至少选择14场比赛
+                </div>
+                <div class="col-20">
+                    <div class="theme-yellow">
+                        <button @click="generateOrder" class="button button-fill">投注</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

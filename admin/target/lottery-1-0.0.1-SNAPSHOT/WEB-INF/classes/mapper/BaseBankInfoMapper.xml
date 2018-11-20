@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lottery.dao.BaseBankInfoMapper">
+  <resultMap id="BaseResultMap" type="com.lottery.entity.BaseBankInfo">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="bank_name" jdbcType="VARCHAR" property="bankName" />
+    <result column="is_receivable" jdbcType="TINYINT" property="isReceivable" />
+    <result column="is_payable" jdbcType="TINYINT" property="isPayable" />
+    <result column="bank_logo" jdbcType="VARCHAR" property="bankLogo" />
+    <result column="is_valid" jdbcType="TINYINT" property="isValid" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, bank_name, is_receivable, is_payable, bank_logo, is_valid
+  </sql>
+  <select id="selectByExample" parameterType="com.lottery.entity.BaseBankInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from base_bank_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from base_bank_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+   <!-- 查询有效的银行信息 -->
+    <select id="selectBaseBankInfoList" parameterType="com.lottery.entity.BaseBankInfo" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from base_bank_info
+    where is_valid = 1
+  </select>
+  
+  
+  
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from base_bank_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.lottery.entity.BaseBankInfoExample">
+    delete from base_bank_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.lottery.entity.BaseBankInfo">
+    insert into base_bank_info (id, bank_name, is_receivable, 
+      is_payable, bank_logo, is_valid
+      )
+    values (#{id,jdbcType=BIGINT}, #{bankName,jdbcType=VARCHAR}, #{isReceivable,jdbcType=TINYINT}, 
+      #{isPayable,jdbcType=TINYINT}, #{bankLogo,jdbcType=VARCHAR}, #{isValid,jdbcType=TINYINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lottery.entity.BaseBankInfo">
+    insert into base_bank_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="bankName != null">
+        bank_name,
+      </if>
+      <if test="isReceivable != null">
+        is_receivable,
+      </if>
+      <if test="isPayable != null">
+        is_payable,
+      </if>
+      <if test="bankLogo != null">
+        bank_logo,
+      </if>
+      <if test="isValid != null">
+        is_valid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="bankName != null">
+        #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="isReceivable != null">
+        #{isReceivable,jdbcType=TINYINT},
+      </if>
+      <if test="isPayable != null">
+        #{isPayable,jdbcType=TINYINT},
+      </if>
+      <if test="bankLogo != null">
+        #{bankLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="isValid != null">
+        #{isValid,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.lottery.entity.BaseBankInfoExample" resultType="java.lang.Long">
+    select count(*) from base_bank_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update base_bank_info
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.bankName != null">
+        bank_name = #{record.bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isReceivable != null">
+        is_receivable = #{record.isReceivable,jdbcType=TINYINT},
+      </if>
+      <if test="record.isPayable != null">
+        is_payable = #{record.isPayable,jdbcType=TINYINT},
+      </if>
+      <if test="record.bankLogo != null">
+        bank_logo = #{record.bankLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isValid != null">
+        is_valid = #{record.isValid,jdbcType=TINYINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update base_bank_info
+    set id = #{record.id,jdbcType=BIGINT},
+      bank_name = #{record.bankName,jdbcType=VARCHAR},
+      is_receivable = #{record.isReceivable,jdbcType=TINYINT},
+      is_payable = #{record.isPayable,jdbcType=TINYINT},
+      bank_logo = #{record.bankLogo,jdbcType=VARCHAR},
+      is_valid = #{record.isValid,jdbcType=TINYINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lottery.entity.BaseBankInfo">
+    update base_bank_info
+    <set>
+      <if test="bankName != null">
+        bank_name = #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="isReceivable != null">
+        is_receivable = #{isReceivable,jdbcType=TINYINT},
+      </if>
+      <if test="isPayable != null">
+        is_payable = #{isPayable,jdbcType=TINYINT},
+      </if>
+      <if test="bankLogo != null">
+        bank_logo = #{bankLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="isValid != null">
+        is_valid = #{isValid,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lottery.entity.BaseBankInfo">
+    update base_bank_info
+    set bank_name = #{bankName,jdbcType=VARCHAR},
+      is_receivable = #{isReceivable,jdbcType=TINYINT},
+      is_payable = #{isPayable,jdbcType=TINYINT},
+      bank_logo = #{bankLogo,jdbcType=VARCHAR},
+      is_valid = #{isValid,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

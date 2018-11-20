@@ -1,0 +1,1 @@
+(function(){new Vue({el:"#js-pageSecurity",data:{userInfo:USERINFO},methods:{userLogout:function(){utility.userLogout(function(){window.location.replace(CONFIG.HOST+"/shop/view/user/login.html")})}},created:function(){var e=this;setTimeout(function(){e.userInfo=USERINFO},1e3)}})})();

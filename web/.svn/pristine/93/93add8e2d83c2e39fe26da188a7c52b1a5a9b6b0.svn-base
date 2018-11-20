@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Your app title -->
+    <title>多彩缤纷</title>
+
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/flat-ui.min.css">
+    <link rel="stylesheet" href="../../css/common.min.css">
+</head>
+
+<body>
+
+    <div id="js-recharge">
+
+        <!-- 头部 -->
+        <div class="headerWrap">
+            <div class="header">
+                <div class="c-logo">
+                    <h1 class="img">多彩缤纷</h1>
+                </div>
+                <div class="c-info">
+                    <template v-if="!!!userInfo">
+                        <a href="./login.html">
+                            <i></i>请登录</a>
+                        <a href="./register.html">
+                            <i></i>免费注册</a>
+                        <a href="./resetPass.html">
+                            <i></i>找回密码</a>
+                    </template>
+                    <template v-else>
+                        <a href="./info.html">
+                            <i></i>{{decodeURI(userInfo.nickName)}}</a>
+                        <a href="./info.html">
+                            <i></i>个人中心
+                        </a>
+                        <a @click="userLogout">
+                            <i></i>退出登录</a>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <div class="bread">
+            <p>
+                <span>当前位置：</span>
+                <span>多彩缤纷</span>
+                <span>></span>
+                <span>交易管理></span>
+                <span>充值</span>
+            </p>
+        </div>
+
+        <!-- 主要内容 -->
+        <div class="main">
+            <div class="slider">
+                <div class="userInfo">
+                    <p>
+                        <span>
+                            <img :src="userInfo.headImageUrl||'../../img/img02.png'" />
+                        </span>
+                        <i v-text="decodeURI(userInfo.nickName)"></i>
+                    </p>
+                </div>
+                <div class="accountInfo">
+                    <p class="account">已接单：
+                        <strong v-text="userInfo.totalReceivedOrders"></strong>
+                    </p>
+                    <p class="account">已打单：
+                        <strong v-text="userInfo.totalPrintedOrders"></strong>
+                    </p>
+                    <p class="account">余额：
+                        <strong v-text="userInfo.totalMoney+' 元'"></strong>
+                    </p>
+                    <!-- <p class="account">金币：
+                        <strong v-text="userInfo.coinNum+' 个'"></strong>
+                    </p> -->
+                    <p>
+                        <a href="./recharge.html" class="btn btn-danger">充值</a>
+                        <a href="./deposit.html" class="btn btn-info">提现</a>
+                    </p>
+                </div>
+                <div class="menuInfo">
+                    <p class="label">交易管理</p>
+                    <p class="item">
+                        <a href="./order.html">我的订单</a>
+                    </p>
+                    <p class="item">
+                        <a href="./depRech.html">充值提现明细</a>
+                    </p>
+                    <p class="item">
+                        <a href="./kingBi.html">钱包流水</a>
+                    </p>
+                </div>
+                <div class="menuInfo">
+                    <p class="label">系统管理</p>
+                    <p class="item">
+                        <a href="./message.html">站内通知</a>
+                    </p>
+                </div>
+                <div class="menuInfo">
+                    <p class="label">个人账户</p>
+                    <p class="item">
+                        <a href="./info.html">基本资料</a>
+                    </p>
+                    <p class="item">
+                        <a href="./security.html">安全设置</a>
+                    </p>
+                </div>
+            </div>
+            <div class="contentWrap">
+
+                <template v-if="canModify==1">
+                    <div class="c-box c-box--min">
+                        <div class="title">支付金额：</div>
+                        <div class="content">
+                            <div class="moneyCheck">
+                                <button :class="rechargeInfo.rechargeMoney==50?'active':''">
+                                    <input type="radio" v-model="rechargeInfo.rechargeMoney" name="money" value="50" /> 50元
+                                </button>
+                                <button :class="rechargeInfo.rechargeMoney==100?'active':''">
+                                    <input type="radio" v-model="rechargeInfo.rechargeMoney" name="money" value="100" /> 100元
+                                </button>
+                                <button :class="rechargeInfo.rechargeMoney==200?'active':''">
+                                    <input type="radio" v-model="rechargeInfo.rechargeMoney" name="money" value="200" /> 200元
+                                </button>
+                                <button :class="rechargeInfo.rechargeMoney==500?'active':''">
+                                    <input type="radio" v-model="rechargeInfo.rechargeMoney" name="money" value="500" /> 500元
+                                </button>
+                            </div>
+                            <div class="moneyInput">
+                                其它金额：
+                                <input type="text" v-model="rechargeInfo.rechargeMoney" />元
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- <div class="c-box c-box--min">
+                    <div class="title">选择支付方式：</div>
+                    <div class="content">
+                        <div class="payType">
+                            <label>
+                                <input type="radio" name="pay" />
+                                <img src="/assets/img/jd.png" />
+                            </label>
+                            <label>
+                                <input type="radio" name="pay" />
+                                <img src="/assets/img/alipay.jpg" />
+                            </label>
+                            <label>
+                                <input type="radio" name="pay" />
+                                <img src="/assets/img/wxpay.gif" />
+                            </label>
+                            <label>
+                                <input type="radio" name="pay" />
+                                <img src="/assets/img/online.png" />
+                            </label>
+                            <label>
+                                <input type="radio" name="pay" />
+                                <img src="/assets/img/baidu.png" />
+                            </label>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="c-box c-box--min">
+                    <div class="title">充值优惠：</div>
+                    <div class="content">
+                        <div class="discount">
+                            <template v-for="item in rechargePolicyList">
+                                <label>
+                                    <input type="radio" v-model="rechargeInfo.rechargePolicyId" :value="item.rechargePolicyId" name="discount" />
+                                    <span class="label" v-text="item.policyName"></span>
+                                    <span class="time" v-text="item.endTime+'前有效'"></span>
+                                </label>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="inputWrap clear">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p class="label">支付密码:</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <input type="text" v-model="payPwd" placeholder="请输入支付密码" />
+                                        <span class="request">*</span>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                </td>
+                                <td>
+                                    <p>
+                                        没有支付密码？
+                                        <a href="./payPass.html">设置支付密码</a>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> -->
+
+                <div class="c-box c-box--min">
+                    <div class="title payAction">
+                        <button @click="doRechargeAction" class="btn btn-info">确认充值</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer">
+            <div class="copyright">
+                <p>版权所有：粤ICP备18070257号</p>
+                <p>客服热线：020-89853112 (8:30-12:00 14:30-18:00)</p>
+                <p>彩票票提示您：理性购彩，健康生活。不向未满18周岁的青少年出售彩票。</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/assets/jquery-3.2.2.min.js"></script>
+    <script type="text/javascript" src="/assets/vue.min.js"></script>
+    <script type="text/javascript" src="/assets/vender/Flat-UI-master/scripts/flat-ui.min.js"></script>
+    <script type="text/javascript" src="/assets/md5.min.js"></script>
+    <script type="text/javascript" src="/assets/config.js?v=03939"></script>
+    <script type="text/javascript" src="/assets/utility.js?v=03939"></script>
+    <script type="text/javascript" src="../../js/app.min.js?v=0948483939"></script>
+    <script type="text/javascript" src="../../action/user/recharge.min.js?v=0948483939"></script>
+
+</body>
+
+</html>

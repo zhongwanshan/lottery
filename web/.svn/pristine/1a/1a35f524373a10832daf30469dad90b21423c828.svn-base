@@ -1,0 +1,73 @@
+(function () {
+    var pageVue = new Vue({
+        el: "#js-pageDepositHistory",
+        data: {
+            mescroll: null,
+            rechargeStatu: CONFIG.RECHARGESTATU,
+            rechargeType: CONFIG.RECHARGETYPE,
+            historyList: [],
+            paramInfo: {
+                action: CONFIG.ACTION.getRrechargeList,
+                pageSize: 20,
+                pageNum: 1
+            }
+        },
+        methods: {
+            // 获取充值列表
+            getRrechargeList: function () {
+                var self = this;
+
+                utility.interactWithServer({
+                    headerInfo: {
+                        userId: !!USERINFO ? USERINFO["userId"] : "",
+                        userToken: !!USERINFO ? USERINFO["userToken"] : "",
+                        actionUrl: utility.formatActionUrl(CONFIG.SERVICE.walletService, CONFIG.ACTION.getRrechargeList, self.paramInfo),
+                    },
+                    url: CONFIG.HOST + CONFIG.SERVICE.walletService,
+                    dataObj: self.paramInfo,
+                    beforeSendCallback: function () {
+                        app.showIndicator();
+                    },
+                    completeCallback: function (XMLHttpRequest, textStatus) {
+                        app.hideIndicator();
+                    },
+                    successCallback: function (data) {
+                        if (data.code == 200) {
+                            if (data.data.length > 0) {
+                                // 如果不是最后一页
+                                if (self.paramInfo.pageNum <= Math.ceil(data.count / self.paramInfo.pageSize)) {
+                                    self.paramInfo.pageNum = self.paramInfo.pageNum + 1;
+                                    self.historyList = data.data.concat(self.historyList);
+                                }
+                            }
+                            self.mescroll.endBySize(self.historyList.length, data.count);
+                            self.mescroll.endSuccess(); //无参
+                        } else {
+                            app.showPreloader(data.message);
+                            setTimeout(function () {
+                                app.hidePreloader();
+                            }, 1000);
+                        }
+                    },
+                });
+            }
+        },
+        created: function () {
+            var self = this;
+
+        },
+        mounted: function () {
+            //创建MeScroll对象,down可以不用配置,因为内部已默认开启下拉刷新,重置列表数据为第一页
+            //解析: 下拉回调默认调用mescroll.resetUpScroll(); 而resetUpScroll会将page.num=1,再执行up.callback,从而实现刷新列表数据为第一页;
+            var self = this;
+            self.mescroll = new MeScroll("mescroll", { //请至少在vue的mounted生命周期初始化mescroll,以确保您配置的id能够被找到
+                down: {
+                    // auto: false, //是否在初始化完毕之后自动执行下拉回调callback; 默认true
+                    callback: function () {
+                        self.getRrechargeList();
+                    } //下拉刷新的回调
+                }
+            });
+        }
+    });
+}())

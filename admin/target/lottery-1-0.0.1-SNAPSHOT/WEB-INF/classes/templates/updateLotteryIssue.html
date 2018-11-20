@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>更新</title>
+<style type="text/css">
+/*初始化页面  */
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset,
+	legend, input, textarea, select {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font: 12px "宋体", "Arial Narrow", HELVETICA;
+	background: #fff;
+	-webkit-text-size-adjust: 100%;
+}
+
+a {
+	color: #2d374b;
+	text-decoration: none
+}
+
+a:hover {
+	color: #cd0200;
+	text-decoration: underline
+}
+
+em {
+	font-style: normal
+}
+
+li {
+	list-style: none
+}
+
+img {
+	border: 0;
+	vertical-align: middle
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+p {
+	word-wrap: break-word
+}
+/* 页面css*/
+#addMessage table tr td:last-child {
+	display: inline-block;
+	line-height: 30px;
+	height: 30px;
+	width: 500px;
+	border: 1px solid #2f1f1f;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+#addMessage table tr td:first-child {
+	display: inline-block;
+	line-height: 30px;
+	height: 30px;
+	width: 200px;
+	border: 1px solid #2f1f1f;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+#addMessage {
+	margin-left: 30px;
+	margin-top: 10px;
+}
+
+#addMessage table  tr td:last-child {
+	text-align: left;
+	padding-left: 10px;
+}
+
+#addMessage table  tr:first-child td input {
+	display: inline;
+	width: 350px;
+	line-height: 23px;
+	height: 23px;
+	border: 1px solid #c3adad;
+	border-radius: 4px;
+}
+
+#addMessage table tr:nth-child(2) td span {
+	margin-right: 20px;
+	margin-left: 5px;
+}
+
+#addMessage table tr td textarea {
+	margin-top: 3px;
+	border-radius: 5px;
+}
+
+#messageTitle {
+	font-size: 22px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 20px;
+	margin-left: 302px;
+}
+
+#addMessage table tr:nth-child(5) td span:first-child {
+	display: block;
+	height: 10px;
+	margin-top: -20px;
+	margin-bottom: 10px;
+}
+
+#addMessage table tr:nth-child(5) td span:first-child input {
+	display: inline-block;
+	height: 15px;
+	width: 20px;
+	margin-right: 5px;
+}
+
+#addMessage table tr:nth-child(5) td span:nth-child(2) {
+	display: block;
+	height: 10px;
+	margin-bottom: 16px;
+}
+
+#addMessage table tr:nth-child(5) td span:nth-child(2) input {
+	display: inline-block;
+	height: 15px;
+	width: 20px;
+	margin-right: 5px;
+}
+
+#addMessage table tr:nth-child(5) td span:nth-child(3) input {
+	display: inline-block;
+	height: 25px;
+	width: 75px;
+	margin-right: 15px;
+}
+
+#addMessage table tr:nth-child(6) td  input {
+	margin-right: 15px;
+}
+
+#sumbmitMessage input {
+	display: inline-block;
+	height: 40px;
+	width: 70px;
+	line-height: 30px;
+	margin-top: 7px;
+	margin-left: 300px;
+	margin-bottom:10px;
+	border-radius: 3px;
+	border: none;
+	background-color: #169CD1;
+	color: white;
+}
+#sumbmitMessage input:active{
+background-color: white;
+color: black;
+}
+#addMessage table tr td input {
+	display: inline;
+	width: 350px;
+	line-height: 23px;
+	height: 23px;
+	border: 1px solid #c3adad;
+	border-radius: 4px;
+}
+#sumbmitMessage input:hover {
+	background-color:#00d9d9;
+	cursor: pointer;
+}
+</style>
+<script src="/lottery/js/jquery-1.8.2.js" type="text/javascript"
+	charset="utf-8"></script>
+
+</head>
+<body>
+	<div id="messageTitle">数字彩期数</div>
+	<div id="addMessage">
+		<table style="border-collapse: collapse;">
+			<tr>
+				<td>项目名称：</td>
+				<td><input th:value="${dataList['lotteryName']}"></td>
+			</tr>
+			<tr>
+				<td>期数编码：</td>
+				<td><input th:value="${dataList['issueno']}"></td>
+			</tr>
+			<tr>
+				<td>期数名称：</td>
+				<td><input th:value="${dataList['issueName']}"></td>
+			</tr>
+
+			<tr>
+				<td>停止销售时间</td>
+				<td><input type="datetime-local"
+					th:value="${dataList['stopTimeTow']}"></td>
+			</tr>
+			<tr>
+				<td>是否有效</td>
+				<td><select>
+						<option value="0" th:selected="(${dataList['isValid']} eq 0)">否</option>
+						<option value="1" th:selected="(${dataList['isValid']} eq 1)">是</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>创建时间</td>
+				<td><input type="datetime-local"
+					th:value="${dataList['createTimeTow']}"></td>
+			</tr>
+			<tr>
+				<td>开奖时间</td>
+				<td><input type="datetime-local"
+					th:value="${dataList['openTimeTow']}"></td>
+			</tr>
+			</tr>
+			<tr>
+				<td>最后修改时间</td>
+				<td><input type="datetime-local"
+					th:value="${dataList['lastModifyTimeTow']}"></td>
+			</tr>
+			<tr>
+				<td>高频彩开奖号：</td>
+				<td><input th:value="${dataList['winNumber']}"></td>
+			</tr>
+		</table>
+		<div id="saveData" th:attr="idValue=${dataList['id']}" hidden="true"></div>
+	</div>
+	<div id="sumbmitMessage">
+		<input type="button" onclick="save()" value="保存">
+	</div>
+	<script type="text/javascript">
+//日期帮助类
+Date.prototype.format = function (format) {
+    var args = {
+        "M+": this.getMonth() + 1,
+        "d+": this.getDate(),
+        "h+": this.getHours(),
+        "m+": this.getMinutes(),
+        "s+": this.getSeconds(),
+        "q+": Math.floor((this.getMonth() + 3) / 3),  //quarter
+        "S": this.getMilliseconds()
+    };
+    if (/(y+)/.test(format))
+        format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var i in args) {
+        var n = args[i];
+        if (new RegExp("(" + i + ")").test(format))
+            format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? n : ("00" + n).substr(("" + n).length));
+    }
+    return format;
+};
+
+
+//修改消息
+function save(){
+		
+	var id =$("#saveData").attr("idValue");
+	var lotteryName =$("#addMessage table tr:nth-child(1) td input").val();
+	var issueno =$("#addMessage table tr:nth-child(2) td input").val();
+	var issueName =$("#addMessage table tr:nth-child(3) td input").val();
+	var stopTime =$("#addMessage table tr:nth-child(4) td input").val();
+	var isValid=$("#addMessage table tr:nth-child(5) td select option:selected").val();
+	var createTime =$("#addMessage table tr:nth-child(6) td input").val();
+	var openTime =$("#addMessage table tr:nth-child(7) td input").val();
+	var lastModifyTime =$("#addMessage table tr:nth-child(8) td input").val();
+	var winNumber =$("#addMessage table tr:nth-child(9) td input").val();
+	if(stopTime!=""&&stopTime!=null){
+		stopTime =new Date(stopTime).format("yyyy-MM-dd hh:mm:ss")
+	}
+	if(createTime!=""&&createTime!=null){
+		createTime =new Date(createTime).format("yyyy-MM-dd hh:mm:ss")
+	}
+	if(openTime!=""&&openTime!=null){
+		openTime =new Date(openTime).format("yyyy-MM-dd hh:mm:ss")
+	}
+	if(lastModifyTime!=""&&lastModifyTime!=null){
+		lastModifyTime =new Date(lastModifyTime).format("yyyy-MM-dd hh:mm:ss")
+	}
+	
+ 		$.ajax({
+			type : "Get",
+			url : "/lottery/lotteryIssue/updatelotteryIssue",
+			data : {
+				"id" : id,
+				"lotteryName" : lotteryName,
+				"issueno" : issueno,
+				"issueName" : issueName,
+				"stopTime" : stopTime,
+				"isValid" : isValid,
+				"createTime" : createTime,
+				"openTime" : openTime,
+				"lastModifyTime":lastModifyTime,
+				"winNumber":winNumber	
+			},
+			/* dataType : "json", */
+			success : function(data) {
+				if("sucess"==data){
+					alert("修改成功")
+					var index = parent.layer.getFrameIndex(window.name);
+					parent.layer.close(index);
+				}else{
+					alert("保存失败，请重新保存，谢谢")
+				}
+			}
+		});
+     }
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- status=debug 可以查看log4j的装配过程 -->
+
+
+<Configuration status="WARN">
+	<properties>
+		<property name="LOG_HOME">/tmp/logs/app</property>
+		<property name="APP_NAME">app</property>
+	</properties>
+
+	<Appenders>
+		<Console name="CONSOLE" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="${APP_NAME} %-d{yyyy-MM-dd HH:mm:ss} [%-5p] (%c{1}:%L) %m%n" />
+		</Console>
+		<RollingRandomAccessFile name="RFILE"
+			fileName="${LOG_HOME}/${APP_NAME}" filePattern="${LOG_HOME}/${APP_NAME}.%d{yyyy-MM-dd-HH}.log">
+			<PatternLayout
+				pattern="${APP_NAME} %-d{yyyy-MM-dd HH:mm:ss} [%-5p] (%c{1}:%L) %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+			</Policies>
+		</RollingRandomAccessFile>
+		<!-- <Flume name="eventLogger" compress="true">
+			<Agent host="localhost" port="41414" />
+			<RFC5424Layout enterpriseNumber="18060" includeMDC="true"
+				appName="${APP_NAME}" />
+		</Flume> -->
+		<Async name="Async">
+			<appender-ref ref="CONSOLE" />
+			<appender-ref ref="RFILE" />
+		<!-- 	<appender-ref ref="eventLogger" /> -->
+		</Async>
+	</Appenders>
+	<Loggers>
+		<Root level="INFO">
+			<AppenderRef ref="Async" />
+		</Root>
+	</Loggers>
+</Configuration>

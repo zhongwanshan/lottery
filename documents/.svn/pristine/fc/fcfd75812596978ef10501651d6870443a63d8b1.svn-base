@@ -1,0 +1,1326 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>提现</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="data/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/提现/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/ie.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="files/提现/data.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (首页布局已登录) -->
+
+      <!-- Unnamed (Placeholder) -->
+      <div id="u6114" class="ax_default placeholder">
+        <img id="u6114_img" class="img " src="images/首页（未登录）/u5.png"/>
+        <!-- Unnamed () -->
+        <div id="u6115" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6116" class="ax_default box_2">
+        <div id="u6116_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6117" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6118" class="ax_default label">
+        <div id="u6118_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6119" class="text" style="visibility: visible;">
+          <p><span>安全退出</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6120" class="ax_default label">
+        <div id="u6120_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6121" class="text" style="visibility: visible;">
+          <p><span>个人中心</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6122" class="ax_default label">
+        <div id="u6122_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6123" class="text" style="visibility: visible;">
+          <p><span>帮助</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6124" class="ax_default box_1">
+        <div id="u6124_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6125" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6126" class="ax_default label">
+        <div id="u6126_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6127" class="text" style="visibility: visible;">
+          <p><span>下午好，管理员！</span></p>
+        </div>
+      </div>
+
+      <!-- 个人中心 (Group) -->
+      <div id="u6128" class="ax_default ax_default_hidden" data-label="个人中心" style="display: none; visibility: hidden">
+
+        <!-- 竞彩足球 (Rectangle) -->
+        <div id="u6129" class="ax_default box_2" data-label="竞彩足球">
+          <img id="u6129_img" class="img " src="images/订单管理/竞彩足球_u117.png"/>
+          <!-- Unnamed () -->
+          <div id="u6130" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+          </div>
+        </div>
+
+        <!-- 胜平负 (Rectangle) -->
+        <div id="u6131" class="ax_default box_2" data-label="胜平负">
+          <img id="u6131_img" class="img " src="images/订单管理/胜平负_u119.png"/>
+          <!-- Unnamed () -->
+          <div id="u6132" class="text" style="visibility: visible;">
+            <p><span>订单管理</span></p>
+          </div>
+        </div>
+
+        <!-- 比分 (Rectangle) -->
+        <div id="u6133" class="ax_default box_2" data-label="比分">
+          <img id="u6133_img" class="img " src="images/订单管理/胜平负_u119.png"/>
+          <!-- Unnamed () -->
+          <div id="u6134" class="text" style="visibility: visible;">
+            <p><span>充值提现明细</span></p>
+          </div>
+        </div>
+
+        <!-- 半全场 (Rectangle) -->
+        <div id="u6135" class="ax_default box_2" data-label="半全场">
+          <img id="u6135_img" class="img " src="images/订单管理/胜平负_u119.png"/>
+          <!-- Unnamed () -->
+          <div id="u6136" class="text" style="visibility: visible;">
+            <p><span>金币明细</span></p>
+          </div>
+        </div>
+
+        <!-- 总进球 (Rectangle) -->
+        <div id="u6137" class="ax_default box_2" data-label="总进球">
+          <img id="u6137_img" class="img " src="images/订单管理/胜平负_u119.png"/>
+          <!-- Unnamed () -->
+          <div id="u6138" class="text" style="visibility: visible;">
+            <p><span>消息管理</span></p>
+          </div>
+        </div>
+
+        <!-- 总进球 (Rectangle) -->
+        <div id="u6139" class="ax_default box_2" data-label="总进球">
+          <img id="u6139_img" class="img " src="images/订单管理/胜平负_u119.png"/>
+          <!-- Unnamed () -->
+          <div id="u6140" class="text" style="visibility: visible;">
+            <p><span>订单统计</span></p>
+          </div>
+        </div>
+
+        <!-- 总进球 (Rectangle) -->
+        <div id="u6141" class="ax_default box_2" data-label="总进球">
+          <img id="u6141_img" class="img " src="images/订单管理/胜平负_u119.png"/>
+          <!-- Unnamed () -->
+          <div id="u6142" class="text" style="visibility: visible;">
+            <p><span>基本资料</span></p>
+          </div>
+        </div>
+
+        <!-- 总进球 (Rectangle) -->
+        <div id="u6143" class="ax_default box_2" data-label="总进球">
+          <img id="u6143_img" class="img " src="images/订单管理/胜平负_u119.png"/>
+          <!-- Unnamed () -->
+          <div id="u6144" class="text" style="visibility: visible;">
+            <p><span>安全设置</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u6145" class="ax_default icon">
+        <img id="u6145_img" class="img " src="images/订单管理/u133.png"/>
+        <!-- Unnamed () -->
+        <div id="u6146" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Ellipse) -->
+      <div id="u6147" class="ax_default ellipse">
+        <img id="u6147_img" class="img " src="images/订单管理/u135.png"/>
+        <!-- Unnamed () -->
+        <div id="u6148" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Hot Spot) -->
+      <div id="u6149" class="ax_default">
+      </div>
+
+      <!-- Unnamed (底部版权) -->
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6151" class="ax_default label">
+        <div id="u6151_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6152" class="text" style="visibility: visible;">
+          <p><span>版权所有：xxxxxxx发展有限公司 Copyright © 2006-2014 粤ICP备B2-288888-2号 增值电信业务经营许可证：粤B2-2888888 粤网文[2017]8888-8888号</span></p><p><span>公司地址：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx楼&nbsp;&nbsp; 客服热线：400-888-8888 (8:30-12:00 14:30-18:00)</span></p><p><span>多彩缤纷提示您：理性购彩，健康生活。不向未满18周岁的青少年出售彩票。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u6153" class="ax_default image">
+        <img id="u6153_img" class="img " src="images/首页（未登录）/u3.png"/>
+        <!-- Unnamed () -->
+        <div id="u6154" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6155" class="ax_default label">
+        <div id="u6155_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6156" class="text" style="visibility: visible;">
+          <p><span>多彩缤纷 &gt; 提现</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (彩票店管理员菜单) -->
+
+      <!-- Unnamed (Group) -->
+      <div id="u6158" class="ax_default">
+
+        <!-- 统计分析 (Dynamic Panel) -->
+        <div id="u6159" class="ax_default" data-label="统计分析">
+          <div id="u6159_state0" class="panel_state" data-label="State1">
+            <div id="u6159_state0_content" class="panel_state_content">
+
+              <!-- xz_jia (Rectangle) -->
+              <div id="u6160" class="ax_default shape" data-label="xz_jia" selectiongroup="u6157erji_caidan">
+                <div id="u6160_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u6161" class="text" style="visibility: visible;">
+                  <p><span>基本资料</span></p>
+                </div>
+              </div>
+
+              <!-- xz_jia (Rectangle) -->
+              <div id="u6162" class="ax_default shape" data-label="xz_jia" selectiongroup="u6157erji_caidan">
+                <div id="u6162_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u6163" class="text" style="visibility: visible;">
+                  <p><span>安全设置</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- xz_yiji_caidan (Rectangle) -->
+        <div id="u6164" class="ax_default shape" data-label="xz_yiji_caidan" selectiongroup="u6157yijicaidan">
+          <div id="u6164_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u6165" class="text" style="visibility: visible;">
+            <p><span>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 个人账户</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u6166" class="ax_default">
+
+        <!-- 账户资产 (Dynamic Panel) -->
+        <div id="u6167" class="ax_default" data-label="账户资产">
+          <div id="u6167_state0" class="panel_state" data-label="State1">
+            <div id="u6167_state0_content" class="panel_state_content">
+
+              <!-- xz_jia (Rectangle) -->
+              <div id="u6168" class="ax_default shape" data-label="xz_jia" selectiongroup="u6157erji_caidan">
+                <div id="u6168_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u6169" class="text" style="visibility: visible;">
+                  <p><span>消息管理</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- xz_yiji_caidan (Rectangle) -->
+        <div id="u6170" class="ax_default shape" data-label="xz_yiji_caidan" selectiongroup="u6157yijicaidan">
+          <div id="u6170_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u6171" class="text" style="visibility: visible;">
+            <p><span>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 系统管理</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u6172" class="ax_default">
+
+        <!-- 交易管理 (Dynamic Panel) -->
+        <div id="u6173" class="ax_default" data-label="交易管理">
+          <div id="u6173_state0" class="panel_state" data-label="State1">
+            <div id="u6173_state0_content" class="panel_state_content">
+
+              <!-- xz_jia (Rectangle) -->
+              <div id="u6174" class="ax_default shape" data-label="xz_jia" selectiongroup="u6157erji_caidan">
+                <div id="u6174_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u6175" class="text" style="visibility: visible;">
+                  <p><span>订单管理</span></p>
+                </div>
+              </div>
+
+              <!-- xz_jia (Rectangle) -->
+              <div id="u6176" class="ax_default shape" data-label="xz_jia" selectiongroup="u6157erji_caidan">
+                <div id="u6176_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u6177" class="text" style="visibility: visible;">
+                  <p><span>金币明细</span></p>
+                </div>
+              </div>
+
+              <!-- xz_jia (Rectangle) -->
+              <div id="u6178" class="ax_default shape" data-label="xz_jia" selectiongroup="u6157erji_caidan">
+                <div id="u6178_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u6179" class="text" style="visibility: visible;">
+                  <p><span>充值提现明细</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- xz_yiji_caidan (Rectangle) -->
+        <div id="u6180" class="ax_default shape" data-label="xz_yiji_caidan" selectiongroup="u6157yijicaidan">
+          <div id="u6180_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u6181" class="text" style="visibility: visible;">
+            <p><span>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 交易管理</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- img_wuliu (Image) -->
+      <div id="u6182" class="ax_default image" data-label="img_wuliu">
+        <img id="u6182_img" class="img " src="images/订单管理/img_wuliu_u304.png"/>
+        <!-- Unnamed () -->
+        <div id="u6183" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- img_wuliu (Image) -->
+      <div id="u6184" class="ax_default image" data-label="img_wuliu">
+        <img id="u6184_img" class="img " src="images/订单管理/img_wuliu_u304.png"/>
+        <!-- Unnamed () -->
+        <div id="u6185" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- img_wuliu (Image) -->
+      <div id="u6186" class="ax_default image" data-label="img_wuliu">
+        <img id="u6186_img" class="img " src="images/订单管理/img_wuliu_u304.png"/>
+        <!-- Unnamed () -->
+        <div id="u6187" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6188" class="ax_default box_1">
+        <div id="u6188_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6189" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6190" class="ax_default label">
+        <div id="u6190_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6191" class="text" style="visibility: visible;">
+          <p><span>彩票店管理员</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6192" class="ax_default label">
+        <div id="u6192_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6193" class="text" style="visibility: visible;">
+          <p><span>已接单：</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6194" class="ax_default label">
+        <div id="u6194_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6195" class="text" style="visibility: visible;">
+          <p><span>800</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6196" class="ax_default label">
+        <div id="u6196_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6197" class="text" style="visibility: visible;">
+          <p><span>已打单：</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u6198" class="ax_default image">
+        <img id="u6198_img" class="img " src="images/订单管理/u320.png"/>
+        <!-- Unnamed () -->
+        <div id="u6199" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6200" class="ax_default label">
+        <div id="u6200_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6201" class="text" style="visibility: visible;">
+          <p><span>760</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6202" class="ax_default label">
+        <div id="u6202_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6203" class="text" style="visibility: visible;">
+          <p><span>余额：</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6204" class="ax_default label">
+        <div id="u6204_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6205" class="text" style="visibility: visible;">
+          <p><span>100元</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6206" class="ax_default label">
+        <div id="u6206_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6207" class="text" style="visibility: visible;">
+          <p><span>金币：</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6208" class="ax_default label">
+        <div id="u6208_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6209" class="text" style="visibility: visible;">
+          <p><span>50</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6210" class="ax_default box_2">
+        <div id="u6210_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6211" class="text" style="visibility: visible;">
+          <p><span>充值</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6212" class="ax_default label">
+        <div id="u6212_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6213" class="text" style="visibility: visible;">
+          <p><span>提现</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u6214" class="ax_default">
+
+        <!-- 账户资产 (Dynamic Panel) -->
+        <div id="u6215" class="ax_default" data-label="账户资产">
+          <div id="u6215_state0" class="panel_state" data-label="State1">
+            <div id="u6215_state0_content" class="panel_state_content">
+
+              <!-- xz_jia (Rectangle) -->
+              <div id="u6216" class="ax_default shape" data-label="xz_jia" selectiongroup="u6157erji_caidan">
+                <div id="u6216_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u6217" class="text" style="visibility: visible;">
+                  <p><span>订单统计</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- xz_yiji_caidan (Rectangle) -->
+        <div id="u6218" class="ax_default shape" data-label="xz_yiji_caidan" selectiongroup="u6157yijicaidan">
+          <div id="u6218_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u6219" class="text" style="visibility: visible;">
+            <p><span>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 统计分析</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- img_wuliu (Image) -->
+      <div id="u6220" class="ax_default image" data-label="img_wuliu">
+        <img id="u6220_img" class="img " src="images/订单管理/img_wuliu_u304.png"/>
+        <!-- Unnamed () -->
+        <div id="u6221" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6222" class="ax_default box_1">
+        <div id="u6222_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6223" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6224" class="ax_default label">
+        <div id="u6224_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6225" class="text" style="visibility: visible;">
+          <p><span>温馨提醒：所有提现均需提出申请并平台审核通过后才可到帐。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6226" class="ax_default box_1">
+        <div id="u6226_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6227" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6228" class="ax_default heading_1">
+        <div id="u6228_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6229" class="text" style="visibility: visible;">
+          <p><span>提取到：</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6230" class="ax_default box_1">
+        <div id="u6230_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6231" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- k1 (Rectangle) -->
+      <div id="u6232" class="ax_default shape selected" data-label="k1">
+        <div id="u6232_div" class="selected"></div>
+        <!-- Unnamed () -->
+        <div id="u6233" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- r1 (Radio Button) -->
+      <div id="u6234" class="ax_default radio_button" data-label="r1">
+        <label for="u6234_input">
+          <!-- Unnamed () -->
+          <div id="u6235" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+          </div>
+        </label>
+        <input id="u6234_input" type="radio" value="radio" name="支付切换" checked/>
+      </div>
+
+      <!-- Unnamed (Placeholder) -->
+      <div id="u6236" class="ax_default shape">
+        <img id="u6236_img" class="img " src="images/充值/u5939.png"/>
+        <!-- Unnamed () -->
+        <div id="u6237" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- k2 (Rectangle) -->
+      <div id="u6238" class="ax_default shape" data-label="k2">
+        <div id="u6238_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6239" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- r2 (Radio Button) -->
+      <div id="u6240" class="ax_default radio_button" data-label="r2">
+        <label for="u6240_input">
+          <!-- Unnamed () -->
+          <div id="u6241" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+          </div>
+        </label>
+        <input id="u6240_input" type="radio" value="radio" name="支付切换"/>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6242" class="ax_default paragraph">
+        <div id="u6242_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6243" class="text" style="visibility: visible;">
+          <p><span>招商银行&nbsp; 尾号4839</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Placeholder) -->
+      <div id="u6244" class="ax_default shape">
+        <img id="u6244_img" class="img " src="images/充值/u5939.png"/>
+        <!-- Unnamed () -->
+        <div id="u6245" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6246" class="ax_default paragraph">
+        <div id="u6246_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6247" class="text" style="visibility: visible;">
+          <p><span>建设银行&nbsp; 尾号8787</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u6248" class="ax_default icon">
+        <img id="u6248_img" class="img " src="images/充值/u5961.png"/>
+        <!-- Unnamed () -->
+        <div id="u6249" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6250" class="ax_default paragraph">
+        <div id="u6250_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6251" class="text" style="visibility: visible;">
+          <p><span>提现说明</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6252" class="ax_default box_1">
+        <div id="u6252_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6253" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6254" class="ax_default primary_button">
+        <div id="u6254_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6255" class="text" style="visibility: visible;">
+          <p><span>提现</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6256" class="ax_default primary_button">
+        <div id="u6256_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6257" class="text" style="visibility: visible;">
+          <p><span>添加银行卡</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6258" class="ax_default flow_shape">
+        <div id="u6258_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6259" class="text" style="visibility: visible;">
+          <p><span>默认</span></p>
+        </div>
+      </div>
+
+      <!-- k3 (Rectangle) -->
+      <div id="u6260" class="ax_default shape" data-label="k3">
+        <div id="u6260_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6261" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- r3 (Radio Button) -->
+      <div id="u6262" class="ax_default radio_button" data-label="r3">
+        <label for="u6262_input">
+          <!-- Unnamed () -->
+          <div id="u6263" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+          </div>
+        </label>
+        <input id="u6262_input" type="radio" value="radio" name="支付切换"/>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6264" class="ax_default paragraph">
+        <div id="u6264_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6265" class="text" style="visibility: visible;">
+          <p><span>工商银行&nbsp; 尾号 4567</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Placeholder) -->
+      <div id="u6266" class="ax_default shape">
+        <img id="u6266_img" class="img " src="images/充值/u5939.png"/>
+        <!-- Unnamed () -->
+        <div id="u6267" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6268" class="ax_default heading_1">
+        <div id="u6268_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6269" class="text" style="visibility: visible;">
+          <p><span>设为默认</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6270" class="ax_default heading_1">
+        <div id="u6270_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6271" class="text" style="visibility: visible;">
+          <p><span>设为默认</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6272" class="ax_default heading_1">
+        <div id="u6272_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6273" class="text" style="visibility: visible;">
+          <p><span>提取金额：</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6274" class="ax_default heading_1">
+        <div id="u6274_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6275" class="text" style="visibility: visible;">
+          <p><span>元</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u6276" class="ax_default heading_1">
+        <div id="u6276_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u6277" class="text" style="visibility: visible;">
+          <p><span>支付密码：</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Text Field) -->
+      <div id="u6278" class="ax_default text_field">
+        <input id="u6278_input" type="text" value=""/>
+      </div>
+
+      <!-- Unnamed (Text Field) -->
+      <div id="u6279" class="ax_default text_field">
+        <input id="u6279_input" type="text" value=""/>
+      </div>
+
+      <!-- 添加银行卡 (Dynamic Panel) -->
+      <div id="u6280" class="ax_default ax_default_hidden" data-label="添加银行卡" style="display: none; visibility: hidden">
+        <div id="u6280_state0" class="panel_state" data-label="State1">
+          <div id="u6280_state0_content" class="panel_state_content">
+
+            <!-- k2 (Rectangle) -->
+            <div id="u6281" class="ax_default shape" data-label="k2">
+              <div id="u6281_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u6282" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Group) -->
+            <div id="u6283" class="ax_default">
+
+              <!-- r2 (Radio Button) -->
+              <div id="u6284" class="ax_default radio_button" data-label="r2">
+                <label for="u6284_input">
+                  <!-- Unnamed () -->
+                  <div id="u6285" class="text" style="display: none; visibility: hidden">
+                    <p><span></span></p>
+                  </div>
+                </label>
+                <input id="u6284_input" type="radio" value="radio" name="支付切换"/>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u6286" class="ax_default paragraph">
+                <div id="u6286_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u6287" class="text" style="visibility: visible;">
+                  <p><span>工商银行</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Placeholder) -->
+              <div id="u6288" class="ax_default shape">
+                <img id="u6288_img" class="img " src="images/提现/u6288.png"/>
+                <!-- Unnamed () -->
+                <div id="u6289" class="text" style="display: none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u6290" class="ax_default heading_1">
+              <div id="u6290_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u6291" class="text" style="visibility: visible;">
+                <p><span>请选择开卡银行：</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u6292" class="ax_default heading_1">
+              <div id="u6292_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u6293" class="text" style="visibility: visible;">
+                <p><span>备注：</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Text Field) -->
+            <div id="u6294" class="ax_default text_field">
+              <input id="u6294_input" type="text" value=""/>
+            </div>
+
+            <!-- Unnamed (Group) -->
+            <div id="u6295" class="ax_default">
+
+              <!-- r2 (Radio Button) -->
+              <div id="u6296" class="ax_default radio_button" data-label="r2">
+                <label for="u6296_input">
+                  <!-- Unnamed () -->
+                  <div id="u6297" class="text" style="display: none; visibility: hidden">
+                    <p><span></span></p>
+                  </div>
+                </label>
+                <input id="u6296_input" type="radio" value="radio" name="支付切换"/>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u6298" class="ax_default paragraph">
+                <div id="u6298_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u6299" class="text" style="visibility: visible;">
+                  <p><span>工商银行</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Placeholder) -->
+              <div id="u6300" class="ax_default shape">
+                <img id="u6300_img" class="img " src="images/提现/u6288.png"/>
+                <!-- Unnamed () -->
+                <div id="u6301" class="text" style="display: none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unnamed (Group) -->
+            <div id="u6302" class="ax_default">
+
+              <!-- r2 (Radio Button) -->
+              <div id="u6303" class="ax_default radio_button" data-label="r2">
+                <label for="u6303_input">
+                  <!-- Unnamed () -->
+                  <div id="u6304" class="text" style="display: none; visibility: hidden">
+                    <p><span></span></p>
+                  </div>
+                </label>
+                <input id="u6303_input" type="radio" value="radio" name="支付切换"/>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u6305" class="ax_default paragraph">
+                <div id="u6305_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u6306" class="text" style="visibility: visible;">
+                  <p><span>工商银行</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Placeholder) -->
+              <div id="u6307" class="ax_default shape">
+                <img id="u6307_img" class="img " src="images/提现/u6288.png"/>
+                <!-- Unnamed () -->
+                <div id="u6308" class="text" style="display: none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unnamed (Group) -->
+            <div id="u6309" class="ax_default">
+
+              <!-- r2 (Radio Button) -->
+              <div id="u6310" class="ax_default radio_button" data-label="r2">
+                <label for="u6310_input">
+                  <!-- Unnamed () -->
+                  <div id="u6311" class="text" style="display: none; visibility: hidden">
+                    <p><span></span></p>
+                  </div>
+                </label>
+                <input id="u6310_input" type="radio" value="radio" name="支付切换"/>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u6312" class="ax_default paragraph">
+                <div id="u6312_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u6313" class="text" style="visibility: visible;">
+                  <p><span>工商银行</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Placeholder) -->
+              <div id="u6314" class="ax_default shape">
+                <img id="u6314_img" class="img " src="images/提现/u6288.png"/>
+                <!-- Unnamed () -->
+                <div id="u6315" class="text" style="display: none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unnamed (Group) -->
+            <div id="u6316" class="ax_default">
+
+              <!-- r2 (Radio Button) -->
+              <div id="u6317" class="ax_default radio_button" data-label="r2">
+                <label for="u6317_input">
+                  <!-- Unnamed () -->
+                  <div id="u6318" class="text" style="display: none; visibility: hidden">
+                    <p><span></span></p>
+                  </div>
+                </label>
+                <input id="u6317_input" type="radio" value="radio" name="支付切换"/>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u6319" class="ax_default paragraph">
+                <div id="u6319_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u6320" class="text" style="visibility: visible;">
+                  <p><span>工商银行</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Placeholder) -->
+              <div id="u6321" class="ax_default shape">
+                <img id="u6321_img" class="img " src="images/提现/u6288.png"/>
+                <!-- Unnamed () -->
+                <div id="u6322" class="text" style="display: none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unnamed (Group) -->
+            <div id="u6323" class="ax_default">
+
+              <!-- r2 (Radio Button) -->
+              <div id="u6324" class="ax_default radio_button" data-label="r2">
+                <label for="u6324_input">
+                  <!-- Unnamed () -->
+                  <div id="u6325" class="text" style="display: none; visibility: hidden">
+                    <p><span></span></p>
+                  </div>
+                </label>
+                <input id="u6324_input" type="radio" value="radio" name="支付切换"/>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u6326" class="ax_default paragraph">
+                <div id="u6326_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u6327" class="text" style="visibility: visible;">
+                  <p><span>工商银行</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Placeholder) -->
+              <div id="u6328" class="ax_default shape">
+                <img id="u6328_img" class="img " src="images/提现/u6288.png"/>
+                <!-- Unnamed () -->
+                <div id="u6329" class="text" style="display: none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unnamed (Group) -->
+            <div id="u6330" class="ax_default">
+
+              <!-- r2 (Radio Button) -->
+              <div id="u6331" class="ax_default radio_button" data-label="r2">
+                <label for="u6331_input">
+                  <!-- Unnamed () -->
+                  <div id="u6332" class="text" style="display: none; visibility: hidden">
+                    <p><span></span></p>
+                  </div>
+                </label>
+                <input id="u6331_input" type="radio" value="radio" name="支付切换"/>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u6333" class="ax_default paragraph">
+                <div id="u6333_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u6334" class="text" style="visibility: visible;">
+                  <p><span>工商银行</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Placeholder) -->
+              <div id="u6335" class="ax_default shape">
+                <img id="u6335_img" class="img " src="images/提现/u6288.png"/>
+                <!-- Unnamed () -->
+                <div id="u6336" class="text" style="display: none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unnamed (Group) -->
+            <div id="u6337" class="ax_default">
+
+              <!-- r2 (Radio Button) -->
+              <div id="u6338" class="ax_default radio_button" data-label="r2">
+                <label for="u6338_input">
+                  <!-- Unnamed () -->
+                  <div id="u6339" class="text" style="display: none; visibility: hidden">
+                    <p><span></span></p>
+                  </div>
+                </label>
+                <input id="u6338_input" type="radio" value="radio" name="支付切换"/>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u6340" class="ax_default paragraph">
+                <div id="u6340_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u6341" class="text" style="visibility: visible;">
+                  <p><span>工商银行</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Placeholder) -->
+              <div id="u6342" class="ax_default shape">
+                <img id="u6342_img" class="img " src="images/提现/u6288.png"/>
+                <!-- Unnamed () -->
+                <div id="u6343" class="text" style="display: none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unnamed (Group) -->
+            <div id="u6344" class="ax_default">
+
+              <!-- r2 (Radio Button) -->
+              <div id="u6345" class="ax_default radio_button" data-label="r2">
+                <label for="u6345_input">
+                  <!-- Unnamed () -->
+                  <div id="u6346" class="text" style="display: none; visibility: hidden">
+                    <p><span></span></p>
+                  </div>
+                </label>
+                <input id="u6345_input" type="radio" value="radio" name="支付切换"/>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u6347" class="ax_default paragraph">
+                <div id="u6347_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u6348" class="text" style="visibility: visible;">
+                  <p><span>工商银行</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Placeholder) -->
+              <div id="u6349" class="ax_default shape">
+                <img id="u6349_img" class="img " src="images/提现/u6288.png"/>
+                <!-- Unnamed () -->
+                <div id="u6350" class="text" style="display: none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unnamed (Group) -->
+            <div id="u6351" class="ax_default">
+
+              <!-- r2 (Radio Button) -->
+              <div id="u6352" class="ax_default radio_button" data-label="r2">
+                <label for="u6352_input">
+                  <!-- Unnamed () -->
+                  <div id="u6353" class="text" style="display: none; visibility: hidden">
+                    <p><span></span></p>
+                  </div>
+                </label>
+                <input id="u6352_input" type="radio" value="radio" name="支付切换"/>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u6354" class="ax_default paragraph">
+                <div id="u6354_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u6355" class="text" style="visibility: visible;">
+                  <p><span>工商银行</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Placeholder) -->
+              <div id="u6356" class="ax_default shape">
+                <img id="u6356_img" class="img " src="images/提现/u6288.png"/>
+                <!-- Unnamed () -->
+                <div id="u6357" class="text" style="display: none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u6358" class="ax_default heading_1">
+              <div id="u6358_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u6359" class="text" style="visibility: visible;">
+                <p><span>银行卡号：</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Text Field) -->
+            <div id="u6360" class="ax_default text_field">
+              <input id="u6360_input" type="text" value=""/>
+            </div>
+
+            <!-- 监控 (Rectangle) -->
+            <div id="u6361" class="ax_default shape" data-label="监控">
+              <div id="u6361_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u6362" class="text" style="visibility: visible;">
+                <p><span>添加</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u6363" class="ax_default heading_1">
+              <div id="u6363_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u6364" class="text" style="visibility: visible;">
+                <p><span>取消</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u6365" class="ax_default heading_1">
+              <div id="u6365_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u6366" class="text" style="visibility: visible;">
+                <p><span>&nbsp;&nbsp;&nbsp; 开户人：</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Text Field) -->
+            <div id="u6367" class="ax_default text_field">
+              <input id="u6367_input" type="text" value="" disabled readonly/>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u6368" class="ax_default heading_1">
+              <div id="u6368_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u6369" class="text" style="visibility: visible;">
+                <p><span>&nbsp;&nbsp;&nbsp; 开户银行：</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Text Field) -->
+            <div id="u6370" class="ax_default text_field">
+              <input id="u6370_input" type="text" value=""/>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u6371" class="ax_default heading_1">
+              <div id="u6371_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u6372" class="text" style="visibility: visible;">
+                <p><span>为了您的资金安全，目前仅支持提现到您本人银行卡。</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 提现申请结果 (Group) -->
+      <div id="u6373" class="ax_default ax_default_hidden" data-label="提现申请结果" style="display: none; visibility: hidden">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u6374" class="ax_default box_1">
+          <div id="u6374_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u6375" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u6376" class="ax_default label">
+          <div id="u6376_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u6377" class="text" style="visibility: visible;">
+            <p><span>多彩缤纷</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u6378" class="ax_default primary_button">
+          <div id="u6378_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u6379" class="text" style="visibility: visible;">
+            <p><span>关闭</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Shape) -->
+        <div id="u6380" class="ax_default icon">
+          <img id="u6380_img" class="img " src="images/充值/u5976.png"/>
+          <!-- Unnamed () -->
+          <div id="u6381" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u6382" class="ax_default label">
+          <div id="u6382_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u6383" class="text" style="visibility: visible;">
+            <p><span>成功提交提现申请</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u6384" class="ax_default paragraph">
+          <div id="u6384_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u6385" class="text" style="visibility: visible;">
+            <p><span>已成功提交提现申请，详情查看充值提现明细。</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Placeholder) -->
+        <div id="u6386" class="ax_default shape">
+          <img id="u6386_img" class="img " src="images/充值/u5982.png"/>
+          <!-- Unnamed () -->
+          <div id="u6387" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

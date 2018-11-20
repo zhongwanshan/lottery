@@ -1,0 +1,97 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="../hall.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">竞彩足球</div>
+        <div class="right">
+            <!-- <a>
+                <i class="glyphicon glyphicon-calendar"></i>
+            </a> -->
+        </div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="history-football">
+    <div id="js-historyFootball" class="page-content buyWrap">
+        <div id="page-history-football">
+            <div class="mainWrap">
+                <template v-for="value in matchInfoObj">
+                    <p class="hTitle" v-text="value.time + ' ' + value.weekDay"> </p>
+                    <div class="ballWrap ballBall">
+
+                        <template v-for="item in value.list">
+                            <div class="ballItem" :style="{borderTop: '2px solid #'+item.l_color}">
+                                <div class="teamWrap">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="label">
+                                                    <p v-text="item.m_id"></p>
+                                                    <p v-text="item.l_cn" :style="{backgroundColor: '#'+item.l_color,color: 'white'}"></p>
+                                                    <p v-text="item.m_num"></p>
+                                                </td>
+                                                <td class="teams">
+                                                    <p>{{item.h_cn}}
+                                                        <span>全 {{item.full}}
+                                                            <br/>半 {{item.half}}</span>{{item.a_cn}}</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="teamRecord">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <p>主胜赔
+                                                        <span v-text="item.h"></span>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p>平赔
+                                                        <span v-text="item.d"></span>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p>主负赔
+                                                        <span v-text="item.a"></span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>(让球)主胜赔
+                                                        <span v-text="item.hh"></span>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p>(让球)平赔
+                                                        <span v-text="item.hd"></span>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p>(让球)主负赔
+                                                        <span v-text="item.ha"></span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <div class="buyAction">
+            <p class="theme-yellow">
+                <a href="view/buy/football.html" class="button button-big button-round active">投注</a>
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lottery.dao.TblBaseAdminUserMapper">
+	<resultMap id="BaseResultMap" type="com.lottery.entity.TblBaseAdminUser">
+		<id column="id" jdbcType="BIGINT" property="id" />
+		<result column="sys_user_code" jdbcType="VARCHAR" property="sysUserCode" />
+		<result column="sys_user_pwd" jdbcType="VARCHAR" property="sysUserPwd" />
+		<result column="user_status" jdbcType="TINYINT" property="userStatus" />
+		<result column="reg_time" jdbcType="DATE" property="regTime" />
+		<result column="sys_user_name" jdbcType="VARCHAR" property="sysUserName" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id, sys_user_code, sys_user_pwd, user_status, reg_time,
+		sys_user_name
+
+	</sql>
+	<!-- 根据条件查询用户记录集合 -->
+	<select id="searchBaseAdminUseByCondition" parameterType="com.lottery.entity.TblBaseAdminUser"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from base_admin_user where 1=1
+		<if
+			test="sysUserName != null or sysUserCode != null or userStatus != null ">
+			<if test="sysUserName != null and sysUserName !=''">
+				and sys_user_name like CONCAT('%',#{sysUserName},'%')
+			</if>
+			<if test="sysUserCode != null and sysUserCode !=''">
+				and sys_user_code like CONCAT('%',#{sysUserName},'%')
+			</if>
+			<if test="userStatus != null and  userStatus !=2">
+				and user_status=#{userStatus}
+			</if>
+			<if test="pageNum != null">
+				order by id desc limit #{pageNum},10
+			</if>
+		</if>
+	</select>
+	<!-- 查询用户总数量 -->
+	<select id="searchTotallPageNum" parameterType="com.lottery.entity.TblBaseAdminUser"
+		resultType="java.lang.Integer">
+		select
+		count(*)
+		from base_admin_user where 1=1
+		<if
+			test="sysUserName != null or sysUserCode != null or userStatus != null ">
+			<if test="sysUserName != null and sysUserName !=''">
+				and sys_user_name like CONCAT('%',#{sysUserName},'%')
+			</if>
+			<if test="sysUserCode != null and sysUserCode !=''">
+				and sys_user_code like CONCAT('%',#{sysUserName},'%')
+			</if>
+			<if test="userStatus != null and  userStatus !=2">
+				and user_status=#{userStatus}
+			</if>
+		</if>
+	</select>
+	<!-- 插入用户 -->
+	<insert id="addUser" parameterType="com.lottery.entity.TblBaseAdminUser"
+		keyProperty="id">
+		insert into base_admin_user(sys_user_code, sys_user_pwd,
+		user_status,
+		reg_time, sys_user_name)
+		values(#{sysUserCode},#{sysUserPwd},#{userStatus},now(),#{sysUserName})
+	</insert>
+	<!-- 根据用户id查询 -->
+	<select id="findSysUserById" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from base_admin_user where id=#{id}
+	</select>
+	<!-- 根据id更新用户信息 -->
+
+	<update id="updateUserData" parameterType="com.lottery.entity.TblBaseAdminUser"
+		keyProperty="id">
+		update base_admin_user set sys_user_name=#{sysUserName} ,
+		user_status=#{userStatus}
+		where id=#{id}
+	</update>
+	<!-- 根据id集合删除用户信息 -->
+	<delete id="deleteUserDataByIds" parameterType="java.util.List">
+		delete from base_admin_user where id in
+		<foreach collection="idList" index="index" item="item" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+	
+	
+	
+		<!-- 登录-->
+	<select id="login" parameterType="com.lottery.entity.TblBaseAdminUser"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from base_admin_user where 1=1
+		<if
+			test="sysUserName != null or sysUserCode != null or userStatus != null ">
+			<if test="sysUserName != null and sysUserName !=''">
+				and sys_user_name=#{sysUserName}
+			</if>
+			<if test="sysUserPwd != null and sysUserPwd !=''">
+				and sys_user_pwd=#{sysUserPwd}
+			</if>
+			<if test="userStatus != null and  userStatus !=2">
+				and user_status=#{userStatus}
+			</if>
+		</if>
+	</select>
+
+
+
+</mapper>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Your app title -->
+    <title>多彩缤纷</title>
+
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/flat-ui.min.css">
+    <link rel="stylesheet" href="../../css/common.min.css">
+</head>
+
+<body>
+
+    <div id="js-pageLogin">
+        <!-- 头部 -->
+        <div class="headerWrap">
+            <div class="header">
+                <div class="c-logo">
+                    <h1 class="img">多彩缤纷</h1>
+                </div>
+                <div class="c-info">
+                    <a href="./login.html">
+                        <i></i>请登录</a>
+                    <a href="./register.html">
+                        <i></i>免费注册</a>
+                    <a href="./resetPass.html">
+                        <i></i>找回密码</a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 主要内容 -->
+        <div class="main" style="margin-top: 20px;">
+
+            <div class="inputWrap">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <h2>用户登录</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label">账号:</p>
+                            </td>
+                            <td>
+                                <p>
+                                    <input type="text" v-model="paramInfo.userAccount" placeholder="请输入账号" />
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label">密码:</p>
+                            </td>
+                            <td>
+                                <p>
+                                    <input type="password" v-model="pwd" placeholder="请输入密码" />
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <p class="remember">
+                                    <label>
+                                        <input type="checkbox" v-model="isChecked" value="1" />记住我</label>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p class="action">
+                                    <button @click="doAction" class="btn btn-success">登录</button>
+                                    <a href="./register.html" class="btn btn-link">去注册</a>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer">
+            <div class="copyright">
+                <p>版权所有：粤ICP备18070257号</p>
+                <p>客服热线：020-89853112 (8:30-12:00 14:30-18:00)</p>
+                <p>彩票票提示您：理性购彩，健康生活。不向未满18周岁的青少年出售彩票。</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/assets/jquery-3.2.2.min.js"></script>
+    <script type="text/javascript" src="/assets/vue.min.js"></script>
+    <script type="text/javascript" src="/assets/vender/Flat-UI-master/scripts/flat-ui.min.js"></script>
+    <script type="text/javascript" src="/assets/md5.min.js"></script>
+    <script type="text/javascript" src="/assets/config.min.js?v=03939"></script>
+    <script type="text/javascript" src="/assets/utility.min.js?v=03939"></script>
+    <script type="text/javascript" src="../../js/app.min.js?v=0948483939"></script>
+    <script type="text/javascript" src="../../action/user/login.min.js?v=0948483939"></script>
+
+</body>
+
+</html>

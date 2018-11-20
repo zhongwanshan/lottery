@@ -1,0 +1,31 @@
+package com.lottery.service;
+
+import java.util.List;
+
+import com.lottery.entity.BaseAdminUser;
+
+public interface BaseAdminUserService {
+
+	// 根据条件查询最新10条数据
+	public List<BaseAdminUser> searchBaseAdminUserByCondition(String sysUserName, String sysUserCode,
+			Integer userStatus, Integer pageNum);
+
+	// 查询总页数
+	public Integer searchTotallPageNum(String sysUserName, String sysUserCode, Integer userStatus, Integer pageNum);
+
+	// 添加用户
+	public Integer addUser(BaseAdminUser baseAdminUser);
+	
+	// 根据id查询记录
+	public BaseAdminUser findSysUserById(Integer id);
+	
+	// 根据id更新用户信息
+   public Integer updateUserData(BaseAdminUser baseAdminUser);
+   /*
+   // 根据id更新用户信息
+   public Integer deleteUserDataByIds(List<Integer> idList);*/
+   
+   // 根据id更新用户信息
+   public BaseAdminUser login(BaseAdminUser BaseAdminUser);
+
+}

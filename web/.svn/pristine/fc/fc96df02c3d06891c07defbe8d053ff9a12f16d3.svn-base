@@ -1,0 +1,128 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="view/me.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">我的关注</div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="user-focus">
+    <div class="page-content">
+        <div class="lotteryType">
+            <div class="item">
+                <div class="header">
+                    <span class="label">足球单场 第198023期</span>
+                    <span class="dot">已关注
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </span>
+                </div>
+                <a class="content">
+                    <p class="sigle">
+                        <img src="img/type/type09.png" />
+                        <span>广州恒大</span>
+                        <strong>4:2</strong>
+                        <span>皇家马德里</span>
+                    </p>
+                </a>
+                <span class="toword glyphicon glyphicon-menu-right"></span>
+            </div>
+            <div class="item">
+                <div class="header">
+                    <span class="label">足球单场 第198023期</span>
+                    <span class="dot">已关注
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </span>
+                </div>
+                <a class="content">
+                    <p class="footer">
+                        <img src="img/type/type10.png" />
+                        <span>广州恒大</span>
+                        <strong>4:2</strong>
+                        <span>皇家马德里</span>
+                    </p>
+                </a>
+                <span class="toword glyphicon glyphicon-menu-right"></span>
+            </div>
+            <div class="item">
+                <div class="header">
+                    <span class="label">竞彩篮球 比赛日 2018-06-30</span>
+                    <span class="dot">已关注
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </span>
+                </div>
+                <a class="content">
+                    <p class="basketball">
+                        <img src="img/type/type10.png" />
+                        <span>克利夫兰骑士</span>
+                        <strong>4:2</strong>
+                        <span>凯尔特人</span>
+                    </p>
+                </a>
+                <span class="toword glyphicon glyphicon-menu-right"></span>
+            </div>
+            <div class="item">
+                <div class="header">
+                    <span class="label">任选九 第234567期 2018-06-30</span>
+                    <span class="dot">已关注
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </span>
+                </div>
+                <a class="content">
+                    <p class="numberType">
+                        <span class="circle">1</span>
+                        <span class="circle">2</span>
+                        <span class="circle">3</span>
+                        <span class="circle">4</span>
+                        <span class="circle">5</span>
+                        <span class="circle">6</span>
+                        <span class="circle blue">7</span>
+                    </p>
+                </a>
+                <span class="toword glyphicon glyphicon-menu-right"></span>
+            </div>
+            <div class="item">
+                <div class="header">
+                    <span class="label">双色球 第234567期 2018-06-30</span>
+                    <span class="dot">已关注
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </span>
+                </div>
+                <a class="content">
+                    <p class="numberType">
+                        <span class="circle">1</span>
+                        <span class="circle">2</span>
+                        <span class="circle">3</span>
+                        <span class="circle">4</span>
+                        <span class="circle">5</span>
+                        <span class="circle">6</span>
+                        <span class="circle blue">7</span>
+                    </p>
+                </a>
+                <span class="toword glyphicon glyphicon-menu-right"></span>
+            </div>
+            <div class="item">
+                <div class="header">
+                    <span class="label">七星彩 第234567期 2018-06-30</span>
+                    <span class="dot">已关注
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </span>
+                </div>
+                <a class="content">
+                    <p class="numberType">
+                        <span class="circle">1</span>
+                        <span class="circle">2</span>
+                        <span class="circle">3</span>
+                        <span class="circle">4</span>
+                        <span class="circle">5</span>
+                        <span class="circle">6</span>
+                        <span class="circle blue">7</span>
+                    </p>
+                </a>
+                <span class="toword glyphicon glyphicon-menu-right"></span>
+            </div>
+        </div>
+    </div>
+</div>

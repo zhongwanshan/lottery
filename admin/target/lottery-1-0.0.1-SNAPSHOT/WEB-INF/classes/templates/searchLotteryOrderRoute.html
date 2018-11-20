@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>规则查看</title>
+<style type="text/css">
+/*初始化页面  */
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset,
+	legend, input, textarea, select {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font: 14px "微软雅黑", "Arial Narrow", HELVETICA;
+	background: #fff;
+	-webkit-text-size-adjust: 100%;
+}
+
+a {
+	color: #2d374b;
+	text-decoration: none
+}
+
+a:hover {
+	color: #cd0200;
+	text-decoration: underline
+}
+
+em {
+	font-style: normal
+}
+
+li {
+	list-style: none
+}
+
+img {
+	border: 0;
+	vertical-align: middle
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+p {
+	word-wrap: break-word
+}
+/* 页面css*/
+#searchCondition ul li {
+	float: left;
+	margin-left: 29px;
+	margin-top: 35px;
+	font-size: 13px;
+}
+
+#searchCondition ul li select {
+	display: inline-block;
+	width: 143px;
+	height: 26px
+}
+
+#searchCondition ul li input {
+	display: inline-block;
+	width: 165px;
+	height: 22px
+}
+
+#searchCondition ul li input#cx {
+	display: inline-block;
+	width: 80px;
+	height: 26px;
+	background-color: #5978A6;
+	color: white;
+	border-radius: 3px;
+	box-shadow: none;
+}
+
+#messageLlist {
+	clear: both;
+	margin-left: 29px;
+	padding-top: 15px;
+}
+
+#messageLlist #messageData td {
+	display: inline-block;
+	width: 148px;
+	text-align: center;
+	line-height: 40px;
+	border: none;
+	border-bottom: 1px;
+}
+
+#messageLlist #messageData td:first-child {
+	width: 130px;
+}
+
+#messageLlist #messageData td:last-child {
+	width: 130px;
+}
+
+#messageLlist #messageData thead td {
+	background-color: #F2F2F2;
+}
+
+#messageLlist #messageData tbody tr {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #E7E7E7;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #E7E7E7;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #E7E7E7;
+}
+
+#messageLlist #messageData thead tr {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #E7E7E7;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #E7E7E7;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #E7E7E7;
+}
+
+#messageLlist #messageData tbody tr:hover {
+	background-color: #F2F2F2;
+}
+
+#funtionList {
+	height: 30px;
+	width: 100%;
+	clear: both;
+	margin-top: 10px;
+}
+
+#funtionList ul li {
+	float: left;
+	display: inline-block;
+	height: 26px;
+	width: 80px;
+	line-height: 26px;
+	border: 1px solid #c3adad;
+	border-radius: 3px;
+	margin-left: 30px;
+	text-align: center;
+	background-color: #5978A6;
+	color: white;
+}
+
+#funtionList ul {
+	padding-top: 20px;
+}
+
+#funtionList ul li:hover {
+	cursor: pointer;
+}
+
+#funtionList ul li:active {
+	background-color: #c3adad;
+}
+
+#pageLimit span {
+	float: left;
+	display: inline-block;
+	height: 20px;
+	width: 47px;
+	line-height: 20px;
+	text-align: center;
+	border: 1px solid #BDBFBE;
+	border-radius: 3px;
+	background-color: #159ADD;
+	margin-right: 5px;
+	color: white;
+}
+
+#pageLimit span:active {
+	color: black;
+	background-color: white;
+}
+
+#pageLimit span:hover {
+	cursor: pointer;
+}
+
+#pageLimit {
+	margin-left: 192px;
+	margin-top: 20px;
+}
+
+#pageLimit span:nth-child(7) {
+	width: 80px;
+}
+
+#pageLimit span:nth-child(7) input {
+	width: 20px;
+}
+
+#pageLimit span:nth-child(8) {
+	height: 25px;
+	width: 50px;
+	line-height: 25px;
+	border: 1px solid #c3adad;
+	border-radius: 3px;
+}
+
+#searchCondition ul li span {
+	float: left;
+	display: inline-block;
+	height: 26px;
+	width: 80px;
+	line-height: 26px;
+	border: 1px solid #c3adad;
+	border-radius: 3px;
+	margin-left: 30px;
+	text-align: center;
+	background-color: #169CD1;
+	color: white;
+}
+
+#searchCondition div:first-child {
+	height: 51px;
+	line-height: 51px;
+	margin: 0 7px;
+	border-bottom: 3px solid #797979;
+	"
+}
+
+#searchCondition div:first-child span {
+	padding-left: 22px;
+}
+
+#functionListTow {
+	clear: both;
+}
+
+#functionListTow ul li span {
+	margin-left: 0px;
+}
+
+#searchCondition ul li span:hover {
+	cursor: pointer;
+}
+
+#searchCondition ul li span:active {
+	background-color: white;
+	color: black;
+}
+
+#messageLlist #messageData tbody tr span {
+	/* 	float: left; */
+	display: inline-block;
+	height: 20px;
+	width: 77px;
+	line-height: 20px;
+	text-align: center;
+	border: 1px solid #BDBFBE;
+	border-radius: 3px;
+	background-color: #159ADD;
+	margin-right: 5px;
+	color: white;
+}
+
+#messageLlist #messageData tbody tr span:nth-child(3) {
+	background-color: #009C00;
+}
+
+#messageLlist #messageData tbody tr span:nth-child(4) {
+	background-color: #FD9A00;
+}
+
+#messageLlist #messageData tbody tr span:hover {
+	cursor: pointer;
+}
+
+#messageLlist #messageData tbody tr span:active {
+	background-color: white;
+	color: black;
+}
+
+#messageLlist #messageData tbody tr div {
+	display: inline-block;
+}
+
+#searchCondition table {
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+#searchCondition table tr td {
+	border: 1px solid #BDBFBE;
+	height: 38px;
+	line-height: 38px;
+}
+
+#searchCondition table tr td:first-child {
+	width: 132px;
+	text-align: right;
+}
+
+#searchCondition table tr td:last-child {
+	width: 640px;
+	text-align: left;
+}
+
+#searchCondition table tr td input {
+	display: inline-block;
+	line-height: 28px;
+	height: 28px;
+	margin-left: 1px;
+}
+
+#searchCondition table tr td select {
+	display: inline-block;
+	height: 38px;
+	line-height: 33px;
+	height: 33px;
+	margin-left: 1px;
+	width: 174px;
+}
+
+#searchCondition table tr:last-child td span {
+	border: 1px solid #BDBFBE;
+	display: inline-block;
+	width: 88px;
+	height: 31px;
+	line-height: 31px;
+	border-radius: 3px;
+	background-color: #199BD7;
+	color: white;
+	margin-left: 8px;
+}
+
+#searchCondition table tr:last-child td span:hover {
+	cursor: pointer;
+}
+
+#searchCondition table tr:last-child td span:active {
+	color: black;
+	background-color: white;
+}
+</style>
+
+<script src="/lottery/js/jquery-1.8.2.js" type="text/javascript"
+	charset="utf-8"></script>
+<script src="/lottery/js/layer/layer.min.js" type="text/javascript"
+	charset="utf-8"></script>
+
+</head>
+<body>
+	<div id="searchCondition"
+		style="height: 273px; border: 1px solid #BDBFBE; background-color: #F2F2F2">
+		<div>
+			<span>规则查看</span>
+		</div>
+		<div>
+			<form id="formToUpdate" method="post" action="#"
+				enctype="multipart/form-data">
+				<table>
+					<tr>
+						<td>规则名称：</td>
+						<td>[[${lotteryOrderRoute.ruleName}]]</td>
+					</tr>
+					<tr>
+						<td>彩种种类：</td>
+						<td>[[${lotteryOrderRoute.lottoTypeName}]]</td>
+					</tr>
+					<tr>
+						<td>购彩金额：：</td>
+						<td>[[${lotteryOrderRoute.minOrderPrice}]] 至[[${lotteryOrderRoute.maxOrderPrice}]]</td>
+					</tr>
+
+					<tr>
+						<td>预计中奖金额：：</td>
+						<td>[[${lotteryOrderRoute.minPayMoney}]] 至[[${lotteryOrderRoute.maxPayMoney}]]</td>
+					</tr>
+<!-- 
+					<tr>
+						<td colspan="2"><span onclick="save()">保存</span></td>
+					</tr> -->
+
+				</table>
+			</form>
+		</div>
+	</div>
+	<div
+		style="border: 1px solid #BDBFBE; margin-top: 13px; height: 1000px;">
+		<div id="messageLlist">
+			<table id="messageData" style="border-collapse: collapse;">
+				<thead>
+					<td>用户名</td>
+					<td>手机号码</td>
+					<td>省份</td>
+					<td>城市</td>
+					<td>区县</td>
+				</thead>
+				<tbody>
+				<tr th:each="entries,stat:${dataList}">
+						<td th:text="${entries['userCode']}"></td>
+						<td th:text="${entries['phone']}"></td>
+							<td th:text="${entries['provinceName']}"></td>
+						<td th:text="${entries['cityName']}"></td>
+						<td th:text="${entries['districtName']}"></td>	
+					     
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

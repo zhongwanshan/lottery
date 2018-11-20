@@ -1,0 +1,169 @@
+(function () {
+    var pageVue = new Vue({
+        el: "#js-pageOrder",
+        data: {
+            userInfo: USERINFO,
+            isClick: false,
+            orderParam: {
+                action: CONFIG.ACTION.getOrderList,
+                pageSize: 10,
+                pageNum: 1,
+                lotteryTypeId: "",
+                beginDay: "",
+                endDay: "",
+                orderStatus: "",
+                sysOpStr: "sss@2018",
+                shopDealStatus: "",
+                shopId: USERINFO["userId"]
+            },
+            pageCount: 1,
+            orderList: [],
+            lotterIdList: CONFIG.LOTTERYID,
+            orderStatuList: CONFIG.ORDERSTATU,
+            shopDealStatus: CONFIG.SHOPDEALSTATUS
+        },
+        methods: {
+            // 退出登录
+            userLogout: function () {
+                utility.userLogout(function () {
+                    window.location.replace(CONFIG.HOST + "/shop/view/user/login.html");
+                });
+            },
+
+            // 分页
+            getByPage: function (page) {
+                var self = this;
+
+                self.orderParam.pageNum = page;
+
+                self.getOrderList();
+            },
+
+            // 获取列表数据
+            getOrderList: function (bool) {
+                var self = this;
+
+                // 如果是重新获取，则重新设置分页数据
+                if (bool == true) {
+                    self.orderParam.pageNum = 1;
+                }
+
+                utility.interactWithServer({
+                    headerInfo: {
+                        appType: "2",
+                        userId: !!USERINFO ? USERINFO["userId"] : "",
+                        userToken: !!USERINFO ? USERINFO["userToken"] : "",
+                        actionUrl: utility.formatActionUrl(CONFIG.SERVICE.commonOrderService, CONFIG.ACTION.getOrderList, self.orderParam),
+                    },
+                    url: CONFIG.HOST + CONFIG.SERVICE.commonOrderService,
+                    dataObj: self.orderParam,
+                    successCallback: function (data) {
+                        if (data.code == 200) {
+
+                            if (data.data.length > 0) {
+                                self.pageCount = Math.ceil(data.count / self.orderParam.pageSize);
+                                self.orderList = data.data;
+                            } else {
+                                self.orderList = [];
+                            }
+                        }
+                    }
+                });
+            },
+
+            // 获取上一页数据
+            getPreViewData: function () {
+                var self = this;
+
+                if (self.orderParam.pageNum > 1) {
+                    self.orderParam.pageNum = self.orderParam.pageNum - 1;
+                    self.getOrderList();
+                }
+            },
+            // 获取下一页数据
+            getNextData: function () {
+                var self = this;
+
+                if (self.orderParam.pageNum < self.pageCount) {
+                    self.orderParam.pageNum = self.orderParam.pageNum + 1;
+                    self.getOrderList();
+                }
+            },
+            // 修改订单状态
+            modifyOrderByShop: function (shopDealStatus, orderCode) {
+                var self = this;
+
+                if(confirm("确定修改?")) {
+                    if (self.isClick == true) {
+                        return;
+                    }
+
+                    utility.interactWithServer({
+                        headerInfo: {
+                            appType: "2",
+                            userId: !!USERINFO ? USERINFO["userId"] : "",
+                            userToken: !!USERINFO ? USERINFO["userToken"] : "",
+                            actionUrl: utility.formatActionUrl(CONFIG.SERVICE.commonOrderService, CONFIG.ACTION.modifyOrderByShop, {
+                                shopWorkerId: USERINFO["userId"],
+                                shopDealStatus: shopDealStatus,
+                                action: CONFIG.ACTION.modifyOrderByShop,
+                                orderCode: orderCode,
+                                sysOpStr: "sss@2018"
+                            }),
+                        },
+                        url: CONFIG.HOST + CONFIG.SERVICE.commonOrderService,
+                        dataObj: {
+                            shopWorkerId: USERINFO["userId"],
+                            shopDealStatus: shopDealStatus,
+                            action: CONFIG.ACTION.modifyOrderByShop,
+                            orderCode: orderCode,
+                            sysOpStr: "sss@2018"
+                        },
+                        completeCallback: function () {
+                            self.isClick = false;
+                        },
+                        successCallback: function (data) {
+                            if (data.code == 200) {
+                                self.getOrderList();
+
+                                utility.getShopOrderStat(function (data) {
+                                    USERINFO["totalUntreatedOrders"] = data.data.totalUntreatedOrders;
+                                    USERINFO["totalReceivedOrders"] = data.data.totalReceivedOrders;
+                                    USERINFO["totalPrintedOrders"] = data.data.totalPrintedOrders;
+                                    USERINFO["totalOrders"] = data.data.totalOrders;
+                                    USERINFO["totalRejectedOrders"] = data.data.totalRejectedOrders;
+                                    self.userInfo = USERINFO;
+                                });
+                            } else {
+                                alert(data.message);
+                            }
+                        }
+                    });
+                }
+            }
+        },
+        created: function () {
+            var self = this;
+            self.getOrderList(true);
+
+            setTimeout(function () {
+                self.userInfo = USERINFO;
+            }, 1000);
+        },
+        mounted: function () {
+            var self = this;
+
+            $('#starTime').fdatepicker({
+                format: 'yyyy-mm-dd'
+            }).on('changeDate', function (ev) {
+                self.orderParam.beginDay = $('#starTime').val();
+            });
+            $('#endTime').fdatepicker({
+                format: 'yyyy-mm-dd'
+            }).on('changeDate', function (ev) {
+                self.orderParam.endDay = $('#endTime').val();
+            });
+
+        }
+    });
+}())

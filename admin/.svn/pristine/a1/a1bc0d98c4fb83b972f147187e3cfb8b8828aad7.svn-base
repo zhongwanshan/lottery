@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+body {
+  font: 14px "微软雅黑", "Arial Narrow", HELVETICA;
+  background: #fff;
+  -webkit-text-size-adjust: 100%;
+}
+a {
+  color: #2d374b;
+  text-decoration: none;
+}
+a:hover {
+  color: #cd0200;
+  text-decoration: underline;
+}
+em {
+  font-style: normal;
+}
+li {
+  list-style: none;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+p {
+  word-wrap: break-word;
+}
+#topArea {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 3px solid #575cea;
+}
+#topArea ul {
+  float: right;
+  overflow: hidden;
+}
+#topArea ul li {
+  float: left;
+  height: 60px;
+  line-height: 60px;
+  margin-right: 10px;
+}
+#topArea h1 {
+  float: left;
+  padding-left: 30px;
+}
+#topArea h1 img {
+  width: 150px;
+  height: 50px;
+}
+#leftArea {
+  position: fixed;
+  z-index: 0;
+  top: 70px;
+  left: 0;
+  bottom: 10px;
+  width: 15%;
+  border-top: 1px solid #BDBFBE;
+  border-right: 1px solid #BDBFBE;
+  border-bottom: 1px solid #BDBFBE;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#firstUl ul li {
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #BDBFBE;
+  text-indent: 40px;
+  font-size: 13px;
+  cursor: pointer;
+}
+#firstUl ul li:hover {
+  background-color: #EBF2FB;
+}
+#firstUl ul li.label {
+  text-indent: 20px;
+  background-color: #d8e8fb;
+  font-size: 15px;
+  text-align: left;
+  padding: 5px 0;
+}
+#firstUl ul li.addColor {
+  background-color: #E0F9E1;
+  color: white;
+}
+#firstUl ul li a {
+  display: block;
+}
+#firstUl ul:last-child li:last-child {
+  border: none;
+}
+#firstUl .info {
+  padding: 10px;
+  border-bottom: 1px solid #BDBFBE;
+}
+#firstUl .info span {
+  display: block;
+  font-size: 13px;
+  padding: 5px 0;
+}
+#firstUl .info span i {
+  font-size: 14px;
+  color: red;
+}
+#rightArea {
+  position: fixed;
+  z-index: 0;
+  top: 70px;
+  left: 16%;
+  width: 83%;
+  right: 0;
+  bottom: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: 1px solid #BDBFBE;
+}
+#rightArea iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

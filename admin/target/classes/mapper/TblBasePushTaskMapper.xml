@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lottery.dao.TblBasePushTaskMsgMapper" >
+<!--   <resultMap id="BaseResultMap" type="TblBasePushTask">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="msg_id" jdbcType="BIGINT" property="msgId" />
+    <result column="app" jdbcType="smallint" property="app" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="tag_id" jdbcType="BIGINT" property="tagId" />
+    <result column="tag_code" jdbcType="VARCHAR" property="tagCode" />
+    <result column="send_time" jdbcType="datetime" property="sendTime" />
+    <result column="send_status" jdbcType="tinyint" property="sendStatus" />
+    <result column="actual_send_time" jdbcType="datetime" property="actualSendTime" />
+    <result column="retry_times" jdbcType="int" property="retryTimes" />
+    <result column="push_type" jdbcType="smallint" property="pushType" />   
+  </resultMap> -->
+ 
+  <sql id="Base_Column_List">
+    id, msg_id, app, user_id, tag_id, tag_code, send_time,send_status, actual_send_time, retry_times,push_type
+  </sql>
+  <!--
+  <sql id="Blob_Column_List">
+    FIELD_CONFIG
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from fnd_xls_fields
+    where FIELD_ID = #{fieldId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from fnd_xls_fields
+    where FIELD_ID = #{fieldId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.misp.beans.model.FndXlsFields" useGeneratedKeys="true" keyProperty="fieldId">
+    insert into fnd_xls_fields (FIELD_ID, TEMPLATE_ID, SEQ_NO, 
+      TEMP_FIELD, DATA_TYPE, FIELD_NAME, 
+      FIELD_DESC, FIELD_CONFIG,SHEET_CODE)
+    values (#{fieldId,jdbcType=BIGINT}, #{templateId,jdbcType=BIGINT}, #{seqNo,jdbcType=BIGINT}, 
+      #{tempField,jdbcType=VARCHAR}, #{dataType,jdbcType=VARCHAR}, #{fieldName,jdbcType=VARCHAR}, 
+      #{fieldDesc,jdbcType=VARCHAR}, #{fieldConfig,jdbcType=LONGVARCHAR},#{sheetCode})
+  </insert>
+  <insert id="insertSelective" parameterType="com.misp.beans.model.FndXlsFields" useGeneratedKeys="true" keyProperty="fieldId">
+    insert into fnd_xls_fields
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fieldId != null">
+        FIELD_ID,
+      </if>
+      <if test="templateId != null">
+        TEMPLATE_ID,
+      </if>
+      <if test="seqNo != null">
+        SEQ_NO,
+      </if>
+      <if test="tempField != null">
+        TEMP_FIELD,
+      </if>
+      <if test="dataType != null">
+        DATA_TYPE,
+      </if>
+      <if test="fieldName != null">
+        FIELD_NAME,
+      </if>
+      <if test="fieldDesc != null">
+        FIELD_DESC,
+      </if>
+      <if test="fieldConfig != null">
+        FIELD_CONFIG,
+      </if>
+      <if test="sheetCode != null">
+        SHEET_CODE,
+      </if>
+      
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fieldId != null">
+        #{fieldId,jdbcType=BIGINT},
+      </if>
+      <if test="templateId != null">
+        #{templateId,jdbcType=BIGINT},
+      </if>
+      <if test="seqNo != null">
+        #{seqNo,jdbcType=BIGINT},
+      </if>
+      <if test="tempField != null">
+        #{tempField,jdbcType=VARCHAR},
+      </if>
+      <if test="dataType != null">
+        #{dataType,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldName != null">
+        #{fieldName,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldDesc != null">
+        #{fieldDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldConfig != null">
+        #{fieldConfig,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="sheetCode != null">
+       #{sheetCode},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.misp.beans.model.FndXlsFields">
+    update fnd_xls_fields
+    <set>
+      <if test="templateId != null">
+        TEMPLATE_ID = #{templateId,jdbcType=BIGINT},
+      </if>
+      <if test="seqNo != null">
+        SEQ_NO = #{seqNo,jdbcType=BIGINT},
+      </if>
+      <if test="tempField != null">
+        TEMP_FIELD = #{tempField,jdbcType=VARCHAR},
+      </if>
+      <if test="dataType != null">
+        DATA_TYPE = #{dataType,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldName != null">
+        FIELD_NAME = #{fieldName,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldDesc != null">
+        FIELD_DESC = #{fieldDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldConfig != null">
+        FIELD_CONFIG = #{fieldConfig,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="sheetCode != null">
+       SHEET_CODE=#{sheetCode},
+      </if>
+    </set>
+    where FIELD_ID = #{fieldId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.misp.beans.model.FndXlsFields">
+    update fnd_xls_fields
+    set TEMPLATE_ID = #{templateId,jdbcType=BIGINT},
+      SEQ_NO = #{seqNo,jdbcType=BIGINT},
+      TEMP_FIELD = #{tempField,jdbcType=VARCHAR},
+      DATA_TYPE = #{dataType,jdbcType=VARCHAR},
+      FIELD_NAME = #{fieldName,jdbcType=VARCHAR},
+      FIELD_DESC = #{fieldDesc,jdbcType=VARCHAR},
+       <if test="sheetCode != null">
+       SHEET_CODE=#{sheetCode},
+      </if>
+      FIELD_CONFIG = #{fieldConfig,jdbcType=LONGVARCHAR}
+      
+    where FIELD_ID = #{fieldId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.misp.beans.model.FndXlsFields">
+    update fnd_xls_fields
+    set TEMPLATE_ID = #{templateId,jdbcType=BIGINT},
+      SEQ_NO = #{seqNo,jdbcType=BIGINT},
+      TEMP_FIELD = #{tempField,jdbcType=VARCHAR},
+      DATA_TYPE = #{dataType,jdbcType=VARCHAR},
+      FIELD_NAME = #{fieldName,jdbcType=VARCHAR},
+        <if test="sheetCode != null">
+       SHEET_CODE=#{sheetCode},
+      </if>
+      FIELD_DESC = #{fieldDesc,jdbcType=VARCHAR}
+     
+    where FIELD_ID = #{fieldId,jdbcType=BIGINT}
+  </update>
+  
+  <select id="selectFieldsListByTemplateId" parameterType="java.util.Map" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from fnd_xls_fields
+    where TEMPLATE_ID = #{templateId}
+    order by SEQ_NO
+  </select>
+  
+  <select id="selectPageFieldsListByTemplate" parameterType="java.util.Map" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />,
+    <include refid="Blob_Column_List" />
+    from fnd_xls_fields
+    where 1=1
+    <if test="templateId != null and templateId !=''">
+  	 and TEMPLATE_ID = #{templateId}
+   </if>
+     <if test="tempField != null and tempField!=''">
+         and TEMP_FIELD like concat('%',   #{tempField}, '%')
+      </if>
+      <if test="dataType != null and dataType !=''">
+        and  DATA_TYPE = #{dataType}
+      </if>
+      <if test="fieldName != null and fieldName !='' ">
+         and  FIELD_NAME like concat('%',  #{fieldName}, '%') 
+      </if>
+      <if test="fieldDesc != null and fieldDesc!=''">
+         and  FIELD_DESC like concat('%',  #{fieldDesc}, '%')  
+      </if>
+       <if test="sheetCode != null and sheetCode!=''">
+      and  SHEET_CODE like concat('%',  #{sheetCode}, '%'),
+      </if>
+  </select>
+  
+  
+    
+  <select id="existFieldCodeValid" parameterType="java.util.Map" resultType="java.lang.Integer">
+    select 
+   count(0)
+    from fnd_xls_fields
+    where  TEMP_FIELD= #{tempField}
+     <if test="fieldId != null and fieldId !=''">
+      and FIELD_ID!=#{fieldId}
+      </if>
+      <if test="templateId != null and templateId !=''">
+      and TEMPLATE_ID=#{templateId}
+      </if>
+  </select>
+  
+  <select id="selectRequestDataByRequestId" parameterType="java.util.Map" resultType="java.util.Map">
+    select 
+  ${columnStr}
+    from fnd_xls_fields
+    where  TEMP_FIELD= #{tempField}
+     <if test="fieldId != null and fieldId !=''">
+      and FIELD_ID!=#{fieldId}
+      </if>
+  </select>
+  
+   -->
+  
+</mapper>

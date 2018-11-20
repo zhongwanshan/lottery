@@ -1,0 +1,262 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="view/me.html" class="active">
+                <i class="navIcon navIcon-me"></i>
+            </a>
+        </div>
+        <div class="center">开奖</div>
+        <div class="right">
+            <a class="js-message" href="view/user/message.html">
+                <i class="babo"></i>
+                <i class="navIcon navIcon-message"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="page" data-page="prize">
+    <div id="js-pagePrize" class="page-content tabTop">
+        <div id="page-prize">
+            <div class="mainWrap">
+                <div class="lotteryType">
+
+                    <template v-if="footBallData.length > 0 && !!footBallData[0]">
+                        <div class="item">
+                            <a href="view/history/football.html">
+                                <div class="content">
+                                    <p class="footer" :style="{backgroundColor: '#'+ footBallData[0].l_color}">
+                                        <img src="../assets/img/type/type10.png" />
+                                        <span v-text="'竞彩足球 第'+footBallData[0].dateCn+'期'"></span>
+                                    </p>
+                                </div>
+                                <span class="toword" style="top: 1.5rem;">
+                                    <i class="glyphicon glyphicon-menu-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </template>
+
+                    <template v-if="basetballData.length > 0 && !!basetballData[0]">
+                        <div class="item">
+
+                            <a href="view/history/basketball.html">
+                                <div class="content">
+                                    <p class="footer" :style="{backgroundColor: '#'+ basetballData[0].l_color}">
+                                        <img src="../assets/img/type/type11.png" />
+                                        <span v-text="'竞彩篮球 第'+basetballData[0].issueno+'期'"></span>
+                                    </p>
+                                </div>
+                                <span class="toword" style="top: 1.25rem;">
+                                    <i class="glyphicon glyphicon-menu-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </template>
+
+                    <template v-if="numList.length > 0">
+                        <div class="item">
+                            <div class="header">
+                                <span class="label">足彩胜负/任九 [{{num}}期]</span>
+                            </div>
+                            <a :href="'view/history/trFootball.html?num='+num">
+                                <div class="content">
+                                    <p class="numberType">
+                                        <template v-for="item in numList">
+                                            <span class="num" v-text="item"></span>
+                                        </template>
+                                    </p>
+                                </div>
+                                <span class="toword glyphicon glyphicon-menu-right"></span>
+                            </a>
+                        </div>
+                    </template>
+
+                    <template v-if="!!ssqList">
+                        <div class="item">
+                            <div class="header">
+                                <span class="label">{{!!ssqList ? ssqList.lottoName:''}} {{!!ssqList ? ssqList.issueName:''}}</span>
+                                <!-- <span class="dot">
+                                        <i class="glyphicon glyphicon-heart-empty"></i>
+                                    </span> -->
+                            </div>
+                            <a :href="'view/history/digital.html?lottoid='+(!!ssqList ? ssqList.lottoid:'')+'&lottoName='+(!!ssqList ? ssqList.lottoName:'')">
+                                <div class="content">
+                                    <p class="numberType">
+                                        <template v-for="rItem in ssqList.number.split(',')">
+                                            <span class="circle redBall" v-text="rItem"></span>
+                                        </template>
+
+                                        <template v-for="bItem in ssqList.refernumber.split(',')">
+                                            <span class="circle blueBall" v-text="bItem"></span>
+                                        </template>
+                                    </p>
+                                </div>
+                                <span class="toword glyphicon glyphicon-menu-right"></span>
+                            </a>
+                        </div>
+                    </template>
+
+                    <template v-if="!!dltList">
+                        <div class="item">
+                            <div class="header">
+                                <span class="label">{{dltList.lottoName}} {{dltList.issueName}}</span>
+                                <!-- <span class="dot">
+                                        <i class="glyphicon glyphicon-heart-empty"></i>
+                                    </span> -->
+                            </div>
+                            <a :href="'view/history/digital.html?lottoid='+dltList.lottoid+'&lottoName='+dltList.lottoName">
+                                <div class="content">
+                                    <p class="numberType">
+                                        <template v-for="rItem in dltList.number.split(',')">
+                                            <span class="circle redBall" v-text="rItem"></span>
+                                        </template>
+
+                                        <template v-for="bItem in dltList.refernumber.split(',')">
+                                            <span class="circle blueBall" v-text="bItem"></span>
+                                        </template>
+                                    </p>
+                                </div>
+                                <span class="toword glyphicon glyphicon-menu-right"></span>
+                            </a>
+                        </div>
+                    </template>
+
+                    <template v-if="!!fc3dList">
+                        <div class="item">
+                            <div class="header">
+                                <span class="label">{{fc3dList.lottoName}} {{fc3dList.issueName}}</span>
+                                <!-- <span class="dot">
+                                        <i class="glyphicon glyphicon-heart-empty"></i>
+                                    </span> -->
+                            </div>
+                            <a :href="'view/history/digital.html?lottoid='+fc3dList.lottoid+'&lottoName='+fc3dList.lottoName">
+                                <div class="content">
+                                    <p class="numberType">
+                                        <template v-for="rItem in fc3dList.number.split(',')">
+                                            <span class="circle redBall" v-text="rItem"></span>
+                                        </template>
+
+                                        <template v-for="bItem in fc3dList.refernumber.split(',')">
+                                            <span class="circle blueBall" v-text="bItem"></span>
+                                        </template>
+                                    </p>
+                                </div>
+                                <span class="toword glyphicon glyphicon-menu-right"></span>
+                            </a>
+                        </div>
+                    </template>
+
+                    <template v-if="!!pl3List">
+                        <div class="item">
+                            <div class="header">
+                                <span class="label">{{pl3List.lottoName}} {{pl3List.issueName}}</span>
+                                <!-- <span class="dot">
+                                        <i class="glyphicon glyphicon-heart-empty"></i>
+                                    </span> -->
+                            </div>
+                            <a :href="'view/history/digital.html?lottoid='+pl3List.lottoid+'&lottoName='+pl3List.lottoName">
+                                <div class="content">
+                                    <p class="numberType">
+                                        <template v-for="rItem in pl3List.number.split(',')">
+                                            <span class="circle redBall" v-text="rItem"></span>
+                                        </template>
+
+                                        <!-- <template v-for="bItem in pl3List[0].refernumber.split(',')">
+                                        <span class="circle blueBall" v-text="bItem"></span>
+                                    </template> -->
+                                    </p>
+                                </div>
+                                <span class="toword glyphicon glyphicon-menu-right"></span>
+                            </a>
+                        </div>
+                    </template>
+
+                    <template v-if="!!pl5List">
+                        <div class="item">
+                            <div class="header">
+                                <span class="label">{{pl5List.lottoName}} {{pl5List.issueName}}</span>
+                                <!-- <span class="dot">
+                                        <i class="glyphicon glyphicon-heart-empty"></i>
+                                    </span> -->
+                            </div>
+                            <a :href="'view/history/digital.html?lottoid='+pl5List.lottoid+'&lottoName='+pl5List.lottoName">
+                                <div class="content">
+                                    <p class="numberType">
+                                        <template v-for="rItem in pl5List.number.split(',')">
+                                            <span class="circle redBall" v-text="rItem"></span>
+                                        </template>
+
+                                        <!-- <template v-for="bItem in pl5List[0].refernumber.split(',')">
+                                        <span class="circle blueBall" v-text="bItem"></span>
+                                    </template> -->
+                                    </p>
+                                </div>
+                                <span class="toword glyphicon glyphicon-menu-right"></span>
+                            </a>
+                        </div>
+                    </template>
+
+                    <template v-if="!!qclList">
+                        <div class="item">
+                            <div class="header">
+                                <span class="label">{{qclList.lottoName}} {{qclList.issueName}}</span>
+                            </div>
+                            <a :href="'view/history/digital.html?lottoid='+qclList.lottoid+'&lottoName='+qclList.lottoName">
+                                <div class="content">
+                                    <p class="numberType">
+                                        <template v-for="rItem in qclList.number.split(',')">
+                                            <span class="circle redBall" v-text="rItem"></span>
+                                        </template>
+
+                                        <template v-for="bItem in qclList.refernumber.split(',')">
+                                            <span class="circle blueBall" v-text="bItem"></span>
+                                        </template>
+                                    </p>
+                                </div>
+                                <span class="toword glyphicon glyphicon-menu-right"></span>
+                            </a>
+                        </div>
+                    </template>
+
+                    <template v-if="!!qxcList">
+                        <div class="item">
+                            <div class="header">
+                                <span class="label">{{qxcList.lottoName}} {{qxcList.issueName}}</span>
+                            </div>
+                            <a :href="'view/history/digital.html?lottoid='+qxcList.lottoid+'&lottoName='+qxcList.lottoName">
+                                <div class="content">
+                                    <p class="numberType">
+                                        <template v-for="rItem in qxcList.number.split(',')">
+                                            <span class="circle redBall" v-text="rItem"></span>
+                                        </template>
+                                    </p>
+                                </div>
+                                <span class="toword glyphicon glyphicon-menu-right"></span>
+                            </a>
+                        </div>
+                    </template>
+                    <template v-if="!!gd115List">
+                        <div class="item">
+                            <div class="header">
+                                <span class="label">{{gd115List.lottoName}} {{gd115List.issueName}}</span>
+                            </div>
+                            <a :href="'view/history/digital.html?lottoid='+gd115List.lottoId+'&lottoName='+gd115List.lottoName">
+                                <div class="content">
+                                    <p class="numberType">
+                                        <template v-for="rItem in gd115List.winNumber.split(',')">
+                                            <span class="circle redBall" v-text="rItem"></span>
+                                        </template>
+                                    </p>
+                                </div>
+                                <span class="toword glyphicon glyphicon-menu-right"></span>
+                            </a>
+                        </div>
+                    </template>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

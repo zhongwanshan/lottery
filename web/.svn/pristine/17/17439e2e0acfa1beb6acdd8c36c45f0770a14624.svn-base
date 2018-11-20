@@ -1,0 +1,172 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="../hall.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">竞彩篮球</div>
+        <div class="right">
+            <!-- <a>
+                <i class="glyphicon glyphicon-hourglass"></i>
+                <i class="glyphicon glyphicon-option-vertical"></i>
+            </a> -->
+        </div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="history-basketball">
+    <div id="js-historyBasketBall" class="page-content buyWrap">
+
+        <div id="page-history-basketball">
+            <div class="mainWrap">
+                <template v-for="match in basketBallList">
+                    <p class="hTitle" v-text="match.issueno + ' ' + match.weekDay"></p>
+                    <template v-if="match.list.length>0">
+                        <div class="ballWrap ballBall">
+
+                            <template v-for="item in match.list">
+                                <div class="ballItem">
+                                    <div class="teamWrap">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="label">
+                                                        <p v-text="item.num_name"></p>
+                                                        <p class="cnAbbr" v-text="item.l_cn_abbr"></p>
+                                                        <p v-text="item.dtime.split(' ')[1]"></p>
+                                                    </td>
+                                                    <td class="teams">
+                                                        <p>{{item.h_cn}}
+                                                            <span class="score">{{item.final_score}}</span>{{item.a_cn}}</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="teamRecord">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width: 33%;">
+                                                        <p>胜负赔率</p>
+                                                        <p class="record">
+                                                            <span>
+                                                                <i>主胜</i>
+                                                                <i v-text="item.mnl_odds.split(',')[0]"></i>
+                                                            </span>
+                                                            <span>
+                                                                <i>主负</i>
+                                                                <i v-text="item.mnl_odds.split(',')[1]"></i>
+                                                            </span>
+                                                        </p>
+                                                    </td>
+                                                    <td style="width: 33%;" colspan="2">
+                                                        <p>让分胜负赔率</p>
+                                                        <p class="record">
+                                                            <span>
+                                                                <i>主胜</i>
+                                                                <i v-text="item.hdc_odds.split(',')[0]"></i>
+                                                            </span>
+                                                            <span>
+                                                                <i>主负</i>
+                                                                <i v-text="item.hdc_odds.split(',')[1]"></i>
+                                                            </span>
+                                                        </p>
+                                                    </td>
+                                                    <td style="width: 33%;">
+                                                        <p>大小分赔率</p>
+                                                        <p class="record">
+                                                            <span>
+                                                                <i>大分</i>
+                                                                <i v-text="item.hilo_odds.split(',')[0]"></i>
+                                                            </span>
+                                                            <span>
+                                                                <i>小分</i>
+                                                                <i v-text="item.hilo_odds.split(',')[1]"></i>
+                                                            </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 50%;" colspan="2">
+                                                        <p>(主胜)胜分差赔率</p>
+                                                        <p class="record">
+                                                            <span>
+                                                                <i>1-5分</i>
+                                                                <i v-text="item.wnm_win.split(',')[0]"></i>
+                                                            </span>
+                                                            <span>
+                                                                <i>6-10分</i>
+                                                                <i v-text="item.wnm_win.split(',')[1]"></i>
+                                                            </span>
+                                                            <span>
+                                                                <i>11-15分</i>
+                                                                <i v-text="item.wnm_win.split(',')[2]"></i>
+                                                            </span>
+                                                            <span>
+                                                                <i>16-20分</i>
+                                                                <i v-text="item.wnm_win.split(',')[3]"></i>
+                                                            </span>
+                                                            <span>
+                                                                <i>21-25分</i>
+                                                                <i v-text="item.wnm_win.split(',')[4]"></i>
+                                                            </span>
+                                                            <span>
+                                                                <i>26+</i>
+                                                                <i v-text="item.wnm_win.split(',')[5]"></i>
+                                                            </span>
+                                                        </p>
+                                                    </td>
+                                                    <td style="width: 50%;" colspan="2">
+                                                        <p>(主负)胜分差赔率</p>
+                                                        <p class="record">
+                                                            <span>
+                                                                <i>1-5分</i>
+                                                                <i v-text="item.wnm_lose.split(',')[0]"></i>
+                                                            </span>
+                                                            <span>
+                                                                <i>6-10分</i>
+                                                                <i v-text="item.wnm_lose.split(',')[1]"></i>
+                                                            </span>
+                                                            <span>
+                                                                <i>11-15分</i>
+                                                                <i v-text="item.wnm_lose.split(',')[2]"></i>
+                                                            </span>
+                                                            <span>
+                                                                <i>16-20分</i>
+                                                                <i v-text="item.wnm_lose.split(',')[3]"></i>
+                                                            </span>
+                                                            <span>
+                                                                <i>21-25分</i>
+                                                                <i v-text="item.wnm_lose.split(',')[4]"></i>
+                                                            </span>
+                                                            <span>
+                                                                <i>26+</i>
+                                                                <i v-text="item.wnm_lose.split(',')[5]"></i>
+                                                            </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <p class="noData">没有比赛</p>
+                    </template>
+                </template>
+
+            </div>
+        </div>
+
+        <div class="buyAction">
+            <p class="theme-yellow">
+                <a href="/app/view/buy/basketball.html" class="button button-big button-round active">投注</a>
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Your app title -->
+    <title>多彩缤纷</title>
+
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/flat-ui.min.css">
+    <link rel="stylesheet" href="../../css/common.min.css?v=3939kdkdkd">
+</head>
+
+<body>
+
+    <div id="js-pagePl5">
+
+        <!-- 头部 -->
+        <div class="headerWrap">
+            <div class="header">
+                <div class="c-logo">
+                    <h1 class="img">多彩缤纷</h1>
+                </div>
+                <div class="c-search">
+                    <input type="text" placeholder="请输入搜索内容" />
+                    <button>搜索</button>
+                </div>
+                <div class="c-info">
+                    <template v-if="!!!userInfo">
+                        <a href="../user/login.html">
+                            <i></i>请登录</a>
+                        <a href="../user/register.html">
+                            <i></i>免费注册</a>
+                        <a href="../user/resetPass.html">
+                            <i></i>找回密码</a>
+                    </template>
+                    <template v-else>
+                        <a href="../user/info.html">
+                            <i></i>{{decodeURI(userInfo.nickName)}}</a>
+                        <a href="../user/info.html">
+                            <i></i>个人中心
+                        </a>
+                        <a @click="userLogout">
+                            <i></i>退出登录</a>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <div class="c-nav">
+                <div class="navlist">
+                    <div class="navItem selectMenu">选择彩票
+                        <!-- 左侧菜单 -->
+                        <div class="c-menu">
+                            <div class="mMenu">
+                                <a href="./football.html">
+                                    <img src="/assets/img/deticon/football.png" />竞彩足球
+                                    <span>官方返奖率73%</span>
+                                </a>
+                                <a href="./basketball.html">
+                                    <img src="/assets/img/deticon/basketball.png" />竞彩篮球
+                                    <span>猜胜负中奖很容易</span>
+                                </a>
+                            </div>
+                            <div class="menulist">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="title">数字彩</td>
+                                            <td class="item">
+                                                <a href="./ssq.html">双色球</a>
+                                                <a href="./dlt.html">大乐透</a>
+                                                <a href="./qxc.html">七星彩</a>
+                                                <a href="./qcl.html">七乐彩</a>
+                                                <a href="./fc3d.html">福彩3D</a>
+                                                <a href="./pl3.html">排列3</a>
+                                                <a href="./pl5.html">排列5</a>
+                                                <a href="./gd115.html">广东11选5</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="menulist">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="title">竞技彩</td>
+                                            <td class="item item-b">
+                                                <a href="./sf14.html">足球14场</a>
+                                                <a href="./rs9.html">任选九</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="navItem" href="../../index.html">首页</a>
+                    <a class="navItem" href="../hall.html">购彩大厅</a>
+                    <a class="navItem" href="../prize.html">开奖公告</a>
+                    <a class="navItem">中奖排行</a>
+                    <a class="navItem">赛事数据</a>
+                    <a class="navItem">神算</a>
+                    <span class="clear"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主要内容 -->
+        <div class="main">
+
+            <div class="tabType">
+                <div class="sign">
+                    <img src="/assets/img/deticon/pl5.png" />
+                </div>
+                <div class="tabbox">
+                    <div class="info">
+                        <h2>排列5</h2>
+                        <p class="tips">
+                            <strong v-text="currentIssueName"></strong>
+                            <span>投注截止时间: {{offTime}}</span>
+                        </p>
+                    </div>
+                    <div class="tabs">
+                        <ul>
+                            <li class="active">
+                                <span>普通投注</span>
+                            </li>
+                        </ul>
+                        <span class="tipInfo">每晚 20点30分开奖</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detailMainInfo">
+                <div class="buyDigital sigleList">
+
+                    <div class="ballList dangList">
+                        <div class="circleList">
+                            <span class="label">万</span>
+                            <template v-for="w in 10">
+                                <label class="circle redBall" :class="wList.indexOf(w-1)>=0?'active':''">
+                                    <input type="checkbox" v-model="wList" :value="w-1" name="wBall" />{{w-1}} </label>
+                            </template>
+
+                            <button @click="selectAll('wList')" class="btn btn-link">全选</button>
+                            <button @click="clearNumbs('wList')" class="btn btn-link">全清</button>
+                        </div>
+                    </div>
+                    <div class="ballList dangList">
+                        <div class="circleList">
+                            <span class="label">千</span>
+                            <template v-for="q in 10">
+                                <label class="circle redBall" :class="qList.indexOf(q-1)>=0?'active':''">
+                                    <input type="checkbox" v-model="qList" :value="q-1" name="qBall" />{{q-1}} </label>
+                            </template>
+
+                            <button @click="selectAll('qList')" class="btn btn-link">全选</button>
+                            <button @click="clearNumbs('qList')" class="btn btn-link">全清</button>
+                        </div>
+                    </div>
+                    <div class="ballList dangList">
+                        <div class="circleList">
+                            <span class="label">百</span>
+                            <template v-for="g in 10">
+                                <label class="circle redBall" :class="gList.indexOf(g-1)>=0?'active':''">
+                                    <input type="checkbox" v-model="gList" :value="g-1" name="gBall" />{{g-1}} </label>
+                            </template>
+
+                            <button @click="selectAll('gList')" class="btn btn-link">全选</button>
+                            <button @click="clearNumbs('gList')" class="btn btn-link">全清</button>
+                        </div>
+                    </div>
+                    <div class="ballList dangList">
+                        <div class="circleList">
+                            <span class="label">十</span>
+                            <template v-for="b in 10">
+                                <label class="circle redBall" :class="bList.indexOf(b-1)>=0?'active':''">
+                                    <input type="checkbox" v-model="bList" :value="b-1" name="bBall" />{{b-1}} </label>
+                            </template>
+
+                            <button @click="selectAll('bList')" class="btn btn-link">全选</button>
+                            <button @click="clearNumbs('bList')" class="btn btn-link">全清</button>
+                        </div>
+                    </div>
+                    <div class="ballList dangList">
+                        <div class="circleList">
+                            <span class="label">个</span>
+
+                            <template v-for="g in 10">
+                                <label class="circle redBall" :class="gList.indexOf(g-1)>=0?'active':''">
+                                    <input type="checkbox" v-model="gList" :value="g-1" name="gBall" />{{g-1}} </label>
+                            </template>
+
+                            <button @click="selectAll('gList')" class="btn btn-link">全选</button>
+                            <button @click="clearNumbs('gList')" class="btn btn-link">全清</button>
+                        </div>
+                    </div>
+
+                    <div class="confirmNum">
+                        <button @click="addToResult" class="btn btn-success">确认选号</button>
+                        <button @click="emptySelect" class="btn btn-link">清空选号</button>
+                    </div>
+
+                    <div class="resultWrap">
+                        <div class="list">
+                            <table>
+                                <tbody>
+                                    <template v-for="(item, index) in orderInfoDetail.digitalOrderItems">
+                                        <tr>
+                                            <td v-text="item.betsNumCount+'注'"></td>
+                                            <td v-text="item.betDesc"></td>
+                                            <td>
+                                                <button @click="deleteResult(index)" class="btn btn-link">删除</button>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="otherAction">
+                            <p>
+                                <button @click="randomBuyTime(1)" class="btn btn-block btn-danger">机选1注</button>
+                            </p>
+                            <p>
+                                <button @click="randomBuyTime(5)" class="btn btn-block btn-danger">机选5注</button>
+                            </p>
+                            <p>
+                                <button @click="clearAll" class="btn btn-block btn-primary">清空列表</button>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="otherResult">
+                        已选
+                        <strong v-text="!!orderInfoDetail&&orderInfoDetail.digitalOrderItems?orderInfoDetail.digitalOrderItems.length:0"></strong>组号码, 共
+                        <strong v-text="betNum"></strong>注，投注倍数&nbsp;&nbsp;&nbsp;
+                        <span @click="reduceMultipleNum" class="ultipleNumAction">-</span>
+                        <input type="text" v-model="buyInfo.multipleNum" />
+                        <span @click="addMultipleNum" class="ultipleNumAction">+</span>&nbsp;&nbsp;&nbsp;倍，共
+                        <strong v-text="betMoney"></strong>元
+                    </div>
+
+                    <div class="doAction">
+                        <!-- <label><input type="checkbox" v-model="buyInfo.followFlag" true-value="1" style="width: auto;" false-value="0"/>追号?</label>&nbsp;&nbsp;&nbsp; -->
+                        <button @click="generateOrder" class="btn btn-danger">确定提交</button>
+                    </div>
+                </div>
+            </div>
+
+            <template v-if="!!digitalData">
+                <div class="detailSubInfo">
+                    <div class="c-box c-box--min">
+                        <div class="title">最新中奖</div>
+                        <div class="content">
+                            <p class="periods" v-text="digitalData.issueName"></p>
+                            <!-- <p class="prizeDate">开奖时间：2018-05-24 21:15</p> -->
+                            <p class="prizeResult">
+                                <template v-for="item in digitalData.number.split(',')">
+                                    <span class="circle redBall active" v-text="item"></span>
+                                </template>
+                                <template v-if="!!digitalData.refernumber">
+                                    <template v-for="item in digitalData.refernumber.split(',')">
+                                        <span class="circle blueBall active" v-text="item"></span>
+                                    </template>
+                                </template>
+                            </p>
+                            <table class="prizeList">
+                                <thead>
+                                    <tr>
+                                        <th>奖项</th>
+                                        <th>中奖注数</th>
+                                        <th>每注金额</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template v-for="item in digitalData.prize">
+                                        <tr>
+                                            <td v-text="item.prizename"></td>
+                                            <td v-text="item.num"></td>
+                                            <td v-text="item.singlebonus"></td>
+                                        </tr>
+                                    </template>
+
+                                </tbody>
+                            </table>
+                            <table class="prizeList">
+                                <thead>
+                                    <tr>
+                                        <th>期数</th>
+                                        <th>中奖号码</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template v-for="item in digitalList">
+                                        <tr>
+                                            <td v-text="item.issueName"></td>
+                                            <td>
+                                                <span style="color: #e51f42;" v-text="item.number.split(',').join(' ')"></span>
+                                                <template v-if="!!item.refernumber">
+                                                    <span style="color: #575cea;" v-text="item.refernumber.split(',').join(' ')"></span>
+                                                </template>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <span class="clear"></span>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer">
+            <div class="copyright">
+                <p>版权所有：粤ICP备18070257号</p>
+                <p>客服热线：020-89853112 (8:30-12:00 14:30-18:00)</p>
+                <p>彩票票提示您：理性购彩，健康生活。不向未满18周岁的青少年出售彩票。</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="/assets/jquery-3.2.2.min.js"></script>
+    <script type="text/javascript" src="/assets/vue.min.js"></script>
+    <script type="text/javascript" src="/assets/vender/Flat-UI-master/scripts/flat-ui.min.js"></script>
+    <script type="text/javascript" src="/assets/md5.min.js"></script>
+    <script type="text/javascript" src="/assets/config.min.js?v=03939"></script>
+    <script type="text/javascript" src="/assets/utility.min.js?v=03939"></script>
+    <script type="text/javascript" src="../../js/app.min.js?v=0948483939"></script>
+    <script type="text/javascript" src="../../action/buy/pl5.min.js?v=0948483939"></script>
+
+</body>
+
+</html>

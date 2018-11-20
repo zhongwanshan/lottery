@@ -1,0 +1,1780 @@
+@import "common.less";
+.hTitle {
+    margin: 0;
+    padding: .4rem 0;
+    font-size: @font14;
+    background-color: @color1;
+    color: @color2;
+    text-align: center;
+    &.accountTitle {
+        overflow: hidden;
+        text-align: left;
+        span {
+            padding-left: .5rem;
+        }
+        select {
+            float: right;
+            width: 6rem;
+            margin-right: .5rem;
+            border: none;
+            padding: .2rem .5rem;
+            text-align: center;
+            background-color: white;
+        }
+        input {
+            width: 8.5rem;
+            padding: .2rem .5rem;
+        }
+    }
+    &.matchTitle {
+        text-align: left;
+        padding: .4rem .5rem;
+        font-size: @font13;
+        .matchNum {
+            color: @color7;
+        }
+        .tip {
+            padding-left: .25rem;
+        }
+    }
+    .offTime {
+        font-size: @font12;
+        color: @colorpink;
+        strong {
+            font-weight: normal;
+            padding: 0 .5rem;
+            font-size: 1rem;
+        }
+    }
+}
+
+.lotteryList,
+.accoutType {
+    background-color: white;
+    &.userInfo {
+        padding: 1rem 0;
+        background-color: @mainColor;
+        table {
+            tr {
+                td {
+                    border: none;
+                    .item {
+                        .img {
+                            float: left;
+                            text-align: center;
+                            width: 3rem;
+                            height: 3rem;
+                            border-radius: 50%;
+                            background-color: white;
+                            overflow: hidden;
+                            vertical-align: middle;
+                            margin-left: 1rem;
+                            margin-right: .5rem;
+                            padding: 0;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                        .txt {
+                            .title {
+                                color: white;
+                            }
+                            .statu {
+                                margin-top: .25rem;
+                                color: white;
+                                .member {
+                                    font-size: @font12;
+                                    font-style: normal;
+                                    padding: .2rem .5rem .2rem .2rem;
+                                    border-radius: .5rem;
+                                    background-color: @color7;
+                                    img {
+                                        width: .9rem;
+                                        height: .9rem;
+                                        vertical-align: top;
+                                        margin-right: .1rem;
+                                    }
+                                }
+                                .deadline {
+                                    font-weight: normal;
+                                    color: @color2;
+                                    font-size: @font12;
+                                    padding-left: .5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        &.prizeDetail {
+            .txt {
+                text-align: center;
+                font-size: @font16;
+                .statu {
+                    font-size: @font14;
+                }
+            }
+        }
+        tr {
+            td {
+                &:nth-child(2n) {
+                    border-right: none;
+                }
+            }
+        }
+        td {
+            width: 50%;
+            border: 1px solid @colorF1;
+            .item {
+                position: relative;
+                z-index: 0;
+                display: block;
+                overflow: hidden;
+                &.accountInfo {
+                    text-align: center;
+                    font-size: @font14;
+                }
+                .img {
+                    float: left;
+                    padding-left: .5rem;
+                    text-align: center;
+                    img {
+                        width: 2.1rem;
+                        height: 2.1rem;
+                    }
+                }
+                .txt {
+                    padding-top: .4rem;
+                    span {
+                        display: block;
+                        text-indent: .5rem;
+                    }
+                    .title {
+                        color: @color333;
+                    }
+                    .statu {
+                        color: @color3;
+                        font-size: @font14;
+                    }
+                    .money {
+                        font-size: @font24;
+                        color: @mainColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 彩票类型
+.lotteryType {
+    background-color: white;
+    &.orderList {
+        .item {
+            padding: 0 .5rem;
+        }
+    }
+    .item {
+        position: relative;
+        z-index: 0;
+        display: block;
+        padding: 0 .5rem .5rem .75rem;
+        color: @color333;
+        border-bottom: 1px solid @colorF1;
+        &:last-child {
+            border: none;
+        }
+        a {
+            display: block;
+            overflow: hidden;
+        }
+        .header {
+            padding-top: .8rem;
+            padding-bottom: .5rem;
+            color: @color333;
+            .dot,
+            .toword {
+                position: relative;
+                z-index: 0;
+                top: -.2rem;
+                float: right;
+                font-size: @font13;
+                color: @color3;
+                i {
+                    position: relative;
+                    z-index: 0;
+                    top: .2rem;
+                    color: @mainColor;
+                    font-size: @font18;
+                    margin-left: .2rem;
+                }
+            }
+            .toword {
+                i {
+                    color: @color3;
+                }
+            }
+        }
+        .content {
+            display: block;
+            color: white;
+            .numberType {
+                overflow: hidden;
+                border-radius: 0;
+                .num {
+                    float: left;
+                    height: 2rem;
+                    line-height: 2rem;
+                    padding: 0 .2rem;
+                    margin-right: .25rem;
+                    background-color: @color5;
+                }
+            }
+            p {
+                display: inline-block;
+                padding: .15rem 1rem .15rem 0;
+                height: 1.8rem;
+                line-height: 1.8rem;
+                border-radius: 100px;
+                font-size: @font14;
+                margin: 0;
+                img {
+                    width: 1.8rem;
+                    height: 1.75rem;
+                }
+                strong,
+                span {
+                    position: relative;
+                    z-index: 0;
+                }
+                strong {
+                    font-size: @font16;
+                    color: @color7;
+                    padding: 0 .25rem;
+                }
+                &.sigle,
+                &.footer,
+                &.basketball {
+                    padding-left: .25rem;
+                    margin-top: .5rem;
+                    span,
+                    strong {
+                        top: -.55rem;
+                    }
+                }
+                &.sigle {
+                    background-color: @color4;
+                }
+                &.footer {
+                    background-color: @color5;
+                }
+                &.basketball {
+                    background-color: @color6;
+                }
+                &.orderStatus {
+                    border-radius: 0;
+                    padding: .15rem .25rem;
+                    margin-top: .25rem;
+                    height: auto;
+                    line-height: 1.2;
+                    background-color: @color7;
+                    color: white;
+                    font-size: @font13;
+                }
+                &.orderName {
+                    display: block;
+                    color: @color333;
+                    font-size: @font13;
+                }
+                &.createTime {
+                    height: auto;
+                    line-height: 1.2;
+                    color: @color333;
+                    font-size: @font13;
+                }
+            }
+        }
+    }
+}
+
+.toword {
+    position: absolute;
+    z-index: 10;
+    right: .6rem;
+    top: 3rem;
+    color: @color3;
+    font-size: @font14;
+}
+
+// 最近购彩
+.recently {
+    height: 3.5rem;
+    overflow-y: hidden;
+    overflow-x: auto;
+    padding: .75rem 0;
+    background-color: white;
+    .list {
+        overflow: hidden;
+        .item {
+            display: inline-block;
+            padding: 0 .25rem;
+            color: @color333;
+            p {
+                margin: 0;
+                text-align: center;
+            }
+            .img {
+                img {
+                    width: 2.1rem;
+                    height: 2.1rem;
+                }
+            }
+            .txt {
+                .title {
+                    font-size: @font13;
+                }
+            }
+        }
+    }
+}
+
+// 资讯头条
+.news {
+    background-color: white;
+    table {
+        width: 100%;
+        td {
+            vertical-align: top;
+            border-bottom: 1px solid @colorF1;
+            padding: .25rem .1rem;
+            a {
+                display: block;
+                color: @color333;
+                h2 {
+                    margin: 0;
+                    font-weight: normal;
+                    font-size: @font16;
+                }
+                p {
+                    font-size: @font13;
+                    color: @color3;
+                    margin: 0;
+                    padding-top: .25rem;
+                }
+                &.info {
+                    padding: 0 .25rem;
+                }
+            }
+        }
+    }
+}
+
+// 用户列表
+.userBlock {
+    .list-block {
+        margin: .5rem 0;
+        font-size: @font14;
+        &.myAcount {
+            margin-bottom: 0;
+        }
+        .item-media {
+            img {
+                width: 60%;
+                height: 60%;
+            }
+        }
+        .item-inner {
+            padding-left: 0;
+            margin-left: 0 !important;
+        }
+        .accountImg {
+            position: relative;
+            z-index: 0;
+            top: -.05rem;
+            width: 1rem;
+            height: 1rem;
+            vertical-align: middle;
+            margin-right: .25rem;
+        }
+    }
+    .accoutType {
+        table {
+            tr {
+                td {
+                    &:nth-child(2n) {
+                        border-right: none;
+                    }
+                }
+            }
+            td {
+                border-top: none;
+                .item {
+                    .img {
+                        padding-left: .5rem;
+                        img {
+                            width: 60%;
+                            height: 60%;
+                            vertical-align: middle;
+                            margin-right: .5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .toword {
+        top: 1.5rem;
+    }
+    .nologinLayer {
+        position: fixed;
+        z-index: 100000000;
+        width: 100%;
+        top: 9rem;
+        bottom: 13rem;
+    }
+}
+
+// 顶部Tabs
+.tabTop {
+    .content-block {
+        margin: 0;
+        padding: 0;
+        .buttons-row {
+            position: fixed;
+            z-index: 100;
+            top: 2.2rem;
+            width: 100%;
+            background-color: white;
+            .button {
+                position: relative;
+                z-index: 0;
+                height: 2rem;
+                line-height: 2rem;
+                font-size: @font12;
+                border: none;
+                background-color: white;
+                border-bottom: 1px solid @colorddd;
+                color: @color333;
+                padding: 0;
+                input,
+                a {
+                    position: absolute;
+                    z-index: 1;
+                    width: 100%;
+                    height: 92%;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    opacity: 0;
+                }
+                a {
+                    opacity: 1;
+                    color: @color333;
+                }
+                &:first-child {
+                    border-radius: 0;
+                }
+                &:last-child {
+                    border-radius: 0;
+                }
+                &.active {
+                    border-bottom-color: @color9;
+                    color: @mainColor;
+                    background-color: @colorF3;
+                    a {
+                        color: @mainColor;
+                    }
+                }
+            }
+        }
+    }
+    .tabs {
+        padding-top: 2rem;
+    }
+}
+
+// 详情模块
+.detailTable {
+    padding: 1rem 1rem 3rem 1rem;
+    table {
+        width: 100%;
+        th,
+        td {
+            border: 1px solid @color2;
+            text-align: center;
+            font-weight: normal;
+            font-size: @font14;
+            padding: .4rem 0;
+        }
+        th {
+            background-color: @color9;
+            color: white;
+            border-color: @mainColor;
+        }
+        tr {
+            &:nth-child(2n) {
+                background-color: @colorF3;
+            }
+        }
+        td {
+            font-size: @font13;
+        }
+    }
+}
+
+// 提交动作
+.action {
+    padding: 0 6%;
+    .row {
+        div {
+            margin-bottom: .5rem;
+        }
+    }
+    .button {
+        width: 100%;
+        height: 1.6rem;
+        line-height: 1.6rem;
+        font-size: @font14;
+        &.button-fill {
+            border: none;
+            &.button-gray {
+                background-color: white;
+                color: @color333;
+            }
+        }
+        &.button-gray {
+            border-color: @colorddd;
+            color: @color333;
+        }
+        &.button-main {
+            background-color: @mainColor;
+        }
+    }
+    .actionLabel {
+        a {
+            color: @color12;
+            &:last-child {
+                float: right;
+                color: @color7;
+            }
+        }
+    }
+}
+
+// 投注动作
+.buyAction {
+    position: fixed;
+    z-index: 10000;
+    bottom: 0;
+    width: 100%;
+    padding: .25rem 0;
+    background-color: @color12;
+    p {
+        margin: 0;
+        padding: 0 25%;
+        &.theme-yellow,
+        &.theme-gray,
+        &.theme-green {
+            .button {
+                width: 100%;
+                &.active {
+                    border: none;
+                }
+                &.button-big {
+                    color: @color333;
+                    height: 1.8rem;
+                    line-height: 1.8rem;
+                }
+            }
+        }
+    }
+    .row {
+        color: white;
+        text-align: center;
+        line-height: 2.2rem;
+        i {
+            margin-left: .25rem;
+        }
+        p {
+            margin: 0;
+            padding: 0 .5rem;
+            font-size: @font13;
+            color: @color13;
+            &.matchMoney {
+                text-align: left;
+                padding-right: 2rem;
+                font-size: .9rem;
+            }
+        }
+        .col-60 {
+            font-size: @font16;
+            &.payCol {
+                line-height: 1.2;
+            }
+            span {
+                font-size: @font18;
+                padding: 0 .5rem;
+            }
+        }
+        .col-20 {
+            [class*=theme-] {
+                padding-top: .3rem;
+                padding-right: .5rem;
+            }
+        }
+        .button {
+            color: @color333;
+            height: 1.6rem;
+            line-height: 1.6rem;
+        }
+    }
+    .times {
+        position: absolute;
+        right: 5rem;
+        top: .6rem;
+        input {
+            width: 2rem;
+            margin: 0 .2rem;
+            text-align: center;
+            border-radius: .1rem;
+            border: none;
+            padding: .2rem 0;
+        }
+    }
+}
+
+.fixedAction {
+    position: fixed;
+    z-index: 1000;
+    bottom: 2.5rem;
+    width: 100%;
+    padding: .25rem 0;
+    background-color: white;
+    .button {
+        display: inline-block;
+        height: 1.4rem;
+        line-height: 1.4rem;
+        margin-left: .25rem;
+        font-size: @font12;
+        padding: 0 .2rem;
+    }
+    select {
+        height: 1.2rem;
+        line-height: 1.2rem;
+        border: 1px solid @mainColor;
+        text-align: center;
+        option {
+            display: block;
+        }
+    }
+    .times {
+        float: right;
+        margin-right: .5rem;
+        input {
+            width: 2rem;
+            margin: 0 .2rem;
+            text-align: center;
+            border-radius: .1rem;
+            border: none;
+            padding: .2rem 0;
+        }
+    }
+    .cgType {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        li {
+            float: left;
+            width: 25%;
+            list-style: none;
+            label {
+                display: block;
+                border: 1px solid @color7;
+                padding: .15rem 0 .15rem .15rem;
+                text-align: center;
+                border-radius: .2rem;
+                margin: .2rem;
+                font-size: @font12;
+                &.label-radio input[type=checkbox]~.item-inner {
+                    padding-right: .25rem;
+                }
+            }
+        }
+    }
+}
+
+.groupWrap {
+    margin-top: .5rem;
+    padding: .25rem;
+    background-color: @colorF3;
+    text-align: center;
+    label {
+        display: inline-block;
+        padding: 0 .5rem;
+    }
+}
+
+.typeSelect {
+    position: fixed;
+    z-index: 100000000;
+    bottom: 2.5rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    table {
+        position: absolute;
+        z-index: 10000;
+        bottom: 1rem;
+        left: .25rem;
+        right: .25rem;
+        width: 98%;
+        td {
+            border: 1px solid @colorddd;
+            .item {
+                height: 1.8rem;
+                line-height: 1.8rem;
+                text-align: center;
+                background-color: white;
+                &.active {
+                    background-color: @color13;
+                }
+                label {
+                    display: block;
+                    width: 100%;
+                    input {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.teamWrap {
+    border-bottom: 1px solid @color1;
+    padding: .5rem 0;
+    table {
+        width: 100%;
+        td {
+            padding: .2rem 0;
+            p {
+                line-height: 1.5;
+                margin: 0;
+                text-align: center;
+            }
+            &.label {
+                font-size: @font12;
+                padding-left: .5rem;
+                .cnAbbr {
+                    background-color: @color8;
+                    color: white;
+                }
+            }
+            &.teams {
+                span {
+                    display: inline-block;
+                    padding: 0 1rem;
+                    &.score {
+                        font-size: 1rem;
+                        color: @color6;
+                    }
+                }
+                strong {
+                    font-weight: normal;
+                    font-size: @font18;
+                    color: @colorpink;
+                    padding: 0 .25rem;
+                }
+            }
+        }
+    }
+}
+
+.ballWrap {
+    padding: .5rem;
+    &.ballBall {
+        padding: 0;
+        margin: 0;
+    }
+    .ballItem {
+        position: relative;
+        z-index: 0;
+        display: block;
+        border-bottom: 10px solid @colorF1;
+        &:last-child {
+            border: none;
+        }
+        color: @color333;
+        .teamWrap {
+            padding: 0;
+        }
+        .toword {
+            right: -1rem;
+        }
+    }
+    table {
+        width: 100%;
+        td {
+            padding: .2rem 0;
+            font-size: @font12;
+            &.label {
+                text-align: center;
+            }
+            p {
+                line-height: 1.5;
+                margin: 0;
+            }
+            table {
+                text-align: center;
+                th {
+                    font-weight: normal;
+                    background-color: @color9;
+                    color: white;
+                    padding: .25rem 0;
+                    border: 1px solid @color8;
+                }
+                tr {
+                    &:nth-child(2n) {
+                        background-color: @color1;
+                    }
+                }
+                td {
+                    border: 1px solid @colorF1;
+                }
+            }
+        }
+    }
+}
+
+.teamRecord {
+    table {
+        text-align: center;
+        td {
+            border-left: 1px solid @colorF1;
+            border-bottom: 1px solid @colorF1;
+            p {
+                line-height: 1.5;
+                margin: 0;
+                overflow: hidden;
+                &.record {
+                    span {
+                        float: left;
+                        width: 40%;
+                        border: 1px solid @color1;
+                        border-radius: 3px;
+                        padding: 0;
+                        margin: .2rem;
+                        i {
+                            display: block;
+                            font-style: normal;
+                        }
+                    }
+                }
+                span {
+                    padding-left: .5rem;
+                }
+            }
+        }
+        tr {
+            td {
+                &:first-child {
+                    border-left: none;
+                }
+            }
+        }
+    }
+}
+
+.menuFixed {
+    position: fixed;
+    z-index: 1000000;
+    right: 0;
+    top: 0;
+    .menuList {
+        position: relative;
+        float: right;
+        margin-right: .5rem;
+        margin-top: 3rem;
+        background-color: white;
+        box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
+        .triangle {
+            position: absolute;
+            z-index: 0;
+            top: -.5rem;
+            right: .25rem;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-right: 1rem solid transparent;
+            border-bottom: 1rem solid white;
+            border-left: 1rem solid transparent;
+        }
+        table {
+            tr {
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+            td {
+                border: 1px solid @color2;
+                a {
+                    display: block;
+                    padding: .3rem 1.5rem;
+                    color: @color333;
+                }
+            }
+        }
+    }
+}
+
+// 提现
+.listBlock {
+    &.inputInfoBlock {
+        background-color: white;
+        .list-block {
+            margin: 0;
+            padding: 2rem 1rem 0 1rem;
+            .item {
+                .item-title {
+                    width: 10%;
+                }
+            }
+            ul {
+                .item-inner:after,
+                &:before {
+                    display: none;
+                }
+                li {
+                    margin-bottom: .5rem;
+                    border-radius: .25rem;
+                    border: 1px solid @colorddd;
+                }
+            }
+        }
+        .list-block-label {
+            padding: 0;
+            margin-bottom: .5rem;
+        }
+        .action {
+            padding-top: 1rem;
+            .button {
+                height: 2.2rem;
+                line-height: 2.2rem;
+                font-size: @font16;
+            }
+        }
+    }
+    .content-block-title {
+        margin-top: 0;
+    }
+    .list-block {
+        margin-top: 0;
+        margin-bottom: .5rem;
+        font-size: @font14;
+        .item {
+            .item-title {
+                width: 30%;
+            }
+            input {
+                font-size: @font13;
+            }
+        }
+        &.moneyType {
+            margin-top: .5rem;
+            margin-bottom: 0;
+            ul {
+                overflow: hidden;
+                li {
+                    float: left;
+                    width: 25%;
+                    .item-content {
+                        padding-left: 0;
+                        .item-title {
+                            width: 100%;
+                            padding-left: 0;
+                            text-align: center;
+                        }
+                    }
+                    label.label-radio input[type=radio]:checked~.item-inner {
+                        background-position: calc(100% - 15px) center;
+                    }
+                    label.label-radio input[type=radio]~.item-inner {
+                        padding-right: .25rem;
+                    }
+                }
+            }
+        }
+        .item-media {
+            .glyphicon {
+                font-size: @font18;
+                color: @color3;
+            }
+        }
+        .numbers {
+            display: block;
+            width: 100%;
+            padding: .5rem 0;
+            color: @color3;
+            p {
+                font-size: @font14;
+                margin: 0;
+                i {
+                    color: @color7;
+                    font-style: normal;
+                }
+                span {
+                    color: @color7;
+                    padding: 0 .25rem;
+                    &.blue {
+                        color: @color11;
+                    }
+                }
+            }
+        }
+        .labelInfo {
+            p {
+                padding: 0rem .5rem .5rem 1rem;
+                margin: 0;
+                &:first-child {
+                    padding-top: 1rem;
+                }
+            }
+        }
+    }
+    table {
+        background-color: white;
+        width: 100%; // tr {
+        //     td {
+        //         &:nth-child(2n) {
+        //             background-color: @colorF1;
+        //         }
+        //     }
+        // }
+        td {
+            font-size: @font12;
+            padding: .5rem 0;
+            text-align: center;
+            border-bottom: 3px solid @color10;
+            span {
+                display: block;
+            }
+        }
+    }
+    .addBank {
+        margin: 0;
+        overflow: hidden;
+        padding: .25rem .5rem;
+        .button {
+            float: right;
+            font-size: @font13;
+            height: 1.2rem;
+            line-height: 1.2rem;
+        }
+    }
+    .bankItem {
+        width: 100%;
+        img {
+            vertical-align: middle;
+            width: 9rem;
+            height: 2rem;
+        }
+        span {
+            font-size: @font14;
+        }
+        .time {
+            float: right;
+            font-style: normal;
+        }
+        .button {
+            float: right;
+            font-size: @font12;
+            height: 1.2rem;
+            line-height: 1.2rem;
+            margin-top: .4rem;
+        }
+    }
+    .popup {
+        padding-top: 2.2rem;
+        background-color: @color10;
+    }
+    .imgInfo {
+        padding: 1rem;
+        text-align: center;
+    }
+}
+
+// 信息提示
+.infoTips {
+    margin: 0;
+    padding: .5rem;
+    font-size: @font13;
+    color: @color333;
+    a {
+        padding-left: .25rem;
+        text-decoration: underline;
+    }
+    &.rechargeInfo {
+        text-align: right;
+        padding-bottom: 1rem;
+    }
+}
+
+// 购买
+.buyWrap {
+    &.page-content {
+        padding-bottom: 10rem !important;
+    }
+    background-color: white;
+    .ballList {
+        padding: 0 .5rem;
+        .numberType {
+            margin: 0;
+            padding-top: 2rem;
+            .circle {
+                margin: .2rem .2rem .2rem 0;
+            }
+            .num {
+                background-color: @color5;
+            }
+        }
+        &.blueArea {
+            .circle {
+                color: @color11;
+                &.active {
+                    color: white;
+                    background: radial-gradient(circle at 50% 120%, #2761B7, #85ACE8 10%, #075CDC 80%, #1950A2 100%);
+                }
+            }
+            .ballLabel {
+                border-bottom-color: @color11;
+            }
+        }
+        &.redArea {
+            .circle {
+                color: @color7;
+                &.active {
+                    color: white;
+                    background: radial-gradient(circle at 50% 120%, #F99D9D, #E69898 10%, #EA4F4F 80%, #E8A2A2 100%);
+                }
+            }
+            .ballLabel {
+                border-bottom-color: @color7;
+            }
+        }
+        .ballLabel {
+            position: relative;
+            z-index: 0;
+            width: 100%;
+            top: 1rem;
+            border-bottom: 1px solid @color7;
+            .title,
+            .tip {
+                position: absolute;
+                z-index: 1;
+                top: -.65rem;
+                padding: .25rem 0;
+                background-color: white;
+            }
+            .title {
+                left: 0;
+                padding-right: 1rem;
+            }
+            .tip {
+                right: 0;
+                padding-left: 1rem;
+            }
+        }
+    }
+    .playType {
+        margin: 0;
+        label.label-radio input[type=radio]~.item-inner {
+            padding-right: .5rem;
+            font-size: @font13;
+        }
+    }
+    .playTip {
+        margin: 0;
+        padding: .25rem;
+        color: @color7;
+        font-size: @font12;
+        text-align: center;
+        background-color: @colorF1;
+    }
+}
+
+.recordInfo {
+    background-color: white;
+    table {
+        width: 100%;
+        margin-bottom: 30px;
+        p {
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            font-size: @font13;
+        }
+        .recordTitle {
+            background-color: lighten(@mainColor, 20%);
+            color: white;
+            span {
+                font-size: @font12;
+                padding: 0 10px;
+            }
+        }
+        .hisDetail {
+            &:nth-child(2n) {
+                background-color: lighten(@colord15, 2%);
+            }
+        }
+        td {
+            border-bottom: 1px solid lighten(@color1, 2%);
+            border-right: 1px solid lighten(@color1, 2%);
+            padding: 5px;
+            .teamName {
+                font-size: @font14;
+                padding: 10px 0;
+            }
+            &.aTeam {
+                padding-left: 10px;
+                background-color: lighten(@colord14, 7%);
+            }
+            &.hTeam {
+                padding-left: 10px;
+                background-color: lighten(@colord15, 2%);
+            }
+            &.label {
+                p {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.orderWrap {
+    &.listBlock {
+        padding-bottom: 6rem !important;
+    }
+}
+
+// 各种规则，说明
+.rule {
+    text-align: center;
+    label {
+        input {
+            position: relative;
+            z-index: 0;
+            top: .1rem;
+            width: .8rem;
+            height: .8rem;
+        }
+    }
+}
+
+// 数字彩选彩结果
+.resultWrap {
+    padding-top: .5rem;
+    p {
+        margin: 0;
+        text-align: center;
+        .button {
+            display: inline-block;
+        }
+    }
+    .numList {
+        width: 90%;
+        min-height: 6rem;
+        margin: .25rem auto;
+        border: 1px solid @color1;
+        table {
+            width: 100%;
+            td,
+            th {
+                padding: .5rem;
+                border-bottom: 1px solid @colorF3;
+                font-size: @font13;
+            }
+            thead {
+                tr {
+                    background-color: @colord14;
+                }
+            }
+            tr {
+                &:nth-child(2n) {
+                    background-color: @colorF3;
+                }
+                td {
+                    &:nth-child(3) {
+                        color: @color7;
+                    }
+                    &:nth-child(4) {
+                        text-align: center;
+                        i {
+                            font-style: normal;
+                            font-size: @font12;
+                        }
+                    }
+                    .bMatchNum {
+                        display: inline-block;
+                        width: 1rem;
+                        height: 1rem;
+                        line-height: 1rem;
+                        border-radius: 50%;
+                        text-align: center;
+                        background-color: @color3;
+                        color: white;
+                    }
+                }
+                &.bMatch {
+                    td {
+                        padding: .25rem 0;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 支付列表
+.payList {
+    &.list-block {
+        ul {
+            &:before {
+                display: none;
+            }
+        }
+        .item-content {
+            padding-left: 0;
+            &.item-link {
+                padding-left: .75rem;
+            }
+        }
+        .item-divider {
+            padding-top: .5rem;
+            &:before {
+                display: none;
+            }
+        }
+        margin-top: 0;
+        margin-bottom: .5rem;
+        font-size: @font14;
+        .payInfo {
+            width: 100%;
+            text-align: center;
+            p,
+            h2 {
+                margin: 0;
+            }
+            h2 {
+                font-weight: normal;
+                font-size: @font20;
+                padding: .25rem 0;
+            }
+            p {
+                font-size: @font13;
+                strong {
+                    padding: 0 .25rem;
+                    color: @color5;
+                    font-size: @font18;
+                }
+            }
+        }
+    }
+}
+
+// 足球比赛列表
+.matchList {
+    .item {
+        padding-bottom: .25rem;
+        border-bottom: 1px solid @colorddd;
+        overflow: hidden;
+        .info {
+            float: left;
+            width: 17%;
+            font-size: @font12;
+            text-align: center;
+            &.basketball {
+                width: 25%;
+            }
+            .detail {
+                p {
+                    margin: 0;
+                    padding: 0;
+                    &:first-child {
+                        padding-top: .5rem;
+                    }
+                    &.type {
+                        padding: .25rem 0;
+                        span {
+                            display: inline-block;
+                            min-width: 2.5rem;
+                            padding: .2rem .15rem;
+                            background-color: @color5;
+                            border-radius: .2rem;
+                            color: white;
+                        }
+                    }
+                }
+            }
+            .toPage {
+                margin-top: .55rem;
+                color: @color11;
+            }
+        }
+        .record {
+            float: left;
+            width: 68%;
+            &.basketball {
+                width: 60%;
+            }
+            table {
+                width: 100%;
+                td,
+                th {
+                    font-size: @font12;
+                    font-weight: normal;
+                    text-align: center;
+                }
+                th {
+                    padding: .5rem 0;
+                }
+                .dg {
+                    td {
+                        label {
+                            &.check {
+                                border-color: @colorpink;
+                            }
+                        }
+                    }
+                }
+                td {
+                    padding: .25rem;
+                    span {
+                        &.pNumber {
+                            color: @color7;
+                        }
+                        &.nNumber {
+                            color: @color5;
+                        }
+                    }
+                    label {
+                        position: relative;
+                        z-index: 0;
+                        input {
+                            position: absolute;
+                            z-index: 10;
+                            left: 0;
+                            right: 0;
+                            top: -3px;
+                            bottom: 0;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+                        }
+                        &.let {
+                            display: inline-block;
+                            width: 1rem;
+                            height: 1rem;
+                            line-height: 1rem;
+                            border-radius: 50%;
+                            font-size: @font12;
+                            background-color: @color3;
+                            &.zero {
+                                color: @colorF1;
+                            }
+                        }
+                        &.check {
+                            display: block;
+                            border: 1px solid @color2;
+                            padding: .25rem;
+                            border-radius: .25rem;
+                            &.active {
+                                background-color: @colorpink;
+                                border-color: @colorpink;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .more {
+            float: left;
+            width: 15%;
+            margin-top: 3rem;
+            text-align: center;
+            &.active {
+                p {
+                    background-color: @mainColor;
+                    color: white;
+                }
+            }
+            p {
+                position: relative;
+                z-index: 0;
+                display: inline-block;
+                width: 1.5rem;
+                height: 1.5rem;
+                margin: 0 auto;
+                border-radius: .2rem;
+                border: 1px solid @color2;
+                font-size: @font12;
+                span {
+                    position: absolute;
+                    z-index: 10;
+                    top: -.4rem;
+                    right: -.4rem;
+                    color: @mainColor;
+                    width: .8rem;
+                    height: .8rem;
+                    border-radius: 50%;
+                    border: 1px solid @mainColor;
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
+
+.matchTip {
+    text-align: center;
+    padding: .5rem;
+    color: @color2;
+    font-size: @font12;
+}
+
+.matchPopup {
+    top: 2.2rem;
+    height: auto;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    .content-block {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        margin: 0;
+        padding: 0 0 4rem 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: white;
+        .matchTip {
+            margin: 0;
+            padding: .25rem 0;
+            text-align: center;
+        }
+    }
+    .popupAction {
+        position: absolute;
+        z-index: 10000;
+        width: 100%;
+        bottom: 0;
+        border-top: 1px solid @mainColor;
+        padding: .5rem 0;
+        background-color: white;
+        .button {
+            width: 60%;
+            margin: 0 auto;
+            border: 1px solid @mainColor;
+        }
+    }
+    .matchType {
+        .record {
+            &.allInBall,
+            &.bQc {
+                table {
+                    width: 70%;
+                    margin: 0 auto;
+                    td {
+                        &.checkList {
+                            label {
+                                &.check {
+                                    width: 25%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            table {
+                width: 100%;
+                td,
+                th {
+                    font-size: @font13;
+                    font-weight: normal;
+                    text-align: center;
+                }
+                th {
+                    padding: .5rem 0;
+                }
+                .dg {
+                    td {
+                        label {
+                            &.check {
+                                border-color: @colorpink;
+                            }
+                        }
+                    }
+                }
+                td {
+                    padding: .25rem;
+                    &.checkList {
+                        overflow: hidden;
+                        label {
+                            &.check {
+                                float: left;
+                                margin: .2rem;
+                                i {
+                                    display: block;
+                                    font-style: normal;
+                                    &.count {
+                                        color: @color333;
+                                    }
+                                    &.rate {
+                                        color: @color2;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    label {
+                        position: relative;
+                        z-index: 0;
+                        input {
+                            position: absolute;
+                            z-index: 10;
+                            left: 0;
+                            right: 0;
+                            top: 0;
+                            bottom: 0;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+                        }
+                        &.let {
+                            display: inline-block;
+                            width: 1rem;
+                            height: 1rem;
+                            line-height: 1rem;
+                            border-radius: 50%;
+                            font-size: @font12;
+                            background-color: @color3;
+                            &.zero {
+                                color: @colorF1;
+                            }
+                            &.pNumber {
+                                color: @color7;
+                            }
+                            &.nNumber {
+                                color: @color5;
+                            }
+                        }
+                        &.check {
+                            display: block;
+                            border: 1px solid @color2;
+                            padding: .25rem;
+                            border-radius: .25rem;
+                            &.dg {
+                                border-color: @colorpink;
+                            }
+                            &.active {
+                                background-color: @colorpink;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.lotteryListType {
+    padding-bottom: 4rem;
+}
+
+.noData {
+    text-align: center;
+    color: @color3;
+}
+
+.cmsWrap {
+    .cmsHeader {
+        text-align: center;
+        h2 {
+            font-size: @font18;
+        }
+        p {
+            font-size: @font13;
+            span {
+                padding: 0 20px;
+            }
+        }
+    }
+    .cmsDetail {
+        padding: 20px 30px;
+    }
+}
+
+.mainWrap,
+div[id^='page-'] {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 3rem;
+}
+
+.iScrollV {
+    position: absolute;
+    z-index: 100;
+    width: 4px;
+    bottom: 2px;
+    top: 2px;
+    right: 1px;
+    pointer-events: none;
+    transition-property: opacity;
+    transition-duration: 350ms;
+    overflow: hidden;
+    opacity: 0;
+    div {
+        position: absolute;
+        z-index: 100;
+        border: 1px solid rgba(255, 255, 255, 0.901961);
+        box-sizing: border-box;
+        width: 100%;
+        border-radius: 3px;
+        pointer-events: none;
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
+        transform: translate(0px, 240.608px) translateZ(0px);
+        height: 201px;
+        background: padding-box padding-box rgba(0, 0, 0, 0.3);
+    }
+}
+
+.js-showMenu {
+    display: none;
+}
+
+.js-message {
+    position: relative;
+    z-index: 0;
+    .babo {
+        display: none;
+        position: absolute;
+        z-index: 10;
+        top: .5rem;
+        right: .5rem;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: @color7;
+    }
+}

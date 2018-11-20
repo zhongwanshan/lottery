@@ -1,0 +1,29 @@
+(function () {
+    var queryInfo = utility.getQueryParams();
+    var pageVue = new Vue({
+        el: "#js-pageResult",
+        data: {
+            userInfo: USERINFO,
+            queryInfo: queryInfo,
+            paramInfo: JSON.parse(decodeURI(queryInfo.paramInfo))
+        },
+        methods: {
+            // 退出登录
+            userLogout: function () {
+                utility.userLogout(function () {
+                    window.location.href = URL + "/index.html";
+                });
+            },
+            rePay: function () {
+                var self = this;
+                
+                self.paramInfo.backUrl = CONFIG.HOST + "/www/view/order/result.html" + "?paramInfo=" + queryInfo.paramInfo;
+
+                window.location.href = CONFIG.HOST + utility.formatActionUrl(CONFIG.SERVICE.walletService, self.paramInfo.action, self.paramInfo) + "&userId=" + USERINFO["userId"] + "&userToken=" + USERINFO["userToken"] + "&appType=2";
+            }
+        },
+        created: function() {
+            var self = this;
+        }
+    });
+}())

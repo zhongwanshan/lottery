@@ -1,0 +1,377 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="../hall.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">竞彩足球</div>
+        <div class="right">
+            <span class="js-showMenu">
+                <i class="glyphicon glyphicon-option-vertical"></i>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="buy-football">
+    <div id="js-pageBuyFootball" class="page-content buyWrap">
+        <div id="page-buy-football">
+            <div class="mainWrap">
+
+                <template v-for="(keyObj, key) in matchInfoObj">
+
+                    <p class="hTitle matchTitle">
+                        {{keyObj.weekDay}} {{keyObj.time}}
+                        <span class="matchNum">共{{keyObj.list.length}}场</span>
+                        <span class="tip">(红框选项可投单关)</span>
+                    </p>
+
+                    <div class="matchList">
+                        <template v-for="(item, index) in keyObj.list">
+                            <div class="item">
+                                <div class="info">
+                                    <div class="detail">
+                                        <p v-text="weekList['w_'+item.num.slice(0,1)]+item.num.slice(1)"></p>
+                                        <p class="type">
+                                            <span v-text="item.l_cn_a" :style="{backgroundColor: '#'+item.l_color}"></span>
+                                        </p>
+                                        <p v-text="item.dtime.split(' ')[1]"></p>
+                                    </div>
+                                    <a :href="'view/detail/football.html?mid='+item.mid" class="toPage">查看数据</a>
+                                </div>
+                                <div class="record">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th v-text="item.h_cn"></th>
+                                                <th>VS</th>
+                                                <th v-text="item.a_cn"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr :class="item.p_single.split(',')[0]==1?'dg':'noDg'">
+                                                <td>
+                                                    <span class="let zero">{{item.p_goal.split(',')[0]}}</span>
+                                                </td>
+                                                <template v-for="(sfItem, sfIndex) in sfList">
+                                                    <td>
+                                                        <label class="check" :class="item.matchInfo.sf.indexOf(key+','+index+','+sfItem.name+','+sfItem.value)!=-1?'active':''">
+                                                            {{sfItem.name}}{{item.had_odds.split(',')[sfIndex]}}
+                                                            <input type="checkbox" v-model="item.matchInfo.sf" :value="key+','+index+','+sfItem.name+','+sfItem.value" />
+                                                        </label>
+                                                    </td>
+                                                </template>
+                                            </tr>
+                                            <tr :class="item.p_single.split(',')[1]==1?'dg':'noDg'">
+                                                <td>
+                                                    <span class="let" :class="Number(item.p_goal.split(',')[1])>0?'nNumber':'pNumber'">{{item.p_goal.split(',')[1]}}</span>
+                                                </td>
+
+                                                <template v-for="(rItem, rIndex) in rangList">
+                                                    <td>
+                                                        <label class="check" :class="item.matchInfo.rang.indexOf(key+','+index+','+rItem.name+','+rItem.value)!=-1?'active':''">
+                                                            {{rItem.name}}{{item.hhad_odds.split(',')[0]}}
+                                                            <input type="checkbox" v-model="item.matchInfo.rang" :value="key+','+index+','+rItem.name+','+rItem.value" />
+                                                        </label>
+                                                    </td>
+                                                </template>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="more" :class="(item.matchInfo.sf.length+item.matchInfo.rang.length+item.matchInfo.score.length+item.matchInfo.ball.length+item.matchInfo.half.length)>0?'active':''">
+                                    <p @click="showPopupAndSetData(key, index)">更多玩法
+                                        <span v-if="(item.matchInfo.sf.length+item.matchInfo.rang.length+item.matchInfo.score.length+item.matchInfo.ball.length+item.matchInfo.half.length)>0"
+                                            v-text="item.matchInfo.sf.length+item.matchInfo.rang.length+item.matchInfo.score.length+item.matchInfo.ball.length+item.matchInfo.half.length"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+
+                <!-- <template v-if="matchList.length==0">
+                    <p class="noData">没有比赛</p>
+                </template> -->
+
+                <div class="matchTip">竞彩足球是国家体彩中心发行的玩法，包含胜平负、让球胜平负、比分、总进球、半全场等玩法。</div>
+            </div>
+        </div>
+        <!-- 下拉菜单 -->
+        <template v-if="isShowMenu">
+            <div @click="showMenu()" class="maskerLayer"></div>
+            <div class="menuFixed">
+                <div class="menuList">
+                    <span class="triangle"></span>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="view/history/football.html">开奖历史</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="view/magic.html">最新资讯</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="view/rules/football.html">玩法说明</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </template>
+
+
+        <div class="fixedAction">
+            <ul class="cgType">
+                <template v-if="isDg">
+                    <li>
+                        <label class="label-radio item-content">
+                            <input type="checkbox" v-model="cgList" name="CG" value="单场">
+                            <div class="item-inner">
+                                <div class="item-title">单关</div>
+                            </div>
+                        </label>
+                    </li>
+                </template>
+                <template v-for="i in selectItem.num">
+                    <template v-if="i>1 && i < 9">
+                        <li>
+                            <label class="label-radio item-content">
+                                <input type="checkbox" v-model="cgList" name="CG" :value="i+'串1'">
+                                <div class="item-inner">
+                                    <div class="item-title" v-text="i+'串1'"></div>
+                                </div>
+                            </label>
+                        </li>
+                    </template>
+                </template>
+            </ul>
+        </div>
+
+        <div class="buyAction">
+            <div class="row">
+                <div class="col-80 matchSelect" style="text-align: left; text-indent: .5rem;">
+                    <template v-if="selectItem.num==0">
+                        请选择比赛
+                    </template>
+                    <template v-if="!isDg">
+                        <template v-if="selectItem.num<=1">
+                            至少选择2场比赛
+                        </template>
+                        <template v-else>
+                            <template v-if="cgList.length==0">
+                                至少选择一种串关方式
+                            </template>
+                        </template>
+                    </template>
+                    <template v-else>
+                        <template v-if="cgList.length==0">
+                            至少选择一种串关方式
+                        </template>
+                    </template>
+                    <template v-if="selectItem.num>=1 && cgList.length!=0">
+                        <p class="matchMoney">{{selectItem.num}}场，金额: {{totalOrderPrice}}元</p>
+                    </template>
+                </div>
+                <div class="col-20">
+                    <div class="theme-yellow">
+                        <button @click="generateOrder" class="button button-fill">投注</button>
+                    </div>
+                </div>
+            </div>
+            <template v-if="selectItem.num>1">
+                <div class="times">
+                    <span class="button button-fill">投
+                        <input type="tel" v-model="buyInfo.multipleNum" />倍</span>
+                </div>
+            </template>
+        </div>
+
+        <div class="popup popup-setData matchPopup" style="position: fixed;">
+            <div class="content-block" v-if="!!matchData">
+                <p class="matchTip">红框选项可投单关</p>
+                <p class="hTitle matchTitle">
+                    <span class="type">胜负/让分胜负</span>
+                    <span class="tip">(-为主队让球，+为客队让球)</span>
+                </p>
+                <div class="matchType">
+                    <div class="record">
+                        <table>
+                            <tbody>
+                                <tr :class="matchData.data.p_single.split(',')[0]==1?'dg':'noDg'">
+                                    <td>
+                                        <span class="let zero">{{matchData.data.p_goal.split(',')[0]}}</span>
+                                    </td>
+                                    <template v-for="(sfItem, sfIndex) in sfList">
+                                        <td>
+                                            <label class="check" :class="matchData.data.matchInfo.sf.indexOf(matchData.key+','+matchData.index+','+sfItem.name+','+sfItem.value)!=-1?'active':''">
+                                                {{sfItem.name}}{{matchData.data.had_odds.split(',')[sfIndex]}}
+                                                <input type="checkbox" v-model="matchData.data.matchInfo.sf" :value="matchData.key+','+matchData.index+','+sfItem.name+','+sfItem.value"
+                                                />
+                                            </label>
+                                        </td>
+                                    </template>
+                                </tr>
+                                <tr :class="matchData.data.p_single.split(',')[1]==1?'dg':'noDg'">
+                                    <td>
+                                        <span class="let" :class="Number(matchData.data.p_goal.split(',')[1])>0?'nNumber':'pNumber'">{{matchData.data.p_goal.split(',')[1]}}</span>
+                                    </td>
+
+                                    <template v-for="(rItem, rIndex) in rangList">
+                                        <td>
+                                            <label class="check" :class="matchData.data.matchInfo.rang.indexOf(matchData.key+','+matchData.index+','+rItem.name+','+rItem.value)!=-1?'active':''">
+                                                {{rItem.name}}{{matchData.data.hhad_odds.split(',')[0]}}
+                                                <input type="checkbox" v-model="matchData.data.matchInfo.rang" :value="matchData.key+','+matchData.index+','+rItem.name+','+rItem.value"
+                                                />
+                                            </label>
+                                        </td>
+                                    </template>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <p class="hTitle matchTitle">
+                    <span class="type">比分</span>
+                    <span class="tip">(90分钟内，两队的比分)</span>
+                </p>
+                <div class="matchType">
+                    <div class="record">
+                        <table>
+                            <tbody>
+                                <tr :class="matchData.data.p_single.split(',')[2]==1?'dg':'noDg'">
+                                    <td style="width: 1rem; vertical-align: middle; padding: 0 .5rem;">
+                                        <span class="rTitle">主队胜比分</span>
+                                    </td>
+                                    <td class="checkList">
+                                        <template v-for="(sItem, sIndex) in scoreSList">
+                                            <label class="check" :class="matchData.data.matchInfo.score.indexOf(matchData.key+','+matchData.index+','+sItem.name+','+sItem.value)!=-1?'active':''">
+                                                <i class="count" v-text="sItem.name"></i>
+                                                <i class="rate" v-text="matchData.data.crs_win.split(',')[sIndex]"></i>
+                                                <input type="checkbox" v-model="matchData.data.matchInfo.score" :value="matchData.key+','+matchData.index+','+sItem.name+','+sItem.value"
+                                                />
+                                            </label>
+                                        </template>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="record">
+                        <table>
+                            <tbody>
+                                <tr :class="matchData.data.p_single.split(',')[2]==1?'dg':'noDg'">
+                                    <td style="width: 1rem; vertical-align: middle; padding: 0 .5rem;">
+                                        <span class="rTitle">平比分</span>
+                                    </td>
+                                    <td class="checkList">
+
+                                        <template v-for="(pItem, pIndex) in scorePList">
+                                            <label class="check" :class="matchData.data.matchInfo.score.indexOf(matchData.key+','+matchData.index+','+pItem.name+','+pItem.value)!=-1?'active':''">
+                                                <i class="count" v-text="pItem.name"></i>
+                                                <i class="rate" v-text="matchData.data.crs_win.split(',')[pIndex]"></i>
+                                                <input type="checkbox" v-model="matchData.data.matchInfo.score" :value="matchData.key+','+matchData.index+','+pItem.name+','+pItem.value"
+                                                />
+                                            </label>
+                                        </template>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="record">
+                        <table>
+                            <tbody>
+                                <tr :class="matchData.data.p_single.split(',')[2]==1?'dg':'noDg'">
+                                    <td style="width: 1rem; vertical-align: middle; padding: 0 .5rem;">
+                                        <span class="rTitle">主队负比分</span>
+                                    </td>
+                                    <td class="checkList">
+
+                                        <template v-for="(fItem, fIndex) in scoreFList">
+                                            <label class="check" :class="matchData.data.matchInfo.score.indexOf(matchData.key+','+matchData.index+','+fItem.name+','+fItem.value)!=-1?'active':''">
+                                                <i class="count" v-text="fItem.name"></i>
+                                                <i class="rate" v-text="matchData.data.crs_win.split(',')[fIndex]"></i>
+                                                <input type="checkbox" v-model="matchData.data.matchInfo.score" :value="matchData.key+','+matchData.index+','+fItem.name+','+fItem.value"
+                                                />
+                                            </label>
+                                        </template>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <p class="hTitle matchTitle">
+                    <span class="type">总进球</span>
+                    <span class="tip">(90分钟内，两队的进球总数)</span>
+                </p>
+                <div class="matchType">
+                    <div class="record allInBall">
+                        <table>
+                            <tbody>
+                                <tr :class="matchData.data.p_single.split(',')[3]==1?'dg':'noDg'">
+                                    <td class="checkList">
+                                        <template v-for="(bItem, bIndex) in ballList">
+                                            <label class="check" :class="matchData.data.matchInfo.ball.indexOf(matchData.key+','+matchData.index+','+bItem.name+','+bItem.value)!=-1?'active':''">
+                                                <i class="count" v-text="bItem.name"></i>
+                                                <i class="rate" v-text="matchData.data.ttg_odds.split(',')[bIndex]"></i>
+                                                <input type="checkbox" v-model="matchData.data.matchInfo.ball" :value="matchData.key+','+matchData.index+','+bItem.name+','+bItem.value"
+                                                />
+                                            </label>
+                                        </template>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <p class="hTitle matchTitle">
+                    <span class="type">半全场</span>
+                    <span class="tip">(90分钟内，主队的半场/全场的结果)</span>
+                </p>
+                <div class="matchType">
+                    <div class="record bQc">
+                        <table>
+                            <tbody>
+
+                                <tr :class="matchData.data.p_single.split(',')[4]==1?'dg':'noDg'">
+                                    <td class="checkList">
+
+                                        <template v-for="(hItem, hIndex) in halfList">
+                                            <label class="check" :class="matchData.data.matchInfo.half.indexOf(matchData.key+','+matchData.index+','+hItem.name+','+hItem.value)!=-1?'active':''">
+                                                <i class="count" v-text="hItem.name"></i>
+                                                <i class="rate" v-text="matchData.data.hafu_odds.split(',')[hIndex]"></i>
+                                                <input type="checkbox" v-model="matchData.data.matchInfo.half" :value="matchData.key+','+matchData.index+','+hItem.name+','+hItem.value"
+                                                />
+                                            </label>
+                                        </template>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="popupAction">
+                <div class="row">
+                    <div class="col-100 theme-white">
+                        <button class="close-popup button">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

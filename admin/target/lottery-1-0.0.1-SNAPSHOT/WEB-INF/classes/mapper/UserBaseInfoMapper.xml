@@ -1,0 +1,878 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lottery.dao.UserBaseInfoMapper">
+	<resultMap id="BaseResultMap" type="com.lottery.entity.UserBaseInfo">
+		<id column="id" jdbcType="BIGINT" property="id" />
+		<result column="user_code" jdbcType="VARCHAR" property="userCode" />
+		<result column="phone" jdbcType="VARCHAR" property="phone" />
+		<result column="user_type" jdbcType="SMALLINT" property="userType" />
+		<result column="email" jdbcType="VARCHAR" property="email" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+		<result column="pwd" jdbcType="VARCHAR" property="pwd" />
+		<result column="register_date" jdbcType="TIMESTAMP" property="registerDate" />
+		<result column="gender" jdbcType="SMALLINT" property="gender" />
+		<result column="head_image_url" jdbcType="VARCHAR" property="headImageUrl" />
+		<result column="referer_code" jdbcType="VARCHAR" property="refererCode" />
+		<result column="status" jdbcType="SMALLINT" property="status" />
+		<result column="qq" jdbcType="VARCHAR" property="qq" />
+		<result column="invite_user_id" jdbcType="BIGINT" property="inviteUserId" />
+		<result column="pay_pwd" jdbcType="VARCHAR" property="payPwd" />
+		<result column="is_email_authed" jdbcType="SMALLINT" property="isEmailAuthed" />
+		<result column="total_money" jdbcType="INTEGER" property="totalMoney" />
+		<result column="cash_money_left" jdbcType="INTEGER" property="cashMoneyLeft" />
+		<result column="gift_money_left" jdbcType="INTEGER" property="giftMoneyLeft" />
+		<result column="locked_money" jdbcType="INTEGER" property="lockedMoney" />
+		<result column="coin_num" jdbcType="INTEGER" property="coinNum" />
+		<result column="notify_fee" jdbcType="INTEGER" property="notifyFee" />
+		<result column="sms_code" jdbcType="VARCHAR" property="smsCode" />
+		<result column="id_card_no" jdbcType="VARCHAR" property="idCardNo" />
+		<result column="member_level" jdbcType="TINYINT" property="memberLevel" />
+		<result column="total_score" jdbcType="INTEGER" property="totalScore" />
+		<result column="app_type" jdbcType="INTEGER" property="appType" />
+		<result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+		<result column="real_user_flag" jdbcType="SMALLINT" property="realUserFlag" />
+		<result column="real_user_name" jdbcType="VARCHAR" property="realUserName" />
+		<result column="real_identify_time" jdbcType="TIMESTAMP"
+			property="realIdentifyTime" />
+		<result column="province_id" jdbcType="BIGINT" property="provinceId" />
+		<result column="city_id" jdbcType="BIGINT" property="cityId" />
+		<result column="district_id" jdbcType="BIGINT" property="districtId" />
+		<result column="province_name" jdbcType="VARCHAR" property="provinceName" />
+		<result column="city_name" jdbcType="VARCHAR" property="cityName" />
+		<result column="district_name" jdbcType="VARCHAR" property="districtName" />
+	</resultMap>
+	<sql id="Example_Where_Clause">
+		<where>
+			<foreach collection="oredCriteria" item="criteria" separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" prefixOverrides="and" suffix=")">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach close=")" collection="criterion.value" item="listItem"
+										open="(" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Update_By_Example_Where_Clause">
+		<where>
+			<foreach collection="example.oredCriteria" item="criteria"
+				separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" prefixOverrides="and" suffix=")">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach close=")" collection="criterion.value" item="listItem"
+										open="(" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Base_Column_List">
+		id, user_code, phone, user_type, email, name, nick_name, pwd,
+		register_date, gender,
+		head_image_url, referer_code, status, qq, invite_user_id, pay_pwd, is_email_authed,
+		total_money, cash_money_left, gift_money_left, locked_money, coin_num,
+		notify_fee,
+		sms_code, id_card_no, member_level, total_score, app_type, update_time,
+		real_user_flag,
+		real_user_name, real_identify_time, province_id, city_id, district_id, province_name,
+		city_name, district_name
+	</sql>
+	<select id="selectByExample" parameterType="com.lottery.entity.UserBaseInfoExample"
+		resultMap="BaseResultMap">
+		select
+		<if test="distinct">
+			distinct
+		</if>
+		'true' as QUERYID,
+		<include refid="Base_Column_List" />
+		from user_base_info
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+		<if test="orderByClause != null">
+			order by ${orderByClause}
+		</if>
+	</select>
+
+
+
+	<!--查询彩票店主列表 -->
+	<select id="searchLotteryShopUserByCondition" parameterType="com.lottery.entity.UserBaseInfo"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from user_base_info
+		where user_type=1 and status &lt; 2
+
+		<if test="userCode != null and userCode != ''">
+			and user_code=#{userCode}
+		</if>
+
+	</select>
+	
+	
+		<!--查询彩票店主列表分页数据 -->
+	<select id="searchLotteryShopUserList"
+		parameterType="com.lottery.entity.UserBaseInfo" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from user_base_info
+		where user_type=1 and status &lt; 2
+        <if test="userCode != null and userCode != ''"> 
+			and user_code like CONCAT('%',#{userCode},'%')
+		</if>
+	</select>
+
+
+
+	<!--查询彩票店主列表分页数据 -->
+	<select id="searchLotteryShopUserByConditionLimit"
+		parameterType="com.lottery.entity.UserBaseInfo" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from user_base_info
+		where user_type=1 and status &lt; 2
+
+		<if test="userCode != null and userCode != ''">
+			and user_code=#{userCode}
+		</if>
+		<if test="idList != null">
+			and id in
+			<foreach collection="idList" open="(" close=")" separator=","
+				item="idValue">
+				#{idValue}
+			</foreach>
+		</if>
+		limit #{pageNum},10
+	</select>
+
+
+	<!--查询彩票店主列表总数 -->
+	<select id="searchLotteryShopUserCountByConditionLimit"
+		parameterType="com.lottery.entity.UserBaseInfo" resultType="java.lang.Integer">
+		select
+		count(*)
+		from user_base_info
+		where user_type=1 and status &lt; 2
+
+		<if test="userCode != null and userCode != ''">
+			and user_code=#{userCode}
+		</if>
+
+		<if test="idList != null">
+			and id in
+			<foreach collection="idList" open="(" close=")" separator=","
+				item="idValue">
+				#{idValue}
+			</foreach>
+		</if>
+
+	</select>
+
+
+	<!--分页查询 -->
+	<select id="queryUserData" parameterType="com.lottery.entity.UserBaseInfo"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from user_base_info
+		where user_code=#{userCode} and pwd=#{pwd}
+	</select>
+
+
+	<!--分页查询 -->
+	<select id="searchUserBaseInfoByCondition" parameterType="com.lottery.entity.UserBaseInfo"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from user_base_info
+		where id>0
+		<if test="userCode != null and userCode !=''">
+			and user_code LIKE CONCAT('%',#{userCode},'%')
+		</if>
+		<if test="userType!=4">
+			and user_type=#{userType}
+		</if>
+		<if test="status!=0">
+			and status=#{status}
+		</if>
+		order by id desc limit #{pageNum},10
+	</select>
+	<!--分页查询记录总数 -->
+	<select id="searchUserBaseInfoConutByCondition" parameterType="com.lottery.entity.UserBaseInfo"
+		resultType="java.lang.Integer">
+		select
+		count(*)
+		from user_base_info
+		where id>0
+		<if test="userCode != null and userCode !=''">
+			and user_code=#{userCode}
+		</if>
+		<if test="userType !=4">
+			and user_type=#{userType}
+		</if>
+		<if test="status !=0">
+			and status=#{status}
+		</if>
+	</select>
+
+
+
+	<select id="selectByPrimaryKey" parameterType="java.lang.Long"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from user_base_info
+		where id = #{id,jdbcType=BIGINT}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from user_base_info
+		where id = #{id,jdbcType=BIGINT}
+	</delete>
+	<delete id="deleteByExample" parameterType="com.lottery.entity.UserBaseInfoExample">
+		delete from user_base_info
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</delete>
+	<insert id="insert" parameterType="com.lottery.entity.UserBaseInfo">
+		insert into user_base_info (id, user_code, phone,
+		user_type, email, name,
+		nick_name, pwd, register_date,
+		gender, head_image_url, referer_code,
+		status, qq, invite_user_id,
+		pay_pwd, is_email_authed, total_money,
+		cash_money_left, gift_money_left, locked_money,
+		coin_num, notify_fee, sms_code,
+		id_card_no, member_level, total_score,
+		app_type, update_time, real_user_flag,
+		real_user_name, real_identify_time, province_id,
+		city_id, district_id, province_name,
+		city_name, district_name)
+		values (#{id,jdbcType=BIGINT}, #{userCode,jdbcType=VARCHAR},
+		#{phone,jdbcType=VARCHAR},
+		#{userType,jdbcType=SMALLINT}, #{email,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+		#{nickName,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR},
+		#{registerDate,jdbcType=TIMESTAMP},
+		#{gender,jdbcType=SMALLINT}, #{headImageUrl,jdbcType=VARCHAR}, #{refererCode,jdbcType=VARCHAR},
+		#{status,jdbcType=SMALLINT}, #{qq,jdbcType=VARCHAR},
+		#{inviteUserId,jdbcType=BIGINT},
+		#{payPwd,jdbcType=VARCHAR}, #{isEmailAuthed,jdbcType=SMALLINT}, #{totalMoney,jdbcType=INTEGER},
+		#{cashMoneyLeft,jdbcType=INTEGER}, #{giftMoneyLeft,jdbcType=INTEGER},
+		#{lockedMoney,jdbcType=INTEGER},
+		#{coinNum,jdbcType=INTEGER}, #{notifyFee,jdbcType=INTEGER}, #{smsCode,jdbcType=VARCHAR},
+		#{idCardNo,jdbcType=VARCHAR}, #{memberLevel,jdbcType=TINYINT},
+		#{totalScore,jdbcType=INTEGER},
+		#{appType,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, #{realUserFlag,jdbcType=SMALLINT},
+		#{realUserName,jdbcType=VARCHAR},
+		#{realIdentifyTime,jdbcType=TIMESTAMP}, #{provinceId,jdbcType=BIGINT},
+		#{cityId,jdbcType=BIGINT}, #{districtId,jdbcType=BIGINT},
+		#{provinceName,jdbcType=VARCHAR},
+		#{cityName,jdbcType=VARCHAR}, #{districtName,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="com.lottery.entity.UserBaseInfo">
+		insert into user_base_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="userCode != null">
+				user_code,
+			</if>
+			<if test="phone != null">
+				phone,
+			</if>
+			<if test="userType != null">
+				user_type,
+			</if>
+			<if test="email != null">
+				email,
+			</if>
+			<if test="name != null">
+				name,
+			</if>
+			<if test="nickName != null">
+				nick_name,
+			</if>
+			<if test="pwd != null">
+				pwd,
+			</if>
+			<if test="registerDate != null">
+				register_date,
+			</if>
+			<if test="gender != null">
+				gender,
+			</if>
+			<if test="headImageUrl != null">
+				head_image_url,
+			</if>
+			<if test="refererCode != null">
+				referer_code,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="qq != null">
+				qq,
+			</if>
+			<if test="inviteUserId != null">
+				invite_user_id,
+			</if>
+			<if test="payPwd != null">
+				pay_pwd,
+			</if>
+			<if test="isEmailAuthed != null">
+				is_email_authed,
+			</if>
+			<if test="totalMoney != null">
+				total_money,
+			</if>
+			<if test="cashMoneyLeft != null">
+				cash_money_left,
+			</if>
+			<if test="giftMoneyLeft != null">
+				gift_money_left,
+			</if>
+			<if test="lockedMoney != null">
+				locked_money,
+			</if>
+			<if test="coinNum != null">
+				coin_num,
+			</if>
+			<if test="notifyFee != null">
+				notify_fee,
+			</if>
+			<if test="smsCode != null">
+				sms_code,
+			</if>
+			<if test="idCardNo != null">
+				id_card_no,
+			</if>
+			<if test="memberLevel != null">
+				member_level,
+			</if>
+			<if test="totalScore != null">
+				total_score,
+			</if>
+			<if test="appType != null">
+				app_type,
+			</if>
+			<if test="updateTime != null">
+				update_time,
+			</if>
+			<if test="realUserFlag != null">
+				real_user_flag,
+			</if>
+			<if test="realUserName != null">
+				real_user_name,
+			</if>
+			<if test="realIdentifyTime != null">
+				real_identify_time,
+			</if>
+			<if test="provinceId != null">
+				province_id,
+			</if>
+			<if test="cityId != null">
+				city_id,
+			</if>
+			<if test="districtId != null">
+				district_id,
+			</if>
+			<if test="provinceName != null">
+				province_name,
+			</if>
+			<if test="cityName != null">
+				city_name,
+			</if>
+			<if test="districtName != null">
+				district_name,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=BIGINT},
+			</if>
+			<if test="userCode != null">
+				#{userCode,jdbcType=VARCHAR},
+			</if>
+			<if test="phone != null">
+				#{phone,jdbcType=VARCHAR},
+			</if>
+			<if test="userType != null">
+				#{userType,jdbcType=SMALLINT},
+			</if>
+			<if test="email != null">
+				#{email,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="nickName != null">
+				#{nickName,jdbcType=VARCHAR},
+			</if>
+			<if test="pwd != null">
+				#{pwd,jdbcType=VARCHAR},
+			</if>
+			<if test="registerDate != null">
+				#{registerDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="gender != null">
+				#{gender,jdbcType=SMALLINT},
+			</if>
+			<if test="headImageUrl != null">
+				#{headImageUrl,jdbcType=VARCHAR},
+			</if>
+			<if test="refererCode != null">
+				#{refererCode,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=SMALLINT},
+			</if>
+			<if test="qq != null">
+				#{qq,jdbcType=VARCHAR},
+			</if>
+			<if test="inviteUserId != null">
+				#{inviteUserId,jdbcType=BIGINT},
+			</if>
+			<if test="payPwd != null">
+				#{payPwd,jdbcType=VARCHAR},
+			</if>
+			<if test="isEmailAuthed != null">
+				#{isEmailAuthed,jdbcType=SMALLINT},
+			</if>
+			<if test="totalMoney != null">
+				#{totalMoney,jdbcType=INTEGER},
+			</if>
+			<if test="cashMoneyLeft != null">
+				#{cashMoneyLeft,jdbcType=INTEGER},
+			</if>
+			<if test="giftMoneyLeft != null">
+				#{giftMoneyLeft,jdbcType=INTEGER},
+			</if>
+			<if test="lockedMoney != null">
+				#{lockedMoney,jdbcType=INTEGER},
+			</if>
+			<if test="coinNum != null">
+				#{coinNum,jdbcType=INTEGER},
+			</if>
+			<if test="notifyFee != null">
+				#{notifyFee,jdbcType=INTEGER},
+			</if>
+			<if test="smsCode != null">
+				#{smsCode,jdbcType=VARCHAR},
+			</if>
+			<if test="idCardNo != null">
+				#{idCardNo,jdbcType=VARCHAR},
+			</if>
+			<if test="memberLevel != null">
+				#{memberLevel,jdbcType=TINYINT},
+			</if>
+			<if test="totalScore != null">
+				#{totalScore,jdbcType=INTEGER},
+			</if>
+			<if test="appType != null">
+				#{appType,jdbcType=INTEGER},
+			</if>
+			<if test="updateTime != null">
+				#{updateTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="realUserFlag != null">
+				#{realUserFlag,jdbcType=SMALLINT},
+			</if>
+			<if test="realUserName != null">
+				#{realUserName,jdbcType=VARCHAR},
+			</if>
+			<if test="realIdentifyTime != null">
+				#{realIdentifyTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="provinceId != null">
+				#{provinceId,jdbcType=BIGINT},
+			</if>
+			<if test="cityId != null">
+				#{cityId,jdbcType=BIGINT},
+			</if>
+			<if test="districtId != null">
+				#{districtId,jdbcType=BIGINT},
+			</if>
+			<if test="provinceName != null">
+				#{provinceName,jdbcType=VARCHAR},
+			</if>
+			<if test="cityName != null">
+				#{cityName,jdbcType=VARCHAR},
+			</if>
+			<if test="districtName != null">
+				#{districtName,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<select id="countByExample" parameterType="com.lottery.entity.UserBaseInfoExample"
+		resultType="java.lang.Long">
+		select count(*) from user_base_info
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</select>
+	<update id="updateByExampleSelective" parameterType="map">
+		update user_base_info
+		<set>
+			<if test="record.id != null">
+				id = #{record.id,jdbcType=BIGINT},
+			</if>
+			<if test="record.userCode != null">
+				user_code = #{record.userCode,jdbcType=VARCHAR},
+			</if>
+			<if test="record.phone != null">
+				phone = #{record.phone,jdbcType=VARCHAR},
+			</if>
+			<if test="record.userType != null">
+				user_type = #{record.userType,jdbcType=SMALLINT},
+			</if>
+			<if test="record.email != null">
+				email = #{record.email,jdbcType=VARCHAR},
+			</if>
+			<if test="record.name != null">
+				name = #{record.name,jdbcType=VARCHAR},
+			</if>
+			<if test="record.nickName != null">
+				nick_name = #{record.nickName,jdbcType=VARCHAR},
+			</if>
+			<if test="record.pwd != null">
+				pwd = #{record.pwd,jdbcType=VARCHAR},
+			</if>
+			<if test="record.registerDate != null">
+				register_date = #{record.registerDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.gender != null">
+				gender = #{record.gender,jdbcType=SMALLINT},
+			</if>
+			<if test="record.headImageUrl != null">
+				head_image_url = #{record.headImageUrl,jdbcType=VARCHAR},
+			</if>
+			<if test="record.refererCode != null">
+				referer_code = #{record.refererCode,jdbcType=VARCHAR},
+			</if>
+			<if test="record.status != null">
+				status = #{record.status,jdbcType=SMALLINT},
+			</if>
+			<if test="record.qq != null">
+				qq = #{record.qq,jdbcType=VARCHAR},
+			</if>
+			<if test="record.inviteUserId != null">
+				invite_user_id = #{record.inviteUserId,jdbcType=BIGINT},
+			</if>
+			<if test="record.payPwd != null">
+				pay_pwd = #{record.payPwd,jdbcType=VARCHAR},
+			</if>
+			<if test="record.isEmailAuthed != null">
+				is_email_authed = #{record.isEmailAuthed,jdbcType=SMALLINT},
+			</if>
+			<if test="record.totalMoney != null">
+				total_money = #{record.totalMoney,jdbcType=INTEGER},
+			</if>
+			<if test="record.cashMoneyLeft != null">
+				cash_money_left = #{record.cashMoneyLeft,jdbcType=INTEGER},
+			</if>
+			<if test="record.giftMoneyLeft != null">
+				gift_money_left = #{record.giftMoneyLeft,jdbcType=INTEGER},
+			</if>
+			<if test="record.lockedMoney != null">
+				locked_money = #{record.lockedMoney,jdbcType=INTEGER},
+			</if>
+			<if test="record.coinNum != null">
+				coin_num = #{record.coinNum,jdbcType=INTEGER},
+			</if>
+			<if test="record.notifyFee != null">
+				notify_fee = #{record.notifyFee,jdbcType=INTEGER},
+			</if>
+			<if test="record.smsCode != null">
+				sms_code = #{record.smsCode,jdbcType=VARCHAR},
+			</if>
+			<if test="record.idCardNo != null">
+				id_card_no = #{record.idCardNo,jdbcType=VARCHAR},
+			</if>
+			<if test="record.memberLevel != null">
+				member_level = #{record.memberLevel,jdbcType=TINYINT},
+			</if>
+			<if test="record.totalScore != null">
+				total_score = #{record.totalScore,jdbcType=INTEGER},
+			</if>
+			<if test="record.appType != null">
+				app_type = #{record.appType,jdbcType=INTEGER},
+			</if>
+			<if test="record.updateTime != null">
+				update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.realUserFlag != null">
+				real_user_flag = #{record.realUserFlag,jdbcType=SMALLINT},
+			</if>
+			<if test="record.realUserName != null">
+				real_user_name = #{record.realUserName,jdbcType=VARCHAR},
+			</if>
+			<if test="record.realIdentifyTime != null">
+				real_identify_time = #{record.realIdentifyTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.provinceId != null">
+				province_id = #{record.provinceId,jdbcType=BIGINT},
+			</if>
+			<if test="record.cityId != null">
+				city_id = #{record.cityId,jdbcType=BIGINT},
+			</if>
+			<if test="record.districtId != null">
+				district_id = #{record.districtId,jdbcType=BIGINT},
+			</if>
+			<if test="record.provinceName != null">
+				province_name = #{record.provinceName,jdbcType=VARCHAR},
+			</if>
+			<if test="record.cityName != null">
+				city_name = #{record.cityName,jdbcType=VARCHAR},
+			</if>
+			<if test="record.districtName != null">
+				district_name = #{record.districtName,jdbcType=VARCHAR},
+			</if>
+		</set>
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByExample" parameterType="map">
+		update user_base_info
+		set id = #{record.id,jdbcType=BIGINT},
+		user_code = #{record.userCode,jdbcType=VARCHAR},
+		phone = #{record.phone,jdbcType=VARCHAR},
+		user_type = #{record.userType,jdbcType=SMALLINT},
+		email = #{record.email,jdbcType=VARCHAR},
+		name = #{record.name,jdbcType=VARCHAR},
+		nick_name = #{record.nickName,jdbcType=VARCHAR},
+		pwd = #{record.pwd,jdbcType=VARCHAR},
+		register_date = #{record.registerDate,jdbcType=TIMESTAMP},
+		gender = #{record.gender,jdbcType=SMALLINT},
+		head_image_url = #{record.headImageUrl,jdbcType=VARCHAR},
+		referer_code = #{record.refererCode,jdbcType=VARCHAR},
+		status = #{record.status,jdbcType=SMALLINT},
+		qq = #{record.qq,jdbcType=VARCHAR},
+		invite_user_id = #{record.inviteUserId,jdbcType=BIGINT},
+		pay_pwd = #{record.payPwd,jdbcType=VARCHAR},
+		is_email_authed = #{record.isEmailAuthed,jdbcType=SMALLINT},
+		total_money = #{record.totalMoney,jdbcType=INTEGER},
+		cash_money_left = #{record.cashMoneyLeft,jdbcType=INTEGER},
+		gift_money_left = #{record.giftMoneyLeft,jdbcType=INTEGER},
+		locked_money = #{record.lockedMoney,jdbcType=INTEGER},
+		coin_num = #{record.coinNum,jdbcType=INTEGER},
+		notify_fee = #{record.notifyFee,jdbcType=INTEGER},
+		sms_code = #{record.smsCode,jdbcType=VARCHAR},
+		id_card_no = #{record.idCardNo,jdbcType=VARCHAR},
+		member_level = #{record.memberLevel,jdbcType=TINYINT},
+		total_score = #{record.totalScore,jdbcType=INTEGER},
+		app_type = #{record.appType,jdbcType=INTEGER},
+		update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+		real_user_flag = #{record.realUserFlag,jdbcType=SMALLINT},
+		real_user_name = #{record.realUserName,jdbcType=VARCHAR},
+		real_identify_time = #{record.realIdentifyTime,jdbcType=TIMESTAMP},
+		province_id = #{record.provinceId,jdbcType=BIGINT},
+		city_id = #{record.cityId,jdbcType=BIGINT},
+		district_id = #{record.districtId,jdbcType=BIGINT},
+		province_name = #{record.provinceName,jdbcType=VARCHAR},
+		city_name = #{record.cityName,jdbcType=VARCHAR},
+		district_name = #{record.districtName,jdbcType=VARCHAR}
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByPrimaryKeySelective" parameterType="com.lottery.entity.UserBaseInfo">
+		update user_base_info
+		<set>
+			<if test="userCode != null">
+				user_code = #{userCode,jdbcType=VARCHAR},
+			</if>
+			<if test="phone != null">
+				phone = #{phone,jdbcType=VARCHAR},
+			</if>
+			<if test="userType != null">
+				user_type = #{userType,jdbcType=SMALLINT},
+			</if>
+			<if test="email != null">
+				email = #{email,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="nickName != null">
+				nick_name = #{nickName,jdbcType=VARCHAR},
+			</if>
+			<if test="pwd != null">
+				pwd = #{pwd,jdbcType=VARCHAR},
+			</if>
+			<if test="registerDate != null">
+				register_date = #{registerDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="gender != null">
+				gender = #{gender,jdbcType=SMALLINT},
+			</if>
+			<if test="headImageUrl != null">
+				head_image_url = #{headImageUrl,jdbcType=VARCHAR},
+			</if>
+			<if test="refererCode != null">
+				referer_code = #{refererCode,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				status = #{status,jdbcType=SMALLINT},
+			</if>
+			<if test="qq != null">
+				qq = #{qq,jdbcType=VARCHAR},
+			</if>
+			<if test="inviteUserId != null">
+				invite_user_id = #{inviteUserId,jdbcType=BIGINT},
+			</if>
+			<if test="payPwd != null">
+				pay_pwd = #{payPwd,jdbcType=VARCHAR},
+			</if>
+			<if test="isEmailAuthed != null">
+				is_email_authed = #{isEmailAuthed,jdbcType=SMALLINT},
+			</if>
+			<if test="totalMoney != null">
+				total_money = #{totalMoney,jdbcType=INTEGER},
+			</if>
+			<if test="cashMoneyLeft != null">
+				cash_money_left = #{cashMoneyLeft,jdbcType=INTEGER},
+			</if>
+			<if test="giftMoneyLeft != null">
+				gift_money_left = #{giftMoneyLeft,jdbcType=INTEGER},
+			</if>
+			<if test="lockedMoney != null">
+				locked_money = #{lockedMoney,jdbcType=INTEGER},
+			</if>
+			<if test="coinNum != null">
+				coin_num = #{coinNum,jdbcType=INTEGER},
+			</if>
+			<if test="notifyFee != null">
+				notify_fee = #{notifyFee,jdbcType=INTEGER},
+			</if>
+			<if test="smsCode != null">
+				sms_code = #{smsCode,jdbcType=VARCHAR},
+			</if>
+			<if test="idCardNo != null">
+				id_card_no = #{idCardNo,jdbcType=VARCHAR},
+			</if>
+			<if test="memberLevel != null">
+				member_level = #{memberLevel,jdbcType=TINYINT},
+			</if>
+			<if test="totalScore != null">
+				total_score = #{totalScore,jdbcType=INTEGER},
+			</if>
+			<if test="appType != null">
+				app_type = #{appType,jdbcType=INTEGER},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="realUserFlag != null">
+				real_user_flag = #{realUserFlag,jdbcType=SMALLINT},
+			</if>
+			<if test="realUserName != null">
+				real_user_name = #{realUserName,jdbcType=VARCHAR},
+			</if>
+			<if test="realIdentifyTime != null">
+				real_identify_time = #{realIdentifyTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="provinceId != null">
+				province_id = #{provinceId,jdbcType=BIGINT},
+			</if>
+			<if test="cityId != null">
+				city_id = #{cityId,jdbcType=BIGINT},
+			</if>
+			<if test="districtId != null">
+				district_id = #{districtId,jdbcType=BIGINT},
+			</if>
+			<if test="provinceName != null">
+				province_name = #{provinceName,jdbcType=VARCHAR},
+			</if>
+			<if test="cityName != null">
+				city_name = #{cityName,jdbcType=VARCHAR},
+			</if>
+			<if test="districtName != null">
+				district_name = #{districtName,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.lottery.entity.UserBaseInfo">
+		update user_base_info
+		set user_code = #{userCode,jdbcType=VARCHAR},
+		phone = #{phone,jdbcType=VARCHAR},
+		user_type = #{userType,jdbcType=SMALLINT},
+		email = #{email,jdbcType=VARCHAR},
+		name = #{name,jdbcType=VARCHAR},
+		nick_name = #{nickName,jdbcType=VARCHAR},
+		pwd = #{pwd,jdbcType=VARCHAR},
+		register_date = #{registerDate,jdbcType=TIMESTAMP},
+		gender = #{gender,jdbcType=SMALLINT},
+		head_image_url = #{headImageUrl,jdbcType=VARCHAR},
+		referer_code = #{refererCode,jdbcType=VARCHAR},
+		status = #{status,jdbcType=SMALLINT},
+		qq = #{qq,jdbcType=VARCHAR},
+		invite_user_id = #{inviteUserId,jdbcType=BIGINT},
+		pay_pwd = #{payPwd,jdbcType=VARCHAR},
+		is_email_authed = #{isEmailAuthed,jdbcType=SMALLINT},
+		total_money = #{totalMoney,jdbcType=INTEGER},
+		cash_money_left = #{cashMoneyLeft,jdbcType=INTEGER},
+		gift_money_left = #{giftMoneyLeft,jdbcType=INTEGER},
+		locked_money = #{lockedMoney,jdbcType=INTEGER},
+		coin_num = #{coinNum,jdbcType=INTEGER},
+		notify_fee = #{notifyFee,jdbcType=INTEGER},
+		sms_code = #{smsCode,jdbcType=VARCHAR},
+		id_card_no = #{idCardNo,jdbcType=VARCHAR},
+		member_level = #{memberLevel,jdbcType=TINYINT},
+		total_score = #{totalScore,jdbcType=INTEGER},
+		app_type = #{appType,jdbcType=INTEGER},
+		update_time = #{updateTime,jdbcType=TIMESTAMP},
+		real_user_flag = #{realUserFlag,jdbcType=SMALLINT},
+		real_user_name = #{realUserName,jdbcType=VARCHAR},
+		real_identify_time = #{realIdentifyTime,jdbcType=TIMESTAMP},
+		province_id = #{provinceId,jdbcType=BIGINT},
+		city_id = #{cityId,jdbcType=BIGINT},
+		district_id = #{districtId,jdbcType=BIGINT},
+		province_name = #{provinceName,jdbcType=VARCHAR},
+		city_name = #{cityName,jdbcType=VARCHAR},
+		district_name = #{districtName,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+</mapper>

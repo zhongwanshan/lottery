@@ -1,0 +1,113 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="/app/view/me.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">我的账户</div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="account-account">
+    <div id="js-account" class="page-content">
+        <div id="mescroll" class="mescroll">
+            <div class="userBlock">
+                <div class="accoutType">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="item accountInfo">
+                                        <p class="txt">
+                                            <span class="title">总余额</span>
+                                            <span class="money" v-text="userInfo.totalMoney+'元'"></span>
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 33.333%; text-align: center; padding: 5px 0;">
+                                    <p style="padding: 5px; font-size: 14px;margin: 0;">提现余额</p>
+                                    <p v-text="userInfo.cashMoneyLeft + ' 元'" style="padding: 0;margin: 0;"></p>
+                                </td>
+                                <td style="width: 33.333%; text-align: center; padding: 5px 0;">
+                                    <p style="padding: 5px; font-size: 14px;margin: 0;">赠送余额</p>
+                                    <p v-text="userInfo.giftMoneyLeft + ' 元'" style="padding: 0;margin: 0;"></p>
+                                </td>
+                                <td style="width: 33.333%; text-align: center; padding: 5px 0;">
+                                    <p style="padding: 5px; font-size: 14px;margin: 0;">冻结金额</p>
+                                    <p v-text="userInfo.lockedMoney + ' 元'" style="padding: 0;margin: 0;"></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="accoutType">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="width: 50%;">
+                                    <a href="/app/view/account/deposit.html" class="item">
+                                        <p class="img">
+                                            <img src="img/icon/deposit.png" />
+                                        </p>
+                                        <p class="txt">
+                                            <span class="title">提现</span>
+                                            <span class="statu">最快5分钟到账</span>
+                                        </p>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/app/view/account/recharge.html" class="item">
+                                        <p class="img">
+                                            <img src="img/icon/recharge.png" />
+                                        </p>
+                                        <p class="txt">
+                                            <span class="title">充值</span>
+                                            <span class="statu">快速充值</span>
+                                        </p>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="hTitle accountTitle">
+                    <span>账单明细</span>
+                    <select v-model="transInfo.transType" @change="getWalletTransList">
+                        <option value="">全部</option>
+                        <template v-for="item in transType">
+                            <template v-if="item.id!=2&&item.id!=7&&item.id!=8&&item.id!=9&&item.id!=11&&item.id!=12&&item.id!=13">
+                                <option :value="item.id" v-text="item.name"></option>
+                            </template>
+                        </template>
+                    </select>
+                </p>
+
+                <div class="listBlock">
+                    <table>
+                        <tbody>
+                            <template v-for="item in walletTransList">
+                                <tr>
+                                    <td>
+                                        <span v-text="item.actionTime"></span>
+                                        <span v-text="item.transTypeName"></span>
+                                    </td>
+                                    <td>
+                                        <span v-text="item.orderCode"></span>
+                                        <span v-text="item.type"></span>
+                                    </td>
+                                    <td>
+                                        <span v-text="item.transMoneyStr" :style="{color: item.transMoneyStr<0?'#e51f42':'#41d494'}"></span>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

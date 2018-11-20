@@ -1,0 +1,22 @@
+// 求组合
+    utility.getCombination = function(n,m) {
+        return utility.getFactorial(n)/(utility.getFactorial(m)*utility.getFactorial(n-m));
+    };
+
+    // 求阶乘
+    utility.getFactorial = function (num) {
+        if (num < 0) {
+            return -1;
+        } else if (num === 0 || num === 1) {
+            return 1;
+        } else {
+            for (var i = num - 1; i >= 1; i--) {
+                num *= i;
+            }
+        }
+        return num;
+    };
+
+
+https://blog.csdn.net/ajian005/article/details/22265507
+

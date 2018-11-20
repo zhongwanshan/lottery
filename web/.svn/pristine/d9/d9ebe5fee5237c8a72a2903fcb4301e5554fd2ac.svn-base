@@ -1,0 +1,40 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="../index.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">提现历史</div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="account-depHistory">
+    <div id="js-pageDepositHistory" class="page-content">
+        <div id="mescroll" class="mescroll listBlock">
+            <table>
+                <tbody>
+                    <template v-for="item in historyList">
+                        <tr>
+                            <td>
+                                <span v-text="item.rechargeTime.split(' ')[0]"></span>
+                                <span v-text="item.rechargeTime.split(' ')[1]"></span>
+                            </td>
+                            <td>
+                                <span v-text="item.rechargePolicyName"></span>
+                                <span v-text="rechargeType['type'+item.payPlatformId]+item.rechargeMoney+'元'"></span>
+                                <span v-text="'单号:'+item.rechargeOrderCode"></span>
+                            </td>
+                            <td>
+                                <span v-text="rechargeStatu['statu'+item.resultStatus]"></span>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            <template v-if="historyList.length==0">
+                <p class="noData">暂无数据</p>
+            </template>
+        </div>
+    </div>
+</div>

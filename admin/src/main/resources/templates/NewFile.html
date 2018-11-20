@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" content="text/html">
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+    <title>left</title>
+    <style type="text/css">
+        ul{list-style-type:none;}
+        #tree a:link{text-decoration:none;}
+    </style>
+</head>
+<body>
+<div id="tree">
+<ul class="menu">
+    <li><a href="#">个人报表</a>
+        <ul>
+            <li><a href="#">文件一</a>
+            </li>
+            <li><a href="#">文件二</a>
+
+            </li>
+            <li><a href="#">文件三</a>
+
+            </li>
+        </ul>
+    </li>
+</ul>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".menu ul").css("display","none");    //文件准备好后，ul的样式为隐藏
+        $(".menu a").on("click",function(){       //点击a的时候就执行以下函数
+            $(this).next().toggle();                      //toggle提供为隐藏和显示相互转换的方法    意思是点击的这个 元素的下一个元素是显示的话就隐藏，是隐藏的话就显示
+        })
+    })
+</script>
+</body>
+</html>

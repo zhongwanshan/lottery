@@ -1,0 +1,1902 @@
+// 统一定义颜色
+@mainColor: #6F00BD;
+@color1: #e9e9e9;
+@color2: #a59faa;
+@color3: #9e9e9e;
+@color5: #41d494;
+@color6: #ff5f5f;
+@color7: #e51f42;
+@color8: #575cea;
+@color9: #9962C0;
+@color10: #695BFA;
+@colorddd: #dddddd;
+@color333: #333333;
+@colorF1: #f1f1f1;
+@colorF3: #F3F3F3;
+@colorb2: #b2b2b2; 
+@colord8: #d8e8fb;
+@colord9: #f3f8fe;
+@colortip: #fffaed;
+// 统一定义字体
+@font12: 12px;
+@font13: 13px;
+@font14: 14px;
+@font16: 16px;
+@font18: 18px;
+@font20: 20px;
+@font24: 24px;
+// 统一定义宽,高
+@maxWidth: 1000px;
+// 覆盖 Flat ui 样式 
+.btn-sm {
+    padding: 5px 13px;
+    font-size: @font13;
+}
+
+.center() {
+    position: relative;
+    z-index: 0;
+    width: @maxWidth;
+    margin: 0 auto;
+}
+
+.clear {
+    display: block;
+    clear: both;
+}
+
+body {
+    font-family: "微软雅黑", sans-serif;
+    background-color: @colorF3;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+a {
+    cursor: pointer;
+}
+
+// 工具类
+.circle {
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    color: @color7;
+    text-align: center;
+    font-size: @font14;
+    cursor: pointer;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 120%, #D2D2D2, #EFEFEF 10%, #ECEAEA 80%, #D0CECE 100%);
+    margin-right: 5px;
+    input {
+        position: absolute;
+        z-index: 10;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        opacity: 0;
+        left: 0;
+        cursor: pointer;
+    }
+    &.blueBall {
+        color: @color10;
+    }
+    &.active {
+        &.redBall {
+            color: white;
+            background: radial-gradient(circle at 50% 120%, #F99D9D, #E69898 10%, #EA4F4F 80%, #E8A2A2 100%);
+        }
+        &.blueBall {
+            color: white;
+            background: radial-gradient(circle at 50% 120%, #2761B7, #85ACE8 10%, #075CDC 80%, #1950A2 100%);
+        }
+    }
+}
+
+// logo 组件
+.c-logo {
+    .img {
+        width: 170px;
+        height: 60px;
+        margin: 0;
+        padding: 0;
+        text-indent: -100000000rem;
+        background: url(/assets/img/logo.png) no-repeat center center;
+    }
+}
+
+// 搜索组件
+.c-search {
+    display: none;
+    position: relative;
+    z-index: 0;
+    width: 360px;
+    input {
+        width: 100%;
+        height: 38px;
+        padding: 0 30px;
+        border: 1px solid @mainColor;
+        border-radius: 20px;
+        font-size: @font14;
+    }
+    button {
+        position: absolute;
+        z-index: 100;
+        right: 0;
+        top: 0;
+        width: 60px;
+        height: 38px;
+        text-align: center;
+        border-radius: 0 20px 20px 0;
+        background-color: @mainColor;
+        border: none;
+        font-size: @font13;
+        color: white;
+    }
+}
+
+// 用户信息组件
+.c-info {
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
+    padding: 0 15px;
+    background-color: @color1;
+    a {
+        float: left;
+        color: @color333;
+        padding: 7px;
+        font-size: @font13;
+        i {
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            margin-right: 5px;
+            border-radius: 50%;
+            background-color: @mainColor;
+        }
+    }
+}
+
+.c-menu {
+    display: none;
+    background-color: white;
+    border: 1px solid @color9;
+    line-height: 1.8;
+    .mMenu {
+        a {
+            display: block;
+            padding: 8px 6px;
+            text-align: left;
+            color: @color333;
+            font-size: @font16;
+            border-bottom: 1px solid @color3;
+            img {
+                width: 35px;
+                height: 35px;
+                margin-right: 10px;
+            }
+            span {
+                padding-left: 10px;
+                font-size: @font14;
+                color: @color2;
+            }
+        }
+    }
+    .menulist {
+        padding: 5px 10px;
+        table {
+            width: 100%;
+            .title {
+                width: 30px;
+                text-align: center;
+                vertical-align: middle;
+                font-size: @font16;
+                background-color: @colorddd;
+                padding: 10px 0;
+                color: @color333;
+            }
+            .item {
+                padding: 0 10px;
+                vertical-align: top;
+                &.item-b {
+                    a {
+                        float: none;
+                        display: block;
+                        width: 100%;
+                    }
+                }
+                a {
+                    float: left;
+                    width: 45%;
+                    padding: 3px 0;
+                    color: @color333;
+                    font-size: @font14;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+// 导航组件
+.c-nav {
+    height: 50px;
+    line-height: 50px;
+    .navlist {
+        width: @maxWidth;
+        margin: 0 auto;
+        .navItem {
+            float: left;
+            height: 50px;
+            line-height: 50px;
+            padding: 0 30px;
+            color: white;
+            font-size: @font16;
+            &:nth-child(5) {
+                display: none;
+            }
+            &:nth-child(6) {
+                display: none;
+            }
+            &:nth-child(7) {
+                display: none;
+            }
+            &.selectMenu {
+                position: relative;
+                z-index: 0;
+                background-color: @color10;
+                width: 150px;
+                text-align: center;
+                cursor: pointer;
+                &:hover {
+                    background-color: lighten(@color10, 10%);
+                    color: white;
+                    .c-menu {
+                        a {
+                            color: @color333;
+                        }
+                    }
+                }
+                .c-menu {
+                    position: absolute;
+                    z-index: 100;
+                    left: 0;
+                    top: 50px;
+                    width: 259px;
+                    height: 360px;
+                }
+            }
+            &:hover,
+            &.active {
+                background-color: @color8;
+                color: white;
+            }
+        }
+    }
+}
+
+// 头部模块，包住logo组件，搜索组件，用户信息组件
+.header {
+    background-color: white;
+    .center;
+    padding: 5px 0 5px;
+    overflow: hidden;
+    .c-logo {
+        float: left;
+    }
+    .c-search {
+        float: right;
+    }
+    .c-info {
+        position: absolute;
+        z-index: 10;
+        right: 0;
+        top: 0;
+    }
+}
+
+.headerWrap {
+    background-color: white;
+}
+
+.navigation {
+    position: relative;
+    z-index: 100;
+    background: url(../img/navLine.png) repeat-x left center;
+    .c-nav {
+        .center;
+    }
+}
+
+.bannerWrap {
+    height: 360px;
+    background-color: @color8;
+    .c-banner {
+        .center;
+        position: relative;
+        z-index: 0;
+        img {
+            width: 100%;
+            height: 360px;
+        }
+    }
+}
+
+.c-box {
+    // border: 1px solid @color1;
+    &.c-box--min {
+        .title {
+            background-color: @colord8;
+            height: 30px;
+            line-height: 30px;
+            color: @color333;
+            a {
+                color: @color333;
+            }
+        }
+    }
+    .title {
+        height: 48px;
+        line-height: 48px;
+        background-color: @color8;
+        color: white;
+        font-size: @font14;
+        padding-left: 10px;
+        a {
+            float: right;
+            margin-right: 20px;
+            color: white;
+        }
+        .subTab {
+            padding-left: 52px;
+            ul {
+                overflow: hidden;
+                li {
+                    float: left;
+                    list-style: none;
+                    cursor: pointer;
+                    span {
+                        display: block;
+                        font-size: @font12;
+                        padding: 0 15px;
+                    }
+                    &.active {
+                        background-color: white;
+                        color: @color333;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main {
+    min-height: 500px;
+    background-color: white;
+    overflow: hidden;
+    .center;
+    .recomend {
+        margin-bottom: 10px;
+        &.c-box {
+            .content {
+                table {
+                    width: 100%;
+                    tr {
+                        td {
+                            padding: 30px 20px 20px 20px;
+                            border: 1px solid @color1;
+                        }
+                    }
+                    .item {
+                        text-align: center;
+                        .img {
+                            img {
+                                width: 60px;
+                                height: 60px;
+                            }
+                            span {
+                                padding-left: 20px;
+                            }
+                        }
+                        .action {
+                            padding: 10px 20px;
+                            a {
+                                color: white;
+                            }
+                        }
+                        .info {
+                            margin: 0;
+                            padding: 0;
+                            font-size: @font14;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .prizeInfo {
+        margin-bottom: 10px;
+        border: 1px solid @color1;
+        &.c-box {
+            table {
+                width: 100%;
+                tr {
+                    &:nth-child(2n+1) {
+                        background-color: @colord8;
+                    }
+                    &:first-child {
+                        td {
+                            padding: 10px;
+                        }
+                    }
+                    td {
+                        padding: 5px 10px;
+                        font-size: @font13;
+                        a {
+                            &.btn {
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .matchInfo {
+        border: 1px solid @color1;
+        &.c-box {
+            &.buyMatch {
+                margin-top: 10px;
+                // border-top: 5px solid @colord8;
+                .content {
+                    .detail {
+                        width: 100%;
+                        margin: 0;
+                        .info {
+                            table {
+                                thead {
+                                    tr {
+                                        th {
+                                            padding: 3px 0;
+                                            font-size: @font13;
+                                            color: white;
+                                            background-color: @color10;
+                                            padding: 8px 0;
+                                            p {
+                                                font-size: @font13;
+                                                margin: 0;
+                                                padding: 0;
+                                                overflow: hidden; 
+                                            }
+                                        }
+                                    }
+                                }
+                                tbody {
+                                    tr {
+                                        &:nth-child(2n) {
+                                            background-color: white;
+                                        }
+                                        td {
+                                            padding: 2px;
+                                            label {
+                                                position: relative;
+                                                z-index: 0;
+                                                margin: 0;
+                                                font-size: @font13;
+                                                cursor: pointer;
+                                                background-color: @colord8;
+                                                color: @color333;
+                                                box-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
+                                                span {
+                                                    &.teams {
+                                                        padding-left: 30px;
+                                                    }
+                                                }
+                                                input {
+                                                    position: absolute;
+                                                    z-index: 10;
+                                                    left: 0;
+                                                    right: 0;
+                                                    top: 0;
+                                                    bottom: 0;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    opacity: 0;
+                                                    cursor: pointer;
+                                                }
+                                                .isShow {
+                                                    float: right;
+                                                    margin-right: 20px;
+                                                    color: @color6;
+                                                    font-size: @font12;
+                                                }
+                                                &.active {
+                                                    border-radius: 3px;
+                                                    color: white;
+                                                    background-color: @color6;
+                                                    box-shadow: 1px 1px 4px rgba(0, 0, 0, .5);
+                                                }
+                                            }
+                                            .matchName {
+                                                display: inline-block;
+                                                min-width: 80px;
+                                                text-align: center;
+                                                padding: 2px 5px;
+                                                color: white;
+                                                background-color: @mainColor;
+                                            }
+                                            &.teanInfo {
+                                                margin: 0;
+                                                font-size: @font12;
+                                                text-align: left;
+                                                padding: 5px 0 5px 20px;
+                                                cursor: pointer;
+                                                p {
+                                                    position: relative;
+                                                    z-index: 0;
+                                                    left: -15px;
+                                                    text-align: center;
+                                                }
+                                            }
+                                            &.check {
+                                                label {
+                                                    display: block;
+                                                    margin: 0 1px;
+                                                    background-color: @colord8;
+                                                    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+                                                }
+                                            }
+                                            .scoreWrap {
+                                                padding-left: 50px;
+                                                .scoreDiff {
+                                                    float: left;
+                                                    width: 33.333333333%;
+                                                    padding-left: 0;
+                                                    .scoreDiffTitle {
+                                                        text-align: center;
+                                                    }
+                                                    p {
+                                                        span {
+                                                            width: 45%;
+                                                            &.label {
+                                                                padding: 0;
+                                                            }
+                                                        }
+                                                        label {
+                                                            width: 45%;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            .scoreDiff {
+                                                width: 100%;
+                                                float: left;
+                                                padding: 5px;
+                                                padding-left: 50px; // background-color: @colortip;
+                                                .scoreDiffTitle {
+                                                    background-color: @color2;
+                                                    color: white;
+                                                    text-align: left;
+                                                    padding-left: 20px;
+                                                }
+                                                p {
+                                                    padding: 5px 0;
+                                                    margin: 0;
+                                                    overflow: hidden;
+                                                    font-size: @font12;
+                                                    span {
+                                                        float: left;
+                                                        width: 13.2857%;
+                                                        background-color: @color1;
+                                                        margin: 0 1px;
+                                                        padding: 5px 0;
+                                                        &.label {
+                                                            background-color: @color8;
+                                                            color: white;
+                                                        }
+                                                    }
+                                                    label {
+                                                        float: left;
+                                                        width: 13.2857%;
+                                                        margin: 0 1px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        &.time {
+                                            background-color: @colortip;
+                                            td {
+                                                text-align: left;
+                                                padding: 5px;
+                                                font-size: @font14;
+                                                border-bottom-color: @color6;
+                                                span {
+                                                    color: @color7;
+                                                    padding: 0 10px;
+                                                    font-size: @font16;
+                                                }
+                                            }
+                                        }
+                                        &.moreList {
+                                            background-color: @colord9;
+                                            span {
+                                                display: block;
+                                                font-size: @font12;
+                                                line-height: 1.5;
+                                                &.dangGu {
+                                                    background-color: @color8;
+                                                    padding: 1px 10px;
+                                                    color: white;
+                                                    width: 75%;
+                                                    margin: 0 auto;
+                                                    font-size: @font12;
+                                                }
+                                                i {
+                                                    font-style: normal;
+                                                    font-size: @font14;
+                                                    font-weight: bold;
+                                                    &.pNumber {
+                                                        color: @color7;
+                                                    }
+                                                    &.nNumber {
+                                                        color: @color5;
+                                                    }
+                                                }
+                                            }
+                                            td {
+                                                .item {
+                                                    text-align: center;
+                                                    overflow: hidden;
+                                                    padding: 3px 0;
+                                                    label {
+                                                        float: left;
+                                                        width: 6.5%;
+                                                        margin: 0 2px;
+                                                        padding: 0;
+                                                        &.label {
+                                                            padding: 3px 0;
+                                                            background-color: white;
+                                                        }
+                                                    }
+                                                    &.itemOther {
+                                                        label {
+                                                            width: 30%;
+                                                        }
+                                                        i {
+                                                            display: inline-block;
+                                                            text-align: left;
+                                                            &:nth-child(1) {
+                                                                width: 70%;
+                                                            }
+                                                            &::nth-child(2) {
+                                                                width: 30%;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .content {
+                background-color: @colord8;
+                overflow: hidden;
+                .matchTab {
+                    float: left;
+                    width: 130px;
+                    padding-top: 20px;
+                    p {
+                        overflow: hidden;
+                        margin: 0 0 5px 0;
+                        padding: 0;
+                        &.active {
+                            span {
+                                background-color: white;
+                                color: @color333;
+                            }
+                        }
+                        span {
+                            float: right;
+                            width: 130px;
+                            height: 48px;
+                            line-height: 48px;
+                            border-radius: 10px 0 0 10px;
+                            background-color: @color8;
+                            color: white;
+                            text-indent: 20px;
+                            font-size: @font14;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .detail {
+                    background-color: white;
+                    margin-left: 130px;
+                    .search {
+                        padding: 10px;
+                        select {
+                            width: 150px;
+                            height: 24px;
+                            line-height: 24px;
+                            margin-right: 10px;
+                        }
+                        span {
+                            font-size: @font14;
+                            color: @color333;
+                        }
+                        a {
+                            float: right;
+                            color: white;
+                        }
+                        .btn {
+                            margin: 0 .5rem;
+                        }
+                    }
+                    .info {
+                        table {
+                            width: 100%;
+                            font-size: @font12;
+                            td,
+                            th {
+                                border: 1px solid @color1;
+                                text-align: center;
+                                padding: 5px 0;
+                            }
+                            thead {
+                                tr {
+                                    th {
+                                        background-color: @colorF1;
+                                        font-weight: normal;
+                                        box-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+                                    }
+                                }
+                            }
+                            tbody {
+                                tr {
+                                    &:nth-child(2n) {
+                                        background-color: @colorF1;
+                                    }
+                                    p {
+                                        font-size: @font12;
+                                        padding: 0 3px;
+                                        margin: 0;
+                                    }
+                                    .trMatch {
+                                        text-align: left;
+                                        .num {
+                                            display: inline-block;
+                                            margin: 0 .2rem;
+                                            padding: .25rem;
+                                            background-color: @color5;
+                                            color: white;
+                                            font-size: @font14;
+                                        }
+                                    }
+                                    .matchName {
+                                        display: inline-block;
+                                        min-width: 80px;
+                                        text-align: center;
+                                        padding: 2px 5px;
+                                        color: white;
+                                        background-color: @mainColor;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .bottom {
+                .resultMatch {
+                    font-size: @font13;
+                    color: @color333;
+                    .cgType {
+                        padding: 20px;
+                        background-color: @colorF3;
+                        overflow: hidden;
+                        li {
+                            list-style: none;
+                            float: left;
+                        }
+                    }
+                    .buyAction {
+                        padding: 20px 20px 50px 20px;
+                        .matchSelect {
+                            font-size: @font18;
+                            text-align: right;
+                            strong {
+                                color: @color9;
+                            }
+                            input {
+                                width: 100px;
+                                margin: 0 5px;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .detailMainInfo {
+        float: left;
+        width: 75%;
+        margin-top: 20px;
+        border: 1px solid @color1;
+        font-size: @font13;
+        .gd115PrizeList {
+            background-color: @colorF1;
+            table {
+                width: 100%;
+                td,
+                th {
+                    text-align: center;
+                    padding: 5px 0;
+                    span {
+                        width: 22px;
+                        height: 22px;
+                        line-height: 22px;
+                        font-size: 12px;
+                    }
+                }
+                thead {
+                    th {
+                        background-color: @colord9;
+                        border-bottom: 1px solid @color1;
+                    }
+                }
+            }
+        }
+        .img {
+            padding: 10px 20px;
+            img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+        .info {
+            overflow: hidden;
+            padding-bottom: 20px;
+            .detail {
+                float: left;
+                width: 50%;
+                p {
+                    margin: 0;
+                    font-size: @font14;
+                    padding-left: 20px;
+                    line-height: 2;
+                    &.circleWrap {
+                        margin: 5px 0;
+                        span {
+                            position: relative;
+                            z-index: 0;
+                            top: 10px;
+                        }
+                    }
+                    strong {
+                        font-weight: normal;
+                        color: @color7;
+                        padding-right: 10px;
+                    }
+                }
+            }
+            .prizeList {
+                float: right;
+                width: 40%;
+                margin-right: 5%;
+                table {
+                    width: 100%;
+                    td,
+                    th {
+                        border: 1px solid @colord8;
+                        padding: 5px;
+                        text-align: center;
+                    }
+                    thead {
+                        th {
+                            background-color: @colorF1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .detailSubInfo {
+        float: right;
+        width: 23%;
+        margin-top: 20px;
+        border: 1px solid @color1;
+        background-color: @colord9;
+        font-size: @font13;
+        p {
+            margin: 0;
+            padding: 10px 10px 0 10px;
+            font-size: @font14;
+        }
+        .periods {
+            color: @color7;
+        }
+        .prizeDate {}
+        .prizeResult {
+            .circle {
+                width: 22px;
+                height: 22px;
+                line-height: 22px;
+                font-size: @font12;
+            }
+        }
+        .prizeList {
+            width: 100%;
+            td,
+            th {
+                border: 1px solid @color1;
+                padding: 5px;
+                text-align: center;
+            }
+            thead {
+                th {
+                    background-color: @colord8;
+                }
+            }
+        }
+    }
+    .cmsWrap {
+        .cmsHeader {
+            text-align: center;
+            h2 {
+                font-size: @font18;
+            }
+            p {
+                font-size: @font13;
+                span {
+                    padding: 0 20px;
+                }
+            }
+        }
+        .cmsDetail {
+            padding: 20px 30px;
+        }
+        .cmsList {
+            a {
+                display: block;
+                padding: 10px;
+                color: @color333;
+                font-size: @font14;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        } 
+    }
+}
+
+.tabType {
+    overflow: hidden;
+    border-bottom: 3px solid @color7;
+    padding: 20px 20px 0 20px;
+    .sign {
+        float: left;
+        width: 100px;
+        img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+    .tabbox {
+        position: relative;
+        z-index: 0;
+        left: -20px;
+        padding-left: 100px;
+        .info {
+            overflow: hidden;
+            h2 {
+                float: left;
+                margin: 0;
+                font-size: @font20;
+            }
+            p {
+                float: left;
+                font-size: @font13;
+                color: @color3;
+                padding-left: 10px;
+                &.tips {
+                    strong {
+                        color: @color7;
+                        padding: 0 5px;
+                    }
+                    .tipInfo {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+        .tabs {
+            position: relative;
+            z-index: 0;
+            .matchTip {
+                position: absolute;
+                z-index: 10;
+                top: 5px;
+                right: 0;
+                font-size: @font12;
+                color: @color2;
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                border-bottom: none;
+                &.longer {
+                    li {
+                        padding: 5px 10px;
+                    }
+                }
+                li {
+                    float: left;
+                    padding: 5px 25px;
+                    font-size: @font14;
+                    list-style: none;
+                    border: 1px solid @color1;
+                    border-bottom: none;
+                    cursor: pointer;
+                    &:first-child {
+                        border-right: none;
+                    }
+                    &.active {
+                        border-color: @color1;
+                        background-color: @color7;
+                        color: white;
+                    }
+                }
+            }
+            .tipInfo {
+                position: absolute;
+                z-index: 10;
+                right: 0;
+                top: 10px;
+                font-size: @font13;
+                color: @color7;
+            }
+        }
+    }
+}
+
+.buyDigital {
+    padding: 20px;
+    overflow: hidden;
+    &.sigleList {
+        .ballList {
+            margin-bottom: 5px;
+            &.dangList {
+                padding-top: 5px;
+            }
+        }
+    }
+    .ballList {
+        margin-bottom: 10px;
+        &.dangList {
+            .clear;
+            padding-top: 10px;
+            width: 100%;
+            .tips {
+                strong {
+                    color: @color7;
+                }
+            }
+            &.sumValue {
+                padding: 0 85px;
+                .circle {
+                    margin: 5px;
+                }
+            }
+        }
+        &.redList {
+            float: left;
+            width: 60%;
+            .tips {
+                strong {
+                    color: @color7;
+                }
+            }
+        }
+        &.blueList {
+            float: right;
+            width: 35%;
+            .tips {
+                strong {
+                    color: @color8;
+                }
+            }
+        }
+        .select {
+            padding: 20px 10px;
+            text-align: right;
+            select {
+                width: 100px;
+                padding: 5px 0;
+            }
+            .btn {
+                font-size: @font13;
+                padding: 4px 10px;
+            }
+        }
+        .circleList {
+            .label {
+                position: relative;
+                z-index: 0;
+                padding: 0 30px 0 100px;
+                top: -10px;
+            }
+            .btn {
+                position: relative;
+                z-index: 0;
+                top: -15px;
+                padding: 5px;
+                font-size: @font13;
+            }
+        }
+        .checkGroup {
+            text-align: center;
+            padding: 10px;
+            span {
+                padding: 0 20px;
+            }
+        }
+        .tips {
+            font-size: @font14;
+            color: @color2;
+            strong {
+                padding: 0 10px;
+            }
+        }
+    }
+    .buyResult {
+        .clear;
+        text-align: center;
+        font-size: @font14;
+        span {
+            padding: 0 5px;
+            &.red {
+                color: @color7;
+            }
+            &.blue {
+                color: @color8;
+            }
+        }
+        strong {
+            padding: 0 5px;
+        }
+    }
+    .confirmNum {
+        width: 30%;
+        margin: 20px auto;
+        .btn,
+        .btn-link {
+            cursor: pointer;
+        }
+    }
+    .resultWrap {
+        width: 70%;
+        margin: 0 auto;
+        overflow: hidden;
+        .list {
+            float: left;
+            width: 75%;
+            border: 1px solid @color3;
+            height: 150px;
+            overflow: auto;
+            table {
+                width: 100%;
+                tr {
+                    &:last-child {
+                        td {
+                            border: none;
+                        }
+                    }
+                    td {
+                        text-align: center;
+                        font-size: @font13;
+                        border-bottom: 1px solid @color1;
+                        &.red {
+                            color: @color7;
+                        }
+                        &.blue {
+                            color: @color8;
+                        }
+                        .btn {
+                            font-size: @font12;
+                        }
+                    }
+                }
+            }
+        }
+        .otherAction {
+            float: right;
+            width: 20%;
+            .btn {
+                padding: 4px 10px;
+                font-size: @font12;
+            }
+        }
+    }
+    .otherResult {
+        margin: 20px 0;
+        text-align: center;
+        strong {
+            color: @color7;
+            padding: 0 5px;
+        }
+        span {
+            padding: 5px 10px;
+            border: 1px solid @color10;
+            background-color: @color10;
+            color: white;
+            cursor: pointer;
+        }
+        input {
+            width: 50px;
+            text-align: center;
+        }
+        .ultipleNumAction {
+            cursor: pointer;
+        }
+    }
+    .doAction {
+        text-align: center;
+    }
+    .groupWrap {
+        text-align: center;
+        label {
+            padding: 0 10px;
+        }
+    }
+}
+
+.inputWrap {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 10px;
+    table {
+        position: relative;
+        z-index: 0;
+        left: -100px;
+        width: 100%;
+        tbody {
+            tr {
+                td {
+                    h2 {
+                        font-size: @font20;
+                        text-align: center;
+                    }
+                    p {
+                        position: relative;
+                        z-index: 0;
+                        input {
+                            font-size: @font14;
+                            width: 100%;
+                            border-radius: 3px;
+                            padding: 6px 0;
+                            border: 1px solid @color3;
+                            text-indent: 20px;
+                        }
+                        .request {
+                            position: absolute;
+                            z-index: 100;
+                            right: 10px;
+                            top: 10px;
+                            color: @color7;
+                            font-size: @font16;
+                        }
+                        &.head {
+                            span {
+                                display: inline-block;
+                            }
+                            .btn {
+                                padding: 5px 10px;
+                            }
+                        }
+                        &.remember {
+                            label {
+                                display: block;
+                                font-size: @font14;
+                                input {
+                                    position: relative;
+                                    z-index: 0;
+                                    top: 5px;
+                                    width: 20px;
+                                    height: 20px;
+                                }
+                                a {
+                                    color: @color10;
+                                }
+                            }
+                        }
+                        &.label {
+                            padding-right: 10px;
+                            text-align: right;
+                            font-size: @font14;
+                        }
+                        &.action {
+                            text-align: center;
+                            .btn {
+                                padding-left: 40px;
+                                padding-right: 40px;
+                            }
+                        }
+                        .validate {
+                            position: absolute;
+                            z-index: 100;
+                            right: 0;
+                            top: 0;
+                            bottom: 0;
+                            width: 100px;
+                            height: 100%;
+                            font-size: @font13;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bread {
+    .center;
+    p {
+        margin: 0;
+        padding: 10px 0;
+        font-size: @font13;
+    }
+}
+
+.slider {
+    float: left;
+    width: 20%;
+    p {
+        margin: 0;
+        padding: 0;
+        font-size: @font14;
+        line-height: 1.5;
+    }
+    .userInfo {
+        padding: 10px 0 10px 10px;
+        p {
+            span {
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border: 2px solid white;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .accountInfo {
+        p {
+            padding-left: 10px;
+            margin: 5px 0;
+            &.account {
+                padding-left: 20px;
+            }
+            strong {
+                color: @color7;
+            }
+            .btn {
+                margin: 0 5px;
+                padding: 5px 15px;
+                font-size: @font13;
+            }
+        }
+    }
+    .menuInfo {
+        padding: 10px 0;
+        border-bottom: 1px solid @color1;
+        p {
+            padding: 5px 20px;
+            &.label {
+                display: block;
+                background-color: white;
+                text-align: left;
+                color: @color10;
+            }
+            &.item {
+                padding-left: 40px;
+                a {
+                    color: @color333;
+                }
+                &.active {
+                    background-color: @colord9;
+                }
+            }
+        }
+    }
+}
+
+.contentWrap {
+    margin-left: 20%;
+    border-left: 10px solid @colorF3;
+    min-height: 600px;
+    .inputWrap {
+        padding-top: 20px;
+        &.blockInput {
+            width: 90%;
+            table {
+                left: 0;
+                td {
+                    p {
+                        span {
+                            display: block;
+                            text-align: center;
+                            font-size: @font14;
+                        }
+                        .done {
+                            color: @mainColor;
+                        }
+                        .fail {
+                            color: @color7;
+                        }
+                        .btn {
+                            color: white;
+                            font-size: @font14;
+                            width: 100px;
+                            padding: 5px 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .infoTable {
+        .tabType {
+            padding: 0;
+            .tabbox {
+                left: 0;
+                padding-left: 0;
+            }
+        }
+        .searc {
+            padding: 10px 20px;
+            select {
+                width: 150px;
+                height: 32px;
+            }
+        }
+        table {
+            width: 100%;
+            border: none;
+            margin: 0;
+            td,
+            th {
+                padding: 10px;
+                font-size: @font14;
+                p {
+                    font-size: @font12;
+                    margin: 0;
+                    .btn {
+                        padding: 3px 5px;
+                        font-size: @font12;
+                        color: white;
+                    }
+                }
+            }
+            thead {
+                tr {
+                    th {
+                        background-color: @colord8;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    &:nth-child(2n) {
+                        background-color: @colord9;
+                    }
+                }
+            }
+        }
+        .pagination {
+            overflow: hidden;
+            display: block;
+            margin: 0;
+            padding: 20px;
+            ul {
+                float: right;
+            }
+        }
+    }
+    .moneyCheck {
+        overflow: hidden;
+        padding: 15px 150px 15px 150px;
+        button {
+            position: relative;
+            z-index: 0;
+            width: 100px;
+            height: 36px;
+            line-height: 32px;
+            border: 1px solid @colorb2;
+            margin: 0 5px;
+            background-color: transparent;
+            border-radius: 5px;
+            font-size: @font16;
+            cursor: pointer;
+            &.active {
+                border-color: @mainColor;
+                background-color: @mainColor;
+                color: white;
+            }
+            input {
+                position: absolute;
+                z-index: 100;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                cursor: pointer;
+            }
+        }
+    }
+    .moneyInput {
+        padding: 15px 150px 15px 150px;
+        font-size: @font14;
+        input {
+            width: 250px;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 5px;
+            border: 1px solid @colorb2;
+            margin-right: 10px;
+            text-indent: 20px;
+        }
+    }
+    .payType {
+        overflow: hidden;
+        padding: 15px 150px 15px 150px;
+        label {
+            float: left;
+            margin: 10px;
+            input {
+                position: relative;
+                z-index: 0;
+                margin-right: 5px;
+            }
+            img {
+                width: 100px;
+                height: 42px;
+            }
+        }
+    }
+    .discount {
+        padding: 15px 150px 15px 150px;
+        label {
+            display: block;
+            span {
+                font-size: @font14;
+                padding-left: 20px;
+                &.time {
+                    float: right;
+                    color: @colorb2;
+                }
+            }
+        }
+    }
+    .payAction {
+        padding: 20px 20px 60px 20px;
+        .btn {
+            display: block;
+            width: 150px;
+            padding: 6px;
+            margin: 0 auto;
+        }
+    }
+    .tipInfo {
+        padding: 10px;
+        font-size: @font13;
+        text-align: center;
+        background-color: @colortip;
+    }
+    .myCarList {
+        padding: 15px 150px 15px 150px;
+        label {
+            display: block;
+            margin-bottom: 20px;
+            .carRadio {
+                margin-right: 10px;
+            }
+            .input { 
+                width: 250px;
+                height: 36px;
+                line-height: 36px;
+                border-radius: 5px;
+                border: 1px solid @colorb2;
+                margin-right: 10px;
+                font-size: @font14;
+                padding: 0 20px;
+            }
+            img {
+                width: 150px;
+                height: 48px;
+            }
+            span {
+                font-size: @font13;
+                padding-left: 10px;
+            }
+            a {
+                float: right;
+                width: 80px;
+                color: @color333;
+                font-size: @font13;
+                text-align: center;
+                &.active {
+                    background: @color6;
+                    color: white;
+                }
+            }
+        }
+    }
+    .addCar {
+        button {
+            margin-left: 400px;
+            padding: 3px 15px;
+            font-size: @font13;
+        }
+    }
+    .searchWrap {
+        .searchTitle {
+            padding: 10px 20px;
+            border-bottom: 1px solid @mainColor;
+            margin: 0;
+        }
+        table {
+            width: 100%;
+            border: none;
+            tr {
+                &:nth-of-type(even) {
+                    background: white;
+                }
+            }
+            td {
+                border: none;
+                padding-bottom: 0;
+                p {
+                    font-size: @font13;
+                    padding: 0;
+                    margin: 0;
+                    input,
+                    select {
+                        height: 32px;
+                        line-height: 32px;
+                        margin-bottom: 0;
+                        padding: 0 10px;
+                        font-size: @font13;
+                        background-color: white;
+                    }
+                    button {
+                        position: relative;
+                        z-index: 0;
+                        top: 20px;
+                        padding: 5px 25px;
+                        font-size: @font14;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    .infoDetail {
+        padding: 10px;
+        .prizeStatu {
+            font-size: @font13;
+            padding: 5px 20px;
+            background-color: @colortip;
+            border: 1px solid darken(@colortip, 10%);
+        }
+        p {
+            font-size: @font13;
+            padding: 0;
+            margin: 0;
+        }
+        .btn {
+            padding: 5px 15px;
+            font-size: @font13;
+        }
+        table {
+            width: 100%;
+            margin: 0;
+            .orderItem {
+                float: left;
+                width: 33.3333333333%;
+            }
+            td {
+                padding: 5px 10px;
+                &.infoTitle {
+                    background-color: @colord8;
+                    color: @color333;
+                }
+                &.action {
+                    text-align: center;
+                    .btn {
+                        margin: 0 5px;
+                        color: white;
+                    }
+                }
+                .ballWrap {
+                    span {
+                        position: relative;
+                        z-index: 0;
+                        top: 10px;
+                    }
+                }
+            }
+            .resultList {
+                text-align: center;
+                .redBall {
+                    color: @color7;
+                }
+                .blueBall {
+                    color: @color8;
+                }
+            }
+        }
+    }
+}
+
+.bankListWrap {
+    position: fixed;
+    z-index: 10000000000;
+    width: 650px;
+    top: 80px;
+    left: 50%;
+    margin-left: -300px;
+    background-color: white;
+    .bankList {
+        padding: 15px 40px 15px 40px;
+        label {
+            padding: 0 5px;
+            input {
+                margin-right: 10px;
+            }
+            img {
+                width: 150px;
+                height: 40px;
+            }
+        }
+    }
+    .inputWrap {
+        width: 80%;
+        margin-left: 0;
+        left: 0;
+        table {
+            left: 0;
+        }
+        p {
+            font-size: @font13;
+        }
+    }
+}
+
+.maskerLayer {
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    background-color: #000;
+}
+
+.payWrap {
+    .payList {
+        ul {
+            margin: 0;
+            padding: 0;
+            li {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                text-align: center;
+                .payInfo {
+                    h2 {
+                        font-size: @font24;
+                    }
+                    p {
+                        font-size: @font14;
+                        strong {
+                            color: @mainColor;
+                            font-size: @font18;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .resultWrap {
+        margin-bottom: 20px;
+        .numList {
+            height: 200px;
+            overflow: auto;
+            border: 1px solid @color2;
+            table {
+                left: 0;
+                tr {
+                    td {
+                        text-align: center;
+                        border-bottom: 1px solid @color2;
+                        font-size: @font13;
+                    }
+                }
+            }
+        }
+    }
+    .buyAction {
+        padding: 0 50px;
+        margin-bottom: 20px;
+    }
+}
+
+.noData {
+    padding: 30px;
+    text-align: center;
+    color: @color3;
+}
+
+.triangle_border_up {
+    width: 0;
+    height: 0;
+    border-width: 0 7px 7px;
+    border-style: solid;
+    border-color: transparent transparent #333;
+    position: relative;
+    top: -12px;
+}
+
+.triangle_border_down {
+    width: 0;
+    height: 0;
+    border-width: 7px 7px 0;
+    border-style: solid;
+    border-color: #333 transparent transparent;
+    position: relative;
+    top: 12px;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    border-top: 4px solid @color8;
+    background-color: white;
+    p {
+        margin: 0;
+        padding: 0;
+        font-size: @font12;
+        color: @colorb2;
+    }
+    .copyright {
+        p {
+            &:nth-child(2) {
+                display: none;
+            }
+        }
+    }
+}

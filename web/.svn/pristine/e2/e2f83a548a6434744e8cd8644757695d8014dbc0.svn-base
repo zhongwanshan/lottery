@@ -1,0 +1,149 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="../hall.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">浙江体彩6+1</div>
+        <div class="right">
+            <a>
+                <i class="glyphicon glyphicon-option-vertical"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="buy-zj61">
+    <div class="page-content buyWrap">
+        <div class="ballList">
+            <div class="ballLabel">
+                <span class="title">红球区</span>
+                <span class="tip">至少选择6个球</span>
+            </div>
+            <p class="numberType">
+                <span class="circle">01</span>
+                <span class="circle">02</span>
+                <span class="circle">03</span>
+                <span class="circle">04</span>
+                <span class="circle">05</span>
+                <span class="circle">06</span>
+                <span class="circle">07</span>
+                <span class="circle">08</span>
+                <span class="circle">09</span>
+                <span class="circle">10</span>
+                <span class="circle">11</span>
+                <span class="circle">12</span>
+                <span class="circle">13</span>
+                <span class="circle">14</span>
+                <span class="circle">15</span>
+                <span class="circle">16</span>
+                <span class="circle">17</span>
+                <span class="circle">18</span>
+                <span class="circle">19</span>
+                <span class="circle">20</span>
+                <span class="circle">21</span>
+                <span class="circle">22</span>
+                <span class="circle">23</span>
+                <span class="circle">24</span>
+                <span class="circle">25</span>
+                <span class="circle red">26</span>
+                <span class="circle">27</span>
+                <span class="circle">28</span>
+                <span class="circle">29</span>
+                <span class="circle">30</span>
+                <span class="circle">31</span>
+                <span class="circle">32</span>
+                <span class="circle">33</span>
+            </p>
+        </div>
+        <div class="ballList blueArea">
+            <div class="ballLabel">
+                <span class="title">蓝球区</span>
+                <span class="tip">至少选择1个球</span>
+            </div>
+            <p class="numberType">
+                <span class="circle">01</span>
+                <span class="circle">02</span>
+                <span class="circle">03</span>
+                <span class="circle">04</span>
+                <span class="circle">05</span>
+                <span class="circle">06</span>
+                <span class="circle">07</span>
+                <span class="circle">08</span>
+                <span class="circle">09</span>
+                <span class="circle">10</span>
+                <span class="circle">11</span>
+                <span class="circle">12</span>
+                <span class="circle">13</span>
+                <span class="circle blue">14</span>
+                <span class="circle">15</span>
+                <span class="circle">16</span>
+            </p>
+        </div>
+
+        <div class="fixedAction">
+            <button class="button button-fill">清空</button>
+            <button class="button button-fill">随机</button>
+        </div>
+
+        <div class="menuFixed">
+            <div class="menuList">
+                <span class="triangle"></span>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="view/history/zj61.html">开奖历史</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="view/magic.html">最新资讯</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="view/rules/zj61.html">玩法说明</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="typeSelect">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="item">普通</div>
+                        </td>
+                        <td>
+                            <div class="item active">胆拖</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="buyAction">
+            <div class="row">
+                <div class="col-20">
+                    普通
+                    <i class="glyphicon glyphicon-menu-down"></i>
+                </div>
+                <div class="col-60">
+                    共
+                    <span>12</span>注
+                    <span>24</span>元
+                </div>
+                <div class="col-20">
+                    <div class="theme-yellow">
+                        <a href="view/order/number.html" class="button button-fill">投注</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

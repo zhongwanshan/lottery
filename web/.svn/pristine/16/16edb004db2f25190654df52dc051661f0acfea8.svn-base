@@ -1,0 +1,21 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="../hall.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">双色球</div>
+        <div class="right">
+            <a>
+                <i class="glyphicon glyphicon-option-vertical"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="buy-ssq">
+    <div class="page-content">
+        <p>双色球玩法说明</p>
+    </div>
+</div>

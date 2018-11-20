@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>按钮管理</title>
+<style type="text/css">
+/*初始化页面  */
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset,
+	legend, input, textarea, select {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font: 12px "宋体", "Arial Narrow", HELVETICA;
+	background: #fff;
+	-webkit-text-size-adjust: 100%;
+}
+
+a {
+	color: #2d374b;
+	text-decoration: none
+}
+
+a:hover {
+	color: #cd0200;
+	text-decoration: underline
+}
+
+em {
+	font-style: normal
+}
+
+li {
+	list-style: none
+}
+
+img {
+	border: 0;
+	vertical-align: middle
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+p {
+	word-wrap: break-word
+}
+/* 页面css*/
+#searchCondition ul li {
+	float: left;
+	margin-left: 29px;
+	margin-top: 35px;
+	font-size: 13px;
+}
+
+#searchCondition ul li select {
+	display: inline-block;
+	width: 143px;
+	height: 26px
+}
+
+#searchCondition ul li input {
+	display: inline-block;
+	width: 143px;
+	height: 22px
+}
+
+#searchCondition ul li input#cx {
+	display: inline-block;
+	width: 143px;
+	height: 26px
+}
+
+#buttonManagerLlist {
+	clear: both;
+	margin-left: 29px;
+	padding-top: 15px;
+}
+
+#buttonManagerLlist #buttonManagerData td {
+	display: inline-block;
+	width: 150px;
+	text-align: center;
+	line-height: 40px;
+	border: none;
+	border-bottom: 1px;
+}
+
+#buttonManagerLlist #buttonManagerData td:first-child {
+	width: 50px;
+}
+
+#buttonManagerLlist #buttonManagerData thead td {
+	background-color: #F2F2F2;
+}
+
+#buttonManagerLlist #buttonManagerData tbody tr {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #E7E7E7;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #E7E7E7;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #E7E7E7;
+}
+
+#buttonManagerLlist #buttonManagerData thead tr {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #E7E7E7;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #E7E7E7;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #E7E7E7;
+}
+
+#buttonManagerLlist #buttonManagerData tbody tr:hover {
+	background-color: #F2F2F2;
+}
+
+#funtionList {
+	height: 30px;
+	width: 100%;
+	clear: both;
+	margin-top: 10px;
+}
+
+#funtionList ul li {
+	float: left;
+	display: inline-block;
+	height: 26px;
+	width: 80px;
+	line-height: 26px;
+	border: 1px solid #c3adad;
+	border-radius: 3px;
+	margin-left: 30px;
+	text-align: center;
+	background-color: #5978A6;
+	color: white;
+}
+
+#funtionList ul {
+	padding-top: 20px;
+}
+
+#funtionList ul li:hover {
+	cursor: pointer;
+}
+
+#funtionList ul li:active {
+	background-color: #c3adad;
+}
+
+#buttonLimit span {
+	float: left;
+	display: inline-block;
+	height: 20px;
+	width: 47px;
+	line-height: 20px;
+	text-align: center;
+}
+
+#buttonLimit span:hover {
+	cursor: pointer;
+}
+
+#buttonLimit span:active {
+	background-color: #c3adad;
+}
+
+#buttonLimit {
+	margin-left: 250px;
+	margin-top: 20px;
+}
+
+#buttonLimit span:nth-child(7) {
+	width: 80px;
+}
+
+#buttonLimit span:nth-child(7) input {
+	width: 20px;
+}
+
+#buttonLimit span:nth-child(8) {
+	height: 25px;
+	width: 50px;
+	line-height: 25px;
+	border: 1px solid #c3adad;
+	border-radius: 3px;
+}
+/* #rightArea{
+  position: absolute;
+  left: 60px;
+  top: 50px;
+  background-color:rgba(255,255,255,0.5);
+  background-color:filter: Alpha(Opacity=30);
+
+} */
+#pageLimit span:hover {
+	background-color:#00d9d9;
+}
+</style>
+
+<script src="/lottery/js/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
+<script src="/lottery/js/layer/layer.min.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+	<div id="funtionList">
+		<ul>
+			<li><span>新增</span></li>
+			<li><span>编辑</span></li>
+			<li><span>删除</span></li>
+		</ul>
+	</div>
+	<div id="buttonManagerLlist">
+		<table id="buttonManagerData" style="border-collapse: collapse;">
+			<thead>
+				<td><input type="checkbox"></td>
+				<td>按钮ID</td>
+				<td>按钮名称</td>
+				<td>按钮编码</td>
+				<td>是否删除</td>
+			</thead>
+			<tbody>
+				<tr th:each="entries,stat:${dataList}">
+					<td><input type="checkbox"></td>
+					<td th:text="${entries['id']}"></td>
+					<td th:text="${entries['buttonName']}"></td>
+					<td th:text="${entries['buttonCode']}"></td>
+					<td th:text="${entries['isDel']}"></td>
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript">　	   
+	//全部勾选和反选的js效果
+	 $("#buttonManagerLlist #buttonManagerData thead td input").click(function(){
+	 var checkedStatus = $("#buttonManagerLlist #buttonManagerData thead td input").attr("checked");
+	 if(checkedStatus=="checked"){
+		 $("#buttonManagerLlist #buttonManagerData input[type='checkbox']").attr("checked",true);
+		 }else{
+			 $("#buttonManagerLlist #buttonManagerData input[type='checkbox']").attr("checked",false); 
+			 
+		 }
+	 })
+			
+      function searchbutton(){
+    	  
+    		$.ajax({
+				type : "Get",
+						url : "/buttonManager/searchAllBaseAdminButton",
+						data : {
+						
+						},
+						/* dataType : "json", */
+						success : function(data) {
+								$('#buttonManagerData tbody').empty();
+								console.info(data);
+								var html = "";
+								for (var i = 0, l = data.length; i < l; i++) {
+									html += "<tr><td><input type='checkbox'></td>";
+									html += "<td>" + data[i]['id'] + "</td>";
+									html += "<td>" + data[i]['buttonName'] + "</td>";
+									html += "<td>" + data[i]['buttonCode'] + "</td> ";
+									html += "<td>" + data[i]['isDel'] + "</td> ";
+									html += "</tr>";
+								}
+								$('#buttonManagerData tbody').html(html);							
+						}
+					});
+    	  
+      } 
+	 
+	 
+ //新增，修改，删除弹出框
+ $("#funtionList ul li").click(function(){
+	 var textValue =$(this).text();
+	 if(textValue=="新增"){
+		 $.layer({
+			 type: 2,
+			 title: ["", true],
+			 fix: true,
+			 end:function(){searchbutton(0)},
+			 move: true,
+			 maxmin: true,
+			 shadeClose: false,
+			 shade: [0.1, '#000', true],
+			 border: [1, 0.8, '#fff', true],
+			/*  offset: [($(window).height() - 100) / 2 + 'px', ''], */
+			 offset: [30+ 'px', ''],
+			 area: [400+ 'px', 260 + 'px'],
+			 iframe: { src: "/buttonManager/addButtonPath" }
+		 }); 
+	 }else if(textValue=="编辑"){
+		 var checknum =$("#buttonManagerLlist #buttonManagerData tbody td input[type='checkbox']:checked").length
+		 if(parseInt(checknum)>parseInt(0)&&parseInt(checknum)<=parseInt(2)){
+		  var checkIid =$("#buttonManagerLlist #buttonManagerData tbody td input[type='checkbox']:checked").parent().next().text();
+		 $.layer({
+			 type: 2,
+			 title: ["", true],
+			 fix: true,
+			 end:function(){searchbutton(0)},
+			 move: false,
+			 maxmin: true,
+			 shadeClose: false,
+			 shade: [0.1, '#000', true],
+			 border: [1, 0.8, '#fff', true],
+			/*  offset: [($(window).height() - 100) / 2 + 'px', ''], */
+			 offset: [30+ 'px', ''],
+			 area: [400+ 'px', 300 + 'px'],
+			 iframe: { src: "/buttonManager/updateButtonPath?id="+checkIid}
+		 }); 
+		 } else{
+			 alert("请选择一条记录，谢谢！");
+		 }
+	 }else if(textValue=="删除"){
+	 var checknum =$("#buttonManagerLlist #buttonManagerData tbody td input[type='checkbox']:checked").length
+	   if(parseInt(checknum)>parseInt(0)){
+		 if(window.confirm('确定要删除选中的'+checknum+'条记录吗？')){
+             var idList="-1";
+           $("#buttonManagerLlist #buttonManagerData tbody td input[type='checkbox']:checked").parent().next().each(function(){
+        	   idList+=","+$(this).text()
+             })
+            	$.ajax({
+				type : "GET",
+				url : "/buttonManager/deleteButtonDataByIds",
+				data : {
+					"idList" : idList,
+				},
+				/* dataType : "json", */
+				success : function(data) {
+				 searchbutton(0)
+				}
+			}); 
+              
+              
+             return true;
+          }else{
+             //alert("取消");
+             return false;
+         }
+	   }else{
+		   alert("请勾选要删除的记录")
+	   }
+	 }
+	 
+ })
+	   
+	</script>
+</body>
+</html>

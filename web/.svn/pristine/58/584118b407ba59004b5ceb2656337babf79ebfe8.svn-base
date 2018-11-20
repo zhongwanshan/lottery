@@ -1,0 +1,143 @@
+(function () {
+    var pageVue = new Vue({
+        el: "#js-pageInfo",
+        data: {
+            userInfo: USERINFO,
+            isAction: false,
+            imageData: "",
+            paramInfo: {
+                nickName: "",
+                action: CONFIG.ACTION.modifyUserNickName
+            },
+            nickName: ""
+        },
+        methods: {
+            // 提交登录信息
+            doNikNameAction: function () {
+                var self = this;
+
+                // 防止重复点击
+                if (self.isAction == true) {
+                    return;
+                }
+
+                if (utility.checkLen(self.nickName, 0)) {
+                    app.showPreloader("昵称不能为空");
+                    setTimeout(function () {
+                        app.hidePreloader();
+                    }, 1000);
+                    return;
+                }
+
+                if (self.nickName.length > 10) {
+                    app.showPreloader("昵称长度过长");
+                    setTimeout(function () {
+                        app.hidePreloader();
+                    }, 1000);
+                    return;
+                }
+
+                self.paramInfo.nickName = encodeURI(self.nickName);
+
+                utility.interactWithServer({
+                    headerInfo: {
+                        userId: !!USERINFO ? USERINFO["userId"] : "",
+                        userToken: !!USERINFO ? USERINFO["userToken"] : "",
+                        actionUrl: utility.formatActionUrl(CONFIG.SERVICE.commonService, CONFIG.ACTION.modifyUserNickName, self.paramInfo),
+                    },
+                    url: CONFIG.HOST + CONFIG.SERVICE.commonService,
+                    dataObj: self.paramInfo,
+                    beforeSendCallback: function () {
+                        app.showIndicator();
+                    },
+                    completeCallback: function (XMLHttpRequest, textStatus) {
+                        app.hideIndicator();
+                        self.isAction = false;
+                    },
+                    successCallback: function (data) {
+                        if (data.code == 200) {
+                            self.userInfo.nickName = self.nickName;
+                            utility.setLocalStorage("userInfo", self.userInfo);
+                            app.closeModal();
+                        } else {
+                            app.showPreloader(data.message);
+                            setTimeout(function () {
+                                app.hidePreloader();
+                            }, 1000);
+                        }
+                    },
+                });
+            },
+
+            // 从相册或照相机获取图片
+            getImageByType: function (type) {
+                var self = this;
+                // "source:来源1:相机 2:相册"
+                // "isSquare:是否裁剪为正方形 1:是 0:否"
+                if (typeof jsBridge != "undefined") {
+                    jsBridge.cpApi(8, JSON.stringify({
+                        "source": type,
+                        "isSquare": 1
+                    }), (function (res) {
+
+                    }).toString());
+                }
+            },
+            // 提交修改图片信息
+            doHeadImgAction: function () {
+                var self = this;
+
+                // 防止重复点击
+                if (self.isAction == true) {
+                    return;
+                }
+
+                if (utility.checkLen(self.imageData.length, 0)) {
+                    app.showPreloader("请选择图片");
+                    setTimeout(function () {
+                        app.hidePreloader();
+                    }, 1000);
+                    return;
+                }
+
+                utility.interactWithServer({
+                    headerInfo: {
+                        userId: !!USERINFO ? USERINFO["userId"] : "",
+                        userToken: !!USERINFO ? USERINFO["userToken"] : "",
+                        actionUrl: utility.formatActionUrl(CONFIG.SERVICE.commonService, CONFIG.ACTION.modifyUserPhoto, {
+                            headImgUrl: "",
+                            imageData: self.imageData,
+                            action: CONFIG.ACTION.modifyUserPhoto
+                        }),
+                    },
+                    url: CONFIG.HOST + CONFIG.SERVICE.commonService,
+                    dataObj: {
+                        headImgUrl: "",
+                        imageData: self.imageData,
+                        action: CONFIG.ACTION.modifyUserPhoto
+                    },
+                    beforeSendCallback: function () {
+                        $.showIndicator();
+                    },
+                    completeCallback: function () {
+                        $.hideIndicator();
+                        self.isAction = false;
+                    },
+                    successCallback: function (data) {
+                        if (data.code == 200) {
+
+                        } else {
+                            app.showPreloader(data.message);
+                            setTimeout(function () {
+                                app.hidePreloader();
+                            }, 1000);
+                        }
+                    }
+                });
+            }
+        },
+        created: function () {
+            var self = this;
+        }
+    });
+}())

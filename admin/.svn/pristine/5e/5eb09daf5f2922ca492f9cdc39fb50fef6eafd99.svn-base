@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>更新</title>
+<style type="text/css">
+/*初始化页面  */
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset,
+	legend, input, textarea, select {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font: 12px "宋体", "Arial Narrow", HELVETICA;
+	background: #fff;
+	-webkit-text-size-adjust: 100%;
+}
+
+a {
+	color: #2d374b;
+	text-decoration: none
+}
+
+a:hover {
+	color: #cd0200;
+	text-decoration: underline
+}
+
+em {
+	font-style: normal
+}
+
+li {
+	list-style: none
+}
+
+img {
+	border: 0;
+	vertical-align: middle
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+p {
+	word-wrap: break-word
+}
+/* 页面css*/
+#addMessage table tr td:last-child {
+	display: inline-block;
+	line-height: 30px;
+	height: 30px;
+	width: 288px;
+	border: 1px solid #2f1f1f;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+#addMessage table tr td:first-child {
+	display: inline-block;
+	line-height: 30px;
+	height: 30px;
+	width: 200px;
+	border: 1px solid #2f1f1f;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+#addMessage {
+	margin-left: 30px;
+	margin-top: 10px;
+}
+
+#addMessage table  tr td:last-child {
+	text-align: left;
+	padding-left: 10px;
+}
+
+#addMessage table  tr:first-child td input {
+	display: inline;
+	width: 282px;
+	line-height: 23px;
+	height: 23px;
+	border: 1px solid #c3adad;
+	border-radius: 4px;
+}
+
+#addMessage table tr:nth-child(2) td span {
+	margin-right: 20px;
+	margin-left: 5px;
+}
+
+#addMessage table tr td textarea {
+	margin-top: 3px;
+	border-radius: 5px;
+}
+
+#messageTitle {
+	font-size: 20px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 20px;
+	margin-left: 205px;
+}
+
+#addMessage table tr:nth-child(5) td span:first-child {
+	display: block;
+	height: 10px;
+	margin-top: -20px;
+	margin-bottom: 10px;
+}
+
+#addMessage table tr:nth-child(5) td span:first-child input {
+	display: inline-block;
+	height: 15px;
+	width: 20px;
+	margin-right: 5px;
+}
+
+#addMessage table tr:nth-child(5) td span:nth-child(2) {
+	display: block;
+	height: 10px;
+	margin-bottom: 16px;
+}
+
+#addMessage table tr:nth-child(5) td span:nth-child(2) input {
+	display: inline-block;
+	height: 15px;
+	width: 20px;
+	margin-right: 5px;
+}
+
+#addMessage table tr:nth-child(5) td span:nth-child(3) input {
+	display: inline-block;
+	height: 25px;
+	width: 75px;
+	margin-right: 15px;
+}
+
+#addMessage table tr:nth-child(6) td  input {
+	margin-right: 15px;
+}
+
+#sumbmitMessage input {
+	display: inline-block;
+	height: 40px;
+	width: 70px;
+	line-height: 30px;
+	margin-top: 7px;
+	margin-left: 263px;
+	margin-bottom: 10px;
+	border-radius: 3px;
+	border: none;
+	background-color: #169CD1;
+	color: white;
+}
+#sumbmitMessage input:hover{
+cursor: pointer;
+background-color: #00d9d9;
+}
+
+#sumbmitMessage input:active {
+	background-color: white;
+	color: black;
+}
+
+#addMessage table tr td input {
+	display: inline;
+	width: 282px;
+	line-height: 23px;
+	height: 23px;
+	border: 1px solid #c3adad;
+	border-radius: 4px;
+}
+#addMessage table tr td select {
+	display: inline;
+	width: 282px;
+	line-height: 23px;
+	height: 23px;
+	border: 1px solid #c3adad;
+	border-radius: 4px;
+}
+</style>
+<script src="/lottery/js/jquery-1.8.2.js" type="text/javascript"
+	charset="utf-8"></script>
+
+</head>
+<body>
+	<div id="messageTitle">更新用户彩票主订单</div>
+	<div id="addMessage">
+		<table style="border-collapse: collapse;">
+			<tr>
+				<td>订单编码：</td>
+				<td><input th:value="${dataList['orderCode']}"
+					readonly="readonly"></td>
+			</tr>
+			<tr>
+				<td>订单状态：</td>
+				<td><select>
+						<option value="0" th:selected="(${dataList['orderStatus']} eq 0)">暂存，非正式订单</option>
+						<option value="1" th:selected="(${dataList['orderStatus']} eq 1)">待付款</option>
+						<option value="2" th:selected="(${dataList['orderStatus']} eq 2)">付款不成功</option>
+						<option value="3" th:selected="(${dataList['orderStatus']} eq 3)">已付款并提交给平台</option>
+						<option value="4" th:selected="(${dataList['orderStatus']} eq 4)">已开奖且已中奖</option>
+						<option value="5" th:selected="(${dataList['orderStatus']} eq 5)">已开奖且未中奖</option>
+						<option value="6" th:selected="(${dataList['orderStatus']} eq 6)">用户取消订单</option>
+						<option value="7" th:selected="(${dataList['orderStatus']} eq 7)">系统取消订单，退款中</option>
+						<option value="8" th:selected="(${dataList['orderStatus']} eq 8)">用户删除订单</option>
+						<option value="9" th:selected="(${dataList['orderStatus']} eq 9)">系统取消订单，已退款</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>彩票店处理状态：</td>
+				<td><select>
+						<option value="0" th:selected="(${dataList['shopDealStatus']} eq 0)">未处理</option>
+						<option value="1" th:selected="(${dataList['shopDealStatus']} eq 1)">已接单</option>
+						<option value="2" th:selected="(${dataList['shopDealStatus']} eq 2)">已打印出单</option>
+						<option value="3" th:selected="(${dataList['shopDealStatus']} eq 3)">出单失败/拒单</option>
+						<option value="4" th:selected="(${dataList['shopDealStatus']} eq 4)">超时撤销</option>
+						<option value="5" th:selected="(${dataList['shopDealStatus']} eq 5)">已结算收款</option>
+						<option value="6" th:selected="(${dataList['shopDealStatus']} eq 6)">已向用户转交彩票</option>
+						<option value="7" th:selected="(${dataList['shopDealStatus']} eq 7)">已退款</option>
+				</select></td>
+			</tr>
+		</table>
+		<div id="saveData" th:attr="idValue=${dataList['id']}" hidden="true"></div>
+	</div>
+	<div id="sumbmitMessage">
+		<input type="button" onclick="save()" value="保存">
+	</div>
+	<script type="text/javascript">
+//日期帮助类
+Date.prototype.format = function (format) {
+    var args = {
+        "M+": this.getMonth() + 1,
+        "d+": this.getDate(),
+        "h+": this.getHours(),
+        "m+": this.getMinutes(),
+        "s+": this.getSeconds(),
+        "q+": Math.floor((this.getMonth() + 3) / 3),  //quarter
+        "S": this.getMilliseconds()
+    };
+    if (/(y+)/.test(format))
+        format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var i in args) {
+        var n = args[i];
+        if (new RegExp("(" + i + ")").test(format))
+            format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? n : ("00" + n).substr(("" + n).length));
+    }
+    return format;
+};
+
+
+//修改消息
+function save(){	
+	var id =$("#saveData").attr("idValue");
+/* 	var upScore =$("#addMessage table tr:nth-child(1) td input").val(); */
+	var orderStatus=$("#addMessage table tr:nth-child(2) td select option:selected").val();
+	var shopDealStatus=$("#addMessage table tr:nth-child(3) td select option:selected").val();
+ 		$.ajax({
+			type : "Get",
+			url : "/lottery/lotteryMainOrder/updatelotteryMainOrder",
+			data : {
+				"id" : id,
+				"orderStatus" : orderStatus,
+				"shopDealStatus" : shopDealStatus
+			},
+			/* dataType : "json", */
+			success : function(data) {
+				if("sucess"==data){
+					alert("修改成功")
+					var index = parent.layer.getFrameIndex(window.name);
+					parent.layer.close(index);
+				}else{
+					alert("保存失败，请重新保存，谢谢")
+				}
+			}
+		});
+     }
+
+
+
+</script>
+
+</body>
+</html>

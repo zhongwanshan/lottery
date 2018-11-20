@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lottery.dao.LotteryOrderRouteShopMapper">
+  <resultMap id="BaseResultMap" type="com.lottery.entity.LotteryOrderRouteShop">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="route_id" jdbcType="INTEGER" property="routeId" />
+    <result column="rule_name" jdbcType="VARCHAR" property="ruleName" />
+    <result column="lotto_type_id" jdbcType="INTEGER" property="lottoTypeId" />
+    <result column="lotto_type_name" jdbcType="VARCHAR" property="lottoTypeName" />
+    <result column="min_order_price" jdbcType="INTEGER" property="minOrderPrice" />
+    <result column="max_order_price" jdbcType="INTEGER" property="maxOrderPrice" />
+    <result column="min_pay_money" jdbcType="INTEGER" property="minPayMoney" />
+    <result column="max_pay_money" jdbcType="INTEGER" property="maxPayMoney" />
+    <result column="shop_id" jdbcType="BIGINT" property="shopId" />
+    <result column="shop_name" jdbcType="VARCHAR" property="shopName" />
+    <result column="crate_time" jdbcType="TIMESTAMP" property="crateTime" />
+    <result column="is_valid" jdbcType="INTEGER" property="isValid" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, route_id, rule_name, lotto_type_id, lotto_type_name, min_order_price, max_order_price, 
+    min_pay_money, max_pay_money, shop_id, shop_name, crate_time, is_valid
+  </sql>
+  <select id="selectByExample" parameterType="com.lottery.entity.LotteryOrderRouteShopExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from lottery_order_route_shop
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  
+  
+    <delete id="deleteByRouteId" parameterType="java.lang.Integer">
+    delete from lottery_order_route_shop
+    where route_id = #{id}
+  </delete>
+  
+  <select id="queryLotteryOrderRouteShopList" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from lottery_order_route_shop
+    
+    where route_id=#{id}
+  </select>
+  
+  
+  
+  
+  
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from lottery_order_route_shop
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from lottery_order_route_shop
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.lottery.entity.LotteryOrderRouteShopExample">
+    delete from lottery_order_route_shop
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.lottery.entity.LotteryOrderRouteShop">
+    insert into lottery_order_route_shop (id, route_id, rule_name, 
+      lotto_type_id, lotto_type_name, min_order_price, 
+      max_order_price, min_pay_money, max_pay_money, 
+      shop_id, shop_name, crate_time, 
+      is_valid)
+    values (#{id,jdbcType=INTEGER}, #{routeId,jdbcType=INTEGER}, #{ruleName,jdbcType=VARCHAR}, 
+      #{lottoTypeId,jdbcType=INTEGER}, #{lottoTypeName,jdbcType=VARCHAR}, #{minOrderPrice,jdbcType=INTEGER}, 
+      #{maxOrderPrice,jdbcType=INTEGER}, #{minPayMoney,jdbcType=INTEGER}, #{maxPayMoney,jdbcType=INTEGER}, 
+      #{shopId,jdbcType=BIGINT}, #{shopName,jdbcType=VARCHAR}, #{crateTime,jdbcType=TIMESTAMP}, 
+      #{isValid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lottery.entity.LotteryOrderRouteShop">
+    insert into lottery_order_route_shop
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="routeId != null">
+        route_id,
+      </if>
+      <if test="ruleName != null">
+        rule_name,
+      </if>
+      <if test="lottoTypeId != null">
+        lotto_type_id,
+      </if>
+      <if test="lottoTypeName != null">
+        lotto_type_name,
+      </if>
+      <if test="minOrderPrice != null">
+        min_order_price,
+      </if>
+      <if test="maxOrderPrice != null">
+        max_order_price,
+      </if>
+      <if test="minPayMoney != null">
+        min_pay_money,
+      </if>
+      <if test="maxPayMoney != null">
+        max_pay_money,
+      </if>
+      <if test="shopId != null">
+        shop_id,
+      </if>
+      <if test="shopName != null">
+        shop_name,
+      </if>
+      <if test="crateTime != null">
+        crate_time,
+      </if>
+      <if test="isValid != null">
+        is_valid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="routeId != null">
+        #{routeId,jdbcType=INTEGER},
+      </if>
+      <if test="ruleName != null">
+        #{ruleName,jdbcType=VARCHAR},
+      </if>
+      <if test="lottoTypeId != null">
+        #{lottoTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="lottoTypeName != null">
+        #{lottoTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="minOrderPrice != null">
+        #{minOrderPrice,jdbcType=INTEGER},
+      </if>
+      <if test="maxOrderPrice != null">
+        #{maxOrderPrice,jdbcType=INTEGER},
+      </if>
+      <if test="minPayMoney != null">
+        #{minPayMoney,jdbcType=INTEGER},
+      </if>
+      <if test="maxPayMoney != null">
+        #{maxPayMoney,jdbcType=INTEGER},
+      </if>
+      <if test="shopId != null">
+        #{shopId,jdbcType=BIGINT},
+      </if>
+      <if test="shopName != null">
+        #{shopName,jdbcType=VARCHAR},
+      </if>
+      <if test="crateTime != null">
+        #{crateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isValid != null">
+        #{isValid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.lottery.entity.LotteryOrderRouteShopExample" resultType="java.lang.Long">
+    select count(*) from lottery_order_route_shop
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update lottery_order_route_shop
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.routeId != null">
+        route_id = #{record.routeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.ruleName != null">
+        rule_name = #{record.ruleName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lottoTypeId != null">
+        lotto_type_id = #{record.lottoTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.lottoTypeName != null">
+        lotto_type_name = #{record.lottoTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.minOrderPrice != null">
+        min_order_price = #{record.minOrderPrice,jdbcType=INTEGER},
+      </if>
+      <if test="record.maxOrderPrice != null">
+        max_order_price = #{record.maxOrderPrice,jdbcType=INTEGER},
+      </if>
+      <if test="record.minPayMoney != null">
+        min_pay_money = #{record.minPayMoney,jdbcType=INTEGER},
+      </if>
+      <if test="record.maxPayMoney != null">
+        max_pay_money = #{record.maxPayMoney,jdbcType=INTEGER},
+      </if>
+      <if test="record.shopId != null">
+        shop_id = #{record.shopId,jdbcType=BIGINT},
+      </if>
+      <if test="record.shopName != null">
+        shop_name = #{record.shopName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.crateTime != null">
+        crate_time = #{record.crateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.isValid != null">
+        is_valid = #{record.isValid,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update lottery_order_route_shop
+    set id = #{record.id,jdbcType=INTEGER},
+      route_id = #{record.routeId,jdbcType=INTEGER},
+      rule_name = #{record.ruleName,jdbcType=VARCHAR},
+      lotto_type_id = #{record.lottoTypeId,jdbcType=INTEGER},
+      lotto_type_name = #{record.lottoTypeName,jdbcType=VARCHAR},
+      min_order_price = #{record.minOrderPrice,jdbcType=INTEGER},
+      max_order_price = #{record.maxOrderPrice,jdbcType=INTEGER},
+      min_pay_money = #{record.minPayMoney,jdbcType=INTEGER},
+      max_pay_money = #{record.maxPayMoney,jdbcType=INTEGER},
+      shop_id = #{record.shopId,jdbcType=BIGINT},
+      shop_name = #{record.shopName,jdbcType=VARCHAR},
+      crate_time = #{record.crateTime,jdbcType=TIMESTAMP},
+      is_valid = #{record.isValid,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lottery.entity.LotteryOrderRouteShop">
+    update lottery_order_route_shop
+    <set>
+      <if test="routeId != null">
+        route_id = #{routeId,jdbcType=INTEGER},
+      </if>
+      <if test="ruleName != null">
+        rule_name = #{ruleName,jdbcType=VARCHAR},
+      </if>
+      <if test="lottoTypeId != null">
+        lotto_type_id = #{lottoTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="lottoTypeName != null">
+        lotto_type_name = #{lottoTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="minOrderPrice != null">
+        min_order_price = #{minOrderPrice,jdbcType=INTEGER},
+      </if>
+      <if test="maxOrderPrice != null">
+        max_order_price = #{maxOrderPrice,jdbcType=INTEGER},
+      </if>
+      <if test="minPayMoney != null">
+        min_pay_money = #{minPayMoney,jdbcType=INTEGER},
+      </if>
+      <if test="maxPayMoney != null">
+        max_pay_money = #{maxPayMoney,jdbcType=INTEGER},
+      </if>
+      <if test="shopId != null">
+        shop_id = #{shopId,jdbcType=BIGINT},
+      </if>
+      <if test="shopName != null">
+        shop_name = #{shopName,jdbcType=VARCHAR},
+      </if>
+      <if test="crateTime != null">
+        crate_time = #{crateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isValid != null">
+        is_valid = #{isValid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lottery.entity.LotteryOrderRouteShop">
+    update lottery_order_route_shop
+    set route_id = #{routeId,jdbcType=INTEGER},
+      rule_name = #{ruleName,jdbcType=VARCHAR},
+      lotto_type_id = #{lottoTypeId,jdbcType=INTEGER},
+      lotto_type_name = #{lottoTypeName,jdbcType=VARCHAR},
+      min_order_price = #{minOrderPrice,jdbcType=INTEGER},
+      max_order_price = #{maxOrderPrice,jdbcType=INTEGER},
+      min_pay_money = #{minPayMoney,jdbcType=INTEGER},
+      max_pay_money = #{maxPayMoney,jdbcType=INTEGER},
+      shop_id = #{shopId,jdbcType=BIGINT},
+      shop_name = #{shopName,jdbcType=VARCHAR},
+      crate_time = #{crateTime,jdbcType=TIMESTAMP},
+      is_valid = #{isValid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

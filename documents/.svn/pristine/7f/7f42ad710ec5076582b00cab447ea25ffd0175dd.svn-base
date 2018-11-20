@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>竞彩M串N的算法</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="core.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+   
+</script>
+<div id="gglist">
+<span id="min_1" style="display:none;">
+<label><input type="checkbox" name="gg_box" id="x1001" ggtype="1" value="单关" />单关</label>
+</span><br />
+<span id="min_2" style="display:none;">
+<label><input type="checkbox" name="gg_box" id="x2001" ggtype="1" value="2串1" />2串1</label>
+</span><br />
+<span id="min_3" style="display:none;">
+<label><input type="checkbox" name="gg_box" id="x3001" ggtype="1" value="3串1" />3串1</label>
+<label><input type="checkbox" name="gg_box" id="x3003" ggtype="2" value="3串3" />3串3</label>
+<label><input type="checkbox" name="gg_box" id="x3004" ggtype="2" value="3串4" />3串4</label>
+</span><br />
+<span id="min_4" style="display:none;">
+<label><input type="checkbox" name="gg_box" id="x4001" ggtype="1" value="4串1" />4串1</label>
+<label><input type="checkbox" name="gg_box" id="x4004" ggtype="2" value="4串4" />4串4</label>
+<label><input type="checkbox" name="gg_box" id="x4005" ggtype="2" value="4串5" />4串5</label>
+<label><input type="checkbox" name="gg_box" id="x4006" ggtype="2" value="4串6" />4串6</label>
+<label><input type="checkbox" name="gg_box" id="x4011" ggtype="2" value="4串11" />4串11</label>
+</span><br />
+<span id="min_5" style="display:none;">
+<label><input type="checkbox" name="gg_box" id="x5001" ggtype="1" value="5串1" />5串1</label>
+<label><input type="checkbox" name="gg_box" id="x5005" ggtype="2" value="5串5" />5串5</label>
+<label><input type="checkbox" name="gg_box" id="x5006" ggtype="2" value="5串6" />5串6</label>
+<label><input type="checkbox" name="gg_box" id="x5010" ggtype="2" value="5串10" />5串10</label>
+<label><input type="checkbox" name="gg_box" id="x5016" ggtype="2" value="5串16" />5串16</label>
+<label><input type="checkbox" name="gg_box" id="x5020" ggtype="2" value="5串20" />5串20</label>
+<label><input type="checkbox" name="gg_box" id="x5026" ggtype="2" value="5串26" />5串26</label>
+</span><br />
+<span id="min_6" style="display:none;">
+<label><input type="checkbox" name="gg_box" id="x6001" ggtype="1" value="6串1" />6串1</label>
+<label><input type="checkbox" name="gg_box" id="x6006" ggtype="2" value="6串6" />6串6</label>
+<label><input type="checkbox" name="gg_box" id="x6007" ggtype="2" value="6串7" />6串7</label>
+<label><input type="checkbox" name="gg_box" id="x6015" ggtype="2" value="6串15" />6串15</label>
+<label><input type="checkbox" name="gg_box" id="x6020" ggtype="2" value="6串20" />6串20</label>
+<label><input type="checkbox" name="gg_box" id="x6022" ggtype="2" value="6串22" />6串22</label>
+<label><input type="checkbox" name="gg_box" id="x6035" ggtype="2" value="6串35" />6串35</label>
+<label><input type="checkbox" name="gg_box" id="x6042" ggtype="2" value="6串42" />6串42</label>
+<label><input type="checkbox" name="gg_box" id="x6050" ggtype="2" value="6串50" />6串50</label>
+<label><input type="checkbox" name="gg_box" id="x6057" ggtype="2" value="6串57" />6串57</label>
+</span><br />
+<span id="min_7" style="display:none;">
+<label><input type="checkbox" name="gg_box" id="x7001" ggtype="1" value="7串1" />7串1</label>
+<label><input type="checkbox" name="gg_box" id="x7007" ggtype="2" value="7串7" />7串7</label>
+<label><input type="checkbox" name="gg_box" id="x7008" ggtype="2" value="7串8" />7串8</label>
+<label><input type="checkbox" name="gg_box" id="x7021" ggtype="2" value="7串21" />7串21</label>
+<label><input type="checkbox" name="gg_box" id="x7035" ggtype="2" value="7串35" />7串35</label>
+<label><input type="checkbox" name="gg_box" id="x7120" ggtype="2" value="7串120" />7串120</label>
+</span><br />
+<span id="min_8" style="display:none;">
+<label><input type="checkbox" name="gg_box" id="x8001" ggtype="1" value="8串1" />8串1</label>
+<label><input type="checkbox" name="gg_box" id="x8008" ggtype="2" value="8串8" />8串8</label>
+<label><input type="checkbox" name="gg_box" id="x8009" ggtype="2" value="8串9" />8串9</label>
+<label><input type="checkbox" name="gg_box" id="x8028" ggtype="2" value="8串28" />8串28</label>
+<label><input type="checkbox" name="gg_box" id="x8056" ggtype="2" value="8串56" />8串56</label>
+<label><input type="checkbox" name="gg_box" id="x8070" ggtype="2" value="8串70" />8串70</label>
+<label><input type="checkbox" name="gg_box" id="x8247" ggtype="2" value="8串247" />8串247</label>
+</span>
+</div>
+<br />
+包3的场次：<input type="text" value="3" id="s3" onkeyup="show_gglist()"> <br />
+包2的场次：<input type="text" value="2" id="s2" onkeyup="show_gglist()"> <br />
+单选的场次：<input type="text" value="1" id="s1" onkeyup="show_gglist()"> <br />
+<input type="button" value="计算" onclick="js_cmn()" /><br />
+结果:<label id="res_html"></label>
+
+<script type="text/javascript">
+    var index = {};
+    index.GuoGuanPattern = { "单关": { "n": 1, "m": 1, "ename": "r1c1" }, "2串1": { "n": 2, "m": 1, "ename": "r2c1" }, "3串1": { "n": 3, "m": 1, "ename": "r3c1" }, "3串3": { "n": 3, "m": 3, "ename": "r3c3" }, "3串4": { "n": 3, "m": 4, "ename": "r3c4" }, "4串1": { "n": 4, "m": 1, "ename": "r4c1" }, "4串4": { "n": 4, "m": 4, "ename": "r4c4" }, "4串5": { "n": 4, "m": 5, "ename": "r4c5" }, "4串6": { "n": 4, "m": 6, "ename": "r4c6" }, "4串11": { "n": 4, "m": 11, "ename": "r4c11" }, "5串1": { "n": 5, "m": 1, "ename": "r5c1" }, "5串6": { "n": 5, "m": 6, "ename": "r5c6" }, "5串16": { "n": 5, "m": 16, "ename": "r5c16" }, "5串20": { "n": 5, "m": 20, "ename": "r5c20" }, "5串26": { "n": 5, "m": 26, "ename": "r5c26" }, "6串1": { "n": 6, "m": 1, "ename": "r6c1" }, "6串6": { "n": 6, "m": 6, "ename": "r6c6" }, "6串7": { "n": 6, "m": 7, "ename": "r6c7" }, "6串15": { "n": 6, "m": 15, "ename": "r6c15" }, "6串20": { "n": 6, "m": 20, "ename": "r6c20" }, "6串22": { "n": 6, "m": 22, "ename": "r6c22" }, "6串35": { "n": 6, "m": 35, "ename": "r6c35" }, "6串42": { "n": 6, "m": 42, "ename": "r6c42" }, "6串50": { "n": 6, "m": 50, "ename": "r6c50" }, "6串57": { "n": 6, "m": 57, "ename": "r6c57" }, "7串1": { "n": 7, "m": 1, "ename": "r7c1" }, "7串7": { "n": 7, "m": 7, "ename": "r7c7" }, "7串8": { "n": 7, "m": 8, "ename": "r7c8" }, "7串21": { "n": 7, "m": 21, "ename": "r7c21" }, "7串35": { "n": 7, "m": 35, "ename": "r7c35" }, "7串120": { "n": 7, "m": 120, "ename": "r7c120" }, "8串1": { "n": 8, "m": 1, "ename": "r8c1" }, "8串8": { "n": 8, "m": 8, "ename": "r8c8" }, "8串9": { "n": 8, "m": 9, "ename": "r8c9" }, "8串28": { "n": 8, "m": 28, "ename": "r8c28" }, "8串56": { "n": 8, "m": 56, "ename": "r8c56" }, "8串70": { "n": 8, "m": 70, "ename": "r8c70" }, "8串247": { "n": 8, "m": 247, "ename": "r8c247"} };
+    index.SplitMap = { "单关": { "单关": 1 }, "2串1": { "2串1": 1 }, "3串1": { "3串1": 1 }, "4串1": { "4串1": 1 }, "5串1": { "5串1": 1 }, "6串1": { "6串1": 1 }, "7串1": { "7串1": 1 }, "8串1": { "8串1": 1 }, "3串3": { "2串1": 3 }, "3串4": { "3串1": 1, "2串1": 3 }, "4串6": { "2串1": 6 }, "4串11": { "4串1": 1, "3串1": 4, "2串1": 6 }, "5串10": { "2串1": 10 }, "5串20": { "2串1": 10, "3串1": 10 }, "5串26": { "5串1": 1, "4串1": 5, "3串1": 10, "2串1": 10 }, "6串15": { "2串1": 15 }, "6串35": { "2串1": 15, "3串1": 20 }, "6串50": { "2串1": 15, "3串1": 20, "4串1": 15 }, "6串57": { "6串1": 1, "5串1": 6, "4串1": 15, "3串1": 20, "2串1": 15 }, "4串4": { "3串1": 4 }, "4串5": { "4串1": 1, "3串1": 4 }, "5串16": { "5串1": 1, "4串1": 5, "3串1": 10 }, "6串20": { "3串1": 20 }, "6串42": { "6串1": 1, "5串1": 6, "4串1": 15, "3串1": 20 }, "5串5": { "4串1": 5 }, "5串6": { "5串1": 1, "4串1": 5 }, "6串22": { "6串1": 1, "5串1": 6, "4串1": 15 }, "6串6": { "5串1": 6 }, "6串7": { "6串1": 1, "5串1": 6 }, "7串7": { "6串1": 7 }, "7串8": { "6串1": 7, "7串1": 1 }, "7串21": { "5串1": 21 }, "7串35": { "4串1": 35 }, "7串120": { "2串1": 21, "3串1": 35, "4串1": 35, "5串1": 21, "6串1": 7, "7串1": 1 }, "8串8": { "7串1": 8 }, "8串9": { "7串1": 8, "8串1": 1 }, "8串28": { "6串1": 28 }, "8串56": { "5串1": 56 }, "8串70": { "4串1": 70 }, "8串247": { "2串1": 28, "3串1": 56, "4串1": 70, "5串1": 56, "6串1": 28, "7串1": 8, "8串1": 1} };
+    index.ggm2num = { "单关": [1], "2串1": [2], "2串3": [2, 1], "3串1": [3], "3串3": [2], "3串4": [3, 2], "3串7": [3, 2, 1], "4串1": [4], "4串4": [3], "4串5": [4, 3], "4串6": [2], "4串11": [4, 3, 2], "4串15": [4, 3, 2, 1], "5串1": [5], "5串5": [4], "5串6": [5, 4], "5串10": [2], "5串16": [5, 4, 3], "5串20": [3, 2], "5串26": [5, 4, 3, 2], "5串31": [5, 4, 3, 2, 1], "6串1": [6], "6串6": [5], "6串7": [6, 5], "6串15": [2], "6串20": [3], "6串22": [6, 5, 4], "6串35": [3, 2], "6串42": [6, 5, 4, 3], "6串50": [4, 3, 2], "6串57": [6, 5, 4, 3, 2], "6串63": [6, 5, 4, 3, 2, 1], "7串1": [7], "8串1": [8], "9串1": [9], "10串1": [10], "11串1": [11], "12串1": [12], "13串1": [13], "14串1": [14], "15串1": [15], "7串7": [6], "7串8": [7, 6], "7串21": [5], "7串35": [4], "7串120": [7, 6, 5, 4, 3, 2], "8串8": [7], "8串9": [8, 7], "8串28": [6], "8串56": [5], "8串70": [4], "8串247": [8, 7, 6, 5, 4, 3, 2] };
+    index.num2ggm = { "1": "单关", "2": "2串1", "3": "3串1", "4": "4串1", "5": "5串1", "6": "6串1", "7": "7串1", "8": "8串1", "9": "9串1", "10": "10串1", "11": "11串1", "12": "12串1", "13": "13串1", "14": "14串1", "15": "15串1" };
+    index.type2nm = { "单关": { "n": 1, "m": 1 }, "2串1": { "n": 2, "m": 1 }, "3串1": { "n": 3, "m": 1 }, "4串1": { "n": 4, "m": 1 }, "5串1": { "n": 5, "m": 1 }, "6串1": { "n": 6, "m": 1 }, "7串1": { "n": 7, "m": 1 }, "8串1": { "n": 8, "m": 1 }, "3串3": { "n": 3, "m": 3 }, "3串4": { "n": 3, "m": 4 }, "4串6": { "n": 4, "m": 6 }, "4串11": { "n": 4, "m": 11 }, "5串10": { "n": 5, "m": 10 }, "5串20": { "n": 5, "m": 20 }, "5串26": { "n": 5, "m": 26 }, "6串15": { "n": 6, "m": 15 }, "6串35": { "n": 6, "m": 35 }, "6串50": { "n": 6, "m": 50 }, "6串57": { "n": 6, "m": 57 }, "4串4": { "n": 4, "m": 4 }, "4串5": { "n": 4, "m": 5 }, "5串16": { "n": 5, "m": 16 }, "6串20": { "n": 6, "m": 20 }, "6串42": { "n": 6, "m": 42 }, "5串5": { "n": 5, "m": 5 }, "5串6": { "n": 5, "m": 6 }, "6串22": { "n": 6, "m": 22 }, "6串6": { "n": 6, "m": 6 }, "6串7": { "n": 6, "m": 7 }, "7串7": { "n": 7, "m": 7 }, "7串8": { "n": 7, "m": 8 }, "7串21": { "n": 7, "m": 21 }, "7串35": { "n": 7, "m": 35 }, "7串120": { "n": 7, "m": 120 }, "8串8": { "n": 8, "m": 8 }, "8串9": { "n": 8, "m": 9 }, "8串28": { "n": 8, "m": 28 }, "8串56": { "n": 8, "m": 56 }, "8串70": { "n": 8, "m": 70 }, "8串247": { "n": 8, "m": 247} };
+    index.xhObj = [];
+    function Cmn(len, m) {
+        return (function (n1, n2, j, i, n) {
+            for (; j <= m; ) {
+                n2 *= j++;
+                n1 *= i--;
+            }
+            return n1 / n2;
+        })(1, 1, 1, len, len);
+    };
+
+    function show_gglist() {
+        var all_count = Number($("#s3").val()) + Number($("#s2").val()) + Number($("#s1").val());
+        for (var i = 1; i <= all_count; i++) {
+            if ($("#min_" + i)) $("#min_" + i).show();
+        }
+        for (var i = all_count + 1; i < 9; i++)
+            if ($("#min_" + i)) $("#min_" + i).hide();
+    }
+
+    function on_xuanhao(o) {
+        var ggtype = Number(o.attr("ggtype"));
+        var all_zhushu = 0;
+        for (var i = 0; i < index.xhObj.length; i++) {
+            if (index.xhObj[i].attr('checked'))
+                all_zhushu += js_Single_zs(index.xhObj[i]);
+        }
+        $("#res_html").html(all_zhushu*2 + "元");
+    }
+    function js_Single_zs(cbox) {
+        var ggtype = Number(cbox.attr("ggtype"));
+        if (ggtype == 1)
+            return get_ziyougg(cbox);
+        if (ggtype == 2)
+            return get_zhuhegg(cbox);
+    }
+    function get_zhuhegg(cbox) {
+        var ggzh = index.ggm2num[cbox.val()];  //该组合同哪些选项组成
+        var c_num = index.type2nm[cbox.val()].n;  //该组合的底数是多少，例如：8串35，底数是8
+        var all_count = Number($("#s3").val()) + Number($("#s2").val()) + Number($("#s1").val());  //总共选了多少场
+        var xhzh = [];
+        for (var i = 1; i <= 3; i++)
+            xhzh.push([i, parseInt($("#s" + i).val())]);
+        var res_sum = 0;
+        var ff = function (n, i) {
+            return Math.pow(xhzh[i][0], n) * Math.c(xhzh[i][1], n);
+        };
+        var paichu = function (n, i) {
+            return Math.c(xhzh[i][1], n);
+        };
+        var get_childzh = function (tmparr, idx, czh) {
+            var tmp_res = 0;
+            if (idx == xhzh.length) {
+                if (core.arrayAdd(tmparr) == czh)
+                    return core.arrayMultiple(core.arrayEach(tmparr, ff, [])) - core.arrayMultiple(core.arrayEach(tmparr, paichu, []));
+                return 0;
+            }
+            for (var j = 0; j <= xhzh[idx][1]; j++) {
+                tmp_res += get_childzh(tmparr.concat(j), idx + 1, czh);
+            }
+            return tmp_res;
+        }
+        for (var i = 0; i < ggzh.length; i++) {
+            res_sum += Math.c(all_count, c_num) * Math.c(c_num, ggzh[i]) + Math.c(all_count - ggzh[i], c_num - ggzh[i]) * get_childzh([], 0, ggzh[i]);
+        }
+       
+        return res_sum;
+    }
+
+    function get_ziyougg(cbox) {
+        var c_num = index.type2nm[cbox.val()].n;
+        var xhzh = [];
+        for (var i = 1; i <= 3; i++)
+            xhzh.push([i,parseInt($("#s" + i).val())]);
+
+        var ff = function (n, i) {
+            return Math.pow(xhzh[i][0], n) * Math.c(xhzh[i][1], n);
+        };
+        var dgzygg = function (tmparr, idx) {
+            var res_sum = 0;
+            if (idx == xhzh.length) {
+                if (core.arrayAdd(tmparr) == c_num)
+                     return core.arrayMultiple(core.arrayEach(tmparr, ff, []));
+                return 0;
+            }
+            for (var j = 0; j <= xhzh[idx][1]; j++) {
+                res_sum += dgzygg(tmparr.concat(j), idx + 1);
+            }
+            return res_sum;
+        }
+        return dgzygg([], 0);
+    }
+   
+    function init_Page() {
+        $("input[name='gg_box']").each(function () {
+            $(this).click(function () { on_xuanhao($(this)); });
+            index.xhObj.push($(this));
+        });
+        show_gglist();
+    }
+    init_Page();
+</script>
+</body>
+</html>

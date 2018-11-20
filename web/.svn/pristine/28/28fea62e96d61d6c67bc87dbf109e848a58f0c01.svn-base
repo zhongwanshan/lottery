@@ -1,0 +1,151 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="view/" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">详细比赛数据</div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="detail-football">
+    <div id="js-detailFootball" class="page-content">
+        <template v-if="!!teamInfo">
+
+            <div class="recordInfo">
+
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="recordTitle">主客队历史交锋</td>
+                            <td class="recordTitle">
+                                <span v-text="'(主队)'+teamInfo.h_cn_abbr"></span>
+                            </td>
+                            <td class="recordTitle">
+                                <span v-text="'(客队)'+teamInfo.a_cn_abbr"></span>
+                            </td>
+                        </tr>
+                        <template v-for="item in hisDetailList">
+                            <tr class="detail hisDetail">
+                                <td class="label">
+                                    <p v-text="item.l_cn_abbr" :style="{backgroundColor: '#'+item.l_color,color: 'white'}"></p>
+                                    <p v-text="item.date_cn"></p>
+                                </td>
+                                <td colspan="2" style="padding-left: 50px;">
+                                    <p>半场比分
+                                        <span v-text="item.half"></span>
+                                    </p>
+                                    <p>全场比分
+                                        <span v-text="item.final"></span>
+                                    </p>
+                                    <p>盘路
+                                        <span v-text="item.team_rs"></span>
+                                    </p>
+                                    <p>澳彩主胜
+                                        <span v-text="item.mac_h"></span>
+                                    </p>
+                                    <p>澳彩客胜
+                                        <span v-text="item.mac_a"></span>
+                                    </p>
+                                    <p>澳彩盘路
+                                        <span v-text="item.mac_data"></span>
+                                    </p>
+                                    <p>澳彩盘口
+                                        <span v-text="item.mac_str"></span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="recordTitle">主客队近期战绩</td>
+                            <td class="recordTitle">
+                                <span v-text="'(主队)'+teamInfo.h_cn_abbr"></span>
+                            </td>
+                            <td class="recordTitle">
+                                <span v-text="'(客队)'+teamInfo.a_cn_abbr"></span>
+                            </td>
+                        </tr>
+                        <template v-for="item in leagueList">
+                            <tr class="detail">
+                                <td class="label">
+                                    <p v-text="item.l_cn_abbr" :style="{backgroundColor: '#'+item.l_color,color: 'white'}"></p>
+                                    <p v-text="item.date_cn"></p>
+                                </td>
+                                <td class="hTeam">
+                                    <p>主队排名
+                                        <span v-text="item.rank_h"></span>
+                                    </p>
+                                    <p>(总)主队排名
+                                        <span v-text="item.table_h"></span>
+                                    </p>
+                                    <p>(总)主队胜
+                                        <span v-text="item.twin_h"></span>
+                                    </p>
+                                    <p>(总)主队平
+                                        <span v-text="item.tdraw_h"></span>
+                                    </p>
+                                    <p>(总)主队负
+                                        <span v-text="item.tlose_h"></span>
+                                    </p>
+                                    <p>(总)主队积分
+                                        <span v-text="item.tpoint_h"></span>
+                                    </p>
+                                    <p>(轮)主队胜
+                                        <span v-text="item.hwin_h"></span>
+                                    </p>
+                                    <p>(轮)主队平
+                                        <span v-text="item.hdraw_h"></span>
+                                    </p>
+                                    <p>(轮)主队负
+                                        <span v-text="item.hlose_h"></span>
+                                    </p>
+                                    <p>(轮)主队积分
+                                        <span v-text="item.hpoint_h"></span>
+                                    </p>
+                                </td>
+                                <td class="aTeam">
+                                    <p>客队排名
+                                        <span v-text="item.rank_a"></span>
+                                    </p>
+                                    <p>(总)客队排名
+                                        <span v-text="item.table_a"></span>
+                                    </p>
+                                    <p>(总)客队胜
+                                        <span v-text="item.twin_a"></span>
+                                    </p>
+                                    <p>(总)客队平
+                                        <span v-text="item.tdraw_a"></span>
+                                    </p>
+                                    <p>(总)客队负
+                                        <span v-text="item.tlose_a"></span>
+                                    </p>
+                                    <p>(总)客队积分
+                                        <span v-text="item.tpoint_a"></span>
+                                    </p>
+                                    <p>(轮)客队胜
+                                        <span v-text="item.awin_a"></span>
+                                    </p>
+                                    <p>(轮)客队平
+                                        <span v-text="item.adraw_a"></span>
+                                    </p>
+                                    <p>(轮)客队负
+                                        <span v-text="item.alose_a"></span>
+                                    </p>
+                                    <p>(轮)客队积分
+                                        <span v-text="item.apoint_a"></span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+
+            </div>
+        </template>
+    </div>
+</div>

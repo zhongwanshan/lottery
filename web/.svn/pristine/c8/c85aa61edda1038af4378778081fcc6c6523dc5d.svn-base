@@ -1,0 +1,114 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="view/account/account.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">充值</div>
+        <div class="right">
+            <a style="width: auto;" href="view/account/rechHistory.html">充值历史</a>
+        </div>
+    </div>
+</div>
+
+<div class="page no-toolbar" data-page="account-recharge">
+    <div id="js-recharge" class="page-content listBlock">
+
+        <p class="infoTips">温馨提醒：为了保障您的资金安全，请尽快完成
+            <a href="view/user/identity.html">实名认证</a>，提现必须完成实名认证。</p>
+
+        <div v-show="isShowCash" class="list-block moneyType">
+            <ul>
+                <li>
+                    <label class="label-radio item-content">
+                        <input type="radio" v-model="rechargeInfo.rechargeMoney" name="my-radio" value="200">
+                        <div class="item-inner">
+                            <div class="item-title">200元</div>
+                        </div>
+                    </label>
+                </li>
+                <li>
+                    <label class="label-radio item-content">
+                        <input type="radio" v-model="rechargeInfo.rechargeMoney" name="my-radio" value="500">
+                        <div class="item-inner">
+                            <div class="item-title">500元</div>
+                        </div>
+                    </label>
+                </li>
+                <li>
+                    <label class="label-radio item-content">
+                        <input type="radio" v-model="rechargeInfo.rechargeMoney" name="my-radio" value="2000">
+                        <div class="item-inner">
+                            <div class="item-title">2000元</div>
+                        </div>
+                    </label>
+                </li>
+                <li>
+                    <label class="label-radio item-content">
+                        <input type="radio" v-model="rechargeInfo.rechargeMoney" name="my-radio" value="5000">
+                        <div class="item-inner">
+                            <div class="item-title">5000元</div>
+                        </div>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div v-show="isShowCash" class="list-block">
+            <ul>
+                <li class="item">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">其它金额:</div>
+                            <div class="item-input">
+                                <input type="text" v-model="rechargeInfo.rechargeMoney" placeholder="请输入其它金额">
+                            </div>
+                            <div class="item-label">元</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-block-title">充值优惠</div>
+        <div class="list-block">
+            <ul>
+                <template v-for="item in rechargePolicyList">
+                    <li @click="setIsCanModify(item.rechargePolicyId,item.canModify)">
+                        <label class="label-checkbox item-content">
+                            <input type="radio" name="rechargePolicyId" :value="item.rechargePolicyId">
+                            <div class="item-media">
+                                <i class="icon icon-form-checkbox"></i>
+                            </div>
+                            <div class="item-inner">
+                                <div class="bankItem">
+                                    <span v-text="item.policyName"></span>
+                                    <i class="time">{{item.endTime}}前有效</i>
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+                </template>
+            </ul>
+        </div>
+        <div class="list-block">
+            <ul>
+                <li class="item">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">备注信息:</div>
+                            <div class="item-input">
+                                <input type="text" v-model="remark" placeholder="请输入备注信息">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="action">
+            <button @click="doRechargeAction" class="button button-fill">确认充值</button>
+        </div>
+    </div>
+</div>

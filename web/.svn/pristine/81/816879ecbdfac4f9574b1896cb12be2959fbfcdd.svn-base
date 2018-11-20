@@ -1,0 +1,178 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="center">个人中心</div>
+        <div class="right">
+            <a class="js-message" href="view/user/message.html">
+                <i class="navIcon navIcon-message"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="page" data-page="me">
+    <div id="js-pageMe" class="page-content">
+        <div class="userBlock">
+            <div class="accoutType userInfo">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a :href="!!userInfo?'view/user/info.html':'view/user/login.html'" class="item">
+                                    <p class="img">
+                                        <img :src="!!userInfo ? (userInfo.headImageUrl||'img/img02.png'):''" />
+                                    </p>
+                                    <p class="txt">
+                                        <span class="title" v-text="!!userInfo ? decodeURI(userInfo.nickName):'请登录'"></span>
+                                        <template v-if="!!userInfo">
+                                            <span class="statu">
+                                                <i class="member">
+                                                    <!-- <img :src="!!userInfo?userInfo.headImgUrl:'img/icon/best.png'" /> -->
+                                                    普通会员
+                                                </i>
+                                                <!-- <strong class="deadline">2019-12-28到期<i class="glyphicon glyphicon-question-sign"></i></strong> -->
+                                            </span>
+                                        </template>
+                                    </p>
+                                    <span class="toword glyphicon glyphicon-menu-right"></span>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="myAcount list-block">
+                <ul>
+                    <li>
+                        <a href="view/account/account.html" class="item-link item-content">
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    <img class="accountImg" src="img/icon/account.png" />我的账户</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="accoutType">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td style="width: 50%;">
+                                <a href="view/account/deposit.html" class="item">
+                                    <p class="img">
+                                        <img src="img/icon/deposit.png" />
+                                    </p>
+                                    <p class="txt">
+                                        <span class="title">提现</span>
+                                        <span class="statu">最快5分钟到账</span>
+                                    </p>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="view/account/recharge.html" class="item">
+                                    <p class="img">
+                                        <img src="img/icon/recharge.png" />
+                                    </p>
+                                    <p class="txt">
+                                        <span class="title">充值</span>
+                                        <span class="statu">快速充值</span>
+                                    </p>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="list-block">
+                <ul>
+                    <li>
+                        <a href="view/order/order.html" class="item-link item-content">
+                            <div class="item-media">
+                                <img src="img/icon/order.png" />
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">我的彩票</div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- <li>
+                        <a href="view/user/focus.html" class="item-link item-content">
+                            <div class="item-media">
+                                <img src="img/icon/focus.png" />
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">我的关注</div>
+                            </div>
+                        </a>
+                    </li> -->
+                    <li>
+                        <a href="view/user/kingBi.html" class="item-link item-content">
+                            <div class="item-media">
+                                <img src="img/icon/kingBi.png" />
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">我的金币</div>
+                            </div>
+                        </a>
+                    </li>
+<!-- 
+                </ul>
+            </div>
+            <div class="list-block">
+                <ul> -->
+                    <li>
+                        <a href="view/user/security.html" class="item-link item-content">
+                            <div class="item-media">
+                                <img src="img/icon/security.png" />
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">账号安全</div>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- <li>
+                                <a href="#" class="item-link item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title">检查更新</div>
+                                    </div>
+                                </a>
+                            </li> -->
+                    <!-- <li>
+                        <a href="view/user/about.html" class="item-link item-content">
+                            <div class="item-media">
+                                <img src="img/icon/about.png" />
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">关于</div>
+                            </div>
+                        </a>
+                    </li> -->
+                    <li v-if="!!!userInfo">
+                        <a href="view/user/login.html" class="item-link item-content">
+                            <div class="item-media">
+                                <img src="img/icon/account.png" />
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">登录</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li v-if="!!userInfo">
+                        <div @click="userLogout" class="item-link item-content">
+                            <div class="item-media">
+                                <img src="img/icon/account.png" />
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">退出</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <template v-if="!!!userInfo">
+                <div @click="checkLoginStatu" class="nologinLayer"></div>
+            </template>
+        </div>
+    </div>
+</div>

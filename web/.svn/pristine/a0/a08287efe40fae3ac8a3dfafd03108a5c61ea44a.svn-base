@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Your app title -->
+    <title>多彩缤纷</title>
+
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/flat-ui.min.css">
+    <link rel="stylesheet" href="../../css/common.min.css">
+</head>
+
+<body>
+
+    <div id="js-pageRegister">
+
+        <!-- 头部 -->
+        <div class="headerWrap">
+            <div class="header">
+                <div class="c-logo">
+                    <h1 class="img">多彩缤纷</h1>
+                </div>
+                <div class="c-info">
+                    <a href="./login.html">
+                        <i></i>请登录</a>
+                    <a href="./register.html">
+                        <i></i>免费注册</a>
+                    <a href="./resetPass.html">
+                        <i></i>找回密码</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主要内容 -->
+        <div class="main">
+            <div class="inputWrap">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <h2>用户注册</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label">手机号:</p>
+                            </td>
+                            <td>
+                                <p>
+                                    <input type="text" v-model="paramInfo.phone" placeholder="请输入手机号" />
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label">图片验证码:</p>
+                            </td>
+                            <td>
+                                <p>
+                                    <input type="text" v-model="imgCode" placeholder="请输入图片验证码" />
+                                    <img class="validate" :src="imgSrc" @click="getImgCode" />
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label">短信验证码:</p>
+                            </td>
+                            <td>
+                                <p>
+                                    <input type="text" v-model="paramInfo.smsCode" placeholder="请输入短信验证码" />
+                                    <button class="validate btn btn-default" @click="getSmsCode" v-text="smsTxt"></button>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label">用户昵称:</p>
+                            </td>
+                            <td>
+                                <p>
+                                    <input type="text" v-model="nickName" placeholder="请输入用户昵称" />
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label">设置密码:</p>
+                            </td>
+                            <td>
+                                <p>
+                                    <input type="text" v-model="pwd" placeholder="请输入密码" />
+                                </p>
+                            </td>
+                        </tr>
+                        <!-- <tr>
+                            <td>
+                                <p class="label">确认密码:</p>
+                            </td>
+                            <td>
+                                <p>
+                                    <input type="text" v-model="paramInfo." placeholder="请输入确认密码" />
+                                </p>
+                            </td>
+                        </tr> -->
+                        <tr>
+                            <td></td>
+                            <td>
+                                <p class="remember">
+                                    <label>
+                                        <input type="checkbox" />
+                                        <a>同意协议</a>
+                                    </label>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p class="action">
+                                    <button @click="doAction" class="btn btn-success">确认提交</button>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer">
+            <div class="copyright">
+                <p>版权所有：粤ICP备18070257号</p>
+                <p>客服热线：020-89853112 (8:30-12:00 14:30-18:00)</p>
+                <p>彩票票提示您：理性购彩，健康生活。不向未满18周岁的青少年出售彩票。</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/assets/jquery-3.2.2.min.js"></script>
+    <script type="text/javascript" src="/assets/vue.min.js"></script>
+    <script type="text/javascript" src="/assets/vender/Flat-UI-master/scripts/flat-ui.min.js"></script>
+    <script type="text/javascript" src="/assets/md5.min.js"></script>
+    <script type="text/javascript" src="/assets/config.js?v=03939"></script>
+    <script type="text/javascript" src="/assets/utility.js?v=03939"></script>
+    <script type="text/javascript" src="../../js/app.min.js?v=0948483939"></script>
+    <script type="text/javascript" src="../../action/user/register.min.js?v=0948483939"></script>
+
+</body>
+
+</html>

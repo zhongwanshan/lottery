@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>忘记密码</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="data/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/忘记密码/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/ie.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="files/忘记密码/data.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (底部版权) -->
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u35" class="ax_default label">
+        <div id="u35_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u36" class="text" style="visibility: visible;">
+          <p><span>版权所有：xxxxxxx发展有限公司 Copyright © 2006-2014 粤ICP备B2-288888-2号 增值电信业务经营许可证：粤B2-2888888 粤网文[2017]8888-8888号</span></p><p><span>公司地址：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx楼&nbsp;&nbsp; 客服热线：400-888-8888 (8:30-12:00 14:30-18:00)</span></p><p><span>多彩缤纷提示您：理性购彩，健康生活。不向未满18周岁的青少年出售彩票。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u37" class="ax_default image">
+        <img id="u37_img" class="img " src="images/首页（未登录）/u3.png"/>
+        <!-- Unnamed () -->
+        <div id="u38" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Placeholder) -->
+      <div id="u39" class="ax_default placeholder">
+        <img id="u39_img" class="img " src="images/首页（未登录）/u5.png"/>
+        <!-- Unnamed () -->
+        <div id="u40" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Placeholder) -->
+      <div id="u41" class="ax_default placeholder">
+        <img id="u41_img" class="img " src="images/首页（未登录）/u7.png"/>
+        <!-- Unnamed () -->
+        <div id="u42" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u43" class="ax_default box_1">
+        <div id="u43_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u44" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u45" class="ax_default paragraph">
+        <div id="u45_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u46" class="text" style="visibility: visible;">
+          <p><span>多彩缤纷</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Vertical Line) -->
+      <div id="u47" class="ax_default vertical_line">
+        <img id="u47_img" class="img " src="images/忘记密码/u47.png"/>
+        <!-- Unnamed () -->
+        <div id="u48" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49" class="ax_default paragraph">
+        <div id="u49_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u50" class="text" style="visibility: visible;">
+          <p><span>管理中心</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u51" class="ax_default paragraph">
+        <div id="u51_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u52" class="text" style="visibility: visible;">
+          <p><span>管理员登录</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u53" class="ax_default shape">
+        <div id="u53_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u54" class="text" style="visibility: visible;">
+          <p><span>&nbsp;&nbsp; 管理员找回密码</span></p>
+        </div>
+      </div>
+
+      <!-- 找回密码 (Dynamic Panel) -->
+      <div id="u55" class="ax_default" data-label="找回密码">
+        <div id="u55_state0" class="panel_state" data-label="验证手机号码">
+          <div id="u55_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u56" class="ax_default shape">
+              <div id="u56_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u57" class="text" style="visibility: visible;">
+                <p><span>1.验证手机号码</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u58" class="ax_default shape">
+              <div id="u58_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u59" class="text" style="visibility: visible;">
+                <p><span>2.设置新密码</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u60" class="ax_default shape">
+              <div id="u60_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u61" class="text" style="visibility: visible;">
+                <p><span>3.完成</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u62" class="ax_default paragraph">
+              <div id="u62_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u63" class="text" style="visibility: visible;">
+                <p><span style="color:#FF0000;">*</span><span>手机号码：</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Text Field) -->
+            <div id="u64" class="ax_default text_field">
+              <input id="u64_input" type="text" value=""/>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u65" class="ax_default paragraph">
+              <div id="u65_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u66" class="text" style="visibility: visible;">
+                <p><span style="color:#FF0000;">*</span><span style="color:#000000;">短信验证码</span><span>：</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Text Field) -->
+            <div id="u67" class="ax_default text_field">
+              <input id="u67_input" type="text" value=""/>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u68" class="ax_default shape">
+              <div id="u68_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u69" class="text" style="visibility: visible;">
+                <p><span>确认</span></p>
+              </div>
+            </div>
+
+            <!-- 提示 (Rectangle) -->
+            <div id="u70" class="ax_default paragraph ax_default_hidden" data-label="提示" style="display: none; visibility: hidden">
+              <div id="u70_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u71" class="text" style="visibility: visible;">
+                <p><span>短信验证码已经发送到139****1234，请输入验证码。再次发送&nbsp; 59秒。</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u72" class="ax_default paragraph">
+              <div id="u72_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u73" class="text" style="visibility: visible;">
+                <p><span style="color:#FF0000;">*</span><span style="color:#1E1E1E;">管理员账号</span><span>：</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Text Field) -->
+            <div id="u74" class="ax_default text_field">
+              <input id="u74_input" type="text" value=""/>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u75" class="ax_default primary_button">
+              <div id="u75_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u76" class="text" style="visibility: visible;">
+                <p><span>获取验证码</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="u55_state1" class="panel_state" data-label="设置新密码">
+          <div id="u55_state1_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u77" class="ax_default shape">
+              <div id="u77_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u78" class="text" style="visibility: visible;">
+                <p><span>1.验证手机号码</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u79" class="ax_default shape">
+              <div id="u79_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u80" class="text" style="visibility: visible;">
+                <p><span>2.设置新密码</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u81" class="ax_default shape">
+              <div id="u81_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u82" class="text" style="visibility: visible;">
+                <p><span>3.完成</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u83" class="ax_default paragraph">
+              <div id="u83_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u84" class="text" style="visibility: visible;">
+                <p><span style="color:#FF0000;">*</span><span style="color:#000000;">新密码</span><span>：</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Text Field) -->
+            <div id="u85" class="ax_default text_field">
+              <input id="u85_input" type="text" value=""/>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u86" class="ax_default paragraph">
+              <div id="u86_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u87" class="text" style="visibility: visible;">
+                <p><span style="color:#FF0000;">*</span><span style="color:#000000;">确认密码</span><span>：</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Text Field) -->
+            <div id="u88" class="ax_default text_field">
+              <input id="u88_input" type="text" value=""/>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u89" class="ax_default shape">
+              <div id="u89_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u90" class="text" style="visibility: visible;">
+                <p><span>确认</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="u55_state2" class="panel_state" data-label="完成">
+          <div id="u55_state2_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u91" class="ax_default shape">
+              <div id="u91_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u92" class="text" style="visibility: visible;">
+                <p><span>1.验证手机号码</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u93" class="ax_default shape">
+              <div id="u93_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u94" class="text" style="visibility: visible;">
+                <p><span>2.设置新密码</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u95" class="ax_default shape">
+              <div id="u95_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u96" class="text" style="visibility: visible;">
+                <p><span>3.完成</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u97" class="ax_default shape">
+              <div id="u97_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u98" class="text" style="visibility: visible;">
+                <p><span>确认</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u99" class="ax_default paragraph">
+              <div id="u99_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u100" class="text" style="visibility: visible;">
+                <p><span>新密码设置成功，请返回登录页面登录平台。</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

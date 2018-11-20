@@ -1,0 +1,88 @@
+(function () {
+    var pageVue = new Vue({
+        el: "#js-pageKingBi",
+        data: {
+            userInfo: USERINFO,
+            transList: {},
+            transInfo: {
+                transType: "",
+                transType: "",
+                curPage: 0,
+                pageSize: 10,
+                pageNum: 1,
+                action: CONFIG.ACTION.getWalletTransList
+            },
+            pageCount: 1,
+            // 0：存入、
+            // 1：转移、
+            // 2：消费
+            // 3：过期失效
+            transtype: CONFIG.TRANSTYPE
+        },
+        methods: {
+            // 退出登录
+            userLogout: function() {
+                utility.userLogout(function() {
+                    window.location.replace(CONFIG.HOST+"/shop/view/user/login.html");
+                });
+            },
+            // 分页
+            getByPage: function (page) {
+                var self = this;
+
+                self.transInfo.pageNum = page;
+
+                self.getUserCoinList();
+            },
+            // 获取上一页数据
+            getPreViewData: function () {
+                var self = this;
+
+                if (self.transInfo.pageNum > 1) {
+                    self.transInfo.pageNum = self.transInfo.pageNum - 1;
+                    self.getUserCoinList();
+                }
+            },
+            // 获取下一页数据
+            getNextData: function () {
+                var self = this;
+
+                if (self.transInfo.pageNum < self.pageCount) {
+                    self.transInfo.pageNum = self.transInfo.pageNum + 1;
+                    self.getUserCoinList();
+                }
+            },
+            // 获取账单明细列表
+            getUserCoinList: function () {
+                var self = this;
+                utility.interactWithServer({
+                    headerInfo: {
+                        appType: "2",
+                        userId: !!USERINFO ? USERINFO["userId"] : "",
+                        userToken: !!USERINFO ? USERINFO["userToken"] : "",
+                        actionUrl: utility.formatActionUrl(CONFIG.SERVICE.walletService, CONFIG.ACTION.getWalletTransList, self.transInfo),
+                    },
+                    url: CONFIG.HOST + CONFIG.SERVICE.walletService,
+                    dataObj: self.transInfo,
+                    successCallback: function (data) {
+                        if (data.code == 200) {
+                            self.transList = data.data;
+                        } else {
+                            alert(data.message);
+                        }
+                    },
+                });
+            }
+        },
+        created: function () {
+            var self = this;
+
+            self.getUserCoinList();
+
+            setTimeout(function() {
+                self.userInfo = USERINFO;
+            }, 1000);
+
+        }
+    });
+}())

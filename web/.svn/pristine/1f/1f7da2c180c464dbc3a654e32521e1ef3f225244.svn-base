@@ -1,0 +1,186 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="view/me.html" class="active">
+                <i class="navIcon navIcon-me"></i>
+            </a>
+        </div>
+        <div class="center">购彩大厅</div>
+        <div class="right">
+            <a class="js-message" href="view/user/message.html">
+                <i class="navIcon navIcon-message"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="page" data-page="hall">
+    <!-- Scrollable page content -->
+    <div id="js-pageHall" class="page-content">
+        <div id="page-hall">
+            <div class="mainWrap">
+
+                <p class="hTitle">竞技彩</p>
+                <div class="lotteryList">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="width: 50%;">
+                                    <a href="view/buy/football.html" class="item">
+                                        <p class="img">
+                                            <img src="../assets/img/deticon/football.png" />
+                                        </p>
+                                        <p class="txt">
+                                            <span class="title" style="padding-top: .4rem;">竞彩足球</span>
+                                            <!-- <span class="statu">暂停销售</span> -->
+                                        </p>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="view/buy/basketball.html" class="item">
+                                        <p class="img">
+                                            <img src="../assets/img/deticon/basketball.png" />
+                                        </p>
+                                        <p class="txt">
+                                            <span class="title" style="padding-top: .4rem;">竞彩篮球</span>
+                                            <!-- <span class="statu">截至 23时59分</span> -->
+                                        </p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="view/buy/sf14.html" class="item">
+                                        <p class="img">
+                                            <img src="../assets/img/deticon/sf14.png" />
+                                        </p>
+                                        <p class="txt">
+                                            <span class="title" style="padding-top: .4rem;">十四场胜负</span>
+                                            <!-- <span class="statu">截至 23时59分</span> -->
+                                        </p>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="view/buy/rs9.html" class="item">
+                                        <p class="img">
+                                            <img src="../assets/img/deticon/rs9.png" />
+                                        </p>
+                                        <p class="txt">
+                                            <span class="title" style="padding-top: .4rem;">任选九</span>
+                                            <!-- <span class="statu">截至 23时59分</span> -->
+                                        </p>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="hTitle">数字彩</p>
+                <div class="lotteryList">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="width: 50%;">
+                                    <a href="view/buy/ssq.html" class="item">
+                                        <p class="img">
+                                            <img src="../assets/img/deticon/ssq.png" />
+                                        </p>
+                                        <p class="txt">
+                                            <span class="title">双色球</span>
+                                            <span class="statu" v-text="!!digitalData?digitalData['lottoId'+11]['statu']:''"></span>
+                                        </p>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="view/buy/dlt.html" href="" class="item">
+                                        <p class="img">
+                                            <img src="../assets/img/deticon/dlt.png" />
+                                        </p>
+                                        <p class="txt">
+                                            <span class="title">大乐透</span>
+                                            <span class="statu" v-text="!!digitalData?digitalData['lottoId'+14]['statu']:''"></span>
+                                        </p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="view/buy/fc3d.html" class="item">
+                                        <p class="img">
+                                            <img src="../assets/img/deticon/fc3d.png" />
+                                        </p>
+                                        <p class="txt">
+                                            <span class="title">福彩3D</span>
+                                            <span class="statu" v-text="!!digitalData?digitalData['lottoId'+12]['statu']:''"></span>
+                                        </p>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="view/buy/pl3.html" class="item">
+                                        <p class="img">
+                                            <img src="../assets/img/deticon/pl3.png" />
+                                        </p>
+                                        <p class="txt">
+                                            <span class="title">排列三</span>
+                                            <span class="statu" v-text="!!digitalData?digitalData['lottoId'+16]['statu']:''"></span>
+                                        </p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="view/buy/pl5.html" class="item">
+                                        <p class="img">
+                                            <img src="../assets/img/deticon/pl5.png" />
+                                        </p>
+                                        <p class="txt">
+                                            <span class="title">排列五</span>
+                                            <span class="statu" v-text="!!digitalData?digitalData['lottoId'+17]['statu']:''"></span>
+                                        </p>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="view/buy/qcl.html" class="item">
+                                        <p class="img">
+                                            <img src="../assets/img/deticon/qcl.png" />
+                                        </p>
+                                        <p class="txt">
+                                            <span class="title">七乐彩</span>
+                                            <span class="statu" v-text="!!digitalData?digitalData['lottoId'+13]['statu']:''"></span>
+                                        </p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="view/buy/qxc.html" class="item">
+                                        <p class="img">
+                                            <img src="../assets/img/deticon/qxc.png" />
+                                        </p>
+                                        <p class="txt">
+                                            <span class="title">七星彩</span>
+                                            <span class="statu" v-text="!!digitalData?digitalData['lottoId'+15]['statu']:''"></span>
+                                        </p>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="view/buy/gd115.html" class="item">
+                                        <p class="img">
+                                            <img src="../assets/img/deticon/sf14.png" />
+                                        </p>
+                                        <p class="txt">
+                                            <span class="title">广东11选5</span>
+                                            <span class="statu" v-text="!!digitalData&&!!digitalData['lottoId'+6]?digitalData['lottoId'+6]['statu']:''"></span>
+                                        </p>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

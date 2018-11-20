@@ -1,0 +1,143 @@
+                                                                                  <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登录页面</title>
+<style type="text/css">
+/*初始化页面  */
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset,
+	legend, input, textarea, select {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font: 14px "微软雅黑", "Arial Narrow", HELVETICA;
+	background: #fff;
+	-webkit-text-size-adjust: 100%;
+}
+
+a {
+	color: #2d374b;
+	text-decoration: none
+}
+
+a:hover {
+	color: #cd0200;
+	text-decoration: underline
+}
+
+em {
+	font-style: normal
+}
+
+li {
+	list-style: none
+}
+
+img {
+	border: 0;
+	vertical-align: middle
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+p {
+	word-wrap: break-word
+}
+/* 页面css*/
+#login div input {
+	display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    margin-left: 28px;
+    width: 86%;
+    margin-top: 28px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: #F8F8F8;
+    border:1px solid #DCDCDC;
+    color: #929292;
+}
+#login div button {
+	display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    margin-left: 28px;
+    width: 86%;
+    margin-top: 28px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: #00A3D9;
+    border:1px solid #DCDCDC;
+    color: white;
+}
+
+#login div button:hover {
+background: #00D9D9;
+}
+
+#login div button:active {
+color: black;
+background-color: white;
+}
+</style>
+
+</head>
+<body style="background-color: #346760;">
+
+ <div id="login" style="width: 350px;height: 350px;
+    margin:0 auto;
+    margin-top: 60px;border-radius: 5px;">
+   <div style="height: 100px;width: 100%;background-color: #FFFFFF;height: 70px;
+    width: 100%;
+    background-color: #FFFFFF;
+    /* border-radius: 5px; */
+    text-align: center;
+    font-size: 25px;line-height: 70px;    border-top-left-radius: 15px;
+    border-top-right-radius: 15px">运营管理后台</div>
+   <div style="height: 300px;width: 100%;background-color: #EEEEEE;    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px">
+       <input type="text"  placeholder="用户名"> <br>
+       <input type="password" placeholder="密码" id="password1"> <br>
+      <button value="登录" onclick="login()">登录</button>
+   </div>
+ 
+ </div>
+	<iframe id="iframe" src="" hidden="true" ></iframe>
+<script src="/lottery/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	function login(){
+		var userCode =$("#login div input:nth-child(1)").val();
+		var pwd =$("#login div #password1").val();
+	    if(userCode!="" &&pwd!=""){
+		$.ajax({
+			type : "Post",
+			url : "/lottery/login/login",
+			data : {
+				"sysUserCode":userCode,
+				"sysUserPwd":pwd
+			},
+			success : function(data) {
+            if("sucess"==data){
+            	location.href="/lottery/login/home"
+            	
+			}else{
+				alert("用户名，密码不正确")
+			}
+	}
+		})
+		
+	}else{
+    	
+    	alert("请填写用户名密码，谢谢！")
+    }
+
+	}	
+	
+	</script>
+</body>
+</html>

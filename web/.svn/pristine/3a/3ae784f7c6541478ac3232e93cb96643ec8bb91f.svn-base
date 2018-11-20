@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Required meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- Your app title -->
+  <title>多彩缤纷</title>
+  <!-- Path to Framework7 iOS CSS theme styles-->
+  <link rel="stylesheet" href="/assets/vender/Framework7-1.2.0/css/framework7.ios.min.css">
+  <!-- Path to Framework7 iOS related color styles -->
+  <link rel="stylesheet" href="/assets/vender/Framework7-1.2.0/css/framework7.ios.colors.min.css">
+  <link rel="stylesheet" href="/assets/vender/mescroll-master/mescroll.min.css">
+  <link rel="stylesheet" href="/assets/vender/cropperjs-master/cropper.min.css">
+  <!-- Path to your custom app styles-->
+  <link rel="stylesheet" href="/app/css/app.min.css?v=757488jueeue">
+</head>
+
+<body>
+  <!-- Status bar overlay for full screen mode (PhoneGap) -->
+  <div class="statusbar-overlay"></div>
+
+  <!-- Views -->
+  <div class="views">
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main">
+
+      <!-- Top Navbar-->
+      <div id="js-nave" class="navbar">
+        <div class="navbar-inner">
+          <div class="left"><a class="active"><i class="navIcon navIcon-me"></i></a></div>
+          <div class="center"></div>
+          <div class="right"><a><i class="navIcon navIcon-message"></i></a></div>
+        </div>
+      </div>
+
+      <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+      <div class="pages navbar-through toolbar-through">
+        <div class="page" data-page="index"></div>
+      </div>
+
+      <!-- Bottom Toolbar-->
+      <div id="js-toolbar" class="toolbar tabbar tabbar-labels">
+        <div class="toolbar-inner tabWrap">
+          <a id="index" data-force="true" data-ignoreCache="true" href="/app/view/index.html" class="link active">
+            <i class="navIcon navIcon-home"></i>
+            <span class="tabbar-label">首页</span>
+          </a>
+          <a id="hall" data-force="true" data-ignoreCache="true" href="/app/view/hall.html" class="link">
+            <i class="navIcon navIcon-hall"></i>
+            <span class="tabbar-label">大厅</span>
+          </a>
+          <a id="prize" data-force="true" data-ignoreCache="true" href="/app/view/prize.html" class="link">
+            <i class="navIcon navIcon-prize"></i>
+            <span class="tabbar-label">开奖</span>
+          </a>
+          <!-- <a id="magic" href="/app/view/magic.html" class="link">
+            <i class="navIcon navIcon-magic"></i>
+            <span class="tabbar-label">神算</span>
+          </a> -->
+          <a id="me" data-force="true" data-ignoreCache="true" href="/app/view/me.html" class="link">
+            <i class="navIcon navIcon-me"></i>
+            <span class="tabbar-label">我的</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="text/javascript" src="/assets/vender/Framework7-1.2.0/js/framework7.min.js"></script>
+  <script type="text/javascript" src="/assets/vender/mescroll-master/mescroll.min.js"></script>
+  <script type="text/javascript" src="/assets/vender/iscroll-4/iscroll.min.js"></script>
+  <script type="text/javascript" src="/assets/vender/cropperjs-master/cropper.min.js"></script>
+  <script type="text/javascript" src="/assets/LAB.min.js"></script>
+  <script type="text/javascript" src="/assets/vue.min.js"></script>
+  <script type="text/javascript" src="/assets/md5.min.js"></script>
+  <script type="text/javascript" src="/assets/config.min.js?v=48rurujf"></script>
+  <script type="text/javascript" src="/assets/utility.min.js?v=e3eurj33"></script>
+  <script type="text/javascript" src="/app/js/app.min.js?v=re33eddd"></script>
+
+</body>
+
+</html>

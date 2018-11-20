@@ -1,0 +1,1 @@
+(function(){new Vue({el:"#js-pageHall",data:{userInfo:USERINFO,digitalData:null},methods:{userLogout:function(){utility.userLogout(function(){window.location.replace(CONFIG.HOST+"/www/index.html")})}},created:function(){utility.setSessionStorage("resultList",null),utility.setSessionStorage("orderInfo",null),utility.setSessionStorage("generateOrder",null)}})})();

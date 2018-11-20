@@ -1,0 +1,1 @@
+(function(){utility.getQueryParams(),new Vue({el:"#js-pageContent",data:{userInfo:USERINFO,contentInfo:null},methods:{},created:function(){var t=this;utility.findByContentId({contentId:PAGE.query.contentId,callback:function(n){t.contentInfo=n.data}})}})})();

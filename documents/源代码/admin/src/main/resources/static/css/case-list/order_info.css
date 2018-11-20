@@ -1,0 +1,358 @@
+.page-details {
+    font-size: 12px;
+}
+
+/*导航栏*/
+.case-nav {
+    width: 100%;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.case-nav li a {
+    padding-bottom: 10px !important;
+    font-size: 14px;
+}
+
+.case-nav li a:hover {
+    margin-bottom: -2px;
+    border-bottom: 2px solid #009966;
+    color: #009966;
+}
+
+.case-nav li a.selected {
+    margin-bottom: -2px;
+    border-bottom: 2px solid #009966;
+    color: #009966;
+}
+
+/*案例详情*/
+
+.panel-body ul li > span {
+    word-break: break-all;
+}
+
+/*修复项目图片*/
+.repairt_select_item {
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+.repairt_select_item > img {
+    vertical-align: middle;
+    height: 30px;
+}
+
+.repairt_select_item > span {
+    vertical-align: middle;
+}
+
+#details {
+    overflow: hidden;
+}
+
+#details .basic-info {
+    width: calc(100% - 310px);
+    margin-top: 10px;
+    float: right;
+    table-layout: inherit;
+    padding: 0 !important;
+}
+
+#details .row {
+    margin: 0px;
+}
+
+#details .row .col-sm-6, #details .row .col-sm-12 {
+    padding: 0 !important;
+}
+
+#details .basic_title {
+    padding: 5px;
+    color: black;
+    font-weight: 700;
+    display: inline-block;
+}
+
+#details .basic-info .basic-left {
+    padding: 5px;
+    display: inline-block;
+    color: #808080;
+    word-break: break-all;
+}
+
+#details .basic-info .basic-right {
+    padding: 5px;
+    display: inline-block;
+    color: #009966;
+    word-break: break-all;
+}
+
+.unclick_Div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.teeth-container {
+    width: 300px;
+    float: left;
+    border: 1px solid #009966;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 10px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.teeth-container #div-teeth-container {
+    width: 100%;
+    height: 100%;
+    margin-top: -10px;
+}
+
+.table-container {
+    width: calc(70% - 15px);
+    float: left;
+    /*border: 1px solid #009966;*/
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.table-container .panel-default {
+    border: 1px solid #009966;
+}
+
+.table-container .panel-default ul li {
+    line-height: 25px;
+    position: relative;
+}
+
+.table-container .table {
+    margin-bottom: 0 !important;
+    word-break: break-all;
+}
+
+.table-container .table td {
+    word-break: break-all;
+}
+
+.table-container .table thead td {
+    background-color: rgba(242, 242, 242, 1)
+}
+
+.btn-container {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.pay_item_div {
+    border-top: 1px solid #BCBCBC;
+    padding: 4px 0px;
+}
+
+.pay_item_div:last-child {
+    border-bottom: 1px solid #BCBCBC;
+}
+
+.pay_item_div ul {
+    padding-left: 0px;
+}
+
+.pay_item_div ul li > span {
+    padding: 5px;
+    color: #808080;
+}
+
+.pay_item_div .item_span {
+    display: inline-block;
+    width: 30%;
+}
+
+.img_div img {
+    height: 100px !important;
+    padding: 5px;
+}
+
+
+/*案例方案*/
+.evaluate {
+    margin-bottom: 10px;
+}
+
+.headline {
+    font-weight: bold;
+    color: #333;
+}
+
+.marked-words {
+    font-size: 12px;
+    color: #AEAEAE;
+}
+
+.suggest {
+    resize: none;
+}
+
+.form-horizontal .form-group label.control-label {
+    font-weight: 400;
+}
+
+.btn-save {
+    border-radius: 30px;
+}
+
+/*案例流程*/
+.flow {
+    position: relative;
+    min-height: 300px;
+}
+
+.imaginary-line {
+    /* width: 1px;
+     position: absolute;
+     left: 16px;
+     height: 100%;
+     border-left: 1px dashed #009966;*/
+}
+
+.flow .col-sm-11 {
+    padding-left: 0 !important;
+}
+
+.form-horizontal .form-group label.control-label i {
+    font-size: 23px;
+    color: #009966;
+}
+
+.text-green {
+    color: #009966;
+}
+
+/*聊天记录*/
+#records {
+    min-height: 450px;
+    padding-bottom: 30px;
+}
+
+#records .chat-message {
+    margin-bottom: 15px;
+}
+
+#records .chat-message .chat-user-name {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+#records .chat-message .chat-msg-content {
+    margin-top: 5px;
+    padding-left: 2em;
+    line-height: 20px;
+}
+
+.text-green {
+    color: #009966;
+}
+
+.text-blue {
+    color: #0099ff;
+}
+
+.text-red {
+    color: #ff6666;
+}
+
+/*桥体*/
+.RIDGE_LAP, .MODIFIED_RIDGE_LAP, .STEIN, .SANITARY, .OVATE {
+    position: absolute;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    /*background-position: 20px 0;*/
+}
+
+.RIDGE_LAP {
+    background-image: url("/images/tooth/svg1.gif");
+}
+
+.MODIFIED_RIDGE_LAP {
+    background-image: url("/images/tooth/svg2.gif");
+}
+
+.STEIN {
+    background-image: url("/images/tooth/svg3.gif");
+}
+
+.SANITARY {
+    background-image: url("/images/tooth/svg4.gif");
+}
+
+.OVATE {
+    background-image: url("/images/tooth/svg5.gif");
+}
+
+.rating-font-size {
+    font-size: 14px;
+}
+
+.rating-top {
+    margin-top: 15px;
+}
+
+.rating-top-span {
+    margin-left: 30px;
+    color: #aeaeae;
+}
+
+.rating-span-color {
+    color: #009900;
+}
+
+.rating-save-btn {
+    width: 96px;
+    height: 30px;
+    background-color: rgba(0, 153, 0, 1);
+    border-radius: 20px;
+}
+
+.logistics-top {
+    display: block;
+    font-size: 16px;
+    color: #a1a1a1;
+    margin-top: 20px;
+}
+
+.logistics-top-div {
+    margin-top: 10px;
+    color: #515151;
+    font-family: "Arial Normal", "Arial";
+}
+
+.logistics-top-div-label {
+    width: 70px;
+}
+
+.logistics-bottom {
+    margin-top: 40px;
+}
+
+.express-div-label {
+    width: 120px;
+    color: #333;
+}
+
+.enclosure-div {
+    width: calc(100% - 80px);
+}
+
+.enclosure-div li {
+    font-weight: 700;
+    margin-bottom: 5px;
+    margin-left: 4px;
+}

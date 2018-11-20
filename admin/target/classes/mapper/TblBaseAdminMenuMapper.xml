@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lottery.dao.TblBaseAdminMenuMapper">
+	<resultMap id="BaseResultMap" type="com.lottery.entity.TblBaseAdminMenu">
+		<id column="id" jdbcType="BIGINT" property="id" />
+		<result column="menu_name" jdbcType="VARCHAR" property="menuName" />
+		<result column="menu_code" jdbcType="VARCHAR" property="menuCode" />
+		<result column="menu_level" jdbcType="TINYINT" property="menuLevel" />
+		<result column="para_menu_id" jdbcType="TINYINT" property="paraMenuId" />
+		<result column="para_menu_code" jdbcType="VARCHAR" property="paraMenuCode" />
+		<result column="sort_num" jdbcType="TINYINT" property="sortNum" />
+		<result column="page_id" jdbcType="TINYINT" property="pageId" />
+		<result column="url_prefix" jdbcType="VARCHAR" property="urlPrefix" />
+		<result column="js_action_name" jdbcType="VARCHAR" property="jsActionName" />
+		<result column="config_time" jdbcType="DATE" property="configTime" />
+		<result column="is_del" jdbcType="TINYINT" property="isDel" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id, menu_name, menu_code, menu_level,
+		para_menu_id,
+		para_menu_code, sort_num, page_id,
+		url_prefix, js_action_name,
+		config_time, is_del
+	</sql>
+	<!-- 插入菜单 -->
+	<insert id="addMenu" parameterType="com.lottery.entity.TblBaseAdminMenu">
+		insert into
+		base_admin_menu(menu_name, menu_code, menu_level,
+		para_menu_id,
+		para_menu_code, sort_num, page_id,
+		url_prefix, js_action_name,
+		config_time, is_del)
+		values(
+		#{menuName},#{menuCode},#{menuLevel},
+		#{paraMenuId},#{paraMenuCode},#{sortNum},
+		#{pageId},#{urlPrefix},#{jsActionName},
+		#{configTime},#{isDel}
+		)
+	</insert>
+
+
+
+
+	<!-- 根据条件查询角色记录集合 -->
+
+	<select id="queryMenuById" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from base_admin_menu where id=#{id}
+
+	</select>
+
+
+	<!-- 根据条件查询角色记录集合 -->
+
+	<select id="queryAllMenuDatas" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from base_admin_menu order by  id,para_menu_id,menu_level
+
+	</select>
+	
+		<!-- 根据id集合删除用户信息 -->
+	<delete id="deleteMenuDataByIds">
+		delete from base_admin_menu where id in
+		<foreach collection="idList" index="index" item="item" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+
+	</delete>
+	
+	<!-- 查询角色总数量 -->
+	<!-- <select id="searchTotallPageNum" parameterType="com.lottery.entity.TblBaseAdminRole" 
+		resultType="java.lang.Integer"> select count(*) from base_admin_role where 
+		1=1 <if test="roleName != null or roleStatus != null or roleName !='' or 
+		roleStatus!=''"> <if test="roleName != null and sysUserName !=''"> and role_name=#{roleName} 
+		</if> <if test="roleStatus != null and roleStatus !='' and roleStatus !=2"> 
+		and role_status=#{roleStatus} </if> </if> </select> -->
+
+	<!-- 根据用户id查询 -->
+	<!-- <select id="findSysRoleById" parameterType="java.lang.Integer" resultMap="BaseResultMap"> 
+		select <include refid="Base_Column_List" /> from base_admin_role where id=#{id} 
+		</select> -->
+	<!-- 根据id更新用户信息 -->
+
+	<!-- <update id="updateUserData" parameterType="com.lottery.entity.TblBaseAdminUser" 
+		keyProperty="id"> update base_admin_role set role_name=#{roleName} , role_status=#{roleStatus},role_desc=#{roleDesc} 
+		where id=#{id} </update> -->
+	<!-- 根据id集合删除用户信息 -->
+	<!-- <delete id="deleteRoleDataByIds" parameterType="java.util.List"> delete 
+		from base_admin_role where id in <foreach collection="idList" index="index" 
+		item="item" open="(" separator="," close=")"> #{item} </foreach> </delete> -->
+
+
+
+</mapper>

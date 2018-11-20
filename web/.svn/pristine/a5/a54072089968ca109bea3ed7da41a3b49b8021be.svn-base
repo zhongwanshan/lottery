@@ -1,0 +1,105 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="view/me.html" class="active">
+                <i class="navIcon navIcon-me"></i>
+            </a>
+        </div>
+        <div class="center">神算</div>
+        <div class="right">
+            <a href="view/user/message.html">
+                <i class="navIcon navIcon-message"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="page" data-page="magic">
+    <div class="page-content">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="img/img01.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/img01.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/img01.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/img01.png" />
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <p class="hTitle">资讯头条</p>
+        <div class="news">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="width: 2rem;">
+                            <a>
+                                <img src="img/img01.png" />
+                            </a>
+                        </td>
+                        <td>
+                            <a class="info">
+                                <h2>巴西甲推荐：战意不高 科林蒂安沉淀中游</h2>
+                                <p>巴伊亚是本赛季升班马之一，不过球队升级后举步维艰，最大原因就在于他们客场战绩不佳，至今5场联...
+                                    <span class="detail">【详细】</span>
+                                </p>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a>
+                                <img src="img/img01.png" />
+                            </a>
+                        </td>
+                        <td>
+                            <a class="info">
+                                <h2>巴西甲推荐：战意不高 科林蒂安沉淀中游</h2>
+                                <p>巴伊亚是本赛季升班马之一，不过球队升级后举步维艰，最大原因就在于他们客场战绩不佳，至今5场联...
+                                    <span class="detail">【详细】</span>
+                                </p>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a>
+                                <img src="img/img01.png" />
+                            </a>
+                        </td>
+                        <td>
+                            <a class="info">
+                                <h2>巴西甲推荐：战意不高 科林蒂安沉淀中游</h2>
+                                <p>巴伊亚是本赛季升班马之一，不过球队升级后举步维艰，最大原因就在于他们客场战绩不佳，至今5场联...
+                                    <span class="detail">【详细】</span>
+                                </p>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a>
+                                <img src="img/img01.png" />
+                            </a>
+                        </td>
+                        <td>
+                            <a class="info">
+                                <h2>巴西甲推荐：战意不高 科林蒂安沉淀中游</h2>
+                                <p>巴伊亚是本赛季升班马之一，不过球队升级后举步维艰，最大原因就在于他们客场战绩不佳，至今5场联...
+                                    <span class="detail">【详细】</span>
+                                </p>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

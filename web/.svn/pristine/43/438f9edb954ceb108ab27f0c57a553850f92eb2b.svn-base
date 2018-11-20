@@ -1,0 +1,56 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="../hall.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">十四场胜负(含任选9)</div>
+        <div class="right">
+            <!-- <a>
+                <i class="glyphicon glyphicon-option-vertical"></i>
+            </a> -->
+        </div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="history-trFootball">
+    <div id="js-trFootball" class="page-content">
+        
+        <div id="page-history-football">
+            <div class="mainWrap">
+                <div class="lotteryType" style="padding-bottom: 3rem;">
+                    <template v-for="match in matchList">
+                        <div class="item">
+                            <div class="header">
+                                <span class="label">第{{match.name}} </span>
+                            </div>
+                            <div class="content">
+                                <p class="numberType">
+                                    <template v-for="item in match.list">
+                                        <span class="num" v-text="item"></span>
+                                    </template>
+                                </p>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <div class="buyAction">
+            <div class="row">
+                <div class="col-50">
+                    <p class="theme-yellow">
+                        <a href="/app/view/buy/sf14.html" class="button button-fill button-round">投注胜负彩</a>
+                    </p>
+                </div>
+                <div class="col-50">
+                    <p class="theme-yellow">
+                        <a href="/app/view/buy/rs9.html" class="button button-fill button-round">投注任选九</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

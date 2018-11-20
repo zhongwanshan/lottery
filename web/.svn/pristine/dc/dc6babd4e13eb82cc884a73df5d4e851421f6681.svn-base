@@ -1,0 +1,245 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="../hall.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">大乐透</div>
+        <div class="right">
+            <span class="js-showMenu">
+                <i class="glyphicon glyphicon-option-vertical"></i>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="buy-dlt">
+    <div id="js-buyDlt" class="page-content buyWrap">
+        <div id="page-buy-dlt">
+            <div class="mainWrap">
+                <p class="hTitle">
+                    <template v-if="!!currentIssueName">
+                        <span v-text="'【'+currentIssueName+'】'"></span>
+                        <span class="offTime" v-text="offTime+'停止销售'"></span>
+                    </template>
+                    <template v-else>
+                        <span class="offTime">无可售数据</span>
+                    </template>
+                </p>
+                <!-- 普通 -->
+                <template v-if="buyInfo.dBetFunction==1">
+                    <div class="ballList redArea">
+                        <div class="ballLabel">
+                            <span class="title">前区</span>
+                            <span class="tip">至少选择5个球</span>
+                        </div>
+                        <p class="numberType">
+                            <template v-for="i in 35">
+                                <label class="circle" :class="redBetList.indexOf(i<=9? '0'+i:''+i)>=0?'active':''">
+                                    <input type="checkbox" v-model="redBetList" :value="i<=9? '0'+i:''+i" name="redBall" />{{i
+                                    <=9? '0'+i:i}} </label>
+                            </template>
+                        </p>
+                    </div>
+                    <div class="ballList blueArea">
+                        <div class="ballLabel">
+                            <span class="title">后区</span>
+                            <span class="tip">至少选择2个球</span>
+                        </div>
+                        <p class="numberType">
+                            <template v-for="i in 12">
+                                <label class="circle" :class="blueBetList.indexOf(i<=9? '0'+i:''+i)>=0?'active':''">
+                                    <input type="checkbox" v-model="blueBetList" :value="i<=9? '0'+i:''+i" name="blueBall" />{{i
+                                    <=9? '0'+i:i}} </label>
+                            </template>
+                        </p>
+                    </div>
+                </template>
+
+                <!-- 定胆 -->
+                <template v-if="buyInfo.dBetFunction==2">
+                    <div class="ballList redArea">
+                        <div class="ballLabel">
+                            <span class="title">前区</span>
+                            <span class="tip">至少选择6个球</span>
+                        </div>
+                        <p class="numberType">
+                            <template v-for="i in 35">
+                                <label class="circle" :class="redBetList.indexOf(i<=9? '0'+i:''+i)>=0?'active':''">
+                                    <input type="checkbox" v-model="redBetList" :value="i<=9? '0'+i:''+i" name="redBall" />{{i
+                                    <=9? '0'+i:i}} </label>
+                            </template>
+                        </p>
+                    </div>
+                    <template v-if="redBetList.length>=6">
+                        <div class="ballList redArea">
+                            <div class="ballLabel">
+                                <span class="title">前胆区</span>
+                                <span class="tip">至多选择5个球设胆</span>
+                            </div>
+                            <p class="numberType">
+                                <template v-for="item in redBetList">
+                                    <label class="circle" :class="redDAreaList.indexOf(item)>=0?'active':''">
+                                        <input type="checkbox" v-model="redDAreaList" :value="''+item" name="redDBall" />{{item}}
+                                        </label>
+                                </template>
+                            </p>
+                        </div>
+                    </template>
+                    <div class="ballList blueArea">
+                        <div class="ballLabel">
+                            <span class="title">后区</span>
+                            <span class="tip">至少选择1个球</span>
+                        </div>
+                        <p class="numberType">
+                            <template v-for="i in 12">
+                                <label class="circle" :class="blueBetList.indexOf(i<=9? '0'+i:''+i)>=0?'active':''">
+                                    <input type="checkbox" v-model="blueBetList" :value="i<=9? '0'+i:''+i" name="blueBall" />{{i<=9?
+                                        '0'+i: ''+i}} </label>
+                            </template>
+                        </p>
+                    </div>
+                    <template v-if="blueBetList.length>=3">
+                        <div class="ballList blueArea">
+                            <div class="ballLabel">
+                                <span class="title">后胆区</span>
+                                <span class="tip">至多选择1个球设胆</span>
+                            </div>
+                            <p class="numberType">
+                                <template v-for="item in blueBetList">
+                                    <label class="circle" :class="blueDAreaList.indexOf(item)>=0?'active':''">
+                                        <input type="checkbox" v-model="blueDAreaList" :value="item" name="blueDBall" />{{item}}
+                                        </label>
+                                </template>
+                            </p>
+                        </div>
+                    </template>
+                </template>
+
+                <div class="resultWrap">
+                    <p class="theme-pink">
+                        <button @click="addToResult" class="button button-fill">
+                            <i class="glyphicon glyphicon-arrow-down"></i>添加选号</button>
+                    </p>
+                    <div class="numList">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th style="width: 2.5rem;">注数</th>
+                                    <th>号码</th>
+                                    <th style="width: 2.5rem;">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template v-for="(item, index) in orderInfoDetail.digitalOrderItems">
+                                    <tr>
+                                        <td v-text="index+1"></td>
+                                        <td v-text="item.betsNumCount+'注'"></td>
+                                        <td v-text="item.betDesc"></td>
+                                        <td @click="deleteResult(index)">
+                                            <i>删除</i>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <p style="text-align: center; font-size: 13px;">
+                    <label>
+                        <input type="checkbox" v-model="buyInfo.extraAdd" true-value="1" false-value="0" />追加1元（可中1600万)</label>
+                </p>
+                <div class="rule">
+                    <label>
+                        <input type="checkbox" v-model="isCheck" />我已阅读并同意
+                        <a>《委托投注规则》</a>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="fixedAction">
+            <button @click="clearAll" class="button">清空</button>
+            <button @click="randomBuyTime(1)" class="button button-fill">随机1注</button>
+            <button @click="randomBuyTime(5)" class="button button-fill">随机5注</button>
+
+            <div class="times">
+                <span class="button button-fill">投
+                    <input type="phone" v-model="buyInfo.multipleNum" />倍</span>
+            </div>
+        </div>
+
+        <template v-if="isShowMenu">
+            <div @click="showMenu()" class="maskerLayer"></div>
+            <div class="menuFixed">
+                <div class="menuList">
+                    <span class="triangle"></span>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="/app/view/history/digital.html?lottoid=14&lottoName=大乐透">开奖历史</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="/app/view/magic.html">最新资讯</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="/app/view/rules/dlt.html">玩法说明</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </template>
+
+        <template v-if="isShowTypeSelect">
+            <div @click="showTypeSelect()" class="maskerLayer"></div>
+            <div class="typeSelect">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td style="width: 50%;">
+                                <div class="item" :class="buyInfo.dBetFunction==1?'active': ''">
+                                    <label>
+                                        <input type="radio" v-model="buyInfo.dBetFunction" name="dBetFunction" value="1" />普通</label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="item" :class="buyInfo.dBetFunction==2?'active': ''">
+                                    <label>
+                                        <input type="radio" v-model="buyInfo.dBetFunction" name="dBetFunction" value="2" />定胆</label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </template>
+
+        <div class="buyAction">
+            <div class="row">
+                <div @click="showTypeSelect()" class="col-20">
+                    <span v-text="dBetFunText"></span>
+                    <i class="glyphicon glyphicon-menu-down"></i>
+                </div>
+                <div class="col-60">
+                    共
+                    <span v-text="betNum"></span>注
+                    <span v-text="betMoney"></span>元
+                </div>
+                <div class="col-20">
+                    <div class="theme-yellow">
+                        <button @click="generateOrder" class="button button-fill">投注</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

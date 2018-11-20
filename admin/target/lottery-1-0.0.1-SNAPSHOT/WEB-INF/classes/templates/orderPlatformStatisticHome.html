@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>查询条件</title>
+<style type="text/css">
+/*初始化页面  */
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset,
+	legend, input, textarea, select {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font: 14px "微软雅黑", "Arial Narrow", HELVETICA;
+	background: #fff;
+	-webkit-text-size-adjust: 100%;
+}
+
+a {
+	color: #2d374b;
+	text-decoration: none
+}
+
+a:hover {
+	color: #cd0200;
+	text-decoration: underline
+}
+
+em {
+	font-style: normal
+}
+
+li {
+	list-style: none
+}
+
+img {
+	border: 0;
+	vertical-align: middle
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+p {
+	word-wrap: break-word
+}
+/* 页面css*/
+#searchCondition ul li {
+	float: left;
+	margin-left: 29px;
+	margin-top: 35px;
+	font-size: 13px;
+}
+
+#searchCondition ul li select {
+	display: inline-block;
+	width: 143px;
+	height: 26px
+}
+
+#searchCondition ul li input {
+	display: inline-block;
+	width: 165px;
+	height: 22px
+}
+
+#searchCondition ul li input#cx {
+	display: inline-block;
+	width: 80px;
+	height: 26px;
+	background-color: #5978A6;
+	color: white;
+	border-radius: 3px;
+	box-shadow: none;
+}
+
+#messageLlist {
+	clear: both;
+	margin-left: 29px;
+	padding-top: 15px;
+}
+
+#messageLlist #messageData td {
+	display: inline-block;
+	width: 140px;
+	text-align: center;
+	line-height: 40px;
+	border: none;
+	border-bottom: 1px;
+}
+
+#messageLlist #messageData td:first-child {
+	width: 200px;
+}
+
+#messageLlist #messageData td:last-child {
+	width: 200px;
+}
+
+#messageLlist #messageData thead td {
+	background-color: #F2F2F2;
+}
+
+#messageLlist #messageData tbody tr {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #E7E7E7;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #E7E7E7;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #E7E7E7;
+}
+
+#messageLlist #messageData thead tr {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #E7E7E7;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #E7E7E7;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #E7E7E7;
+}
+
+#messageLlist #messageData tbody tr:hover {
+	background-color: #F2F2F2;
+}
+
+#funtionList {
+	height: 30px;
+	width: 100%;
+	clear: both;
+	margin-top: 10px;
+}
+
+#funtionList ul li {
+	float: left;
+	display: inline-block;
+	height: 26px;
+	width: 80px;
+	line-height: 26px;
+	border: 1px solid #c3adad;
+	border-radius: 3px;
+	margin-left: 30px;
+	text-align: center;
+	background-color: #5978A6;
+	color: white;
+}
+
+#funtionList ul {
+	padding-top: 20px;
+}
+
+#funtionList ul li:hover {
+	cursor: pointer;
+}
+
+#funtionList ul li:active {
+	background-color: #c3adad;
+}
+
+#pageLimit span {
+	float: left;
+	display: inline-block;
+	height: 20px;
+	width: 47px;
+	line-height: 20px;
+	text-align: center;
+	border: 1px solid #BDBFBE;
+	border-radius: 3px;
+	background-color: #159ADD;
+	margin-right: 5px;
+	color: white;
+}
+
+#pageLimit span:active {
+	color: black;
+	background-color: white;
+}
+
+#pageLimit span:hover {
+	cursor: pointer;
+}
+
+#pageLimit {
+	margin-left: 548px;
+	margin-top: 20px;
+}
+
+#pageLimit span:nth-child(7) {
+	width: 80px;
+}
+
+#pageLimit span:nth-child(7) input {
+	width: 20px;
+}
+
+#pageLimit span:nth-child(8) {
+	height: 25px;
+	width: 50px;
+	line-height: 25px;
+	border: 1px solid #c3adad;
+	border-radius: 3px;
+}
+
+#searchCondition ul li span {
+	float: left;
+	display: inline-block;
+	height: 26px;
+	width: 80px;
+	line-height: 26px;
+	border: 1px solid #c3adad;
+	border-radius: 3px;
+	margin-left: 30px;
+	text-align: center;
+	background-color: #169CD1;
+	color: white;
+}
+
+#searchCondition div:first-child {
+	height: 51px;
+	line-height: 51px;
+	margin: 0 7px;
+	border-bottom: 3px solid #797979;
+	"
+}
+
+#searchCondition div:first-child span {
+	padding-left: 22px;
+}
+
+#functionListTow {
+	clear: both;
+}
+
+#functionListTow ul li span {
+	margin-left: 0px;
+}
+
+#searchCondition ul li span:hover {
+	cursor: pointer;
+}
+
+#searchCondition ul li span:active {
+	background-color: white;
+	color: black;
+}
+
+#messageLlist #messageData tbody tr span {
+	/* 	float: left; */
+	display: inline-block;
+	height: 20px;
+	width: 47px;
+	line-height: 20px;
+	text-align: center;
+	border: 1px solid #BDBFBE;
+	border-radius: 3px;
+	background-color: #159ADD;
+	margin-right: 5px;
+	color: white;
+}
+
+#messageLlist #messageData tbody tr span:nth-child(3) {
+	background-color: #009C00;
+}
+
+#messageLlist #messageData tbody tr span:nth-child(4) {
+	background-color: #FD9A00;
+}
+
+#messageLlist #messageData tbody tr span:hover {
+	cursor: pointer;
+}
+
+#messageLlist #messageData tbody tr span:active {
+	background-color: white;
+	color: black;
+}
+#pageLimit span:hover {
+	background-color:#00d9d9;
+}
+#searchCondition ul li span:hover {
+	background-color:#00d9d9;
+}
+</style>
+
+<script src="/lottery/js/jquery-1.8.2.js" type="text/javascript"
+	charset="utf-8"></script>
+<script src="/lottery/js/layer/layer.min.js" type="text/javascript"
+	charset="utf-8"></script>
+
+</head>
+<body>
+	<div id="searchCondition"
+		style="height: 200px; border: 1px solid #BDBFBE; background-color: #F2F2F2">
+		<div>
+			<span>查询条件</span>
+		</div>
+		<ul>
+			<li>订单开始时间：<input type="datetime-local">
+			</li>
+			<li>订单结束时间：<input type="datetime-local">
+			</li>
+			<li>周期：<select>
+					<option value="0">日</option>
+					<option value="1">周</option>
+					<option value="2">月</option>
+					
+			</select>
+			</li>
+					<li>彩种：<select>
+					<option value="0">全部</option>
+					<option value="1001">竞彩足球</option>
+					<option value="1002">传统足球14场</option>
+					<option value="1003">传统足球任选9场</option>
+					<option value="1004">竞彩篮球</option>
+					<option value="1005">北京单场</option>
+					<option value="6">广东11选5</option>
+					<option value="11">双色球</option>
+					<option value="12">福彩3D</option>
+					<option value="13">七乐彩</option>
+					<option value="14">大乐透</option>
+					<option value="15">七星彩</option>
+					<option value="16">排列三</option>
+					<option value="17">排列五</option>
+			</select>
+			</li>
+			<li><span onclick="searchMeassages(0)">查询</span> <span
+				onclick="reSet()">重置</span> <!-- <span onclick="reSet()">导出</span> --></li>
+		</ul>
+	</div>
+	<div
+		style="border: 1px solid #BDBFBE; margin-top: 13px; height: 1000px;">
+		<div id="messageLlist">
+			<table id="messageData" style="border-collapse: collapse;">
+				<thead>
+					<td>日期</td>
+					<td>订单总数</td>
+					<td>订单总金额</td>
+					<td>用户支出金额</td>
+					<td>彩票店主收入金额</td>
+					<td>平台收入金额</td>
+				</thead>
+				<tbody>
+					<tr th:each="entries,stat:${dataList}">
+						<td th:text="${entries['orderCode']}"></td>
+						<td th:text="${entries['winNum']}"></td>
+						<td th:text="${entries['orderTotallMoney']}"></td>
+						<td th:text="${entries['userPayTotallMoney']}"></td>
+						<td th:text="${entries['shopGetTotallMoney']}"></td>
+						<td th:text="${entries['platformTotallMoney']}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="pageLimit">
+			<span>首页</span> <span>前页</span> <span>后页</span> <span>尾页</span> <span>第<b>1</b>页
+			</span> <span>共<b>[[${totallNum}]]</b>页
+			</span> <span> 到第<input type="text">页
+			</span> <span>Go</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+	Date.prototype.format = function (format) {
+        var args = {
+            "M+": this.getMonth() + 1,
+            "d+": this.getDate(),
+            "h+": this.getHours(),
+            "m+": this.getMinutes(),
+            "s+": this.getSeconds(),
+            "q+": Math.floor((this.getMonth() + 3) / 3),  //quarter
+            "S": this.getMilliseconds()
+        };
+        if (/(y+)/.test(format))
+            format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var i in args) {
+            var n = args[i];
+            if (new RegExp("(" + i + ")").test(format))
+                format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? n : ("00" + n).substr(("" + n).length));
+        }
+        return format;
+    };
+	
+	 //重置
+	  function reSet(){
+	  $("#searchCondition ul li input").val("");
+	  $("#searchCondition ul li:nth-child(3) select").val("0")
+	   $("#searchCondition ul li:nth-child(4) select").val("0")	 	   
+	  }
+	   //根据条件查询信息
+		function searchMeassages(pageNum) {
+			var orderTimerBegain = $("#searchCondition ul li:nth-child(1) input").val();
+			var orderTimerEnd = $("#searchCondition ul li:nth-child(2) input").val();
+			var timeDimension = $("#searchCondition ul li:nth-child(3) select option:selected").val();
+			var  lotteryTypeId= $("#searchCondition ul li:nth-child(4) select option:selected").val();
+			if(orderTimerBegain!=""&&orderTimerBegain!=null){
+			orderTimerBegain =new Date(orderTimerBegain).format("yyyy-MM-dd hh:mm:ss")
+			}
+			if(orderTimerEnd!=""&&orderTimerEnd!=null){
+				orderTimerEnd =new Date(orderTimerEnd).format("yyyy-MM-dd hh:mm:ss")
+				}
+			$.ajax({
+				type : "GET",
+				url : "/lottery/lotteryMainOrder/orderPlatformFlowStatistics",
+				data : {
+					"orderTimerBegain" : orderTimerBegain,
+					"orderTimerEnd" : orderTimerEnd,
+					"lotteryTypeId" : lotteryTypeId,
+					"timeDimension" : timeDimension,
+					"pageNum" : parseInt(pageNum)*10
+				},
+				dataType : "json",
+				success : function(data) {
+					if(parseInt(pageNum)==0){
+					     $("#pageLimit span:nth-child(5) b").text("1");
+						}
+					//改变页数
+					$("#pageLimit span:nth-child(6) b").text(data.totallNum)
+					$('#messageLlist #messageData tbody').empty();
+					var html = "";
+					for (var i = 0, l = data.dataList.length; i < l; i++) {
+						html += "<tr>";
+						html += "<td>" + data.dataList[i]['orderCode'] + "</td>";
+						html += "<td>" + data.dataList[i]['winNum'] + "</td>";
+						html += "<td>" + data.dataList[i]['orderTotallMoney'] + "</td>";
+						html += "<td>" + data.dataList[i]['userPayTotallMoney'] + "</td>";
+						html += "<td>" + data.dataList[i]['shopGetTotallMoney'] + "</td>";
+						html += "<td>" + data.dataList[i]['platformTotallMoney'] + "</td>";
+						html += "</tr>";
+					}
+
+					$('#messageLlist #messageData tbody').html(html);
+					/* init() */
+				}
+			});
+
+		}　
+	   //翻页跳转
+	   $("#pageLimit span").click(function(){
+		 var textValue =$(this).text();
+		 var currentPageNum = $("#pageLimit span:nth-child(5) b").text();
+		 var totallPageNum = $("#pageLimit span:nth-child(6) b").text();
+		 if(textValue=='首页'){
+			 searchMeassages(0);
+			 $("#pageLimit span:nth-child(5) b").text(1)
+		 }else if(textValue=='前页'){
+		   if(currentPageNum!=1){
+			   searchMeassages(parseInt(currentPageNum)-2);
+			   $("#pageLimit span:nth-child(5) b").text(parseInt(currentPageNum)-1)
+		   }		 	 
+		 }else if(textValue=='后页'){
+			 if(currentPageNum!=totallPageNum){
+			 searchMeassages(currentPageNum)
+			 $("#pageLimit span:nth-child(5) b").text(parseInt(currentPageNum)+1)
+			 }
+			 
+		 }else if(textValue=='尾页'){
+			 if(totallPageNum!=1&&totallPageNum!=currentPageNum){
+				 searchMeassages(totallPageNum-1)
+				  $("#pageLimit span:nth-child(5) b").text(totallPageNum)
+			 } 
+		 }else if(textValue=='Go'){
+			 var searchNum = $("#pageLimit span:nth-child(7) input").val();
+			 if(searchNum!=currentPageNum&&searchNum!=""&&parseInt(searchNum)<=parseInt(totallPageNum)){
+				 searchMeassages(parseInt(searchNum)-1);
+				$("#pageLimit span:nth-child(5) b").text(searchNum)
+			 }
+		 }
+	   });
+	</script>
+</body>
+</html>

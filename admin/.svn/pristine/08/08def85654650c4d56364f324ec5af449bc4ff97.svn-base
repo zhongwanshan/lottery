@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lottery.dao.TblBasePushMsgMapper">
+	<resultMap id="BaseResultMap" type="com.lottery.entity.TblBasePushMsg">
+		<id column="id" jdbcType="BIGINT" property="id" />
+		<result column="msg_title" jdbcType="VARCHAR" property="msgTitle" />
+		<result column="msg_content" jdbcType="VARCHAR" property="msgContent" />
+		<result column="msg_type" jdbcType="TINYINT" property="msgType" />
+		<result column="content_type" jdbcType="TINYINT" property="contentType" />
+		<result column="msg_url" jdbcType="VARCHAR" property="msgUrl" />
+		<result column="receive_user_type" jdbcType="TINYINT" property="receiveUserType" />
+		<result column="push_type" jdbcType="TINYINT" property="pushType" />
+		<result column="reg_time" jdbcType="TIMESTAMP" property="regTime" />
+		<result column="send_user" jdbcType="VARCHAR" property="sendUser" />
+		<result column="send_status" jdbcType="TINYINT" property="sendStatus" />
+		<result column="plan_begin_time" jdbcType="TIMESTAMP" property="planBeginTime" />
+		<result column="send_begin_time" jdbcType="TIMESTAMP" property="sendBeginTime" />
+		<result column="send_end_time" jdbcType="TIMESTAMP" property="sendEndTime" />
+		<result column="test_user_type" jdbcType="TINYINT" property="testUserType" />
+		<result column="test_user_phone" jdbcType="VARCHAR" property="testUserPhone" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, msg_title, msg_content, msg_type, content_type,
+		msg_url,
+		receive_user_type,push_type,
+		reg_time, send_user, send_status,
+		plan_begin_time, send_begin_time,
+		send_end_time, test_user_type,
+		test_user_phone
+	</sql>
+
+	<select id="searchMessagesByCondition" parameterType="com.lottery.entity.TblBasePushMsg"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from base_push_msg where 1=1
+		<if test="msgTitle != null or msgType != null or sendStatus != null ">
+			<if test="msgTitle != null and msgTitle !=''">
+				and msg_title  LIKE CONCAT('%',#{msgTitle},'%')
+			</if>
+			<if test="sendStatus != null and sendStatus !=4 ">
+				and send_status=#{sendStatus}
+			</if>
+			<if test="pushType != null and  pushType !=4">
+				and push_type=#{pushType}
+			</if>
+			<if test="pageNum != null">
+				order by id desc limit #{pageNum},10
+			</if>
+		</if>
+	</select>
+
+	<select id="searchTotallPageNum" parameterType="com.lottery.entity.TblBasePushMsg"
+		resultType="java.lang.Integer">
+		select
+		count(*)
+		from base_push_msg where 1=1
+		<if test="msgTitle != null or msgType != null or sendStatus != null ">
+			<if test="msgTitle != null and msgTitle !=''">
+				and msg_title=#{msgTitle}
+			</if>
+			<if test="sendStatus != null and sendStatus !=4 ">
+				and send_status=#{sendStatus}
+			</if>
+			<if test="pushType != null and  pushType !=4">
+				and push_type=#{pushType}
+			</if>
+		</if>
+	</select>
+	<!-- 新增消息 -->
+	<insert id="saveTblBasePushMsg" parameterType="com.lottery.entity.TblBasePushMsg">
+		insert into
+		base_push_msg(msg_title,push_type,content_type,msg_content,
+		plan_begin_time,receive_user_type,test_user_type,send_status,msg_type,reg_time,send_user)
+		values(#{msgTitle},#{pushType},#{contentType},#{msgContent},#{planBeginTime},
+		#{receiveUserType},#{testUserType},#{sendStatus},#{msgType},#{regTime},#{sendUser})
+	</insert>
+	<!-- 根据id查询 -->
+	<select id="queryBasePushMsgById" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from base_push_msg where id=#{id}
+	</select>
+
+	<!-- 根据id删除 -->
+	<delete id="deletebasePushMsgById" parameterType="java.lang.Integer">
+
+		delete from base_push_msg where id=#{id}
+	</delete>
+	<!-- 更新用户消息 -->
+	<update id="updateTblBasePushMsg" parameterType="com.lottery.entity.TblBasePushMsg">
+		update
+		base_push_msg set msg_title=#{msgTitle},push_type=#{pushType},
+		content_type=#{contentType},msg_content=#{msgContent},
+		plan_begin_time=#{planBeginTime},receive_user_type=#{receiveUserType},
+		test_user_type=#{testUserType} where id=#{id}
+
+	</update>
+
+
+</mapper>

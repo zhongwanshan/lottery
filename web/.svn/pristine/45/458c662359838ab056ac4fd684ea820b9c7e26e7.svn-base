@@ -1,0 +1,59 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <!-- <div class="left">
+            <a href="view/me.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div> -->
+        <div class="center">登录</div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="user-login">
+    <div id="js-pageLogin" class="page-content listBlock inputInfoBlock">
+        <div class="list-block">
+            <ul>
+                <li class="item">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">
+                                <img src="img/icon/phone.png" style="width: .75rem; height: 1.2rem;" />
+                            </div>
+                            <div class="item-input">
+                                <input v-model="paramInfo.userAccount" type="text" placeholder="请输入手机号">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">
+                                <img src="img/icon/pass.png" style="width: 1rem; height: 1rem;" />
+                            </div>
+                            <div class="item-input">
+                                <input v-model="pwd" type="password" placeholder="请输入密码">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+            <div class="list-block-label">
+                <label>
+                    <input type="checkbox" v-model="isChecked" true-value="1" false-value="0" />下次自动登录</label>
+            </div>
+        </div>
+        <div class="action">
+            <div class="row">
+                <div class="col-100 theme-pink">
+                    <button @click="doAction" class="button button-big button-fill">登录</button>
+                </div>
+                <div class="col-100 actionLabel">
+                    <a href="view/user/resetPass.html">忘记密码?</a>
+                    <a href="view/user/register.html">快速注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

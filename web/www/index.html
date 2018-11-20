@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Required meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- Your app title -->
+  <title>多彩缤纷</title>
+
+  <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/flat-ui.min.css">
+  <link rel="stylesheet" href="/assets/vender/swiper-master/swiper.min.css">
+  <link rel="stylesheet" href="/www/css/common.min.css?v=383746">
+</head>
+
+<body>
+
+  <div id="js-index">
+    <!-- 头部 -->
+    <div class="headerWrap">
+      <div class="header">
+        <div class="c-logo">
+          <h1 class="img">多彩缤纷</h1>
+        </div>
+        <div class="c-search">
+          <input type="text" placeholder="请输入搜索内容" />
+          <button>搜索</button>
+        </div>
+        <div class="c-info">
+          <template v-if="!!!userInfo">
+            <a href="/www/view/user/login.html">
+              <i></i>请登录</a>
+            <a href="/www/view/user/register.html">
+              <i></i>免费注册</a>
+            <a href="/www/view/user/resetPass.html">
+              <i></i>找回密码</a>
+          </template>
+          <template v-else>
+            <a href="/www/view/user/order.html">
+              <i></i>{{decodeURI(userInfo.nickName)}}</a>
+            <a href="/www/view/user/order.html">
+              <i></i>个人中心
+            </a>
+            <a @click="userLogout">
+              <i></i>退出登录</a>
+          </template>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigation">
+      <div class="c-nav">
+        <div class="navlist">
+          <div class="navItem selectMenu">选择彩票
+            <!-- 左侧菜单 -->
+            <div class="c-menu">
+              <div class="mMenu">
+                <a href="/www/view/buy/football.html">
+                  <img src="/assets/img/deticon/football.png" />竞彩足球
+                  <span>官方返奖率73%</span>
+                </a>
+                <a href="/www/view/buy/basketball.html">
+                  <img src="/assets/img/deticon/basketball.png" />竞彩篮球
+                  <span>猜胜负中奖很容易</span>
+                </a>
+              </div>
+              <div class="menulist">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td class="title">数字彩</td>
+                      <td class="item">
+                        <a href="/www/view/buy/ssq.html">双色球</a>
+                        <a href="/www/view/buy/dlt.html">大乐透</a>
+                        <a href="/www/view/buy/qxc.html">七星彩</a>
+                        <a href="/www/view/buy/qcl.html">七乐彩</a>
+                        <a href="/www/view/buy/fc3d.html">福彩3D</a>
+                        <a href="/www/view/buy/pl3.html">排列3</a>
+                        <a href="/www/view/buy/pl5.html">排列5</a>
+                        <a href="/www/view/buy/gd115.html">广东11选5</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="menulist">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td class="title">竞技彩</td>
+                      <td class="item item-b">
+                        <a href="/www/view/buy/sf14.html">足球14场</a>
+                        <a href="/www/view/buy/rs9.html">任选九</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <a class="navItem active">首页</a>
+          <a class="navItem" href="/www/view/hall.html">购彩大厅</a>
+          <a class="navItem" href="/www/view/prize.html">开奖公告</a>
+          <a class="navItem">中奖排行</a>
+          <a class="navItem">赛事数据</a>
+          <a class="navItem">神算</a>
+          <span class="clear"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- banner -->
+    <div class="bannerWrap">
+      <div class="c-banner">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <template v-for="item in cmsList">
+              <div class="swiper-slide">
+                <a :href="'/www/view/content.html?contentId='+item.content_id" style="display: block; width: 100%;">
+                  <img :src="cmsImgHost+item.icon" />
+                </a>
+              </div>
+            </template>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="main">
+      <!-- 推荐 -->
+      <div class="c-box c-box--min recomend">
+        <div class="title">彩种推荐</div>
+        <div class="content">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="item">
+                    <p class="img">
+                      <img src="/assets/img/deticon/ssq.png" />
+                      <span>双色球</span>
+                    </p>
+                    <p class="action">
+                      <a href="/www/view/buy/ssq.html" class="btn btn-sm btn-block btn-danger">立即投注</a>
+                    </p>
+                    <p class="info">
+                      <a href="/www/view/prize.html">开奖公告</a>
+                    </p>
+                  </div>
+                </td>
+                <td>
+                  <div class="item">
+                    <p class="img">
+                      <img src="/assets/img/deticon/football.png" />
+                      <span>竞彩足球</span>
+                    </p>
+                    <p class="action">
+                      <a href="/www/view/buy/football.html" class="btn btn-sm btn-block btn-danger">立即投注</a>
+                    </p>
+                    <p class="info">
+                      <a href="/www/view/prize.html">开奖公告</a>
+                    </p>
+                  </div>
+                </td>
+                <td>
+                  <div class="item">
+                    <p class="img">
+                      <img src="/assets/img/deticon/dlt.png" />
+                      <span>大乐透</span>
+                    </p>
+                    <p class="action">
+                      <a href="/www/view/buy/dlt.html" class="btn btn-sm btn-block btn-danger">立即投注</a>
+                    </p>
+                    <p class="info">
+                      <a href="/www/view/prize.html">开奖公告</a>
+                    </p>
+                  </div>
+                </td>
+                <td>
+                  <div class="item">
+                    <p class="img">
+                      <img src="/assets/img/deticon/pl5.png" />
+                      <span>排列5</span>
+                    </p>
+                    <p class="action">
+                      <a href="/www/view/buy/pl5.html" class="btn btn-sm btn-block btn-danger">立即投注</a>
+                    </p>
+                    <p class="info">
+                      <a href="/www/view/prize.html">开奖公告</a>
+                    </p>
+                  </div>
+                </td>
+                <td>
+                  <div class="item">
+                    <p class="img">
+                      <img src="/assets/img/deticon/fc3d.png" />
+                      <span>福彩3D</span>
+                    </p>
+                    <p class="action">
+                      <a href="/www/view/buy/fc3d.html" class="btn btn-sm btn-block btn-danger">立即投注</a>
+                    </p>
+                    <p class="info">
+                      <a href="/www/view/prize.html">开奖公告</a>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 开奖公告 -->
+      <div class="c-box prizeInfo">
+        <div class="title">开奖公告
+          <a href="/www/view/prize.html">更多>></a>
+        </div>
+        <div class="content">
+          <table>
+            <tbody>
+              <tr>
+                <!-- <td>开奖时间</td> -->
+                <td>彩种</td>
+                <td>期数</td>
+                <td>开奖号码</td>
+                <td>详情</td>
+                <!-- <td>赛事数据</td> -->
+                <td>购买</td>
+              </tr>
+              <tr v-for="item in digitalPirzeData">
+                <template v-if="item.lottoId==6">
+                  <td v-text="item.lottoName"></td>
+                  <td v-text="item.issueName"></td>
+                  <td>
+                    <template v-if="!!item.winNumber">
+                      <template v-for="red in item.winNumber.split(',')">
+                        <span class="circle redBall active" v-text="red"></span>
+                      </template>
+                    </template>
+                  </td>
+                  <td>
+                    <!-- <a :href="'/www/view/detail/digital.html?issueno='+item.issueNo+'&lottoid='+item.lottoId+'&lottoName='+item.lottoName">详情</a> -->
+                  </td>
+                  <td>
+                    <a :href="'/www/view/buy/'+type['lottoId'+item.lottoId]+'.html'" class="btn btn-sm btn-danger">购买</a>
+                  </td>
+                </template>
+                <template v-else>
+                  <td v-text="item.lottoName"></td>
+                  <td v-text="item.issueName"></td>
+                  <td>
+                    <template v-if="!!item.number">
+                      <template v-for="red in item.number.split(',')">
+                        <span class="circle redBall active" v-text="red"></span>
+                      </template>
+                    </template>
+                    <template v-if="!!item.refernumber">
+                      <template v-if="item.refernumber.length>0" v-for="blue in item.refernumber.split(',')">
+                        <span class="circle blueBall active" v-text="blue"></span>
+                      </template>
+                    </template>
+                  </td>
+                  <td>
+                    <a :href="'/www/view/detail/digital.html?issueno='+item.issueno+'&lottoid='+item.lottoid+'&lottoName='+item.lottoName">详情</a>
+                  </td>
+                  <td>
+                    <a :href="'/www/view/buy/'+type['lottoId'+item.lottoid]+'.html'" class="btn btn-sm btn-danger">购买</a>
+                  </td>
+                </template>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 赛事数据 -->
+      <!-- 赛事数据 -->
+      <div class="c-box matchInfo">
+        <div class="title">赛事数据</div>
+        <div class="content">
+          <div class="matchTab">
+            <p @click="setBallType(0)" :class="ballType==0?'active':''">
+              <span>竞彩足球</span>
+            </p>
+            <p @click="setBallType(1)" :class="ballType==1?'active':''">
+              <span>竞彩篮球</span>
+            </p>
+            <p @click="setBallType(2)" :class="ballType==2?'active':''">
+              <span>足球胜负/任九</span>
+            </p>
+          </div>
+          <div class="detail">
+            <template v-if="ballType==0">
+              <div class="search">
+                <!-- <select>
+                          <option>所有比赛</option>
+                          <option>比赛1</option>
+                          <option>比赛2</option>
+                      </select>
+
+                      <select>
+                          <option>所有时间</option>
+                          <option>2018-01-09</option>
+                      </select> -->
+
+                <span v-text="'共'+footBallData.length+'场'"></span>
+                <!-- <span>已完成2场</span> -->
+
+                <a href="/www/view/buy/football.html" class="btn btn-danger btn-sm">投注竞彩足球</a>
+              </div>
+            </template>
+            <template v-if="ballType==1">
+              <div class="search">
+                <!-- <select>
+                                          <option>所有比赛</option>
+                                          <option>比赛1</option>
+                                          <option>比赛2</option>
+                                      </select>
+          
+                                      <select>
+                                          <option>所有时间</option>
+                                          <option>2018-01-09</option>
+                                      </select> -->
+
+                <span v-text="'共'+basketMatchNum+'场'"></span>
+                <!-- <span>已完成2场</span> -->
+
+                <a href="/www/view/buy/basketball.html" class="btn btn-danger btn-sm">投注竞彩篮球</a>
+              </div>
+            </template>
+            <template v-if="ballType==2">
+              <div class="search">
+                <a href="/www/view/buy/rs9.html" class="btn btn-danger btn-sm">投注任选9</a>
+                <a href="/www/view/buy/sf14.html" class="btn btn-danger btn-sm">投注14场胜负彩</a>
+              </div>
+
+            </template>
+            <div class="info">
+              <template v-if="ballType==0">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>场次</th>
+                      <th>赛事</th>
+                      <th>比赛时间</th>
+                      <th>轮次</th>
+                      <th>状态</th>
+                      <th>(排名)主队</th>
+                      <th>比分</th>
+                      <th>客队(排名)</th>
+                      <th>半场</th>
+                      <th>主胜</th>
+                      <th>平</th>
+                      <th>负主负</th>
+                      <th>(让球)主胜</th>
+                      <th>(让球)平</th>
+                      <th>(让球)主负</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <template v-for="item in footBallData">
+
+                      <tr>
+                        <td v-text="item.m_num"></td>
+                        <td v-text="item.l_cn" :style="{backgroundColor: '#'+item.l_color, color: 'white'}"></td>
+                        <td v-text="item.timeCn"></td>
+                        <td v-text="item.m_period"></td>
+                        <td v-text="playStatu[item.m_status]"></td>
+                        <td v-text="item.h_cn"></td>
+                        <td v-text="item.full"></td>
+                        <td v-text="item.a_cn"></td>
+                        <td v-text="item.half"></td>
+                        <td v-text="item.a"></td>
+                        <td v-text="item.d"></td>
+                        <td v-text="item.h"></td>
+                        <td v-text="item.ha"></td>
+                        <td v-text="item.hd"></td>
+                        <td v-text="item.hh"></td>
+                      </tr>
+                    </template>
+                  </tbody>
+                </table>
+              </template>
+              <template v-if="ballType==1">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>场次</th>
+                      <th>赛事</th>
+                      <th>时间</th>
+                      <th>状态</th>
+                      <th>主队</th>
+                      <th>比分</th>
+                      <th>客队</th>
+                      <th>胜负</th>
+                      <th>让分胜负</th>
+                      <th>(主胜)胜分差</th>
+                      <th>(主负)胜分差</th>
+                      <th>大小分</th>
+                      <th>(结果)主胜</th>
+                      <th>(结果)主负</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <template v-for="list in basketBallList">
+                      <template v-for="item in list.list">
+                        <tr>
+                          <td v-text="item.num_name"></td>
+                          <td>
+                            <span v-text="item.l_cn_abbr" class="matchName"></span>
+                          </td>
+                          <td>
+                            <template v-if="!!item.dtime">
+                              <p v-text="item.dtime.split(' ')[0]"></p>
+                              <p v-text="item.dtime.split(' ')[1]"></p>
+                            </template>
+                          </td>
+                          <td v-text="playStatu[item.match_status]"></td>
+                          <td v-text="item.h_cn_abbr"></td>
+                          <td v-text="item.final_score"></td>
+                          <td v-text="item.a_cn_abbr"></td>
+                          <td>
+                            <template v-if="!!item.mnl_odds">
+                              <template v-for="(m, index) in item.mnl_odds.split(',')">
+                                <p v-text="mnlList[index]+m"></p>
+                              </template>
+                            </template>
+                          </td>
+                          <td>
+                            <template v-if="!!item.hdc_odds">
+                              <template v-for="(m, index) in item.hdc_odds.split(',')">
+                                <p v-text="hdcList[index]+m"></p>
+                              </template>
+                            </template>
+                          </td>
+                          <td>
+                            <template v-if="!!item.wnm_win">
+                              <template v-for="(m, index) in item.wnm_win.split(',')">
+                                <p v-text="wnmList[index]+m"></p>
+                              </template>
+                            </template>
+                          </td>
+                          <td>
+                            <template v-if="!!item.wnm_lose">
+                              <template v-for="(m, index) in item.wnm_lose.split(',')">
+                                <p v-text="wnmList[index]+m"></p>
+                              </template>
+                            </template>
+                          </td>
+                          <td>
+                            <template v-if="!!item.hilo_odds">
+                              <template v-for="(m, index) in item.hilo_odds.split(',')">
+                                <p v-text="hdcList[index]+m"></p>
+                              </template>
+                            </template>
+                          </td>
+                          <td>
+                            <template v-if="!!item.b_h">
+                              <template v-for="(m, index) in item.b_h.split(',')">
+                                <p v-text="m"></p>
+                              </template>
+                            </template>
+                          </td>
+                          <td>
+                            <template v-if="!!item.b_a">
+                              <template v-for="(m, index) in item.b_a.split(',')">
+                                <p v-text="m"></p>
+                              </template>
+                            </template>
+                          </td>
+                        </tr>
+                      </template>
+                    </template>
+                  </tbody>
+                </table>
+              </template>
+
+              <template v-if="ballType==2">
+                <table>
+                  <tbody>
+                    <template v-for="match in trMatchList">
+                      <template v-if="match.list.length>0">
+                        <tr>
+                          <td style="width: 80px;">
+                            <span class="label">第{{match.name}} </span>
+                          </td>
+                          <td class="trMatch">
+                            <template v-for="item in match.list">
+                              <span class="num" v-text="item"></span>
+                            </template>
+                          </td>
+                        </tr>
+                      </template>
+                    </template>
+                  </tbody>
+                </table>
+              </template>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="c-box cmsWrap">
+        <div class="title">开奖公告</div>
+        <div class="content cmsList">
+            <template v-for="(item, index) in cmsList">
+                <p>
+                  <a :href="'/www/view/content.html?contentId='+item.content_id" style="display: block; width: 100%;" v-text="(index+1)+ ':' +item.title"></a>
+                </p>
+              </template>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+      <div class="copyright">
+        <p>版权所有：粤ICP备18070257号</p>
+        <p>客服热线：020-89853112 (8:30-12:00 14:30-18:00)</p>
+        <p>彩票票提示您：理性购彩，健康生活。不向未满18周岁的青少年出售彩票。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="/assets/jquery-3.2.2.min.js"></script>
+  <script type="text/javascript" src="/assets/vue.min.js"></script>
+  <script type="text/javascript" src="/assets/vender/Flat-UI-master/scripts/flat-ui.min.js"></script>
+  <script type="text/javascript" src="/assets/vender/swiper-master/swiper.min.js"></script>
+  <script type="text/javascript" src="/assets/md5.min.js"></script>
+  <script type="text/javascript" src="/assets/config.min.js?v=03939"></script>
+  <script type="text/javascript" src="/assets/utility.min.js?v=0395545439"></script>
+  <script type="text/javascript" src="/www/js/app.min.js?v=0941118483939"></script>
+  <script type="text/javascript" src="/www/action/index.min.js?v=0948483939"></script>
+
+</body>
+
+</html>

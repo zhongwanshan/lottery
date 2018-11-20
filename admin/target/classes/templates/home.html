@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>首页</title>
+<style type="text/css">
+/*初始化页面  */
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0} 
+body{font:12px"宋体","Arial Narrow",HELVETICA;background:#fff;-webkit-text-size-adjust:100%;} 
+a{color:#2d374b;text-decoration:none} 
+a:hover{color:#cd0200;text-decoration:underline} 
+em{font-style:normal} 
+li{list-style:none} 
+img{border:0;vertical-align:middle} 
+table{border-collapse:collapse;border-spacing:0} 
+p{word-wrap:break-word}
+/*页面css  */
+#centerArea div{
+float: left;
+}
+#topArea ul li a{
+line-height: 56px;
+text-align: center;
+font-size: 15px;
+color: white;
+}
+#centerArea #leftArea ul li a{
+text-align: center;
+font-size: 15px;
+color: black;
+margin: auto;
+padding:aut;
+vertical-align:middle
+}
+#topArea ul li img {
+	display: block;
+	height: 60px;
+	width: 188px;
+	line-height:60px;
+}
+#topArea ul li{
+float: left;
+}
+#centerArea{
+clear: both;
+margin-top: 13px;
+margin-left: 20px;
+}
+#topArea ul li:nth-child(2) span{
+font-size: 32px;
+color: white;
+display: inline-block;
+line-height: 60px;
+height: 60px;
+margin-left: 20px;
+font-weight: 100px;
+}
+
+#topArea ul li:nth-child(3){
+float:right;
+font-size: 22px;
+color: white;
+display: inline-block;
+line-height: 60px;
+height: 60px;
+margin-left: 20px;
+font-weight: 100px;
+margin-right: 20px;
+}
+#topArea ul li:nth-child(4){
+float:right;
+font-size: 22px;
+color: white;
+display: inline-block;
+line-height: 60px;
+height: 60px;
+margin-left: 20px;
+font-weight: 100px;
+}
+#rightArea{
+margin-left: 11px;
+}
+#leftArea ul li{
+text-align: center;
+height: 25px;
+line-height: 25px;
+}
+#leftArea ul li:hover{
+background-color: #5978A6
+}
+
+#leftArea ul li:first-child{
+height: 31px;
+line-height: 31px;
+text-align: center;
+display: block;
+font-size: 15px;
+background-color: #465163;
+color: white;
+font-weight:bold;
+}
+
+
+#searchCondition ul li input#cx {
+    display: inline-block;
+    width: 143px;
+    height: 28px;
+    background-color: #5978A6;
+    color: white;
+}
+
+
+
+</style>
+</head>
+<body style="background-color: #EFEFEF">
+	<div id="topArea" style="width: 100%; height: 60px; background-color: #465163;">
+		<ul>
+	        <li><img alt="" src="../static/minoLogo.jpg">
+			</li>
+			<li><span>MISP内部管理系统</span>
+			</li>
+			<li><span>[退出系统]</span>
+			<li>小明   |
+			</li>
+			</li>
+		</ul>
+	</div>
+	<div id="centerArea" style="width: 100%; height:400px;">
+		<div id="leftArea" style="width: 12%; height: 100%; background-color:#fff;">
+		<ul>
+		<li>菜单列表</li>
+		<li><a href="/message/messageListPath" target="myiframe">消息列表</a></li>
+		<li><a href="/userManager/userHome" target="myiframe">用户管理</a></li>
+		<li><a href="/roleManager/roleHome" target="myiframe">角色管理</a></li>
+		<li><a href="/menuManager/menuHome" target="myiframe">菜单配置</a></li>
+		<li><a href="/pageManager/pageHome" target="myiframe">页面配置</a></li>
+		<li><a href="/buttonManager/buttonHome" target="myiframe">菜单配置</a></li>
+		</ul>
+		</div>
+		<div id="rightArea" style="width: 84%; height: 150%; background-color: #FFFFFF;">
+		 <iframe src="/message/messageListPath" name="myiframe" scrolling="no" frameborder="0" width="100%" height="100%"></iframe>
+		</div>
+	</div>
+</body>
+</html>

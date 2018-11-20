@@ -1,0 +1,32 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="view/me.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">文章详情</div>
+        <div class="right">
+            <a class="js-message" href="view/user/message.html">
+                <i class="navIcon navIcon-message"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="content">
+    <div id="js-pageContent" class="page-content" style="background-color: white;">
+        <template v-if="!!contentInfo">
+            <div class="cmsWrap">
+                <div class="cmsHeader">
+                    <h2 v-text="contentInfo.title"></h2>
+                    <p>
+                        <span v-text="'发布时间:'+contentInfo.update_date">
+                            <span v-text="'发布作者:'+contentInfo.publisher">
+                    </p>
+                </div>
+                <div class="cmsDetail" v-html="contentInfo.content"></div>
+            </div>
+        </template>
+    </div>
+</div>

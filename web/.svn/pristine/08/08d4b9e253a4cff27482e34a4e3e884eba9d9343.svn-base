@@ -1,0 +1,80 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="view/me.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">我的彩票</div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="order-order">
+    <div id="js-orderList" class="page-content tabTop">
+        <div id="mescroll" class="mescroll">
+            <div class="hTitle accountTitle">
+                <p>
+                    <span>开始时间：</span>
+                    <input type="text" placeholder="开始时间" readonly id="startTime" />
+                </p>
+                <p>
+                    <span>结束时间：</span>
+                    <input type="text" placeholder="结束时间" readonly id="endTime" />
+                </p>
+                <p>
+                    <span>订单状态：</span>
+                    <select v-model="orderStatus" style="float: none; width: 10rem;">
+                        <option value="">全部</option>
+                        <template v-for="(item, index) in statu">
+                            <template v-if="index.split('_')[1]!=0&&index.split('_')[1]!=2&&index.split('_')[1]!=8">
+                                <option :value="index.split('_')[1]" v-text="item"></option>
+                            </template>
+                        </template>
+                    </select>
+                </p>
+            </div>
+
+            <div class="content-block">
+                <div class="lotteryType orderList">
+                    <template v-for="item in orderList">
+                        <div class="item">
+                            <a :href="'view/order/detail.html?orderCode='+item.orderCode">
+                                <div class="content">
+                                    <template v-if="item.orderStatus>4">
+                                        <p class="orderStatus" style="background-color:dimgrey;" v-text="statu['s_'+item.orderStatus]"></p>
+                                    </template>
+                                    <template v-if="item.orderStatus==3 && !!item.awardFlag">
+                                        <p class="orderStatus" style="background-color:forestgreen;" v-text="statu['s_'+item.orderStatus]+'(已开奖)'"></p>
+                                    </template>
+                                    <template v-if="item.orderStatus==3 && !item.awardFlag">
+                                        <p class="orderStatus" style="background-color: #ffd800; color: #333;" v-text="statu['s_'+item.orderStatus]+'(等待开奖)'"></p>
+                                    </template>
+                                    <template v-if="item.orderStatus==4">
+                                        <p class="orderStatus" style="background-color:forestgreen;" v-text="statu['s_'+item.orderStatus]"></p>
+                                    </template>
+                                    <template v-if="item.orderStatus<3 && item.awardFlag==1">
+                                        <p class="orderStatus" style="background-color:dimgrey;" v-text="statu['s_'+item.orderStatus]+'(已开奖)'"></p>
+                                    </template>
+                                    <template v-if="item.orderStatus<3 && item.awardFlag==0">
+                                        <p class="orderStatus" v-text="statu['s_'+item.orderStatus]"></p>
+                                    </template>
+                                    <p class="createTime" v-text="item.createTime"></p>
+                                    <p class="orderName">
+                                        <template v-if="!!item.issueNo">
+                                            <span v-text="'【第'+item.issueNo+'期】'"></span>
+                                        </template>
+                                        <span v-text="item.orderName"></span>
+                                    </p>
+                                </div>
+                                <span class="toword" style="top: 1.25rem;">
+                                    {{item.orderPriceStr}}元
+                                    <i class="glyphicon glyphicon-menu-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>订单查询</title>
+<style type="text/css">
+/*初始化页面  */
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset,
+	legend, input, textarea, select {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font: 14px "微软雅黑", "Arial Narrow", HELVETICA;
+	background: #fff;
+	-webkit-text-size-adjust: 100%;
+}
+
+a {
+	color: #2d374b;
+	text-decoration: none
+}
+
+a:hover {
+	color: #cd0200;
+	text-decoration: underline
+}
+
+em {
+	font-style: normal
+}
+
+li {
+	list-style: none
+}
+
+img {
+	border: 0;
+	vertical-align: middle
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+p {
+	word-wrap: break-word
+}
+/* 页面css*/
+#searchCondition ul li {
+	float: left;
+	margin-left: 29px;
+	margin-top: 17px;
+	font-size: 13px;
+	width: 178px;
+}
+
+#searchCondition ul li select {
+	display: inline-block;
+	width: 143px;
+	height: 26px
+}
+
+#searchCondition ul li input {
+	display: inline-block;
+	width: 144px;
+	height: 22px
+}
+
+#searchCondition ul li input#cx {
+	display: inline-block;
+	width: 80px;
+	height: 26px;
+	background-color: #5978A6;
+	color: white;
+	border-radius: 3px;
+	box-shadow: none;
+}
+
+#messageLlist {
+	clear: both;
+	margin-left: 29px;
+	padding-top: 15px;
+}
+
+#messageLlist #messageData td {
+	display: inline-block;
+	width: 200px;
+	text-align: center;
+	line-height: 40px;
+	border: none;
+	border-bottom: 1px;
+}
+
+#messageLlist #messageData td:first-child {
+	width: 160px;
+}
+
+#messageLlist #messageData td:last-child {
+	width: 160px;
+}
+
+#messageLlist #messageData thead td {
+	background-color: #F2F2F2;
+}
+
+#messageLlist #messageData tbody tr {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #E7E7E7;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #E7E7E7;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #E7E7E7;
+}
+
+#messageLlist #messageData thead tr {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #E7E7E7;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #E7E7E7;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #E7E7E7;
+}
+
+#messageLlist #messageData tbody tr:hover {
+	background-color: #F2F2F2;
+}
+
+#funtionList {
+	height: 30px;
+	width: 100%;
+	clear: both;
+	margin-top: 10px;
+}
+
+#funtionList ul li {
+	float: left;
+	display: inline-block;
+	height: 26px;
+	width: 80px;
+	line-height: 26px;
+	border: 1px solid #c3adad;
+	border-radius: 3px;
+	margin-left: 30px;
+	text-align: center;
+	background-color: #5978A6;
+	color: white;
+}
+
+#funtionList ul {
+	padding-top: 20px;
+}
+
+#funtionList ul li:hover {
+	cursor: pointer;
+}
+
+#funtionList ul li:active {
+	background-color: #c3adad;
+}
+
+#pageLimit span {
+	float: left;
+	display: inline-block;
+	height: 20px;
+	width: 47px;
+	line-height: 20px;
+	text-align: center;
+	border: 1px solid #BDBFBE;
+	border-radius: 3px;
+	background-color: #159ADD;
+	margin-right: 5px;
+	color: white;
+}
+
+#pageLimit span:active {
+	color: black;
+	background-color: white;
+}
+
+#pageLimit span:hover {
+	cursor: pointer;
+}
+
+#pageLimit {
+	margin-left: 500px;
+	margin-top: 20px;
+}
+
+#pageLimit span:nth-child(7) {
+	width: 80px;
+}
+
+#pageLimit span:nth-child(7) input {
+	width: 20px;
+}
+
+#pageLimit span:nth-child(8) {
+	height: 25px;
+	width: 50px;
+	line-height: 25px;
+	border: 1px solid #c3adad;
+	border-radius: 3px;
+}
+
+#searchCondition ul li span {
+	float: left;
+	display: inline-block;
+	height: 40px;
+	width: 60px;
+	line-height: 40px;
+	border: 1px solid #c3adad;
+	border-radius: 3px;
+	margin-left: 27px;
+	text-align: center;
+	background-color: #169CD1;
+	color: white;
+}
+#searchCondition ul li span:hover{
+cursor: pointer;
+background-color: #00d9d9;
+}
+#messageLlist #messageData tbody tr span:hover{
+cursor: pointer;
+background-color: #00d9d9;
+}
+
+
+#searchCondition div:first-child {
+	height: 51px;
+	line-height: 51px;
+	margin: 0 7px;
+	border-bottom: 3px solid #797979;
+	"
+}
+
+#searchCondition div:first-child span {
+	padding-left: 22px;
+}
+
+#functionListTow {
+	clear: both;
+}
+
+#functionListTow ul li span {
+	margin-left: 0px;
+}
+
+#searchCondition ul li span:hover {
+	cursor: pointer;
+}
+
+#searchCondition ul li span:active {
+	background-color: white;
+	color: black;
+}
+
+#messageLlist #messageData tbody tr span {
+	/* 	float: left; */
+	display: inline-block;
+	height: 20px;
+	width: 47px;
+	line-height: 20px;
+	text-align: center;
+	border: 1px solid #BDBFBE;
+	border-radius: 3px;
+	background-color: #159ADD;
+	margin-right: 5px;
+	color: white;
+}
+
+#messageLlist #messageData tbody tr span:nth-child(3) {
+	background-color: #009C00;
+}
+
+#messageLlist #messageData tbody tr span:nth-child(4) {
+	background-color: #FD9A00;
+}
+
+#messageLlist #messageData tbody tr span:hover {
+	cursor: pointer;
+}
+
+#messageLlist #messageData tbody tr span:active {
+	background-color: white;
+	color: black;
+}
+
+#messageLlist #messageData table thead td {
+	white-space: nowrap;
+}
+
+#messageLlist #messageData table tbody td {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+#pageLimit span:hover {
+	background-color:#00d9d9;
+}
+</style>
+
+<script src="/lottery/js/jquery-1.8.2.js" type="text/javascript"
+	charset="utf-8"></script>
+<script src="/lottery/js/layer/layer.min.js" type="text/javascript"
+	charset="utf-8"></script>
+
+</head>
+<body>
+	<div id="searchCondition"
+		style="height: 254px; border: 1px solid #BDBFBE; background-color: #F2F2F2">
+		<div>
+			<span>订单查询</span>
+		</div>
+		<ul>
+			<li>下单开始时间：<input type="datetime-local">
+			</li>
+			<li>下单结束时间：<input type="datetime-local">
+			</li>
+			<li>彩种：<select>
+					<option value="0">全部</option>
+					<option value="1001">竞彩足球</option>
+					<option value="1002">传统足球14场</option>
+					<option value="1003">传统足球任选9场</option>
+					<option value="1004">竞彩篮球</option>
+					<option value="1005">北京单场</option>
+					<option value="6">广东11选5</option>
+					<option value="11">双色球</option>
+					<option value="12">福彩3D</option>
+					<option value="13">七乐彩</option>
+					<option value="14">大乐透</option>
+					<option value="15">七星彩</option>
+					<option value="16">排列三</option>
+					<option value="17">排列五</option>
+			</select>
+			</li>
+			<li>订单状态：<select>
+					<option value="9">全部</option>
+					<option value="0">暂存</option>
+					<option value="1">待付款</option>
+					<option value="2">付款不成功</option>
+					<option value="3">已付款</option>
+					<option value="4">中奖</option>
+					<option value="5">未中奖</option>
+					<option value="6">用户取消订单</option>
+					<option value="7">系统取消订单</option>
+					<option value="8">用户删除订单</option>
+			</select>
+			</li>
+			<li>打单状态：<select>
+					<option value="9">全部</option>
+					<option value="0">未处理</option>
+					<option value="1">已接单</option>
+					<option value="2">已打印出单</option>
+					<option value="3">出单失败/拒单</option>
+					<option value="4">超时撤销</option>
+					<option value="5">已结算收款</option>
+					<option value="6">已向用户转交彩票</option>
+					<option value="7">已退款</option>
+			</select>
+			</li>
+			<li>彩票店id：<select>
+					<option value="0">全部</option>
+					<option th:each="list:${userBaseInfoList}" th:value="${list.id}"
+						th:text="${list.id}"></option>
+			</select>
+			</li>
+			<li>彩票店名称：<input type="text">
+			</li>
+			<li>中奖金额最少：<input type="number">
+			</li>
+			<li>中奖金额最大：<input type="number">
+			</li>
+			<li>订单编号：<input type="text">
+			</li>
+			<li>用户昵称：<input type="text">
+			</li>
+			<li>是否中奖：<select>
+					<option value="9">全部</option>
+					<option value="0">否</option>
+					<option value="1">是</option>
+			</select>
+			</li>
+			<li><span onclick="searchMeassages(0)">查询</span> <span
+				onclick="reSet()">重置</span> <!--  <span onclick="reSet()">导出</span> --></li>
+		</ul>
+	</div>
+	<div
+		style="border: 1px solid #BDBFBE; margin-top: 13px; height: 1000px;">
+		<div id="messageLlist" style="overflow-x: scroll; width: 1000px;">
+			<table id="messageData"
+				style="border-collapse: collapse; width: 10722px; table-layout: fixed;">
+				<thead>
+					<td>操作</td>
+					<td>订单编码</td>
+					<td>订单状态</td>
+					<td>已赢标记</td>
+					<td>赢后税前奖金</td>
+					<td>下注订单显示名称</td>
+					<td>投注期号</td>
+					<td>投注号</td>
+					<td>投注人电话</td>
+					<td>投注人昵称</td>
+					<td>彩票项目名称</td>
+					<td>用户支付时间</td>
+					<td>是否单式投注</td>
+					<!-- 		<td>用户数字彩投注详情</td>
+					<td>用户球类彩投注详情</td> -->
+					<td>数字彩投注方式名称</td>
+					<td>数字彩投注功能名称</td>
+					<td>球赛过关方式</td>
+					<td>投注倍数</td>
+					<td>数字彩大乐透是否追加1元投注</td>
+					<td>分解后总注数</td>
+					<td>中奖注数</td>
+					<td>订单总金额</td>
+					<td>支付方式</td>
+					<!-- 	<td>支付单号</td> -->
+					<td>支付单编码</td>
+					<td>创建时间</td>
+					<td>修改时间</td>
+					<td>代理商ID</td>
+					<td>彩票店处理状态</td>
+					<td>接单彩票店名称</td>
+					<td>彩票店接单时间</td>
+					<td>彩票店打单时间</td>
+					<td>订单来源</td>
+					<td>因比赛无效，退款金额</td>
+					<td>开始退款时间</td>
+					<td>结束退款时间</td>
+					<td>付款给彩票店时间</td>
+					<td>实际付款给彩票店金额</td>
+					<td>实际付款给代理商时间</td>
+					<td>实际付款给代理商金额</td>
+					<td>代理商从用户购彩费分成比例</td>
+					<td>彩票店从用户购彩费分成比例</td>
+					<!-- <td>赔率</td> -->
+					<!-- 	<td>预计最高回报倍数</td> -->
+					<td>下注时赔率</td>
+					<td>彩票预计开奖时间</td>
+					<td>预计中奖奖金</td>
+					<td>订单赔付状态</td>
+					<td>赔付时间</td>
+					<td>串关过关方式</td>
+					<!-- 	<td>识别不定位投注</td>
+					<td>合买标记</td> -->
+					<!-- <td>追号期数</td> -->
+					<!-- 	<td>是否追号产生的订单</td>
+					<td>是否追号</td>
+					<td>追号剩下期数,为0时结束</td>
+					<td>追号一次性付款资金</td>
+					<td>中奖盈利多少停止追号</td> -->
+					<!-- 	<td>奖金比例，中奖以这个为据</td>
+					<td>开奖号码，没开奖的留空串</td> -->
+					<!-- <td>官方实际开奖时间</td> -->
+					<!-- <td>是否已经取消购买</td>
+					<td>识别盈亏标记</td> -->
+					<td>是否公开投注信息</td>
+					<td>是否已开奖</td>
+					<!-- 	<td>封盘时间（最后一场）</td>
+					<td>平台分单处理标记</td>
+					<td>最迟兑奖时间</td>
+					<td>平台处理备注</td>
+					<td>彩票店处理备注信息</td> -->
+					<td>付款给彩票店付款单号</td>
+					<td>付款给代理商付款单号</td>
+					<!-- <td>会员当前钱包余额</td> -->
+					<td>实际回报倍数</td>
+					<!-- 	<td>下注前用户账户金额</td> -->
+					<td>平台开奖处理时间</td>
+					<!-- 	<td>是否已结算所有</td> -->
+					<!-- <td>中奖号码详情</td> -->
+					<td>分发给彩票店时间</td>
+				</thead>
+				<tbody>
+					<tr th:each="entries,stat:${dataList}">
+						<td th:attr="idValue=${entries['id']}"><span>查看</span><span>编辑</span></td>
+						<td th:text="${entries['orderCode']}"></td>
+						<td th:if="${entries['orderStatus']==0}">暂存，非正式订单</td>
+						<td th:if="${entries['orderStatus']==1}">待付款</td>
+						<td th:if="${entries['orderStatus']==2}">付款不成功</td>
+						<td th:if="${entries['orderStatus']==3}">已付款并提交给平台</td>
+						<td th:if="${entries['orderStatus']==4}">已开奖且已中奖</td>
+						<td th:if="${entries['orderStatus']==5}">已开奖且未中奖</td>
+						<td th:if="${entries['orderStatus']==6}">用户取消订单</td>
+						<td th:if="${entries['orderStatus']==7}">系统取消订单，退款中</td>
+						<td th:if="${entries['orderStatus']==8}">用户删除订单</td>
+						<td th:if="${entries['orderStatus']==9}">系统取消订单，已退款</td>
+						<td
+							th:if="${entries['orderStatus']!=9 and entries['orderStatus']!=8 and entries['orderStatus']!=7 and entries['orderStatus']!=6 and entries['orderStatus']!=5 and entries['orderStatus']!=4 and entries['orderStatus']!=3 and entries['orderStatus']!=2 and entries['orderStatus']!=1 and entries['orderStatus']!=0}"></td>
+						<td th:if="${entries['winFlag']==0}">未处理</td>
+						<td th:if="${entries['winFlag']==1}">已中奖</td>
+						<td th:if="${entries['winFlag']==2}">未中奖</td>
+						<td
+							th:if="${entries['winFlag']!=2 and entries['winFlag']!=1 and entries['winFlag']!=0}"></td>
+						<td th:text="${entries['bonusTow']}"></td>
+						<td th:text="${entries['orderName']}"></td>
+						<td th:text="${entries['issueNo']}"></td>
+						<td th:text="${entries['betNo']}"></td>
+						<td th:text="${entries['userPhone']}"></td>
+						<td th:text="${entries['nickName']}"></td>
+						<td th:text="${entries['lotteryTypeName']}"></td>
+						<td th:text="${entries['userPayTimeTow']}"></td>
+						<td th:if="${entries['singleFlag']==false}">否</td>
+						<td th:if="${entries['singleFlag']==true}">是</td>
+						<td
+							th:if="${entries['singleFlag']!=true and entries['singleFlag']!=false}"></td>
+						<!-- <td th:text="${entries['digitalBetDetail']}"
+							style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"></td>
+						<td th:text="${entries['ballBetDetail']}"
+							style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"></td> -->
+						<td th:text="${entries['digitalBetTypeName']}"></td>
+						<td th:text="${entries['digitalBetFunctionName']}"></td>
+						<td th:text="${entries['ballBetTypeIds']}"></td>
+						<td th:text="${entries['multipleNum']}"></td>
+						<td th:text="${entries['extraAdd']}"></td>
+						<td th:text="${entries['betsNum']}"></td>
+						<td th:text="${entries['winNum']}"></td>
+						<td th:text="${entries['orderPriceTow']}"></td>
+
+						<td th:if="${entries['payType']==0}">账户余额支付</td>
+						<td th:if="${entries['payType']==1}">微信</td>
+						<td th:if="${entries['payType']==2}">支付宝</td>
+						<td
+							th:if="${entries['payType']!=2 and entries['payType']!=1 and entries['payType']!=0}"></td>
+						<!-- <td th:text="${entries['payOrderId']}"></td> -->
+						<td th:text="${entries['payOrderCode']}"
+							style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"></td>
+						<td th:text="${entries['createTimeTow']}"></td>
+						<td th:text="${entries['updateTimeTow']}"></td>
+						<td th:if="${entries['agentId']==0}">平台</td>
+						<td th:if="${entries['agentId']!=0}">其他</td>
+						<td th:if="${entries['shopDealStatus']==0}">未处理</td>
+						<td th:if="${entries['shopDealStatus']==1}">已接单</td>
+						<td th:if="${entries['shopDealStatus']==2}">已打印出单</td>
+						<td th:if="${entries['shopDealStatus']==3}">出单失败</td>
+						<td th:if="${entries['shopDealStatus']==4}">超时撤销</td>
+						<td th:if="${entries['shopDealStatus']==5}">已结算收款</td>
+						<td
+							th:if="${entries['shopDealStatus']!=5 and entries['shopDealStatus']!=4 and entries['shopDealStatus']!=3 and entries['shopDealStatus']!=2 and entries['shopDealStatus']!=1 and entries['shopDealStatus']!=0}"></td>
+						<td th:text="${entries['shopName']}"></td>
+						<td th:text="${entries['shopReceiveTimeTow']}"></td>
+						<td th:text="${entries['shopPrintTimeTow']}"></td>
+
+
+						<td th:if="${entries['appType']==1}">H5</td>
+						<td th:if="${entries['appType']==2}">WWW</td>
+						<td th:if="${entries['appType']==3}">android app</td>
+						<td th:if="${entries['appType']==4}">ios app</td>
+						<td
+							th:if="${entries['appType']!=1 and entries['appType']!=2 and entries['appType']!=3 and entries['appType']!=4 }"></td>
+						<td th:text="${entries['refundMoneyTow']}"></td>
+						<td th:text="${entries['refundBeginTimeTow']}"></td>
+						<td th:text="${entries['refundEndTimeTow']}"></td>
+						<td th:text="${entries['payShopTimeTow']}"></td>
+						<td th:text="${entries['payShopMoneyTow']}"></td>
+						<td th:text="${entries['payAgentTimeTow']}"></td>
+						<td th:text="${entries['payAgentMoneyTow']}"></td>
+						<td th:text="${entries['agentShareRate']}"></td>
+						<td th:text="${entries['shopShareRate']}"></td>
+						<!-- <td th:text="${entries['betRate']}"></td> -->
+						<!-- <td th:text="${entries['wantWinMultipleNum']}"></td> -->
+						<td th:text="${entries['betPoint']}"></td>
+						<td th:text="${entries['planAwardTimeTow']}"></td>
+						<td th:text="${entries['maybeWinMoneyTow']}"></td>
+
+						<td th:if="${entries['winPayStatus']==0}">待处理</td>
+						<td th:if="${entries['winPayStatus']==1}">平台已赔付给用户</td>
+						<td th:if="${entries['winPayStatus']==2}">平台已通知用户线下兑奖</td>
+						<td
+							th:if="${entries['winPayStatus']!=0 and entries['appType']!=1 and entries['appType']!=2}"></td>
+						<td th:text="${entries['winPayTimeTow']}"></td>
+						<td th:text="${entries['passType']}"></td>
+						<!-- 	<td th:text="${entries['bdwEnable']}"></td>
+						<td th:text="${entries['multiBuyFlag']}"></td> -->
+						<!-- <td th:text="${entries['followIssueNum']}"></td> -->
+						<!-- 						 <td th:text="${entries['followOrderFlag']}"></td>
+						<td th:text="${entries['followFlag']}"></td> 
+						<td th:text="${entries['followLeftIssue']}"></td>
+						<td th:text="${entries['followMoney']}"></td>
+						<td th:text="${entries['followStopFor']}"></td> -->
+						<!-- <td th:text="${entries['bonusRatio']}"></td>
+						<td th:text="${entries['prizeNo']}"></td> -->
+						<!-- <td th:text="${entries['openTimeTow']}"></td> -->
+						<!-- <td th:if="${entries['isCancled']==0}">否</td>
+						<td th:if="${entries['isCancled']!=0}">是</td> -->
+						<!-- <td th:if="${entries['gainFlag']==0}">否</td>
+						<td th:if="${entries['gainFlag']!=0}">是</td> -->
+						<td th:if="${entries['openFlag']==0}">保密</td>
+						<td th:if="${entries['openFlag']!=0}">公开</td>
+						<td th:if="${entries['awardFlag']==0}">未开奖</td>
+						<td th:if="${entries['awardFlag']!=0}">已开奖</td>
+						<!-- 						<td th:text="${entries['betEndtimeTow']}"></td>
+						<td th:text="${entries['deliverFlag']}"></td>
+						<td th:text="${entries['moneyLostTimeTow']}"></td>
+						<td th:text="${entries['sysRemark']}"></td>
+						<td th:text="${entries['shopRemark']}"></td> -->
+						<td th:text="${entries['payShopOrderCode']}"></td>
+						<td th:text="${entries['payAgentOrderCode']}"></td>
+						<!-- <td th:text="${entries['balanceTow']}"></td> -->
+						<td th:text="${entries['winRate']}"></td>
+						<!-- <td th:text="${entries['userAccountBeforeTow']}"></td> -->
+						<td th:text="${entries['sysOpenTimeTow']}"></td>
+						<!-- <td th:if="${entries['sysPayFlag']==0}">未结算</td>
+						<td th:if="${entries['sysPayFlag']==1}">已结算用户</td>
+						<td th:if="${entries['sysPayFlag']==2}">已结算店铺</td>
+						<td th:if="${entries['sysPayFlag']==3}">已结算代理</td> -->
+						<td
+							th:if="${entries['sysPayFlag']!=3 and entries['sysPayFlag']!=2 and entries['sysPayFlag']!=1 and entries['sysPayFlag']!=0}"></td>
+						<!-- <td th:text="${entries['winNumberDetail']}"></td> -->
+						<td th:text="${entries['deliverToShopTimeTow']}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="pageLimit">
+			<span>首页</span> <span>前页</span> <span>后页</span> <span>尾页</span> <span>第<b>1</b>页
+			</span> <span>共<b>[[${totallNum}]]</b>页
+			</span> <span> 到第<input type="text">页
+			</span> <span>Go</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+	Date.prototype.format = function (format) {
+        var args = {
+            "M+": this.getMonth() + 1,
+            "d+": this.getDate(),
+            "h+": this.getHours(),
+            "m+": this.getMinutes(),
+            "s+": this.getSeconds(),
+            "q+": Math.floor((this.getMonth() + 3) / 3),  //quarter
+            "S": this.getMilliseconds()
+        };
+        if (/(y+)/.test(format))
+            format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var i in args) {
+            var n = args[i];
+            if (new RegExp("(" + i + ")").test(format))
+                format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? n : ("00" + n).substr(("" + n).length));
+        }
+        return format;
+    };
+	
+	
+	$(function(){
+		init();
+	})
+	 //重置
+	  function reSet(){
+	  $("#searchCondition ul li input").val("");
+	  $("#searchCondition ul li:nth-child(3) select").val("0")
+	   $("#searchCondition ul li:nth-child(4) select").val("9")	 
+	   $("#searchCondition ul li:nth-child(5) select").val("9")	 
+	   $("#searchCondition ul li:nth-child(6) select").val("0")	
+	   $("#searchCondition ul li:nth-child(12) select").val("9")	
+	  }
+	   //根据条件查询信息
+		function searchMeassages(pageNum) {
+			var orderTimerBegain = $("#searchCondition ul li:nth-child(1) input").val();
+			var orderTimerEnd = $("#searchCondition ul li:nth-child(2) input").val();
+			var lotteryTypeId = $("#searchCondition ul li:nth-child(3) select option:selected").val();
+			var orderStatus = $("#searchCondition ul li:nth-child(4) select option:selected").val();
+			var shopDealStatus = $("#searchCondition ul li:nth-child(5) select option:selected").val();
+			var shopId = $("#searchCondition ul li:nth-child(6) select option:selected").val();
+			var shopName = $("#searchCondition ul li:nth-child(7) input").val();
+			var bonusBegain = $("#searchCondition ul li:nth-child(8) input").val();
+			var bonusEnd= $("#searchCondition ul li:nth-child(9) input").val();
+			var orderCode = $("#searchCondition ul li:nth-child(10) input").val();
+			var nickName = $("#searchCondition ul li:nth-child(11) input").val();
+			var winNum = $("#searchCondition ul li:nth-child(12) select option:selected").val();
+			if(bonusBegain!=""&&bonusBegain!=null){
+				bonusBegain =parseInt(bonusBegain)*100
+				}
+			if(bonusEnd!=""&&bonusEnd!=null){
+				bonusEnd =parseInt(bonusEnd)*100
+				}
+			if(orderTimerBegain!=""&&orderTimerBegain!=null){
+			orderTimerBegain =new Date(orderTimerBegain).format("yyyy-MM-dd hh:mm:ss")
+			}
+			if(orderTimerEnd!=""&&orderTimerEnd!=null){
+				orderTimerEnd =new Date(orderTimerEnd).format("yyyy-MM-dd hh:mm:ss")
+				}
+			$.ajax({
+				type : "GET",
+				url : "/lottery/lotteryMainOrder/searchLotteryMainOrder",
+				data : {
+					"orderTimerBegain" : orderTimerBegain,
+					"orderTimerEnd" : orderTimerEnd,
+					"lotteryTypeId" : lotteryTypeId,
+					"orderStatus" : orderStatus,
+					"shopDealStatus" : shopDealStatus,
+					"shopId" : shopId,
+					"shopName" : shopName,
+					"bonusBegain" : bonusBegain,
+					"bonusEnd" : bonusEnd,
+					"orderCode" : orderCode,
+					"nickName" : nickName,
+					"winNum" : winNum,
+					"pageNum" : parseInt(pageNum)*10
+				},
+				dataType : "json",
+				success : function(data) {
+					if(parseInt(pageNum)==0){
+					     $("#pageLimit span:nth-child(5) b").text("1");
+						}
+					//改变页数
+					$("#pageLimit span:nth-child(6) b").text(data.totallNum)
+					$('#messageLlist #messageData tbody').empty();
+					var html = "";
+					for (var i = 0, l = data.dataList.length; i < l; i++) {
+						html += "<tr>";
+						html += "<td idValue="+ data.dataList[i]['id'] +"  lotteryTypeId="+ data.dataList[i]['lotteryTypeId'] +"><span>查看</span><span>编辑</span></td>";
+						if(null==data.dataList[i]['orderCode']){
+							html += "<td></td>";	
+						}else{
+							html += "<td>" + data.dataList[i]['orderCode'] + "</td>";
+						}
+						if("0"==data.dataList[i]['orderStatus']){
+							html += "<td>暂存，非正式订单</td>";
+						}else if("1"==data.dataList[i]['orderStatus']){
+							html += "<td>待付款</td>";
+						}else if("2"==data.dataList[i]['orderStatus']){
+							html += "<td>付款不成功</td>";
+						}else if("3"==data.dataList[i]['orderStatus']){
+							html += "<td>已付款并提交给平台</td>";
+						}else if("4"==data.dataList[i]['orderStatus']){
+							html += "<td>已开奖且已中奖</td>";
+						}else if("5"==data.dataList[i]['orderStatus']){
+							html += "<td>已开奖且未中奖</td>";
+						}else if("6"==data.dataList[i]['orderStatus']){
+							html += "<td>用户取消订单</td>";
+						}else if("7"==data.dataList[i]['orderStatus']){
+							html += "<td>系统取消订单，退款中</td>";
+						}else if("8"==data.dataList[i]['orderStatus']){
+							html += "<td>用户删除订单</td>";
+						}else if("9"==data.dataList[i]['orderStatus']){
+							html += "<td>系统取消订单，已退款</td>";
+						}else{
+							html += "<td></td>";
+						}
+						if("0"==data.dataList[i]['winFlag']){
+							html += "<td>未处理</td>";
+							}else if("1"==data.dataList[i]['orderStatus']){
+								html += "<td>已中奖</td>";
+							}else{
+							html += "<td>未中奖</td>";
+							}
+						if(null==data.dataList[i]['bonusTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" +data.dataList[i]['bonusTow']+ "</td>";
+							}
+						if(null==data.dataList[i]['orderName']){
+						html += "<td></td>";
+						}else{
+						html += "<td>" + data.dataList[i]['orderName'] + "</td>";
+						}
+						if(null==data.dataList[i]['issueNo']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['issueNo'] + "</td>";
+							}
+						if(null==data.dataList[i]['betNo']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['betNo'] + "</td>";
+							}
+						if(null==data.dataList[i]['userPhone']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['userPhone'] + "</td>";
+							}
+						if(null==data.dataList[i]['nickName']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['nickName'] + "</td>";
+							}
+						if(null==data.dataList[i]['lotteryTypeName']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['lotteryTypeName'] + "</td>";
+							}
+						if(null==data.dataList[i]['userPayTime']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['userPayTime'] + "</td>";
+							}
+						if(false==data.dataList[i]['singleFlag']){
+							html += "<td>否</td>";
+							}else if(true==data.dataList[i]['singleFlag']){
+								html += "<td>是</td>";
+							}else{
+							html += "<td></td>";
+							}
+/* 						if(null==data.dataList[i]['digitalBetDetail']){
+							html += "<td></td>";
+							}else{
+								html += "<td style='white-space: nowrap; overflow: hidden; text-overflow: ellipsis;'>" + data.dataList[i]['digitalBetDetail'] + "</td>";
+							}
+						if(null==data.dataList[i]['ballBetDetail']){
+							html += "<td></td>";
+							}else{
+								html += "<td style='white-space: nowrap; overflow: hidden; text-overflow: ellipsis;'>" + data.dataList[i]['ballBetDetail'] + "</td>";
+							} */
+						if(null==data.dataList[i]['digitalBetTypeName']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['digitalBetTypeName'] + "</td>";
+							}
+						if(null==data.dataList[i]['digitalBetFunctionName']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['digitalBetFunctionName'] + "</td>";
+							}
+						if(null==data.dataList[i]['ballBetTypeIds']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['ballBetTypeIds'] + "</td>";
+							}
+						if(null==data.dataList[i]['multipleNum']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['multipleNum'] + "</td>";
+							}
+						if(null==data.dataList[i]['extraAdd']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['extraAdd'] + "</td>";
+							}
+						if(null==data.dataList[i]['betsNum']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['betsNum'] + "</td>";
+							}
+						if(null==data.dataList[i]['winNum']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['winNum'] + "</td>";
+							}
+						if(null==data.dataList[i]['orderPriceTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['orderPriceTow'] + "</td>";
+							}
+						if("0"==data.dataList[i]['payType']){
+							html += "<td>账户余额支付</td>";
+							}else if("1"==data.dataList[i]['payType']){
+								html += "<td>微信</td>";
+							}else{
+							html += "<td>支付宝</td>";
+							}
+/* 						if(null==data.dataList[i]['payOrderId']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['payOrderId'] + "</td>";
+							} */
+						if(null==data.dataList[i]['payOrderCode']){
+							html += "<td></td>";
+							}else{
+							html += "<td style='white-space: nowrap; overflow: hidden; text-overflow: ellipsis;'>" + data.dataList[i]['payOrderCode'] + "</td>";
+							}
+						if(null==data.dataList[i]['createTimeTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['createTimeTow'] + "</td>";
+							}
+						if(null==data.dataList[i]['updateTimeTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['updateTimeTow'] + "</td>";
+							}
+						if("0"==data.dataList[i]['agentId']){
+							html += "<td>平台</td>";
+							}else{
+							html += "<td>其他</td>";
+							}
+						
+						if("0"==data.dataList[i]['shopDealStatus']){
+							html += "<td>未处理</td>";
+							}else if("1"==data.dataList[i]['shopDealStatus']){
+								html += "<td>已接单</td>";
+							}else if("2"==data.dataList[i]['shopDealStatus']){
+								html += "<td>已打印出单</td>";
+							}else if("3"==data.dataList[i]['shopDealStatus']){
+								html += "<td>出单失败</td>";
+							}else if("4"==data.dataList[i]['shopDealStatus']){
+								html += "<td>超时撤销</td>";
+							}else{
+							html += "<td>已结算收款</td>";
+							}
+						if(null==data.dataList[i]['shopName']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['shopName'] + "</td>";
+							}
+						if(null==data.dataList[i]['shopReceiveTimeTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['shopReceiveTimeTow'] + "</td>";
+							}
+						if(null==data.dataList[i]['shopPrintTimeTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['shopPrintTimeTow'] + "</td>";
+							}
+						if("1"==data.dataList[i]['appType']){
+							html += "<td>H5</td>";
+							}else if("2"==data.dataList[i]['appType']){
+								html += "<td>WWW</td>";
+							}else if("3"==data.dataList[i]['appType']){
+								html += "<td>android app</td>";
+							}else if("4"==data.dataList[i]['appType']){
+								html += "<td>ios app</td>";
+							}else{
+							html += "<td>其他</td>";
+							}
+						if(null==data.dataList[i]['refundMoneyTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['refundMoneyTow'] + "</td>";
+							}
+						if(null==data.dataList[i]['refundBeginTimeTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['refundBeginTimeTow'] + "</td>";
+							}
+						if(null==data.dataList[i]['refundEndTimeTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['refundEndTimeTow'] + "</td>";
+							}
+						if(null==data.dataList[i]['payShopTimeTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['payShopTimeTow'] + "</td>";
+							}
+						if(null==data.dataList[i]['payShopMoneyTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['payShopMoneyTow'] + "</td>";
+							}
+						if(null==data.dataList[i]['payAgentTimeTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['payAgentTimeTow'] + "</td>";
+							}
+						if(null==data.dataList[i]['payAgentMoneyTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['payAgentMoneyTow'] + "</td>";
+							}
+						if(null==data.dataList[i]['agentShareRate']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['agentShareRate'] + "</td>";
+							}
+						if(null==data.dataList[i]['shopShareRate']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['shopShareRate'] + "</td>";
+							}
+/* 						if(null==data.dataList[i]['betRate']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['betRate'] + "</td>";
+							} */
+						
+/* 						if(null==data.dataList[i]['wantWinMultipleNum']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['wantWinMultipleNum'] + "</td>";
+							} */
+						if(null==data.dataList[i]['betPoint']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['betPoint'] + "</td>";
+							}
+						if(null==data.dataList[i]['planAwardTimeTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['planAwardTimeTow'] + "</td>";
+							}
+						if(null==data.dataList[i]['maybeWinMoneyTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['maybeWinMoneyTow'] + "</td>";
+							}
+						
+						if("0"==data.dataList[i]['winPayStatus']){
+							html += "<td>待处理</td>";
+							}else if("1"==data.dataList[i]['appType']){
+								html += "<td>平台已赔付给用户</td>";
+							}else if("2"==data.dataList[i]['appType']){
+								html += "<td>平台已通知用户线下兑奖</td>";
+							}else{
+							html += "<td>其他</td>";
+							}
+						if(null==data.dataList[i]['winPayTimeTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['winPayTimeTow'] + "</td>";
+							}
+						if(null==data.dataList[i]['passType']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['passType'] + "</td>";
+							}
+
+					/* 	html += "<td>" + data.dataList[i]['bdwEnable'] + "</td>";
+						html += "<td>" + data.dataList[i]['multiBuyFlag'] + "</td>"; */
+						/* html += "<td>" + data.dataList[i]['followIssueNum'] + "</td>"; */
+					/* 	html += "<td>" + data.dataList[i]['followOrderFlag'] + "</td>";
+						html += "<td>" + data.dataList[i]['followFlag'] + "</td>";
+						html += "<td>" + data.dataList[i]['followLeftIssue'] + "</td>";
+						html += "<td>" + data.dataList[i]['followMoney'] + "</td>";
+						html += "<td>" + data.dataList[i]['followStopFor'] + "</td>"; */
+					/* 	if(null==data.dataList[i]['bonusRatio']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['bonusRatio'] + "</td>";
+							}
+						if(null==data.dataList[i]['prizeNo']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['prizeNo'] + "</td>";
+							} */
+/* 						if(null==data.dataList[i]['openTimeTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['openTimeTow'] + "</td>";
+							} */
+/* 						if("0"==data.dataList[i]['isCancled']){
+							html += "<td>否</td>";
+							}else{
+							html += "<td>是</td>";
+							}
+						if("0"==data.dataList[i]['gainFlag']){
+							html += "<td>否</td>";
+							}else{
+							html += "<td><td>是</td></td>";
+							} */
+						if("0"==data.dataList[i]['openFlag']){
+							html += "<td>否</td>";
+							}else{
+							html += "<td>是</td>";
+							}
+						if("0"==data.dataList[i]['awardFlag']){
+							html += "<td>否</td>";
+							}else{
+							html += "<td>是</td>";
+							}
+					/* 	html += "<td>" + data.dataList[i]['betEndtime'] + "</td>";
+						html += "<td>" + data.dataList[i]['deliverFlag'] + "</td>";
+						html += "<td>" + data.dataList[i]['moneyLostTime'] + "</td>";
+						html += "<td>" + data.dataList[i]['sysRemark'] + "</td>";
+						html += "<td>" + data.dataList[i]['shopRemark'] + "</td>"; */
+						if(null==data.dataList[i]['payShopOrderCode']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['payShopOrderCode'] + "</td>";
+							}
+						if(null==data.dataList[i]['payAgentOrderCode']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['payAgentOrderCode'] + "</td>";
+							}
+/* 						if(null==data.dataList[i]['balanceTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['balanceTow'] + "</td>";
+							} */
+						if(null==data.dataList[i]['winRate']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['winRate'] + "</td>";
+							}
+/* 						if(null==data.dataList[i]['userAccountBeforeTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['userAccountBeforeTow'] + "</td>";
+							} */
+						if(null==data.dataList[i]['sysOpenTimeTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['sysOpenTimeTow'] + "</td>";
+							}
+/* 						if("0"==data.dataList[i]['sysPayFlag']){
+							html += "<td>未结算</td>";
+							}else if("1"==data.dataList[i]['sysPayFlag']){
+								html += "<td>已结算用户</td>";
+							}else if("2"==data.dataList[i]['sysPayFlag']){
+								html += "<td>已结算店铺</td>";
+							}else{
+								html += "<td>已结算代理</td>";
+							} */
+					/* 	if(null==data.dataList[i]['winNumberDetail']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['winNumberDetail'] + "</td>";
+							} */
+						if(null==data.dataList[i]['deliverToShopTimeTow']){
+							html += "<td></td>";
+							}else{
+							html += "<td>" + data.dataList[i]['deliverToShopTimeTow'] + "</td>";
+							}
+						html += "</tr>";
+					}
+					$('#messageLlist #messageData tbody').html(html);
+					init()
+					
+				}
+			});
+
+		}　
+	   //翻页跳转
+	   $("#pageLimit span").click(function(){
+		 var textValue =$(this).text();
+		 var currentPageNum = $("#pageLimit span:nth-child(5) b").text();
+		 var totallPageNum = $("#pageLimit span:nth-child(6) b").text();
+		 if(textValue=='首页'){
+			 searchMeassages(0);
+			 $("#pageLimit span:nth-child(5) b").text(1)
+		 }else if(textValue=='前页'){
+		   if(currentPageNum!=1){
+			   searchMeassages(parseInt(currentPageNum)-2);
+			   $("#pageLimit span:nth-child(5) b").text(parseInt(currentPageNum)-1)
+		   }		 	 
+		 }else if(textValue=='后页'){
+			 if(currentPageNum!=totallPageNum){
+			 searchMeassages(currentPageNum)
+			 $("#pageLimit span:nth-child(5) b").text(parseInt(currentPageNum)+1)
+			 }
+			 
+		 }else if(textValue=='尾页'){
+			 if(totallPageNum!=1&&totallPageNum!=currentPageNum){
+				 searchMeassages(totallPageNum-1)
+				  $("#pageLimit span:nth-child(5) b").text(totallPageNum)
+			 }
+			 
+		 }else if(textValue=='Go'){
+			 var searchNum = $("#pageLimit span:nth-child(7) input").val();
+			 if(searchNum!=currentPageNum&&searchNum!=""&&parseInt(searchNum)<=parseInt(totallPageNum)){
+				 searchMeassages(parseInt(searchNum)-1);
+				$("#pageLimit span:nth-child(5) b").text(searchNum)
+			 }
+			 
+		 }
+	   });
+
+function init() {
+  //查看，编辑，作废，有效
+ $("#messageLlist table tbody tr td span").click(function(){
+	 var id = $(this).parent().attr("idValue");
+	 var lotteryTypeId = $(this).parent().attr("lotteryTypeId");
+     if(parseInt(lotteryTypeId)<1000){
+         if($(this).text()=="查看"){
+    		 $.layer({
+    			 type: 2,
+    			 title: ["", true],
+    			 fix: true,
+    			 end:function(){searchMeassages(0)},
+    			 move: false,
+    			 maxmin: true,
+    			 shadeClose: false,
+    			 shade: [0.1, '#000', true],
+    			 border: [1, 0.8, '#fff', true],
+    			 offset: [($(window).height() - 100) / 2 + 'px', ''], 
+    			 offset: [30+ 'px', ''],
+    			 area: [1000+ 'px', 500 + 'px'],
+    			 iframe: { src: "/lottery/lotteryMainOrder/lotteryMainOrderDetail?id="+id}
+    		 }); 
+    	 }  
+         
+         
+         
+         if($(this).text()=="编辑"){
+    		 $.layer({
+    			 type: 2,
+    			 title: ["", true],
+    			 fix: true,
+    			 end:function(){searchMeassages(0)},
+    			 move: false,
+    			 maxmin: true,
+    			 shadeClose: false,
+    			 shade: [0.1, '#000', true],
+    			 border: [1, 0.8, '#fff', true],
+    			 offset: [($(window).height() - 100) / 2 + 'px', ''], 
+    			 offset: [30+ 'px', ''],
+    			 area: [650+ 'px', 250 + 'px'],
+    			 iframe: { src: "/lottery/lotteryMainOrder/updateLotteryMainOrderPath?id="+id}
+    		 }); 
+    	 } 
+    	 
+    	 
+    	 
+     }else{
+       if($(this).text()=="查看"){
+		 $.layer({
+			 type: 2,
+			 title: ["", true],
+			 fix: true,
+			 end:function(){searchMeassages(0)},
+			 move: false,
+			 maxmin: true,
+			 shadeClose: false,
+			 shade: [0.1, '#000', true],
+			 border: [1, 0.8, '#fff', true],
+			 offset: [($(window).height() - 100) / 2 + 'px', ''], 
+			 offset: [30+ 'px', ''],
+			 area: [1050+ 'px', 550 + 'px'],
+			 iframe: { src: "/lottery/lotteryMainOrder/lotteryMainOrderColorDetail?id="+id}
+		 }); 
+	 } 
+       
+       
+       
+       if($(this).text()=="编辑"){
+  		 $.layer({
+  			 type: 2,
+  			 title: ["", true],
+  			 fix: true,
+  			 end:function(){searchMeassages(0)},
+  			 move: false,
+  			 maxmin: true,
+  			 shadeClose: false,
+  			 shade: [0.1, '#000', true],
+  			 border: [1, 0.8, '#fff', true],
+  			 offset: [($(window).height() - 100) / 2 + 'px', ''], 
+  			 offset: [30+ 'px', ''],
+  			 area: [600+ 'px', 280 + 'px'],
+  			 iframe: { src: "/lottery/lotteryMainOrder/updateLotteryMainOrderPath?id="+id}
+  		 }); 
+  	 } 
+ }
+     
+     
+     
+ })
+}
+	   
+	</script>
+</body>
+</html>

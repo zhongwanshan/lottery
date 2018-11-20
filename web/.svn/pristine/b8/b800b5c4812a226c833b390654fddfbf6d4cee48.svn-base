@@ -1,0 +1,226 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="../hall.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">北京单场</div>
+        <div class="right">
+            <a>
+                <i class="glyphicon glyphicon-option-vertical"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="buy-bjdc">
+    <div class="page-content buyWrap">
+        <p class="hTitle">05月21日 周三</p>
+        <div class="teamWrap">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="label">
+                            <p>解放者杯</p>
+                            <p>周六003</p>
+                            <p>08:35截止</p>
+                        </td>
+                        <td class="teams">
+                            <p>
+                                <strong>[4]</strong>广州恒大
+                                <span></span>皇家马德里
+                                <strong>[10]</strong>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="ballWrap">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="label">
+                            <p>近期战绩：</p>
+                        </td>
+                        <td>
+                            <p>主队2胜5负0平 客队2胜5负0平</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            <p>最近交锋：</p>
+                        </td>
+                        <td>
+                            <p>3-0（8月12日）3-0（7月2日）3-0（6月23日）</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            <p>平均赔率：</p>
+                        </td>
+                        <td>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>胜</th>
+                                        <th>平</th>
+                                        <th>负</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>3.2（20%）</td>
+                                        <td>1.1（70%）</td>
+                                        <td>4.6（10%）</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3.2（20%）</td>
+                                        <td>1.1（70%）</td>
+                                        <td>4.6（10%）</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3.2（20%）</td>
+                                        <td>1.1（70%）</td>
+                                        <td>4.6（10%）</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="hTitle"></p>
+        <div class="teamWrap">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="label">
+                            <p>解放者杯</p>
+                            <p>周六003</p>
+                            <p>08:35截止</p>
+                        </td>
+                        <td class="teams">
+                            <p>
+                                <strong>[4]</strong>广州恒大
+                                <span></span>皇家马德里
+                                <strong>[10]</strong>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="ballWrap">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="label">
+                            <p>胜平负：</p>
+                        </td>
+                        <td>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>主胜2.3</td>
+                                        <td>平2.7</td>
+                                        <td>客胜3.8</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="menuFixed">
+            <div class="menuList">
+                <span class="triangle"></span>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="/app/view/history/bjdc.html">开奖历史</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="/app/view/magic.html">最新资讯</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="/app/view/rules/bjdc.html">玩法说明</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="fixedAction">
+            <button class="button button-fill">清空</button>
+            <button class="button button-fill">闯关</button>
+            <button class="button button-fill">单关</button>
+        </div>
+
+        <div class="typeSelect">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="item">胜负平</div>
+                        </td>
+                        <td>
+                            <div class="item">让球胜负平</div>
+                        </td>
+                        <td>
+                            <div class="item">比分</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item">总进球</div>
+                        </td>
+                        <td>
+                            <div class="item">半全场</div>
+                        </td>
+                        <td>
+                            <div class="item">混合投注</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item">2选1</div>
+                        </td>
+                        <td>
+                            <div class="item">单关固定</div>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="buyAction">
+            <div class="row">
+                <div class="col-20">
+                    普通
+                    <i class="glyphicon glyphicon-menu-down"></i>
+                </div>
+                <div class="col-60">
+                    已选择1场比赛
+                </div>
+                <div class="col-20">
+                    <div class="theme-yellow">
+                        <a href="/app/view/buy/qcl.html" class="button button-fill">投注</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Your app title -->
+    <title>多彩缤纷</title>
+
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/flat-ui.min.css">
+    <link rel="stylesheet" href="../../css/common.min.css?v=3939kdkdkd">
+</head>
+
+<body>
+
+    <div id="js-pageBuyFootball">
+
+        <!-- 头部 -->
+        <div class="headerWrap">
+            <div class="header">
+                <div class="c-logo">
+                    <h1 class="img">多彩缤纷</h1>
+                </div>
+                <div class="c-search">
+                    <input type="text" placeholder="请输入搜索内容" />
+                    <button>搜索</button>
+                </div>
+                <div class="c-info">
+                    <template v-if="!!!userInfo">
+                        <a href="../user/login.html">
+                            <i></i>请登录</a>
+                        <a href="../user/register.html">
+                            <i></i>免费注册</a>
+                        <a href="../user/resetPass.html">
+                            <i></i>找回密码</a>
+                    </template>
+                    <template v-else>
+                        <a href="../user/info.html">
+                            <i></i>{{decodeURI(userInfo.nickName)}}</a>
+                        <a href="../user/info.html">
+                            <i></i>个人中心
+                        </a>
+                        <a @click="userLogout">
+                            <i></i>退出登录</a>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <div class="c-nav">
+                <div class="navlist">
+                    <div class="navItem selectMenu">选择彩票
+                        <!-- 左侧菜单 -->
+                        <div class="c-menu">
+                            <div class="mMenu">
+                                <a href="./football.html">
+                                    <img src="/assets/img/deticon/football.png" />竞彩足球
+                                    <span>官方返奖率73%</span>
+                                </a>
+                                <a href="./basketball.html">
+                                    <img src="/assets/img/deticon/basketball.png" />竞彩篮球
+                                    <span>猜胜负中奖很容易</span>
+                                </a>
+                            </div>
+                            <div class="menulist">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="title">数字彩</td>
+                                            <td class="item">
+                                                <a href="./ssq.html">双色球</a>
+                                                <a href="./dlt.html">大乐透</a>
+                                                <a href="./qxc.html">七星彩</a>
+                                                <a href="./qcl.html">七乐彩</a>
+                                                <a href="./fc3d.html">福彩3D</a>
+                                                <a href="./pl3.html">排列3</a>
+                                                <a href="./pl5.html">排列5</a>
+                                                <a href="./gd115.html">广东11选5</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="menulist">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="title">竞技彩</td>
+                                            <td class="item item-b">
+                                                <a href="./sf14.html">足球14场</a>
+                                                <a href="./rs9.html">任选九</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="navItem" href="../../index.html">首页</a>
+                    <a class="navItem" href="../hall.html">购彩大厅</a>
+                    <a class="navItem" href="../prize.html">开奖公告</a>
+                    <a class="navItem">中奖排行</a>
+                    <a class="navItem">赛事数据</a>
+                    <a class="navItem">神算</a>
+                    <span class="clear"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主要内容 -->
+        <div class="main">
+
+            <div class="tabType">
+                <div class="sign">
+                    <img src="/assets/img/deticon/football.png" />
+                </div>
+                <div class="tabbox">
+                    <div class="info">
+                        <h2>竞彩足球</h2>
+                        <p class="tips">
+                            <strong></strong>
+                            <span></span>
+                        </p>
+                    </div>
+                    <div class="tabs">
+                        <ul>
+                            <li class="active">
+                                <span>普通投注</span>
+                            </li>
+                        </ul>
+                        <div class="matchTip">竞彩足球是国家体彩中心发行的玩法，包含胜平负、让球胜平负、比分、总进球、半全场等玩法。</div>
+                    </div>
+                </div>
+            </div>
+            <!-- 赛事数据 -->
+            <div class="c-box matchInfo buyMatch">
+                <div class="content">
+                    <div class="detail">
+                        <div class="info">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%;">比赛</th>
+                                        <th style="text-align: center;">
+                                            <span style="float: left; width: 45%;">主</span>
+                                            <span style="float: left; width: 10%;">平</span>
+                                            <span style="float: left; width: 45%;">客</span>
+                                        </th>
+                                        <th style="text-align: center;">
+                                            <span style="float: left; width: 33.33333%;">让球主胜</span>
+                                            <span style="float: left; width: 33.33333%;">让球平</span>
+                                            <span style="float: left; width: 33.33333%;">让球主负</span>
+                                        </th>
+                                        <th style="text-align: center;">
+                                            <p>更多</p>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <template v-if="!!matchInfoObj">
+                                    <tbody>
+                                        <template v-for="(keyObj, key) in matchInfoObj">
+                                            <tr class="time">
+                                                <td colspan="5">
+                                                    {{keyObj.time}} {{keyObj.weekDay}} &nbsp;&nbsp;&nbsp;&nbsp;共
+                                                    <span>{{keyObj.list.length}}</span>场比赛
+                                                </td>
+                                            </tr>
+                                            <template v-if="!!keyObj">
+                                                <template v-for="(item, index) in keyObj.list">
+                                                    <tr>
+                                                        <td>
+                                                            <span v-text="weekList['w_'+item.num.slice(0,1)]"></span> &nbsp;&nbsp;
+                                                            <span class="matchName" v-text="item.l_cn_a" :style="{backgroundColor: '#'+item.l_color}"></span>
+                                                            &nbsp;&nbsp; &nbsp;&nbsp;
+                                                            <span v-text="item.num.slice(1)"></span> &nbsp;&nbsp;
+                                                            <span v-text="item.dtime.split(' ')[1]"></span>&nbsp;&nbsp;
+                                                        </td>
+                                                        <td :class="item.p_single.split(',')[0]==1?'isDg':'noDg'">
+                                                            <template v-for="(sfItem, sfIndex) in sfList">
+                                                                <label :style="{width: sfIndex==0||sfIndex==2?'45%':'10%',backgroundColor: item.p_status.split(',')[0]==0?'#E6E6E6':''}" :class="item.matchInfo.sf.indexOf(key+','+index+','+sfItem.name+','+sfItem.value)!=-1?'active':''">
+                                                                    <template v-if="sfIndex==0">
+                                                                        <span v-text="item.h_cn"></span>
+                                                                    </template>
+                                                                    <template v-if="sfIndex==2">
+                                                                        <span v-text="item.a_cn"></span>
+                                                                    </template>
+                                                                    <span v-text="item.had_odds.split(',')[sfIndex]"></span>
+                                                                    <template v-if="item.p_status.split(',')[0]==1">
+                                                                        <input type="checkbox" v-model="item.matchInfo.sf" :value="key+','+index+','+sfItem.name+','+sfItem.value" />
+                                                                    </template>
+                                                                </label>
+                                                            </template>
+                                                        </td>
+                                                        <td :class="item.p_single.split(',')[1]==1?'isDg':'noDg'">
+                                                            <template v-for="(rItem, rIndex) in rangList">
+                                                                <label :style="{width: rIndex==0||rIndex==2?'45%':'10%',backgroundColor: item.p_status.split(',')[1]==0?'#E6E6E6':''}" :class="item.matchInfo.rang.indexOf(key+','+index+','+rItem.name+','+rItem.value)>=0?'active':''">
+                                                                    <template v-if="rIndex==0">
+                                                                        <span v-text="item.h_cn"></span>
+                                                                    </template>
+                                                                    <template v-if="rIndex==2">
+                                                                        <span v-text="item.a_cn"></span>
+                                                                    </template>
+                                                                    <span v-text="item.hhad_odds.split(',')[0]"></span>
+                                                                    <template v-if="item.p_status.split(',')[1]==1">
+                                                                        <input type="checkbox" v-model="item.matchInfo.rang" :value="key+','+index+','+rItem.name+','+rItem.value" />
+                                                                    </template>
+                                                                </label>
+                                                            </template>
+                                                        </td>
+                                                        <td @click="item.isShow=!item.isShow">
+                                                            <template v-if="item.isShow==false">
+                                                                <span class="triangle_border_up"></span>
+                                                            </template>
+                                                            <template v-if="item.isShow==true">
+                                                                <span class="triangle_border_down"></span>
+                                                            </template>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr v-show="item.isShow" class="moreList" :class="item.p_single.split(',')[2]==1?'isDg':''">
+                                                        <td>
+                                                            <span>比分</span>
+                                                            <template v-if="item.p_single.split(',')[2]==1">
+                                                                <span class="dangGu">可投单关</span>
+                                                            </template>
+                                                        </td>
+                                                        <td colspan="3" :class="item.p_single.split(',')[2]==1?'isDg':'noDg'">
+                                                            <div class="item">
+                                                                <!-- <label class="label">主胜比分</label> -->
+                                                                <template v-for="(sItem, sIndex) in scoreSList">
+                                                                    <label :style="{backgroundColor: item.p_status.split(',')[2]==0?'#E6E6E6':''}" :class="item.matchInfo.score.indexOf(item.key+','+item.index+','+sItem.name+','+sItem.value)>=0?'active':''">
+                                                                        <span v-text="sItem.name"></span>
+                                                                        <span v-text="item.crs_win.split(',')[sIndex]"></span>
+                                                                        <template v-if="item.p_status.split(',')[2]==1">
+                                                                            <input type="checkbox" v-model="item.matchInfo.score" :value="item.key+','+item.index+','+sItem.name+','+sItem.value" />
+                                                                        </template>
+                                                                    </label>
+                                                                </template>
+                                                            </div>
+                                                            <div class="item">
+                                                                <!-- <label class="label">平比分</label> -->
+                                                                <template v-for="(pItem, pIndex) in scorePList">
+                                                                    <label :style="{backgroundColor: item.p_status.split(',')[2]==0?'#E6E6E6':''}" :class="item.matchInfo.score.indexOf(item.key+','+item.index+','+pItem.name+','+pItem.value)>=0?'active':''">
+                                                                        <span v-text="pItem.name"></span>
+                                                                        <span v-text="item.crs_win.split(',')[pIndex]"></span>
+                                                                        <template v-if="item.p_status.split(',')[2]==1">
+                                                                            <input type="checkbox" v-model="item.matchInfo.score" :value="item.key+','+item.index+','+pItem.name+','+pItem.value" />
+                                                                        </template>
+                                                                    </label>
+                                                                </template>
+                                                            </div>
+                                                            <div class="item">
+                                                                <!-- <label class="label">主负比分</label> -->
+                                                                <template v-for="(fItem, fIndex) in scoreFList">
+                                                                    <label :style="{backgroundColor: item.p_status.split(',')[2]==0?'#E6E6E6':''}" :class="item.matchInfo.score.indexOf(item.key+','+item.index+','+fItem.name+','+fItem.value)>=0?'active':''">
+                                                                        <span v-text="fItem.name"></span>
+                                                                        <span v-text="item.crs_win.split(',')[fIndex]"></span>
+                                                                        <template v-if="item.p_status.split(',')[2]==1">
+                                                                            <input type="checkbox" v-model="item.matchInfo.score" :value="item.key+','+item.index+','+fItem.name+','+fItem.value" />
+                                                                        </template>
+                                                                    </label>
+                                                                </template>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr v-show="item.isShow" class="moreList">
+                                                        <td>
+                                                            <span>总进球</span>
+                                                            <template v-if="item.p_single.split(',')[3]==1">
+                                                                <span class="dangGu">可投单关</span>
+                                                            </template>
+                                                        </td>
+                                                        <td colspan="3" :class="item.p_single.split(',')[3]==1?'isDg':'noDg'">
+                                                            <div class="item">
+                                                                <template v-for="(bItem, bIndex) in ballList">
+                                                                    <label :style="{backgroundColor: item.p_status.split(',')[3]==0?'#E6E6E6':''}" :class="item.matchInfo.ball.indexOf(item.key+','+item.index+','+bItem.name+','+bItem.value)>=0?'active':''">
+                                                                        <span v-text="bItem.name"></span>
+                                                                        <span v-text="item.ttg_odds.split(',')[bIndex]"></span>
+                                                                        <template v-if="item.p_status.split(',')[3]==1">
+                                                                            <input type="checkbox" v-model="item.matchInfo.ball" :value="item.key+','+item.index+','+bItem.name+','+bItem.value" />
+                                                                        </template>
+                                                                    </label>
+                                                                </template>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr v-show="item.isShow" class="moreList">
+                                                        <td>
+                                                            <span>半全场</span>
+                                                            <template v-if="item.p_single.split(',')[4]==1">
+                                                                <span class="dangGu">可投单关</span>
+                                                            </template>
+                                                        </td>
+                                                        <td colspan="3" :class="item.p_single.split(',')[4]==1?'isDg':'noDg'">
+                                                            <div class="item">
+                                                                <template v-for="(hItem, hIndex) in halfList">
+                                                                    <label :style="{backgroundColor: item.p_status.split(',')[4]==0?'#E6E6E6':''}" :class="item.matchInfo.half.indexOf(item.key+','+item.index+','+hItem.name+','+hItem.value)>=0?'active':''">
+                                                                        <span v-text="hItem.name"></span>
+                                                                        <span v-text="item.hafu_odds.split(',')[hIndex]"></span>
+                                                                        <template v-if="item.p_status.split(',')[4]==1">
+                                                                            <input type="checkbox" v-model="item.matchInfo.half" :value="item.key+','+item.index+','+hItem.name+','+hItem.value" />
+                                                                        </template>
+                                                                    </label>
+                                                                </template>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </template>
+                                            </template>
+                                        </template>
+                                    </tbody>
+                                </template>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="resultMatch">
+                        <ul class="cgType">
+                            <template v-if="isDg">
+                                <li>
+                                    <label class="checkbox checked" for="isDg">
+                                        <span class="icon"></span>
+                                        <span class="icon-to-fade"></span>
+                                        <input type="checkbox" checked="checked" id="isDg'" value="单场" v-model="cgList" name="CG">                                        单关
+                                    </label>
+                                </li>
+                            </template>
+                            <template v-for="i in selectItem.num">
+                                <template v-if="i>1 && i < 9">
+                                    <li>
+                                        <label class="checkbox checked" :for="'CG'+i">
+                                            <span class="icon"></span>
+                                            <span class="icon-to-fade"></span>
+                                            <input type="checkbox" checked="checked" :id="'CG'+i" :value="i+'串1'" v-model="cgList" name="CG">{{i+'串1'}}
+                                        </label>
+                                    </li>
+                                </template>
+                            </template>
+                        </ul>
+
+                        <div class="buyAction container">
+                            <div class="row">
+                                <div class="col-md-10 matchSelect">
+                                    <template v-if="selectItem.num==0">
+                                        请选择比赛
+                                    </template>
+                                    <template v-if="!isDg">
+                                        <template v-if="selectItem.num<=1">
+                                            至少选择2场比赛
+                                        </template>
+                                        <template v-else>
+                                            <template v-if="cgList.length==0">
+                                                至少选择一种串关方式
+                                            </template>
+                                        </template>
+                                    </template>
+                                    <template v-else>
+                                        <template v-if="cgList.length==0">
+                                            至少选择一种串关方式
+                                        </template>
+                                    </template>
+                                    <template v-if="selectItem.num>=1 && cgList.length!=0">
+                                        共选择
+                                        <strong>{{selectItem.num}}</strong>场，金额:
+                                        <strong>{{totalOrderPrice}}</strong>元 投
+                                        <input type="tel" v-model="buyInfo.multipleNum" />倍
+                                    </template>
+                                </div>
+                                <div class="col-md-2">
+                                    <button @click="generateOrder" class="btn btn-block btn-inverse">投注</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer">
+            <div class="copyright">
+                <p>版权所有：粤ICP备18070257号</p>
+                <p>客服热线：020-89853112 (8:30-12:00 14:30-18:00)</p>
+                <p>彩票票提示您：理性购彩，健康生活。不向未满18周岁的青少年出售彩票。</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="/assets/jquery-3.2.2.min.js"></script>
+    <script type="text/javascript" src="/assets/vue.min.js"></script>
+    <script type="text/javascript" src="/assets/vender/Flat-UI-master/scripts/flat-ui.min.js"></script>
+    <script type="text/javascript" src="/assets/md5.min.js"></script>
+    <script type="text/javascript" src="/assets/config.min.js?v=03939"></script>
+    <script type="text/javascript" src="/assets/utility.min.js?v=03939"></script>
+    <script type="text/javascript" src="../../js/app.min.js?v=0948483939"></script>
+    <script type="text/javascript" src="../../action/buy/football.min.js?v=0948483939"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台模板</title>
+
+<script type="text/javascript" src="scripts/jquery/jquery1.9.1.min.js"></script>
+<script type="text/javascript" src="scripts/jquery/jquery.serializejson.min.js"></script>
+<script type="text/javascript" src="scripts/api/api-prototype.js"></script>
+<script type="text/javascript" src="scripts/admin-api.js"></script>
+<script src="scripts/jquery/jquery.cookie.js"></script>
+<script src="assets/global/plugins/js.cookie.min.js"></script>
+<script src="scripts/user.js"></script>
+<script type="text/javascript" src="assets/global/plugins/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="scripts/utils.js"></script>
+<script type="text/javascript" src="assets/global/plugins/jstree/dist/jstree.js"></script>
+<script type="text/javascript" src="assets/global/plugins/jquery-confirm/jquery-confirm.js"></script>
+<link rel="stylesheet" href="css/page/add.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="assets/global/plugins/bootstrap/css/bootstrap.min.css" type="text/css" media="screen" />
+<link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen"/>
+<link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" media="screen"/>
+<link href="assets/global/plugins/jquery-confirm/jquery-confirm.min.css" rel="stylesheet" media="screen"/>
+</head>
+<body>
+
+<div class="div_from_aoto" style="width: 500px; padding-top: 200px">
+
+    <form id="saveForm">
+        <div class="control-group">
+            <label class="laber_from">用户名</label>
+            <div class="controls">
+                <input class="input_from" type="text" placeholder=" 请输入用户名" name="username" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="laber_from">密码</label>
+            <div  class="controls" ><input class="input_from" type="password" placeholder=" 请输入密码" name="password" /></div>
+        </div>
+
+        <div class="control-group">
+            <label class="laber_from" ></label>
+            <div class="controls" >
+                <input class="btn btn-success" style="width:120px;" onclick="login()" type="button" value="确认"/></div>
+        </div>
+    </form>
+</div>
+<script>
+    function login() {
+        var formData = $("#saveForm").serializeJSON();
+        if(formData.username==""){
+            $.alert("用户名为空");
+            return false
+
+        }
+        if(formData.password==""){
+            $.alert("密码为空");
+            return false
+        }
+        adminApis.user_login_submit.call({
+            data: JSON.stringify(formData),
+            success: function (resp) {
+                if (resp.head.status == "0") {
+                    location.href="/main"
+                }else{
+                    $.alert(resp.head.message);
+                }
+            }
+        });
+
+    }
+</script>
+</body>
+
+</html>

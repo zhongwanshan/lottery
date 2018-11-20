@@ -1,0 +1,111 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="../hall.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">浙江体彩20选5</div>
+        <div class="right">
+            <a>
+                <i class="glyphicon glyphicon-option-vertical"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="detail-zj205">
+    <div class="page-content">
+        <div class="lotteryType">
+            <div class="item">
+                <div class="header">
+                    <span class="label">第847382期 2018-12-29（周二）</span>
+                </div>
+                <div class="content">
+                    <p class="numberType">
+                        <span class="circle">1</span>
+                        <span class="circle">2</span>
+                        <span class="circle">3</span>
+                        <span class="circle">4</span>
+                        <span class="circle">5</span>
+                        <span class="circle">6</span>
+                        <span class="circle blue">7</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="lotteryList">
+            <table class="prizeDetail">
+                <tbody>
+                    <tr>
+                        <td style="width: 50%;">
+                            <div class="item">
+                                <p class="txt">
+                                    <span class="title">销售额（元）</span>
+                                    <span class="statu">749832748.00</span>
+                                </p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="item">
+                                <p class="txt">
+                                    <span class="title">奖池（元）</span>
+                                    <span class="statu">7837483343.00</span>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="detailTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>奖项</th>
+                        <th>中奖注数</th>
+                        <th>每注奖金（元）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>一等奖</td>
+                        <td>3232</td>
+                        <td>498384938</td>
+                    </tr>
+                    <tr>
+                        <td>二等奖</td>
+                        <td>32132</td>
+                        <td>3243432</td>
+                    </tr>
+                    <tr>
+                        <td>三等奖</td>
+                        <td>432432</td>
+                        <td>43243</td>
+                    </tr>
+                    <tr>
+                        <td>四等奖</td>
+                        <td>4324324324</td>
+                        <td>432</td>
+                    </tr>
+                    <tr>
+                        <td>五等奖</td>
+                        <td>432432432432</td>
+                        <td>43</td>
+                    </tr>
+                    <tr>
+                        <td>六等奖</td>
+                        <td>432432432432</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="buyAction">
+            <p class="theme-yellow">
+                <a href="view/buy/zj205.html" class="button button-big button-round active">投注</a>
+            </p>
+        </div>
+    </div>
+</div>

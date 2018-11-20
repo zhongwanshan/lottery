@@ -1,0 +1,2255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lottery.dao.LotteryMainOrderMapper">
+  <resultMap id="BaseResultMap" type="com.lottery.entity.LotteryMainOrder">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="serialize_id" jdbcType="VARCHAR" property="serializeId" />
+    <result column="order_code" jdbcType="VARCHAR" property="orderCode" />
+    <result column="user_plan_code" jdbcType="VARCHAR" property="userPlanCode" />
+    <result column="order_name" jdbcType="VARCHAR" property="orderName" />
+    <result column="issue_no" jdbcType="VARCHAR" property="issueNo" />
+    <result column="bet_no" jdbcType="VARCHAR" property="betNo" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="user_phone" jdbcType="VARCHAR" property="userPhone" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="lottery_type_id" jdbcType="INTEGER" property="lotteryTypeId" />
+    <result column="lottery_type_name" jdbcType="VARCHAR" property="lotteryTypeName" />
+    <result column="user_pay_time" jdbcType="TIMESTAMP" property="userPayTime" />
+    <result column="single_flag" jdbcType="BIT" property="singleFlag" />
+    <result column="digital_bet_type_id" jdbcType="TINYINT" property="digitalBetTypeId" />
+    <result column="digital_bet_function_id" jdbcType="TINYINT" property="digitalBetFunctionId" />
+    <result column="digital_bet_type_name" jdbcType="VARCHAR" property="digitalBetTypeName" />
+    <result column="digital_bet_function_name" jdbcType="VARCHAR" property="digitalBetFunctionName" />
+    <result column="ball_bet_type_ids" jdbcType="VARCHAR" property="ballBetTypeIds" />
+    <result column="multiple_num" jdbcType="INTEGER" property="multipleNum" />
+    <result column="extra_add" jdbcType="TINYINT" property="extraAdd" />
+    <result column="bets_num" jdbcType="INTEGER" property="betsNum" />
+    <result column="win_num" jdbcType="INTEGER" property="winNum" />
+    <result column="order_price" jdbcType="INTEGER" property="orderPrice" />
+    <result column="pay_type" jdbcType="TINYINT" property="payType" />
+    <result column="pay_order_id" jdbcType="BIGINT" property="payOrderId" />
+    <result column="pay_order_code" jdbcType="VARCHAR" property="payOrderCode" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="agent_id" jdbcType="INTEGER" property="agentId" />
+    <result column="shop_id" jdbcType="INTEGER" property="shopId" />
+    <result column="shop_deal_status" jdbcType="SMALLINT" property="shopDealStatus" />
+    <result column="shop_name" jdbcType="VARCHAR" property="shopName" />
+    <result column="shop_receive_time" jdbcType="TIMESTAMP" property="shopReceiveTime" />
+    <result column="shop_print_time" jdbcType="TIMESTAMP" property="shopPrintTime" />
+    <result column="app_type" jdbcType="SMALLINT" property="appType" />
+    <result column="order_status" jdbcType="SMALLINT" property="orderStatus" />
+    <result column="refund_money" jdbcType="INTEGER" property="refundMoney" />
+    <result column="refund_begin_time" jdbcType="TIMESTAMP" property="refundBeginTime" />
+    <result column="refund_end_time" jdbcType="TIMESTAMP" property="refundEndTime" />
+    <result column="pay_shop_time" jdbcType="TIMESTAMP" property="payShopTime" />
+    <result column="pay_shop_money" jdbcType="INTEGER" property="payShopMoney" />
+    <result column="pay_agent_time" jdbcType="TIMESTAMP" property="payAgentTime" />
+    <result column="pay_agent_money" jdbcType="INTEGER" property="payAgentMoney" />
+    <result column="agent_share_rate" jdbcType="REAL" property="agentShareRate" />
+    <result column="shop_share_rate" jdbcType="REAL" property="shopShareRate" />
+    <result column="bet_rate" jdbcType="REAL" property="betRate" />
+    <result column="bonus" jdbcType="INTEGER" property="bonus" />
+    <result column="win_flag" jdbcType="SMALLINT" property="winFlag" />
+    <result column="want_win_multiple_num" jdbcType="DECIMAL" property="wantWinMultipleNum" />
+    <result column="bet_point" jdbcType="REAL" property="betPoint" />
+    <result column="plan_award_time" jdbcType="TIMESTAMP" property="planAwardTime" />
+    <result column="maybe_win_money" jdbcType="INTEGER" property="maybeWinMoney" />
+    <result column="win_pay_status" jdbcType="TINYINT" property="winPayStatus" />
+    <result column="win_pay_time" jdbcType="TIMESTAMP" property="winPayTime" />
+    <result column="pass_type" jdbcType="VARCHAR" property="passType" />
+    <result column="bdw_enable" jdbcType="BIT" property="bdwEnable" />
+    <result column="multi_buy_flag" jdbcType="BIT" property="multiBuyFlag" />
+    <result column="follow_issue_num" jdbcType="INTEGER" property="followIssueNum" />
+    <result column="follow_order_flag" jdbcType="BIT" property="followOrderFlag" />
+    <result column="follow_flag" jdbcType="BIT" property="followFlag" />
+    <result column="follow_left_issue" jdbcType="TINYINT" property="followLeftIssue" />
+    <result column="follow_money" jdbcType="INTEGER" property="followMoney" />
+    <result column="follow_stop_for" jdbcType="INTEGER" property="followStopFor" />
+    <result column="bonus_ratio" jdbcType="DECIMAL" property="bonusRatio" />
+    <result column="prize_no" jdbcType="VARCHAR" property="prizeNo" />
+    <result column="open_time" jdbcType="VARCHAR" property="openTime" />
+    <result column="is_cancled" jdbcType="SMALLINT" property="isCancled" />
+    <result column="gain_flag" jdbcType="BIT" property="gainFlag" />
+    <result column="open_flag" jdbcType="BIT" property="openFlag" />
+    <result column="award_flag" jdbcType="BIT" property="awardFlag" />
+    <result column="bet_endtime" jdbcType="TIMESTAMP" property="betEndtime" />
+    <result column="deliver_flag" jdbcType="BIT" property="deliverFlag" />
+    <result column="money_lost_time" jdbcType="TIMESTAMP" property="moneyLostTime" />
+    <result column="sys_remark" jdbcType="VARCHAR" property="sysRemark" />
+    <result column="shop_remark" jdbcType="VARCHAR" property="shopRemark" />
+    <result column="pay_shop_order_code" jdbcType="VARCHAR" property="payShopOrderCode" />
+    <result column="pay_agent_order_code" jdbcType="VARCHAR" property="payAgentOrderCode" />
+    <result column="balance" jdbcType="INTEGER" property="balance" />
+    <result column="win_rate" jdbcType="DECIMAL" property="winRate" />
+    <result column="user_account_before" jdbcType="INTEGER" property="userAccountBefore" />
+    <result column="sys_open_time" jdbcType="TIMESTAMP" property="sysOpenTime" />
+    <result column="sys_pay_flag" jdbcType="BIT" property="sysPayFlag" />
+    <result column="action_ip" jdbcType="VARCHAR" property="actionIp" />
+    <result column="win_number_detail" jdbcType="VARCHAR" property="winNumberDetail" />
+    <result column="deliver_to_shop_time" jdbcType="TIMESTAMP" property="deliverToShopTime" />
+    <result column="digital_bet_detail" jdbcType="LONGVARCHAR" property="digitalBetDetail" />
+    <result column="ball_bet_detail" jdbcType="LONGVARCHAR" property="ballBetDetail" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.lottery.entity.LotteryMainOrder">
+    <result column="digital_bet_detail" jdbcType="LONGVARCHAR" property="digitalBetDetail" />
+    <result column="ball_bet_detail" jdbcType="LONGVARCHAR" property="ballBetDetail" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, serialize_id, order_code, user_plan_code, order_name, issue_no, bet_no, user_id, 
+    user_phone, nick_name, lottery_type_id, lottery_type_name, user_pay_time, single_flag, 
+    digital_bet_type_id, digital_bet_function_id, digital_bet_type_name, digital_bet_function_name, 
+    ball_bet_type_ids, multiple_num, extra_add, bets_num, win_num, order_price, pay_type, 
+    pay_order_id, pay_order_code, create_time, update_time, agent_id, shop_id, shop_deal_status, 
+    shop_name, shop_receive_time, shop_print_time, app_type, order_status, refund_money, 
+    refund_begin_time, refund_end_time, pay_shop_time, pay_shop_money, pay_agent_time, 
+    pay_agent_money, agent_share_rate, shop_share_rate, bet_rate, bonus, win_flag, want_win_multiple_num, 
+    bet_point, plan_award_time, maybe_win_money, win_pay_status, win_pay_time, pass_type, 
+    bdw_enable, multi_buy_flag, follow_issue_num, follow_order_flag, follow_flag, follow_left_issue, 
+    follow_money, follow_stop_for, bonus_ratio, prize_no, open_time, is_cancled, gain_flag, 
+    open_flag, award_flag, bet_endtime, deliver_flag, money_lost_time, sys_remark, shop_remark, 
+    pay_shop_order_code, pay_agent_order_code, balance, win_rate, user_account_before, 
+    sys_open_time, sys_pay_flag, action_ip, win_number_detail, deliver_to_shop_time,digital_bet_detail, ball_bet_detail
+  </sql>
+  <sql id="Blob_Column_List">
+    digital_bet_detail, ball_bet_detail
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.lottery.entity.LotteryMainOrderExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from lottery_main_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.lottery.entity.LotteryMainOrderExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from lottery_main_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from lottery_main_order
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  
+
+  
+  
+  
+  
+  	<!-- 根据条件查询数据 -->
+	<select id="selectByCondition" parameterType="com.lottery.entity.LotteryMainOrder"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from lottery_main_order where 1=1
+		<if test="orderTimerBegain != null and orderTimerBegain !=''">
+			and create_time &gt;=#{orderTimerBegain} 
+		</if>
+		<if test="orderTimerEnd != null and orderTimerEnd !=''">
+			 and create_time  &lt;=#{orderTimerEnd}
+		</if>
+		
+		<if test="lotteryTypeId != null and lotteryTypeId !=0">
+			and lottery_type_id=#{lotteryTypeId}
+		</if>
+		<if test="orderStatus != null and orderStatus!=9">
+			and order_status=#{orderStatus}
+		</if>
+		<if test="shopDealStatus != null and shopDealStatus!=9">
+			and shop_deal_status=#{shopDealStatus}
+		</if>
+		
+		<if test="shopId != null and shopId !=0">
+			and shop_id=#{shopId}
+		</if>
+		
+		<if test="shopName != null and shopName !=''">
+            and shop_name LIKE CONCAT('%',#{shopName},'%')
+		</if>
+
+		<if test="bonusBegain != null and bonusBegain !=''">
+			 and bonus &gt;=#{bonusBegain}
+		</if>
+		
+		<if test="bonusEnd != null and bonusEnd !=''">
+			 and bonus &lt;=#{bonusEnd}
+		</if>
+        <if test="orderCode != null and orderCode !=''">
+			 and order_code LIKE CONCAT('%',#{orderCode},'%')
+		</if>
+		 <if test="nickName != null and nickName !=''">
+		
+			 and nick_name LIKE CONCAT('%',#{nickName},'%')
+		</if>
+		
+		<if test="winNum != null and winNum !=9">
+		    <if test="winNum ==0">
+			and win_num =0
+			</if>
+			<if test="winNum ==1">
+			and win_num >0
+			</if>
+		</if> 
+	
+		order  by id desc limit #{pageNum},10
+	</select>
+	
+	
+	
+		<!-- 查询今天订单总数 -->
+	<select id="searchTodayOrderCount" resultType="java.lang.Integer">
+		 SELECT count(*) from lottery_main_order WHERE create_time>date_format(now(), '%Y-%m-%d')  
+	</select>
+	
+	<!-- 查询今天付款订单总数 -->
+	<select id="searchTodayPayOrderCount" resultType="java.lang.Integer">
+		 SELECT count(*) from lottery_main_order WHERE create_time>date_format(now(), '%Y-%m-%d')  and  order_status>=3
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<!-- 根据条件查询总记录数 -->
+	<select id="selectCountByCondition" parameterType="com.lottery.entity.LotteryMainOrder"
+		resultType="java.lang.Integer">
+		select
+		count(*)
+		from lottery_main_order where 1=1
+	    <if test="orderTimerBegain != null and orderTimerBegain !=''">
+			and create_time &gt;=#{orderTimerBegain} 
+		</if>
+		<if test="orderTimerEnd != null and orderTimerEnd !=''">
+			 and create_time  &lt;=#{orderTimerEnd}
+		</if>
+		
+		<if test="lotteryTypeId != null and lotteryTypeId !=0">
+			and lottery_type_id=#{lotteryTypeId}
+		</if>
+		<if test="orderStatus != null and orderStatus!=9">
+			and order_status=#{orderStatus}
+		</if>
+		<if test="shopDealStatus != null and shopDealStatus!=9">
+			and shop_deal_status=#{shopDealStatus}
+		</if>
+		
+		<if test="shopId != null and shopId !=0">
+			and shop_id=#{shopId}
+		</if>
+		
+		<if test="shopName != null and shopName !=''">
+            and shop_name LIKE CONCAT('%',#{shopName},'%')
+		</if>
+
+		<if test="bonusBegain != null and bonusBegain !=''">
+			 and bonus &gt;=#{bonusBegain}
+		</if>
+		
+		<if test="bonusEnd != null and bonusEnd !=''">
+			 and bonus &lt;=#{bonusEnd}
+		</if>
+        <if test="orderCode != null and orderCode !=''">
+			 and order_code LIKE CONCAT('%',#{orderCode},'%')
+		</if>
+		 <if test="nickName != null and nickName !=''">
+		
+			 and nick_name LIKE CONCAT('%',#{nickName},'%')
+		</if>
+		
+		<if test="winNum != null and winNum !=9">
+		    <if test="winNum ==0">
+			and win_num =0
+			</if>
+			<if test="winNum ==1">
+			and win_num >0
+			</if>
+		</if> 
+	</select>
+	
+	
+	<!-- 根据条件统计订单 -->
+	<select id="orderStatisticsByCondition" parameterType="com.lottery.entity.LotteryMainOrder"
+		resultMap="BaseResultMap">
+		select
+		<if test="timeDimension==0">
+		 DATE_FORMAT(create_time,'%Y-%m-%d') order_code,
+		</if>
+		<if test="timeDimension==1">
+		DATE_FORMAT(create_time,'%Y(%u周)') order_code,
+		</if>
+		<if test="timeDimension==2">
+		 DATE_FORMAT(create_time,'%Y-%m') order_code,
+		</if>
+		count(id) win_num,
+		sum(order_price) order_price,
+		sum(case when shop_deal_status=2 then 1 else 0 end) multiple_num,
+        sum(order_price*shop_share_rate) pay_shop_money
+		from lottery_main_order where 1=1
+		  <if test="orderTimerBegain != null and orderTimerBegain !=''">
+			and create_time &gt;=#{orderTimerBegain} 
+		</if>
+		<if test="orderTimerEnd != null and orderTimerEnd !=''">
+			 and create_time  &lt;=#{orderTimerEnd}
+		</if>
+		
+		<if test="lotteryTypeId != null and lotteryTypeId !=0">
+			and lottery_type_id=#{lotteryTypeId}
+		</if>
+		
+	   <if test="shopId != null and shopId !='' and shopId !=0">
+			and shop_id=#{shopId}
+		</if>
+		<if test="timeDimension==0">
+			 GROUP BY DATE_FORMAT(create_time,'%Y-%m-%d'),shop_id
+		</if>
+		<if test="timeDimension==1">
+			 GROUP BY DATE_FORMAT(create_time,'%Y(%u周)'),shop_id
+		</if>
+		<if test="timeDimension==2">
+			 GROUP BY DATE_FORMAT(create_time,'%Y-%m'),shop_id
+		</if>
+		 order  by  order_code desc limit #{pageNum},10
+	</select>
+	
+
+	<!-- 根据条件统计订单总记录数 -->
+	<select id="orderStatisticsByConditionCount" parameterType="com.lottery.entity.LotteryMainOrder"
+		resultType="java.lang.Integer">
+		select count(a.order_code) from (select
+		<if test="timeDimension==0">
+		DATE_FORMAT(create_time,'%Y-%m-%d') order_code
+		</if>
+		<if test="timeDimension==1">
+		DATE_FORMAT(create_time,'%Y(%u周)') order_code
+		</if>
+		<if test="timeDimension==2">
+		 DATE_FORMAT(create_time,'%Y-%m')  order_code
+		</if>
+		from lottery_main_order b where 1=1
+		  <if test="orderTimerBegain != null and orderTimerBegain !=''">
+			and create_time &gt;=#{orderTimerBegain} 
+		</if>
+		<if test="orderTimerEnd != null and orderTimerEnd !=''">
+			 and create_time  &lt;=#{orderTimerEnd}
+		</if>
+		
+		<if test="lotteryTypeId != null and lotteryTypeId !=0">
+			and lottery_type_id=#{lotteryTypeId}
+		</if>
+		
+		<if test="shopId != null and shopId !='' and shopId !=0">
+			and shop_id=#{shopId}
+		</if>
+		<if test="timeDimension==0">
+			 GROUP BY DATE_FORMAT(create_time,'%Y-%m-%d'),shop_id
+		</if>
+		<if test="timeDimension==1">
+			 GROUP BY DATE_FORMAT(create_time,'%Y(%u周)'),shop_id
+		</if>
+		<if test="timeDimension==2">
+			 GROUP BY DATE_FORMAT(create_time,'%Y-%m'),shop_id
+		</if>
+		) a
+	</select>
+	
+	
+	<!-- 用户流水 -->
+		<!-- 根据条件统计订单 -->
+	<select id="orderUserFlowStatisticsByCondition" parameterType="com.lottery.entity.LotteryMainOrder"
+		resultMap="BaseResultMap">
+		select
+		<if test="timeDimension==0">
+		 DATE_FORMAT(create_time,'%Y-%m-%d') order_code,
+		</if>
+		<if test="timeDimension==1">
+		DATE_FORMAT(create_time,'%Y(%u周)') order_code,
+		</if>
+		<if test="timeDimension==2">
+		 DATE_FORMAT(create_time,'%Y-%m') order_code,
+		</if>
+		count(id) win_num,
+		sum(order_price) order_price,
+		sum(refund_money) refund_money,
+        sum(order_price-refund_money) pay_shop_money,
+        sum(bonus) bonus
+		from lottery_main_order where   order_status >2
+		  <if test="orderTimerBegain != null and orderTimerBegain !=''">
+			and create_time &gt;=#{orderTimerBegain} 
+		</if>
+		<if test="orderTimerEnd != null and orderTimerEnd !=''">
+			 and create_time  &lt;=#{orderTimerEnd}
+		</if>
+		
+		<if test="lotteryTypeId != null and lotteryTypeId !=0">
+			and lottery_type_id=#{lotteryTypeId}
+		</if>
+		<if test="timeDimension==0">
+			 GROUP BY DATE_FORMAT(create_time,'%Y-%m-%d')
+		</if>
+		<if test="timeDimension==1">
+			 GROUP BY DATE_FORMAT(create_time,'%Y(%u周)')
+		</if>
+		<if test="timeDimension==2">
+			 GROUP BY DATE_FORMAT(create_time,'%Y-%m')
+		</if>
+		 
+		 order  by  order_code desc limit #{pageNum},10
+	</select>
+	
+
+	<!-- 根据条件统计订单总记录数 -->
+	<select id="orderUserFlowStatisticsByConditionCount" parameterType="com.lottery.entity.LotteryMainOrder"
+		resultType="java.lang.Integer">
+		select count(a.order_code) from (select
+		<if test="timeDimension==0">
+		DATE_FORMAT(create_time,'%Y-%m-%d') order_code
+		</if>
+		<if test="timeDimension==1">
+		DATE_FORMAT(create_time,'%Y(%u周)') order_code
+		</if>
+		<if test="timeDimension==2">
+		 DATE_FORMAT(create_time,'%Y-%m')  order_code
+		</if>
+		from lottery_main_order b where  order_status >2
+		  <if test="orderTimerBegain != null and orderTimerBegain !=''">
+			and create_time &gt;=#{orderTimerBegain} 
+		</if>
+		<if test="orderTimerEnd != null and orderTimerEnd !=''">
+			 and create_time  &lt;=#{orderTimerEnd}
+		</if>
+		
+		<if test="lotteryTypeId != null and lotteryTypeId !=0">
+			and lottery_type_id=#{lotteryTypeId}
+		</if>
+		<if test="timeDimension==0">
+			 GROUP BY DATE_FORMAT(create_time,'%Y-%m-%d')
+		</if>
+		<if test="timeDimension==1">
+			 GROUP BY DATE_FORMAT(create_time,'%Y(%u周)')
+		</if>
+		<if test="timeDimension==2">
+			 GROUP BY DATE_FORMAT(create_time,'%Y-%m')
+		</if>
+		) a
+	</select>
+	
+	<!-- 彩票店流水 -->
+		<!-- 根据条件统计订单 -->
+	<select id="orderLotteryShopFlowStatisticsByCondition" parameterType="com.lottery.entity.LotteryMainOrder"
+		resultMap="BaseResultMap">
+		select
+		<if test="timeDimension==0">
+		 DATE_FORMAT(create_time,'%Y-%m-%d') order_code,
+		</if>
+		<if test="timeDimension==1">
+		DATE_FORMAT(create_time,'%Y(%u周)') order_code,
+		</if>
+		<if test="timeDimension==2">
+		 DATE_FORMAT(create_time,'%Y-%m') order_code,
+		</if>
+		count(id) win_num,
+		sum(order_price) order_price,
+		sum(refund_money) refund_money,
+        sum(order_price*shop_share_rate) pay_shop_money,
+        sum(pay_shop_money) bonus
+		from lottery_main_order where 1=1
+		  <if test="orderTimerBegain != null and orderTimerBegain !=''">
+			and create_time &gt;=#{orderTimerBegain} 
+		</if>
+		<if test="orderTimerEnd != null and orderTimerEnd !=''">
+			 and create_time  &lt;=#{orderTimerEnd}
+		</if>
+		
+		<if test="lotteryTypeId != null and lotteryTypeId !=0">
+			and lottery_type_id=#{lotteryTypeId}
+		</if>
+		
+		<if test="shopName != null and shopName !='' and shopName!=0">
+			and shop_name LIKE CONCAT('%',#{shopName},'%')
+		</if>
+		
+		and order_status=3 and shop_deal_status=2
+		
+		<if test="timeDimension==0">
+			 GROUP BY DATE_FORMAT(create_time,'%Y-%m-%d')
+		</if>
+		<if test="timeDimension==1">
+			 GROUP BY DATE_FORMAT(create_time,'%Y(%u周)')
+		</if>
+		<if test="timeDimension==2">
+			 GROUP BY DATE_FORMAT(create_time,'%Y-%m')
+		</if>
+		 order  by  order_code desc limit #{pageNum},10
+	</select>
+	
+
+	<!-- 根据条件统计订单总记录数 -->
+	<select id="orderLotteryShopFlowStatisticsByConditionCount" parameterType="com.lottery.entity.LotteryMainOrder"
+		resultType="java.lang.Integer">
+		select count(a.order_code) from (select
+		<if test="timeDimension==0">
+		DATE_FORMAT(create_time,'%Y-%m-%d') order_code
+		</if>
+		<if test="timeDimension==1">
+		DATE_FORMAT(create_time,'%Y(%u周)') order_code
+		</if>
+		<if test="timeDimension==2">
+		 DATE_FORMAT(create_time,'%Y-%m')  order_code
+		</if>
+		from lottery_main_order b where 1=1
+		  <if test="orderTimerBegain != null and orderTimerBegain !=''">
+			and create_time &gt;=#{orderTimerBegain} 
+		</if>
+		<if test="orderTimerEnd != null and orderTimerEnd !=''">
+			 and create_time  &lt;=#{orderTimerEnd}
+		</if>
+		
+		<if test="lotteryTypeId != null and lotteryTypeId !=0">
+			and lottery_type_id=#{lotteryTypeId}
+		</if>
+		
+		<if test="shopName != null and shopName !='' and shopName!=0">
+			and shop_name LIKE CONCAT('%',#{shopName},'%')
+		</if>
+		
+		and order_status=3 and shop_deal_status=2
+		<if test="timeDimension==0">
+			 GROUP BY DATE_FORMAT(create_time,'%Y-%m-%d')
+		</if>
+		<if test="timeDimension==1">
+			 GROUP BY DATE_FORMAT(create_time,'%Y(%u周)')
+		</if>
+		<if test="timeDimension==2">
+			 GROUP BY DATE_FORMAT(create_time,'%Y-%m')
+		</if>
+		) a
+	</select>
+	
+	<!-- 平台流水 -->
+	
+	
+		<!-- 根据条件平台订单 -->
+	<select id="ordePlatformFlowStatisticsByCondition" parameterType="com.lottery.entity.LotteryMainOrder"
+		resultMap="BaseResultMap">
+		select
+		<if test="timeDimension==0">
+		 DATE_FORMAT(create_time,'%Y-%m-%d') order_code,
+		</if>
+		<if test="timeDimension==1">
+		DATE_FORMAT(create_time,'%Y(%u周)') order_code,
+		</if>
+		<if test="timeDimension==2">
+		 DATE_FORMAT(create_time,'%Y-%m') order_code,
+		</if>
+		count(id) win_num,
+		sum(order_price) order_price,
+		sum(order_price-refund_money) refund_money  ,
+		sum(order_price*shop_share_rate) pay_shop_money,
+		sum(order_price*agent_share_rate) pay_agent_money
+		from lottery_main_order where 1=1
+		  <if test="orderTimerBegain != null and orderTimerBegain !=''">
+			and create_time &gt;=#{orderTimerBegain} 
+		</if>
+		<if test="orderTimerEnd != null and orderTimerEnd !=''">
+			 and create_time  &lt;=#{orderTimerEnd}
+		</if>
+		
+		<if test="lotteryTypeId != null and lotteryTypeId !=0">
+			and lottery_type_id=#{lotteryTypeId}
+		</if>
+		
+		<if test="shopName != null and shopName !=''">
+			and shop_name LIKE CONCAT('%',#{shopName},'%')
+		</if>
+		<if test="timeDimension==0">
+			 GROUP BY DATE_FORMAT(create_time,'%Y-%m-%d')
+		</if>
+		<if test="timeDimension==1">
+			 GROUP BY DATE_FORMAT(create_time,'%Y(%u周)')
+		</if>
+		<if test="timeDimension==2">
+			 GROUP BY DATE_FORMAT(create_time,'%Y-%m')
+		</if>
+		 order  by  order_code desc limit #{pageNum},10
+	</select>
+	
+
+	<!-- 根据条件统计订单总记录数 -->
+	<select id="orderPlatformFlowStatisticsByConditionCount" parameterType="com.lottery.entity.LotteryMainOrder"
+		resultType="java.lang.Integer">
+		select count(a.order_code) from (select
+		<if test="timeDimension==0">
+		DATE_FORMAT(create_time,'%Y-%m-%d') order_code
+		</if>
+		<if test="timeDimension==1">
+		DATE_FORMAT(create_time,'%Y(%u周)') order_code
+		</if>
+		<if test="timeDimension==2">
+		 DATE_FORMAT(create_time,'%Y-%m')  order_code
+		</if>
+		from lottery_main_order b where 1=1
+		  <if test="orderTimerBegain != null and orderTimerBegain !=''">
+			and create_time &gt;=#{orderTimerBegain} 
+		</if>
+		<if test="orderTimerEnd != null and orderTimerEnd !=''">
+			 and create_time  &lt;=#{orderTimerEnd}
+		</if>
+		
+		<if test="lotteryTypeId != null and lotteryTypeId !=0">
+			and lottery_type_id=#{lotteryTypeId}
+		</if>
+		
+		<if test="shopName != null and shopName !=''">
+			and shop_name LIKE CONCAT('%',#{shopName},'%')
+		</if>
+		<if test="timeDimension==0">
+			 GROUP BY DATE_FORMAT(create_time,'%Y-%m-%d')
+		</if>
+		<if test="timeDimension==1">
+			 GROUP BY DATE_FORMAT(create_time,'%Y(%u周)')
+		</if>
+		<if test="timeDimension==2">
+			 GROUP BY DATE_FORMAT(create_time,'%Y-%m')
+		</if>
+		) a
+	</select>  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from lottery_main_order
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.lottery.entity.LotteryMainOrderExample">
+    delete from lottery_main_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.lottery.entity.LotteryMainOrder">
+    insert into lottery_main_order (id, serialize_id, order_code, 
+      user_plan_code, order_name, issue_no, 
+      bet_no, user_id, user_phone, 
+      nick_name, lottery_type_id, lottery_type_name, 
+      user_pay_time, single_flag, digital_bet_type_id, 
+      digital_bet_function_id, digital_bet_type_name, 
+      digital_bet_function_name, ball_bet_type_ids, 
+      multiple_num, extra_add, bets_num, 
+      win_num, order_price, pay_type, 
+      pay_order_id, pay_order_code, create_time, 
+      update_time, agent_id, shop_id, 
+      shop_deal_status, shop_name, shop_receive_time, 
+      shop_print_time, app_type, order_status, 
+      refund_money, refund_begin_time, refund_end_time, 
+      pay_shop_time, pay_shop_money, pay_agent_time, 
+      pay_agent_money, agent_share_rate, shop_share_rate, 
+      bet_rate, bonus, win_flag, 
+      want_win_multiple_num, bet_point, plan_award_time, 
+      maybe_win_money, win_pay_status, win_pay_time, 
+      pass_type, bdw_enable, multi_buy_flag, 
+      follow_issue_num, follow_order_flag, follow_flag, 
+      follow_left_issue, follow_money, follow_stop_for, 
+      bonus_ratio, prize_no, open_time, 
+      is_cancled, gain_flag, open_flag, 
+      award_flag, bet_endtime, deliver_flag, 
+      money_lost_time, sys_remark, shop_remark, 
+      pay_shop_order_code, pay_agent_order_code, balance, 
+      win_rate, user_account_before, sys_open_time, 
+      sys_pay_flag, action_ip, win_number_detail, 
+      deliver_to_shop_time, digital_bet_detail, 
+      ball_bet_detail)
+    values (#{id,jdbcType=BIGINT}, #{serializeId,jdbcType=VARCHAR}, #{orderCode,jdbcType=VARCHAR}, 
+      #{userPlanCode,jdbcType=VARCHAR}, #{orderName,jdbcType=VARCHAR}, #{issueNo,jdbcType=VARCHAR}, 
+      #{betNo,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, #{userPhone,jdbcType=VARCHAR}, 
+      #{nickName,jdbcType=VARCHAR}, #{lotteryTypeId,jdbcType=INTEGER}, #{lotteryTypeName,jdbcType=VARCHAR}, 
+      #{userPayTime,jdbcType=TIMESTAMP}, #{singleFlag,jdbcType=BIT}, #{digitalBetTypeId,jdbcType=TINYINT}, 
+      #{digitalBetFunctionId,jdbcType=TINYINT}, #{digitalBetTypeName,jdbcType=VARCHAR}, 
+      #{digitalBetFunctionName,jdbcType=VARCHAR}, #{ballBetTypeIds,jdbcType=VARCHAR}, 
+      #{multipleNum,jdbcType=INTEGER}, #{extraAdd,jdbcType=TINYINT}, #{betsNum,jdbcType=INTEGER}, 
+      #{winNum,jdbcType=INTEGER}, #{orderPrice,jdbcType=INTEGER}, #{payType,jdbcType=TINYINT}, 
+      #{payOrderId,jdbcType=BIGINT}, #{payOrderCode,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{agentId,jdbcType=INTEGER}, #{shopId,jdbcType=INTEGER}, 
+      #{shopDealStatus,jdbcType=SMALLINT}, #{shopName,jdbcType=VARCHAR}, #{shopReceiveTime,jdbcType=TIMESTAMP}, 
+      #{shopPrintTime,jdbcType=TIMESTAMP}, #{appType,jdbcType=SMALLINT}, #{orderStatus,jdbcType=SMALLINT}, 
+      #{refundMoney,jdbcType=INTEGER}, #{refundBeginTime,jdbcType=TIMESTAMP}, #{refundEndTime,jdbcType=TIMESTAMP}, 
+      #{payShopTime,jdbcType=TIMESTAMP}, #{payShopMoney,jdbcType=INTEGER}, #{payAgentTime,jdbcType=TIMESTAMP}, 
+      #{payAgentMoney,jdbcType=INTEGER}, #{agentShareRate,jdbcType=REAL}, #{shopShareRate,jdbcType=REAL}, 
+      #{betRate,jdbcType=REAL}, #{bonus,jdbcType=INTEGER}, #{winFlag,jdbcType=SMALLINT}, 
+      #{wantWinMultipleNum,jdbcType=DECIMAL}, #{betPoint,jdbcType=REAL}, #{planAwardTime,jdbcType=TIMESTAMP}, 
+      #{maybeWinMoney,jdbcType=INTEGER}, #{winPayStatus,jdbcType=TINYINT}, #{winPayTime,jdbcType=TIMESTAMP}, 
+      #{passType,jdbcType=VARCHAR}, #{bdwEnable,jdbcType=BIT}, #{multiBuyFlag,jdbcType=BIT}, 
+      #{followIssueNum,jdbcType=INTEGER}, #{followOrderFlag,jdbcType=BIT}, #{followFlag,jdbcType=BIT}, 
+      #{followLeftIssue,jdbcType=TINYINT}, #{followMoney,jdbcType=INTEGER}, #{followStopFor,jdbcType=INTEGER}, 
+      #{bonusRatio,jdbcType=DECIMAL}, #{prizeNo,jdbcType=VARCHAR}, #{openTime,jdbcType=VARCHAR}, 
+      #{isCancled,jdbcType=SMALLINT}, #{gainFlag,jdbcType=BIT}, #{openFlag,jdbcType=BIT}, 
+      #{awardFlag,jdbcType=BIT}, #{betEndtime,jdbcType=TIMESTAMP}, #{deliverFlag,jdbcType=BIT}, 
+      #{moneyLostTime,jdbcType=TIMESTAMP}, #{sysRemark,jdbcType=VARCHAR}, #{shopRemark,jdbcType=VARCHAR}, 
+      #{payShopOrderCode,jdbcType=VARCHAR}, #{payAgentOrderCode,jdbcType=VARCHAR}, #{balance,jdbcType=INTEGER}, 
+      #{winRate,jdbcType=DECIMAL}, #{userAccountBefore,jdbcType=INTEGER}, #{sysOpenTime,jdbcType=TIMESTAMP}, 
+      #{sysPayFlag,jdbcType=BIT}, #{actionIp,jdbcType=VARCHAR}, #{winNumberDetail,jdbcType=VARCHAR}, 
+      #{deliverToShopTime,jdbcType=TIMESTAMP}, #{digitalBetDetail,jdbcType=LONGVARCHAR}, 
+      #{ballBetDetail,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lottery.entity.LotteryMainOrder">
+    insert into lottery_main_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="serializeId != null">
+        serialize_id,
+      </if>
+      <if test="orderCode != null">
+        order_code,
+      </if>
+      <if test="userPlanCode != null">
+        user_plan_code,
+      </if>
+      <if test="orderName != null">
+        order_name,
+      </if>
+      <if test="issueNo != null">
+        issue_no,
+      </if>
+      <if test="betNo != null">
+        bet_no,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="userPhone != null">
+        user_phone,
+      </if>
+      <if test="nickName != null">
+        nick_name,
+      </if>
+      <if test="lotteryTypeId != null">
+        lottery_type_id,
+      </if>
+      <if test="lotteryTypeName != null">
+        lottery_type_name,
+      </if>
+      <if test="userPayTime != null">
+        user_pay_time,
+      </if>
+      <if test="singleFlag != null">
+        single_flag,
+      </if>
+      <if test="digitalBetTypeId != null">
+        digital_bet_type_id,
+      </if>
+      <if test="digitalBetFunctionId != null">
+        digital_bet_function_id,
+      </if>
+      <if test="digitalBetTypeName != null">
+        digital_bet_type_name,
+      </if>
+      <if test="digitalBetFunctionName != null">
+        digital_bet_function_name,
+      </if>
+      <if test="ballBetTypeIds != null">
+        ball_bet_type_ids,
+      </if>
+      <if test="multipleNum != null">
+        multiple_num,
+      </if>
+      <if test="extraAdd != null">
+        extra_add,
+      </if>
+      <if test="betsNum != null">
+        bets_num,
+      </if>
+      <if test="winNum != null">
+        win_num,
+      </if>
+      <if test="orderPrice != null">
+        order_price,
+      </if>
+      <if test="payType != null">
+        pay_type,
+      </if>
+      <if test="payOrderId != null">
+        pay_order_id,
+      </if>
+      <if test="payOrderCode != null">
+        pay_order_code,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="agentId != null">
+        agent_id,
+      </if>
+      <if test="shopId != null">
+        shop_id,
+      </if>
+      <if test="shopDealStatus != null">
+        shop_deal_status,
+      </if>
+      <if test="shopName != null">
+        shop_name,
+      </if>
+      <if test="shopReceiveTime != null">
+        shop_receive_time,
+      </if>
+      <if test="shopPrintTime != null">
+        shop_print_time,
+      </if>
+      <if test="appType != null">
+        app_type,
+      </if>
+      <if test="orderStatus != null">
+        order_status,
+      </if>
+      <if test="refundMoney != null">
+        refund_money,
+      </if>
+      <if test="refundBeginTime != null">
+        refund_begin_time,
+      </if>
+      <if test="refundEndTime != null">
+        refund_end_time,
+      </if>
+      <if test="payShopTime != null">
+        pay_shop_time,
+      </if>
+      <if test="payShopMoney != null">
+        pay_shop_money,
+      </if>
+      <if test="payAgentTime != null">
+        pay_agent_time,
+      </if>
+      <if test="payAgentMoney != null">
+        pay_agent_money,
+      </if>
+      <if test="agentShareRate != null">
+        agent_share_rate,
+      </if>
+      <if test="shopShareRate != null">
+        shop_share_rate,
+      </if>
+      <if test="betRate != null">
+        bet_rate,
+      </if>
+      <if test="bonus != null">
+        bonus,
+      </if>
+      <if test="winFlag != null">
+        win_flag,
+      </if>
+      <if test="wantWinMultipleNum != null">
+        want_win_multiple_num,
+      </if>
+      <if test="betPoint != null">
+        bet_point,
+      </if>
+      <if test="planAwardTime != null">
+        plan_award_time,
+      </if>
+      <if test="maybeWinMoney != null">
+        maybe_win_money,
+      </if>
+      <if test="winPayStatus != null">
+        win_pay_status,
+      </if>
+      <if test="winPayTime != null">
+        win_pay_time,
+      </if>
+      <if test="passType != null">
+        pass_type,
+      </if>
+      <if test="bdwEnable != null">
+        bdw_enable,
+      </if>
+      <if test="multiBuyFlag != null">
+        multi_buy_flag,
+      </if>
+      <if test="followIssueNum != null">
+        follow_issue_num,
+      </if>
+      <if test="followOrderFlag != null">
+        follow_order_flag,
+      </if>
+      <if test="followFlag != null">
+        follow_flag,
+      </if>
+      <if test="followLeftIssue != null">
+        follow_left_issue,
+      </if>
+      <if test="followMoney != null">
+        follow_money,
+      </if>
+      <if test="followStopFor != null">
+        follow_stop_for,
+      </if>
+      <if test="bonusRatio != null">
+        bonus_ratio,
+      </if>
+      <if test="prizeNo != null">
+        prize_no,
+      </if>
+      <if test="openTime != null">
+        open_time,
+      </if>
+      <if test="isCancled != null">
+        is_cancled,
+      </if>
+      <if test="gainFlag != null">
+        gain_flag,
+      </if>
+      <if test="openFlag != null">
+        open_flag,
+      </if>
+      <if test="awardFlag != null">
+        award_flag,
+      </if>
+      <if test="betEndtime != null">
+        bet_endtime,
+      </if>
+      <if test="deliverFlag != null">
+        deliver_flag,
+      </if>
+      <if test="moneyLostTime != null">
+        money_lost_time,
+      </if>
+      <if test="sysRemark != null">
+        sys_remark,
+      </if>
+      <if test="shopRemark != null">
+        shop_remark,
+      </if>
+      <if test="payShopOrderCode != null">
+        pay_shop_order_code,
+      </if>
+      <if test="payAgentOrderCode != null">
+        pay_agent_order_code,
+      </if>
+      <if test="balance != null">
+        balance,
+      </if>
+      <if test="winRate != null">
+        win_rate,
+      </if>
+      <if test="userAccountBefore != null">
+        user_account_before,
+      </if>
+      <if test="sysOpenTime != null">
+        sys_open_time,
+      </if>
+      <if test="sysPayFlag != null">
+        sys_pay_flag,
+      </if>
+      <if test="actionIp != null">
+        action_ip,
+      </if>
+      <if test="winNumberDetail != null">
+        win_number_detail,
+      </if>
+      <if test="deliverToShopTime != null">
+        deliver_to_shop_time,
+      </if>
+      <if test="digitalBetDetail != null">
+        digital_bet_detail,
+      </if>
+      <if test="ballBetDetail != null">
+        ball_bet_detail,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="serializeId != null">
+        #{serializeId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCode != null">
+        #{orderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="userPlanCode != null">
+        #{userPlanCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderName != null">
+        #{orderName,jdbcType=VARCHAR},
+      </if>
+      <if test="issueNo != null">
+        #{issueNo,jdbcType=VARCHAR},
+      </if>
+      <if test="betNo != null">
+        #{betNo,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="userPhone != null">
+        #{userPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null">
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="lotteryTypeId != null">
+        #{lotteryTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="lotteryTypeName != null">
+        #{lotteryTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPayTime != null">
+        #{userPayTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="singleFlag != null">
+        #{singleFlag,jdbcType=BIT},
+      </if>
+      <if test="digitalBetTypeId != null">
+        #{digitalBetTypeId,jdbcType=TINYINT},
+      </if>
+      <if test="digitalBetFunctionId != null">
+        #{digitalBetFunctionId,jdbcType=TINYINT},
+      </if>
+      <if test="digitalBetTypeName != null">
+        #{digitalBetTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="digitalBetFunctionName != null">
+        #{digitalBetFunctionName,jdbcType=VARCHAR},
+      </if>
+      <if test="ballBetTypeIds != null">
+        #{ballBetTypeIds,jdbcType=VARCHAR},
+      </if>
+      <if test="multipleNum != null">
+        #{multipleNum,jdbcType=INTEGER},
+      </if>
+      <if test="extraAdd != null">
+        #{extraAdd,jdbcType=TINYINT},
+      </if>
+      <if test="betsNum != null">
+        #{betsNum,jdbcType=INTEGER},
+      </if>
+      <if test="winNum != null">
+        #{winNum,jdbcType=INTEGER},
+      </if>
+      <if test="orderPrice != null">
+        #{orderPrice,jdbcType=INTEGER},
+      </if>
+      <if test="payType != null">
+        #{payType,jdbcType=TINYINT},
+      </if>
+      <if test="payOrderId != null">
+        #{payOrderId,jdbcType=BIGINT},
+      </if>
+      <if test="payOrderCode != null">
+        #{payOrderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="agentId != null">
+        #{agentId,jdbcType=INTEGER},
+      </if>
+      <if test="shopId != null">
+        #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="shopDealStatus != null">
+        #{shopDealStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="shopName != null">
+        #{shopName,jdbcType=VARCHAR},
+      </if>
+      <if test="shopReceiveTime != null">
+        #{shopReceiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shopPrintTime != null">
+        #{shopPrintTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="appType != null">
+        #{appType,jdbcType=SMALLINT},
+      </if>
+      <if test="orderStatus != null">
+        #{orderStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="refundMoney != null">
+        #{refundMoney,jdbcType=INTEGER},
+      </if>
+      <if test="refundBeginTime != null">
+        #{refundBeginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="refundEndTime != null">
+        #{refundEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payShopTime != null">
+        #{payShopTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payShopMoney != null">
+        #{payShopMoney,jdbcType=INTEGER},
+      </if>
+      <if test="payAgentTime != null">
+        #{payAgentTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payAgentMoney != null">
+        #{payAgentMoney,jdbcType=INTEGER},
+      </if>
+      <if test="agentShareRate != null">
+        #{agentShareRate,jdbcType=REAL},
+      </if>
+      <if test="shopShareRate != null">
+        #{shopShareRate,jdbcType=REAL},
+      </if>
+      <if test="betRate != null">
+        #{betRate,jdbcType=REAL},
+      </if>
+      <if test="bonus != null">
+        #{bonus,jdbcType=INTEGER},
+      </if>
+      <if test="winFlag != null">
+        #{winFlag,jdbcType=SMALLINT},
+      </if>
+      <if test="wantWinMultipleNum != null">
+        #{wantWinMultipleNum,jdbcType=DECIMAL},
+      </if>
+      <if test="betPoint != null">
+        #{betPoint,jdbcType=REAL},
+      </if>
+      <if test="planAwardTime != null">
+        #{planAwardTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="maybeWinMoney != null">
+        #{maybeWinMoney,jdbcType=INTEGER},
+      </if>
+      <if test="winPayStatus != null">
+        #{winPayStatus,jdbcType=TINYINT},
+      </if>
+      <if test="winPayTime != null">
+        #{winPayTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="passType != null">
+        #{passType,jdbcType=VARCHAR},
+      </if>
+      <if test="bdwEnable != null">
+        #{bdwEnable,jdbcType=BIT},
+      </if>
+      <if test="multiBuyFlag != null">
+        #{multiBuyFlag,jdbcType=BIT},
+      </if>
+      <if test="followIssueNum != null">
+        #{followIssueNum,jdbcType=INTEGER},
+      </if>
+      <if test="followOrderFlag != null">
+        #{followOrderFlag,jdbcType=BIT},
+      </if>
+      <if test="followFlag != null">
+        #{followFlag,jdbcType=BIT},
+      </if>
+      <if test="followLeftIssue != null">
+        #{followLeftIssue,jdbcType=TINYINT},
+      </if>
+      <if test="followMoney != null">
+        #{followMoney,jdbcType=INTEGER},
+      </if>
+      <if test="followStopFor != null">
+        #{followStopFor,jdbcType=INTEGER},
+      </if>
+      <if test="bonusRatio != null">
+        #{bonusRatio,jdbcType=DECIMAL},
+      </if>
+      <if test="prizeNo != null">
+        #{prizeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="openTime != null">
+        #{openTime,jdbcType=VARCHAR},
+      </if>
+      <if test="isCancled != null">
+        #{isCancled,jdbcType=SMALLINT},
+      </if>
+      <if test="gainFlag != null">
+        #{gainFlag,jdbcType=BIT},
+      </if>
+      <if test="openFlag != null">
+        #{openFlag,jdbcType=BIT},
+      </if>
+      <if test="awardFlag != null">
+        #{awardFlag,jdbcType=BIT},
+      </if>
+      <if test="betEndtime != null">
+        #{betEndtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deliverFlag != null">
+        #{deliverFlag,jdbcType=BIT},
+      </if>
+      <if test="moneyLostTime != null">
+        #{moneyLostTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysRemark != null">
+        #{sysRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="shopRemark != null">
+        #{shopRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="payShopOrderCode != null">
+        #{payShopOrderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="payAgentOrderCode != null">
+        #{payAgentOrderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="balance != null">
+        #{balance,jdbcType=INTEGER},
+      </if>
+      <if test="winRate != null">
+        #{winRate,jdbcType=DECIMAL},
+      </if>
+      <if test="userAccountBefore != null">
+        #{userAccountBefore,jdbcType=INTEGER},
+      </if>
+      <if test="sysOpenTime != null">
+        #{sysOpenTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysPayFlag != null">
+        #{sysPayFlag,jdbcType=BIT},
+      </if>
+      <if test="actionIp != null">
+        #{actionIp,jdbcType=VARCHAR},
+      </if>
+      <if test="winNumberDetail != null">
+        #{winNumberDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="deliverToShopTime != null">
+        #{deliverToShopTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="digitalBetDetail != null">
+        #{digitalBetDetail,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="ballBetDetail != null">
+        #{ballBetDetail,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.lottery.entity.LotteryMainOrderExample" resultType="java.lang.Long">
+    select count(*) from lottery_main_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update lottery_main_order
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.serializeId != null">
+        serialize_id = #{record.serializeId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderCode != null">
+        order_code = #{record.orderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userPlanCode != null">
+        user_plan_code = #{record.userPlanCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderName != null">
+        order_name = #{record.orderName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issueNo != null">
+        issue_no = #{record.issueNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.betNo != null">
+        bet_no = #{record.betNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=BIGINT},
+      </if>
+      <if test="record.userPhone != null">
+        user_phone = #{record.userPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nickName != null">
+        nick_name = #{record.nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lotteryTypeId != null">
+        lottery_type_id = #{record.lotteryTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.lotteryTypeName != null">
+        lottery_type_name = #{record.lotteryTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userPayTime != null">
+        user_pay_time = #{record.userPayTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.singleFlag != null">
+        single_flag = #{record.singleFlag,jdbcType=BIT},
+      </if>
+      <if test="record.digitalBetTypeId != null">
+        digital_bet_type_id = #{record.digitalBetTypeId,jdbcType=TINYINT},
+      </if>
+      <if test="record.digitalBetFunctionId != null">
+        digital_bet_function_id = #{record.digitalBetFunctionId,jdbcType=TINYINT},
+      </if>
+      <if test="record.digitalBetTypeName != null">
+        digital_bet_type_name = #{record.digitalBetTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.digitalBetFunctionName != null">
+        digital_bet_function_name = #{record.digitalBetFunctionName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ballBetTypeIds != null">
+        ball_bet_type_ids = #{record.ballBetTypeIds,jdbcType=VARCHAR},
+      </if>
+      <if test="record.multipleNum != null">
+        multiple_num = #{record.multipleNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.extraAdd != null">
+        extra_add = #{record.extraAdd,jdbcType=TINYINT},
+      </if>
+      <if test="record.betsNum != null">
+        bets_num = #{record.betsNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.winNum != null">
+        win_num = #{record.winNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderPrice != null">
+        order_price = #{record.orderPrice,jdbcType=INTEGER},
+      </if>
+      <if test="record.payType != null">
+        pay_type = #{record.payType,jdbcType=TINYINT},
+      </if>
+      <if test="record.payOrderId != null">
+        pay_order_id = #{record.payOrderId,jdbcType=BIGINT},
+      </if>
+      <if test="record.payOrderCode != null">
+        pay_order_code = #{record.payOrderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.agentId != null">
+        agent_id = #{record.agentId,jdbcType=INTEGER},
+      </if>
+      <if test="record.shopId != null">
+        shop_id = #{record.shopId,jdbcType=INTEGER},
+      </if>
+      <if test="record.shopDealStatus != null">
+        shop_deal_status = #{record.shopDealStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="record.shopName != null">
+        shop_name = #{record.shopName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shopReceiveTime != null">
+        shop_receive_time = #{record.shopReceiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.shopPrintTime != null">
+        shop_print_time = #{record.shopPrintTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.appType != null">
+        app_type = #{record.appType,jdbcType=SMALLINT},
+      </if>
+      <if test="record.orderStatus != null">
+        order_status = #{record.orderStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="record.refundMoney != null">
+        refund_money = #{record.refundMoney,jdbcType=INTEGER},
+      </if>
+      <if test="record.refundBeginTime != null">
+        refund_begin_time = #{record.refundBeginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.refundEndTime != null">
+        refund_end_time = #{record.refundEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.payShopTime != null">
+        pay_shop_time = #{record.payShopTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.payShopMoney != null">
+        pay_shop_money = #{record.payShopMoney,jdbcType=INTEGER},
+      </if>
+      <if test="record.payAgentTime != null">
+        pay_agent_time = #{record.payAgentTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.payAgentMoney != null">
+        pay_agent_money = #{record.payAgentMoney,jdbcType=INTEGER},
+      </if>
+      <if test="record.agentShareRate != null">
+        agent_share_rate = #{record.agentShareRate,jdbcType=REAL},
+      </if>
+      <if test="record.shopShareRate != null">
+        shop_share_rate = #{record.shopShareRate,jdbcType=REAL},
+      </if>
+      <if test="record.betRate != null">
+        bet_rate = #{record.betRate,jdbcType=REAL},
+      </if>
+      <if test="record.bonus != null">
+        bonus = #{record.bonus,jdbcType=INTEGER},
+      </if>
+      <if test="record.winFlag != null">
+        win_flag = #{record.winFlag,jdbcType=SMALLINT},
+      </if>
+      <if test="record.wantWinMultipleNum != null">
+        want_win_multiple_num = #{record.wantWinMultipleNum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.betPoint != null">
+        bet_point = #{record.betPoint,jdbcType=REAL},
+      </if>
+      <if test="record.planAwardTime != null">
+        plan_award_time = #{record.planAwardTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.maybeWinMoney != null">
+        maybe_win_money = #{record.maybeWinMoney,jdbcType=INTEGER},
+      </if>
+      <if test="record.winPayStatus != null">
+        win_pay_status = #{record.winPayStatus,jdbcType=TINYINT},
+      </if>
+      <if test="record.winPayTime != null">
+        win_pay_time = #{record.winPayTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.passType != null">
+        pass_type = #{record.passType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bdwEnable != null">
+        bdw_enable = #{record.bdwEnable,jdbcType=BIT},
+      </if>
+      <if test="record.multiBuyFlag != null">
+        multi_buy_flag = #{record.multiBuyFlag,jdbcType=BIT},
+      </if>
+      <if test="record.followIssueNum != null">
+        follow_issue_num = #{record.followIssueNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.followOrderFlag != null">
+        follow_order_flag = #{record.followOrderFlag,jdbcType=BIT},
+      </if>
+      <if test="record.followFlag != null">
+        follow_flag = #{record.followFlag,jdbcType=BIT},
+      </if>
+      <if test="record.followLeftIssue != null">
+        follow_left_issue = #{record.followLeftIssue,jdbcType=TINYINT},
+      </if>
+      <if test="record.followMoney != null">
+        follow_money = #{record.followMoney,jdbcType=INTEGER},
+      </if>
+      <if test="record.followStopFor != null">
+        follow_stop_for = #{record.followStopFor,jdbcType=INTEGER},
+      </if>
+      <if test="record.bonusRatio != null">
+        bonus_ratio = #{record.bonusRatio,jdbcType=DECIMAL},
+      </if>
+      <if test="record.prizeNo != null">
+        prize_no = #{record.prizeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.openTime != null">
+        open_time = #{record.openTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isCancled != null">
+        is_cancled = #{record.isCancled,jdbcType=SMALLINT},
+      </if>
+      <if test="record.gainFlag != null">
+        gain_flag = #{record.gainFlag,jdbcType=BIT},
+      </if>
+      <if test="record.openFlag != null">
+        open_flag = #{record.openFlag,jdbcType=BIT},
+      </if>
+      <if test="record.awardFlag != null">
+        award_flag = #{record.awardFlag,jdbcType=BIT},
+      </if>
+      <if test="record.betEndtime != null">
+        bet_endtime = #{record.betEndtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.deliverFlag != null">
+        deliver_flag = #{record.deliverFlag,jdbcType=BIT},
+      </if>
+      <if test="record.moneyLostTime != null">
+        money_lost_time = #{record.moneyLostTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.sysRemark != null">
+        sys_remark = #{record.sysRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shopRemark != null">
+        shop_remark = #{record.shopRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payShopOrderCode != null">
+        pay_shop_order_code = #{record.payShopOrderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payAgentOrderCode != null">
+        pay_agent_order_code = #{record.payAgentOrderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.balance != null">
+        balance = #{record.balance,jdbcType=INTEGER},
+      </if>
+      <if test="record.winRate != null">
+        win_rate = #{record.winRate,jdbcType=DECIMAL},
+      </if>
+      <if test="record.userAccountBefore != null">
+        user_account_before = #{record.userAccountBefore,jdbcType=INTEGER},
+      </if>
+      <if test="record.sysOpenTime != null">
+        sys_open_time = #{record.sysOpenTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.sysPayFlag != null">
+        sys_pay_flag = #{record.sysPayFlag,jdbcType=BIT},
+      </if>
+      <if test="record.actionIp != null">
+        action_ip = #{record.actionIp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.winNumberDetail != null">
+        win_number_detail = #{record.winNumberDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deliverToShopTime != null">
+        deliver_to_shop_time = #{record.deliverToShopTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.digitalBetDetail != null">
+        digital_bet_detail = #{record.digitalBetDetail,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.ballBetDetail != null">
+        ball_bet_detail = #{record.ballBetDetail,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update lottery_main_order
+    set id = #{record.id,jdbcType=BIGINT},
+      serialize_id = #{record.serializeId,jdbcType=VARCHAR},
+      order_code = #{record.orderCode,jdbcType=VARCHAR},
+      user_plan_code = #{record.userPlanCode,jdbcType=VARCHAR},
+      order_name = #{record.orderName,jdbcType=VARCHAR},
+      issue_no = #{record.issueNo,jdbcType=VARCHAR},
+      bet_no = #{record.betNo,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=BIGINT},
+      user_phone = #{record.userPhone,jdbcType=VARCHAR},
+      nick_name = #{record.nickName,jdbcType=VARCHAR},
+      lottery_type_id = #{record.lotteryTypeId,jdbcType=INTEGER},
+      lottery_type_name = #{record.lotteryTypeName,jdbcType=VARCHAR},
+      user_pay_time = #{record.userPayTime,jdbcType=TIMESTAMP},
+      single_flag = #{record.singleFlag,jdbcType=BIT},
+      digital_bet_type_id = #{record.digitalBetTypeId,jdbcType=TINYINT},
+      digital_bet_function_id = #{record.digitalBetFunctionId,jdbcType=TINYINT},
+      digital_bet_type_name = #{record.digitalBetTypeName,jdbcType=VARCHAR},
+      digital_bet_function_name = #{record.digitalBetFunctionName,jdbcType=VARCHAR},
+      ball_bet_type_ids = #{record.ballBetTypeIds,jdbcType=VARCHAR},
+      multiple_num = #{record.multipleNum,jdbcType=INTEGER},
+      extra_add = #{record.extraAdd,jdbcType=TINYINT},
+      bets_num = #{record.betsNum,jdbcType=INTEGER},
+      win_num = #{record.winNum,jdbcType=INTEGER},
+      order_price = #{record.orderPrice,jdbcType=INTEGER},
+      pay_type = #{record.payType,jdbcType=TINYINT},
+      pay_order_id = #{record.payOrderId,jdbcType=BIGINT},
+      pay_order_code = #{record.payOrderCode,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      agent_id = #{record.agentId,jdbcType=INTEGER},
+      shop_id = #{record.shopId,jdbcType=INTEGER},
+      shop_deal_status = #{record.shopDealStatus,jdbcType=SMALLINT},
+      shop_name = #{record.shopName,jdbcType=VARCHAR},
+      shop_receive_time = #{record.shopReceiveTime,jdbcType=TIMESTAMP},
+      shop_print_time = #{record.shopPrintTime,jdbcType=TIMESTAMP},
+      app_type = #{record.appType,jdbcType=SMALLINT},
+      order_status = #{record.orderStatus,jdbcType=SMALLINT},
+      refund_money = #{record.refundMoney,jdbcType=INTEGER},
+      refund_begin_time = #{record.refundBeginTime,jdbcType=TIMESTAMP},
+      refund_end_time = #{record.refundEndTime,jdbcType=TIMESTAMP},
+      pay_shop_time = #{record.payShopTime,jdbcType=TIMESTAMP},
+      pay_shop_money = #{record.payShopMoney,jdbcType=INTEGER},
+      pay_agent_time = #{record.payAgentTime,jdbcType=TIMESTAMP},
+      pay_agent_money = #{record.payAgentMoney,jdbcType=INTEGER},
+      agent_share_rate = #{record.agentShareRate,jdbcType=REAL},
+      shop_share_rate = #{record.shopShareRate,jdbcType=REAL},
+      bet_rate = #{record.betRate,jdbcType=REAL},
+      bonus = #{record.bonus,jdbcType=INTEGER},
+      win_flag = #{record.winFlag,jdbcType=SMALLINT},
+      want_win_multiple_num = #{record.wantWinMultipleNum,jdbcType=DECIMAL},
+      bet_point = #{record.betPoint,jdbcType=REAL},
+      plan_award_time = #{record.planAwardTime,jdbcType=TIMESTAMP},
+      maybe_win_money = #{record.maybeWinMoney,jdbcType=INTEGER},
+      win_pay_status = #{record.winPayStatus,jdbcType=TINYINT},
+      win_pay_time = #{record.winPayTime,jdbcType=TIMESTAMP},
+      pass_type = #{record.passType,jdbcType=VARCHAR},
+      bdw_enable = #{record.bdwEnable,jdbcType=BIT},
+      multi_buy_flag = #{record.multiBuyFlag,jdbcType=BIT},
+      follow_issue_num = #{record.followIssueNum,jdbcType=INTEGER},
+      follow_order_flag = #{record.followOrderFlag,jdbcType=BIT},
+      follow_flag = #{record.followFlag,jdbcType=BIT},
+      follow_left_issue = #{record.followLeftIssue,jdbcType=TINYINT},
+      follow_money = #{record.followMoney,jdbcType=INTEGER},
+      follow_stop_for = #{record.followStopFor,jdbcType=INTEGER},
+      bonus_ratio = #{record.bonusRatio,jdbcType=DECIMAL},
+      prize_no = #{record.prizeNo,jdbcType=VARCHAR},
+      open_time = #{record.openTime,jdbcType=VARCHAR},
+      is_cancled = #{record.isCancled,jdbcType=SMALLINT},
+      gain_flag = #{record.gainFlag,jdbcType=BIT},
+      open_flag = #{record.openFlag,jdbcType=BIT},
+      award_flag = #{record.awardFlag,jdbcType=BIT},
+      bet_endtime = #{record.betEndtime,jdbcType=TIMESTAMP},
+      deliver_flag = #{record.deliverFlag,jdbcType=BIT},
+      money_lost_time = #{record.moneyLostTime,jdbcType=TIMESTAMP},
+      sys_remark = #{record.sysRemark,jdbcType=VARCHAR},
+      shop_remark = #{record.shopRemark,jdbcType=VARCHAR},
+      pay_shop_order_code = #{record.payShopOrderCode,jdbcType=VARCHAR},
+      pay_agent_order_code = #{record.payAgentOrderCode,jdbcType=VARCHAR},
+      balance = #{record.balance,jdbcType=INTEGER},
+      win_rate = #{record.winRate,jdbcType=DECIMAL},
+      user_account_before = #{record.userAccountBefore,jdbcType=INTEGER},
+      sys_open_time = #{record.sysOpenTime,jdbcType=TIMESTAMP},
+      sys_pay_flag = #{record.sysPayFlag,jdbcType=BIT},
+      action_ip = #{record.actionIp,jdbcType=VARCHAR},
+      win_number_detail = #{record.winNumberDetail,jdbcType=VARCHAR},
+      deliver_to_shop_time = #{record.deliverToShopTime,jdbcType=TIMESTAMP},
+      digital_bet_detail = #{record.digitalBetDetail,jdbcType=LONGVARCHAR},
+      ball_bet_detail = #{record.ballBetDetail,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update lottery_main_order
+    set id = #{record.id,jdbcType=BIGINT},
+      serialize_id = #{record.serializeId,jdbcType=VARCHAR},
+      order_code = #{record.orderCode,jdbcType=VARCHAR},
+      user_plan_code = #{record.userPlanCode,jdbcType=VARCHAR},
+      order_name = #{record.orderName,jdbcType=VARCHAR},
+      issue_no = #{record.issueNo,jdbcType=VARCHAR},
+      bet_no = #{record.betNo,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=BIGINT},
+      user_phone = #{record.userPhone,jdbcType=VARCHAR},
+      nick_name = #{record.nickName,jdbcType=VARCHAR},
+      lottery_type_id = #{record.lotteryTypeId,jdbcType=INTEGER},
+      lottery_type_name = #{record.lotteryTypeName,jdbcType=VARCHAR},
+      user_pay_time = #{record.userPayTime,jdbcType=TIMESTAMP},
+      single_flag = #{record.singleFlag,jdbcType=BIT},
+      digital_bet_type_id = #{record.digitalBetTypeId,jdbcType=TINYINT},
+      digital_bet_function_id = #{record.digitalBetFunctionId,jdbcType=TINYINT},
+      digital_bet_type_name = #{record.digitalBetTypeName,jdbcType=VARCHAR},
+      digital_bet_function_name = #{record.digitalBetFunctionName,jdbcType=VARCHAR},
+      ball_bet_type_ids = #{record.ballBetTypeIds,jdbcType=VARCHAR},
+      multiple_num = #{record.multipleNum,jdbcType=INTEGER},
+      extra_add = #{record.extraAdd,jdbcType=TINYINT},
+      bets_num = #{record.betsNum,jdbcType=INTEGER},
+      win_num = #{record.winNum,jdbcType=INTEGER},
+      order_price = #{record.orderPrice,jdbcType=INTEGER},
+      pay_type = #{record.payType,jdbcType=TINYINT},
+      pay_order_id = #{record.payOrderId,jdbcType=BIGINT},
+      pay_order_code = #{record.payOrderCode,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      agent_id = #{record.agentId,jdbcType=INTEGER},
+      shop_id = #{record.shopId,jdbcType=INTEGER},
+      shop_deal_status = #{record.shopDealStatus,jdbcType=SMALLINT},
+      shop_name = #{record.shopName,jdbcType=VARCHAR},
+      shop_receive_time = #{record.shopReceiveTime,jdbcType=TIMESTAMP},
+      shop_print_time = #{record.shopPrintTime,jdbcType=TIMESTAMP},
+      app_type = #{record.appType,jdbcType=SMALLINT},
+      order_status = #{record.orderStatus,jdbcType=SMALLINT},
+      refund_money = #{record.refundMoney,jdbcType=INTEGER},
+      refund_begin_time = #{record.refundBeginTime,jdbcType=TIMESTAMP},
+      refund_end_time = #{record.refundEndTime,jdbcType=TIMESTAMP},
+      pay_shop_time = #{record.payShopTime,jdbcType=TIMESTAMP},
+      pay_shop_money = #{record.payShopMoney,jdbcType=INTEGER},
+      pay_agent_time = #{record.payAgentTime,jdbcType=TIMESTAMP},
+      pay_agent_money = #{record.payAgentMoney,jdbcType=INTEGER},
+      agent_share_rate = #{record.agentShareRate,jdbcType=REAL},
+      shop_share_rate = #{record.shopShareRate,jdbcType=REAL},
+      bet_rate = #{record.betRate,jdbcType=REAL},
+      bonus = #{record.bonus,jdbcType=INTEGER},
+      win_flag = #{record.winFlag,jdbcType=SMALLINT},
+      want_win_multiple_num = #{record.wantWinMultipleNum,jdbcType=DECIMAL},
+      bet_point = #{record.betPoint,jdbcType=REAL},
+      plan_award_time = #{record.planAwardTime,jdbcType=TIMESTAMP},
+      maybe_win_money = #{record.maybeWinMoney,jdbcType=INTEGER},
+      win_pay_status = #{record.winPayStatus,jdbcType=TINYINT},
+      win_pay_time = #{record.winPayTime,jdbcType=TIMESTAMP},
+      pass_type = #{record.passType,jdbcType=VARCHAR},
+      bdw_enable = #{record.bdwEnable,jdbcType=BIT},
+      multi_buy_flag = #{record.multiBuyFlag,jdbcType=BIT},
+      follow_issue_num = #{record.followIssueNum,jdbcType=INTEGER},
+      follow_order_flag = #{record.followOrderFlag,jdbcType=BIT},
+      follow_flag = #{record.followFlag,jdbcType=BIT},
+      follow_left_issue = #{record.followLeftIssue,jdbcType=TINYINT},
+      follow_money = #{record.followMoney,jdbcType=INTEGER},
+      follow_stop_for = #{record.followStopFor,jdbcType=INTEGER},
+      bonus_ratio = #{record.bonusRatio,jdbcType=DECIMAL},
+      prize_no = #{record.prizeNo,jdbcType=VARCHAR},
+      open_time = #{record.openTime,jdbcType=VARCHAR},
+      is_cancled = #{record.isCancled,jdbcType=SMALLINT},
+      gain_flag = #{record.gainFlag,jdbcType=BIT},
+      open_flag = #{record.openFlag,jdbcType=BIT},
+      award_flag = #{record.awardFlag,jdbcType=BIT},
+      bet_endtime = #{record.betEndtime,jdbcType=TIMESTAMP},
+      deliver_flag = #{record.deliverFlag,jdbcType=BIT},
+      money_lost_time = #{record.moneyLostTime,jdbcType=TIMESTAMP},
+      sys_remark = #{record.sysRemark,jdbcType=VARCHAR},
+      shop_remark = #{record.shopRemark,jdbcType=VARCHAR},
+      pay_shop_order_code = #{record.payShopOrderCode,jdbcType=VARCHAR},
+      pay_agent_order_code = #{record.payAgentOrderCode,jdbcType=VARCHAR},
+      balance = #{record.balance,jdbcType=INTEGER},
+      win_rate = #{record.winRate,jdbcType=DECIMAL},
+      user_account_before = #{record.userAccountBefore,jdbcType=INTEGER},
+      sys_open_time = #{record.sysOpenTime,jdbcType=TIMESTAMP},
+      sys_pay_flag = #{record.sysPayFlag,jdbcType=BIT},
+      action_ip = #{record.actionIp,jdbcType=VARCHAR},
+      win_number_detail = #{record.winNumberDetail,jdbcType=VARCHAR},
+      deliver_to_shop_time = #{record.deliverToShopTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lottery.entity.LotteryMainOrder">
+    update lottery_main_order
+    <set>
+      <if test="serializeId != null">
+        serialize_id = #{serializeId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCode != null">
+        order_code = #{orderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="userPlanCode != null">
+        user_plan_code = #{userPlanCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderName != null">
+        order_name = #{orderName,jdbcType=VARCHAR},
+      </if>
+      <if test="issueNo != null">
+        issue_no = #{issueNo,jdbcType=VARCHAR},
+      </if>
+      <if test="betNo != null">
+        bet_no = #{betNo,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="userPhone != null">
+        user_phone = #{userPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null">
+        nick_name = #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="lotteryTypeId != null">
+        lottery_type_id = #{lotteryTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="lotteryTypeName != null">
+        lottery_type_name = #{lotteryTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPayTime != null">
+        user_pay_time = #{userPayTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="singleFlag != null">
+        single_flag = #{singleFlag,jdbcType=BIT},
+      </if>
+      <if test="digitalBetTypeId != null">
+        digital_bet_type_id = #{digitalBetTypeId,jdbcType=TINYINT},
+      </if>
+      <if test="digitalBetFunctionId != null">
+        digital_bet_function_id = #{digitalBetFunctionId,jdbcType=TINYINT},
+      </if>
+      <if test="digitalBetTypeName != null">
+        digital_bet_type_name = #{digitalBetTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="digitalBetFunctionName != null">
+        digital_bet_function_name = #{digitalBetFunctionName,jdbcType=VARCHAR},
+      </if>
+      <if test="ballBetTypeIds != null">
+        ball_bet_type_ids = #{ballBetTypeIds,jdbcType=VARCHAR},
+      </if>
+      <if test="multipleNum != null">
+        multiple_num = #{multipleNum,jdbcType=INTEGER},
+      </if>
+      <if test="extraAdd != null">
+        extra_add = #{extraAdd,jdbcType=TINYINT},
+      </if>
+      <if test="betsNum != null">
+        bets_num = #{betsNum,jdbcType=INTEGER},
+      </if>
+      <if test="winNum != null">
+        win_num = #{winNum,jdbcType=INTEGER},
+      </if>
+      <if test="orderPrice != null">
+        order_price = #{orderPrice,jdbcType=INTEGER},
+      </if>
+      <if test="payType != null">
+        pay_type = #{payType,jdbcType=TINYINT},
+      </if>
+      <if test="payOrderId != null">
+        pay_order_id = #{payOrderId,jdbcType=BIGINT},
+      </if>
+      <if test="payOrderCode != null">
+        pay_order_code = #{payOrderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="agentId != null">
+        agent_id = #{agentId,jdbcType=INTEGER},
+      </if>
+      <if test="shopId != null">
+        shop_id = #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="shopDealStatus != null">
+        shop_deal_status = #{shopDealStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="shopName != null">
+        shop_name = #{shopName,jdbcType=VARCHAR},
+      </if>
+      <if test="shopReceiveTime != null">
+        shop_receive_time = #{shopReceiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shopPrintTime != null">
+        shop_print_time = #{shopPrintTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="appType != null">
+        app_type = #{appType,jdbcType=SMALLINT},
+      </if>
+      <if test="orderStatus != null">
+        order_status = #{orderStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="refundMoney != null">
+        refund_money = #{refundMoney,jdbcType=INTEGER},
+      </if>
+      <if test="refundBeginTime != null">
+        refund_begin_time = #{refundBeginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="refundEndTime != null">
+        refund_end_time = #{refundEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payShopTime != null">
+        pay_shop_time = #{payShopTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payShopMoney != null">
+        pay_shop_money = #{payShopMoney,jdbcType=INTEGER},
+      </if>
+      <if test="payAgentTime != null">
+        pay_agent_time = #{payAgentTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payAgentMoney != null">
+        pay_agent_money = #{payAgentMoney,jdbcType=INTEGER},
+      </if>
+      <if test="agentShareRate != null">
+        agent_share_rate = #{agentShareRate,jdbcType=REAL},
+      </if>
+      <if test="shopShareRate != null">
+        shop_share_rate = #{shopShareRate,jdbcType=REAL},
+      </if>
+      <if test="betRate != null">
+        bet_rate = #{betRate,jdbcType=REAL},
+      </if>
+      <if test="bonus != null">
+        bonus = #{bonus,jdbcType=INTEGER},
+      </if>
+      <if test="winFlag != null">
+        win_flag = #{winFlag,jdbcType=SMALLINT},
+      </if>
+      <if test="wantWinMultipleNum != null">
+        want_win_multiple_num = #{wantWinMultipleNum,jdbcType=DECIMAL},
+      </if>
+      <if test="betPoint != null">
+        bet_point = #{betPoint,jdbcType=REAL},
+      </if>
+      <if test="planAwardTime != null">
+        plan_award_time = #{planAwardTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="maybeWinMoney != null">
+        maybe_win_money = #{maybeWinMoney,jdbcType=INTEGER},
+      </if>
+      <if test="winPayStatus != null">
+        win_pay_status = #{winPayStatus,jdbcType=TINYINT},
+      </if>
+      <if test="winPayTime != null">
+        win_pay_time = #{winPayTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="passType != null">
+        pass_type = #{passType,jdbcType=VARCHAR},
+      </if>
+      <if test="bdwEnable != null">
+        bdw_enable = #{bdwEnable,jdbcType=BIT},
+      </if>
+      <if test="multiBuyFlag != null">
+        multi_buy_flag = #{multiBuyFlag,jdbcType=BIT},
+      </if>
+      <if test="followIssueNum != null">
+        follow_issue_num = #{followIssueNum,jdbcType=INTEGER},
+      </if>
+      <if test="followOrderFlag != null">
+        follow_order_flag = #{followOrderFlag,jdbcType=BIT},
+      </if>
+      <if test="followFlag != null">
+        follow_flag = #{followFlag,jdbcType=BIT},
+      </if>
+      <if test="followLeftIssue != null">
+        follow_left_issue = #{followLeftIssue,jdbcType=TINYINT},
+      </if>
+      <if test="followMoney != null">
+        follow_money = #{followMoney,jdbcType=INTEGER},
+      </if>
+      <if test="followStopFor != null">
+        follow_stop_for = #{followStopFor,jdbcType=INTEGER},
+      </if>
+      <if test="bonusRatio != null">
+        bonus_ratio = #{bonusRatio,jdbcType=DECIMAL},
+      </if>
+      <if test="prizeNo != null">
+        prize_no = #{prizeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="openTime != null">
+        open_time = #{openTime,jdbcType=VARCHAR},
+      </if>
+      <if test="isCancled != null">
+        is_cancled = #{isCancled,jdbcType=SMALLINT},
+      </if>
+      <if test="gainFlag != null">
+        gain_flag = #{gainFlag,jdbcType=BIT},
+      </if>
+      <if test="openFlag != null">
+        open_flag = #{openFlag,jdbcType=BIT},
+      </if>
+      <if test="awardFlag != null">
+        award_flag = #{awardFlag,jdbcType=BIT},
+      </if>
+      <if test="betEndtime != null">
+        bet_endtime = #{betEndtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deliverFlag != null">
+        deliver_flag = #{deliverFlag,jdbcType=BIT},
+      </if>
+      <if test="moneyLostTime != null">
+        money_lost_time = #{moneyLostTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysRemark != null">
+        sys_remark = #{sysRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="shopRemark != null">
+        shop_remark = #{shopRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="payShopOrderCode != null">
+        pay_shop_order_code = #{payShopOrderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="payAgentOrderCode != null">
+        pay_agent_order_code = #{payAgentOrderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="balance != null">
+        balance = #{balance,jdbcType=INTEGER},
+      </if>
+      <if test="winRate != null">
+        win_rate = #{winRate,jdbcType=DECIMAL},
+      </if>
+      <if test="userAccountBefore != null">
+        user_account_before = #{userAccountBefore,jdbcType=INTEGER},
+      </if>
+      <if test="sysOpenTime != null">
+        sys_open_time = #{sysOpenTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysPayFlag != null">
+        sys_pay_flag = #{sysPayFlag,jdbcType=BIT},
+      </if>
+      <if test="actionIp != null">
+        action_ip = #{actionIp,jdbcType=VARCHAR},
+      </if>
+      <if test="winNumberDetail != null">
+        win_number_detail = #{winNumberDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="deliverToShopTime != null">
+        deliver_to_shop_time = #{deliverToShopTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="digitalBetDetail != null">
+        digital_bet_detail = #{digitalBetDetail,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="ballBetDetail != null">
+        ball_bet_detail = #{ballBetDetail,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.lottery.entity.LotteryMainOrder">
+    update lottery_main_order
+    set serialize_id = #{serializeId,jdbcType=VARCHAR},
+      order_code = #{orderCode,jdbcType=VARCHAR},
+      user_plan_code = #{userPlanCode,jdbcType=VARCHAR},
+      order_name = #{orderName,jdbcType=VARCHAR},
+      issue_no = #{issueNo,jdbcType=VARCHAR},
+      bet_no = #{betNo,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=BIGINT},
+      user_phone = #{userPhone,jdbcType=VARCHAR},
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      lottery_type_id = #{lotteryTypeId,jdbcType=INTEGER},
+      lottery_type_name = #{lotteryTypeName,jdbcType=VARCHAR},
+      user_pay_time = #{userPayTime,jdbcType=TIMESTAMP},
+      single_flag = #{singleFlag,jdbcType=BIT},
+      digital_bet_type_id = #{digitalBetTypeId,jdbcType=TINYINT},
+      digital_bet_function_id = #{digitalBetFunctionId,jdbcType=TINYINT},
+      digital_bet_type_name = #{digitalBetTypeName,jdbcType=VARCHAR},
+      digital_bet_function_name = #{digitalBetFunctionName,jdbcType=VARCHAR},
+      ball_bet_type_ids = #{ballBetTypeIds,jdbcType=VARCHAR},
+      multiple_num = #{multipleNum,jdbcType=INTEGER},
+      extra_add = #{extraAdd,jdbcType=TINYINT},
+      bets_num = #{betsNum,jdbcType=INTEGER},
+      win_num = #{winNum,jdbcType=INTEGER},
+      order_price = #{orderPrice,jdbcType=INTEGER},
+      pay_type = #{payType,jdbcType=TINYINT},
+      pay_order_id = #{payOrderId,jdbcType=BIGINT},
+      pay_order_code = #{payOrderCode,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      agent_id = #{agentId,jdbcType=INTEGER},
+      shop_id = #{shopId,jdbcType=INTEGER},
+      shop_deal_status = #{shopDealStatus,jdbcType=SMALLINT},
+      shop_name = #{shopName,jdbcType=VARCHAR},
+      shop_receive_time = #{shopReceiveTime,jdbcType=TIMESTAMP},
+      shop_print_time = #{shopPrintTime,jdbcType=TIMESTAMP},
+      app_type = #{appType,jdbcType=SMALLINT},
+      order_status = #{orderStatus,jdbcType=SMALLINT},
+      refund_money = #{refundMoney,jdbcType=INTEGER},
+      refund_begin_time = #{refundBeginTime,jdbcType=TIMESTAMP},
+      refund_end_time = #{refundEndTime,jdbcType=TIMESTAMP},
+      pay_shop_time = #{payShopTime,jdbcType=TIMESTAMP},
+      pay_shop_money = #{payShopMoney,jdbcType=INTEGER},
+      pay_agent_time = #{payAgentTime,jdbcType=TIMESTAMP},
+      pay_agent_money = #{payAgentMoney,jdbcType=INTEGER},
+      agent_share_rate = #{agentShareRate,jdbcType=REAL},
+      shop_share_rate = #{shopShareRate,jdbcType=REAL},
+      bet_rate = #{betRate,jdbcType=REAL},
+      bonus = #{bonus,jdbcType=INTEGER},
+      win_flag = #{winFlag,jdbcType=SMALLINT},
+      want_win_multiple_num = #{wantWinMultipleNum,jdbcType=DECIMAL},
+      bet_point = #{betPoint,jdbcType=REAL},
+      plan_award_time = #{planAwardTime,jdbcType=TIMESTAMP},
+      maybe_win_money = #{maybeWinMoney,jdbcType=INTEGER},
+      win_pay_status = #{winPayStatus,jdbcType=TINYINT},
+      win_pay_time = #{winPayTime,jdbcType=TIMESTAMP},
+      pass_type = #{passType,jdbcType=VARCHAR},
+      bdw_enable = #{bdwEnable,jdbcType=BIT},
+      multi_buy_flag = #{multiBuyFlag,jdbcType=BIT},
+      follow_issue_num = #{followIssueNum,jdbcType=INTEGER},
+      follow_order_flag = #{followOrderFlag,jdbcType=BIT},
+      follow_flag = #{followFlag,jdbcType=BIT},
+      follow_left_issue = #{followLeftIssue,jdbcType=TINYINT},
+      follow_money = #{followMoney,jdbcType=INTEGER},
+      follow_stop_for = #{followStopFor,jdbcType=INTEGER},
+      bonus_ratio = #{bonusRatio,jdbcType=DECIMAL},
+      prize_no = #{prizeNo,jdbcType=VARCHAR},
+      open_time = #{openTime,jdbcType=VARCHAR},
+      is_cancled = #{isCancled,jdbcType=SMALLINT},
+      gain_flag = #{gainFlag,jdbcType=BIT},
+      open_flag = #{openFlag,jdbcType=BIT},
+      award_flag = #{awardFlag,jdbcType=BIT},
+      bet_endtime = #{betEndtime,jdbcType=TIMESTAMP},
+      deliver_flag = #{deliverFlag,jdbcType=BIT},
+      money_lost_time = #{moneyLostTime,jdbcType=TIMESTAMP},
+      sys_remark = #{sysRemark,jdbcType=VARCHAR},
+      shop_remark = #{shopRemark,jdbcType=VARCHAR},
+      pay_shop_order_code = #{payShopOrderCode,jdbcType=VARCHAR},
+      pay_agent_order_code = #{payAgentOrderCode,jdbcType=VARCHAR},
+      balance = #{balance,jdbcType=INTEGER},
+      win_rate = #{winRate,jdbcType=DECIMAL},
+      user_account_before = #{userAccountBefore,jdbcType=INTEGER},
+      sys_open_time = #{sysOpenTime,jdbcType=TIMESTAMP},
+      sys_pay_flag = #{sysPayFlag,jdbcType=BIT},
+      action_ip = #{actionIp,jdbcType=VARCHAR},
+      win_number_detail = #{winNumberDetail,jdbcType=VARCHAR},
+      deliver_to_shop_time = #{deliverToShopTime,jdbcType=TIMESTAMP},
+      digital_bet_detail = #{digitalBetDetail,jdbcType=LONGVARCHAR},
+      ball_bet_detail = #{ballBetDetail,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lottery.entity.LotteryMainOrder">
+    update lottery_main_order
+    set serialize_id = #{serializeId,jdbcType=VARCHAR},
+      order_code = #{orderCode,jdbcType=VARCHAR},
+      user_plan_code = #{userPlanCode,jdbcType=VARCHAR},
+      order_name = #{orderName,jdbcType=VARCHAR},
+      issue_no = #{issueNo,jdbcType=VARCHAR},
+      bet_no = #{betNo,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=BIGINT},
+      user_phone = #{userPhone,jdbcType=VARCHAR},
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      lottery_type_id = #{lotteryTypeId,jdbcType=INTEGER},
+      lottery_type_name = #{lotteryTypeName,jdbcType=VARCHAR},
+      user_pay_time = #{userPayTime,jdbcType=TIMESTAMP},
+      single_flag = #{singleFlag,jdbcType=BIT},
+      digital_bet_type_id = #{digitalBetTypeId,jdbcType=TINYINT},
+      digital_bet_function_id = #{digitalBetFunctionId,jdbcType=TINYINT},
+      digital_bet_type_name = #{digitalBetTypeName,jdbcType=VARCHAR},
+      digital_bet_function_name = #{digitalBetFunctionName,jdbcType=VARCHAR},
+      ball_bet_type_ids = #{ballBetTypeIds,jdbcType=VARCHAR},
+      multiple_num = #{multipleNum,jdbcType=INTEGER},
+      extra_add = #{extraAdd,jdbcType=TINYINT},
+      bets_num = #{betsNum,jdbcType=INTEGER},
+      win_num = #{winNum,jdbcType=INTEGER},
+      order_price = #{orderPrice,jdbcType=INTEGER},
+      pay_type = #{payType,jdbcType=TINYINT},
+      pay_order_id = #{payOrderId,jdbcType=BIGINT},
+      pay_order_code = #{payOrderCode,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      agent_id = #{agentId,jdbcType=INTEGER},
+      shop_id = #{shopId,jdbcType=INTEGER},
+      shop_deal_status = #{shopDealStatus,jdbcType=SMALLINT},
+      shop_name = #{shopName,jdbcType=VARCHAR},
+      shop_receive_time = #{shopReceiveTime,jdbcType=TIMESTAMP},
+      shop_print_time = #{shopPrintTime,jdbcType=TIMESTAMP},
+      app_type = #{appType,jdbcType=SMALLINT},
+      order_status = #{orderStatus,jdbcType=SMALLINT},
+      refund_money = #{refundMoney,jdbcType=INTEGER},
+      refund_begin_time = #{refundBeginTime,jdbcType=TIMESTAMP},
+      refund_end_time = #{refundEndTime,jdbcType=TIMESTAMP},
+      pay_shop_time = #{payShopTime,jdbcType=TIMESTAMP},
+      pay_shop_money = #{payShopMoney,jdbcType=INTEGER},
+      pay_agent_time = #{payAgentTime,jdbcType=TIMESTAMP},
+      pay_agent_money = #{payAgentMoney,jdbcType=INTEGER},
+      agent_share_rate = #{agentShareRate,jdbcType=REAL},
+      shop_share_rate = #{shopShareRate,jdbcType=REAL},
+      bet_rate = #{betRate,jdbcType=REAL},
+      bonus = #{bonus,jdbcType=INTEGER},
+      win_flag = #{winFlag,jdbcType=SMALLINT},
+      want_win_multiple_num = #{wantWinMultipleNum,jdbcType=DECIMAL},
+      bet_point = #{betPoint,jdbcType=REAL},
+      plan_award_time = #{planAwardTime,jdbcType=TIMESTAMP},
+      maybe_win_money = #{maybeWinMoney,jdbcType=INTEGER},
+      win_pay_status = #{winPayStatus,jdbcType=TINYINT},
+      win_pay_time = #{winPayTime,jdbcType=TIMESTAMP},
+      pass_type = #{passType,jdbcType=VARCHAR},
+      bdw_enable = #{bdwEnable,jdbcType=BIT},
+      multi_buy_flag = #{multiBuyFlag,jdbcType=BIT},
+      follow_issue_num = #{followIssueNum,jdbcType=INTEGER},
+      follow_order_flag = #{followOrderFlag,jdbcType=BIT},
+      follow_flag = #{followFlag,jdbcType=BIT},
+      follow_left_issue = #{followLeftIssue,jdbcType=TINYINT},
+      follow_money = #{followMoney,jdbcType=INTEGER},
+      follow_stop_for = #{followStopFor,jdbcType=INTEGER},
+      bonus_ratio = #{bonusRatio,jdbcType=DECIMAL},
+      prize_no = #{prizeNo,jdbcType=VARCHAR},
+      open_time = #{openTime,jdbcType=VARCHAR},
+      is_cancled = #{isCancled,jdbcType=SMALLINT},
+      gain_flag = #{gainFlag,jdbcType=BIT},
+      open_flag = #{openFlag,jdbcType=BIT},
+      award_flag = #{awardFlag,jdbcType=BIT},
+      bet_endtime = #{betEndtime,jdbcType=TIMESTAMP},
+      deliver_flag = #{deliverFlag,jdbcType=BIT},
+      money_lost_time = #{moneyLostTime,jdbcType=TIMESTAMP},
+      sys_remark = #{sysRemark,jdbcType=VARCHAR},
+      shop_remark = #{shopRemark,jdbcType=VARCHAR},
+      pay_shop_order_code = #{payShopOrderCode,jdbcType=VARCHAR},
+      pay_agent_order_code = #{payAgentOrderCode,jdbcType=VARCHAR},
+      balance = #{balance,jdbcType=INTEGER},
+      win_rate = #{winRate,jdbcType=DECIMAL},
+      user_account_before = #{userAccountBefore,jdbcType=INTEGER},
+      sys_open_time = #{sysOpenTime,jdbcType=TIMESTAMP},
+      sys_pay_flag = #{sysPayFlag,jdbcType=BIT},
+      action_ip = #{actionIp,jdbcType=VARCHAR},
+      win_number_detail = #{winNumberDetail,jdbcType=VARCHAR},
+      deliver_to_shop_time = #{deliverToShopTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

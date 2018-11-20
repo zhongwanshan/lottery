@@ -1,0 +1,2345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lottery.dao.BetMatchbkMapper">
+  <resultMap id="BaseResultMap" type="com.lottery.entity.BetMatchbk">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="mid" jdbcType="VARCHAR" property="mid" />
+    <result column="num" jdbcType="VARCHAR" property="num" />
+    <result column="l_id" jdbcType="VARCHAR" property="lId" />
+    <result column="l_cn" jdbcType="VARCHAR" property="lCn" />
+    <result column="l_cn_abbr" jdbcType="VARCHAR" property="lCnAbbr" />
+    <result column="h_id" jdbcType="VARCHAR" property="hId" />
+    <result column="a_id" jdbcType="VARCHAR" property="aId" />
+    <result column="h_cn" jdbcType="VARCHAR" property="hCn" />
+    <result column="a_cn" jdbcType="VARCHAR" property="aCn" />
+    <result column="h_cn_abbr" jdbcType="VARCHAR" property="hCnAbbr" />
+    <result column="a_cn_abbr" jdbcType="VARCHAR" property="aCnAbbr" />
+    <result column="dtime" jdbcType="TIMESTAMP" property="dtime" />
+    <result column="p_status" jdbcType="VARCHAR" property="pStatus" />
+    <result column="sale_status" jdbcType="VARCHAR" property="saleStatus" />
+    <result column="p_single" jdbcType="VARCHAR" property="pSingle" />
+    <result column="p_goal" jdbcType="VARCHAR" property="pGoal" />
+    <result column="mnl_odds" jdbcType="VARCHAR" property="mnlOdds" />
+    <result column="hdc_odds" jdbcType="VARCHAR" property="hdcOdds" />
+    <result column="wnm_lose" jdbcType="VARCHAR" property="wnmLose" />
+    <result column="wnm_win" jdbcType="VARCHAR" property="wnmWin" />
+    <result column="hilo_odds" jdbcType="VARCHAR" property="hiloOdds" />
+    <result column="h_order" jdbcType="VARCHAR" property="hOrder" />
+    <result column="a_order" jdbcType="VARCHAR" property="aOrder" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="time" jdbcType="VARCHAR" property="time" />
+    <result column="b_a" jdbcType="VARCHAR" property="bA" />
+    <result column="b_h" jdbcType="VARCHAR" property="bH" />
+    <result column="match_status" jdbcType="VARCHAR" property="matchStatus" />
+    <result column="b_rf" jdbcType="VARCHAR" property="bRf" />
+    <result column="m_show" jdbcType="TINYINT" property="mShow" />
+    <result column="mnl_h" jdbcType="DECIMAL" property="mnlH" />
+    <result column="mnl_a" jdbcType="DECIMAL" property="mnlA" />
+    <result column="mnl_status" jdbcType="VARCHAR" property="mnlStatus" />
+    <result column="mnl_single" jdbcType="TINYINT" property="mnlSingle" />
+    <result column="mnl_allup" jdbcType="TINYINT" property="mnlAllup" />
+    <result column="mnl_rq" jdbcType="VARCHAR" property="mnlRq" />
+    <result column="mnl_cbt" jdbcType="TINYINT" property="mnlCbt" />
+    <result column="mnl_int" jdbcType="TINYINT" property="mnlInt" />
+    <result column="mnl_vbt" jdbcType="TINYINT" property="mnlVbt" />
+    <result column="mnl_htrend" jdbcType="DECIMAL" property="mnlHtrend" />
+    <result column="mnl_atrend" jdbcType="DECIMAL" property="mnlAtrend" />
+    <result column="mnl_dtrend" jdbcType="DECIMAL" property="mnlDtrend" />
+    <result column="mnl_ltrend" jdbcType="DECIMAL" property="mnlLtrend" />
+    <result column="hdc_h" jdbcType="DECIMAL" property="hdcH" />
+    <result column="hdc_a" jdbcType="DECIMAL" property="hdcA" />
+    <result column="hdc_rq" jdbcType="VARCHAR" property="hdcRq" />
+    <result column="hdc_type" jdbcType="VARCHAR" property="hdcType" />
+    <result column="hdc_id" jdbcType="VARCHAR" property="hdcId" />
+    <result column="hdc_status" jdbcType="VARCHAR" property="hdcStatus" />
+    <result column="hdc_single" jdbcType="TINYINT" property="hdcSingle" />
+    <result column="hdc_allup" jdbcType="TINYINT" property="hdcAllup" />
+    <result column="hdc_cbt" jdbcType="TINYINT" property="hdcCbt" />
+    <result column="hdc_int" jdbcType="TINYINT" property="hdcInt" />
+    <result column="hdc_vbt" jdbcType="TINYINT" property="hdcVbt" />
+    <result column="hdc_htrend" jdbcType="DECIMAL" property="hdcHtrend" />
+    <result column="hdc_atrend" jdbcType="DECIMAL" property="hdcAtrend" />
+    <result column="hdc_dtrend" jdbcType="DECIMAL" property="hdcDtrend" />
+    <result column="hdc_ltrend" jdbcType="DECIMAL" property="hdcLtrend" />
+    <result column="wnm_w1" jdbcType="DECIMAL" property="wnmW1" />
+    <result column="wnm_w2" jdbcType="DECIMAL" property="wnmW2" />
+    <result column="wnm_w3" jdbcType="DECIMAL" property="wnmW3" />
+    <result column="wnm_w4" jdbcType="DECIMAL" property="wnmW4" />
+    <result column="wnm_w5" jdbcType="DECIMAL" property="wnmW5" />
+    <result column="wnm_w6" jdbcType="DECIMAL" property="wnmW6" />
+    <result column="wnm_l1" jdbcType="DECIMAL" property="wnmL1" />
+    <result column="wnm_l2" jdbcType="DECIMAL" property="wnmL2" />
+    <result column="wnm_l3" jdbcType="DECIMAL" property="wnmL3" />
+    <result column="wnm_l4" jdbcType="DECIMAL" property="wnmL4" />
+    <result column="wnm_l5" jdbcType="DECIMAL" property="wnmL5" />
+    <result column="wnm_l6" jdbcType="DECIMAL" property="wnmL6" />
+    <result column="wnm_type" jdbcType="VARCHAR" property="wnmType" />
+    <result column="wnm_id" jdbcType="VARCHAR" property="wnmId" />
+    <result column="wnm_status" jdbcType="VARCHAR" property="wnmStatus" />
+    <result column="wnm_single" jdbcType="TINYINT" property="wnmSingle" />
+    <result column="wnm_allup" jdbcType="TINYINT" property="wnmAllup" />
+    <result column="wnm_rq" jdbcType="VARCHAR" property="wnmRq" />
+    <result column="wnm_cbt" jdbcType="TINYINT" property="wnmCbt" />
+    <result column="wnm_int" jdbcType="TINYINT" property="wnmInt" />
+    <result column="wnm_vbt" jdbcType="TINYINT" property="wnmVbt" />
+    <result column="wnm_htrend" jdbcType="DECIMAL" property="wnmHtrend" />
+    <result column="wnm_atrend" jdbcType="DECIMAL" property="wnmAtrend" />
+    <result column="wnm_dtrend" jdbcType="DECIMAL" property="wnmDtrend" />
+    <result column="wnm_ltrend" jdbcType="DECIMAL" property="wnmLtrend" />
+    <result column="hilo_h" jdbcType="DECIMAL" property="hiloH" />
+    <result column="hilo_l" jdbcType="DECIMAL" property="hiloL" />
+    <result column="hilo_type" jdbcType="VARCHAR" property="hiloType" />
+    <result column="hilo_id" jdbcType="VARCHAR" property="hiloId" />
+    <result column="hilo_status" jdbcType="VARCHAR" property="hiloStatus" />
+    <result column="hilo_single" jdbcType="TINYINT" property="hiloSingle" />
+    <result column="hilo_allup" jdbcType="TINYINT" property="hiloAllup" />
+    <result column="hilo_rq" jdbcType="VARCHAR" property="hiloRq" />
+    <result column="hilo_cbt" jdbcType="TINYINT" property="hiloCbt" />
+    <result column="hilo_int" jdbcType="TINYINT" property="hiloInt" />
+    <result column="hilo_vbt" jdbcType="TINYINT" property="hiloVbt" />
+    <result column="hilo_htrend" jdbcType="DECIMAL" property="hiloHtrend" />
+    <result column="hilo_atrend" jdbcType="DECIMAL" property="hiloAtrend" />
+    <result column="hilo_dtrend" jdbcType="DECIMAL" property="hiloDtrend" />
+    <result column="hilo_ltrend" jdbcType="DECIMAL" property="hiloLtrend" />
+    <result column="up_score" jdbcType="VARCHAR" property="upScore" />
+    <result column="now_score" jdbcType="VARCHAR" property="nowScore" />
+    <result column="final_score" jdbcType="VARCHAR" property="finalScore" />
+    <result column="m_stopup" jdbcType="TINYINT" property="mStopup" />
+    <result column="m_matchtime" jdbcType="VARCHAR" property="mMatchtime" />
+    <result column="m_hredcard" jdbcType="TINYINT" property="mHredcard" />
+    <result column="m_gredcard" jdbcType="TINYINT" property="mGredcard" />
+    <result column="h_half_score" jdbcType="INTEGER" property="hHalfScore" />
+    <result column="h_full_score" jdbcType="INTEGER" property="hFullScore" />
+    <result column="a_half_score" jdbcType="INTEGER" property="aHalfScore" />
+    <result column="a_full_score" jdbcType="INTEGER" property="aFullScore" />
+    <result column="extra_score" jdbcType="VARCHAR" property="extraScore" />
+    <result column="scorecheck" jdbcType="INTEGER" property="scorecheck" />
+    <result column="b_color" jdbcType="VARCHAR" property="bColor" />
+    <result column="weather" jdbcType="VARCHAR" property="weather" />
+    <result column="weather_city" jdbcType="VARCHAR" property="weatherCity" />
+    <result column="temperature" jdbcType="VARCHAR" property="temperature" />
+    <result column="last_update_time" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="num_name" jdbcType="VARCHAR" property="numName" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.lottery.entity.BetMatchbk">
+    <result column="match_info" jdbcType="LONGVARCHAR" property="matchInfo" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, mid, num, l_id, l_cn, l_cn_abbr, h_id, a_id, h_cn, a_cn, h_cn_abbr, a_cn_abbr, 
+    dtime, p_status, sale_status, p_single, p_goal, mnl_odds, hdc_odds, wnm_lose, wnm_win, 
+    hilo_odds, h_order, a_order, date, time, b_a, b_h, match_status, b_rf, m_show, mnl_h, 
+    mnl_a, mnl_status, mnl_single, mnl_allup, mnl_rq, mnl_cbt, mnl_int, mnl_vbt, mnl_htrend, 
+    mnl_atrend, mnl_dtrend, mnl_ltrend, hdc_h, hdc_a, hdc_rq, hdc_type, hdc_id, hdc_status, 
+    hdc_single, hdc_allup, hdc_cbt, hdc_int, hdc_vbt, hdc_htrend, hdc_atrend, hdc_dtrend, 
+    hdc_ltrend, wnm_w1, wnm_w2, wnm_w3, wnm_w4, wnm_w5, wnm_w6, wnm_l1, wnm_l2, wnm_l3, 
+    wnm_l4, wnm_l5, wnm_l6, wnm_type, wnm_id, wnm_status, wnm_single, wnm_allup, wnm_rq, 
+    wnm_cbt, wnm_int, wnm_vbt, wnm_htrend, wnm_atrend, wnm_dtrend, wnm_ltrend, hilo_h, 
+    hilo_l, hilo_type, hilo_id, hilo_status, hilo_single, hilo_allup, hilo_rq, hilo_cbt, 
+    hilo_int, hilo_vbt, hilo_htrend, hilo_atrend, hilo_dtrend, hilo_ltrend, up_score, 
+    now_score, final_score, m_stopup, m_matchtime, m_hredcard, m_gredcard, h_half_score, 
+    h_full_score, a_half_score, a_full_score, extra_score, scorecheck, b_color, weather, 
+    weather_city, temperature, last_update_time, create_time, num_name
+  </sql>
+  <sql id="Blob_Column_List">
+    match_info
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.lottery.entity.BetMatchbkExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from bet_matchbk
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.lottery.entity.BetMatchbkExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from bet_matchbk
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from bet_matchbk
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  
+  
+  
+  <!-- 根据条件查询数据 -->
+	<select id="searchBetMatchbkByCondition" parameterType="com.lottery.entity.BetMatchbk"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from bet_matchbk where 1=1
+		<if test="mid != null and mid != ''">
+			and mid LIKE CONCAT('%',#{mid},'%')
+		</if>
+		order by id desc limit #{pageNum},10
+	</select>
+
+	<!-- 根据条件查询总记录数 -->
+	<select id="searchBetMatchbkCountByCondition" parameterType="com.lottery.entity.BetMatchbk"
+		resultType="java.lang.Integer">
+		select
+		count(*)
+		from bet_matchbk where 1=1
+		<if test="mid != null and mid != ''">
+			and mid LIKE CONCAT('%',#{mid},'%')
+		</if>
+	</select> 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from bet_matchbk
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.lottery.entity.BetMatchbkExample">
+    delete from bet_matchbk
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.lottery.entity.BetMatchbk">
+    insert into bet_matchbk (id, mid, num, 
+      l_id, l_cn, l_cn_abbr, 
+      h_id, a_id, h_cn, a_cn, 
+      h_cn_abbr, a_cn_abbr, dtime, 
+      p_status, sale_status, p_single, 
+      p_goal, mnl_odds, hdc_odds, 
+      wnm_lose, wnm_win, hilo_odds, 
+      h_order, a_order, date, 
+      time, b_a, b_h, match_status, 
+      b_rf, m_show, mnl_h, mnl_a, 
+      mnl_status, mnl_single, mnl_allup, 
+      mnl_rq, mnl_cbt, mnl_int, 
+      mnl_vbt, mnl_htrend, mnl_atrend, 
+      mnl_dtrend, mnl_ltrend, hdc_h, 
+      hdc_a, hdc_rq, hdc_type, 
+      hdc_id, hdc_status, hdc_single, 
+      hdc_allup, hdc_cbt, hdc_int, 
+      hdc_vbt, hdc_htrend, hdc_atrend, 
+      hdc_dtrend, hdc_ltrend, wnm_w1, 
+      wnm_w2, wnm_w3, wnm_w4, 
+      wnm_w5, wnm_w6, wnm_l1, 
+      wnm_l2, wnm_l3, wnm_l4, 
+      wnm_l5, wnm_l6, wnm_type, 
+      wnm_id, wnm_status, wnm_single, 
+      wnm_allup, wnm_rq, wnm_cbt, 
+      wnm_int, wnm_vbt, wnm_htrend, 
+      wnm_atrend, wnm_dtrend, wnm_ltrend, 
+      hilo_h, hilo_l, hilo_type, 
+      hilo_id, hilo_status, hilo_single, 
+      hilo_allup, hilo_rq, hilo_cbt, 
+      hilo_int, hilo_vbt, hilo_htrend, 
+      hilo_atrend, hilo_dtrend, hilo_ltrend, 
+      up_score, now_score, final_score, 
+      m_stopup, m_matchtime, m_hredcard, 
+      m_gredcard, h_half_score, h_full_score, 
+      a_half_score, a_full_score, extra_score, 
+      scorecheck, b_color, weather, 
+      weather_city, temperature, last_update_time, 
+      create_time, num_name, match_info
+      )
+    values (#{id,jdbcType=INTEGER}, #{mid,jdbcType=VARCHAR}, #{num,jdbcType=VARCHAR}, 
+      #{lId,jdbcType=VARCHAR}, #{lCn,jdbcType=VARCHAR}, #{lCnAbbr,jdbcType=VARCHAR}, 
+      #{hId,jdbcType=VARCHAR}, #{aId,jdbcType=VARCHAR}, #{hCn,jdbcType=VARCHAR}, #{aCn,jdbcType=VARCHAR}, 
+      #{hCnAbbr,jdbcType=VARCHAR}, #{aCnAbbr,jdbcType=VARCHAR}, #{dtime,jdbcType=TIMESTAMP}, 
+      #{pStatus,jdbcType=VARCHAR}, #{saleStatus,jdbcType=VARCHAR}, #{pSingle,jdbcType=VARCHAR}, 
+      #{pGoal,jdbcType=VARCHAR}, #{mnlOdds,jdbcType=VARCHAR}, #{hdcOdds,jdbcType=VARCHAR}, 
+      #{wnmLose,jdbcType=VARCHAR}, #{wnmWin,jdbcType=VARCHAR}, #{hiloOdds,jdbcType=VARCHAR}, 
+      #{hOrder,jdbcType=VARCHAR}, #{aOrder,jdbcType=VARCHAR}, #{date,jdbcType=VARCHAR}, 
+      #{time,jdbcType=VARCHAR}, #{bA,jdbcType=VARCHAR}, #{bH,jdbcType=VARCHAR}, #{matchStatus,jdbcType=VARCHAR}, 
+      #{bRf,jdbcType=VARCHAR}, #{mShow,jdbcType=TINYINT}, #{mnlH,jdbcType=DECIMAL}, #{mnlA,jdbcType=DECIMAL}, 
+      #{mnlStatus,jdbcType=VARCHAR}, #{mnlSingle,jdbcType=TINYINT}, #{mnlAllup,jdbcType=TINYINT}, 
+      #{mnlRq,jdbcType=VARCHAR}, #{mnlCbt,jdbcType=TINYINT}, #{mnlInt,jdbcType=TINYINT}, 
+      #{mnlVbt,jdbcType=TINYINT}, #{mnlHtrend,jdbcType=DECIMAL}, #{mnlAtrend,jdbcType=DECIMAL}, 
+      #{mnlDtrend,jdbcType=DECIMAL}, #{mnlLtrend,jdbcType=DECIMAL}, #{hdcH,jdbcType=DECIMAL}, 
+      #{hdcA,jdbcType=DECIMAL}, #{hdcRq,jdbcType=VARCHAR}, #{hdcType,jdbcType=VARCHAR}, 
+      #{hdcId,jdbcType=VARCHAR}, #{hdcStatus,jdbcType=VARCHAR}, #{hdcSingle,jdbcType=TINYINT}, 
+      #{hdcAllup,jdbcType=TINYINT}, #{hdcCbt,jdbcType=TINYINT}, #{hdcInt,jdbcType=TINYINT}, 
+      #{hdcVbt,jdbcType=TINYINT}, #{hdcHtrend,jdbcType=DECIMAL}, #{hdcAtrend,jdbcType=DECIMAL}, 
+      #{hdcDtrend,jdbcType=DECIMAL}, #{hdcLtrend,jdbcType=DECIMAL}, #{wnmW1,jdbcType=DECIMAL}, 
+      #{wnmW2,jdbcType=DECIMAL}, #{wnmW3,jdbcType=DECIMAL}, #{wnmW4,jdbcType=DECIMAL}, 
+      #{wnmW5,jdbcType=DECIMAL}, #{wnmW6,jdbcType=DECIMAL}, #{wnmL1,jdbcType=DECIMAL}, 
+      #{wnmL2,jdbcType=DECIMAL}, #{wnmL3,jdbcType=DECIMAL}, #{wnmL4,jdbcType=DECIMAL}, 
+      #{wnmL5,jdbcType=DECIMAL}, #{wnmL6,jdbcType=DECIMAL}, #{wnmType,jdbcType=VARCHAR}, 
+      #{wnmId,jdbcType=VARCHAR}, #{wnmStatus,jdbcType=VARCHAR}, #{wnmSingle,jdbcType=TINYINT}, 
+      #{wnmAllup,jdbcType=TINYINT}, #{wnmRq,jdbcType=VARCHAR}, #{wnmCbt,jdbcType=TINYINT}, 
+      #{wnmInt,jdbcType=TINYINT}, #{wnmVbt,jdbcType=TINYINT}, #{wnmHtrend,jdbcType=DECIMAL}, 
+      #{wnmAtrend,jdbcType=DECIMAL}, #{wnmDtrend,jdbcType=DECIMAL}, #{wnmLtrend,jdbcType=DECIMAL}, 
+      #{hiloH,jdbcType=DECIMAL}, #{hiloL,jdbcType=DECIMAL}, #{hiloType,jdbcType=VARCHAR}, 
+      #{hiloId,jdbcType=VARCHAR}, #{hiloStatus,jdbcType=VARCHAR}, #{hiloSingle,jdbcType=TINYINT}, 
+      #{hiloAllup,jdbcType=TINYINT}, #{hiloRq,jdbcType=VARCHAR}, #{hiloCbt,jdbcType=TINYINT}, 
+      #{hiloInt,jdbcType=TINYINT}, #{hiloVbt,jdbcType=TINYINT}, #{hiloHtrend,jdbcType=DECIMAL}, 
+      #{hiloAtrend,jdbcType=DECIMAL}, #{hiloDtrend,jdbcType=DECIMAL}, #{hiloLtrend,jdbcType=DECIMAL}, 
+      #{upScore,jdbcType=VARCHAR}, #{nowScore,jdbcType=VARCHAR}, #{finalScore,jdbcType=VARCHAR}, 
+      #{mStopup,jdbcType=TINYINT}, #{mMatchtime,jdbcType=VARCHAR}, #{mHredcard,jdbcType=TINYINT}, 
+      #{mGredcard,jdbcType=TINYINT}, #{hHalfScore,jdbcType=INTEGER}, #{hFullScore,jdbcType=INTEGER}, 
+      #{aHalfScore,jdbcType=INTEGER}, #{aFullScore,jdbcType=INTEGER}, #{extraScore,jdbcType=VARCHAR}, 
+      #{scorecheck,jdbcType=INTEGER}, #{bColor,jdbcType=VARCHAR}, #{weather,jdbcType=VARCHAR}, 
+      #{weatherCity,jdbcType=VARCHAR}, #{temperature,jdbcType=VARCHAR}, #{lastUpdateTime,jdbcType=TIMESTAMP}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{numName,jdbcType=VARCHAR}, #{matchInfo,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lottery.entity.BetMatchbk">
+    insert into bet_matchbk
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="mid != null">
+        mid,
+      </if>
+      <if test="num != null">
+        num,
+      </if>
+      <if test="lId != null">
+        l_id,
+      </if>
+      <if test="lCn != null">
+        l_cn,
+      </if>
+      <if test="lCnAbbr != null">
+        l_cn_abbr,
+      </if>
+      <if test="hId != null">
+        h_id,
+      </if>
+      <if test="aId != null">
+        a_id,
+      </if>
+      <if test="hCn != null">
+        h_cn,
+      </if>
+      <if test="aCn != null">
+        a_cn,
+      </if>
+      <if test="hCnAbbr != null">
+        h_cn_abbr,
+      </if>
+      <if test="aCnAbbr != null">
+        a_cn_abbr,
+      </if>
+      <if test="dtime != null">
+        dtime,
+      </if>
+      <if test="pStatus != null">
+        p_status,
+      </if>
+      <if test="saleStatus != null">
+        sale_status,
+      </if>
+      <if test="pSingle != null">
+        p_single,
+      </if>
+      <if test="pGoal != null">
+        p_goal,
+      </if>
+      <if test="mnlOdds != null">
+        mnl_odds,
+      </if>
+      <if test="hdcOdds != null">
+        hdc_odds,
+      </if>
+      <if test="wnmLose != null">
+        wnm_lose,
+      </if>
+      <if test="wnmWin != null">
+        wnm_win,
+      </if>
+      <if test="hiloOdds != null">
+        hilo_odds,
+      </if>
+      <if test="hOrder != null">
+        h_order,
+      </if>
+      <if test="aOrder != null">
+        a_order,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+      <if test="bA != null">
+        b_a,
+      </if>
+      <if test="bH != null">
+        b_h,
+      </if>
+      <if test="matchStatus != null">
+        match_status,
+      </if>
+      <if test="bRf != null">
+        b_rf,
+      </if>
+      <if test="mShow != null">
+        m_show,
+      </if>
+      <if test="mnlH != null">
+        mnl_h,
+      </if>
+      <if test="mnlA != null">
+        mnl_a,
+      </if>
+      <if test="mnlStatus != null">
+        mnl_status,
+      </if>
+      <if test="mnlSingle != null">
+        mnl_single,
+      </if>
+      <if test="mnlAllup != null">
+        mnl_allup,
+      </if>
+      <if test="mnlRq != null">
+        mnl_rq,
+      </if>
+      <if test="mnlCbt != null">
+        mnl_cbt,
+      </if>
+      <if test="mnlInt != null">
+        mnl_int,
+      </if>
+      <if test="mnlVbt != null">
+        mnl_vbt,
+      </if>
+      <if test="mnlHtrend != null">
+        mnl_htrend,
+      </if>
+      <if test="mnlAtrend != null">
+        mnl_atrend,
+      </if>
+      <if test="mnlDtrend != null">
+        mnl_dtrend,
+      </if>
+      <if test="mnlLtrend != null">
+        mnl_ltrend,
+      </if>
+      <if test="hdcH != null">
+        hdc_h,
+      </if>
+      <if test="hdcA != null">
+        hdc_a,
+      </if>
+      <if test="hdcRq != null">
+        hdc_rq,
+      </if>
+      <if test="hdcType != null">
+        hdc_type,
+      </if>
+      <if test="hdcId != null">
+        hdc_id,
+      </if>
+      <if test="hdcStatus != null">
+        hdc_status,
+      </if>
+      <if test="hdcSingle != null">
+        hdc_single,
+      </if>
+      <if test="hdcAllup != null">
+        hdc_allup,
+      </if>
+      <if test="hdcCbt != null">
+        hdc_cbt,
+      </if>
+      <if test="hdcInt != null">
+        hdc_int,
+      </if>
+      <if test="hdcVbt != null">
+        hdc_vbt,
+      </if>
+      <if test="hdcHtrend != null">
+        hdc_htrend,
+      </if>
+      <if test="hdcAtrend != null">
+        hdc_atrend,
+      </if>
+      <if test="hdcDtrend != null">
+        hdc_dtrend,
+      </if>
+      <if test="hdcLtrend != null">
+        hdc_ltrend,
+      </if>
+      <if test="wnmW1 != null">
+        wnm_w1,
+      </if>
+      <if test="wnmW2 != null">
+        wnm_w2,
+      </if>
+      <if test="wnmW3 != null">
+        wnm_w3,
+      </if>
+      <if test="wnmW4 != null">
+        wnm_w4,
+      </if>
+      <if test="wnmW5 != null">
+        wnm_w5,
+      </if>
+      <if test="wnmW6 != null">
+        wnm_w6,
+      </if>
+      <if test="wnmL1 != null">
+        wnm_l1,
+      </if>
+      <if test="wnmL2 != null">
+        wnm_l2,
+      </if>
+      <if test="wnmL3 != null">
+        wnm_l3,
+      </if>
+      <if test="wnmL4 != null">
+        wnm_l4,
+      </if>
+      <if test="wnmL5 != null">
+        wnm_l5,
+      </if>
+      <if test="wnmL6 != null">
+        wnm_l6,
+      </if>
+      <if test="wnmType != null">
+        wnm_type,
+      </if>
+      <if test="wnmId != null">
+        wnm_id,
+      </if>
+      <if test="wnmStatus != null">
+        wnm_status,
+      </if>
+      <if test="wnmSingle != null">
+        wnm_single,
+      </if>
+      <if test="wnmAllup != null">
+        wnm_allup,
+      </if>
+      <if test="wnmRq != null">
+        wnm_rq,
+      </if>
+      <if test="wnmCbt != null">
+        wnm_cbt,
+      </if>
+      <if test="wnmInt != null">
+        wnm_int,
+      </if>
+      <if test="wnmVbt != null">
+        wnm_vbt,
+      </if>
+      <if test="wnmHtrend != null">
+        wnm_htrend,
+      </if>
+      <if test="wnmAtrend != null">
+        wnm_atrend,
+      </if>
+      <if test="wnmDtrend != null">
+        wnm_dtrend,
+      </if>
+      <if test="wnmLtrend != null">
+        wnm_ltrend,
+      </if>
+      <if test="hiloH != null">
+        hilo_h,
+      </if>
+      <if test="hiloL != null">
+        hilo_l,
+      </if>
+      <if test="hiloType != null">
+        hilo_type,
+      </if>
+      <if test="hiloId != null">
+        hilo_id,
+      </if>
+      <if test="hiloStatus != null">
+        hilo_status,
+      </if>
+      <if test="hiloSingle != null">
+        hilo_single,
+      </if>
+      <if test="hiloAllup != null">
+        hilo_allup,
+      </if>
+      <if test="hiloRq != null">
+        hilo_rq,
+      </if>
+      <if test="hiloCbt != null">
+        hilo_cbt,
+      </if>
+      <if test="hiloInt != null">
+        hilo_int,
+      </if>
+      <if test="hiloVbt != null">
+        hilo_vbt,
+      </if>
+      <if test="hiloHtrend != null">
+        hilo_htrend,
+      </if>
+      <if test="hiloAtrend != null">
+        hilo_atrend,
+      </if>
+      <if test="hiloDtrend != null">
+        hilo_dtrend,
+      </if>
+      <if test="hiloLtrend != null">
+        hilo_ltrend,
+      </if>
+      <if test="upScore != null">
+        up_score,
+      </if>
+      <if test="nowScore != null">
+        now_score,
+      </if>
+      <if test="finalScore != null">
+        final_score,
+      </if>
+      <if test="mStopup != null">
+        m_stopup,
+      </if>
+      <if test="mMatchtime != null">
+        m_matchtime,
+      </if>
+      <if test="mHredcard != null">
+        m_hredcard,
+      </if>
+      <if test="mGredcard != null">
+        m_gredcard,
+      </if>
+      <if test="hHalfScore != null">
+        h_half_score,
+      </if>
+      <if test="hFullScore != null">
+        h_full_score,
+      </if>
+      <if test="aHalfScore != null">
+        a_half_score,
+      </if>
+      <if test="aFullScore != null">
+        a_full_score,
+      </if>
+      <if test="extraScore != null">
+        extra_score,
+      </if>
+      <if test="scorecheck != null">
+        scorecheck,
+      </if>
+      <if test="bColor != null">
+        b_color,
+      </if>
+      <if test="weather != null">
+        weather,
+      </if>
+      <if test="weatherCity != null">
+        weather_city,
+      </if>
+      <if test="temperature != null">
+        temperature,
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="numName != null">
+        num_name,
+      </if>
+      <if test="matchInfo != null">
+        match_info,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="mid != null">
+        #{mid,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null">
+        #{num,jdbcType=VARCHAR},
+      </if>
+      <if test="lId != null">
+        #{lId,jdbcType=VARCHAR},
+      </if>
+      <if test="lCn != null">
+        #{lCn,jdbcType=VARCHAR},
+      </if>
+      <if test="lCnAbbr != null">
+        #{lCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="hId != null">
+        #{hId,jdbcType=VARCHAR},
+      </if>
+      <if test="aId != null">
+        #{aId,jdbcType=VARCHAR},
+      </if>
+      <if test="hCn != null">
+        #{hCn,jdbcType=VARCHAR},
+      </if>
+      <if test="aCn != null">
+        #{aCn,jdbcType=VARCHAR},
+      </if>
+      <if test="hCnAbbr != null">
+        #{hCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="aCnAbbr != null">
+        #{aCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="dtime != null">
+        #{dtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pStatus != null">
+        #{pStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="saleStatus != null">
+        #{saleStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="pSingle != null">
+        #{pSingle,jdbcType=VARCHAR},
+      </if>
+      <if test="pGoal != null">
+        #{pGoal,jdbcType=VARCHAR},
+      </if>
+      <if test="mnlOdds != null">
+        #{mnlOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="hdcOdds != null">
+        #{hdcOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="wnmLose != null">
+        #{wnmLose,jdbcType=VARCHAR},
+      </if>
+      <if test="wnmWin != null">
+        #{wnmWin,jdbcType=VARCHAR},
+      </if>
+      <if test="hiloOdds != null">
+        #{hiloOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="hOrder != null">
+        #{hOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="aOrder != null">
+        #{aOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="bA != null">
+        #{bA,jdbcType=VARCHAR},
+      </if>
+      <if test="bH != null">
+        #{bH,jdbcType=VARCHAR},
+      </if>
+      <if test="matchStatus != null">
+        #{matchStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="bRf != null">
+        #{bRf,jdbcType=VARCHAR},
+      </if>
+      <if test="mShow != null">
+        #{mShow,jdbcType=TINYINT},
+      </if>
+      <if test="mnlH != null">
+        #{mnlH,jdbcType=DECIMAL},
+      </if>
+      <if test="mnlA != null">
+        #{mnlA,jdbcType=DECIMAL},
+      </if>
+      <if test="mnlStatus != null">
+        #{mnlStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="mnlSingle != null">
+        #{mnlSingle,jdbcType=TINYINT},
+      </if>
+      <if test="mnlAllup != null">
+        #{mnlAllup,jdbcType=TINYINT},
+      </if>
+      <if test="mnlRq != null">
+        #{mnlRq,jdbcType=VARCHAR},
+      </if>
+      <if test="mnlCbt != null">
+        #{mnlCbt,jdbcType=TINYINT},
+      </if>
+      <if test="mnlInt != null">
+        #{mnlInt,jdbcType=TINYINT},
+      </if>
+      <if test="mnlVbt != null">
+        #{mnlVbt,jdbcType=TINYINT},
+      </if>
+      <if test="mnlHtrend != null">
+        #{mnlHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="mnlAtrend != null">
+        #{mnlAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="mnlDtrend != null">
+        #{mnlDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="mnlLtrend != null">
+        #{mnlLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hdcH != null">
+        #{hdcH,jdbcType=DECIMAL},
+      </if>
+      <if test="hdcA != null">
+        #{hdcA,jdbcType=DECIMAL},
+      </if>
+      <if test="hdcRq != null">
+        #{hdcRq,jdbcType=VARCHAR},
+      </if>
+      <if test="hdcType != null">
+        #{hdcType,jdbcType=VARCHAR},
+      </if>
+      <if test="hdcId != null">
+        #{hdcId,jdbcType=VARCHAR},
+      </if>
+      <if test="hdcStatus != null">
+        #{hdcStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="hdcSingle != null">
+        #{hdcSingle,jdbcType=TINYINT},
+      </if>
+      <if test="hdcAllup != null">
+        #{hdcAllup,jdbcType=TINYINT},
+      </if>
+      <if test="hdcCbt != null">
+        #{hdcCbt,jdbcType=TINYINT},
+      </if>
+      <if test="hdcInt != null">
+        #{hdcInt,jdbcType=TINYINT},
+      </if>
+      <if test="hdcVbt != null">
+        #{hdcVbt,jdbcType=TINYINT},
+      </if>
+      <if test="hdcHtrend != null">
+        #{hdcHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hdcAtrend != null">
+        #{hdcAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hdcDtrend != null">
+        #{hdcDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hdcLtrend != null">
+        #{hdcLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmW1 != null">
+        #{wnmW1,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmW2 != null">
+        #{wnmW2,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmW3 != null">
+        #{wnmW3,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmW4 != null">
+        #{wnmW4,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmW5 != null">
+        #{wnmW5,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmW6 != null">
+        #{wnmW6,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmL1 != null">
+        #{wnmL1,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmL2 != null">
+        #{wnmL2,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmL3 != null">
+        #{wnmL3,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmL4 != null">
+        #{wnmL4,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmL5 != null">
+        #{wnmL5,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmL6 != null">
+        #{wnmL6,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmType != null">
+        #{wnmType,jdbcType=VARCHAR},
+      </if>
+      <if test="wnmId != null">
+        #{wnmId,jdbcType=VARCHAR},
+      </if>
+      <if test="wnmStatus != null">
+        #{wnmStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="wnmSingle != null">
+        #{wnmSingle,jdbcType=TINYINT},
+      </if>
+      <if test="wnmAllup != null">
+        #{wnmAllup,jdbcType=TINYINT},
+      </if>
+      <if test="wnmRq != null">
+        #{wnmRq,jdbcType=VARCHAR},
+      </if>
+      <if test="wnmCbt != null">
+        #{wnmCbt,jdbcType=TINYINT},
+      </if>
+      <if test="wnmInt != null">
+        #{wnmInt,jdbcType=TINYINT},
+      </if>
+      <if test="wnmVbt != null">
+        #{wnmVbt,jdbcType=TINYINT},
+      </if>
+      <if test="wnmHtrend != null">
+        #{wnmHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmAtrend != null">
+        #{wnmAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmDtrend != null">
+        #{wnmDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmLtrend != null">
+        #{wnmLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hiloH != null">
+        #{hiloH,jdbcType=DECIMAL},
+      </if>
+      <if test="hiloL != null">
+        #{hiloL,jdbcType=DECIMAL},
+      </if>
+      <if test="hiloType != null">
+        #{hiloType,jdbcType=VARCHAR},
+      </if>
+      <if test="hiloId != null">
+        #{hiloId,jdbcType=VARCHAR},
+      </if>
+      <if test="hiloStatus != null">
+        #{hiloStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="hiloSingle != null">
+        #{hiloSingle,jdbcType=TINYINT},
+      </if>
+      <if test="hiloAllup != null">
+        #{hiloAllup,jdbcType=TINYINT},
+      </if>
+      <if test="hiloRq != null">
+        #{hiloRq,jdbcType=VARCHAR},
+      </if>
+      <if test="hiloCbt != null">
+        #{hiloCbt,jdbcType=TINYINT},
+      </if>
+      <if test="hiloInt != null">
+        #{hiloInt,jdbcType=TINYINT},
+      </if>
+      <if test="hiloVbt != null">
+        #{hiloVbt,jdbcType=TINYINT},
+      </if>
+      <if test="hiloHtrend != null">
+        #{hiloHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hiloAtrend != null">
+        #{hiloAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hiloDtrend != null">
+        #{hiloDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hiloLtrend != null">
+        #{hiloLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="upScore != null">
+        #{upScore,jdbcType=VARCHAR},
+      </if>
+      <if test="nowScore != null">
+        #{nowScore,jdbcType=VARCHAR},
+      </if>
+      <if test="finalScore != null">
+        #{finalScore,jdbcType=VARCHAR},
+      </if>
+      <if test="mStopup != null">
+        #{mStopup,jdbcType=TINYINT},
+      </if>
+      <if test="mMatchtime != null">
+        #{mMatchtime,jdbcType=VARCHAR},
+      </if>
+      <if test="mHredcard != null">
+        #{mHredcard,jdbcType=TINYINT},
+      </if>
+      <if test="mGredcard != null">
+        #{mGredcard,jdbcType=TINYINT},
+      </if>
+      <if test="hHalfScore != null">
+        #{hHalfScore,jdbcType=INTEGER},
+      </if>
+      <if test="hFullScore != null">
+        #{hFullScore,jdbcType=INTEGER},
+      </if>
+      <if test="aHalfScore != null">
+        #{aHalfScore,jdbcType=INTEGER},
+      </if>
+      <if test="aFullScore != null">
+        #{aFullScore,jdbcType=INTEGER},
+      </if>
+      <if test="extraScore != null">
+        #{extraScore,jdbcType=VARCHAR},
+      </if>
+      <if test="scorecheck != null">
+        #{scorecheck,jdbcType=INTEGER},
+      </if>
+      <if test="bColor != null">
+        #{bColor,jdbcType=VARCHAR},
+      </if>
+      <if test="weather != null">
+        #{weather,jdbcType=VARCHAR},
+      </if>
+      <if test="weatherCity != null">
+        #{weatherCity,jdbcType=VARCHAR},
+      </if>
+      <if test="temperature != null">
+        #{temperature,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="numName != null">
+        #{numName,jdbcType=VARCHAR},
+      </if>
+      <if test="matchInfo != null">
+        #{matchInfo,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.lottery.entity.BetMatchbkExample" resultType="java.lang.Long">
+    select count(*) from bet_matchbk
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update bet_matchbk
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.mid != null">
+        mid = #{record.mid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.num != null">
+        num = #{record.num,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lId != null">
+        l_id = #{record.lId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lCn != null">
+        l_cn = #{record.lCn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lCnAbbr != null">
+        l_cn_abbr = #{record.lCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hId != null">
+        h_id = #{record.hId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.aId != null">
+        a_id = #{record.aId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hCn != null">
+        h_cn = #{record.hCn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.aCn != null">
+        a_cn = #{record.aCn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hCnAbbr != null">
+        h_cn_abbr = #{record.hCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.aCnAbbr != null">
+        a_cn_abbr = #{record.aCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dtime != null">
+        dtime = #{record.dtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.pStatus != null">
+        p_status = #{record.pStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.saleStatus != null">
+        sale_status = #{record.saleStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pSingle != null">
+        p_single = #{record.pSingle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pGoal != null">
+        p_goal = #{record.pGoal,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mnlOdds != null">
+        mnl_odds = #{record.mnlOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hdcOdds != null">
+        hdc_odds = #{record.hdcOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wnmLose != null">
+        wnm_lose = #{record.wnmLose,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wnmWin != null">
+        wnm_win = #{record.wnmWin,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hiloOdds != null">
+        hilo_odds = #{record.hiloOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hOrder != null">
+        h_order = #{record.hOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="record.aOrder != null">
+        a_order = #{record.aOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="record.date != null">
+        date = #{record.date,jdbcType=VARCHAR},
+      </if>
+      <if test="record.time != null">
+        time = #{record.time,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bA != null">
+        b_a = #{record.bA,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bH != null">
+        b_h = #{record.bH,jdbcType=VARCHAR},
+      </if>
+      <if test="record.matchStatus != null">
+        match_status = #{record.matchStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bRf != null">
+        b_rf = #{record.bRf,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mShow != null">
+        m_show = #{record.mShow,jdbcType=TINYINT},
+      </if>
+      <if test="record.mnlH != null">
+        mnl_h = #{record.mnlH,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mnlA != null">
+        mnl_a = #{record.mnlA,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mnlStatus != null">
+        mnl_status = #{record.mnlStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mnlSingle != null">
+        mnl_single = #{record.mnlSingle,jdbcType=TINYINT},
+      </if>
+      <if test="record.mnlAllup != null">
+        mnl_allup = #{record.mnlAllup,jdbcType=TINYINT},
+      </if>
+      <if test="record.mnlRq != null">
+        mnl_rq = #{record.mnlRq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mnlCbt != null">
+        mnl_cbt = #{record.mnlCbt,jdbcType=TINYINT},
+      </if>
+      <if test="record.mnlInt != null">
+        mnl_int = #{record.mnlInt,jdbcType=TINYINT},
+      </if>
+      <if test="record.mnlVbt != null">
+        mnl_vbt = #{record.mnlVbt,jdbcType=TINYINT},
+      </if>
+      <if test="record.mnlHtrend != null">
+        mnl_htrend = #{record.mnlHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mnlAtrend != null">
+        mnl_atrend = #{record.mnlAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mnlDtrend != null">
+        mnl_dtrend = #{record.mnlDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mnlLtrend != null">
+        mnl_ltrend = #{record.mnlLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hdcH != null">
+        hdc_h = #{record.hdcH,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hdcA != null">
+        hdc_a = #{record.hdcA,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hdcRq != null">
+        hdc_rq = #{record.hdcRq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hdcType != null">
+        hdc_type = #{record.hdcType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hdcId != null">
+        hdc_id = #{record.hdcId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hdcStatus != null">
+        hdc_status = #{record.hdcStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hdcSingle != null">
+        hdc_single = #{record.hdcSingle,jdbcType=TINYINT},
+      </if>
+      <if test="record.hdcAllup != null">
+        hdc_allup = #{record.hdcAllup,jdbcType=TINYINT},
+      </if>
+      <if test="record.hdcCbt != null">
+        hdc_cbt = #{record.hdcCbt,jdbcType=TINYINT},
+      </if>
+      <if test="record.hdcInt != null">
+        hdc_int = #{record.hdcInt,jdbcType=TINYINT},
+      </if>
+      <if test="record.hdcVbt != null">
+        hdc_vbt = #{record.hdcVbt,jdbcType=TINYINT},
+      </if>
+      <if test="record.hdcHtrend != null">
+        hdc_htrend = #{record.hdcHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hdcAtrend != null">
+        hdc_atrend = #{record.hdcAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hdcDtrend != null">
+        hdc_dtrend = #{record.hdcDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hdcLtrend != null">
+        hdc_ltrend = #{record.hdcLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wnmW1 != null">
+        wnm_w1 = #{record.wnmW1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wnmW2 != null">
+        wnm_w2 = #{record.wnmW2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wnmW3 != null">
+        wnm_w3 = #{record.wnmW3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wnmW4 != null">
+        wnm_w4 = #{record.wnmW4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wnmW5 != null">
+        wnm_w5 = #{record.wnmW5,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wnmW6 != null">
+        wnm_w6 = #{record.wnmW6,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wnmL1 != null">
+        wnm_l1 = #{record.wnmL1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wnmL2 != null">
+        wnm_l2 = #{record.wnmL2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wnmL3 != null">
+        wnm_l3 = #{record.wnmL3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wnmL4 != null">
+        wnm_l4 = #{record.wnmL4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wnmL5 != null">
+        wnm_l5 = #{record.wnmL5,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wnmL6 != null">
+        wnm_l6 = #{record.wnmL6,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wnmType != null">
+        wnm_type = #{record.wnmType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wnmId != null">
+        wnm_id = #{record.wnmId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wnmStatus != null">
+        wnm_status = #{record.wnmStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wnmSingle != null">
+        wnm_single = #{record.wnmSingle,jdbcType=TINYINT},
+      </if>
+      <if test="record.wnmAllup != null">
+        wnm_allup = #{record.wnmAllup,jdbcType=TINYINT},
+      </if>
+      <if test="record.wnmRq != null">
+        wnm_rq = #{record.wnmRq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wnmCbt != null">
+        wnm_cbt = #{record.wnmCbt,jdbcType=TINYINT},
+      </if>
+      <if test="record.wnmInt != null">
+        wnm_int = #{record.wnmInt,jdbcType=TINYINT},
+      </if>
+      <if test="record.wnmVbt != null">
+        wnm_vbt = #{record.wnmVbt,jdbcType=TINYINT},
+      </if>
+      <if test="record.wnmHtrend != null">
+        wnm_htrend = #{record.wnmHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wnmAtrend != null">
+        wnm_atrend = #{record.wnmAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wnmDtrend != null">
+        wnm_dtrend = #{record.wnmDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wnmLtrend != null">
+        wnm_ltrend = #{record.wnmLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hiloH != null">
+        hilo_h = #{record.hiloH,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hiloL != null">
+        hilo_l = #{record.hiloL,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hiloType != null">
+        hilo_type = #{record.hiloType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hiloId != null">
+        hilo_id = #{record.hiloId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hiloStatus != null">
+        hilo_status = #{record.hiloStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hiloSingle != null">
+        hilo_single = #{record.hiloSingle,jdbcType=TINYINT},
+      </if>
+      <if test="record.hiloAllup != null">
+        hilo_allup = #{record.hiloAllup,jdbcType=TINYINT},
+      </if>
+      <if test="record.hiloRq != null">
+        hilo_rq = #{record.hiloRq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hiloCbt != null">
+        hilo_cbt = #{record.hiloCbt,jdbcType=TINYINT},
+      </if>
+      <if test="record.hiloInt != null">
+        hilo_int = #{record.hiloInt,jdbcType=TINYINT},
+      </if>
+      <if test="record.hiloVbt != null">
+        hilo_vbt = #{record.hiloVbt,jdbcType=TINYINT},
+      </if>
+      <if test="record.hiloHtrend != null">
+        hilo_htrend = #{record.hiloHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hiloAtrend != null">
+        hilo_atrend = #{record.hiloAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hiloDtrend != null">
+        hilo_dtrend = #{record.hiloDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hiloLtrend != null">
+        hilo_ltrend = #{record.hiloLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.upScore != null">
+        up_score = #{record.upScore,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nowScore != null">
+        now_score = #{record.nowScore,jdbcType=VARCHAR},
+      </if>
+      <if test="record.finalScore != null">
+        final_score = #{record.finalScore,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mStopup != null">
+        m_stopup = #{record.mStopup,jdbcType=TINYINT},
+      </if>
+      <if test="record.mMatchtime != null">
+        m_matchtime = #{record.mMatchtime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mHredcard != null">
+        m_hredcard = #{record.mHredcard,jdbcType=TINYINT},
+      </if>
+      <if test="record.mGredcard != null">
+        m_gredcard = #{record.mGredcard,jdbcType=TINYINT},
+      </if>
+      <if test="record.hHalfScore != null">
+        h_half_score = #{record.hHalfScore,jdbcType=INTEGER},
+      </if>
+      <if test="record.hFullScore != null">
+        h_full_score = #{record.hFullScore,jdbcType=INTEGER},
+      </if>
+      <if test="record.aHalfScore != null">
+        a_half_score = #{record.aHalfScore,jdbcType=INTEGER},
+      </if>
+      <if test="record.aFullScore != null">
+        a_full_score = #{record.aFullScore,jdbcType=INTEGER},
+      </if>
+      <if test="record.extraScore != null">
+        extra_score = #{record.extraScore,jdbcType=VARCHAR},
+      </if>
+      <if test="record.scorecheck != null">
+        scorecheck = #{record.scorecheck,jdbcType=INTEGER},
+      </if>
+      <if test="record.bColor != null">
+        b_color = #{record.bColor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weather != null">
+        weather = #{record.weather,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weatherCity != null">
+        weather_city = #{record.weatherCity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.temperature != null">
+        temperature = #{record.temperature,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lastUpdateTime != null">
+        last_update_time = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.numName != null">
+        num_name = #{record.numName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.matchInfo != null">
+        match_info = #{record.matchInfo,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update bet_matchbk
+    set id = #{record.id,jdbcType=INTEGER},
+      mid = #{record.mid,jdbcType=VARCHAR},
+      num = #{record.num,jdbcType=VARCHAR},
+      l_id = #{record.lId,jdbcType=VARCHAR},
+      l_cn = #{record.lCn,jdbcType=VARCHAR},
+      l_cn_abbr = #{record.lCnAbbr,jdbcType=VARCHAR},
+      h_id = #{record.hId,jdbcType=VARCHAR},
+      a_id = #{record.aId,jdbcType=VARCHAR},
+      h_cn = #{record.hCn,jdbcType=VARCHAR},
+      a_cn = #{record.aCn,jdbcType=VARCHAR},
+      h_cn_abbr = #{record.hCnAbbr,jdbcType=VARCHAR},
+      a_cn_abbr = #{record.aCnAbbr,jdbcType=VARCHAR},
+      dtime = #{record.dtime,jdbcType=TIMESTAMP},
+      p_status = #{record.pStatus,jdbcType=VARCHAR},
+      sale_status = #{record.saleStatus,jdbcType=VARCHAR},
+      p_single = #{record.pSingle,jdbcType=VARCHAR},
+      p_goal = #{record.pGoal,jdbcType=VARCHAR},
+      mnl_odds = #{record.mnlOdds,jdbcType=VARCHAR},
+      hdc_odds = #{record.hdcOdds,jdbcType=VARCHAR},
+      wnm_lose = #{record.wnmLose,jdbcType=VARCHAR},
+      wnm_win = #{record.wnmWin,jdbcType=VARCHAR},
+      hilo_odds = #{record.hiloOdds,jdbcType=VARCHAR},
+      h_order = #{record.hOrder,jdbcType=VARCHAR},
+      a_order = #{record.aOrder,jdbcType=VARCHAR},
+      date = #{record.date,jdbcType=VARCHAR},
+      time = #{record.time,jdbcType=VARCHAR},
+      b_a = #{record.bA,jdbcType=VARCHAR},
+      b_h = #{record.bH,jdbcType=VARCHAR},
+      match_status = #{record.matchStatus,jdbcType=VARCHAR},
+      b_rf = #{record.bRf,jdbcType=VARCHAR},
+      m_show = #{record.mShow,jdbcType=TINYINT},
+      mnl_h = #{record.mnlH,jdbcType=DECIMAL},
+      mnl_a = #{record.mnlA,jdbcType=DECIMAL},
+      mnl_status = #{record.mnlStatus,jdbcType=VARCHAR},
+      mnl_single = #{record.mnlSingle,jdbcType=TINYINT},
+      mnl_allup = #{record.mnlAllup,jdbcType=TINYINT},
+      mnl_rq = #{record.mnlRq,jdbcType=VARCHAR},
+      mnl_cbt = #{record.mnlCbt,jdbcType=TINYINT},
+      mnl_int = #{record.mnlInt,jdbcType=TINYINT},
+      mnl_vbt = #{record.mnlVbt,jdbcType=TINYINT},
+      mnl_htrend = #{record.mnlHtrend,jdbcType=DECIMAL},
+      mnl_atrend = #{record.mnlAtrend,jdbcType=DECIMAL},
+      mnl_dtrend = #{record.mnlDtrend,jdbcType=DECIMAL},
+      mnl_ltrend = #{record.mnlLtrend,jdbcType=DECIMAL},
+      hdc_h = #{record.hdcH,jdbcType=DECIMAL},
+      hdc_a = #{record.hdcA,jdbcType=DECIMAL},
+      hdc_rq = #{record.hdcRq,jdbcType=VARCHAR},
+      hdc_type = #{record.hdcType,jdbcType=VARCHAR},
+      hdc_id = #{record.hdcId,jdbcType=VARCHAR},
+      hdc_status = #{record.hdcStatus,jdbcType=VARCHAR},
+      hdc_single = #{record.hdcSingle,jdbcType=TINYINT},
+      hdc_allup = #{record.hdcAllup,jdbcType=TINYINT},
+      hdc_cbt = #{record.hdcCbt,jdbcType=TINYINT},
+      hdc_int = #{record.hdcInt,jdbcType=TINYINT},
+      hdc_vbt = #{record.hdcVbt,jdbcType=TINYINT},
+      hdc_htrend = #{record.hdcHtrend,jdbcType=DECIMAL},
+      hdc_atrend = #{record.hdcAtrend,jdbcType=DECIMAL},
+      hdc_dtrend = #{record.hdcDtrend,jdbcType=DECIMAL},
+      hdc_ltrend = #{record.hdcLtrend,jdbcType=DECIMAL},
+      wnm_w1 = #{record.wnmW1,jdbcType=DECIMAL},
+      wnm_w2 = #{record.wnmW2,jdbcType=DECIMAL},
+      wnm_w3 = #{record.wnmW3,jdbcType=DECIMAL},
+      wnm_w4 = #{record.wnmW4,jdbcType=DECIMAL},
+      wnm_w5 = #{record.wnmW5,jdbcType=DECIMAL},
+      wnm_w6 = #{record.wnmW6,jdbcType=DECIMAL},
+      wnm_l1 = #{record.wnmL1,jdbcType=DECIMAL},
+      wnm_l2 = #{record.wnmL2,jdbcType=DECIMAL},
+      wnm_l3 = #{record.wnmL3,jdbcType=DECIMAL},
+      wnm_l4 = #{record.wnmL4,jdbcType=DECIMAL},
+      wnm_l5 = #{record.wnmL5,jdbcType=DECIMAL},
+      wnm_l6 = #{record.wnmL6,jdbcType=DECIMAL},
+      wnm_type = #{record.wnmType,jdbcType=VARCHAR},
+      wnm_id = #{record.wnmId,jdbcType=VARCHAR},
+      wnm_status = #{record.wnmStatus,jdbcType=VARCHAR},
+      wnm_single = #{record.wnmSingle,jdbcType=TINYINT},
+      wnm_allup = #{record.wnmAllup,jdbcType=TINYINT},
+      wnm_rq = #{record.wnmRq,jdbcType=VARCHAR},
+      wnm_cbt = #{record.wnmCbt,jdbcType=TINYINT},
+      wnm_int = #{record.wnmInt,jdbcType=TINYINT},
+      wnm_vbt = #{record.wnmVbt,jdbcType=TINYINT},
+      wnm_htrend = #{record.wnmHtrend,jdbcType=DECIMAL},
+      wnm_atrend = #{record.wnmAtrend,jdbcType=DECIMAL},
+      wnm_dtrend = #{record.wnmDtrend,jdbcType=DECIMAL},
+      wnm_ltrend = #{record.wnmLtrend,jdbcType=DECIMAL},
+      hilo_h = #{record.hiloH,jdbcType=DECIMAL},
+      hilo_l = #{record.hiloL,jdbcType=DECIMAL},
+      hilo_type = #{record.hiloType,jdbcType=VARCHAR},
+      hilo_id = #{record.hiloId,jdbcType=VARCHAR},
+      hilo_status = #{record.hiloStatus,jdbcType=VARCHAR},
+      hilo_single = #{record.hiloSingle,jdbcType=TINYINT},
+      hilo_allup = #{record.hiloAllup,jdbcType=TINYINT},
+      hilo_rq = #{record.hiloRq,jdbcType=VARCHAR},
+      hilo_cbt = #{record.hiloCbt,jdbcType=TINYINT},
+      hilo_int = #{record.hiloInt,jdbcType=TINYINT},
+      hilo_vbt = #{record.hiloVbt,jdbcType=TINYINT},
+      hilo_htrend = #{record.hiloHtrend,jdbcType=DECIMAL},
+      hilo_atrend = #{record.hiloAtrend,jdbcType=DECIMAL},
+      hilo_dtrend = #{record.hiloDtrend,jdbcType=DECIMAL},
+      hilo_ltrend = #{record.hiloLtrend,jdbcType=DECIMAL},
+      up_score = #{record.upScore,jdbcType=VARCHAR},
+      now_score = #{record.nowScore,jdbcType=VARCHAR},
+      final_score = #{record.finalScore,jdbcType=VARCHAR},
+      m_stopup = #{record.mStopup,jdbcType=TINYINT},
+      m_matchtime = #{record.mMatchtime,jdbcType=VARCHAR},
+      m_hredcard = #{record.mHredcard,jdbcType=TINYINT},
+      m_gredcard = #{record.mGredcard,jdbcType=TINYINT},
+      h_half_score = #{record.hHalfScore,jdbcType=INTEGER},
+      h_full_score = #{record.hFullScore,jdbcType=INTEGER},
+      a_half_score = #{record.aHalfScore,jdbcType=INTEGER},
+      a_full_score = #{record.aFullScore,jdbcType=INTEGER},
+      extra_score = #{record.extraScore,jdbcType=VARCHAR},
+      scorecheck = #{record.scorecheck,jdbcType=INTEGER},
+      b_color = #{record.bColor,jdbcType=VARCHAR},
+      weather = #{record.weather,jdbcType=VARCHAR},
+      weather_city = #{record.weatherCity,jdbcType=VARCHAR},
+      temperature = #{record.temperature,jdbcType=VARCHAR},
+      last_update_time = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      num_name = #{record.numName,jdbcType=VARCHAR},
+      match_info = #{record.matchInfo,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update bet_matchbk
+    set id = #{record.id,jdbcType=INTEGER},
+      mid = #{record.mid,jdbcType=VARCHAR},
+      num = #{record.num,jdbcType=VARCHAR},
+      l_id = #{record.lId,jdbcType=VARCHAR},
+      l_cn = #{record.lCn,jdbcType=VARCHAR},
+      l_cn_abbr = #{record.lCnAbbr,jdbcType=VARCHAR},
+      h_id = #{record.hId,jdbcType=VARCHAR},
+      a_id = #{record.aId,jdbcType=VARCHAR},
+      h_cn = #{record.hCn,jdbcType=VARCHAR},
+      a_cn = #{record.aCn,jdbcType=VARCHAR},
+      h_cn_abbr = #{record.hCnAbbr,jdbcType=VARCHAR},
+      a_cn_abbr = #{record.aCnAbbr,jdbcType=VARCHAR},
+      dtime = #{record.dtime,jdbcType=TIMESTAMP},
+      p_status = #{record.pStatus,jdbcType=VARCHAR},
+      sale_status = #{record.saleStatus,jdbcType=VARCHAR},
+      p_single = #{record.pSingle,jdbcType=VARCHAR},
+      p_goal = #{record.pGoal,jdbcType=VARCHAR},
+      mnl_odds = #{record.mnlOdds,jdbcType=VARCHAR},
+      hdc_odds = #{record.hdcOdds,jdbcType=VARCHAR},
+      wnm_lose = #{record.wnmLose,jdbcType=VARCHAR},
+      wnm_win = #{record.wnmWin,jdbcType=VARCHAR},
+      hilo_odds = #{record.hiloOdds,jdbcType=VARCHAR},
+      h_order = #{record.hOrder,jdbcType=VARCHAR},
+      a_order = #{record.aOrder,jdbcType=VARCHAR},
+      date = #{record.date,jdbcType=VARCHAR},
+      time = #{record.time,jdbcType=VARCHAR},
+      b_a = #{record.bA,jdbcType=VARCHAR},
+      b_h = #{record.bH,jdbcType=VARCHAR},
+      match_status = #{record.matchStatus,jdbcType=VARCHAR},
+      b_rf = #{record.bRf,jdbcType=VARCHAR},
+      m_show = #{record.mShow,jdbcType=TINYINT},
+      mnl_h = #{record.mnlH,jdbcType=DECIMAL},
+      mnl_a = #{record.mnlA,jdbcType=DECIMAL},
+      mnl_status = #{record.mnlStatus,jdbcType=VARCHAR},
+      mnl_single = #{record.mnlSingle,jdbcType=TINYINT},
+      mnl_allup = #{record.mnlAllup,jdbcType=TINYINT},
+      mnl_rq = #{record.mnlRq,jdbcType=VARCHAR},
+      mnl_cbt = #{record.mnlCbt,jdbcType=TINYINT},
+      mnl_int = #{record.mnlInt,jdbcType=TINYINT},
+      mnl_vbt = #{record.mnlVbt,jdbcType=TINYINT},
+      mnl_htrend = #{record.mnlHtrend,jdbcType=DECIMAL},
+      mnl_atrend = #{record.mnlAtrend,jdbcType=DECIMAL},
+      mnl_dtrend = #{record.mnlDtrend,jdbcType=DECIMAL},
+      mnl_ltrend = #{record.mnlLtrend,jdbcType=DECIMAL},
+      hdc_h = #{record.hdcH,jdbcType=DECIMAL},
+      hdc_a = #{record.hdcA,jdbcType=DECIMAL},
+      hdc_rq = #{record.hdcRq,jdbcType=VARCHAR},
+      hdc_type = #{record.hdcType,jdbcType=VARCHAR},
+      hdc_id = #{record.hdcId,jdbcType=VARCHAR},
+      hdc_status = #{record.hdcStatus,jdbcType=VARCHAR},
+      hdc_single = #{record.hdcSingle,jdbcType=TINYINT},
+      hdc_allup = #{record.hdcAllup,jdbcType=TINYINT},
+      hdc_cbt = #{record.hdcCbt,jdbcType=TINYINT},
+      hdc_int = #{record.hdcInt,jdbcType=TINYINT},
+      hdc_vbt = #{record.hdcVbt,jdbcType=TINYINT},
+      hdc_htrend = #{record.hdcHtrend,jdbcType=DECIMAL},
+      hdc_atrend = #{record.hdcAtrend,jdbcType=DECIMAL},
+      hdc_dtrend = #{record.hdcDtrend,jdbcType=DECIMAL},
+      hdc_ltrend = #{record.hdcLtrend,jdbcType=DECIMAL},
+      wnm_w1 = #{record.wnmW1,jdbcType=DECIMAL},
+      wnm_w2 = #{record.wnmW2,jdbcType=DECIMAL},
+      wnm_w3 = #{record.wnmW3,jdbcType=DECIMAL},
+      wnm_w4 = #{record.wnmW4,jdbcType=DECIMAL},
+      wnm_w5 = #{record.wnmW5,jdbcType=DECIMAL},
+      wnm_w6 = #{record.wnmW6,jdbcType=DECIMAL},
+      wnm_l1 = #{record.wnmL1,jdbcType=DECIMAL},
+      wnm_l2 = #{record.wnmL2,jdbcType=DECIMAL},
+      wnm_l3 = #{record.wnmL3,jdbcType=DECIMAL},
+      wnm_l4 = #{record.wnmL4,jdbcType=DECIMAL},
+      wnm_l5 = #{record.wnmL5,jdbcType=DECIMAL},
+      wnm_l6 = #{record.wnmL6,jdbcType=DECIMAL},
+      wnm_type = #{record.wnmType,jdbcType=VARCHAR},
+      wnm_id = #{record.wnmId,jdbcType=VARCHAR},
+      wnm_status = #{record.wnmStatus,jdbcType=VARCHAR},
+      wnm_single = #{record.wnmSingle,jdbcType=TINYINT},
+      wnm_allup = #{record.wnmAllup,jdbcType=TINYINT},
+      wnm_rq = #{record.wnmRq,jdbcType=VARCHAR},
+      wnm_cbt = #{record.wnmCbt,jdbcType=TINYINT},
+      wnm_int = #{record.wnmInt,jdbcType=TINYINT},
+      wnm_vbt = #{record.wnmVbt,jdbcType=TINYINT},
+      wnm_htrend = #{record.wnmHtrend,jdbcType=DECIMAL},
+      wnm_atrend = #{record.wnmAtrend,jdbcType=DECIMAL},
+      wnm_dtrend = #{record.wnmDtrend,jdbcType=DECIMAL},
+      wnm_ltrend = #{record.wnmLtrend,jdbcType=DECIMAL},
+      hilo_h = #{record.hiloH,jdbcType=DECIMAL},
+      hilo_l = #{record.hiloL,jdbcType=DECIMAL},
+      hilo_type = #{record.hiloType,jdbcType=VARCHAR},
+      hilo_id = #{record.hiloId,jdbcType=VARCHAR},
+      hilo_status = #{record.hiloStatus,jdbcType=VARCHAR},
+      hilo_single = #{record.hiloSingle,jdbcType=TINYINT},
+      hilo_allup = #{record.hiloAllup,jdbcType=TINYINT},
+      hilo_rq = #{record.hiloRq,jdbcType=VARCHAR},
+      hilo_cbt = #{record.hiloCbt,jdbcType=TINYINT},
+      hilo_int = #{record.hiloInt,jdbcType=TINYINT},
+      hilo_vbt = #{record.hiloVbt,jdbcType=TINYINT},
+      hilo_htrend = #{record.hiloHtrend,jdbcType=DECIMAL},
+      hilo_atrend = #{record.hiloAtrend,jdbcType=DECIMAL},
+      hilo_dtrend = #{record.hiloDtrend,jdbcType=DECIMAL},
+      hilo_ltrend = #{record.hiloLtrend,jdbcType=DECIMAL},
+      up_score = #{record.upScore,jdbcType=VARCHAR},
+      now_score = #{record.nowScore,jdbcType=VARCHAR},
+      final_score = #{record.finalScore,jdbcType=VARCHAR},
+      m_stopup = #{record.mStopup,jdbcType=TINYINT},
+      m_matchtime = #{record.mMatchtime,jdbcType=VARCHAR},
+      m_hredcard = #{record.mHredcard,jdbcType=TINYINT},
+      m_gredcard = #{record.mGredcard,jdbcType=TINYINT},
+      h_half_score = #{record.hHalfScore,jdbcType=INTEGER},
+      h_full_score = #{record.hFullScore,jdbcType=INTEGER},
+      a_half_score = #{record.aHalfScore,jdbcType=INTEGER},
+      a_full_score = #{record.aFullScore,jdbcType=INTEGER},
+      extra_score = #{record.extraScore,jdbcType=VARCHAR},
+      scorecheck = #{record.scorecheck,jdbcType=INTEGER},
+      b_color = #{record.bColor,jdbcType=VARCHAR},
+      weather = #{record.weather,jdbcType=VARCHAR},
+      weather_city = #{record.weatherCity,jdbcType=VARCHAR},
+      temperature = #{record.temperature,jdbcType=VARCHAR},
+      last_update_time = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      num_name = #{record.numName,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lottery.entity.BetMatchbk">
+    update bet_matchbk
+    <set>
+      <if test="mid != null">
+        mid = #{mid,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null">
+        num = #{num,jdbcType=VARCHAR},
+      </if>
+      <if test="lId != null">
+        l_id = #{lId,jdbcType=VARCHAR},
+      </if>
+      <if test="lCn != null">
+        l_cn = #{lCn,jdbcType=VARCHAR},
+      </if>
+      <if test="lCnAbbr != null">
+        l_cn_abbr = #{lCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="hId != null">
+        h_id = #{hId,jdbcType=VARCHAR},
+      </if>
+      <if test="aId != null">
+        a_id = #{aId,jdbcType=VARCHAR},
+      </if>
+      <if test="hCn != null">
+        h_cn = #{hCn,jdbcType=VARCHAR},
+      </if>
+      <if test="aCn != null">
+        a_cn = #{aCn,jdbcType=VARCHAR},
+      </if>
+      <if test="hCnAbbr != null">
+        h_cn_abbr = #{hCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="aCnAbbr != null">
+        a_cn_abbr = #{aCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="dtime != null">
+        dtime = #{dtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pStatus != null">
+        p_status = #{pStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="saleStatus != null">
+        sale_status = #{saleStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="pSingle != null">
+        p_single = #{pSingle,jdbcType=VARCHAR},
+      </if>
+      <if test="pGoal != null">
+        p_goal = #{pGoal,jdbcType=VARCHAR},
+      </if>
+      <if test="mnlOdds != null">
+        mnl_odds = #{mnlOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="hdcOdds != null">
+        hdc_odds = #{hdcOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="wnmLose != null">
+        wnm_lose = #{wnmLose,jdbcType=VARCHAR},
+      </if>
+      <if test="wnmWin != null">
+        wnm_win = #{wnmWin,jdbcType=VARCHAR},
+      </if>
+      <if test="hiloOdds != null">
+        hilo_odds = #{hiloOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="hOrder != null">
+        h_order = #{hOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="aOrder != null">
+        a_order = #{aOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="bA != null">
+        b_a = #{bA,jdbcType=VARCHAR},
+      </if>
+      <if test="bH != null">
+        b_h = #{bH,jdbcType=VARCHAR},
+      </if>
+      <if test="matchStatus != null">
+        match_status = #{matchStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="bRf != null">
+        b_rf = #{bRf,jdbcType=VARCHAR},
+      </if>
+      <if test="mShow != null">
+        m_show = #{mShow,jdbcType=TINYINT},
+      </if>
+      <if test="mnlH != null">
+        mnl_h = #{mnlH,jdbcType=DECIMAL},
+      </if>
+      <if test="mnlA != null">
+        mnl_a = #{mnlA,jdbcType=DECIMAL},
+      </if>
+      <if test="mnlStatus != null">
+        mnl_status = #{mnlStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="mnlSingle != null">
+        mnl_single = #{mnlSingle,jdbcType=TINYINT},
+      </if>
+      <if test="mnlAllup != null">
+        mnl_allup = #{mnlAllup,jdbcType=TINYINT},
+      </if>
+      <if test="mnlRq != null">
+        mnl_rq = #{mnlRq,jdbcType=VARCHAR},
+      </if>
+      <if test="mnlCbt != null">
+        mnl_cbt = #{mnlCbt,jdbcType=TINYINT},
+      </if>
+      <if test="mnlInt != null">
+        mnl_int = #{mnlInt,jdbcType=TINYINT},
+      </if>
+      <if test="mnlVbt != null">
+        mnl_vbt = #{mnlVbt,jdbcType=TINYINT},
+      </if>
+      <if test="mnlHtrend != null">
+        mnl_htrend = #{mnlHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="mnlAtrend != null">
+        mnl_atrend = #{mnlAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="mnlDtrend != null">
+        mnl_dtrend = #{mnlDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="mnlLtrend != null">
+        mnl_ltrend = #{mnlLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hdcH != null">
+        hdc_h = #{hdcH,jdbcType=DECIMAL},
+      </if>
+      <if test="hdcA != null">
+        hdc_a = #{hdcA,jdbcType=DECIMAL},
+      </if>
+      <if test="hdcRq != null">
+        hdc_rq = #{hdcRq,jdbcType=VARCHAR},
+      </if>
+      <if test="hdcType != null">
+        hdc_type = #{hdcType,jdbcType=VARCHAR},
+      </if>
+      <if test="hdcId != null">
+        hdc_id = #{hdcId,jdbcType=VARCHAR},
+      </if>
+      <if test="hdcStatus != null">
+        hdc_status = #{hdcStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="hdcSingle != null">
+        hdc_single = #{hdcSingle,jdbcType=TINYINT},
+      </if>
+      <if test="hdcAllup != null">
+        hdc_allup = #{hdcAllup,jdbcType=TINYINT},
+      </if>
+      <if test="hdcCbt != null">
+        hdc_cbt = #{hdcCbt,jdbcType=TINYINT},
+      </if>
+      <if test="hdcInt != null">
+        hdc_int = #{hdcInt,jdbcType=TINYINT},
+      </if>
+      <if test="hdcVbt != null">
+        hdc_vbt = #{hdcVbt,jdbcType=TINYINT},
+      </if>
+      <if test="hdcHtrend != null">
+        hdc_htrend = #{hdcHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hdcAtrend != null">
+        hdc_atrend = #{hdcAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hdcDtrend != null">
+        hdc_dtrend = #{hdcDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hdcLtrend != null">
+        hdc_ltrend = #{hdcLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmW1 != null">
+        wnm_w1 = #{wnmW1,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmW2 != null">
+        wnm_w2 = #{wnmW2,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmW3 != null">
+        wnm_w3 = #{wnmW3,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmW4 != null">
+        wnm_w4 = #{wnmW4,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmW5 != null">
+        wnm_w5 = #{wnmW5,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmW6 != null">
+        wnm_w6 = #{wnmW6,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmL1 != null">
+        wnm_l1 = #{wnmL1,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmL2 != null">
+        wnm_l2 = #{wnmL2,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmL3 != null">
+        wnm_l3 = #{wnmL3,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmL4 != null">
+        wnm_l4 = #{wnmL4,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmL5 != null">
+        wnm_l5 = #{wnmL5,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmL6 != null">
+        wnm_l6 = #{wnmL6,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmType != null">
+        wnm_type = #{wnmType,jdbcType=VARCHAR},
+      </if>
+      <if test="wnmId != null">
+        wnm_id = #{wnmId,jdbcType=VARCHAR},
+      </if>
+      <if test="wnmStatus != null">
+        wnm_status = #{wnmStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="wnmSingle != null">
+        wnm_single = #{wnmSingle,jdbcType=TINYINT},
+      </if>
+      <if test="wnmAllup != null">
+        wnm_allup = #{wnmAllup,jdbcType=TINYINT},
+      </if>
+      <if test="wnmRq != null">
+        wnm_rq = #{wnmRq,jdbcType=VARCHAR},
+      </if>
+      <if test="wnmCbt != null">
+        wnm_cbt = #{wnmCbt,jdbcType=TINYINT},
+      </if>
+      <if test="wnmInt != null">
+        wnm_int = #{wnmInt,jdbcType=TINYINT},
+      </if>
+      <if test="wnmVbt != null">
+        wnm_vbt = #{wnmVbt,jdbcType=TINYINT},
+      </if>
+      <if test="wnmHtrend != null">
+        wnm_htrend = #{wnmHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmAtrend != null">
+        wnm_atrend = #{wnmAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmDtrend != null">
+        wnm_dtrend = #{wnmDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="wnmLtrend != null">
+        wnm_ltrend = #{wnmLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hiloH != null">
+        hilo_h = #{hiloH,jdbcType=DECIMAL},
+      </if>
+      <if test="hiloL != null">
+        hilo_l = #{hiloL,jdbcType=DECIMAL},
+      </if>
+      <if test="hiloType != null">
+        hilo_type = #{hiloType,jdbcType=VARCHAR},
+      </if>
+      <if test="hiloId != null">
+        hilo_id = #{hiloId,jdbcType=VARCHAR},
+      </if>
+      <if test="hiloStatus != null">
+        hilo_status = #{hiloStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="hiloSingle != null">
+        hilo_single = #{hiloSingle,jdbcType=TINYINT},
+      </if>
+      <if test="hiloAllup != null">
+        hilo_allup = #{hiloAllup,jdbcType=TINYINT},
+      </if>
+      <if test="hiloRq != null">
+        hilo_rq = #{hiloRq,jdbcType=VARCHAR},
+      </if>
+      <if test="hiloCbt != null">
+        hilo_cbt = #{hiloCbt,jdbcType=TINYINT},
+      </if>
+      <if test="hiloInt != null">
+        hilo_int = #{hiloInt,jdbcType=TINYINT},
+      </if>
+      <if test="hiloVbt != null">
+        hilo_vbt = #{hiloVbt,jdbcType=TINYINT},
+      </if>
+      <if test="hiloHtrend != null">
+        hilo_htrend = #{hiloHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hiloAtrend != null">
+        hilo_atrend = #{hiloAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hiloDtrend != null">
+        hilo_dtrend = #{hiloDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hiloLtrend != null">
+        hilo_ltrend = #{hiloLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="upScore != null">
+        up_score = #{upScore,jdbcType=VARCHAR},
+      </if>
+      <if test="nowScore != null">
+        now_score = #{nowScore,jdbcType=VARCHAR},
+      </if>
+      <if test="finalScore != null">
+        final_score = #{finalScore,jdbcType=VARCHAR},
+      </if>
+      <if test="mStopup != null">
+        m_stopup = #{mStopup,jdbcType=TINYINT},
+      </if>
+      <if test="mMatchtime != null">
+        m_matchtime = #{mMatchtime,jdbcType=VARCHAR},
+      </if>
+      <if test="mHredcard != null">
+        m_hredcard = #{mHredcard,jdbcType=TINYINT},
+      </if>
+      <if test="mGredcard != null">
+        m_gredcard = #{mGredcard,jdbcType=TINYINT},
+      </if>
+      <if test="hHalfScore != null">
+        h_half_score = #{hHalfScore,jdbcType=INTEGER},
+      </if>
+      <if test="hFullScore != null">
+        h_full_score = #{hFullScore,jdbcType=INTEGER},
+      </if>
+      <if test="aHalfScore != null">
+        a_half_score = #{aHalfScore,jdbcType=INTEGER},
+      </if>
+      <if test="aFullScore != null">
+        a_full_score = #{aFullScore,jdbcType=INTEGER},
+      </if>
+      <if test="extraScore != null">
+        extra_score = #{extraScore,jdbcType=VARCHAR},
+      </if>
+      <if test="scorecheck != null">
+        scorecheck = #{scorecheck,jdbcType=INTEGER},
+      </if>
+      <if test="bColor != null">
+        b_color = #{bColor,jdbcType=VARCHAR},
+      </if>
+      <if test="weather != null">
+        weather = #{weather,jdbcType=VARCHAR},
+      </if>
+      <if test="weatherCity != null">
+        weather_city = #{weatherCity,jdbcType=VARCHAR},
+      </if>
+      <if test="temperature != null">
+        temperature = #{temperature,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="numName != null">
+        num_name = #{numName,jdbcType=VARCHAR},
+      </if>
+      <if test="matchInfo != null">
+        match_info = #{matchInfo,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.lottery.entity.BetMatchbk">
+    update bet_matchbk
+    set mid = #{mid,jdbcType=VARCHAR},
+      num = #{num,jdbcType=VARCHAR},
+      l_id = #{lId,jdbcType=VARCHAR},
+      l_cn = #{lCn,jdbcType=VARCHAR},
+      l_cn_abbr = #{lCnAbbr,jdbcType=VARCHAR},
+      h_id = #{hId,jdbcType=VARCHAR},
+      a_id = #{aId,jdbcType=VARCHAR},
+      h_cn = #{hCn,jdbcType=VARCHAR},
+      a_cn = #{aCn,jdbcType=VARCHAR},
+      h_cn_abbr = #{hCnAbbr,jdbcType=VARCHAR},
+      a_cn_abbr = #{aCnAbbr,jdbcType=VARCHAR},
+      dtime = #{dtime,jdbcType=TIMESTAMP},
+      p_status = #{pStatus,jdbcType=VARCHAR},
+      sale_status = #{saleStatus,jdbcType=VARCHAR},
+      p_single = #{pSingle,jdbcType=VARCHAR},
+      p_goal = #{pGoal,jdbcType=VARCHAR},
+      mnl_odds = #{mnlOdds,jdbcType=VARCHAR},
+      hdc_odds = #{hdcOdds,jdbcType=VARCHAR},
+      wnm_lose = #{wnmLose,jdbcType=VARCHAR},
+      wnm_win = #{wnmWin,jdbcType=VARCHAR},
+      hilo_odds = #{hiloOdds,jdbcType=VARCHAR},
+      h_order = #{hOrder,jdbcType=VARCHAR},
+      a_order = #{aOrder,jdbcType=VARCHAR},
+      date = #{date,jdbcType=VARCHAR},
+      time = #{time,jdbcType=VARCHAR},
+      b_a = #{bA,jdbcType=VARCHAR},
+      b_h = #{bH,jdbcType=VARCHAR},
+      match_status = #{matchStatus,jdbcType=VARCHAR},
+      b_rf = #{bRf,jdbcType=VARCHAR},
+      m_show = #{mShow,jdbcType=TINYINT},
+      mnl_h = #{mnlH,jdbcType=DECIMAL},
+      mnl_a = #{mnlA,jdbcType=DECIMAL},
+      mnl_status = #{mnlStatus,jdbcType=VARCHAR},
+      mnl_single = #{mnlSingle,jdbcType=TINYINT},
+      mnl_allup = #{mnlAllup,jdbcType=TINYINT},
+      mnl_rq = #{mnlRq,jdbcType=VARCHAR},
+      mnl_cbt = #{mnlCbt,jdbcType=TINYINT},
+      mnl_int = #{mnlInt,jdbcType=TINYINT},
+      mnl_vbt = #{mnlVbt,jdbcType=TINYINT},
+      mnl_htrend = #{mnlHtrend,jdbcType=DECIMAL},
+      mnl_atrend = #{mnlAtrend,jdbcType=DECIMAL},
+      mnl_dtrend = #{mnlDtrend,jdbcType=DECIMAL},
+      mnl_ltrend = #{mnlLtrend,jdbcType=DECIMAL},
+      hdc_h = #{hdcH,jdbcType=DECIMAL},
+      hdc_a = #{hdcA,jdbcType=DECIMAL},
+      hdc_rq = #{hdcRq,jdbcType=VARCHAR},
+      hdc_type = #{hdcType,jdbcType=VARCHAR},
+      hdc_id = #{hdcId,jdbcType=VARCHAR},
+      hdc_status = #{hdcStatus,jdbcType=VARCHAR},
+      hdc_single = #{hdcSingle,jdbcType=TINYINT},
+      hdc_allup = #{hdcAllup,jdbcType=TINYINT},
+      hdc_cbt = #{hdcCbt,jdbcType=TINYINT},
+      hdc_int = #{hdcInt,jdbcType=TINYINT},
+      hdc_vbt = #{hdcVbt,jdbcType=TINYINT},
+      hdc_htrend = #{hdcHtrend,jdbcType=DECIMAL},
+      hdc_atrend = #{hdcAtrend,jdbcType=DECIMAL},
+      hdc_dtrend = #{hdcDtrend,jdbcType=DECIMAL},
+      hdc_ltrend = #{hdcLtrend,jdbcType=DECIMAL},
+      wnm_w1 = #{wnmW1,jdbcType=DECIMAL},
+      wnm_w2 = #{wnmW2,jdbcType=DECIMAL},
+      wnm_w3 = #{wnmW3,jdbcType=DECIMAL},
+      wnm_w4 = #{wnmW4,jdbcType=DECIMAL},
+      wnm_w5 = #{wnmW5,jdbcType=DECIMAL},
+      wnm_w6 = #{wnmW6,jdbcType=DECIMAL},
+      wnm_l1 = #{wnmL1,jdbcType=DECIMAL},
+      wnm_l2 = #{wnmL2,jdbcType=DECIMAL},
+      wnm_l3 = #{wnmL3,jdbcType=DECIMAL},
+      wnm_l4 = #{wnmL4,jdbcType=DECIMAL},
+      wnm_l5 = #{wnmL5,jdbcType=DECIMAL},
+      wnm_l6 = #{wnmL6,jdbcType=DECIMAL},
+      wnm_type = #{wnmType,jdbcType=VARCHAR},
+      wnm_id = #{wnmId,jdbcType=VARCHAR},
+      wnm_status = #{wnmStatus,jdbcType=VARCHAR},
+      wnm_single = #{wnmSingle,jdbcType=TINYINT},
+      wnm_allup = #{wnmAllup,jdbcType=TINYINT},
+      wnm_rq = #{wnmRq,jdbcType=VARCHAR},
+      wnm_cbt = #{wnmCbt,jdbcType=TINYINT},
+      wnm_int = #{wnmInt,jdbcType=TINYINT},
+      wnm_vbt = #{wnmVbt,jdbcType=TINYINT},
+      wnm_htrend = #{wnmHtrend,jdbcType=DECIMAL},
+      wnm_atrend = #{wnmAtrend,jdbcType=DECIMAL},
+      wnm_dtrend = #{wnmDtrend,jdbcType=DECIMAL},
+      wnm_ltrend = #{wnmLtrend,jdbcType=DECIMAL},
+      hilo_h = #{hiloH,jdbcType=DECIMAL},
+      hilo_l = #{hiloL,jdbcType=DECIMAL},
+      hilo_type = #{hiloType,jdbcType=VARCHAR},
+      hilo_id = #{hiloId,jdbcType=VARCHAR},
+      hilo_status = #{hiloStatus,jdbcType=VARCHAR},
+      hilo_single = #{hiloSingle,jdbcType=TINYINT},
+      hilo_allup = #{hiloAllup,jdbcType=TINYINT},
+      hilo_rq = #{hiloRq,jdbcType=VARCHAR},
+      hilo_cbt = #{hiloCbt,jdbcType=TINYINT},
+      hilo_int = #{hiloInt,jdbcType=TINYINT},
+      hilo_vbt = #{hiloVbt,jdbcType=TINYINT},
+      hilo_htrend = #{hiloHtrend,jdbcType=DECIMAL},
+      hilo_atrend = #{hiloAtrend,jdbcType=DECIMAL},
+      hilo_dtrend = #{hiloDtrend,jdbcType=DECIMAL},
+      hilo_ltrend = #{hiloLtrend,jdbcType=DECIMAL},
+      up_score = #{upScore,jdbcType=VARCHAR},
+      now_score = #{nowScore,jdbcType=VARCHAR},
+      final_score = #{finalScore,jdbcType=VARCHAR},
+      m_stopup = #{mStopup,jdbcType=TINYINT},
+      m_matchtime = #{mMatchtime,jdbcType=VARCHAR},
+      m_hredcard = #{mHredcard,jdbcType=TINYINT},
+      m_gredcard = #{mGredcard,jdbcType=TINYINT},
+      h_half_score = #{hHalfScore,jdbcType=INTEGER},
+      h_full_score = #{hFullScore,jdbcType=INTEGER},
+      a_half_score = #{aHalfScore,jdbcType=INTEGER},
+      a_full_score = #{aFullScore,jdbcType=INTEGER},
+      extra_score = #{extraScore,jdbcType=VARCHAR},
+      scorecheck = #{scorecheck,jdbcType=INTEGER},
+      b_color = #{bColor,jdbcType=VARCHAR},
+      weather = #{weather,jdbcType=VARCHAR},
+      weather_city = #{weatherCity,jdbcType=VARCHAR},
+      temperature = #{temperature,jdbcType=VARCHAR},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      num_name = #{numName,jdbcType=VARCHAR},
+      match_info = #{matchInfo,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lottery.entity.BetMatchbk">
+    update bet_matchbk
+    set mid = #{mid,jdbcType=VARCHAR},
+      num = #{num,jdbcType=VARCHAR},
+      l_id = #{lId,jdbcType=VARCHAR},
+      l_cn = #{lCn,jdbcType=VARCHAR},
+      l_cn_abbr = #{lCnAbbr,jdbcType=VARCHAR},
+      h_id = #{hId,jdbcType=VARCHAR},
+      a_id = #{aId,jdbcType=VARCHAR},
+      h_cn = #{hCn,jdbcType=VARCHAR},
+      a_cn = #{aCn,jdbcType=VARCHAR},
+      h_cn_abbr = #{hCnAbbr,jdbcType=VARCHAR},
+      a_cn_abbr = #{aCnAbbr,jdbcType=VARCHAR},
+      dtime = #{dtime,jdbcType=TIMESTAMP},
+      p_status = #{pStatus,jdbcType=VARCHAR},
+      sale_status = #{saleStatus,jdbcType=VARCHAR},
+      p_single = #{pSingle,jdbcType=VARCHAR},
+      p_goal = #{pGoal,jdbcType=VARCHAR},
+      mnl_odds = #{mnlOdds,jdbcType=VARCHAR},
+      hdc_odds = #{hdcOdds,jdbcType=VARCHAR},
+      wnm_lose = #{wnmLose,jdbcType=VARCHAR},
+      wnm_win = #{wnmWin,jdbcType=VARCHAR},
+      hilo_odds = #{hiloOdds,jdbcType=VARCHAR},
+      h_order = #{hOrder,jdbcType=VARCHAR},
+      a_order = #{aOrder,jdbcType=VARCHAR},
+      date = #{date,jdbcType=VARCHAR},
+      time = #{time,jdbcType=VARCHAR},
+      b_a = #{bA,jdbcType=VARCHAR},
+      b_h = #{bH,jdbcType=VARCHAR},
+      match_status = #{matchStatus,jdbcType=VARCHAR},
+      b_rf = #{bRf,jdbcType=VARCHAR},
+      m_show = #{mShow,jdbcType=TINYINT},
+      mnl_h = #{mnlH,jdbcType=DECIMAL},
+      mnl_a = #{mnlA,jdbcType=DECIMAL},
+      mnl_status = #{mnlStatus,jdbcType=VARCHAR},
+      mnl_single = #{mnlSingle,jdbcType=TINYINT},
+      mnl_allup = #{mnlAllup,jdbcType=TINYINT},
+      mnl_rq = #{mnlRq,jdbcType=VARCHAR},
+      mnl_cbt = #{mnlCbt,jdbcType=TINYINT},
+      mnl_int = #{mnlInt,jdbcType=TINYINT},
+      mnl_vbt = #{mnlVbt,jdbcType=TINYINT},
+      mnl_htrend = #{mnlHtrend,jdbcType=DECIMAL},
+      mnl_atrend = #{mnlAtrend,jdbcType=DECIMAL},
+      mnl_dtrend = #{mnlDtrend,jdbcType=DECIMAL},
+      mnl_ltrend = #{mnlLtrend,jdbcType=DECIMAL},
+      hdc_h = #{hdcH,jdbcType=DECIMAL},
+      hdc_a = #{hdcA,jdbcType=DECIMAL},
+      hdc_rq = #{hdcRq,jdbcType=VARCHAR},
+      hdc_type = #{hdcType,jdbcType=VARCHAR},
+      hdc_id = #{hdcId,jdbcType=VARCHAR},
+      hdc_status = #{hdcStatus,jdbcType=VARCHAR},
+      hdc_single = #{hdcSingle,jdbcType=TINYINT},
+      hdc_allup = #{hdcAllup,jdbcType=TINYINT},
+      hdc_cbt = #{hdcCbt,jdbcType=TINYINT},
+      hdc_int = #{hdcInt,jdbcType=TINYINT},
+      hdc_vbt = #{hdcVbt,jdbcType=TINYINT},
+      hdc_htrend = #{hdcHtrend,jdbcType=DECIMAL},
+      hdc_atrend = #{hdcAtrend,jdbcType=DECIMAL},
+      hdc_dtrend = #{hdcDtrend,jdbcType=DECIMAL},
+      hdc_ltrend = #{hdcLtrend,jdbcType=DECIMAL},
+      wnm_w1 = #{wnmW1,jdbcType=DECIMAL},
+      wnm_w2 = #{wnmW2,jdbcType=DECIMAL},
+      wnm_w3 = #{wnmW3,jdbcType=DECIMAL},
+      wnm_w4 = #{wnmW4,jdbcType=DECIMAL},
+      wnm_w5 = #{wnmW5,jdbcType=DECIMAL},
+      wnm_w6 = #{wnmW6,jdbcType=DECIMAL},
+      wnm_l1 = #{wnmL1,jdbcType=DECIMAL},
+      wnm_l2 = #{wnmL2,jdbcType=DECIMAL},
+      wnm_l3 = #{wnmL3,jdbcType=DECIMAL},
+      wnm_l4 = #{wnmL4,jdbcType=DECIMAL},
+      wnm_l5 = #{wnmL5,jdbcType=DECIMAL},
+      wnm_l6 = #{wnmL6,jdbcType=DECIMAL},
+      wnm_type = #{wnmType,jdbcType=VARCHAR},
+      wnm_id = #{wnmId,jdbcType=VARCHAR},
+      wnm_status = #{wnmStatus,jdbcType=VARCHAR},
+      wnm_single = #{wnmSingle,jdbcType=TINYINT},
+      wnm_allup = #{wnmAllup,jdbcType=TINYINT},
+      wnm_rq = #{wnmRq,jdbcType=VARCHAR},
+      wnm_cbt = #{wnmCbt,jdbcType=TINYINT},
+      wnm_int = #{wnmInt,jdbcType=TINYINT},
+      wnm_vbt = #{wnmVbt,jdbcType=TINYINT},
+      wnm_htrend = #{wnmHtrend,jdbcType=DECIMAL},
+      wnm_atrend = #{wnmAtrend,jdbcType=DECIMAL},
+      wnm_dtrend = #{wnmDtrend,jdbcType=DECIMAL},
+      wnm_ltrend = #{wnmLtrend,jdbcType=DECIMAL},
+      hilo_h = #{hiloH,jdbcType=DECIMAL},
+      hilo_l = #{hiloL,jdbcType=DECIMAL},
+      hilo_type = #{hiloType,jdbcType=VARCHAR},
+      hilo_id = #{hiloId,jdbcType=VARCHAR},
+      hilo_status = #{hiloStatus,jdbcType=VARCHAR},
+      hilo_single = #{hiloSingle,jdbcType=TINYINT},
+      hilo_allup = #{hiloAllup,jdbcType=TINYINT},
+      hilo_rq = #{hiloRq,jdbcType=VARCHAR},
+      hilo_cbt = #{hiloCbt,jdbcType=TINYINT},
+      hilo_int = #{hiloInt,jdbcType=TINYINT},
+      hilo_vbt = #{hiloVbt,jdbcType=TINYINT},
+      hilo_htrend = #{hiloHtrend,jdbcType=DECIMAL},
+      hilo_atrend = #{hiloAtrend,jdbcType=DECIMAL},
+      hilo_dtrend = #{hiloDtrend,jdbcType=DECIMAL},
+      hilo_ltrend = #{hiloLtrend,jdbcType=DECIMAL},
+      up_score = #{upScore,jdbcType=VARCHAR},
+      now_score = #{nowScore,jdbcType=VARCHAR},
+      final_score = #{finalScore,jdbcType=VARCHAR},
+      m_stopup = #{mStopup,jdbcType=TINYINT},
+      m_matchtime = #{mMatchtime,jdbcType=VARCHAR},
+      m_hredcard = #{mHredcard,jdbcType=TINYINT},
+      m_gredcard = #{mGredcard,jdbcType=TINYINT},
+      h_half_score = #{hHalfScore,jdbcType=INTEGER},
+      h_full_score = #{hFullScore,jdbcType=INTEGER},
+      a_half_score = #{aHalfScore,jdbcType=INTEGER},
+      a_full_score = #{aFullScore,jdbcType=INTEGER},
+      extra_score = #{extraScore,jdbcType=VARCHAR},
+      scorecheck = #{scorecheck,jdbcType=INTEGER},
+      b_color = #{bColor,jdbcType=VARCHAR},
+      weather = #{weather,jdbcType=VARCHAR},
+      weather_city = #{weatherCity,jdbcType=VARCHAR},
+      temperature = #{temperature,jdbcType=VARCHAR},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      num_name = #{numName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

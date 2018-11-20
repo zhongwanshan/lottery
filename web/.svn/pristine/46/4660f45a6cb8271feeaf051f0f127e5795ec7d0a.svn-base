@@ -1,0 +1,69 @@
+(function () {
+    var pageVue = new Vue({
+        el: "#js-historyFootball",
+        data: {
+            digitalData: [],
+            matchList: [],
+            matchInfoObj: null
+        },
+        methods: {
+            // 重新格式化赛事数据
+            formatMatchData: function () {
+                var self = this;
+                var timeObj = {};
+
+                for (var i = 0, len = self.matchList.length; i < len; i++) {
+                    (function (i) {
+                        var time = self.matchList[i]["dateCn"].split(" ")[0];
+                        timeObj[time] = {
+                            "list": [],
+                            "weekDay": "",
+                            "time": ""
+                        };
+                    })(i);
+                }
+
+                for (var key in timeObj) {
+                    if (timeObj.hasOwnProperty(key)) {
+                        for (var t = 0, tlen = self.matchList.length; t < tlen; t++) {
+                            (function (t) {
+                                var dtime = self.matchList[t]["dateCn"];
+                                var time = dtime.split(" ")[0];
+                                var date = utility.getCurrentTimeInfo(time);
+                                if (key == time) {
+                                    timeObj[key]["list"].push(self.matchList[t]);
+                                    timeObj[key]["weekDay"] = date["weekDay"];
+                                    timeObj[key]["time"] = time;
+                                }
+                            })(t);
+                        }
+                    }
+                }
+
+                self.matchInfoObj = timeObj;
+            },
+            // 获取指定足球赛事赛果比分接口
+            geFbMatchScoreData: function () {
+                var self = this;
+
+                utility.geFbMatchScoreData({
+                    "mid": "",
+                    "num": "",
+                    "callback": function (data) {
+                        self.matchList = data.data;
+
+                        self.formatMatchData();
+
+                        utility.setiScroll("page-" + PAGE.name);
+                    }
+                });
+            }
+        },
+        created: function () {
+            var self = this;
+
+            // 获取指定足球赛事赛果比分接口
+            self.geFbMatchScoreData();
+        }
+    });
+}())

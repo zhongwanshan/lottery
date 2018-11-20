@@ -1,0 +1,1 @@
+(function(){new Vue({el:"#js-pageSecurity",data:{userInfo:USERINFO}})})();

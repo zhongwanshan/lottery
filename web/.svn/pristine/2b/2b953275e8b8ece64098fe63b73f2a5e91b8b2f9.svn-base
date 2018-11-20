@@ -1,0 +1,97 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="view/me.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">身份认证</div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="user-identity">
+    <div id="js-pageIdentity" class="page-content listBlock inputInfoBlock">
+
+        <p class="infoTips">
+            实名认证是为了更好的保障您的资金安全，同时平台将尽最大努力保护您的隐私信息，请您放心。
+        </p>
+        <div class="list-block">
+            <ul>
+                <li class="item">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">
+                                <img src="img/icon/phone.png" style="width: .75rem; height: 1.2rem;" />
+                            </div>
+                            <div class="item-input">
+                                <input type="text" v-model="userAccount" placeholder="请输入手机号">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">
+                                <i class="glyphicon glyphicon-picture"></i>
+                            </div>
+                            <div class="item-input">
+                                <input type="text" v-model="imgCode" placeholder="请输入图片验证码">
+                            </div>
+                            <div class="item-after">
+                                <img @click="getImgCode" :src="imgSrc" style="height: 1.5rem;" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">
+                                <img src="img/icon/check.png" style="width: .8rem; height: 1.1rem;" />
+                            </div>
+                            <div class="item-input">
+                                <input type="text" v-model="paramInfo.smsCode" placeholder="请输入验证码">
+                            </div>
+                            <div class="item-after" @click="getSmsCode" v-text="smsTxt"></div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="item">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                            <div class="item-input">
+                                <input type="text" v-model="paramInfo.realUserName" placeholder="请输入真实姓名">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">
+                                <img src="img/icon/pass.png" style="width: 1rem; height: 1rem;" />
+                            </div>
+                            <div class="item-input">
+                                <input type="text" v-model="paramInfo.idCardNo" placeholder="请输入身份证号">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        <div class="action">
+            <div class="row">
+                <div class="col-100 theme-pink">
+                    <button @click="doAction" class="button button-fill">身份认证</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

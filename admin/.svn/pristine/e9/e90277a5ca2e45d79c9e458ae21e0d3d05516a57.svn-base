@@ -1,0 +1,3137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lottery.dao.BetMatchfbMapper">
+  <resultMap id="BaseResultMap" type="com.lottery.entity.BetMatchfb">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="m_id" jdbcType="VARCHAR" property="mId" />
+    <result column="m_num" jdbcType="VARCHAR" property="mNum" />
+    <result column="m_num_name" jdbcType="VARCHAR" property="mNumName" />
+    <result column="m_date" jdbcType="TIMESTAMP" property="mDate" />
+    <result column="m_time" jdbcType="TIMESTAMP" property="mTime" />
+    <result column="m_bdate" jdbcType="VARCHAR" property="mBdate" />
+    <result column="m_lid" jdbcType="VARCHAR" property="mLid" />
+    <result column="m_lcn" jdbcType="VARCHAR" property="mLcn" />
+    <result column="m_hid" jdbcType="VARCHAR" property="mHid" />
+    <result column="m_aid" jdbcType="VARCHAR" property="mAid" />
+    <result column="m_hcn" jdbcType="VARCHAR" property="mHcn" />
+    <result column="m_acn" jdbcType="VARCHAR" property="mAcn" />
+    <result column="m_islose" jdbcType="VARCHAR" property="mIslose" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="m_hot" jdbcType="TINYINT" property="mHot" />
+    <result column="m_show" jdbcType="TINYINT" property="mShow" />
+    <result column="hhad_type" jdbcType="VARCHAR" property="hhadType" />
+    <result column="hhad_id" jdbcType="VARCHAR" property="hhadId" />
+    <result column="hhad_status" jdbcType="VARCHAR" property="hhadStatus" />
+    <result column="hhad_single" jdbcType="TINYINT" property="hhadSingle" />
+    <result column="hhad_allup" jdbcType="TINYINT" property="hhadAllup" />
+    <result column="hhad_rq" jdbcType="VARCHAR" property="hhadRq" />
+    <result column="hhad_htrend" jdbcType="DECIMAL" property="hhadHtrend" />
+    <result column="hhad_atrend" jdbcType="DECIMAL" property="hhadAtrend" />
+    <result column="hhad_dtrend" jdbcType="DECIMAL" property="hhadDtrend" />
+    <result column="hhad_ltrend" jdbcType="DECIMAL" property="hhadLtrend" />
+    <result column="hhad_h" jdbcType="DECIMAL" property="hhadH" />
+    <result column="hhad_a" jdbcType="DECIMAL" property="hhadA" />
+    <result column="hhad_d" jdbcType="DECIMAL" property="hhadD" />
+    <result column="had_type" jdbcType="VARCHAR" property="hadType" />
+    <result column="had_id" jdbcType="VARCHAR" property="hadId" />
+    <result column="had_status" jdbcType="VARCHAR" property="hadStatus" />
+    <result column="had_single" jdbcType="TINYINT" property="hadSingle" />
+    <result column="had_allup" jdbcType="TINYINT" property="hadAllup" />
+    <result column="had_rq" jdbcType="VARCHAR" property="hadRq" />
+    <result column="had_htrend" jdbcType="DECIMAL" property="hadHtrend" />
+    <result column="had_atrend" jdbcType="DECIMAL" property="hadAtrend" />
+    <result column="had_dtrend" jdbcType="DECIMAL" property="hadDtrend" />
+    <result column="had_ltrend" jdbcType="DECIMAL" property="hadLtrend" />
+    <result column="had_h" jdbcType="DECIMAL" property="hadH" />
+    <result column="had_a" jdbcType="DECIMAL" property="hadA" />
+    <result column="had_d" jdbcType="DECIMAL" property="hadD" />
+    <result column="ttg_type" jdbcType="VARCHAR" property="ttgType" />
+    <result column="ttg_id" jdbcType="VARCHAR" property="ttgId" />
+    <result column="ttg_status" jdbcType="VARCHAR" property="ttgStatus" />
+    <result column="ttg_single" jdbcType="TINYINT" property="ttgSingle" />
+    <result column="ttg_allup" jdbcType="TINYINT" property="ttgAllup" />
+    <result column="ttg_rq" jdbcType="VARCHAR" property="ttgRq" />
+    <result column="ttg_s0" jdbcType="DECIMAL" property="ttgS0" />
+    <result column="ttg_s1" jdbcType="DECIMAL" property="ttgS1" />
+    <result column="ttg_s2" jdbcType="DECIMAL" property="ttgS2" />
+    <result column="ttg_s3" jdbcType="DECIMAL" property="ttgS3" />
+    <result column="ttg_s4" jdbcType="DECIMAL" property="ttgS4" />
+    <result column="ttg_s5" jdbcType="DECIMAL" property="ttgS5" />
+    <result column="ttg_s6" jdbcType="DECIMAL" property="ttgS6" />
+    <result column="ttg_s7" jdbcType="DECIMAL" property="ttgS7" />
+    <result column="hafu_type" jdbcType="VARCHAR" property="hafuType" />
+    <result column="hafu_id" jdbcType="VARCHAR" property="hafuId" />
+    <result column="hafu_status" jdbcType="VARCHAR" property="hafuStatus" />
+    <result column="hafu_single" jdbcType="TINYINT" property="hafuSingle" />
+    <result column="hafu_allup" jdbcType="TINYINT" property="hafuAllup" />
+    <result column="hafu_rq" jdbcType="VARCHAR" property="hafuRq" />
+    <result column="hafu_aa" jdbcType="DECIMAL" property="hafuAa" />
+    <result column="hafu_ad" jdbcType="DECIMAL" property="hafuAd" />
+    <result column="hafu_ah" jdbcType="DECIMAL" property="hafuAh" />
+    <result column="hafu_da" jdbcType="DECIMAL" property="hafuDa" />
+    <result column="hafu_dd" jdbcType="DECIMAL" property="hafuDd" />
+    <result column="hafu_dh" jdbcType="DECIMAL" property="hafuDh" />
+    <result column="hafu_ha" jdbcType="DECIMAL" property="hafuHa" />
+    <result column="hafu_hd" jdbcType="DECIMAL" property="hafuHd" />
+    <result column="hafu_hh" jdbcType="DECIMAL" property="hafuHh" />
+    <result column="crs_type" jdbcType="VARCHAR" property="crsType" />
+    <result column="crs_id" jdbcType="VARCHAR" property="crsId" />
+    <result column="crs_status" jdbcType="VARCHAR" property="crsStatus" />
+    <result column="crs_single" jdbcType="TINYINT" property="crsSingle" />
+    <result column="crs_allup" jdbcType="TINYINT" property="crsAllup" />
+    <result column="crs_rq" jdbcType="VARCHAR" property="crsRq" />
+    <result column="m_bd10" jdbcType="DECIMAL" property="mBd10" />
+    <result column="m_bd20" jdbcType="DECIMAL" property="mBd20" />
+    <result column="m_bd21" jdbcType="DECIMAL" property="mBd21" />
+    <result column="m_bd30" jdbcType="DECIMAL" property="mBd30" />
+    <result column="m_bd31" jdbcType="DECIMAL" property="mBd31" />
+    <result column="m_bd32" jdbcType="DECIMAL" property="mBd32" />
+    <result column="m_bd40" jdbcType="DECIMAL" property="mBd40" />
+    <result column="m_bd41" jdbcType="DECIMAL" property="mBd41" />
+    <result column="m_bd42" jdbcType="DECIMAL" property="mBd42" />
+    <result column="m_bd50" jdbcType="DECIMAL" property="mBd50" />
+    <result column="m_bd51" jdbcType="DECIMAL" property="mBd51" />
+    <result column="m_bd52" jdbcType="DECIMAL" property="mBd52" />
+    <result column="m_bdup7" jdbcType="DECIMAL" property="mBdup7" />
+    <result column="m_bd00" jdbcType="DECIMAL" property="mBd00" />
+    <result column="m_bd11" jdbcType="DECIMAL" property="mBd11" />
+    <result column="m_bd22" jdbcType="DECIMAL" property="mBd22" />
+    <result column="m_bd33" jdbcType="DECIMAL" property="mBd33" />
+    <result column="m_bddup7" jdbcType="DECIMAL" property="mBddup7" />
+    <result column="m_bdg01" jdbcType="DECIMAL" property="mBdg01" />
+    <result column="m_bdg02" jdbcType="DECIMAL" property="mBdg02" />
+    <result column="m_bdg12" jdbcType="DECIMAL" property="mBdg12" />
+    <result column="m_bdg03" jdbcType="DECIMAL" property="mBdg03" />
+    <result column="m_bdg13" jdbcType="DECIMAL" property="mBdg13" />
+    <result column="m_bdg23" jdbcType="DECIMAL" property="mBdg23" />
+    <result column="m_bdg04" jdbcType="DECIMAL" property="mBdg04" />
+    <result column="m_bdg14" jdbcType="DECIMAL" property="mBdg14" />
+    <result column="m_bdg24" jdbcType="DECIMAL" property="mBdg24" />
+    <result column="m_bdg05" jdbcType="DECIMAL" property="mBdg05" />
+    <result column="m_bdg15" jdbcType="DECIMAL" property="mBdg15" />
+    <result column="m_bdg25" jdbcType="DECIMAL" property="mBdg25" />
+    <result column="m_bdgup7" jdbcType="DECIMAL" property="mBdgup7" />
+    <result column="m_upscore" jdbcType="VARCHAR" property="mUpscore" />
+    <result column="m_nowscore" jdbcType="VARCHAR" property="mNowscore" />
+    <result column="m_overscore" jdbcType="VARCHAR" property="mOverscore" />
+    <result column="m_coverdate" jdbcType="TIMESTAMP" property="mCoverdate" />
+    <result column="m_stopup" jdbcType="TINYINT" property="mStopup" />
+    <result column="m_matchtime" jdbcType="VARCHAR" property="mMatchtime" />
+    <result column="m_minute" jdbcType="INTEGER" property="mMinute" />
+    <result column="minute_extra" jdbcType="INTEGER" property="minuteExtra" />
+    <result column="match_period" jdbcType="VARCHAR" property="matchPeriod" />
+    <result column="h_redcard" jdbcType="TINYINT" property="hRedcard" />
+    <result column="a_redcard" jdbcType="TINYINT" property="aRedcard" />
+    <result column="h_yellocard" jdbcType="TINYINT" property="hYellocard" />
+    <result column="a_yellocard" jdbcType="TINYINT" property="aYellocard" />
+    <result column="fs_hinball" jdbcType="INTEGER" property="fsHinball" />
+    <result column="fs_ainball" jdbcType="INTEGER" property="fsAinball" />
+    <result column="hts_hinball" jdbcType="INTEGER" property="htsHinball" />
+    <result column="hts_ainball" jdbcType="INTEGER" property="htsAinball" />
+    <result column="extrascore" jdbcType="INTEGER" property="extrascore" />
+    <result column="scorecheck" jdbcType="INTEGER" property="scorecheck" />
+    <result column="l_cn_abbr" jdbcType="VARCHAR" property="lCnAbbr" />
+    <result column="h_cn_abbr" jdbcType="VARCHAR" property="hCnAbbr" />
+    <result column="a_cn_abbr" jdbcType="VARCHAR" property="aCnAbbr" />
+    <result column="h_order" jdbcType="VARCHAR" property="hOrder" />
+    <result column="a_order" jdbcType="VARCHAR" property="aOrder" />
+    <result column="l_color" jdbcType="VARCHAR" property="lColor" />
+    <result column="weather" jdbcType="VARCHAR" property="weather" />
+    <result column="weather_city" jdbcType="VARCHAR" property="weatherCity" />
+    <result column="temperature" jdbcType="VARCHAR" property="temperature" />
+    <result column="pre_win" jdbcType="VARCHAR" property="preWin" />
+    <result column="pre_lose" jdbcType="VARCHAR" property="preLose" />
+    <result column="pre_draw" jdbcType="VARCHAR" property="preDraw" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="last_update_time" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="m_total" jdbcType="VARCHAR" property="mTotal" />
+    <result column="h_total" jdbcType="VARCHAR" property="hTotal" />
+    <result column="a_total" jdbcType="VARCHAR" property="aTotal" />
+    <result column="half_score" jdbcType="VARCHAR" property="halfScore" />
+    <result column="final_score" jdbcType="VARCHAR" property="finalScore" />
+    <result column="team_rs" jdbcType="VARCHAR" property="teamRs" />
+    <result column="mac_h" jdbcType="DECIMAL" property="macH" />
+    <result column="mac_a" jdbcType="DECIMAL" property="macA" />
+    <result column="mac_str" jdbcType="VARCHAR" property="macStr" />
+    <result column="m_status" jdbcType="VARCHAR" property="mStatus" />
+    <result column="p_stauts" jdbcType="VARCHAR" property="pStauts" />
+    <result column="p_single" jdbcType="VARCHAR" property="pSingle" />
+    <result column="p_goal" jdbcType="VARCHAR" property="pGoal" />
+    <result column="had_odds" jdbcType="VARCHAR" property="hadOdds" />
+    <result column="hhad_odds" jdbcType="VARCHAR" property="hhadOdds" />
+    <result column="crs_win" jdbcType="VARCHAR" property="crsWin" />
+    <result column="crs_draw" jdbcType="VARCHAR" property="crsDraw" />
+    <result column="crs_lose" jdbcType="VARCHAR" property="crsLose" />
+    <result column="ttg_odds" jdbcType="VARCHAR" property="ttgOdds" />
+    <result column="hafu_odds" jdbcType="VARCHAR" property="hafuOdds" />
+    <result column="d_time" jdbcType="TIMESTAMP" property="dTime" />
+    <result column="hhad_goal" jdbcType="VARCHAR" property="hhadGoal" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.lottery.entity.BetMatchfb">
+    <result column="match_info" jdbcType="LONGVARCHAR" property="matchInfo" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, m_id, m_num, m_num_name, m_date, m_time, m_bdate, m_lid, m_lcn, m_hid, m_aid, 
+    m_hcn, m_acn, m_islose, status, m_hot, m_show, hhad_type, hhad_id, hhad_status, hhad_single, 
+    hhad_allup, hhad_rq, hhad_htrend, hhad_atrend, hhad_dtrend, hhad_ltrend, hhad_h, 
+    hhad_a, hhad_d, had_type, had_id, had_status, had_single, had_allup, had_rq, had_htrend, 
+    had_atrend, had_dtrend, had_ltrend, had_h, had_a, had_d, ttg_type, ttg_id, ttg_status, 
+    ttg_single, ttg_allup, ttg_rq, ttg_s0, ttg_s1, ttg_s2, ttg_s3, ttg_s4, ttg_s5, ttg_s6, 
+    ttg_s7, hafu_type, hafu_id, hafu_status, hafu_single, hafu_allup, hafu_rq, hafu_aa, 
+    hafu_ad, hafu_ah, hafu_da, hafu_dd, hafu_dh, hafu_ha, hafu_hd, hafu_hh, crs_type, 
+    crs_id, crs_status, crs_single, crs_allup, crs_rq, m_bd10, m_bd20, m_bd21, m_bd30, 
+    m_bd31, m_bd32, m_bd40, m_bd41, m_bd42, m_bd50, m_bd51, m_bd52, m_bdup7, m_bd00, 
+    m_bd11, m_bd22, m_bd33, m_bddup7, m_bdg01, m_bdg02, m_bdg12, m_bdg03, m_bdg13, m_bdg23, 
+    m_bdg04, m_bdg14, m_bdg24, m_bdg05, m_bdg15, m_bdg25, m_bdgup7, m_upscore, m_nowscore, 
+    m_overscore, m_coverdate, m_stopup, m_matchtime, m_minute, minute_extra, match_period, 
+    h_redcard, a_redcard, h_yellocard, a_yellocard, fs_hinball, fs_ainball, hts_hinball, 
+    hts_ainball, extrascore, scorecheck, l_cn_abbr, h_cn_abbr, a_cn_abbr, h_order, a_order, 
+    l_color, weather, weather_city, temperature, pre_win, pre_lose, pre_draw, create_time, 
+    last_update_time, m_total, h_total, a_total, half_score, final_score, team_rs, mac_h, 
+    mac_a, mac_str, m_status, p_stauts, p_single, p_goal, had_odds, hhad_odds, crs_win, 
+    crs_draw, crs_lose, ttg_odds, hafu_odds, d_time, hhad_goal
+  </sql>
+  <sql id="Blob_Column_List">
+    match_info
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.lottery.entity.BetMatchfbExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from bet_matchfb
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.lottery.entity.BetMatchfbExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from bet_matchfb
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from bet_matchfb
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from bet_matchfb
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.lottery.entity.BetMatchfbExample">
+    delete from bet_matchfb
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.lottery.entity.BetMatchfb">
+    insert into bet_matchfb (id, m_id, m_num, 
+      m_num_name, m_date, m_time, 
+      m_bdate, m_lid, m_lcn, 
+      m_hid, m_aid, m_hcn, m_acn, 
+      m_islose, status, m_hot, 
+      m_show, hhad_type, hhad_id, 
+      hhad_status, hhad_single, hhad_allup, 
+      hhad_rq, hhad_htrend, hhad_atrend, 
+      hhad_dtrend, hhad_ltrend, hhad_h, 
+      hhad_a, hhad_d, had_type, 
+      had_id, had_status, had_single, 
+      had_allup, had_rq, had_htrend, 
+      had_atrend, had_dtrend, had_ltrend, 
+      had_h, had_a, had_d, ttg_type, 
+      ttg_id, ttg_status, ttg_single, 
+      ttg_allup, ttg_rq, ttg_s0, 
+      ttg_s1, ttg_s2, ttg_s3, 
+      ttg_s4, ttg_s5, ttg_s6, 
+      ttg_s7, hafu_type, hafu_id, 
+      hafu_status, hafu_single, hafu_allup, 
+      hafu_rq, hafu_aa, hafu_ad, 
+      hafu_ah, hafu_da, hafu_dd, 
+      hafu_dh, hafu_ha, hafu_hd, 
+      hafu_hh, crs_type, crs_id, 
+      crs_status, crs_single, crs_allup, 
+      crs_rq, m_bd10, m_bd20, 
+      m_bd21, m_bd30, m_bd31, 
+      m_bd32, m_bd40, m_bd41, 
+      m_bd42, m_bd50, m_bd51, 
+      m_bd52, m_bdup7, m_bd00, 
+      m_bd11, m_bd22, m_bd33, 
+      m_bddup7, m_bdg01, m_bdg02, 
+      m_bdg12, m_bdg03, m_bdg13, 
+      m_bdg23, m_bdg04, m_bdg14, 
+      m_bdg24, m_bdg05, m_bdg15, 
+      m_bdg25, m_bdgup7, m_upscore, 
+      m_nowscore, m_overscore, m_coverdate, 
+      m_stopup, m_matchtime, m_minute, 
+      minute_extra, match_period, h_redcard, 
+      a_redcard, h_yellocard, a_yellocard, 
+      fs_hinball, fs_ainball, hts_hinball, 
+      hts_ainball, extrascore, scorecheck, 
+      l_cn_abbr, h_cn_abbr, a_cn_abbr, 
+      h_order, a_order, l_color, 
+      weather, weather_city, temperature, 
+      pre_win, pre_lose, pre_draw, 
+      create_time, last_update_time, m_total, 
+      h_total, a_total, half_score, 
+      final_score, team_rs, mac_h, 
+      mac_a, mac_str, m_status, 
+      p_stauts, p_single, p_goal, 
+      had_odds, hhad_odds, crs_win, 
+      crs_draw, crs_lose, ttg_odds, 
+      hafu_odds, d_time, hhad_goal, 
+      match_info)
+    values (#{id,jdbcType=INTEGER}, #{mId,jdbcType=VARCHAR}, #{mNum,jdbcType=VARCHAR}, 
+      #{mNumName,jdbcType=VARCHAR}, #{mDate,jdbcType=TIMESTAMP}, #{mTime,jdbcType=TIMESTAMP}, 
+      #{mBdate,jdbcType=VARCHAR}, #{mLid,jdbcType=VARCHAR}, #{mLcn,jdbcType=VARCHAR}, 
+      #{mHid,jdbcType=VARCHAR}, #{mAid,jdbcType=VARCHAR}, #{mHcn,jdbcType=VARCHAR}, #{mAcn,jdbcType=VARCHAR}, 
+      #{mIslose,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{mHot,jdbcType=TINYINT}, 
+      #{mShow,jdbcType=TINYINT}, #{hhadType,jdbcType=VARCHAR}, #{hhadId,jdbcType=VARCHAR}, 
+      #{hhadStatus,jdbcType=VARCHAR}, #{hhadSingle,jdbcType=TINYINT}, #{hhadAllup,jdbcType=TINYINT}, 
+      #{hhadRq,jdbcType=VARCHAR}, #{hhadHtrend,jdbcType=DECIMAL}, #{hhadAtrend,jdbcType=DECIMAL}, 
+      #{hhadDtrend,jdbcType=DECIMAL}, #{hhadLtrend,jdbcType=DECIMAL}, #{hhadH,jdbcType=DECIMAL}, 
+      #{hhadA,jdbcType=DECIMAL}, #{hhadD,jdbcType=DECIMAL}, #{hadType,jdbcType=VARCHAR}, 
+      #{hadId,jdbcType=VARCHAR}, #{hadStatus,jdbcType=VARCHAR}, #{hadSingle,jdbcType=TINYINT}, 
+      #{hadAllup,jdbcType=TINYINT}, #{hadRq,jdbcType=VARCHAR}, #{hadHtrend,jdbcType=DECIMAL}, 
+      #{hadAtrend,jdbcType=DECIMAL}, #{hadDtrend,jdbcType=DECIMAL}, #{hadLtrend,jdbcType=DECIMAL}, 
+      #{hadH,jdbcType=DECIMAL}, #{hadA,jdbcType=DECIMAL}, #{hadD,jdbcType=DECIMAL}, #{ttgType,jdbcType=VARCHAR}, 
+      #{ttgId,jdbcType=VARCHAR}, #{ttgStatus,jdbcType=VARCHAR}, #{ttgSingle,jdbcType=TINYINT}, 
+      #{ttgAllup,jdbcType=TINYINT}, #{ttgRq,jdbcType=VARCHAR}, #{ttgS0,jdbcType=DECIMAL}, 
+      #{ttgS1,jdbcType=DECIMAL}, #{ttgS2,jdbcType=DECIMAL}, #{ttgS3,jdbcType=DECIMAL}, 
+      #{ttgS4,jdbcType=DECIMAL}, #{ttgS5,jdbcType=DECIMAL}, #{ttgS6,jdbcType=DECIMAL}, 
+      #{ttgS7,jdbcType=DECIMAL}, #{hafuType,jdbcType=VARCHAR}, #{hafuId,jdbcType=VARCHAR}, 
+      #{hafuStatus,jdbcType=VARCHAR}, #{hafuSingle,jdbcType=TINYINT}, #{hafuAllup,jdbcType=TINYINT}, 
+      #{hafuRq,jdbcType=VARCHAR}, #{hafuAa,jdbcType=DECIMAL}, #{hafuAd,jdbcType=DECIMAL}, 
+      #{hafuAh,jdbcType=DECIMAL}, #{hafuDa,jdbcType=DECIMAL}, #{hafuDd,jdbcType=DECIMAL}, 
+      #{hafuDh,jdbcType=DECIMAL}, #{hafuHa,jdbcType=DECIMAL}, #{hafuHd,jdbcType=DECIMAL}, 
+      #{hafuHh,jdbcType=DECIMAL}, #{crsType,jdbcType=VARCHAR}, #{crsId,jdbcType=VARCHAR}, 
+      #{crsStatus,jdbcType=VARCHAR}, #{crsSingle,jdbcType=TINYINT}, #{crsAllup,jdbcType=TINYINT}, 
+      #{crsRq,jdbcType=VARCHAR}, #{mBd10,jdbcType=DECIMAL}, #{mBd20,jdbcType=DECIMAL}, 
+      #{mBd21,jdbcType=DECIMAL}, #{mBd30,jdbcType=DECIMAL}, #{mBd31,jdbcType=DECIMAL}, 
+      #{mBd32,jdbcType=DECIMAL}, #{mBd40,jdbcType=DECIMAL}, #{mBd41,jdbcType=DECIMAL}, 
+      #{mBd42,jdbcType=DECIMAL}, #{mBd50,jdbcType=DECIMAL}, #{mBd51,jdbcType=DECIMAL}, 
+      #{mBd52,jdbcType=DECIMAL}, #{mBdup7,jdbcType=DECIMAL}, #{mBd00,jdbcType=DECIMAL}, 
+      #{mBd11,jdbcType=DECIMAL}, #{mBd22,jdbcType=DECIMAL}, #{mBd33,jdbcType=DECIMAL}, 
+      #{mBddup7,jdbcType=DECIMAL}, #{mBdg01,jdbcType=DECIMAL}, #{mBdg02,jdbcType=DECIMAL}, 
+      #{mBdg12,jdbcType=DECIMAL}, #{mBdg03,jdbcType=DECIMAL}, #{mBdg13,jdbcType=DECIMAL}, 
+      #{mBdg23,jdbcType=DECIMAL}, #{mBdg04,jdbcType=DECIMAL}, #{mBdg14,jdbcType=DECIMAL}, 
+      #{mBdg24,jdbcType=DECIMAL}, #{mBdg05,jdbcType=DECIMAL}, #{mBdg15,jdbcType=DECIMAL}, 
+      #{mBdg25,jdbcType=DECIMAL}, #{mBdgup7,jdbcType=DECIMAL}, #{mUpscore,jdbcType=VARCHAR}, 
+      #{mNowscore,jdbcType=VARCHAR}, #{mOverscore,jdbcType=VARCHAR}, #{mCoverdate,jdbcType=TIMESTAMP}, 
+      #{mStopup,jdbcType=TINYINT}, #{mMatchtime,jdbcType=VARCHAR}, #{mMinute,jdbcType=INTEGER}, 
+      #{minuteExtra,jdbcType=INTEGER}, #{matchPeriod,jdbcType=VARCHAR}, #{hRedcard,jdbcType=TINYINT}, 
+      #{aRedcard,jdbcType=TINYINT}, #{hYellocard,jdbcType=TINYINT}, #{aYellocard,jdbcType=TINYINT}, 
+      #{fsHinball,jdbcType=INTEGER}, #{fsAinball,jdbcType=INTEGER}, #{htsHinball,jdbcType=INTEGER}, 
+      #{htsAinball,jdbcType=INTEGER}, #{extrascore,jdbcType=INTEGER}, #{scorecheck,jdbcType=INTEGER}, 
+      #{lCnAbbr,jdbcType=VARCHAR}, #{hCnAbbr,jdbcType=VARCHAR}, #{aCnAbbr,jdbcType=VARCHAR}, 
+      #{hOrder,jdbcType=VARCHAR}, #{aOrder,jdbcType=VARCHAR}, #{lColor,jdbcType=VARCHAR}, 
+      #{weather,jdbcType=VARCHAR}, #{weatherCity,jdbcType=VARCHAR}, #{temperature,jdbcType=VARCHAR}, 
+      #{preWin,jdbcType=VARCHAR}, #{preLose,jdbcType=VARCHAR}, #{preDraw,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastUpdateTime,jdbcType=TIMESTAMP}, #{mTotal,jdbcType=VARCHAR}, 
+      #{hTotal,jdbcType=VARCHAR}, #{aTotal,jdbcType=VARCHAR}, #{halfScore,jdbcType=VARCHAR}, 
+      #{finalScore,jdbcType=VARCHAR}, #{teamRs,jdbcType=VARCHAR}, #{macH,jdbcType=DECIMAL}, 
+      #{macA,jdbcType=DECIMAL}, #{macStr,jdbcType=VARCHAR}, #{mStatus,jdbcType=VARCHAR}, 
+      #{pStauts,jdbcType=VARCHAR}, #{pSingle,jdbcType=VARCHAR}, #{pGoal,jdbcType=VARCHAR}, 
+      #{hadOdds,jdbcType=VARCHAR}, #{hhadOdds,jdbcType=VARCHAR}, #{crsWin,jdbcType=VARCHAR}, 
+      #{crsDraw,jdbcType=VARCHAR}, #{crsLose,jdbcType=VARCHAR}, #{ttgOdds,jdbcType=VARCHAR}, 
+      #{hafuOdds,jdbcType=VARCHAR}, #{dTime,jdbcType=TIMESTAMP}, #{hhadGoal,jdbcType=VARCHAR}, 
+      #{matchInfo,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lottery.entity.BetMatchfb">
+    insert into bet_matchfb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="mId != null">
+        m_id,
+      </if>
+      <if test="mNum != null">
+        m_num,
+      </if>
+      <if test="mNumName != null">
+        m_num_name,
+      </if>
+      <if test="mDate != null">
+        m_date,
+      </if>
+      <if test="mTime != null">
+        m_time,
+      </if>
+      <if test="mBdate != null">
+        m_bdate,
+      </if>
+      <if test="mLid != null">
+        m_lid,
+      </if>
+      <if test="mLcn != null">
+        m_lcn,
+      </if>
+      <if test="mHid != null">
+        m_hid,
+      </if>
+      <if test="mAid != null">
+        m_aid,
+      </if>
+      <if test="mHcn != null">
+        m_hcn,
+      </if>
+      <if test="mAcn != null">
+        m_acn,
+      </if>
+      <if test="mIslose != null">
+        m_islose,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="mHot != null">
+        m_hot,
+      </if>
+      <if test="mShow != null">
+        m_show,
+      </if>
+      <if test="hhadType != null">
+        hhad_type,
+      </if>
+      <if test="hhadId != null">
+        hhad_id,
+      </if>
+      <if test="hhadStatus != null">
+        hhad_status,
+      </if>
+      <if test="hhadSingle != null">
+        hhad_single,
+      </if>
+      <if test="hhadAllup != null">
+        hhad_allup,
+      </if>
+      <if test="hhadRq != null">
+        hhad_rq,
+      </if>
+      <if test="hhadHtrend != null">
+        hhad_htrend,
+      </if>
+      <if test="hhadAtrend != null">
+        hhad_atrend,
+      </if>
+      <if test="hhadDtrend != null">
+        hhad_dtrend,
+      </if>
+      <if test="hhadLtrend != null">
+        hhad_ltrend,
+      </if>
+      <if test="hhadH != null">
+        hhad_h,
+      </if>
+      <if test="hhadA != null">
+        hhad_a,
+      </if>
+      <if test="hhadD != null">
+        hhad_d,
+      </if>
+      <if test="hadType != null">
+        had_type,
+      </if>
+      <if test="hadId != null">
+        had_id,
+      </if>
+      <if test="hadStatus != null">
+        had_status,
+      </if>
+      <if test="hadSingle != null">
+        had_single,
+      </if>
+      <if test="hadAllup != null">
+        had_allup,
+      </if>
+      <if test="hadRq != null">
+        had_rq,
+      </if>
+      <if test="hadHtrend != null">
+        had_htrend,
+      </if>
+      <if test="hadAtrend != null">
+        had_atrend,
+      </if>
+      <if test="hadDtrend != null">
+        had_dtrend,
+      </if>
+      <if test="hadLtrend != null">
+        had_ltrend,
+      </if>
+      <if test="hadH != null">
+        had_h,
+      </if>
+      <if test="hadA != null">
+        had_a,
+      </if>
+      <if test="hadD != null">
+        had_d,
+      </if>
+      <if test="ttgType != null">
+        ttg_type,
+      </if>
+      <if test="ttgId != null">
+        ttg_id,
+      </if>
+      <if test="ttgStatus != null">
+        ttg_status,
+      </if>
+      <if test="ttgSingle != null">
+        ttg_single,
+      </if>
+      <if test="ttgAllup != null">
+        ttg_allup,
+      </if>
+      <if test="ttgRq != null">
+        ttg_rq,
+      </if>
+      <if test="ttgS0 != null">
+        ttg_s0,
+      </if>
+      <if test="ttgS1 != null">
+        ttg_s1,
+      </if>
+      <if test="ttgS2 != null">
+        ttg_s2,
+      </if>
+      <if test="ttgS3 != null">
+        ttg_s3,
+      </if>
+      <if test="ttgS4 != null">
+        ttg_s4,
+      </if>
+      <if test="ttgS5 != null">
+        ttg_s5,
+      </if>
+      <if test="ttgS6 != null">
+        ttg_s6,
+      </if>
+      <if test="ttgS7 != null">
+        ttg_s7,
+      </if>
+      <if test="hafuType != null">
+        hafu_type,
+      </if>
+      <if test="hafuId != null">
+        hafu_id,
+      </if>
+      <if test="hafuStatus != null">
+        hafu_status,
+      </if>
+      <if test="hafuSingle != null">
+        hafu_single,
+      </if>
+      <if test="hafuAllup != null">
+        hafu_allup,
+      </if>
+      <if test="hafuRq != null">
+        hafu_rq,
+      </if>
+      <if test="hafuAa != null">
+        hafu_aa,
+      </if>
+      <if test="hafuAd != null">
+        hafu_ad,
+      </if>
+      <if test="hafuAh != null">
+        hafu_ah,
+      </if>
+      <if test="hafuDa != null">
+        hafu_da,
+      </if>
+      <if test="hafuDd != null">
+        hafu_dd,
+      </if>
+      <if test="hafuDh != null">
+        hafu_dh,
+      </if>
+      <if test="hafuHa != null">
+        hafu_ha,
+      </if>
+      <if test="hafuHd != null">
+        hafu_hd,
+      </if>
+      <if test="hafuHh != null">
+        hafu_hh,
+      </if>
+      <if test="crsType != null">
+        crs_type,
+      </if>
+      <if test="crsId != null">
+        crs_id,
+      </if>
+      <if test="crsStatus != null">
+        crs_status,
+      </if>
+      <if test="crsSingle != null">
+        crs_single,
+      </if>
+      <if test="crsAllup != null">
+        crs_allup,
+      </if>
+      <if test="crsRq != null">
+        crs_rq,
+      </if>
+      <if test="mBd10 != null">
+        m_bd10,
+      </if>
+      <if test="mBd20 != null">
+        m_bd20,
+      </if>
+      <if test="mBd21 != null">
+        m_bd21,
+      </if>
+      <if test="mBd30 != null">
+        m_bd30,
+      </if>
+      <if test="mBd31 != null">
+        m_bd31,
+      </if>
+      <if test="mBd32 != null">
+        m_bd32,
+      </if>
+      <if test="mBd40 != null">
+        m_bd40,
+      </if>
+      <if test="mBd41 != null">
+        m_bd41,
+      </if>
+      <if test="mBd42 != null">
+        m_bd42,
+      </if>
+      <if test="mBd50 != null">
+        m_bd50,
+      </if>
+      <if test="mBd51 != null">
+        m_bd51,
+      </if>
+      <if test="mBd52 != null">
+        m_bd52,
+      </if>
+      <if test="mBdup7 != null">
+        m_bdup7,
+      </if>
+      <if test="mBd00 != null">
+        m_bd00,
+      </if>
+      <if test="mBd11 != null">
+        m_bd11,
+      </if>
+      <if test="mBd22 != null">
+        m_bd22,
+      </if>
+      <if test="mBd33 != null">
+        m_bd33,
+      </if>
+      <if test="mBddup7 != null">
+        m_bddup7,
+      </if>
+      <if test="mBdg01 != null">
+        m_bdg01,
+      </if>
+      <if test="mBdg02 != null">
+        m_bdg02,
+      </if>
+      <if test="mBdg12 != null">
+        m_bdg12,
+      </if>
+      <if test="mBdg03 != null">
+        m_bdg03,
+      </if>
+      <if test="mBdg13 != null">
+        m_bdg13,
+      </if>
+      <if test="mBdg23 != null">
+        m_bdg23,
+      </if>
+      <if test="mBdg04 != null">
+        m_bdg04,
+      </if>
+      <if test="mBdg14 != null">
+        m_bdg14,
+      </if>
+      <if test="mBdg24 != null">
+        m_bdg24,
+      </if>
+      <if test="mBdg05 != null">
+        m_bdg05,
+      </if>
+      <if test="mBdg15 != null">
+        m_bdg15,
+      </if>
+      <if test="mBdg25 != null">
+        m_bdg25,
+      </if>
+      <if test="mBdgup7 != null">
+        m_bdgup7,
+      </if>
+      <if test="mUpscore != null">
+        m_upscore,
+      </if>
+      <if test="mNowscore != null">
+        m_nowscore,
+      </if>
+      <if test="mOverscore != null">
+        m_overscore,
+      </if>
+      <if test="mCoverdate != null">
+        m_coverdate,
+      </if>
+      <if test="mStopup != null">
+        m_stopup,
+      </if>
+      <if test="mMatchtime != null">
+        m_matchtime,
+      </if>
+      <if test="mMinute != null">
+        m_minute,
+      </if>
+      <if test="minuteExtra != null">
+        minute_extra,
+      </if>
+      <if test="matchPeriod != null">
+        match_period,
+      </if>
+      <if test="hRedcard != null">
+        h_redcard,
+      </if>
+      <if test="aRedcard != null">
+        a_redcard,
+      </if>
+      <if test="hYellocard != null">
+        h_yellocard,
+      </if>
+      <if test="aYellocard != null">
+        a_yellocard,
+      </if>
+      <if test="fsHinball != null">
+        fs_hinball,
+      </if>
+      <if test="fsAinball != null">
+        fs_ainball,
+      </if>
+      <if test="htsHinball != null">
+        hts_hinball,
+      </if>
+      <if test="htsAinball != null">
+        hts_ainball,
+      </if>
+      <if test="extrascore != null">
+        extrascore,
+      </if>
+      <if test="scorecheck != null">
+        scorecheck,
+      </if>
+      <if test="lCnAbbr != null">
+        l_cn_abbr,
+      </if>
+      <if test="hCnAbbr != null">
+        h_cn_abbr,
+      </if>
+      <if test="aCnAbbr != null">
+        a_cn_abbr,
+      </if>
+      <if test="hOrder != null">
+        h_order,
+      </if>
+      <if test="aOrder != null">
+        a_order,
+      </if>
+      <if test="lColor != null">
+        l_color,
+      </if>
+      <if test="weather != null">
+        weather,
+      </if>
+      <if test="weatherCity != null">
+        weather_city,
+      </if>
+      <if test="temperature != null">
+        temperature,
+      </if>
+      <if test="preWin != null">
+        pre_win,
+      </if>
+      <if test="preLose != null">
+        pre_lose,
+      </if>
+      <if test="preDraw != null">
+        pre_draw,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time,
+      </if>
+      <if test="mTotal != null">
+        m_total,
+      </if>
+      <if test="hTotal != null">
+        h_total,
+      </if>
+      <if test="aTotal != null">
+        a_total,
+      </if>
+      <if test="halfScore != null">
+        half_score,
+      </if>
+      <if test="finalScore != null">
+        final_score,
+      </if>
+      <if test="teamRs != null">
+        team_rs,
+      </if>
+      <if test="macH != null">
+        mac_h,
+      </if>
+      <if test="macA != null">
+        mac_a,
+      </if>
+      <if test="macStr != null">
+        mac_str,
+      </if>
+      <if test="mStatus != null">
+        m_status,
+      </if>
+      <if test="pStauts != null">
+        p_stauts,
+      </if>
+      <if test="pSingle != null">
+        p_single,
+      </if>
+      <if test="pGoal != null">
+        p_goal,
+      </if>
+      <if test="hadOdds != null">
+        had_odds,
+      </if>
+      <if test="hhadOdds != null">
+        hhad_odds,
+      </if>
+      <if test="crsWin != null">
+        crs_win,
+      </if>
+      <if test="crsDraw != null">
+        crs_draw,
+      </if>
+      <if test="crsLose != null">
+        crs_lose,
+      </if>
+      <if test="ttgOdds != null">
+        ttg_odds,
+      </if>
+      <if test="hafuOdds != null">
+        hafu_odds,
+      </if>
+      <if test="dTime != null">
+        d_time,
+      </if>
+      <if test="hhadGoal != null">
+        hhad_goal,
+      </if>
+      <if test="matchInfo != null">
+        match_info,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="mId != null">
+        #{mId,jdbcType=VARCHAR},
+      </if>
+      <if test="mNum != null">
+        #{mNum,jdbcType=VARCHAR},
+      </if>
+      <if test="mNumName != null">
+        #{mNumName,jdbcType=VARCHAR},
+      </if>
+      <if test="mDate != null">
+        #{mDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mTime != null">
+        #{mTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mBdate != null">
+        #{mBdate,jdbcType=VARCHAR},
+      </if>
+      <if test="mLid != null">
+        #{mLid,jdbcType=VARCHAR},
+      </if>
+      <if test="mLcn != null">
+        #{mLcn,jdbcType=VARCHAR},
+      </if>
+      <if test="mHid != null">
+        #{mHid,jdbcType=VARCHAR},
+      </if>
+      <if test="mAid != null">
+        #{mAid,jdbcType=VARCHAR},
+      </if>
+      <if test="mHcn != null">
+        #{mHcn,jdbcType=VARCHAR},
+      </if>
+      <if test="mAcn != null">
+        #{mAcn,jdbcType=VARCHAR},
+      </if>
+      <if test="mIslose != null">
+        #{mIslose,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="mHot != null">
+        #{mHot,jdbcType=TINYINT},
+      </if>
+      <if test="mShow != null">
+        #{mShow,jdbcType=TINYINT},
+      </if>
+      <if test="hhadType != null">
+        #{hhadType,jdbcType=VARCHAR},
+      </if>
+      <if test="hhadId != null">
+        #{hhadId,jdbcType=VARCHAR},
+      </if>
+      <if test="hhadStatus != null">
+        #{hhadStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="hhadSingle != null">
+        #{hhadSingle,jdbcType=TINYINT},
+      </if>
+      <if test="hhadAllup != null">
+        #{hhadAllup,jdbcType=TINYINT},
+      </if>
+      <if test="hhadRq != null">
+        #{hhadRq,jdbcType=VARCHAR},
+      </if>
+      <if test="hhadHtrend != null">
+        #{hhadHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hhadAtrend != null">
+        #{hhadAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hhadDtrend != null">
+        #{hhadDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hhadLtrend != null">
+        #{hhadLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hhadH != null">
+        #{hhadH,jdbcType=DECIMAL},
+      </if>
+      <if test="hhadA != null">
+        #{hhadA,jdbcType=DECIMAL},
+      </if>
+      <if test="hhadD != null">
+        #{hhadD,jdbcType=DECIMAL},
+      </if>
+      <if test="hadType != null">
+        #{hadType,jdbcType=VARCHAR},
+      </if>
+      <if test="hadId != null">
+        #{hadId,jdbcType=VARCHAR},
+      </if>
+      <if test="hadStatus != null">
+        #{hadStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="hadSingle != null">
+        #{hadSingle,jdbcType=TINYINT},
+      </if>
+      <if test="hadAllup != null">
+        #{hadAllup,jdbcType=TINYINT},
+      </if>
+      <if test="hadRq != null">
+        #{hadRq,jdbcType=VARCHAR},
+      </if>
+      <if test="hadHtrend != null">
+        #{hadHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hadAtrend != null">
+        #{hadAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hadDtrend != null">
+        #{hadDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hadLtrend != null">
+        #{hadLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hadH != null">
+        #{hadH,jdbcType=DECIMAL},
+      </if>
+      <if test="hadA != null">
+        #{hadA,jdbcType=DECIMAL},
+      </if>
+      <if test="hadD != null">
+        #{hadD,jdbcType=DECIMAL},
+      </if>
+      <if test="ttgType != null">
+        #{ttgType,jdbcType=VARCHAR},
+      </if>
+      <if test="ttgId != null">
+        #{ttgId,jdbcType=VARCHAR},
+      </if>
+      <if test="ttgStatus != null">
+        #{ttgStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="ttgSingle != null">
+        #{ttgSingle,jdbcType=TINYINT},
+      </if>
+      <if test="ttgAllup != null">
+        #{ttgAllup,jdbcType=TINYINT},
+      </if>
+      <if test="ttgRq != null">
+        #{ttgRq,jdbcType=VARCHAR},
+      </if>
+      <if test="ttgS0 != null">
+        #{ttgS0,jdbcType=DECIMAL},
+      </if>
+      <if test="ttgS1 != null">
+        #{ttgS1,jdbcType=DECIMAL},
+      </if>
+      <if test="ttgS2 != null">
+        #{ttgS2,jdbcType=DECIMAL},
+      </if>
+      <if test="ttgS3 != null">
+        #{ttgS3,jdbcType=DECIMAL},
+      </if>
+      <if test="ttgS4 != null">
+        #{ttgS4,jdbcType=DECIMAL},
+      </if>
+      <if test="ttgS5 != null">
+        #{ttgS5,jdbcType=DECIMAL},
+      </if>
+      <if test="ttgS6 != null">
+        #{ttgS6,jdbcType=DECIMAL},
+      </if>
+      <if test="ttgS7 != null">
+        #{ttgS7,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuType != null">
+        #{hafuType,jdbcType=VARCHAR},
+      </if>
+      <if test="hafuId != null">
+        #{hafuId,jdbcType=VARCHAR},
+      </if>
+      <if test="hafuStatus != null">
+        #{hafuStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="hafuSingle != null">
+        #{hafuSingle,jdbcType=TINYINT},
+      </if>
+      <if test="hafuAllup != null">
+        #{hafuAllup,jdbcType=TINYINT},
+      </if>
+      <if test="hafuRq != null">
+        #{hafuRq,jdbcType=VARCHAR},
+      </if>
+      <if test="hafuAa != null">
+        #{hafuAa,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuAd != null">
+        #{hafuAd,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuAh != null">
+        #{hafuAh,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuDa != null">
+        #{hafuDa,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuDd != null">
+        #{hafuDd,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuDh != null">
+        #{hafuDh,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuHa != null">
+        #{hafuHa,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuHd != null">
+        #{hafuHd,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuHh != null">
+        #{hafuHh,jdbcType=DECIMAL},
+      </if>
+      <if test="crsType != null">
+        #{crsType,jdbcType=VARCHAR},
+      </if>
+      <if test="crsId != null">
+        #{crsId,jdbcType=VARCHAR},
+      </if>
+      <if test="crsStatus != null">
+        #{crsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="crsSingle != null">
+        #{crsSingle,jdbcType=TINYINT},
+      </if>
+      <if test="crsAllup != null">
+        #{crsAllup,jdbcType=TINYINT},
+      </if>
+      <if test="crsRq != null">
+        #{crsRq,jdbcType=VARCHAR},
+      </if>
+      <if test="mBd10 != null">
+        #{mBd10,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd20 != null">
+        #{mBd20,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd21 != null">
+        #{mBd21,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd30 != null">
+        #{mBd30,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd31 != null">
+        #{mBd31,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd32 != null">
+        #{mBd32,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd40 != null">
+        #{mBd40,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd41 != null">
+        #{mBd41,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd42 != null">
+        #{mBd42,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd50 != null">
+        #{mBd50,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd51 != null">
+        #{mBd51,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd52 != null">
+        #{mBd52,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdup7 != null">
+        #{mBdup7,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd00 != null">
+        #{mBd00,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd11 != null">
+        #{mBd11,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd22 != null">
+        #{mBd22,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd33 != null">
+        #{mBd33,jdbcType=DECIMAL},
+      </if>
+      <if test="mBddup7 != null">
+        #{mBddup7,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg01 != null">
+        #{mBdg01,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg02 != null">
+        #{mBdg02,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg12 != null">
+        #{mBdg12,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg03 != null">
+        #{mBdg03,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg13 != null">
+        #{mBdg13,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg23 != null">
+        #{mBdg23,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg04 != null">
+        #{mBdg04,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg14 != null">
+        #{mBdg14,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg24 != null">
+        #{mBdg24,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg05 != null">
+        #{mBdg05,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg15 != null">
+        #{mBdg15,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg25 != null">
+        #{mBdg25,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdgup7 != null">
+        #{mBdgup7,jdbcType=DECIMAL},
+      </if>
+      <if test="mUpscore != null">
+        #{mUpscore,jdbcType=VARCHAR},
+      </if>
+      <if test="mNowscore != null">
+        #{mNowscore,jdbcType=VARCHAR},
+      </if>
+      <if test="mOverscore != null">
+        #{mOverscore,jdbcType=VARCHAR},
+      </if>
+      <if test="mCoverdate != null">
+        #{mCoverdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mStopup != null">
+        #{mStopup,jdbcType=TINYINT},
+      </if>
+      <if test="mMatchtime != null">
+        #{mMatchtime,jdbcType=VARCHAR},
+      </if>
+      <if test="mMinute != null">
+        #{mMinute,jdbcType=INTEGER},
+      </if>
+      <if test="minuteExtra != null">
+        #{minuteExtra,jdbcType=INTEGER},
+      </if>
+      <if test="matchPeriod != null">
+        #{matchPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="hRedcard != null">
+        #{hRedcard,jdbcType=TINYINT},
+      </if>
+      <if test="aRedcard != null">
+        #{aRedcard,jdbcType=TINYINT},
+      </if>
+      <if test="hYellocard != null">
+        #{hYellocard,jdbcType=TINYINT},
+      </if>
+      <if test="aYellocard != null">
+        #{aYellocard,jdbcType=TINYINT},
+      </if>
+      <if test="fsHinball != null">
+        #{fsHinball,jdbcType=INTEGER},
+      </if>
+      <if test="fsAinball != null">
+        #{fsAinball,jdbcType=INTEGER},
+      </if>
+      <if test="htsHinball != null">
+        #{htsHinball,jdbcType=INTEGER},
+      </if>
+      <if test="htsAinball != null">
+        #{htsAinball,jdbcType=INTEGER},
+      </if>
+      <if test="extrascore != null">
+        #{extrascore,jdbcType=INTEGER},
+      </if>
+      <if test="scorecheck != null">
+        #{scorecheck,jdbcType=INTEGER},
+      </if>
+      <if test="lCnAbbr != null">
+        #{lCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="hCnAbbr != null">
+        #{hCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="aCnAbbr != null">
+        #{aCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="hOrder != null">
+        #{hOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="aOrder != null">
+        #{aOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="lColor != null">
+        #{lColor,jdbcType=VARCHAR},
+      </if>
+      <if test="weather != null">
+        #{weather,jdbcType=VARCHAR},
+      </if>
+      <if test="weatherCity != null">
+        #{weatherCity,jdbcType=VARCHAR},
+      </if>
+      <if test="temperature != null">
+        #{temperature,jdbcType=VARCHAR},
+      </if>
+      <if test="preWin != null">
+        #{preWin,jdbcType=VARCHAR},
+      </if>
+      <if test="preLose != null">
+        #{preLose,jdbcType=VARCHAR},
+      </if>
+      <if test="preDraw != null">
+        #{preDraw,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mTotal != null">
+        #{mTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="hTotal != null">
+        #{hTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="aTotal != null">
+        #{aTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="halfScore != null">
+        #{halfScore,jdbcType=VARCHAR},
+      </if>
+      <if test="finalScore != null">
+        #{finalScore,jdbcType=VARCHAR},
+      </if>
+      <if test="teamRs != null">
+        #{teamRs,jdbcType=VARCHAR},
+      </if>
+      <if test="macH != null">
+        #{macH,jdbcType=DECIMAL},
+      </if>
+      <if test="macA != null">
+        #{macA,jdbcType=DECIMAL},
+      </if>
+      <if test="macStr != null">
+        #{macStr,jdbcType=VARCHAR},
+      </if>
+      <if test="mStatus != null">
+        #{mStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="pStauts != null">
+        #{pStauts,jdbcType=VARCHAR},
+      </if>
+      <if test="pSingle != null">
+        #{pSingle,jdbcType=VARCHAR},
+      </if>
+      <if test="pGoal != null">
+        #{pGoal,jdbcType=VARCHAR},
+      </if>
+      <if test="hadOdds != null">
+        #{hadOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="hhadOdds != null">
+        #{hhadOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="crsWin != null">
+        #{crsWin,jdbcType=VARCHAR},
+      </if>
+      <if test="crsDraw != null">
+        #{crsDraw,jdbcType=VARCHAR},
+      </if>
+      <if test="crsLose != null">
+        #{crsLose,jdbcType=VARCHAR},
+      </if>
+      <if test="ttgOdds != null">
+        #{ttgOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="hafuOdds != null">
+        #{hafuOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="dTime != null">
+        #{dTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="hhadGoal != null">
+        #{hhadGoal,jdbcType=VARCHAR},
+      </if>
+      <if test="matchInfo != null">
+        #{matchInfo,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.lottery.entity.BetMatchfbExample" resultType="java.lang.Long">
+    select count(*) from bet_matchfb
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update bet_matchfb
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.mId != null">
+        m_id = #{record.mId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mNum != null">
+        m_num = #{record.mNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mNumName != null">
+        m_num_name = #{record.mNumName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mDate != null">
+        m_date = #{record.mDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.mTime != null">
+        m_time = #{record.mTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.mBdate != null">
+        m_bdate = #{record.mBdate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mLid != null">
+        m_lid = #{record.mLid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mLcn != null">
+        m_lcn = #{record.mLcn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mHid != null">
+        m_hid = #{record.mHid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mAid != null">
+        m_aid = #{record.mAid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mHcn != null">
+        m_hcn = #{record.mHcn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mAcn != null">
+        m_acn = #{record.mAcn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mIslose != null">
+        m_islose = #{record.mIslose,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mHot != null">
+        m_hot = #{record.mHot,jdbcType=TINYINT},
+      </if>
+      <if test="record.mShow != null">
+        m_show = #{record.mShow,jdbcType=TINYINT},
+      </if>
+      <if test="record.hhadType != null">
+        hhad_type = #{record.hhadType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hhadId != null">
+        hhad_id = #{record.hhadId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hhadStatus != null">
+        hhad_status = #{record.hhadStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hhadSingle != null">
+        hhad_single = #{record.hhadSingle,jdbcType=TINYINT},
+      </if>
+      <if test="record.hhadAllup != null">
+        hhad_allup = #{record.hhadAllup,jdbcType=TINYINT},
+      </if>
+      <if test="record.hhadRq != null">
+        hhad_rq = #{record.hhadRq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hhadHtrend != null">
+        hhad_htrend = #{record.hhadHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hhadAtrend != null">
+        hhad_atrend = #{record.hhadAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hhadDtrend != null">
+        hhad_dtrend = #{record.hhadDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hhadLtrend != null">
+        hhad_ltrend = #{record.hhadLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hhadH != null">
+        hhad_h = #{record.hhadH,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hhadA != null">
+        hhad_a = #{record.hhadA,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hhadD != null">
+        hhad_d = #{record.hhadD,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hadType != null">
+        had_type = #{record.hadType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hadId != null">
+        had_id = #{record.hadId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hadStatus != null">
+        had_status = #{record.hadStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hadSingle != null">
+        had_single = #{record.hadSingle,jdbcType=TINYINT},
+      </if>
+      <if test="record.hadAllup != null">
+        had_allup = #{record.hadAllup,jdbcType=TINYINT},
+      </if>
+      <if test="record.hadRq != null">
+        had_rq = #{record.hadRq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hadHtrend != null">
+        had_htrend = #{record.hadHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hadAtrend != null">
+        had_atrend = #{record.hadAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hadDtrend != null">
+        had_dtrend = #{record.hadDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hadLtrend != null">
+        had_ltrend = #{record.hadLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hadH != null">
+        had_h = #{record.hadH,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hadA != null">
+        had_a = #{record.hadA,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hadD != null">
+        had_d = #{record.hadD,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ttgType != null">
+        ttg_type = #{record.ttgType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ttgId != null">
+        ttg_id = #{record.ttgId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ttgStatus != null">
+        ttg_status = #{record.ttgStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ttgSingle != null">
+        ttg_single = #{record.ttgSingle,jdbcType=TINYINT},
+      </if>
+      <if test="record.ttgAllup != null">
+        ttg_allup = #{record.ttgAllup,jdbcType=TINYINT},
+      </if>
+      <if test="record.ttgRq != null">
+        ttg_rq = #{record.ttgRq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ttgS0 != null">
+        ttg_s0 = #{record.ttgS0,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ttgS1 != null">
+        ttg_s1 = #{record.ttgS1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ttgS2 != null">
+        ttg_s2 = #{record.ttgS2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ttgS3 != null">
+        ttg_s3 = #{record.ttgS3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ttgS4 != null">
+        ttg_s4 = #{record.ttgS4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ttgS5 != null">
+        ttg_s5 = #{record.ttgS5,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ttgS6 != null">
+        ttg_s6 = #{record.ttgS6,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ttgS7 != null">
+        ttg_s7 = #{record.ttgS7,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hafuType != null">
+        hafu_type = #{record.hafuType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hafuId != null">
+        hafu_id = #{record.hafuId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hafuStatus != null">
+        hafu_status = #{record.hafuStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hafuSingle != null">
+        hafu_single = #{record.hafuSingle,jdbcType=TINYINT},
+      </if>
+      <if test="record.hafuAllup != null">
+        hafu_allup = #{record.hafuAllup,jdbcType=TINYINT},
+      </if>
+      <if test="record.hafuRq != null">
+        hafu_rq = #{record.hafuRq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hafuAa != null">
+        hafu_aa = #{record.hafuAa,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hafuAd != null">
+        hafu_ad = #{record.hafuAd,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hafuAh != null">
+        hafu_ah = #{record.hafuAh,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hafuDa != null">
+        hafu_da = #{record.hafuDa,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hafuDd != null">
+        hafu_dd = #{record.hafuDd,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hafuDh != null">
+        hafu_dh = #{record.hafuDh,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hafuHa != null">
+        hafu_ha = #{record.hafuHa,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hafuHd != null">
+        hafu_hd = #{record.hafuHd,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hafuHh != null">
+        hafu_hh = #{record.hafuHh,jdbcType=DECIMAL},
+      </if>
+      <if test="record.crsType != null">
+        crs_type = #{record.crsType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.crsId != null">
+        crs_id = #{record.crsId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.crsStatus != null">
+        crs_status = #{record.crsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.crsSingle != null">
+        crs_single = #{record.crsSingle,jdbcType=TINYINT},
+      </if>
+      <if test="record.crsAllup != null">
+        crs_allup = #{record.crsAllup,jdbcType=TINYINT},
+      </if>
+      <if test="record.crsRq != null">
+        crs_rq = #{record.crsRq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mBd10 != null">
+        m_bd10 = #{record.mBd10,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBd20 != null">
+        m_bd20 = #{record.mBd20,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBd21 != null">
+        m_bd21 = #{record.mBd21,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBd30 != null">
+        m_bd30 = #{record.mBd30,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBd31 != null">
+        m_bd31 = #{record.mBd31,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBd32 != null">
+        m_bd32 = #{record.mBd32,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBd40 != null">
+        m_bd40 = #{record.mBd40,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBd41 != null">
+        m_bd41 = #{record.mBd41,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBd42 != null">
+        m_bd42 = #{record.mBd42,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBd50 != null">
+        m_bd50 = #{record.mBd50,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBd51 != null">
+        m_bd51 = #{record.mBd51,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBd52 != null">
+        m_bd52 = #{record.mBd52,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBdup7 != null">
+        m_bdup7 = #{record.mBdup7,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBd00 != null">
+        m_bd00 = #{record.mBd00,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBd11 != null">
+        m_bd11 = #{record.mBd11,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBd22 != null">
+        m_bd22 = #{record.mBd22,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBd33 != null">
+        m_bd33 = #{record.mBd33,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBddup7 != null">
+        m_bddup7 = #{record.mBddup7,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBdg01 != null">
+        m_bdg01 = #{record.mBdg01,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBdg02 != null">
+        m_bdg02 = #{record.mBdg02,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBdg12 != null">
+        m_bdg12 = #{record.mBdg12,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBdg03 != null">
+        m_bdg03 = #{record.mBdg03,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBdg13 != null">
+        m_bdg13 = #{record.mBdg13,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBdg23 != null">
+        m_bdg23 = #{record.mBdg23,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBdg04 != null">
+        m_bdg04 = #{record.mBdg04,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBdg14 != null">
+        m_bdg14 = #{record.mBdg14,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBdg24 != null">
+        m_bdg24 = #{record.mBdg24,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBdg05 != null">
+        m_bdg05 = #{record.mBdg05,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBdg15 != null">
+        m_bdg15 = #{record.mBdg15,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBdg25 != null">
+        m_bdg25 = #{record.mBdg25,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mBdgup7 != null">
+        m_bdgup7 = #{record.mBdgup7,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mUpscore != null">
+        m_upscore = #{record.mUpscore,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mNowscore != null">
+        m_nowscore = #{record.mNowscore,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mOverscore != null">
+        m_overscore = #{record.mOverscore,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mCoverdate != null">
+        m_coverdate = #{record.mCoverdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.mStopup != null">
+        m_stopup = #{record.mStopup,jdbcType=TINYINT},
+      </if>
+      <if test="record.mMatchtime != null">
+        m_matchtime = #{record.mMatchtime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mMinute != null">
+        m_minute = #{record.mMinute,jdbcType=INTEGER},
+      </if>
+      <if test="record.minuteExtra != null">
+        minute_extra = #{record.minuteExtra,jdbcType=INTEGER},
+      </if>
+      <if test="record.matchPeriod != null">
+        match_period = #{record.matchPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hRedcard != null">
+        h_redcard = #{record.hRedcard,jdbcType=TINYINT},
+      </if>
+      <if test="record.aRedcard != null">
+        a_redcard = #{record.aRedcard,jdbcType=TINYINT},
+      </if>
+      <if test="record.hYellocard != null">
+        h_yellocard = #{record.hYellocard,jdbcType=TINYINT},
+      </if>
+      <if test="record.aYellocard != null">
+        a_yellocard = #{record.aYellocard,jdbcType=TINYINT},
+      </if>
+      <if test="record.fsHinball != null">
+        fs_hinball = #{record.fsHinball,jdbcType=INTEGER},
+      </if>
+      <if test="record.fsAinball != null">
+        fs_ainball = #{record.fsAinball,jdbcType=INTEGER},
+      </if>
+      <if test="record.htsHinball != null">
+        hts_hinball = #{record.htsHinball,jdbcType=INTEGER},
+      </if>
+      <if test="record.htsAinball != null">
+        hts_ainball = #{record.htsAinball,jdbcType=INTEGER},
+      </if>
+      <if test="record.extrascore != null">
+        extrascore = #{record.extrascore,jdbcType=INTEGER},
+      </if>
+      <if test="record.scorecheck != null">
+        scorecheck = #{record.scorecheck,jdbcType=INTEGER},
+      </if>
+      <if test="record.lCnAbbr != null">
+        l_cn_abbr = #{record.lCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hCnAbbr != null">
+        h_cn_abbr = #{record.hCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.aCnAbbr != null">
+        a_cn_abbr = #{record.aCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hOrder != null">
+        h_order = #{record.hOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="record.aOrder != null">
+        a_order = #{record.aOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lColor != null">
+        l_color = #{record.lColor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weather != null">
+        weather = #{record.weather,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weatherCity != null">
+        weather_city = #{record.weatherCity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.temperature != null">
+        temperature = #{record.temperature,jdbcType=VARCHAR},
+      </if>
+      <if test="record.preWin != null">
+        pre_win = #{record.preWin,jdbcType=VARCHAR},
+      </if>
+      <if test="record.preLose != null">
+        pre_lose = #{record.preLose,jdbcType=VARCHAR},
+      </if>
+      <if test="record.preDraw != null">
+        pre_draw = #{record.preDraw,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastUpdateTime != null">
+        last_update_time = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.mTotal != null">
+        m_total = #{record.mTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hTotal != null">
+        h_total = #{record.hTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="record.aTotal != null">
+        a_total = #{record.aTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="record.halfScore != null">
+        half_score = #{record.halfScore,jdbcType=VARCHAR},
+      </if>
+      <if test="record.finalScore != null">
+        final_score = #{record.finalScore,jdbcType=VARCHAR},
+      </if>
+      <if test="record.teamRs != null">
+        team_rs = #{record.teamRs,jdbcType=VARCHAR},
+      </if>
+      <if test="record.macH != null">
+        mac_h = #{record.macH,jdbcType=DECIMAL},
+      </if>
+      <if test="record.macA != null">
+        mac_a = #{record.macA,jdbcType=DECIMAL},
+      </if>
+      <if test="record.macStr != null">
+        mac_str = #{record.macStr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mStatus != null">
+        m_status = #{record.mStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pStauts != null">
+        p_stauts = #{record.pStauts,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pSingle != null">
+        p_single = #{record.pSingle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pGoal != null">
+        p_goal = #{record.pGoal,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hadOdds != null">
+        had_odds = #{record.hadOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hhadOdds != null">
+        hhad_odds = #{record.hhadOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="record.crsWin != null">
+        crs_win = #{record.crsWin,jdbcType=VARCHAR},
+      </if>
+      <if test="record.crsDraw != null">
+        crs_draw = #{record.crsDraw,jdbcType=VARCHAR},
+      </if>
+      <if test="record.crsLose != null">
+        crs_lose = #{record.crsLose,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ttgOdds != null">
+        ttg_odds = #{record.ttgOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hafuOdds != null">
+        hafu_odds = #{record.hafuOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dTime != null">
+        d_time = #{record.dTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.hhadGoal != null">
+        hhad_goal = #{record.hhadGoal,jdbcType=VARCHAR},
+      </if>
+      <if test="record.matchInfo != null">
+        match_info = #{record.matchInfo,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  
+ 
+
+
+
+	<!-- 根据条件查询数据 -->
+	<select id="searchBetMatchfbByCondition" parameterType="com.lottery.entity.BetMatchfb"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from bet_matchfb where 1=1
+		<if test="mId != null and mId != ''">
+			and m_id LIKE CONCAT('%',#{mId},'%')
+		</if>
+		order by id desc limit #{pageNum},10
+	</select>
+
+	<!-- 根据条件查询总记录数 -->
+	<select id="searchBetMatchfbCountByCondition" parameterType="com.lottery.entity.BetMatchfb"
+		resultType="java.lang.Integer">
+		select
+		count(*)
+		from bet_matchfb where 1=1
+		<if test="mId != null and mId != ''">
+			and m_id LIKE CONCAT('%',#{mId},'%')
+		</if>
+	</select> 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update bet_matchfb
+    set id = #{record.id,jdbcType=INTEGER},
+      m_id = #{record.mId,jdbcType=VARCHAR},
+      m_num = #{record.mNum,jdbcType=VARCHAR},
+      m_num_name = #{record.mNumName,jdbcType=VARCHAR},
+      m_date = #{record.mDate,jdbcType=TIMESTAMP},
+      m_time = #{record.mTime,jdbcType=TIMESTAMP},
+      m_bdate = #{record.mBdate,jdbcType=VARCHAR},
+      m_lid = #{record.mLid,jdbcType=VARCHAR},
+      m_lcn = #{record.mLcn,jdbcType=VARCHAR},
+      m_hid = #{record.mHid,jdbcType=VARCHAR},
+      m_aid = #{record.mAid,jdbcType=VARCHAR},
+      m_hcn = #{record.mHcn,jdbcType=VARCHAR},
+      m_acn = #{record.mAcn,jdbcType=VARCHAR},
+      m_islose = #{record.mIslose,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR},
+      m_hot = #{record.mHot,jdbcType=TINYINT},
+      m_show = #{record.mShow,jdbcType=TINYINT},
+      hhad_type = #{record.hhadType,jdbcType=VARCHAR},
+      hhad_id = #{record.hhadId,jdbcType=VARCHAR},
+      hhad_status = #{record.hhadStatus,jdbcType=VARCHAR},
+      hhad_single = #{record.hhadSingle,jdbcType=TINYINT},
+      hhad_allup = #{record.hhadAllup,jdbcType=TINYINT},
+      hhad_rq = #{record.hhadRq,jdbcType=VARCHAR},
+      hhad_htrend = #{record.hhadHtrend,jdbcType=DECIMAL},
+      hhad_atrend = #{record.hhadAtrend,jdbcType=DECIMAL},
+      hhad_dtrend = #{record.hhadDtrend,jdbcType=DECIMAL},
+      hhad_ltrend = #{record.hhadLtrend,jdbcType=DECIMAL},
+      hhad_h = #{record.hhadH,jdbcType=DECIMAL},
+      hhad_a = #{record.hhadA,jdbcType=DECIMAL},
+      hhad_d = #{record.hhadD,jdbcType=DECIMAL},
+      had_type = #{record.hadType,jdbcType=VARCHAR},
+      had_id = #{record.hadId,jdbcType=VARCHAR},
+      had_status = #{record.hadStatus,jdbcType=VARCHAR},
+      had_single = #{record.hadSingle,jdbcType=TINYINT},
+      had_allup = #{record.hadAllup,jdbcType=TINYINT},
+      had_rq = #{record.hadRq,jdbcType=VARCHAR},
+      had_htrend = #{record.hadHtrend,jdbcType=DECIMAL},
+      had_atrend = #{record.hadAtrend,jdbcType=DECIMAL},
+      had_dtrend = #{record.hadDtrend,jdbcType=DECIMAL},
+      had_ltrend = #{record.hadLtrend,jdbcType=DECIMAL},
+      had_h = #{record.hadH,jdbcType=DECIMAL},
+      had_a = #{record.hadA,jdbcType=DECIMAL},
+      had_d = #{record.hadD,jdbcType=DECIMAL},
+      ttg_type = #{record.ttgType,jdbcType=VARCHAR},
+      ttg_id = #{record.ttgId,jdbcType=VARCHAR},
+      ttg_status = #{record.ttgStatus,jdbcType=VARCHAR},
+      ttg_single = #{record.ttgSingle,jdbcType=TINYINT},
+      ttg_allup = #{record.ttgAllup,jdbcType=TINYINT},
+      ttg_rq = #{record.ttgRq,jdbcType=VARCHAR},
+      ttg_s0 = #{record.ttgS0,jdbcType=DECIMAL},
+      ttg_s1 = #{record.ttgS1,jdbcType=DECIMAL},
+      ttg_s2 = #{record.ttgS2,jdbcType=DECIMAL},
+      ttg_s3 = #{record.ttgS3,jdbcType=DECIMAL},
+      ttg_s4 = #{record.ttgS4,jdbcType=DECIMAL},
+      ttg_s5 = #{record.ttgS5,jdbcType=DECIMAL},
+      ttg_s6 = #{record.ttgS6,jdbcType=DECIMAL},
+      ttg_s7 = #{record.ttgS7,jdbcType=DECIMAL},
+      hafu_type = #{record.hafuType,jdbcType=VARCHAR},
+      hafu_id = #{record.hafuId,jdbcType=VARCHAR},
+      hafu_status = #{record.hafuStatus,jdbcType=VARCHAR},
+      hafu_single = #{record.hafuSingle,jdbcType=TINYINT},
+      hafu_allup = #{record.hafuAllup,jdbcType=TINYINT},
+      hafu_rq = #{record.hafuRq,jdbcType=VARCHAR},
+      hafu_aa = #{record.hafuAa,jdbcType=DECIMAL},
+      hafu_ad = #{record.hafuAd,jdbcType=DECIMAL},
+      hafu_ah = #{record.hafuAh,jdbcType=DECIMAL},
+      hafu_da = #{record.hafuDa,jdbcType=DECIMAL},
+      hafu_dd = #{record.hafuDd,jdbcType=DECIMAL},
+      hafu_dh = #{record.hafuDh,jdbcType=DECIMAL},
+      hafu_ha = #{record.hafuHa,jdbcType=DECIMAL},
+      hafu_hd = #{record.hafuHd,jdbcType=DECIMAL},
+      hafu_hh = #{record.hafuHh,jdbcType=DECIMAL},
+      crs_type = #{record.crsType,jdbcType=VARCHAR},
+      crs_id = #{record.crsId,jdbcType=VARCHAR},
+      crs_status = #{record.crsStatus,jdbcType=VARCHAR},
+      crs_single = #{record.crsSingle,jdbcType=TINYINT},
+      crs_allup = #{record.crsAllup,jdbcType=TINYINT},
+      crs_rq = #{record.crsRq,jdbcType=VARCHAR},
+      m_bd10 = #{record.mBd10,jdbcType=DECIMAL},
+      m_bd20 = #{record.mBd20,jdbcType=DECIMAL},
+      m_bd21 = #{record.mBd21,jdbcType=DECIMAL},
+      m_bd30 = #{record.mBd30,jdbcType=DECIMAL},
+      m_bd31 = #{record.mBd31,jdbcType=DECIMAL},
+      m_bd32 = #{record.mBd32,jdbcType=DECIMAL},
+      m_bd40 = #{record.mBd40,jdbcType=DECIMAL},
+      m_bd41 = #{record.mBd41,jdbcType=DECIMAL},
+      m_bd42 = #{record.mBd42,jdbcType=DECIMAL},
+      m_bd50 = #{record.mBd50,jdbcType=DECIMAL},
+      m_bd51 = #{record.mBd51,jdbcType=DECIMAL},
+      m_bd52 = #{record.mBd52,jdbcType=DECIMAL},
+      m_bdup7 = #{record.mBdup7,jdbcType=DECIMAL},
+      m_bd00 = #{record.mBd00,jdbcType=DECIMAL},
+      m_bd11 = #{record.mBd11,jdbcType=DECIMAL},
+      m_bd22 = #{record.mBd22,jdbcType=DECIMAL},
+      m_bd33 = #{record.mBd33,jdbcType=DECIMAL},
+      m_bddup7 = #{record.mBddup7,jdbcType=DECIMAL},
+      m_bdg01 = #{record.mBdg01,jdbcType=DECIMAL},
+      m_bdg02 = #{record.mBdg02,jdbcType=DECIMAL},
+      m_bdg12 = #{record.mBdg12,jdbcType=DECIMAL},
+      m_bdg03 = #{record.mBdg03,jdbcType=DECIMAL},
+      m_bdg13 = #{record.mBdg13,jdbcType=DECIMAL},
+      m_bdg23 = #{record.mBdg23,jdbcType=DECIMAL},
+      m_bdg04 = #{record.mBdg04,jdbcType=DECIMAL},
+      m_bdg14 = #{record.mBdg14,jdbcType=DECIMAL},
+      m_bdg24 = #{record.mBdg24,jdbcType=DECIMAL},
+      m_bdg05 = #{record.mBdg05,jdbcType=DECIMAL},
+      m_bdg15 = #{record.mBdg15,jdbcType=DECIMAL},
+      m_bdg25 = #{record.mBdg25,jdbcType=DECIMAL},
+      m_bdgup7 = #{record.mBdgup7,jdbcType=DECIMAL},
+      m_upscore = #{record.mUpscore,jdbcType=VARCHAR},
+      m_nowscore = #{record.mNowscore,jdbcType=VARCHAR},
+      m_overscore = #{record.mOverscore,jdbcType=VARCHAR},
+      m_coverdate = #{record.mCoverdate,jdbcType=TIMESTAMP},
+      m_stopup = #{record.mStopup,jdbcType=TINYINT},
+      m_matchtime = #{record.mMatchtime,jdbcType=VARCHAR},
+      m_minute = #{record.mMinute,jdbcType=INTEGER},
+      minute_extra = #{record.minuteExtra,jdbcType=INTEGER},
+      match_period = #{record.matchPeriod,jdbcType=VARCHAR},
+      h_redcard = #{record.hRedcard,jdbcType=TINYINT},
+      a_redcard = #{record.aRedcard,jdbcType=TINYINT},
+      h_yellocard = #{record.hYellocard,jdbcType=TINYINT},
+      a_yellocard = #{record.aYellocard,jdbcType=TINYINT},
+      fs_hinball = #{record.fsHinball,jdbcType=INTEGER},
+      fs_ainball = #{record.fsAinball,jdbcType=INTEGER},
+      hts_hinball = #{record.htsHinball,jdbcType=INTEGER},
+      hts_ainball = #{record.htsAinball,jdbcType=INTEGER},
+      extrascore = #{record.extrascore,jdbcType=INTEGER},
+      scorecheck = #{record.scorecheck,jdbcType=INTEGER},
+      l_cn_abbr = #{record.lCnAbbr,jdbcType=VARCHAR},
+      h_cn_abbr = #{record.hCnAbbr,jdbcType=VARCHAR},
+      a_cn_abbr = #{record.aCnAbbr,jdbcType=VARCHAR},
+      h_order = #{record.hOrder,jdbcType=VARCHAR},
+      a_order = #{record.aOrder,jdbcType=VARCHAR},
+      l_color = #{record.lColor,jdbcType=VARCHAR},
+      weather = #{record.weather,jdbcType=VARCHAR},
+      weather_city = #{record.weatherCity,jdbcType=VARCHAR},
+      temperature = #{record.temperature,jdbcType=VARCHAR},
+      pre_win = #{record.preWin,jdbcType=VARCHAR},
+      pre_lose = #{record.preLose,jdbcType=VARCHAR},
+      pre_draw = #{record.preDraw,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      last_update_time = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      m_total = #{record.mTotal,jdbcType=VARCHAR},
+      h_total = #{record.hTotal,jdbcType=VARCHAR},
+      a_total = #{record.aTotal,jdbcType=VARCHAR},
+      half_score = #{record.halfScore,jdbcType=VARCHAR},
+      final_score = #{record.finalScore,jdbcType=VARCHAR},
+      team_rs = #{record.teamRs,jdbcType=VARCHAR},
+      mac_h = #{record.macH,jdbcType=DECIMAL},
+      mac_a = #{record.macA,jdbcType=DECIMAL},
+      mac_str = #{record.macStr,jdbcType=VARCHAR},
+      m_status = #{record.mStatus,jdbcType=VARCHAR},
+      p_stauts = #{record.pStauts,jdbcType=VARCHAR},
+      p_single = #{record.pSingle,jdbcType=VARCHAR},
+      p_goal = #{record.pGoal,jdbcType=VARCHAR},
+      had_odds = #{record.hadOdds,jdbcType=VARCHAR},
+      hhad_odds = #{record.hhadOdds,jdbcType=VARCHAR},
+      crs_win = #{record.crsWin,jdbcType=VARCHAR},
+      crs_draw = #{record.crsDraw,jdbcType=VARCHAR},
+      crs_lose = #{record.crsLose,jdbcType=VARCHAR},
+      ttg_odds = #{record.ttgOdds,jdbcType=VARCHAR},
+      hafu_odds = #{record.hafuOdds,jdbcType=VARCHAR},
+      d_time = #{record.dTime,jdbcType=TIMESTAMP},
+      hhad_goal = #{record.hhadGoal,jdbcType=VARCHAR},
+      match_info = #{record.matchInfo,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update bet_matchfb
+    set id = #{record.id,jdbcType=INTEGER},
+      m_id = #{record.mId,jdbcType=VARCHAR},
+      m_num = #{record.mNum,jdbcType=VARCHAR},
+      m_num_name = #{record.mNumName,jdbcType=VARCHAR},
+      m_date = #{record.mDate,jdbcType=TIMESTAMP},
+      m_time = #{record.mTime,jdbcType=TIMESTAMP},
+      m_bdate = #{record.mBdate,jdbcType=VARCHAR},
+      m_lid = #{record.mLid,jdbcType=VARCHAR},
+      m_lcn = #{record.mLcn,jdbcType=VARCHAR},
+      m_hid = #{record.mHid,jdbcType=VARCHAR},
+      m_aid = #{record.mAid,jdbcType=VARCHAR},
+      m_hcn = #{record.mHcn,jdbcType=VARCHAR},
+      m_acn = #{record.mAcn,jdbcType=VARCHAR},
+      m_islose = #{record.mIslose,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR},
+      m_hot = #{record.mHot,jdbcType=TINYINT},
+      m_show = #{record.mShow,jdbcType=TINYINT},
+      hhad_type = #{record.hhadType,jdbcType=VARCHAR},
+      hhad_id = #{record.hhadId,jdbcType=VARCHAR},
+      hhad_status = #{record.hhadStatus,jdbcType=VARCHAR},
+      hhad_single = #{record.hhadSingle,jdbcType=TINYINT},
+      hhad_allup = #{record.hhadAllup,jdbcType=TINYINT},
+      hhad_rq = #{record.hhadRq,jdbcType=VARCHAR},
+      hhad_htrend = #{record.hhadHtrend,jdbcType=DECIMAL},
+      hhad_atrend = #{record.hhadAtrend,jdbcType=DECIMAL},
+      hhad_dtrend = #{record.hhadDtrend,jdbcType=DECIMAL},
+      hhad_ltrend = #{record.hhadLtrend,jdbcType=DECIMAL},
+      hhad_h = #{record.hhadH,jdbcType=DECIMAL},
+      hhad_a = #{record.hhadA,jdbcType=DECIMAL},
+      hhad_d = #{record.hhadD,jdbcType=DECIMAL},
+      had_type = #{record.hadType,jdbcType=VARCHAR},
+      had_id = #{record.hadId,jdbcType=VARCHAR},
+      had_status = #{record.hadStatus,jdbcType=VARCHAR},
+      had_single = #{record.hadSingle,jdbcType=TINYINT},
+      had_allup = #{record.hadAllup,jdbcType=TINYINT},
+      had_rq = #{record.hadRq,jdbcType=VARCHAR},
+      had_htrend = #{record.hadHtrend,jdbcType=DECIMAL},
+      had_atrend = #{record.hadAtrend,jdbcType=DECIMAL},
+      had_dtrend = #{record.hadDtrend,jdbcType=DECIMAL},
+      had_ltrend = #{record.hadLtrend,jdbcType=DECIMAL},
+      had_h = #{record.hadH,jdbcType=DECIMAL},
+      had_a = #{record.hadA,jdbcType=DECIMAL},
+      had_d = #{record.hadD,jdbcType=DECIMAL},
+      ttg_type = #{record.ttgType,jdbcType=VARCHAR},
+      ttg_id = #{record.ttgId,jdbcType=VARCHAR},
+      ttg_status = #{record.ttgStatus,jdbcType=VARCHAR},
+      ttg_single = #{record.ttgSingle,jdbcType=TINYINT},
+      ttg_allup = #{record.ttgAllup,jdbcType=TINYINT},
+      ttg_rq = #{record.ttgRq,jdbcType=VARCHAR},
+      ttg_s0 = #{record.ttgS0,jdbcType=DECIMAL},
+      ttg_s1 = #{record.ttgS1,jdbcType=DECIMAL},
+      ttg_s2 = #{record.ttgS2,jdbcType=DECIMAL},
+      ttg_s3 = #{record.ttgS3,jdbcType=DECIMAL},
+      ttg_s4 = #{record.ttgS4,jdbcType=DECIMAL},
+      ttg_s5 = #{record.ttgS5,jdbcType=DECIMAL},
+      ttg_s6 = #{record.ttgS6,jdbcType=DECIMAL},
+      ttg_s7 = #{record.ttgS7,jdbcType=DECIMAL},
+      hafu_type = #{record.hafuType,jdbcType=VARCHAR},
+      hafu_id = #{record.hafuId,jdbcType=VARCHAR},
+      hafu_status = #{record.hafuStatus,jdbcType=VARCHAR},
+      hafu_single = #{record.hafuSingle,jdbcType=TINYINT},
+      hafu_allup = #{record.hafuAllup,jdbcType=TINYINT},
+      hafu_rq = #{record.hafuRq,jdbcType=VARCHAR},
+      hafu_aa = #{record.hafuAa,jdbcType=DECIMAL},
+      hafu_ad = #{record.hafuAd,jdbcType=DECIMAL},
+      hafu_ah = #{record.hafuAh,jdbcType=DECIMAL},
+      hafu_da = #{record.hafuDa,jdbcType=DECIMAL},
+      hafu_dd = #{record.hafuDd,jdbcType=DECIMAL},
+      hafu_dh = #{record.hafuDh,jdbcType=DECIMAL},
+      hafu_ha = #{record.hafuHa,jdbcType=DECIMAL},
+      hafu_hd = #{record.hafuHd,jdbcType=DECIMAL},
+      hafu_hh = #{record.hafuHh,jdbcType=DECIMAL},
+      crs_type = #{record.crsType,jdbcType=VARCHAR},
+      crs_id = #{record.crsId,jdbcType=VARCHAR},
+      crs_status = #{record.crsStatus,jdbcType=VARCHAR},
+      crs_single = #{record.crsSingle,jdbcType=TINYINT},
+      crs_allup = #{record.crsAllup,jdbcType=TINYINT},
+      crs_rq = #{record.crsRq,jdbcType=VARCHAR},
+      m_bd10 = #{record.mBd10,jdbcType=DECIMAL},
+      m_bd20 = #{record.mBd20,jdbcType=DECIMAL},
+      m_bd21 = #{record.mBd21,jdbcType=DECIMAL},
+      m_bd30 = #{record.mBd30,jdbcType=DECIMAL},
+      m_bd31 = #{record.mBd31,jdbcType=DECIMAL},
+      m_bd32 = #{record.mBd32,jdbcType=DECIMAL},
+      m_bd40 = #{record.mBd40,jdbcType=DECIMAL},
+      m_bd41 = #{record.mBd41,jdbcType=DECIMAL},
+      m_bd42 = #{record.mBd42,jdbcType=DECIMAL},
+      m_bd50 = #{record.mBd50,jdbcType=DECIMAL},
+      m_bd51 = #{record.mBd51,jdbcType=DECIMAL},
+      m_bd52 = #{record.mBd52,jdbcType=DECIMAL},
+      m_bdup7 = #{record.mBdup7,jdbcType=DECIMAL},
+      m_bd00 = #{record.mBd00,jdbcType=DECIMAL},
+      m_bd11 = #{record.mBd11,jdbcType=DECIMAL},
+      m_bd22 = #{record.mBd22,jdbcType=DECIMAL},
+      m_bd33 = #{record.mBd33,jdbcType=DECIMAL},
+      m_bddup7 = #{record.mBddup7,jdbcType=DECIMAL},
+      m_bdg01 = #{record.mBdg01,jdbcType=DECIMAL},
+      m_bdg02 = #{record.mBdg02,jdbcType=DECIMAL},
+      m_bdg12 = #{record.mBdg12,jdbcType=DECIMAL},
+      m_bdg03 = #{record.mBdg03,jdbcType=DECIMAL},
+      m_bdg13 = #{record.mBdg13,jdbcType=DECIMAL},
+      m_bdg23 = #{record.mBdg23,jdbcType=DECIMAL},
+      m_bdg04 = #{record.mBdg04,jdbcType=DECIMAL},
+      m_bdg14 = #{record.mBdg14,jdbcType=DECIMAL},
+      m_bdg24 = #{record.mBdg24,jdbcType=DECIMAL},
+      m_bdg05 = #{record.mBdg05,jdbcType=DECIMAL},
+      m_bdg15 = #{record.mBdg15,jdbcType=DECIMAL},
+      m_bdg25 = #{record.mBdg25,jdbcType=DECIMAL},
+      m_bdgup7 = #{record.mBdgup7,jdbcType=DECIMAL},
+      m_upscore = #{record.mUpscore,jdbcType=VARCHAR},
+      m_nowscore = #{record.mNowscore,jdbcType=VARCHAR},
+      m_overscore = #{record.mOverscore,jdbcType=VARCHAR},
+      m_coverdate = #{record.mCoverdate,jdbcType=TIMESTAMP},
+      m_stopup = #{record.mStopup,jdbcType=TINYINT},
+      m_matchtime = #{record.mMatchtime,jdbcType=VARCHAR},
+      m_minute = #{record.mMinute,jdbcType=INTEGER},
+      minute_extra = #{record.minuteExtra,jdbcType=INTEGER},
+      match_period = #{record.matchPeriod,jdbcType=VARCHAR},
+      h_redcard = #{record.hRedcard,jdbcType=TINYINT},
+      a_redcard = #{record.aRedcard,jdbcType=TINYINT},
+      h_yellocard = #{record.hYellocard,jdbcType=TINYINT},
+      a_yellocard = #{record.aYellocard,jdbcType=TINYINT},
+      fs_hinball = #{record.fsHinball,jdbcType=INTEGER},
+      fs_ainball = #{record.fsAinball,jdbcType=INTEGER},
+      hts_hinball = #{record.htsHinball,jdbcType=INTEGER},
+      hts_ainball = #{record.htsAinball,jdbcType=INTEGER},
+      extrascore = #{record.extrascore,jdbcType=INTEGER},
+      scorecheck = #{record.scorecheck,jdbcType=INTEGER},
+      l_cn_abbr = #{record.lCnAbbr,jdbcType=VARCHAR},
+      h_cn_abbr = #{record.hCnAbbr,jdbcType=VARCHAR},
+      a_cn_abbr = #{record.aCnAbbr,jdbcType=VARCHAR},
+      h_order = #{record.hOrder,jdbcType=VARCHAR},
+      a_order = #{record.aOrder,jdbcType=VARCHAR},
+      l_color = #{record.lColor,jdbcType=VARCHAR},
+      weather = #{record.weather,jdbcType=VARCHAR},
+      weather_city = #{record.weatherCity,jdbcType=VARCHAR},
+      temperature = #{record.temperature,jdbcType=VARCHAR},
+      pre_win = #{record.preWin,jdbcType=VARCHAR},
+      pre_lose = #{record.preLose,jdbcType=VARCHAR},
+      pre_draw = #{record.preDraw,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      last_update_time = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      m_total = #{record.mTotal,jdbcType=VARCHAR},
+      h_total = #{record.hTotal,jdbcType=VARCHAR},
+      a_total = #{record.aTotal,jdbcType=VARCHAR},
+      half_score = #{record.halfScore,jdbcType=VARCHAR},
+      final_score = #{record.finalScore,jdbcType=VARCHAR},
+      team_rs = #{record.teamRs,jdbcType=VARCHAR},
+      mac_h = #{record.macH,jdbcType=DECIMAL},
+      mac_a = #{record.macA,jdbcType=DECIMAL},
+      mac_str = #{record.macStr,jdbcType=VARCHAR},
+      m_status = #{record.mStatus,jdbcType=VARCHAR},
+      p_stauts = #{record.pStauts,jdbcType=VARCHAR},
+      p_single = #{record.pSingle,jdbcType=VARCHAR},
+      p_goal = #{record.pGoal,jdbcType=VARCHAR},
+      had_odds = #{record.hadOdds,jdbcType=VARCHAR},
+      hhad_odds = #{record.hhadOdds,jdbcType=VARCHAR},
+      crs_win = #{record.crsWin,jdbcType=VARCHAR},
+      crs_draw = #{record.crsDraw,jdbcType=VARCHAR},
+      crs_lose = #{record.crsLose,jdbcType=VARCHAR},
+      ttg_odds = #{record.ttgOdds,jdbcType=VARCHAR},
+      hafu_odds = #{record.hafuOdds,jdbcType=VARCHAR},
+      d_time = #{record.dTime,jdbcType=TIMESTAMP},
+      hhad_goal = #{record.hhadGoal,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lottery.entity.BetMatchfb">
+    update bet_matchfb
+    <set>
+      <if test="mId != null">
+        m_id = #{mId,jdbcType=VARCHAR},
+      </if>
+      <if test="mNum != null">
+        m_num = #{mNum,jdbcType=VARCHAR},
+      </if>
+      <if test="mNumName != null">
+        m_num_name = #{mNumName,jdbcType=VARCHAR},
+      </if>
+      <if test="mDate != null">
+        m_date = #{mDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mTime != null">
+        m_time = #{mTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mBdate != null">
+        m_bdate = #{mBdate,jdbcType=VARCHAR},
+      </if>
+      <if test="mLid != null">
+        m_lid = #{mLid,jdbcType=VARCHAR},
+      </if>
+      <if test="mLcn != null">
+        m_lcn = #{mLcn,jdbcType=VARCHAR},
+      </if>
+      <if test="mHid != null">
+        m_hid = #{mHid,jdbcType=VARCHAR},
+      </if>
+      <if test="mAid != null">
+        m_aid = #{mAid,jdbcType=VARCHAR},
+      </if>
+      <if test="mHcn != null">
+        m_hcn = #{mHcn,jdbcType=VARCHAR},
+      </if>
+      <if test="mAcn != null">
+        m_acn = #{mAcn,jdbcType=VARCHAR},
+      </if>
+      <if test="mIslose != null">
+        m_islose = #{mIslose,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="mHot != null">
+        m_hot = #{mHot,jdbcType=TINYINT},
+      </if>
+      <if test="mShow != null">
+        m_show = #{mShow,jdbcType=TINYINT},
+      </if>
+      <if test="hhadType != null">
+        hhad_type = #{hhadType,jdbcType=VARCHAR},
+      </if>
+      <if test="hhadId != null">
+        hhad_id = #{hhadId,jdbcType=VARCHAR},
+      </if>
+      <if test="hhadStatus != null">
+        hhad_status = #{hhadStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="hhadSingle != null">
+        hhad_single = #{hhadSingle,jdbcType=TINYINT},
+      </if>
+      <if test="hhadAllup != null">
+        hhad_allup = #{hhadAllup,jdbcType=TINYINT},
+      </if>
+      <if test="hhadRq != null">
+        hhad_rq = #{hhadRq,jdbcType=VARCHAR},
+      </if>
+      <if test="hhadHtrend != null">
+        hhad_htrend = #{hhadHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hhadAtrend != null">
+        hhad_atrend = #{hhadAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hhadDtrend != null">
+        hhad_dtrend = #{hhadDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hhadLtrend != null">
+        hhad_ltrend = #{hhadLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hhadH != null">
+        hhad_h = #{hhadH,jdbcType=DECIMAL},
+      </if>
+      <if test="hhadA != null">
+        hhad_a = #{hhadA,jdbcType=DECIMAL},
+      </if>
+      <if test="hhadD != null">
+        hhad_d = #{hhadD,jdbcType=DECIMAL},
+      </if>
+      <if test="hadType != null">
+        had_type = #{hadType,jdbcType=VARCHAR},
+      </if>
+      <if test="hadId != null">
+        had_id = #{hadId,jdbcType=VARCHAR},
+      </if>
+      <if test="hadStatus != null">
+        had_status = #{hadStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="hadSingle != null">
+        had_single = #{hadSingle,jdbcType=TINYINT},
+      </if>
+      <if test="hadAllup != null">
+        had_allup = #{hadAllup,jdbcType=TINYINT},
+      </if>
+      <if test="hadRq != null">
+        had_rq = #{hadRq,jdbcType=VARCHAR},
+      </if>
+      <if test="hadHtrend != null">
+        had_htrend = #{hadHtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hadAtrend != null">
+        had_atrend = #{hadAtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hadDtrend != null">
+        had_dtrend = #{hadDtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hadLtrend != null">
+        had_ltrend = #{hadLtrend,jdbcType=DECIMAL},
+      </if>
+      <if test="hadH != null">
+        had_h = #{hadH,jdbcType=DECIMAL},
+      </if>
+      <if test="hadA != null">
+        had_a = #{hadA,jdbcType=DECIMAL},
+      </if>
+      <if test="hadD != null">
+        had_d = #{hadD,jdbcType=DECIMAL},
+      </if>
+      <if test="ttgType != null">
+        ttg_type = #{ttgType,jdbcType=VARCHAR},
+      </if>
+      <if test="ttgId != null">
+        ttg_id = #{ttgId,jdbcType=VARCHAR},
+      </if>
+      <if test="ttgStatus != null">
+        ttg_status = #{ttgStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="ttgSingle != null">
+        ttg_single = #{ttgSingle,jdbcType=TINYINT},
+      </if>
+      <if test="ttgAllup != null">
+        ttg_allup = #{ttgAllup,jdbcType=TINYINT},
+      </if>
+      <if test="ttgRq != null">
+        ttg_rq = #{ttgRq,jdbcType=VARCHAR},
+      </if>
+      <if test="ttgS0 != null">
+        ttg_s0 = #{ttgS0,jdbcType=DECIMAL},
+      </if>
+      <if test="ttgS1 != null">
+        ttg_s1 = #{ttgS1,jdbcType=DECIMAL},
+      </if>
+      <if test="ttgS2 != null">
+        ttg_s2 = #{ttgS2,jdbcType=DECIMAL},
+      </if>
+      <if test="ttgS3 != null">
+        ttg_s3 = #{ttgS3,jdbcType=DECIMAL},
+      </if>
+      <if test="ttgS4 != null">
+        ttg_s4 = #{ttgS4,jdbcType=DECIMAL},
+      </if>
+      <if test="ttgS5 != null">
+        ttg_s5 = #{ttgS5,jdbcType=DECIMAL},
+      </if>
+      <if test="ttgS6 != null">
+        ttg_s6 = #{ttgS6,jdbcType=DECIMAL},
+      </if>
+      <if test="ttgS7 != null">
+        ttg_s7 = #{ttgS7,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuType != null">
+        hafu_type = #{hafuType,jdbcType=VARCHAR},
+      </if>
+      <if test="hafuId != null">
+        hafu_id = #{hafuId,jdbcType=VARCHAR},
+      </if>
+      <if test="hafuStatus != null">
+        hafu_status = #{hafuStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="hafuSingle != null">
+        hafu_single = #{hafuSingle,jdbcType=TINYINT},
+      </if>
+      <if test="hafuAllup != null">
+        hafu_allup = #{hafuAllup,jdbcType=TINYINT},
+      </if>
+      <if test="hafuRq != null">
+        hafu_rq = #{hafuRq,jdbcType=VARCHAR},
+      </if>
+      <if test="hafuAa != null">
+        hafu_aa = #{hafuAa,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuAd != null">
+        hafu_ad = #{hafuAd,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuAh != null">
+        hafu_ah = #{hafuAh,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuDa != null">
+        hafu_da = #{hafuDa,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuDd != null">
+        hafu_dd = #{hafuDd,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuDh != null">
+        hafu_dh = #{hafuDh,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuHa != null">
+        hafu_ha = #{hafuHa,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuHd != null">
+        hafu_hd = #{hafuHd,jdbcType=DECIMAL},
+      </if>
+      <if test="hafuHh != null">
+        hafu_hh = #{hafuHh,jdbcType=DECIMAL},
+      </if>
+      <if test="crsType != null">
+        crs_type = #{crsType,jdbcType=VARCHAR},
+      </if>
+      <if test="crsId != null">
+        crs_id = #{crsId,jdbcType=VARCHAR},
+      </if>
+      <if test="crsStatus != null">
+        crs_status = #{crsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="crsSingle != null">
+        crs_single = #{crsSingle,jdbcType=TINYINT},
+      </if>
+      <if test="crsAllup != null">
+        crs_allup = #{crsAllup,jdbcType=TINYINT},
+      </if>
+      <if test="crsRq != null">
+        crs_rq = #{crsRq,jdbcType=VARCHAR},
+      </if>
+      <if test="mBd10 != null">
+        m_bd10 = #{mBd10,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd20 != null">
+        m_bd20 = #{mBd20,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd21 != null">
+        m_bd21 = #{mBd21,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd30 != null">
+        m_bd30 = #{mBd30,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd31 != null">
+        m_bd31 = #{mBd31,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd32 != null">
+        m_bd32 = #{mBd32,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd40 != null">
+        m_bd40 = #{mBd40,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd41 != null">
+        m_bd41 = #{mBd41,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd42 != null">
+        m_bd42 = #{mBd42,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd50 != null">
+        m_bd50 = #{mBd50,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd51 != null">
+        m_bd51 = #{mBd51,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd52 != null">
+        m_bd52 = #{mBd52,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdup7 != null">
+        m_bdup7 = #{mBdup7,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd00 != null">
+        m_bd00 = #{mBd00,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd11 != null">
+        m_bd11 = #{mBd11,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd22 != null">
+        m_bd22 = #{mBd22,jdbcType=DECIMAL},
+      </if>
+      <if test="mBd33 != null">
+        m_bd33 = #{mBd33,jdbcType=DECIMAL},
+      </if>
+      <if test="mBddup7 != null">
+        m_bddup7 = #{mBddup7,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg01 != null">
+        m_bdg01 = #{mBdg01,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg02 != null">
+        m_bdg02 = #{mBdg02,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg12 != null">
+        m_bdg12 = #{mBdg12,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg03 != null">
+        m_bdg03 = #{mBdg03,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg13 != null">
+        m_bdg13 = #{mBdg13,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg23 != null">
+        m_bdg23 = #{mBdg23,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg04 != null">
+        m_bdg04 = #{mBdg04,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg14 != null">
+        m_bdg14 = #{mBdg14,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg24 != null">
+        m_bdg24 = #{mBdg24,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg05 != null">
+        m_bdg05 = #{mBdg05,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg15 != null">
+        m_bdg15 = #{mBdg15,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdg25 != null">
+        m_bdg25 = #{mBdg25,jdbcType=DECIMAL},
+      </if>
+      <if test="mBdgup7 != null">
+        m_bdgup7 = #{mBdgup7,jdbcType=DECIMAL},
+      </if>
+      <if test="mUpscore != null">
+        m_upscore = #{mUpscore,jdbcType=VARCHAR},
+      </if>
+      <if test="mNowscore != null">
+        m_nowscore = #{mNowscore,jdbcType=VARCHAR},
+      </if>
+      <if test="mOverscore != null">
+        m_overscore = #{mOverscore,jdbcType=VARCHAR},
+      </if>
+      <if test="mCoverdate != null">
+        m_coverdate = #{mCoverdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mStopup != null">
+        m_stopup = #{mStopup,jdbcType=TINYINT},
+      </if>
+      <if test="mMatchtime != null">
+        m_matchtime = #{mMatchtime,jdbcType=VARCHAR},
+      </if>
+      <if test="mMinute != null">
+        m_minute = #{mMinute,jdbcType=INTEGER},
+      </if>
+      <if test="minuteExtra != null">
+        minute_extra = #{minuteExtra,jdbcType=INTEGER},
+      </if>
+      <if test="matchPeriod != null">
+        match_period = #{matchPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="hRedcard != null">
+        h_redcard = #{hRedcard,jdbcType=TINYINT},
+      </if>
+      <if test="aRedcard != null">
+        a_redcard = #{aRedcard,jdbcType=TINYINT},
+      </if>
+      <if test="hYellocard != null">
+        h_yellocard = #{hYellocard,jdbcType=TINYINT},
+      </if>
+      <if test="aYellocard != null">
+        a_yellocard = #{aYellocard,jdbcType=TINYINT},
+      </if>
+      <if test="fsHinball != null">
+        fs_hinball = #{fsHinball,jdbcType=INTEGER},
+      </if>
+      <if test="fsAinball != null">
+        fs_ainball = #{fsAinball,jdbcType=INTEGER},
+      </if>
+      <if test="htsHinball != null">
+        hts_hinball = #{htsHinball,jdbcType=INTEGER},
+      </if>
+      <if test="htsAinball != null">
+        hts_ainball = #{htsAinball,jdbcType=INTEGER},
+      </if>
+      <if test="extrascore != null">
+        extrascore = #{extrascore,jdbcType=INTEGER},
+      </if>
+      <if test="scorecheck != null">
+        scorecheck = #{scorecheck,jdbcType=INTEGER},
+      </if>
+      <if test="lCnAbbr != null">
+        l_cn_abbr = #{lCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="hCnAbbr != null">
+        h_cn_abbr = #{hCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="aCnAbbr != null">
+        a_cn_abbr = #{aCnAbbr,jdbcType=VARCHAR},
+      </if>
+      <if test="hOrder != null">
+        h_order = #{hOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="aOrder != null">
+        a_order = #{aOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="lColor != null">
+        l_color = #{lColor,jdbcType=VARCHAR},
+      </if>
+      <if test="weather != null">
+        weather = #{weather,jdbcType=VARCHAR},
+      </if>
+      <if test="weatherCity != null">
+        weather_city = #{weatherCity,jdbcType=VARCHAR},
+      </if>
+      <if test="temperature != null">
+        temperature = #{temperature,jdbcType=VARCHAR},
+      </if>
+      <if test="preWin != null">
+        pre_win = #{preWin,jdbcType=VARCHAR},
+      </if>
+      <if test="preLose != null">
+        pre_lose = #{preLose,jdbcType=VARCHAR},
+      </if>
+      <if test="preDraw != null">
+        pre_draw = #{preDraw,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mTotal != null">
+        m_total = #{mTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="hTotal != null">
+        h_total = #{hTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="aTotal != null">
+        a_total = #{aTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="halfScore != null">
+        half_score = #{halfScore,jdbcType=VARCHAR},
+      </if>
+      <if test="finalScore != null">
+        final_score = #{finalScore,jdbcType=VARCHAR},
+      </if>
+      <if test="teamRs != null">
+        team_rs = #{teamRs,jdbcType=VARCHAR},
+      </if>
+      <if test="macH != null">
+        mac_h = #{macH,jdbcType=DECIMAL},
+      </if>
+      <if test="macA != null">
+        mac_a = #{macA,jdbcType=DECIMAL},
+      </if>
+      <if test="macStr != null">
+        mac_str = #{macStr,jdbcType=VARCHAR},
+      </if>
+      <if test="mStatus != null">
+        m_status = #{mStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="pStauts != null">
+        p_stauts = #{pStauts,jdbcType=VARCHAR},
+      </if>
+      <if test="pSingle != null">
+        p_single = #{pSingle,jdbcType=VARCHAR},
+      </if>
+      <if test="pGoal != null">
+        p_goal = #{pGoal,jdbcType=VARCHAR},
+      </if>
+      <if test="hadOdds != null">
+        had_odds = #{hadOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="hhadOdds != null">
+        hhad_odds = #{hhadOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="crsWin != null">
+        crs_win = #{crsWin,jdbcType=VARCHAR},
+      </if>
+      <if test="crsDraw != null">
+        crs_draw = #{crsDraw,jdbcType=VARCHAR},
+      </if>
+      <if test="crsLose != null">
+        crs_lose = #{crsLose,jdbcType=VARCHAR},
+      </if>
+      <if test="ttgOdds != null">
+        ttg_odds = #{ttgOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="hafuOdds != null">
+        hafu_odds = #{hafuOdds,jdbcType=VARCHAR},
+      </if>
+      <if test="dTime != null">
+        d_time = #{dTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="hhadGoal != null">
+        hhad_goal = #{hhadGoal,jdbcType=VARCHAR},
+      </if>
+      <if test="matchInfo != null">
+        match_info = #{matchInfo,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.lottery.entity.BetMatchfb">
+    update bet_matchfb
+    set m_id = #{mId,jdbcType=VARCHAR},
+      m_num = #{mNum,jdbcType=VARCHAR},
+      m_num_name = #{mNumName,jdbcType=VARCHAR},
+      m_date = #{mDate,jdbcType=TIMESTAMP},
+      m_time = #{mTime,jdbcType=TIMESTAMP},
+      m_bdate = #{mBdate,jdbcType=VARCHAR},
+      m_lid = #{mLid,jdbcType=VARCHAR},
+      m_lcn = #{mLcn,jdbcType=VARCHAR},
+      m_hid = #{mHid,jdbcType=VARCHAR},
+      m_aid = #{mAid,jdbcType=VARCHAR},
+      m_hcn = #{mHcn,jdbcType=VARCHAR},
+      m_acn = #{mAcn,jdbcType=VARCHAR},
+      m_islose = #{mIslose,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      m_hot = #{mHot,jdbcType=TINYINT},
+      m_show = #{mShow,jdbcType=TINYINT},
+      hhad_type = #{hhadType,jdbcType=VARCHAR},
+      hhad_id = #{hhadId,jdbcType=VARCHAR},
+      hhad_status = #{hhadStatus,jdbcType=VARCHAR},
+      hhad_single = #{hhadSingle,jdbcType=TINYINT},
+      hhad_allup = #{hhadAllup,jdbcType=TINYINT},
+      hhad_rq = #{hhadRq,jdbcType=VARCHAR},
+      hhad_htrend = #{hhadHtrend,jdbcType=DECIMAL},
+      hhad_atrend = #{hhadAtrend,jdbcType=DECIMAL},
+      hhad_dtrend = #{hhadDtrend,jdbcType=DECIMAL},
+      hhad_ltrend = #{hhadLtrend,jdbcType=DECIMAL},
+      hhad_h = #{hhadH,jdbcType=DECIMAL},
+      hhad_a = #{hhadA,jdbcType=DECIMAL},
+      hhad_d = #{hhadD,jdbcType=DECIMAL},
+      had_type = #{hadType,jdbcType=VARCHAR},
+      had_id = #{hadId,jdbcType=VARCHAR},
+      had_status = #{hadStatus,jdbcType=VARCHAR},
+      had_single = #{hadSingle,jdbcType=TINYINT},
+      had_allup = #{hadAllup,jdbcType=TINYINT},
+      had_rq = #{hadRq,jdbcType=VARCHAR},
+      had_htrend = #{hadHtrend,jdbcType=DECIMAL},
+      had_atrend = #{hadAtrend,jdbcType=DECIMAL},
+      had_dtrend = #{hadDtrend,jdbcType=DECIMAL},
+      had_ltrend = #{hadLtrend,jdbcType=DECIMAL},
+      had_h = #{hadH,jdbcType=DECIMAL},
+      had_a = #{hadA,jdbcType=DECIMAL},
+      had_d = #{hadD,jdbcType=DECIMAL},
+      ttg_type = #{ttgType,jdbcType=VARCHAR},
+      ttg_id = #{ttgId,jdbcType=VARCHAR},
+      ttg_status = #{ttgStatus,jdbcType=VARCHAR},
+      ttg_single = #{ttgSingle,jdbcType=TINYINT},
+      ttg_allup = #{ttgAllup,jdbcType=TINYINT},
+      ttg_rq = #{ttgRq,jdbcType=VARCHAR},
+      ttg_s0 = #{ttgS0,jdbcType=DECIMAL},
+      ttg_s1 = #{ttgS1,jdbcType=DECIMAL},
+      ttg_s2 = #{ttgS2,jdbcType=DECIMAL},
+      ttg_s3 = #{ttgS3,jdbcType=DECIMAL},
+      ttg_s4 = #{ttgS4,jdbcType=DECIMAL},
+      ttg_s5 = #{ttgS5,jdbcType=DECIMAL},
+      ttg_s6 = #{ttgS6,jdbcType=DECIMAL},
+      ttg_s7 = #{ttgS7,jdbcType=DECIMAL},
+      hafu_type = #{hafuType,jdbcType=VARCHAR},
+      hafu_id = #{hafuId,jdbcType=VARCHAR},
+      hafu_status = #{hafuStatus,jdbcType=VARCHAR},
+      hafu_single = #{hafuSingle,jdbcType=TINYINT},
+      hafu_allup = #{hafuAllup,jdbcType=TINYINT},
+      hafu_rq = #{hafuRq,jdbcType=VARCHAR},
+      hafu_aa = #{hafuAa,jdbcType=DECIMAL},
+      hafu_ad = #{hafuAd,jdbcType=DECIMAL},
+      hafu_ah = #{hafuAh,jdbcType=DECIMAL},
+      hafu_da = #{hafuDa,jdbcType=DECIMAL},
+      hafu_dd = #{hafuDd,jdbcType=DECIMAL},
+      hafu_dh = #{hafuDh,jdbcType=DECIMAL},
+      hafu_ha = #{hafuHa,jdbcType=DECIMAL},
+      hafu_hd = #{hafuHd,jdbcType=DECIMAL},
+      hafu_hh = #{hafuHh,jdbcType=DECIMAL},
+      crs_type = #{crsType,jdbcType=VARCHAR},
+      crs_id = #{crsId,jdbcType=VARCHAR},
+      crs_status = #{crsStatus,jdbcType=VARCHAR},
+      crs_single = #{crsSingle,jdbcType=TINYINT},
+      crs_allup = #{crsAllup,jdbcType=TINYINT},
+      crs_rq = #{crsRq,jdbcType=VARCHAR},
+      m_bd10 = #{mBd10,jdbcType=DECIMAL},
+      m_bd20 = #{mBd20,jdbcType=DECIMAL},
+      m_bd21 = #{mBd21,jdbcType=DECIMAL},
+      m_bd30 = #{mBd30,jdbcType=DECIMAL},
+      m_bd31 = #{mBd31,jdbcType=DECIMAL},
+      m_bd32 = #{mBd32,jdbcType=DECIMAL},
+      m_bd40 = #{mBd40,jdbcType=DECIMAL},
+      m_bd41 = #{mBd41,jdbcType=DECIMAL},
+      m_bd42 = #{mBd42,jdbcType=DECIMAL},
+      m_bd50 = #{mBd50,jdbcType=DECIMAL},
+      m_bd51 = #{mBd51,jdbcType=DECIMAL},
+      m_bd52 = #{mBd52,jdbcType=DECIMAL},
+      m_bdup7 = #{mBdup7,jdbcType=DECIMAL},
+      m_bd00 = #{mBd00,jdbcType=DECIMAL},
+      m_bd11 = #{mBd11,jdbcType=DECIMAL},
+      m_bd22 = #{mBd22,jdbcType=DECIMAL},
+      m_bd33 = #{mBd33,jdbcType=DECIMAL},
+      m_bddup7 = #{mBddup7,jdbcType=DECIMAL},
+      m_bdg01 = #{mBdg01,jdbcType=DECIMAL},
+      m_bdg02 = #{mBdg02,jdbcType=DECIMAL},
+      m_bdg12 = #{mBdg12,jdbcType=DECIMAL},
+      m_bdg03 = #{mBdg03,jdbcType=DECIMAL},
+      m_bdg13 = #{mBdg13,jdbcType=DECIMAL},
+      m_bdg23 = #{mBdg23,jdbcType=DECIMAL},
+      m_bdg04 = #{mBdg04,jdbcType=DECIMAL},
+      m_bdg14 = #{mBdg14,jdbcType=DECIMAL},
+      m_bdg24 = #{mBdg24,jdbcType=DECIMAL},
+      m_bdg05 = #{mBdg05,jdbcType=DECIMAL},
+      m_bdg15 = #{mBdg15,jdbcType=DECIMAL},
+      m_bdg25 = #{mBdg25,jdbcType=DECIMAL},
+      m_bdgup7 = #{mBdgup7,jdbcType=DECIMAL},
+      m_upscore = #{mUpscore,jdbcType=VARCHAR},
+      m_nowscore = #{mNowscore,jdbcType=VARCHAR},
+      m_overscore = #{mOverscore,jdbcType=VARCHAR},
+      m_coverdate = #{mCoverdate,jdbcType=TIMESTAMP},
+      m_stopup = #{mStopup,jdbcType=TINYINT},
+      m_matchtime = #{mMatchtime,jdbcType=VARCHAR},
+      m_minute = #{mMinute,jdbcType=INTEGER},
+      minute_extra = #{minuteExtra,jdbcType=INTEGER},
+      match_period = #{matchPeriod,jdbcType=VARCHAR},
+      h_redcard = #{hRedcard,jdbcType=TINYINT},
+      a_redcard = #{aRedcard,jdbcType=TINYINT},
+      h_yellocard = #{hYellocard,jdbcType=TINYINT},
+      a_yellocard = #{aYellocard,jdbcType=TINYINT},
+      fs_hinball = #{fsHinball,jdbcType=INTEGER},
+      fs_ainball = #{fsAinball,jdbcType=INTEGER},
+      hts_hinball = #{htsHinball,jdbcType=INTEGER},
+      hts_ainball = #{htsAinball,jdbcType=INTEGER},
+      extrascore = #{extrascore,jdbcType=INTEGER},
+      scorecheck = #{scorecheck,jdbcType=INTEGER},
+      l_cn_abbr = #{lCnAbbr,jdbcType=VARCHAR},
+      h_cn_abbr = #{hCnAbbr,jdbcType=VARCHAR},
+      a_cn_abbr = #{aCnAbbr,jdbcType=VARCHAR},
+      h_order = #{hOrder,jdbcType=VARCHAR},
+      a_order = #{aOrder,jdbcType=VARCHAR},
+      l_color = #{lColor,jdbcType=VARCHAR},
+      weather = #{weather,jdbcType=VARCHAR},
+      weather_city = #{weatherCity,jdbcType=VARCHAR},
+      temperature = #{temperature,jdbcType=VARCHAR},
+      pre_win = #{preWin,jdbcType=VARCHAR},
+      pre_lose = #{preLose,jdbcType=VARCHAR},
+      pre_draw = #{preDraw,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      m_total = #{mTotal,jdbcType=VARCHAR},
+      h_total = #{hTotal,jdbcType=VARCHAR},
+      a_total = #{aTotal,jdbcType=VARCHAR},
+      half_score = #{halfScore,jdbcType=VARCHAR},
+      final_score = #{finalScore,jdbcType=VARCHAR},
+      team_rs = #{teamRs,jdbcType=VARCHAR},
+      mac_h = #{macH,jdbcType=DECIMAL},
+      mac_a = #{macA,jdbcType=DECIMAL},
+      mac_str = #{macStr,jdbcType=VARCHAR},
+      m_status = #{mStatus,jdbcType=VARCHAR},
+      p_stauts = #{pStauts,jdbcType=VARCHAR},
+      p_single = #{pSingle,jdbcType=VARCHAR},
+      p_goal = #{pGoal,jdbcType=VARCHAR},
+      had_odds = #{hadOdds,jdbcType=VARCHAR},
+      hhad_odds = #{hhadOdds,jdbcType=VARCHAR},
+      crs_win = #{crsWin,jdbcType=VARCHAR},
+      crs_draw = #{crsDraw,jdbcType=VARCHAR},
+      crs_lose = #{crsLose,jdbcType=VARCHAR},
+      ttg_odds = #{ttgOdds,jdbcType=VARCHAR},
+      hafu_odds = #{hafuOdds,jdbcType=VARCHAR},
+      d_time = #{dTime,jdbcType=TIMESTAMP},
+      hhad_goal = #{hhadGoal,jdbcType=VARCHAR},
+      match_info = #{matchInfo,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lottery.entity.BetMatchfb">
+    update bet_matchfb
+    set m_id = #{mId,jdbcType=VARCHAR},
+      m_num = #{mNum,jdbcType=VARCHAR},
+      m_num_name = #{mNumName,jdbcType=VARCHAR},
+      m_date = #{mDate,jdbcType=TIMESTAMP},
+      m_time = #{mTime,jdbcType=TIMESTAMP},
+      m_bdate = #{mBdate,jdbcType=VARCHAR},
+      m_lid = #{mLid,jdbcType=VARCHAR},
+      m_lcn = #{mLcn,jdbcType=VARCHAR},
+      m_hid = #{mHid,jdbcType=VARCHAR},
+      m_aid = #{mAid,jdbcType=VARCHAR},
+      m_hcn = #{mHcn,jdbcType=VARCHAR},
+      m_acn = #{mAcn,jdbcType=VARCHAR},
+      m_islose = #{mIslose,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      m_hot = #{mHot,jdbcType=TINYINT},
+      m_show = #{mShow,jdbcType=TINYINT},
+      hhad_type = #{hhadType,jdbcType=VARCHAR},
+      hhad_id = #{hhadId,jdbcType=VARCHAR},
+      hhad_status = #{hhadStatus,jdbcType=VARCHAR},
+      hhad_single = #{hhadSingle,jdbcType=TINYINT},
+      hhad_allup = #{hhadAllup,jdbcType=TINYINT},
+      hhad_rq = #{hhadRq,jdbcType=VARCHAR},
+      hhad_htrend = #{hhadHtrend,jdbcType=DECIMAL},
+      hhad_atrend = #{hhadAtrend,jdbcType=DECIMAL},
+      hhad_dtrend = #{hhadDtrend,jdbcType=DECIMAL},
+      hhad_ltrend = #{hhadLtrend,jdbcType=DECIMAL},
+      hhad_h = #{hhadH,jdbcType=DECIMAL},
+      hhad_a = #{hhadA,jdbcType=DECIMAL},
+      hhad_d = #{hhadD,jdbcType=DECIMAL},
+      had_type = #{hadType,jdbcType=VARCHAR},
+      had_id = #{hadId,jdbcType=VARCHAR},
+      had_status = #{hadStatus,jdbcType=VARCHAR},
+      had_single = #{hadSingle,jdbcType=TINYINT},
+      had_allup = #{hadAllup,jdbcType=TINYINT},
+      had_rq = #{hadRq,jdbcType=VARCHAR},
+      had_htrend = #{hadHtrend,jdbcType=DECIMAL},
+      had_atrend = #{hadAtrend,jdbcType=DECIMAL},
+      had_dtrend = #{hadDtrend,jdbcType=DECIMAL},
+      had_ltrend = #{hadLtrend,jdbcType=DECIMAL},
+      had_h = #{hadH,jdbcType=DECIMAL},
+      had_a = #{hadA,jdbcType=DECIMAL},
+      had_d = #{hadD,jdbcType=DECIMAL},
+      ttg_type = #{ttgType,jdbcType=VARCHAR},
+      ttg_id = #{ttgId,jdbcType=VARCHAR},
+      ttg_status = #{ttgStatus,jdbcType=VARCHAR},
+      ttg_single = #{ttgSingle,jdbcType=TINYINT},
+      ttg_allup = #{ttgAllup,jdbcType=TINYINT},
+      ttg_rq = #{ttgRq,jdbcType=VARCHAR},
+      ttg_s0 = #{ttgS0,jdbcType=DECIMAL},
+      ttg_s1 = #{ttgS1,jdbcType=DECIMAL},
+      ttg_s2 = #{ttgS2,jdbcType=DECIMAL},
+      ttg_s3 = #{ttgS3,jdbcType=DECIMAL},
+      ttg_s4 = #{ttgS4,jdbcType=DECIMAL},
+      ttg_s5 = #{ttgS5,jdbcType=DECIMAL},
+      ttg_s6 = #{ttgS6,jdbcType=DECIMAL},
+      ttg_s7 = #{ttgS7,jdbcType=DECIMAL},
+      hafu_type = #{hafuType,jdbcType=VARCHAR},
+      hafu_id = #{hafuId,jdbcType=VARCHAR},
+      hafu_status = #{hafuStatus,jdbcType=VARCHAR},
+      hafu_single = #{hafuSingle,jdbcType=TINYINT},
+      hafu_allup = #{hafuAllup,jdbcType=TINYINT},
+      hafu_rq = #{hafuRq,jdbcType=VARCHAR},
+      hafu_aa = #{hafuAa,jdbcType=DECIMAL},
+      hafu_ad = #{hafuAd,jdbcType=DECIMAL},
+      hafu_ah = #{hafuAh,jdbcType=DECIMAL},
+      hafu_da = #{hafuDa,jdbcType=DECIMAL},
+      hafu_dd = #{hafuDd,jdbcType=DECIMAL},
+      hafu_dh = #{hafuDh,jdbcType=DECIMAL},
+      hafu_ha = #{hafuHa,jdbcType=DECIMAL},
+      hafu_hd = #{hafuHd,jdbcType=DECIMAL},
+      hafu_hh = #{hafuHh,jdbcType=DECIMAL},
+      crs_type = #{crsType,jdbcType=VARCHAR},
+      crs_id = #{crsId,jdbcType=VARCHAR},
+      crs_status = #{crsStatus,jdbcType=VARCHAR},
+      crs_single = #{crsSingle,jdbcType=TINYINT},
+      crs_allup = #{crsAllup,jdbcType=TINYINT},
+      crs_rq = #{crsRq,jdbcType=VARCHAR},
+      m_bd10 = #{mBd10,jdbcType=DECIMAL},
+      m_bd20 = #{mBd20,jdbcType=DECIMAL},
+      m_bd21 = #{mBd21,jdbcType=DECIMAL},
+      m_bd30 = #{mBd30,jdbcType=DECIMAL},
+      m_bd31 = #{mBd31,jdbcType=DECIMAL},
+      m_bd32 = #{mBd32,jdbcType=DECIMAL},
+      m_bd40 = #{mBd40,jdbcType=DECIMAL},
+      m_bd41 = #{mBd41,jdbcType=DECIMAL},
+      m_bd42 = #{mBd42,jdbcType=DECIMAL},
+      m_bd50 = #{mBd50,jdbcType=DECIMAL},
+      m_bd51 = #{mBd51,jdbcType=DECIMAL},
+      m_bd52 = #{mBd52,jdbcType=DECIMAL},
+      m_bdup7 = #{mBdup7,jdbcType=DECIMAL},
+      m_bd00 = #{mBd00,jdbcType=DECIMAL},
+      m_bd11 = #{mBd11,jdbcType=DECIMAL},
+      m_bd22 = #{mBd22,jdbcType=DECIMAL},
+      m_bd33 = #{mBd33,jdbcType=DECIMAL},
+      m_bddup7 = #{mBddup7,jdbcType=DECIMAL},
+      m_bdg01 = #{mBdg01,jdbcType=DECIMAL},
+      m_bdg02 = #{mBdg02,jdbcType=DECIMAL},
+      m_bdg12 = #{mBdg12,jdbcType=DECIMAL},
+      m_bdg03 = #{mBdg03,jdbcType=DECIMAL},
+      m_bdg13 = #{mBdg13,jdbcType=DECIMAL},
+      m_bdg23 = #{mBdg23,jdbcType=DECIMAL},
+      m_bdg04 = #{mBdg04,jdbcType=DECIMAL},
+      m_bdg14 = #{mBdg14,jdbcType=DECIMAL},
+      m_bdg24 = #{mBdg24,jdbcType=DECIMAL},
+      m_bdg05 = #{mBdg05,jdbcType=DECIMAL},
+      m_bdg15 = #{mBdg15,jdbcType=DECIMAL},
+      m_bdg25 = #{mBdg25,jdbcType=DECIMAL},
+      m_bdgup7 = #{mBdgup7,jdbcType=DECIMAL},
+      m_upscore = #{mUpscore,jdbcType=VARCHAR},
+      m_nowscore = #{mNowscore,jdbcType=VARCHAR},
+      m_overscore = #{mOverscore,jdbcType=VARCHAR},
+      m_coverdate = #{mCoverdate,jdbcType=TIMESTAMP},
+      m_stopup = #{mStopup,jdbcType=TINYINT},
+      m_matchtime = #{mMatchtime,jdbcType=VARCHAR},
+      m_minute = #{mMinute,jdbcType=INTEGER},
+      minute_extra = #{minuteExtra,jdbcType=INTEGER},
+      match_period = #{matchPeriod,jdbcType=VARCHAR},
+      h_redcard = #{hRedcard,jdbcType=TINYINT},
+      a_redcard = #{aRedcard,jdbcType=TINYINT},
+      h_yellocard = #{hYellocard,jdbcType=TINYINT},
+      a_yellocard = #{aYellocard,jdbcType=TINYINT},
+      fs_hinball = #{fsHinball,jdbcType=INTEGER},
+      fs_ainball = #{fsAinball,jdbcType=INTEGER},
+      hts_hinball = #{htsHinball,jdbcType=INTEGER},
+      hts_ainball = #{htsAinball,jdbcType=INTEGER},
+      extrascore = #{extrascore,jdbcType=INTEGER},
+      scorecheck = #{scorecheck,jdbcType=INTEGER},
+      l_cn_abbr = #{lCnAbbr,jdbcType=VARCHAR},
+      h_cn_abbr = #{hCnAbbr,jdbcType=VARCHAR},
+      a_cn_abbr = #{aCnAbbr,jdbcType=VARCHAR},
+      h_order = #{hOrder,jdbcType=VARCHAR},
+      a_order = #{aOrder,jdbcType=VARCHAR},
+      l_color = #{lColor,jdbcType=VARCHAR},
+      weather = #{weather,jdbcType=VARCHAR},
+      weather_city = #{weatherCity,jdbcType=VARCHAR},
+      temperature = #{temperature,jdbcType=VARCHAR},
+      pre_win = #{preWin,jdbcType=VARCHAR},
+      pre_lose = #{preLose,jdbcType=VARCHAR},
+      pre_draw = #{preDraw,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      m_total = #{mTotal,jdbcType=VARCHAR},
+      h_total = #{hTotal,jdbcType=VARCHAR},
+      a_total = #{aTotal,jdbcType=VARCHAR},
+      half_score = #{halfScore,jdbcType=VARCHAR},
+      final_score = #{finalScore,jdbcType=VARCHAR},
+      team_rs = #{teamRs,jdbcType=VARCHAR},
+      mac_h = #{macH,jdbcType=DECIMAL},
+      mac_a = #{macA,jdbcType=DECIMAL},
+      mac_str = #{macStr,jdbcType=VARCHAR},
+      m_status = #{mStatus,jdbcType=VARCHAR},
+      p_stauts = #{pStauts,jdbcType=VARCHAR},
+      p_single = #{pSingle,jdbcType=VARCHAR},
+      p_goal = #{pGoal,jdbcType=VARCHAR},
+      had_odds = #{hadOdds,jdbcType=VARCHAR},
+      hhad_odds = #{hhadOdds,jdbcType=VARCHAR},
+      crs_win = #{crsWin,jdbcType=VARCHAR},
+      crs_draw = #{crsDraw,jdbcType=VARCHAR},
+      crs_lose = #{crsLose,jdbcType=VARCHAR},
+      ttg_odds = #{ttgOdds,jdbcType=VARCHAR},
+      hafu_odds = #{hafuOdds,jdbcType=VARCHAR},
+      d_time = #{dTime,jdbcType=TIMESTAMP},
+      hhad_goal = #{hhadGoal,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

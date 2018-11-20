@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" charset="utf-8" src="../static/jquery.min.js"></script>  
+<script type="text/javascript" charset="utf-8" src="../static/utf8-jsp/ueditor.config.js"></script>  
+<script type="text/javascript" charset="utf-8" src="../static/utf8-jsp/ueditor.all.js"></script>  
+
+<LINK rel=stylesheet href="../static/utf8-jsp/themes/default/css/ueditor.css">  
+</head>
+<body>
+    <textarea id="newsEditor" name="content"> </textarea>  
+   <br/>  
+   <input type="submit" value="发布" id="ee" onclick="aa()">  
+   <script type="text/javascript">  
+     var ue =  UE.getEditor('newsEditor',{toolbars: [
+    	    ['fullscreen', 'source', 'undo', 'redo'],
+    	    ['bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc']
+    	]});
+      
+      function aa(){
+       alert(ue.getContent())	  
+      } 
+   </script> 
+</body>
+</html>

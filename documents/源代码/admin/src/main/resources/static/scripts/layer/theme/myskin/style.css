@@ -1,0 +1,81 @@
+body .layui-layer {
+    border-radius: 10px;
+}
+
+/*标题*/
+body .layui-layer-title {
+    background-color: rgba(0, 153, 0, 1);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 80px 0 10px;
+    font-size: 12px;
+}
+
+/*右上角的关闭*/
+body .layui-layer-setwin {
+    top: 4px;
+    right: 10px;
+}
+
+body .layui-layer-setwin .layui-layer-close1 {
+    background-position: 0 0;
+}
+
+body .layui-layer-ico {
+    background: url(../default/close.png) no-repeat;
+}
+
+body .layui-layer-setwin a {
+    width: 28px;
+    height: 28px;
+}
+
+/*底部*/
+body .layui-layer-btn {
+    text-align: center;
+    pointer-events: auto;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: rgba(242, 242, 242, 1);
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+body .layui-layer-btn a {
+    margin: 10px 5px 0;
+    height: 30px;
+    background: inherit;
+    background-color: rgba(201, 201, 201, 1);
+    border: none;
+    border-radius: 15px;
+    color: white;
+}
+
+body .layui-layer-iframe .layui-layer-btn, .layui-layer-page .layui-layer-btn {
+    padding-top: 0;
+}
+
+body .layui-layer-iframe iframe {
+    border-radius: 10px;
+}
+
+/*提示框*/
+body .layui-layer-dialog {
+    min-width: 100px;
+}
+
+body .layer-yourskin-msg {
+    background-color: rgba(0, 0, 0, .6);
+    color: #fff;
+    border: none;
+}
+
+body .layer-yourskin-msg .layui-layer-content {
+    padding: 12px;
+}

@@ -1,0 +1,140 @@
+// Initialize your app
+var app = new Framework7({
+    pushState: true,
+    pushStateSeparator: '#page/',
+    // Hide and show indicator during ajax requests
+    onAjaxStart: function (xhr) {
+        app.showIndicator();
+    },
+    onAjaxComplete: function (xhr) {
+        app.hideIndicator();
+    }
+});
+
+// Export selectors engine
+var $ = Dom7;
+
+// Add view
+var mainView = app.addView('.view-main', {
+    // Because we use fixed-through navbar we can enable dynamic navbar
+    dynamicNavbar: true,
+    animatePages: false
+});
+mainView.router.loadPage('cashier.html');
+
+$(document).on('pageInit', function (event) {
+    var queryInfo = utility.getQueryParams();
+    var userInfo = utility.getLocalStorage("userInfo");
+    var pageVue = new Vue({
+        el: "#js-cashier",
+        data: {
+            payChannelId: "",
+            amount: "",
+            payPwd: "",
+            walletLeftCash: 0,
+            payChannelList: []
+        },
+        watch: {
+            "payChannelId": function (value) {
+                var self = this;
+
+                for (var i = 0, len = self.payChannelList.length; i < len; i++) {
+                    if (self.payChannelList[i]["payChannelId"] == "wallet") {
+                        self.walletLeftCash = self.payChannelList[i]["walletLeftCash"];
+                        break;
+                    }
+                }
+            }
+        },
+        methods: {
+            setPayChannelId: function(payChannelId) {
+                var self = this;
+                self.payChannelId = payChannelId;
+            },
+            // 获取支付通道
+            getPayChannel: function () {
+                var self = this;
+                utility.interactWithServer({
+                    headerInfo: {
+                        appType: queryInfo["appType"],
+                        userId: !!userInfo ? userInfo["userId"] : "",
+                        userToken: !!userInfo ? userInfo["userToken"] : "",
+                        actionUrl: utility.formatActionUrl(CONFIG.SERVICE.walletService, CONFIG.ACTION.getPayChannel, {
+                            action: CONFIG.ACTION.getPayChannel,
+                            orderCode: queryInfo["orderCode"],
+                            payFlag: queryInfo["payFlag"]
+                        }),
+                    },
+                    url: CONFIG.HOST + CONFIG.SERVICE.walletService,
+                    dataObj: {
+                        action: CONFIG.ACTION.getPayChannel,
+                        orderCode: queryInfo["orderCode"],
+                        payFlag: queryInfo["payFlag"]
+                    },
+                    beforeSendCallback: function () {
+                        app.showIndicator();
+                    },
+                    completeCallback: function (XMLHttpRequest, textStatus) {
+                        app.hideIndicator();
+                    },
+                    successCallback: function (data) {
+                        if (data.code == 200) {
+                            self.payChannelList = data.data;
+                            self.amount = self.payChannelList[0]["amount"];
+                        } else {
+                            app.showPreloader(data.message);
+                            setTimeout(function () {
+                                app.hidePreloader();
+                            }, 1000);
+                        }
+                    },
+                });
+            },
+            // 支付
+            payAction: function () {
+                var self = this;
+
+                if (utility.checkLen(self.payChannelId, 0)) {
+                    app.showPreloader("请选择一种支付方式");
+                    setTimeout(function () {
+                        app.hidePreloader();
+                    }, 1000);
+                    return;
+                }
+
+                // 如果是钱包支付，则需要填写支付密码
+                if (self.payChannelId == "wallet") {
+                    if (self.walletLeftCash < queryInfo["amount"]) {
+                        app.showPreloader("钱包余额不足!");
+                        setTimeout(function () {
+                            app.hidePreloader();
+                        }, 1000);
+                        return;
+                    }
+
+                    if (self.payPwd.length == 0) {
+                        app.showPreloader("请输入支付密码");
+                        setTimeout(function () {
+                            app.hidePreloader();
+                        }, 1000);
+                        return;
+                    }
+                }
+
+                window.location.href = CONFIG.HOST + utility.formatActionUrl(CONFIG.SERVICE.walletService, CONFIG.ACTION.getPay, {
+                    action: CONFIG.ACTION.getPay,
+                    payChannelId: self.payChannelId,
+                    orderCode: queryInfo["orderCode"],
+                    payPwd: md5(self.payPwd).toUpperCase(),
+                }) + "&userId=" + userInfo["userId"] + "&userToken=" + userInfo["userToken"] + "&appType=" + queryInfo["appType"] + "&orderCode=" + userInfo["orderCode"];
+
+            }
+        },
+        created: function () {
+            var self = this;
+
+            self.getPayChannel();
+        }
+    });
+});
+

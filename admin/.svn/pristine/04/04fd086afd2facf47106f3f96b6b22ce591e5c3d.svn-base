@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lottery.dao.BaseCityMapper">
+  <resultMap id="BaseResultMap" type="com.lottery.entity.BaseCity">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="province_id" jdbcType="BIGINT" property="provinceId" />
+    <result column="city_name" jdbcType="VARCHAR" property="cityName" />
+    <result column="is_hot" jdbcType="SMALLINT" property="isHot" />
+    <result column="letter" jdbcType="CHAR" property="letter" />
+    <result column="zipcode" jdbcType="INTEGER" property="zipcode" />
+    <result column="is_open" jdbcType="SMALLINT" property="isOpen" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, province_id, city_name, is_hot, letter, zipcode, is_open
+  </sql>
+  <!--根据省份id查询数据集 -->
+  
+    <select id="selectCityListByProvinceId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from base_city where province_id=#{provinceId}
+   
+  </select>
+  
+  <select id="selectByExample" parameterType="com.lottery.entity.BaseCityExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from base_city
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from base_city
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from base_city
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.lottery.entity.BaseCityExample">
+    delete from base_city
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.lottery.entity.BaseCity">
+    insert into base_city (id, province_id, city_name, 
+      is_hot, letter, zipcode, 
+      is_open)
+    values (#{id,jdbcType=BIGINT}, #{provinceId,jdbcType=BIGINT}, #{cityName,jdbcType=VARCHAR}, 
+      #{isHot,jdbcType=SMALLINT}, #{letter,jdbcType=CHAR}, #{zipcode,jdbcType=INTEGER}, 
+      #{isOpen,jdbcType=SMALLINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lottery.entity.BaseCity">
+    insert into base_city
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="provinceId != null">
+        province_id,
+      </if>
+      <if test="cityName != null">
+        city_name,
+      </if>
+      <if test="isHot != null">
+        is_hot,
+      </if>
+      <if test="letter != null">
+        letter,
+      </if>
+      <if test="zipcode != null">
+        zipcode,
+      </if>
+      <if test="isOpen != null">
+        is_open,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="provinceId != null">
+        #{provinceId,jdbcType=BIGINT},
+      </if>
+      <if test="cityName != null">
+        #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="isHot != null">
+        #{isHot,jdbcType=SMALLINT},
+      </if>
+      <if test="letter != null">
+        #{letter,jdbcType=CHAR},
+      </if>
+      <if test="zipcode != null">
+        #{zipcode,jdbcType=INTEGER},
+      </if>
+      <if test="isOpen != null">
+        #{isOpen,jdbcType=SMALLINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.lottery.entity.BaseCityExample" resultType="java.lang.Long">
+    select count(*) from base_city
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update base_city
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.provinceId != null">
+        province_id = #{record.provinceId,jdbcType=BIGINT},
+      </if>
+      <if test="record.cityName != null">
+        city_name = #{record.cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isHot != null">
+        is_hot = #{record.isHot,jdbcType=SMALLINT},
+      </if>
+      <if test="record.letter != null">
+        letter = #{record.letter,jdbcType=CHAR},
+      </if>
+      <if test="record.zipcode != null">
+        zipcode = #{record.zipcode,jdbcType=INTEGER},
+      </if>
+      <if test="record.isOpen != null">
+        is_open = #{record.isOpen,jdbcType=SMALLINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update base_city
+    set id = #{record.id,jdbcType=BIGINT},
+      province_id = #{record.provinceId,jdbcType=BIGINT},
+      city_name = #{record.cityName,jdbcType=VARCHAR},
+      is_hot = #{record.isHot,jdbcType=SMALLINT},
+      letter = #{record.letter,jdbcType=CHAR},
+      zipcode = #{record.zipcode,jdbcType=INTEGER},
+      is_open = #{record.isOpen,jdbcType=SMALLINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lottery.entity.BaseCity">
+    update base_city
+    <set>
+      <if test="provinceId != null">
+        province_id = #{provinceId,jdbcType=BIGINT},
+      </if>
+      <if test="cityName != null">
+        city_name = #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="isHot != null">
+        is_hot = #{isHot,jdbcType=SMALLINT},
+      </if>
+      <if test="letter != null">
+        letter = #{letter,jdbcType=CHAR},
+      </if>
+      <if test="zipcode != null">
+        zipcode = #{zipcode,jdbcType=INTEGER},
+      </if>
+      <if test="isOpen != null">
+        is_open = #{isOpen,jdbcType=SMALLINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lottery.entity.BaseCity">
+    update base_city
+    set province_id = #{provinceId,jdbcType=BIGINT},
+      city_name = #{cityName,jdbcType=VARCHAR},
+      is_hot = #{isHot,jdbcType=SMALLINT},
+      letter = #{letter,jdbcType=CHAR},
+      zipcode = #{zipcode,jdbcType=INTEGER},
+      is_open = #{isOpen,jdbcType=SMALLINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

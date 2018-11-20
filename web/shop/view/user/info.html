@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Your app title -->
+    <title>多彩缤纷</title>
+
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/flat-ui.min.css">
+    <link rel="stylesheet" href="/assets/vender/cropperjs-master/cropper.min.css">
+    <link rel="stylesheet" href="/shop/css/common.min.css">
+</head>
+
+<body>
+    <div id="js-pageInfo">
+        <!-- 头部 -->
+        <div class="headerWrap">
+            <div class="header">
+                <div class="c-logo">
+                    <h1 class="img">多彩缤纷</h1>
+                </div>
+                <div class="c-info">
+                    <template v-if="!!!userInfo">
+                        <a href="/shop/view/user/login.html">
+                            <i></i>请登录</a>
+                        <a href="/shop/view/user/register.html">
+                            <i></i>免费注册</a>
+                        <a href="/shop/view/user/resetPass.html">
+                            <i></i>找回密码</a>
+                    </template>
+                    <template v-else>
+                        <a href="/shop/view/user/info.html">
+                            <i></i>{{decodeURI(userInfo.nickName)}}</a>
+                        <a href="/shop/view/user/info.html">
+                            <i></i>个人中心
+                        </a>
+                        <a href="/shop/view/user/message.html">
+                            <i></i>消息通知
+                            <span class="babo"></span>
+                        </a>
+                        <a @click="userLogout">
+                            <i></i>退出登录</a>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <div class="bread">
+            <p>
+                <span>当前位置：</span>
+                <span>多彩缤纷</span>
+                <span>></span>
+                <span>个人账户></span>
+                <span>基本资料</span>
+            </p>
+        </div>
+
+        <!-- 主要内容 -->
+        <div class="main">
+            <div class="slider">
+                <div class="userInfo">
+                    <p>
+                        <span>
+                            <img :src="userInfo.headImageUrl||'/shop/img/img02.png'" />
+                        </span>
+                        <i v-text="decodeURI(userInfo.nickName)"></i>
+                    </p>
+                </div>
+                <div class="accountInfo">
+                    <p class="account">账户余额：
+                        <strong v-text="userInfo.totalMoney+' 元'"></strong>
+                    </p>
+                    <p class="account">总订单数：
+                        <strong v-text="userInfo.totalOrders"></strong>
+                    </p>
+                    <p class="account">今日接单：
+                        <strong v-text="userInfo.totalReceivedOrders"></strong>
+                    </p>
+                    <p class="account">今日打单：
+                        <strong v-text="userInfo.totalPrintedOrders"></strong>
+                    </p>
+                    <p class="account">今日回退：
+                        <strong v-text="userInfo.totalRejectedOrders"></strong>
+                    </p>
+                    <p class="account">未处理单：
+                        <strong v-text="userInfo.totalUntreatedOrders"></strong>
+                    </p>
+                    <p>
+                        <a href="/shop/view/user/recharge.html" class="btn btn-danger">充值</a>
+                        <a href="/shop/view/user/deposit.html" class="btn btn-info">提现</a>
+                    </p>
+                </div>
+                <div class="menuInfo">
+                    <p class="label">交易管理</p>
+                    <p class="item">
+                        <a href="/shop/view/user/order.html">我的订单</a>
+                    </p>
+                    <p class="item">
+                        <a href="/shop/view/user/depRech.html">充值提现明细</a>
+                    </p>
+                    <p class="item">
+                        <a href="/shop/view/user/kingBi.html">钱包流水</a>
+                    </p>
+                </div>
+                <div class="menuInfo">
+                    <p class="label">系统管理</p>
+                    <p class="item">
+                        <a href="/shop/view/user/message.html">站内通知</a>
+                    </p>
+                </div>
+                <div class="menuInfo">
+                    <p class="label">个人账户</p>
+                    <p class="item active">
+                        <a href="/shop/view/user/info.html">基本资料</a>
+                    </p>
+                    <p class="item">
+                        <a href="/shop/view/user/security.html">安全设置</a>
+                    </p>
+                </div>
+            </div>
+            <div class="contentWrap">
+                <div class="infoTable">
+                    <div class="tabType">
+                        <div class="tabbox">
+                            <div class="tabs">
+                                <ul>
+                                    <li @click="switchTab(0)" :class="tabType==0?'active':''">
+                                        <span>昵称</span>
+                                    </li>
+                                    <li @click="switchTab(1)" :class="tabType==1?'active':''">
+                                        <span>头像</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <template v-if="tabType==0">
+                    <div class="inputWrap">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p class="label">昵称:</p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            <input type="text" v-model="paramInfo.nickName" placeholder="请输入昵称" />
+                                            <span class="request">*</span>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <p class="action">
+                                            <button @click="doNikNameAction" class="btn btn-success">保存</button>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </template>
+                <template v-if="tabType==1">
+                    <form>
+                        <div class="inputWrap">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="imgInfo" style="padding: 1rem;">
+                                                <div id="getFile" style="position: relative; z-index: 0; border-radius: .5rem; border: 2px dashed darkgray;">
+                                                    <p style="text-align: center; padding: .25rem; margin: 0; font-size: .8rem; color: rgb(142, 138, 138);">
+                                                        点击获取图片
+                                                    </p>
+                                                    <input @change="previewImg" type="file" style="position: absolute; z-index: 10; top: 0; left: 0; bottom: 0; width: 100%; height: 100%; opacity: 0;"
+                                                        name="photo" id="fileEle" />
+                                                </div>
+                                                <div id="js-canvas" style="width: 6rem; height: 6rem; margin: 0 auto; overflow: hidden; margin-top: 1rem;"></div>
+                                                <template v-if="!!fileImg">
+                                                    <div id="getFile" style="position: relative; z-index: 0; margin-top: 1rem;">
+                                                        <img :src="fileImg" id="js-fileImg" style="width: 100%;" />
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="action" style="padding-top: 20px;">
+                                                <button @click="modifyUserPhoto" type="button" class="btn btn-success">提交修改</button>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </template>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer">
+            <div class="copyright">
+                <p>版权所有：粤ICP备18070257号</p>
+                <p>客服热线：020-89853112 (8:30-12:00 14:30-18:00)</p>
+                <p>彩票票提示您：理性购彩，健康生活。不向未满18周岁的青少年出售彩票。</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/assets/jquery-3.2.2.min.js"></script>
+    <script type="text/javascript" src="/assets/vue.min.js"></script>
+    <script type="text/javascript" src="/assets/vender/Flat-UI-master/scripts/flat-ui.min.js"></script>
+    <script type="text/javascript" src="/assets/vender/cropperjs-master/cropper.min.js"></script>
+    <script type="text/javascript" src="/assets/md5.min.js"></script>
+    <script type="text/javascript" src="/assets/config.min.js?v=03939"></script>
+    <script type="text/javascript" src="/assets/utility.min.js?v=03939"></script>
+    <script type="text/javascript" src="/shop/js/app.min.js?v=0948483939"></script>
+    <script type="text/javascript" src="/shop/action/user/info.min.js?v=0948483939"></script>
+
+</body>
+
+</html>

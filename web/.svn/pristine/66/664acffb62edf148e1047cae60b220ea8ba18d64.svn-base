@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Your app title -->
+    <title>多彩缤纷</title>
+
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/vender/Flat-UI-master/css/flat-ui.min.css">
+    <link rel="stylesheet" href="../../css/common.min.css">
+</head>
+
+<body>
+
+    <div id="js-pageResult">
+        <!-- 头部 -->
+        <div class="headerWrap">
+            <div class="header">
+                <div class="c-logo">
+                    <h1 class="img">多彩缤纷</h1>
+                </div>
+                <div class="c-search">
+                    <input type="text" placeholder="请输入搜索内容" />
+                    <button>搜索</button>
+                </div>
+                <div class="c-info">
+                    <template v-if="!!!userInfo">
+                        <a href="../user/login.html">
+                            <i></i>请登录</a>
+                        <a href="../user/register.html">
+                            <i></i>免费注册</a>
+                        <a href="../user/resetPass.html">
+                            <i></i>找回密码</a>
+                    </template>
+                    <template v-else>
+                        <a href="../user/info.html">
+                            <i></i>{{decodeURI(userInfo.nickName)}}</a>
+                        <a href="../user/info.html">
+                            <i></i>个人中心
+                        </a>
+                        <a @click="userLogout">
+                            <i></i>退出登录</a>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主要内容 -->
+        <div class="main">
+
+            <div class="inputWrap payWrap">
+                <div class="list-block payList">
+                    <ul>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="payInfo">
+                                        <template v-if="queryInfo.code==200 || queryInfo.code==1002">
+                                            <img src="/assets/img/success.png" />
+                                            <h2>支付成功！</h2>
+                                        </template>
+                                        <template v-else>
+                                            <img src="/assets/img/fail.png" />
+                                            <h2 v-text="decodeURI(queryInfo.message)"></h2>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="buyAction container" style="padding-top: 50px;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a :href="paramInfo.goToUrl" class="btn btn-block btn-inverse" style="color: white;">查看订单</a>
+                        </div>
+                        <div class="col-md-6">
+                            <template v-if="queryInfo.code==6024 || queryInfo.code==6023 || queryInfo.code==5095">
+                                <a @click="rePay" class="btn btn-block btn-warning">重新支付</a>
+                            </template>
+                            <template v-else>
+                                <a href="../user/order.html" class="btn btn-block btn-warning">回到个人中心</a>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer">
+            <div class="copyright">
+                <p>版权所有：粤ICP备18070257号</p>
+                <p>客服热线：020-89853112 (8:30-12:00 14:30-18:00)</p>
+                <p>彩票票提示您：理性购彩，健康生活。不向未满18周岁的青少年出售彩票。</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/assets/jquery-3.2.2.min.js"></script>
+    <script type="text/javascript" src="/assets/vue.min.js"></script>
+    <script type="text/javascript" src="/assets/vender/Flat-UI-master/scripts/flat-ui.min.js"></script>
+    <script type="text/javascript" src="/assets/md5.min.js"></script>
+    <script type="text/javascript" src="/assets/config.js?v=03939"></script>
+    <script type="text/javascript" src="/assets/utility.js?v=03939"></script>
+    <script type="text/javascript" src="../../js/app.min.js?v=0948483939"></script>
+    <script type="text/javascript" src="../../action/order/result.min.js?v=0948483939"></script>
+
+</body>
+
+</html>

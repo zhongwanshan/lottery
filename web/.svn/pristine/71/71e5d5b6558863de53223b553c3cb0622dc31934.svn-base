@@ -1,0 +1,117 @@
+(function () {
+    var pageVue = new Vue({
+        el: "#js-recharge",
+        data: {
+            isAction: false,
+            canModify: 0,
+            rechargeInfo: {
+                rechargeMoney: "",
+                rechargePolicyId: "",
+                remark: "",
+                action: CONFIG.ACTION.userRrecharge
+            },
+            paramInfo: {
+                rechargeMoney: "",
+                rechargePolicyId: "",
+                remark: "",
+                goToUrl: "view/account/account.html",
+                action: CONFIG.ACTION.userRrecharge
+            },
+            remark: "",
+            isShowCash: false,
+            payPwd: "",
+            rechargePolicyList: []
+        },
+        watch: {
+            "rechargeInfo.rechargePolicyId": function (value) {
+                var self = this;
+
+                for (var i = 0, len = self.rechargePolicyList.length; i < len; i++) {
+                    if (self.rechargePolicyList[i]["rechargePolicyId"] == value) {
+                        self.canModify = self.rechargePolicyList[i]["canModify"];
+                        self.isShowCash = !!self.canModify;
+                        break;
+                    }
+                }
+            }
+        },
+        methods: {
+            setIsCanModify: function (rechargePolicyId, canModify) {
+                var self = this;
+                self.rechargeInfo.rechargePolicyId = rechargePolicyId;
+                self.isShowCash = !!canModify;
+            },
+            // 获取充值优惠
+            getRechargePolicy: function () {
+                var self = this;
+                utility.interactWithServer({
+                    headerInfo: {
+                        userId: !!USERINFO ? USERINFO["userId"] : "",
+                        userToken: !!USERINFO ? USERINFO["userToken"] : "",
+                        actionUrl: utility.formatActionUrl(CONFIG.SERVICE.walletService, CONFIG.ACTION.getRechargePolicy, {
+                            action: CONFIG.ACTION.getRechargePolicy
+                        }),
+                    },
+                    url: CONFIG.HOST + CONFIG.SERVICE.walletService,
+                    dataObj: {
+                        action: CONFIG.ACTION.getRechargePolicy
+                    },
+                    beforeSendCallback: function () {
+                        app.showIndicator();
+                    },
+                    completeCallback: function (XMLHttpRequest, textStatus) {
+                        app.hideIndicator();
+                    },
+                    successCallback: function (data) {
+                        if (data.code == 200) {
+                            self.rechargePolicyList = data.data;
+                        } else {
+                            app.showPreloader(data.message);
+                            setTimeout(function () {
+                                app.hidePreloader();
+                            }, 1000);
+                        }
+                    },
+                });
+            },
+            // 提交充值信息
+            doRechargeAction: function () {
+                var self = this;
+
+                // 如果可以输入金额
+                if (self.canModify == 1) {
+                    // 如果充值金额为0
+                    if (self.rechargeInfo.rechargeMoney == 0) {
+                        app.showPreloader("充值金额不能为0");
+                        setTimeout(function () {
+                            app.hidePreloader();
+                        }, 1000);
+                        return;
+                    }
+                }
+
+                self.rechargeInfo.remark = encodeURIComponent(self.remark);
+                self.paramInfo.rechargeMoney = self.rechargeInfo.rechargeMoney;
+                self.paramInfo.rechargePolicyId = self.rechargeInfo.rechargePolicyId;
+                self.paramInfo.remark = self.rechargeInfo.remark;
+
+                self.rechargeInfo.backUrl = CONFIG.HOST + "/app/app.html#page/view/order/result.html" + "?paramInfo=" + encodeURI(JSON.stringify(self.paramInfo));
+                window.location.href = CONFIG.HOST + utility.formatActionUrl(CONFIG.SERVICE.walletService, CONFIG.ACTION.userRrecharge, self.rechargeInfo) + "&userId=" + USERINFO["userId"] + "&userToken=" + USERINFO["userToken"] + "&appType=1";
+            }
+
+        },
+        created: function () {
+            var self = this;
+
+            // 获取优惠
+            self.getRechargePolicy();
+
+            if (!!PAGE.query["code"] && PAGE.query["code"] != 200) {
+                app.showPreloader(PAGE.query["message"]);
+                setTimeout(function () {
+                    app.hidePreloader();
+                }, 1000);
+            }
+        }
+    });
+}())

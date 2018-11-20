@@ -1,0 +1,47 @@
+(function () {
+    var pageVue = new Vue({
+        el: "#js-pagePay",
+        data: {
+            isAction: false,
+            userInfo: USERINFO,
+            lotterName: CONFIG.LOTTERYNAME,
+            orderInfo: utility.getSessionStorage("orderInfo"),
+            generateOrder: utility.getSessionStorage("generateOrder"),
+            payOrderInfo: {
+                orderCode: utility.getSessionStorage("generateOrder").orderCode,
+                action: CONFIG.ACTION.payOrder,
+                backUrl: ""
+            },
+            paramInfo: {
+                orderCode: utility.getSessionStorage("generateOrder").orderCode,
+                action: CONFIG.ACTION.payOrder,
+                goToUrl: "view/order/order.html"
+            }
+        },
+        methods: {
+            // 提交数字彩订单
+            submitOrder: function() {
+                var self = this;
+
+                // 防止重复点击
+                if (self.isAction == true) {
+                    return;
+                }
+
+                // 如果还没有登录，则要先登录
+                if(!!!self.userInfo) {
+                    app.confirm("请先登录", function () {
+                        mainView.router.loadPage('view/user/login.html');
+                    });
+                    return;
+                }
+                self.payOrderInfo.backUrl = CONFIG.HOST+"/app/app.html#page/view/order/result.html" + "?paramInfo="+encodeURI(JSON.stringify(self.paramInfo));
+                window.location.href = CONFIG.HOST + utility.formatActionUrl(CONFIG.SERVICE.walletService, CONFIG.ACTION.payOrder, self.payOrderInfo) + "&userId=" + USERINFO["userId"] + "&userToken=" + USERINFO["userToken"]+"&appType=1";
+            }
+        },
+        created: function () {
+            var self = this;
+
+        }
+    });
+}())

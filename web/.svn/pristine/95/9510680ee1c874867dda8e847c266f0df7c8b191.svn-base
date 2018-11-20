@@ -1,0 +1,65 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="view/me.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">我的金币</div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="user-kingBi">
+    <div id="js-pageKingBi" class="page-content">
+        <div class="userBlock">
+            <div class="accoutType">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="item accountInfo">
+                                    <p class="txt">
+                                        <span class="title">余额：</span>
+                                        <span class="money" v-text="userInfo.coinNum+'个'"></span>
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="hTitle accountTitle">
+                <span>金币明细</span>
+                <select v-model="coinInfo.transType" @change="getUserCoinList">
+                    <option value="">全部</option>
+                    <template v-for="item in coinTypeList">
+                        <option :value="item.id" v-text="item.type"></option>
+                    </template>
+                </select>
+            </p>
+            <div id="mescroll" class="listBlock mescroll">
+                <table>
+                    <tbody>
+                        <template v-for="item in coinList">
+                            <tr>
+                                <td>
+                                    <span v-text="item.transTime"></span>
+                                    <span v-text="item.coinTransTypeName"></span>
+                                </td>
+                                <td style="width: 40%;">
+                                    <!-- <span>DD201806281230229999</span> -->
+                                    <span v-text="item.incomeEventName"></span>
+                                </td>
+                                <td>
+                                    <span v-text="item.type + ' ' +item.currTotalCoin"></span>
+                                </td>
+                            </tr>
+                        </template>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

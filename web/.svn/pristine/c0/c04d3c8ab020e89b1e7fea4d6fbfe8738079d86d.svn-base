@@ -1,0 +1,50 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="view/me.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">安全设置</div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="user-security">
+    <div id="js-pageSecurity" class="page-content listBlock">
+        <div class="list-block">
+            <ul>
+                <li class="item">
+                    <a href="view/user/identity.html" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">身份认证</div>
+                            <div class="item-input labelInfo">
+                                <p v-text="userInfo.realUserName"></p>
+                                <p v-text="userInfo.idCardNo"></p>
+                            </div>
+                            <template v-if="userInfo.realUserFlag==1">
+                                <div class="item-label" style="width: 30%;">已认证</div>
+                            </template>
+                            <template v-else>
+                                <div class="item-label" style="width: 30%;">未认证</div>
+                            </template>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="view/user/resetPass.html" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">密码修改</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="view/user/payPass.html" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">提现密码修改</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

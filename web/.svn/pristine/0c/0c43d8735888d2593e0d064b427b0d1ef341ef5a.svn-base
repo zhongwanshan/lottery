@@ -1,0 +1,1694 @@
+.btn-sm {
+  padding: 5px 13px;
+  font-size: 13px;
+}
+.clear {
+  display: block;
+  clear: both;
+}
+body { 
+  font-family: "微软雅黑", sans-serif;
+  background-color: #F3F3F3;
+}
+table {
+  border-collapse: collapse;
+}
+a {
+  cursor: pointer;
+}
+.circle {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0;
+  color: #e51f42;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 120%, #D2D2D2, #EFEFEF 10%, #ECEAEA 80%, #D0CECE 100%);
+  margin-right: 5px;
+}
+.circle input {
+  position: absolute;
+  z-index: 10;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  opacity: 0;
+  left: 0;
+  cursor: pointer;
+}
+.circle.blueBall {
+  color: #695BFA;
+}
+.circle.active.redBall {
+  color: white;
+  background: radial-gradient(circle at 50% 120%, #F99D9D, #E69898 10%, #EA4F4F 80%, #E8A2A2 100%);
+}
+.circle.active.blueBall {
+  color: white;
+  background: radial-gradient(circle at 50% 120%, #2761B7, #85ACE8 10%, #075CDC 80%, #1950A2 100%);
+}
+.c-logo .img {
+  width: 170px;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  text-indent: -100000000rem;
+  background: url(/assets/img/logo.png) no-repeat center center;
+}
+.c-search {
+  display: none;
+  position: relative;
+  z-index: 0;
+  width: 360px;
+}
+.c-search input {
+  width: 100%;
+  height: 38px;
+  padding: 0 30px;
+  border: 1px solid #6F00BD;
+  border-radius: 20px;
+  font-size: 14px;
+}
+.c-search button {
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 38px;
+  text-align: center;
+  border-radius: 0 20px 20px 0;
+  background-color: #6F00BD;
+  border: none;
+  font-size: 13px;
+  color: white;
+}
+.c-info {
+  overflow: hidden;
+  border-radius: 0 0 10px 10px;
+  padding: 0 15px;
+  background-color: #e9e9e9;
+}
+.c-info a {
+  float: left;
+  color: #333333;
+  padding: 7px;
+  font-size: 13px;
+}
+.c-info a i {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background-color: #6F00BD;
+}
+.c-menu {
+  display: none;
+  background-color: white;
+  border: 1px solid #9962C0;
+  line-height: 1.8;
+}
+.c-menu .mMenu a {
+  display: block;
+  padding: 8px 6px;
+  text-align: left;
+  color: #333333;
+  font-size: 16px;
+  border-bottom: 1px solid #9e9e9e;
+}
+.c-menu .mMenu a img {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
+.c-menu .mMenu a span {
+  padding-left: 10px;
+  font-size: 14px;
+  color: #a59faa;
+}
+.c-menu .menulist {
+  padding: 5px 10px;
+}
+.c-menu .menulist table {
+  width: 100%;
+}
+.c-menu .menulist table .title {
+  width: 30px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+  background-color: #dddddd;
+  padding: 10px 0;
+  color: #333333;
+}
+.c-menu .menulist table .item {
+  padding: 0 10px;
+  vertical-align: top;
+}
+.c-menu .menulist table .item.item-b a {
+  float: none;
+  display: block;
+  width: 100%;
+}
+.c-menu .menulist table .item a {
+  float: left;
+  width: 45%;
+  padding: 3px 0;
+  color: #333333;
+  font-size: 14px;
+  text-align: left;
+}
+.c-nav {
+  height: 50px;
+  line-height: 50px;
+}
+.c-nav .navlist {
+  width: 1000px;
+  margin: 0 auto;
+}
+.c-nav .navlist .navItem {
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 30px;
+  color: white;
+  font-size: 16px;
+}
+.c-nav .navlist .navItem:nth-child(5) {
+  display: none;
+}
+.c-nav .navlist .navItem:nth-child(6) {
+  display: none;
+}
+.c-nav .navlist .navItem:nth-child(7) {
+  display: none;
+}
+.c-nav .navlist .navItem.selectMenu {
+  position: relative;
+  z-index: 0;
+  background-color: #695BFA;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+}
+.c-nav .navlist .navItem.selectMenu:hover {
+  background-color: #968cfc;
+  color: white;
+}
+.c-nav .navlist .navItem.selectMenu:hover .c-menu a {
+  color: #333333;
+}
+.c-nav .navlist .navItem.selectMenu .c-menu {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  top: 50px;
+  width: 259px;
+  height: 360px;
+}
+.c-nav .navlist .navItem:hover,
+.c-nav .navlist .navItem.active {
+  background-color: #575cea;
+  color: white;
+}
+.header {
+  background-color: white;
+  position: relative;
+  z-index: 0;
+  width: 1000px;
+  margin: 0 auto;
+  padding: 5px 0 5px;
+  overflow: hidden;
+}
+.header .c-logo {
+  float: left;
+}
+.header .c-search {
+  float: right;
+}
+.header .c-info {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 0;
+}
+.headerWrap {
+  background-color: white;
+}
+.navigation {
+  position: relative;
+  z-index: 100;
+  background: url(../img/navLine.png) repeat-x left center;
+}
+.navigation .c-nav {
+  position: relative;
+  z-index: 0;
+  width: 1000px;
+  margin: 0 auto;
+}
+.bannerWrap {
+  height: 360px;
+  background-color: #575cea;
+}
+.bannerWrap .c-banner {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 0;
+}
+.bannerWrap .c-banner img {
+  width: 100%;
+  height: 360px;
+}
+.c-box.c-box--min .title {
+  background-color: #d8e8fb;
+  height: 30px;
+  line-height: 30px;
+  color: #333333;
+}
+.c-box.c-box--min .title a {
+  color: #333333;
+}
+.c-box .title {
+  height: 48px;
+  line-height: 48px;
+  background-color: #575cea;
+  color: white;
+  font-size: 14px;
+  padding-left: 10px;
+}
+.c-box .title a {
+  float: right;
+  margin-right: 20px;
+  color: white;
+}
+.c-box .title .subTab {
+  padding-left: 52px;
+}
+.c-box .title .subTab ul {
+  overflow: hidden;
+}
+.c-box .title .subTab ul li {
+  float: left;
+  list-style: none;
+  cursor: pointer;
+}
+.c-box .title .subTab ul li span {
+  display: block;
+  font-size: 12px;
+  padding: 0 15px;
+}
+.c-box .title .subTab ul li.active {
+  background-color: white;
+  color: #333333;
+}
+.main {
+  min-height: 500px;
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  width: 1000px;
+  margin: 0 auto;
+}
+.main .recomend {
+  margin-bottom: 10px;
+}
+.main .recomend.c-box .content table {
+  width: 100%;
+}
+.main .recomend.c-box .content table tr td {
+  padding: 30px 20px 20px 20px;
+  border: 1px solid #e9e9e9;
+}
+.main .recomend.c-box .content table .item {
+  text-align: center;
+}
+.main .recomend.c-box .content table .item .img img {
+  width: 60px;
+  height: 60px;
+}
+.main .recomend.c-box .content table .item .img span {
+  padding-left: 20px;
+}
+.main .recomend.c-box .content table .item .action {
+  padding: 10px 20px;
+}
+.main .recomend.c-box .content table .item .action a {
+  color: white;
+}
+.main .recomend.c-box .content table .item .info {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+.main .prizeInfo {
+  margin-bottom: 10px;
+  border: 1px solid #e9e9e9;
+}
+.main .prizeInfo.c-box table {
+  width: 100%;
+}
+.main .prizeInfo.c-box table tr:nth-child(2n+1) {
+  background-color: #d8e8fb;
+}
+.main .prizeInfo.c-box table tr:first-child td {
+  padding: 10px;
+}
+.main .prizeInfo.c-box table tr td {
+  padding: 5px 10px;
+  font-size: 13px;
+}
+.main .prizeInfo.c-box table tr td a.btn {
+  color: white;
+}
+.main .matchInfo {
+  border: 1px solid #e9e9e9;
+}
+.main .matchInfo.c-box.buyMatch {
+  margin-top: 10px;
+}
+.main .matchInfo.c-box.buyMatch .content .detail {
+  width: 100%;
+  margin: 0;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table thead tr th {
+  padding: 3px 0;
+  font-size: 13px;
+  color: white;
+  background-color: #695BFA;
+  padding: 8px 0;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table thead tr th p {
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr:nth-child(2n) {
+  background-color: white;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td {
+  padding: 2px;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td label {
+  position: relative;
+  z-index: 0;
+  margin: 0;
+  font-size: 13px;
+  cursor: pointer;
+  background-color: #d8e8fb;
+  color: #333333;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td label span.teams {
+  padding-left: 30px;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td label input {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td label .isShow {
+  float: right;
+  margin-right: 20px;
+  color: #ff5f5f;
+  font-size: 12px;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td label.active {
+  border-radius: 3px;
+  color: white;
+  background-color: #ff5f5f;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td .matchName {
+  display: inline-block;
+  min-width: 80px;
+  text-align: center;
+  padding: 2px 5px;
+  color: white;
+  background-color: #6F00BD;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td.teanInfo {
+  margin: 0;
+  font-size: 12px;
+  text-align: left;
+  padding: 5px 0 5px 20px;
+  cursor: pointer;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td.teanInfo p {
+  position: relative;
+  z-index: 0;
+  left: -15px;
+  text-align: center;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td.check label {
+  display: block;
+  margin: 0 1px;
+  background-color: #d8e8fb;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td .scoreWrap {
+  padding-left: 50px;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td .scoreWrap .scoreDiff {
+  float: left;
+  width: 33.333333333%;
+  padding-left: 0;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td .scoreWrap .scoreDiff .scoreDiffTitle {
+  text-align: center;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td .scoreWrap .scoreDiff p span {
+  width: 45%;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td .scoreWrap .scoreDiff p span.label {
+  padding: 0;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td .scoreWrap .scoreDiff p label {
+  width: 45%;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td .scoreDiff {
+  width: 100%;
+  float: left;
+  padding: 5px;
+  padding-left: 50px;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td .scoreDiff .scoreDiffTitle {
+  background-color: #a59faa;
+  color: white;
+  text-align: left;
+  padding-left: 20px;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td .scoreDiff p {
+  padding: 5px 0;
+  margin: 0;
+  overflow: hidden;
+  font-size: 12px;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td .scoreDiff p span {
+  float: left;
+  width: 13.2857%;
+  background-color: #e9e9e9;
+  margin: 0 1px;
+  padding: 5px 0;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td .scoreDiff p span.label {
+  background-color: #575cea;
+  color: white;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr td .scoreDiff p label {
+  float: left;
+  width: 13.2857%;
+  margin: 0 1px;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr.time {
+  background-color: #fffaed;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr.time td {
+  text-align: left;
+  padding: 5px;
+  font-size: 14px;
+  border-bottom-color: #ff5f5f;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr.time td span {
+  color: #e51f42;
+  padding: 0 10px;
+  font-size: 16px;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr.moreList {
+  background-color: #f3f8fe;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr.moreList span {
+  display: block;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr.moreList span.dangGu {
+  background-color: #575cea;
+  padding: 1px 10px;
+  color: white;
+  width: 75%;
+  margin: 0 auto;
+  font-size: 12px;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr.moreList span i {
+  font-style: normal;
+  font-size: 14px;
+  font-weight: bold;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr.moreList span i.pNumber {
+  color: #e51f42;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr.moreList span i.nNumber {
+  color: #41d494;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr.moreList td .item {
+  text-align: center;
+  overflow: hidden;
+  padding: 3px 0;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr.moreList td .item label {
+  float: left;
+  width: 6.5%;
+  margin: 0 2px;
+  padding: 0;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr.moreList td .item label.label {
+  padding: 3px 0;
+  background-color: white;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr.moreList td .item.itemOther label {
+  width: 30%;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr.moreList td .item.itemOther i {
+  display: inline-block;
+  text-align: left;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr.moreList td .item.itemOther i:nth-child(1) {
+  width: 70%;
+}
+.main .matchInfo.c-box.buyMatch .content .detail .info table tbody tr.moreList td .item.itemOther i::nth-child(2) {
+  width: 30%;
+}
+.main .matchInfo.c-box .content {
+  background-color: #d8e8fb;
+  overflow: hidden;
+}
+.main .matchInfo.c-box .content .matchTab {
+  float: left;
+  width: 130px;
+  padding-top: 20px;
+}
+.main .matchInfo.c-box .content .matchTab p {
+  overflow: hidden;
+  margin: 0 0 5px 0;
+  padding: 0;
+}
+.main .matchInfo.c-box .content .matchTab p.active span {
+  background-color: white;
+  color: #333333;
+}
+.main .matchInfo.c-box .content .matchTab p span {
+  float: right;
+  width: 130px;
+  height: 48px;
+  line-height: 48px;
+  border-radius: 10px 0 0 10px;
+  background-color: #575cea;
+  color: white;
+  text-indent: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.main .matchInfo.c-box .content .detail {
+  background-color: white;
+  margin-left: 130px;
+}
+.main .matchInfo.c-box .content .detail .search {
+  padding: 10px;
+}
+.main .matchInfo.c-box .content .detail .search select {
+  width: 150px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+}
+.main .matchInfo.c-box .content .detail .search span {
+  font-size: 14px;
+  color: #333333;
+}
+.main .matchInfo.c-box .content .detail .search a {
+  float: right;
+  color: white;
+}
+.main .matchInfo.c-box .content .detail .search .btn {
+  margin: 0 .5rem;
+}
+.main .matchInfo.c-box .content .detail .info table {
+  width: 100%;
+  font-size: 12px;
+}
+.main .matchInfo.c-box .content .detail .info table td,
+.main .matchInfo.c-box .content .detail .info table th {
+  border: 1px solid #e9e9e9;
+  text-align: center;
+  padding: 5px 0;
+}
+.main .matchInfo.c-box .content .detail .info table thead tr th {
+  background-color: #f1f1f1;
+  font-weight: normal;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+.main .matchInfo.c-box .content .detail .info table tbody tr:nth-child(2n) {
+  background-color: #f1f1f1;
+}
+.main .matchInfo.c-box .content .detail .info table tbody tr p {
+  font-size: 12px;
+  padding: 0 3px;
+  margin: 0;
+}
+.main .matchInfo.c-box .content .detail .info table tbody tr .trMatch {
+  text-align: left;
+}
+.main .matchInfo.c-box .content .detail .info table tbody tr .trMatch .num {
+  display: inline-block;
+  margin: 0 .2rem;
+  padding: .25rem;
+  background-color: #41d494;
+  color: white;
+  font-size: 14px;
+}
+.main .matchInfo.c-box .content .detail .info table tbody tr .matchName {
+  display: inline-block;
+  min-width: 80px;
+  text-align: center;
+  padding: 2px 5px;
+  color: white;
+  background-color: #6F00BD;
+}
+.main .matchInfo.c-box .bottom .resultMatch {
+  font-size: 13px;
+  color: #333333;
+}
+.main .matchInfo.c-box .bottom .resultMatch .cgType {
+  padding: 20px;
+  background-color: #F3F3F3;
+  overflow: hidden;
+}
+.main .matchInfo.c-box .bottom .resultMatch .cgType li {
+  list-style: none;
+  float: left;
+}
+.main .matchInfo.c-box .bottom .resultMatch .buyAction {
+  padding: 20px 20px 50px 20px;
+}
+.main .matchInfo.c-box .bottom .resultMatch .buyAction .matchSelect {
+  font-size: 18px;
+  text-align: right;
+}
+.main .matchInfo.c-box .bottom .resultMatch .buyAction .matchSelect strong {
+  color: #9962C0;
+}
+.main .matchInfo.c-box .bottom .resultMatch .buyAction .matchSelect input {
+  width: 100px;
+  margin: 0 5px;
+  text-align: center;
+}
+.main .detailMainInfo {
+  float: left;
+  width: 75%;
+  margin-top: 20px;
+  border: 1px solid #e9e9e9;
+  font-size: 13px;
+}
+.main .detailMainInfo .gd115PrizeList {
+  background-color: #f1f1f1;
+}
+.main .detailMainInfo .gd115PrizeList table {
+  width: 100%;
+}
+.main .detailMainInfo .gd115PrizeList table td,
+.main .detailMainInfo .gd115PrizeList table th {
+  text-align: center;
+  padding: 5px 0;
+}
+.main .detailMainInfo .gd115PrizeList table td span,
+.main .detailMainInfo .gd115PrizeList table th span {
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  font-size: 12px;
+}
+.main .detailMainInfo .gd115PrizeList table thead th {
+  background-color: #f3f8fe;
+  border-bottom: 1px solid #e9e9e9;
+}
+.main .detailMainInfo .img {
+  padding: 10px 20px;
+}
+.main .detailMainInfo .img img {
+  width: 60px;
+  height: 60px;
+}
+.main .detailMainInfo .info {
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+.main .detailMainInfo .info .detail {
+  float: left;
+  width: 50%;
+}
+.main .detailMainInfo .info .detail p {
+  margin: 0;
+  font-size: 14px;
+  padding-left: 20px;
+  line-height: 2;
+}
+.main .detailMainInfo .info .detail p.circleWrap {
+  margin: 5px 0;
+}
+.main .detailMainInfo .info .detail p.circleWrap span {
+  position: relative;
+  z-index: 0;
+  top: 10px;
+}
+.main .detailMainInfo .info .detail p strong {
+  font-weight: normal;
+  color: #e51f42;
+  padding-right: 10px;
+}
+.main .detailMainInfo .info .prizeList {
+  float: right;
+  width: 40%;
+  margin-right: 5%;
+}
+.main .detailMainInfo .info .prizeList table {
+  width: 100%;
+}
+.main .detailMainInfo .info .prizeList table td,
+.main .detailMainInfo .info .prizeList table th {
+  border: 1px solid #d8e8fb;
+  padding: 5px;
+  text-align: center;
+}
+.main .detailMainInfo .info .prizeList table thead th {
+  background-color: #f1f1f1;
+}
+.main .detailSubInfo {
+  float: right;
+  width: 23%;
+  margin-top: 20px;
+  border: 1px solid #e9e9e9;
+  background-color: #f3f8fe;
+  font-size: 13px;
+}
+.main .detailSubInfo p {
+  margin: 0;
+  padding: 10px 10px 0 10px;
+  font-size: 14px;
+}
+.main .detailSubInfo .periods {
+  color: #e51f42;
+}
+.main .detailSubInfo .prizeResult .circle {
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  font-size: 12px;
+}
+.main .detailSubInfo .prizeList {
+  width: 100%;
+}
+.main .detailSubInfo .prizeList td,
+.main .detailSubInfo .prizeList th {
+  border: 1px solid #e9e9e9;
+  padding: 5px;
+  text-align: center;
+}
+.main .detailSubInfo .prizeList thead th {
+  background-color: #d8e8fb;
+}
+.main .cmsWrap .cmsHeader {
+  text-align: center;
+}
+.main .cmsWrap .cmsHeader h2 {
+  font-size: 18px;
+}
+.main .cmsWrap .cmsHeader p {
+  font-size: 13px;
+}
+.main .cmsWrap .cmsHeader p span {
+  padding: 0 20px;
+}
+.main .cmsWrap .cmsDetail {
+  padding: 20px 30px;
+}
+.main .cmsWrap .cmsList a {
+  display: block;
+  padding: 10px;
+  color: #333333;
+  font-size: 14px;
+}
+.main .cmsWrap .cmsList a:hover {
+  text-decoration: underline;
+}
+.tabType {
+  overflow: hidden;
+  border-bottom: 3px solid #e51f42;
+  padding: 20px 20px 0 20px;
+}
+.tabType .sign {
+  float: left;
+  width: 100px;
+}
+.tabType .sign img {
+  width: 60px;
+  height: 60px;
+}
+.tabType .tabbox {
+  position: relative;
+  z-index: 0;
+  left: -20px;
+  padding-left: 100px;
+}
+.tabType .tabbox .info {
+  overflow: hidden;
+}
+.tabType .tabbox .info h2 {
+  float: left;
+  margin: 0;
+  font-size: 20px;
+}
+.tabType .tabbox .info p {
+  float: left;
+  font-size: 13px;
+  color: #9e9e9e;
+  padding-left: 10px;
+}
+.tabType .tabbox .info p.tips strong {
+  color: #e51f42;
+  padding: 0 5px;
+}
+.tabType .tabbox .info p.tips .tipInfo {
+  text-align: right;
+}
+.tabType .tabbox .tabs {
+  position: relative;
+  z-index: 0;
+}
+.tabType .tabbox .tabs .matchTip {
+  position: absolute;
+  z-index: 10;
+  top: 5px;
+  right: 0;
+  font-size: 12px;
+  color: #a59faa;
+}
+.tabType .tabbox .tabs ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-bottom: none;
+}
+.tabType .tabbox .tabs ul.longer li {
+  padding: 5px 10px;
+}
+.tabType .tabbox .tabs ul li {
+  float: left;
+  padding: 5px 25px;
+  font-size: 14px;
+  list-style: none;
+  border: 1px solid #e9e9e9;
+  border-bottom: none;
+  cursor: pointer;
+}
+.tabType .tabbox .tabs ul li:first-child {
+  border-right: none;
+}
+.tabType .tabbox .tabs ul li.active {
+  border-color: #e9e9e9;
+  background-color: #e51f42;
+  color: white;
+}
+.tabType .tabbox .tabs .tipInfo {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 10px;
+  font-size: 13px;
+  color: #e51f42;
+}
+.buyDigital {
+  padding: 20px;
+  overflow: hidden;
+}
+.buyDigital.sigleList .ballList {
+  margin-bottom: 5px;
+}
+.buyDigital.sigleList .ballList.dangList {
+  padding-top: 5px;
+}
+.buyDigital .ballList {
+  margin-bottom: 10px;
+}
+.buyDigital .ballList.dangList {
+  display: block;
+  clear: both;
+  padding-top: 10px;
+  width: 100%;
+}
+.buyDigital .ballList.dangList .tips strong {
+  color: #e51f42;
+}
+.buyDigital .ballList.dangList.sumValue {
+  padding: 0 85px;
+}
+.buyDigital .ballList.dangList.sumValue .circle {
+  margin: 5px;
+}
+.buyDigital .ballList.redList {
+  float: left;
+  width: 60%;
+}
+.buyDigital .ballList.redList .tips strong {
+  color: #e51f42;
+}
+.buyDigital .ballList.blueList {
+  float: right;
+  width: 35%;
+}
+.buyDigital .ballList.blueList .tips strong {
+  color: #575cea;
+}
+.buyDigital .ballList .select {
+  padding: 20px 10px;
+  text-align: right;
+}
+.buyDigital .ballList .select select {
+  width: 100px;
+  padding: 5px 0;
+}
+.buyDigital .ballList .select .btn {
+  font-size: 13px;
+  padding: 4px 10px;
+}
+.buyDigital .ballList .circleList .label {
+  position: relative;
+  z-index: 0;
+  padding: 0 30px 0 100px;
+  top: -10px;
+}
+.buyDigital .ballList .circleList .btn {
+  position: relative;
+  z-index: 0;
+  top: -15px;
+  padding: 5px;
+  font-size: 13px;
+}
+.buyDigital .ballList .checkGroup {
+  text-align: center;
+  padding: 10px;
+}
+.buyDigital .ballList .checkGroup span {
+  padding: 0 20px;
+}
+.buyDigital .ballList .tips {
+  font-size: 14px;
+  color: #a59faa;
+}
+.buyDigital .ballList .tips strong {
+  padding: 0 10px;
+}
+.buyDigital .buyResult {
+  display: block;
+  clear: both;
+  text-align: center;
+  font-size: 14px;
+}
+.buyDigital .buyResult span {
+  padding: 0 5px;
+}
+.buyDigital .buyResult span.red {
+  color: #e51f42;
+}
+.buyDigital .buyResult span.blue {
+  color: #575cea;
+}
+.buyDigital .buyResult strong {
+  padding: 0 5px;
+}
+.buyDigital .confirmNum {
+  width: 30%;
+  margin: 20px auto;
+}
+.buyDigital .confirmNum .btn,
+.buyDigital .confirmNum .btn-link {
+  cursor: pointer;
+}
+.buyDigital .resultWrap {
+  width: 70%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.buyDigital .resultWrap .list {
+  float: left;
+  width: 75%;
+  border: 1px solid #9e9e9e;
+  height: 150px;
+  overflow: auto;
+}
+.buyDigital .resultWrap .list table {
+  width: 100%;
+}
+.buyDigital .resultWrap .list table tr:last-child td {
+  border: none;
+}
+.buyDigital .resultWrap .list table tr td {
+  text-align: center;
+  font-size: 13px;
+  border-bottom: 1px solid #e9e9e9;
+}
+.buyDigital .resultWrap .list table tr td.red {
+  color: #e51f42;
+}
+.buyDigital .resultWrap .list table tr td.blue {
+  color: #575cea;
+}
+.buyDigital .resultWrap .list table tr td .btn {
+  font-size: 12px;
+}
+.buyDigital .resultWrap .otherAction {
+  float: right;
+  width: 20%;
+}
+.buyDigital .resultWrap .otherAction .btn {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+.buyDigital .otherResult {
+  margin: 20px 0;
+  text-align: center;
+}
+.buyDigital .otherResult strong {
+  color: #e51f42;
+  padding: 0 5px;
+}
+.buyDigital .otherResult span {
+  padding: 5px 10px;
+  border: 1px solid #695BFA;
+  background-color: #695BFA;
+  color: white;
+  cursor: pointer;
+}
+.buyDigital .otherResult input {
+  width: 50px;
+  text-align: center;
+}
+.buyDigital .otherResult .ultipleNumAction {
+  cursor: pointer;
+}
+.buyDigital .doAction {
+  text-align: center;
+}
+.buyDigital .groupWrap {
+  text-align: center;
+}
+.buyDigital .groupWrap label {
+  padding: 0 10px;
+}
+.inputWrap {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+.inputWrap table {
+  position: relative;
+  z-index: 0;
+  left: -100px;
+  width: 100%;
+}
+.inputWrap table tbody tr td h2 {
+  font-size: 20px;
+  text-align: center;
+}
+.inputWrap table tbody tr td p {
+  position: relative;
+  z-index: 0;
+}
+.inputWrap table tbody tr td p input {
+  font-size: 14px;
+  width: 100%;
+  border-radius: 3px;
+  padding: 6px 0;
+  border: 1px solid #9e9e9e;
+  text-indent: 20px;
+}
+.inputWrap table tbody tr td p .request {
+  position: absolute;
+  z-index: 100;
+  right: 10px;
+  top: 10px;
+  color: #e51f42;
+  font-size: 16px;
+}
+.inputWrap table tbody tr td p.head span {
+  display: inline-block;
+}
+.inputWrap table tbody tr td p.head .btn {
+  padding: 5px 10px;
+}
+.inputWrap table tbody tr td p.remember label {
+  display: block;
+  font-size: 14px;
+}
+.inputWrap table tbody tr td p.remember label input {
+  position: relative;
+  z-index: 0;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+}
+.inputWrap table tbody tr td p.remember label a {
+  color: #695BFA;
+}
+.inputWrap table tbody tr td p.label {
+  padding-right: 10px;
+  text-align: right;
+  font-size: 14px;
+}
+.inputWrap table tbody tr td p.action {
+  text-align: center;
+}
+.inputWrap table tbody tr td p.action .btn {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.inputWrap table tbody tr td p .validate {
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100%;
+  font-size: 13px;
+}
+.bread {
+  position: relative;
+  z-index: 0;
+  width: 1000px;
+  margin: 0 auto;
+}
+.bread p {
+  margin: 0;
+  padding: 10px 0;
+  font-size: 13px;
+}
+.slider {
+  float: left;
+  width: 20%;
+}
+.slider p {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.slider .userInfo {
+  padding: 10px 0 10px 10px;
+}
+.slider .userInfo p span {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.slider .userInfo p span img {
+  width: 100%;
+  height: 100%;
+}
+.slider .accountInfo p {
+  padding-left: 10px;
+  margin: 5px 0;
+}
+.slider .accountInfo p.account {
+  padding-left: 20px;
+}
+.slider .accountInfo p strong {
+  color: #e51f42;
+}
+.slider .accountInfo p .btn {
+  margin: 0 5px;
+  padding: 5px 15px;
+  font-size: 13px;
+}
+.slider .menuInfo {
+  padding: 10px 0;
+  border-bottom: 1px solid #e9e9e9;
+}
+.slider .menuInfo p {
+  padding: 5px 20px;
+}
+.slider .menuInfo p.label {
+  display: block;
+  background-color: white;
+  text-align: left;
+  color: #695BFA;
+}
+.slider .menuInfo p.item {
+  padding-left: 40px;
+}
+.slider .menuInfo p.item a {
+  color: #333333;
+}
+.slider .menuInfo p.item.active {
+  background-color: #f3f8fe;
+}
+.contentWrap {
+  margin-left: 20%;
+  border-left: 10px solid #F3F3F3;
+  min-height: 600px;
+}
+.contentWrap .inputWrap {
+  padding-top: 20px;
+}
+.contentWrap .inputWrap.blockInput {
+  width: 90%;
+}
+.contentWrap .inputWrap.blockInput table {
+  left: 0;
+}
+.contentWrap .inputWrap.blockInput table td p span {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+.contentWrap .inputWrap.blockInput table td p .done {
+  color: #6F00BD;
+}
+.contentWrap .inputWrap.blockInput table td p .fail {
+  color: #e51f42;
+}
+.contentWrap .inputWrap.blockInput table td p .btn {
+  color: white;
+  font-size: 14px;
+  width: 100px;
+  padding: 5px 10px;
+}
+.contentWrap .infoTable .tabType {
+  padding: 0;
+}
+.contentWrap .infoTable .tabType .tabbox {
+  left: 0;
+  padding-left: 0;
+}
+.contentWrap .infoTable .searc {
+  padding: 10px 20px;
+}
+.contentWrap .infoTable .searc select {
+  width: 150px;
+  height: 32px;
+}
+.contentWrap .infoTable table {
+  width: 100%;
+  border: none;
+  margin: 0;
+}
+.contentWrap .infoTable table td,
+.contentWrap .infoTable table th {
+  padding: 10px;
+  font-size: 14px;
+}
+.contentWrap .infoTable table td p,
+.contentWrap .infoTable table th p {
+  font-size: 12px;
+  margin: 0;
+}
+.contentWrap .infoTable table td p .btn,
+.contentWrap .infoTable table th p .btn {
+  padding: 3px 5px;
+  font-size: 12px;
+  color: white;
+}
+.contentWrap .infoTable table thead tr th {
+  background-color: #d8e8fb;
+}
+.contentWrap .infoTable table tbody tr:nth-child(2n) {
+  background-color: #f3f8fe;
+}
+.contentWrap .infoTable .pagination {
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 20px;
+}
+.contentWrap .infoTable .pagination ul {
+  float: right;
+}
+.contentWrap .moneyCheck {
+  overflow: hidden;
+  padding: 15px 150px 15px 150px;
+}
+.contentWrap .moneyCheck button {
+  position: relative;
+  z-index: 0;
+  width: 100px;
+  height: 36px;
+  line-height: 32px;
+  border: 1px solid #b2b2b2;
+  margin: 0 5px;
+  background-color: transparent;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.contentWrap .moneyCheck button.active {
+  border-color: #6F00BD;
+  background-color: #6F00BD;
+  color: white;
+}
+.contentWrap .moneyCheck button input {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.contentWrap .moneyInput {
+  padding: 15px 150px 15px 150px;
+  font-size: 14px;
+}
+.contentWrap .moneyInput input {
+  width: 250px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 5px;
+  border: 1px solid #b2b2b2;
+  margin-right: 10px;
+  text-indent: 20px;
+}
+.contentWrap .payType {
+  overflow: hidden;
+  padding: 15px 150px 15px 150px;
+}
+.contentWrap .payType label {
+  float: left;
+  margin: 10px;
+}
+.contentWrap .payType label input {
+  position: relative;
+  z-index: 0;
+  margin-right: 5px;
+}
+.contentWrap .payType label img {
+  width: 100px;
+  height: 42px;
+}
+.contentWrap .discount {
+  padding: 15px 150px 15px 150px;
+}
+.contentWrap .discount label {
+  display: block;
+}
+.contentWrap .discount label span {
+  font-size: 14px;
+  padding-left: 20px;
+}
+.contentWrap .discount label span.time {
+  float: right;
+  color: #b2b2b2;
+}
+.contentWrap .payAction {
+  padding: 20px 20px 60px 20px;
+}
+.contentWrap .payAction .btn {
+  display: block;
+  width: 150px;
+  padding: 6px;
+  margin: 0 auto;
+}
+.contentWrap .tipInfo {
+  padding: 10px;
+  font-size: 13px;
+  text-align: center;
+  background-color: #fffaed;
+}
+.contentWrap .myCarList {
+  padding: 15px 150px 15px 150px;
+}
+.contentWrap .myCarList label {
+  display: block;
+  margin-bottom: 20px;
+}
+.contentWrap .myCarList label .carRadio {
+  margin-right: 10px;
+}
+.contentWrap .myCarList label .input {
+  width: 250px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 5px;
+  border: 1px solid #b2b2b2;
+  margin-right: 10px;
+  font-size: 14px;
+  padding: 0 20px;
+}
+.contentWrap .myCarList label img {
+  width: 150px;
+  height: 48px;
+}
+.contentWrap .myCarList label span {
+  font-size: 13px;
+  padding-left: 10px;
+}
+.contentWrap .myCarList label a {
+  float: right;
+  width: 80px;
+  color: #333333;
+  font-size: 13px;
+  text-align: center;
+}
+.contentWrap .myCarList label a.active {
+  background: #ff5f5f;
+  color: white;
+}
+.contentWrap .addCar button {
+  margin-left: 400px;
+  padding: 3px 15px;
+  font-size: 13px;
+}
+.contentWrap .searchWrap .searchTitle {
+  padding: 10px 20px;
+  border-bottom: 1px solid #6F00BD;
+  margin: 0;
+}
+.contentWrap .searchWrap table {
+  width: 100%;
+  border: none;
+}
+.contentWrap .searchWrap table tr:nth-of-type(even) {
+  background: white;
+}
+.contentWrap .searchWrap table td {
+  border: none;
+  padding-bottom: 0;
+}
+.contentWrap .searchWrap table td p {
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+}
+.contentWrap .searchWrap table td p input,
+.contentWrap .searchWrap table td p select {
+  height: 32px;
+  line-height: 32px;
+  margin-bottom: 0;
+  padding: 0 10px;
+  font-size: 13px;
+  background-color: white;
+}
+.contentWrap .searchWrap table td p button {
+  position: relative;
+  z-index: 0;
+  top: 20px;
+  padding: 5px 25px;
+  font-size: 14px;
+  color: white;
+}
+.contentWrap .infoDetail {
+  padding: 10px;
+}
+.contentWrap .infoDetail .prizeStatu {
+  font-size: 13px;
+  padding: 5px 20px;
+  background-color: #fffaed;
+  border: 1px solid #ffecba;
+}
+.contentWrap .infoDetail p {
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+}
+.contentWrap .infoDetail .btn {
+  padding: 5px 15px;
+  font-size: 13px;
+}
+.contentWrap .infoDetail table {
+  width: 100%;
+  margin: 0;
+}
+.contentWrap .infoDetail table .orderItem {
+  float: left;
+  width: 33.3333333333%;
+}
+.contentWrap .infoDetail table td {
+  padding: 5px 10px;
+}
+.contentWrap .infoDetail table td.infoTitle {
+  background-color: #d8e8fb;
+  color: #333333;
+}
+.contentWrap .infoDetail table td.action {
+  text-align: center;
+}
+.contentWrap .infoDetail table td.action .btn {
+  margin: 0 5px;
+  color: white;
+}
+.contentWrap .infoDetail table td .ballWrap span {
+  position: relative;
+  z-index: 0;
+  top: 10px;
+}
+.contentWrap .infoDetail table .resultList {
+  text-align: center;
+}
+.contentWrap .infoDetail table .resultList .redBall {
+  color: #e51f42;
+}
+.contentWrap .infoDetail table .resultList .blueBall {
+  color: #575cea;
+}
+.bankListWrap {
+  position: fixed;
+  z-index: 10000000000;
+  width: 650px;
+  top: 80px;
+  left: 50%;
+  margin-left: -300px;
+  background-color: white;
+}
+.bankListWrap .bankList {
+  padding: 15px 40px 15px 40px;
+}
+.bankListWrap .bankList label {
+  padding: 0 5px;
+}
+.bankListWrap .bankList label input {
+  margin-right: 10px;
+}
+.bankListWrap .bankList label img {
+  width: 150px;
+  height: 40px;
+}
+.bankListWrap .inputWrap {
+  width: 80%;
+  margin-left: 0;
+  left: 0;
+}
+.bankListWrap .inputWrap table {
+  left: 0;
+}
+.bankListWrap .inputWrap p {
+  font-size: 13px;
+}
+.maskerLayer {
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .5;
+  background-color: #000;
+}
+.payWrap .payList ul {
+  margin: 0;
+  padding: 0;
+}
+.payWrap .payList ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+.payWrap .payList ul li .payInfo h2 {
+  font-size: 24px;
+}
+.payWrap .payList ul li .payInfo p {
+  font-size: 14px;
+}
+.payWrap .payList ul li .payInfo p strong {
+  color: #6F00BD;
+  font-size: 18px;
+}
+.payWrap .resultWrap {
+  margin-bottom: 20px;
+}
+.payWrap .resultWrap .numList {
+  height: 200px;
+  overflow: auto;
+  border: 1px solid #a59faa;
+}
+.payWrap .resultWrap .numList table {
+  left: 0;
+}
+.payWrap .resultWrap .numList table tr td {
+  text-align: center;
+  border-bottom: 1px solid #a59faa;
+  font-size: 13px;
+}
+.payWrap .buyAction {
+  padding: 0 50px;
+  margin-bottom: 20px;
+}
+.noData {
+  padding: 30px;
+  text-align: center;
+  color: #9e9e9e;
+}
+.triangle_border_up {
+  width: 0;
+  height: 0;
+  border-width: 0 7px 7px;
+  border-style: solid;
+  border-color: transparent transparent #333;
+  position: relative;
+  top: -12px;
+}
+.triangle_border_down {
+  width: 0;
+  height: 0;
+  border-width: 7px 7px 0;
+  border-style: solid;
+  border-color: #333 transparent transparent;
+  position: relative;
+  top: 12px;
+}
+.footer {
+  padding: 20px;
+  text-align: center;
+  border-top: 4px solid #575cea;
+  background-color: white;
+}
+.footer p {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: #b2b2b2;
+}

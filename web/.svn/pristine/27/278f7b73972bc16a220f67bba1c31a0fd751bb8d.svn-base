@@ -1,0 +1,278 @@
+(function () {
+    var pageVue = new Vue({
+        el: "#js-pageDeposit",
+        data: {
+            isAction: false,
+            allCarList: [],
+            myCarList: [],
+            bindCarInfo: {
+                bankId: "",
+                bankName: "",
+                cardNo: "",
+                bankAccountName: "",
+                subBankName: "",
+                action: CONFIG.ACTION.bindBankCard,
+                payPwd: "",
+            },
+            bankAccountName: "",
+            subBankName: "",
+            payPwd: "",
+            amount: "",
+            depositInfo: {
+                amount: "",
+                action: CONFIG.ACTION.userWithdrawCash,
+                remark: "",
+                payPwd: "",
+                bindBankCardId: ""
+            },
+            depositPwd: "",
+            remark: "",
+            defaultBankId: "", // 默认银行卡id
+        },
+        watch: {
+            // 设置银行卡名称
+            "bindCarInfo.bankId": function (value) {
+                var self = this;
+
+                for (var i = 0, len = self.allCarList.length; i < len; i++) {
+                    if (self.allCarList[i]["bankId"] == value) {
+                        self.bindCarInfo.bankName = encodeURIComponent(self.allCarList[i]["bankName"]);
+                        break;
+                    }
+                }
+            }
+        },
+        methods: {
+            // 获取银行卡列表
+            getAllBankList: function () {
+                var self = this;
+
+                utility.interactWithServer({
+                    headerInfo: {
+                        userId: !!USERINFO ? USERINFO["userId"] : "",
+                        userToken: !!USERINFO ? USERINFO["userToken"] : "",
+                        actionUrl: "",
+                    },
+                    url: CONFIG.HOST + CONFIG.SERVICE.getBankList,
+                    successCallback: function (data) {
+                        if (data.code == 200) {
+                            self.allCarList = data.data;
+                        }
+                    },
+                });
+            },
+            // 绑定银行卡
+            bindBankCard: function () {
+                var self = this;
+
+                // 防止重复点击
+                if (self.isAction == true) {
+                    return;
+                }
+
+                if (utility.checkLen(self.bindCarInfo.bankId, 0)) {
+                    app.showPreloader("请选择一张银行卡")
+                    setTimeout(function () {
+                        app.hidePreloader();
+                    }, 1000);
+                    return;
+                }
+                if (utility.checkLen(self.bindCarInfo.cardNo, 0)) {
+                    app.showPreloader("请输入银行卡号")
+                    setTimeout(function () {
+                        app.hidePreloader();
+                    }, 1000);
+                    return;
+                }
+                if (utility.checkLen(self.bankAccountName, 0)) {
+                    app.showPreloader("请输入开户人")
+                    setTimeout(function () {
+                        app.hidePreloader();
+                    }, 1000);
+                    return;
+                }
+                if (utility.checkLen(self.subBankName, 0)) {
+                    app.showPreloader("请输入开户行")
+                    setTimeout(function () {
+                        app.hidePreloader();
+                    }, 1000);
+                    return;
+                }
+                if (utility.checkLen(self.payPwd, 0)) {
+                    app.showPreloader("请输入支付密码");
+                    setTimeout(function () {
+                        app.hidePreloader();
+                    }, 1000);
+                    return;
+                }
+
+                self.bindCarInfo.payPwd = md5(self.payPwd).toUpperCase();
+                self.bindCarInfo.bankAccountName = encodeURIComponent(self.bankAccountName);
+                self.bindCarInfo.subBankName = encodeURIComponent(self.subBankName);
+
+                utility.interactWithServer({
+                    headerInfo: {
+                        userId: !!USERINFO ? USERINFO["userId"] : "",
+                        userToken: !!USERINFO ? USERINFO["userToken"] : "",
+                        actionUrl: utility.formatActionUrl(CONFIG.SERVICE.walletService, CONFIG.ACTION.bindBankCard, self.bindCarInfo),
+                    },
+                    url: CONFIG.HOST + CONFIG.SERVICE.walletService,
+                    dataObj: self.bindCarInfo,
+                    beforeSendCallback: function () {
+                        app.showIndicator();
+                    },
+                    completeCallback: function (XMLHttpRequest, textStatus) {
+                        app.hideIndicator();
+                        self.isAction = false;
+                    },
+                    successCallback: function (data) {
+                        if (data.code == 200) {
+                            // 当成功绑定银行卡后，重新获取用户已经绑定的银行卡列表
+                            self.getUserBindCardList();
+
+                            app.closeModal(".popup-about");
+                        } else {
+                            app.showPreloader(data.message);
+                            setTimeout(function () {
+                                app.hidePreloader();
+                            }, 1000);
+                        }
+                    },
+                });
+            },
+
+            // 获取用户绑定的银行卡列表
+            getUserBindCardList: function () {
+                var self = this;
+
+                utility.interactWithServer({
+                    headerInfo: {
+                        userId: !!USERINFO ? USERINFO["userId"] : "",
+                        userToken: !!USERINFO ? USERINFO["userToken"] : "",
+                        actionUrl: utility.formatActionUrl(CONFIG.SERVICE.walletService, CONFIG.ACTION.getUserBankCards, {
+                            action: CONFIG.ACTION.getUserBankCards
+                        }),
+                    },
+                    url: CONFIG.HOST + CONFIG.SERVICE.walletService,
+                    dataObj: {
+                        action: CONFIG.ACTION.getUserBankCards
+                    },
+                    successCallback: function (data) {
+                        if (data.code == 200) {
+                            self.myCarList = data.data || [];
+
+                            for (var i = 0, len = self.myCarList.length; i < len; i++) {
+                                if (self.myCarList[i]["isDefault"] == 1) {
+                                    self.depositInfo.bindBankCardId = self.myCarList[i]["bindBankCardId"];
+                                    break;
+                                }
+                            }
+                        }
+                    },
+                });
+            },
+
+            // 设置默认银行卡
+            setDefaultBankCard: function (bindBankCardId) {
+                var self = this;
+
+                utility.interactWithServer({
+                    headerInfo: {
+                        userId: !!USERINFO ? USERINFO["userId"] : "",
+                        userToken: !!USERINFO ? USERINFO["userToken"] : "",
+                        actionUrl: utility.formatActionUrl(CONFIG.SERVICE.walletService, CONFIG.ACTION.setDefaultBankCard, {
+                            action: CONFIG.ACTION.setDefaultBankCard,
+                            bindBankCardId: bindBankCardId
+                        }),
+                    },
+                    url: CONFIG.HOST + CONFIG.SERVICE.walletService,
+                    dataObj: {
+                        action: CONFIG.ACTION.setDefaultBankCard,
+                        bindBankCardId: bindBankCardId
+                    },
+                    successCallback: function (data) {
+                        if (data.code == 200) {
+                            // 获取用户绑定的银行卡
+                            self.getUserBindCardList();
+                        }
+                    },
+                });
+            },
+
+            // 用户提现
+            depositAction: function () {
+                var self = this;
+
+                var self = this;
+
+                // 防止重复点击
+                if (self.isAction == true) {
+                    return;
+                }
+
+                if (utility.checkLen(self.depositInfo.bindBankCardId, 0)) {
+                    app.showPreloader("请选择一张银行卡")
+                    setTimeout(function () {
+                        app.hidePreloader();
+                    }, 1000);
+                    return;
+                }
+                if (utility.checkLen(self.amount, 0)) {
+                    app.showPreloader("请输入提现金额")
+                    setTimeout(function () {
+                        app.hidePreloader();
+                    }, 1000);
+                    return;
+                }
+                if (utility.checkLen(self.depositPwd, 0)) {
+                    app.showPreloader("请输入支付密码");
+                    setTimeout(function () {
+                        app.hidePreloader();
+                    }, 1000);
+                    return;
+                }
+
+                self.depositInfo.amount = self.amount;
+                self.depositInfo.payPwd = md5(self.depositPwd).toUpperCase();
+                self.depositInfo.remark = encodeURIComponent(self.remark);
+
+                utility.interactWithServer({
+                    headerInfo: {
+                        userId: !!USERINFO ? USERINFO["userId"] : "",
+                        userToken: !!USERINFO ? USERINFO["userToken"] : "",
+                        actionUrl: utility.formatActionUrl(CONFIG.SERVICE.walletService, CONFIG.ACTION.userWithdrawCash, self.depositInfo),
+                    },
+                    url: CONFIG.HOST + CONFIG.SERVICE.walletService,
+                    dataObj: self.depositInfo,
+                    beforeSendCallback: function () {
+                        app.showIndicator();
+                    },
+                    completeCallback: function (XMLHttpRequest, textStatus) {
+                        app.hideIndicator();
+                        self.isAction = false;
+                    },
+                    successCallback: function (data) {
+                        if (data.code == 200) {
+                            mainView.router.loadPage("view/account/depHistory.html");
+                        } else {
+                            app.showPreloader(data.message);
+                            setTimeout(function () {
+                                app.hidePreloader();
+                            }, 1000);
+                        }
+                    },
+                });
+            }
+
+        },
+        created: function () {
+            var self = this;
+
+            // 获取用户绑定的银行卡
+            self.getUserBindCardList();
+
+            // 获取所有银行卡
+            self.getAllBankList();
+        }
+    });
+}())

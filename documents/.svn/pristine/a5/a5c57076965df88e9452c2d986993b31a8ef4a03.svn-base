@@ -1,0 +1,2885 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>站内通知</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="data/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/站内通知/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/ie.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="files/站内通知/data.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (首页布局已登录) -->
+
+      <!-- Unnamed (Placeholder) -->
+      <div id="u49147" class="ax_default placeholder">
+        <img id="u49147_img" class="img " src="images/首页（未登录）/u1.png"/>
+        <!-- Unnamed () -->
+        <div id="u49148" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49149" class="ax_default box_2">
+        <div id="u49149_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49150" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49151" class="ax_default label">
+        <div id="u49151_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49152" class="text" style="visibility: visible;">
+          <p><span>安全退出</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49153" class="ax_default label">
+        <div id="u49153_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49154" class="text" style="visibility: visible;">
+          <p><span>个人中心</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49155" class="ax_default label">
+        <div id="u49155_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49156" class="text" style="visibility: visible;">
+          <p><span>帮助</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49157" class="ax_default box_1">
+        <div id="u49157_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49158" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u49159" class="ax_default">
+
+        <!-- 搜索条件 (Rectangle) -->
+        <div id="u49160" class="ax_default box_1" data-label="搜索条件">
+          <div id="u49160_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u49161" class="text" style="visibility: visible;">
+            <p><span>比赛数据</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u49162" class="ax_default box_3">
+          <div id="u49162_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u49163" class="text" style="visibility: visible;">
+            <p><span>&nbsp;&nbsp;&nbsp; 搜索</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Shape) -->
+        <div id="u49164" class="ax_default icon">
+          <img id="u49164_img" class="img " src="images/首页（未登录）/u18.png"/>
+          <!-- Unnamed () -->
+          <div id="u49165" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49166" class="ax_default label">
+        <div id="u49166_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49167" class="text" style="visibility: visible;">
+          <p><span>下午好，足彩彩神！</span></p>
+        </div>
+      </div>
+
+      <!-- 个人中心 (Group) -->
+      <div id="u49168" class="ax_default ax_default_hidden" data-label="个人中心" style="display: none; visibility: hidden">
+
+        <!-- 竞彩足球 (Rectangle) -->
+        <div id="u49169" class="ax_default box_2" data-label="竞彩足球">
+          <img id="u49169_img" class="img " src="images/首页（已登录）/竞彩足球_u384.png"/>
+          <!-- Unnamed () -->
+          <div id="u49170" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+          </div>
+        </div>
+
+        <!-- 胜平负 (Rectangle) -->
+        <div id="u49171" class="ax_default box_2" data-label="胜平负">
+          <img id="u49171_img" class="img " src="images/首页（已登录）/胜平负_u386.png"/>
+          <!-- Unnamed () -->
+          <div id="u49172" class="text" style="visibility: visible;">
+            <p><span>我的彩票</span></p>
+          </div>
+        </div>
+
+        <!-- 比分 (Rectangle) -->
+        <div id="u49173" class="ax_default box_2" data-label="比分">
+          <img id="u49173_img" class="img " src="images/首页（已登录）/胜平负_u386.png"/>
+          <!-- Unnamed () -->
+          <div id="u49174" class="text" style="visibility: visible;">
+            <p><span>充值提现明细</span></p>
+          </div>
+        </div>
+
+        <!-- 半全场 (Rectangle) -->
+        <div id="u49175" class="ax_default box_2" data-label="半全场">
+          <img id="u49175_img" class="img " src="images/首页（已登录）/胜平负_u386.png"/>
+          <!-- Unnamed () -->
+          <div id="u49176" class="text" style="visibility: visible;">
+            <p><span>金币明细</span></p>
+          </div>
+        </div>
+
+        <!-- 总进球 (Rectangle) -->
+        <div id="u49177" class="ax_default box_2" data-label="总进球">
+          <img id="u49177_img" class="img " src="images/首页（已登录）/胜平负_u386.png"/>
+          <!-- Unnamed () -->
+          <div id="u49178" class="text" style="visibility: visible;">
+            <p><span>站内通知</span></p>
+          </div>
+        </div>
+
+        <!-- 总进球 (Rectangle) -->
+        <div id="u49179" class="ax_default box_2" data-label="总进球">
+          <img id="u49179_img" class="img " src="images/首页（已登录）/胜平负_u386.png"/>
+          <!-- Unnamed () -->
+          <div id="u49180" class="text" style="visibility: visible;">
+            <p><span>基本资料</span></p>
+          </div>
+        </div>
+
+        <!-- 总进球 (Rectangle) -->
+        <div id="u49181" class="ax_default box_2" data-label="总进球">
+          <img id="u49181_img" class="img " src="images/首页（已登录）/胜平负_u386.png"/>
+          <!-- Unnamed () -->
+          <div id="u49182" class="text" style="visibility: visible;">
+            <p><span>安全设置</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u49183" class="ax_default icon">
+        <img id="u49183_img" class="img " src="images/首页（已登录）/u398.png"/>
+        <!-- Unnamed () -->
+        <div id="u49184" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Ellipse) -->
+      <div id="u49185" class="ax_default ellipse">
+        <img id="u49185_img" class="img " src="images/首页（已登录）/u400.png"/>
+        <!-- Unnamed () -->
+        <div id="u49186" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Hot Spot) -->
+      <div id="u49187" class="ax_default">
+      </div>
+
+      <!-- Unnamed (底部版权) -->
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49189" class="ax_default label">
+        <div id="u49189_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49190" class="text" style="visibility: visible;">
+          <p><span>版权所有：xxxxxxx发展有限公司 Copyright © 2006-2014 粤ICP备B2-288888-2号 增值电信业务经营许可证：粤B2-2888888 粤网文[2017]8888-8888号</span></p><p><span>公司地址：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx楼&nbsp;&nbsp; 客服热线：400-888-8888 (8:30-12:00 14:30-18:00)</span></p><p><span>彩票票提示您：理性购彩，健康生活。不向未满18周岁的青少年出售彩票。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u49191" class="ax_default image">
+        <img id="u49191_img" class="img " src="images/首页（未登录）/u125.png"/>
+        <!-- Unnamed () -->
+        <div id="u49192" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (个人中心菜单) -->
+
+      <!-- Unnamed (Group) -->
+      <div id="u49194" class="ax_default">
+
+        <!-- 交易管理 (Dynamic Panel) -->
+        <div id="u49195" class="ax_default" data-label="交易管理">
+          <div id="u49195_state0" class="panel_state" data-label="State1">
+            <div id="u49195_state0_content" class="panel_state_content">
+
+              <!-- xz_jia (Rectangle) -->
+              <div id="u49196" class="ax_default shape" data-label="xz_jia" selectiongroup="u49193erji_caidan">
+                <div id="u49196_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49197" class="text" style="visibility: visible;">
+                  <p><span>我的彩票</span></p>
+                </div>
+              </div>
+
+              <!-- xz_jia (Rectangle) -->
+              <div id="u49198" class="ax_default shape" data-label="xz_jia" selectiongroup="u49193erji_caidan">
+                <div id="u49198_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49199" class="text" style="visibility: visible;">
+                  <p><span>金币明细</span></p>
+                </div>
+              </div>
+
+              <!-- xz_jia (Rectangle) -->
+              <div id="u49200" class="ax_default shape" data-label="xz_jia" selectiongroup="u49193erji_caidan">
+                <div id="u49200_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49201" class="text" style="visibility: visible;">
+                  <p><span>充值提现明细</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- xz_yiji_caidan (Rectangle) -->
+        <div id="u49202" class="ax_default shape" data-label="xz_yiji_caidan" selectiongroup="u49193yijicaidan">
+          <div id="u49202_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u49203" class="text" style="visibility: visible;">
+            <p><span>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 交易管理</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- img_wuliu (Image) -->
+      <div id="u49204" class="ax_default image" data-label="img_wuliu">
+        <img id="u49204_img" class="img " src="images/我的彩票/img_wuliu_u47199.png"/>
+        <!-- Unnamed () -->
+        <div id="u49205" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u49206" class="ax_default">
+
+        <!-- 统计分析 (Dynamic Panel) -->
+        <div id="u49207" class="ax_default" data-label="统计分析">
+          <div id="u49207_state0" class="panel_state" data-label="State1">
+            <div id="u49207_state0_content" class="panel_state_content">
+
+              <!-- xz_jia (Rectangle) -->
+              <div id="u49208" class="ax_default shape" data-label="xz_jia" selectiongroup="u49193erji_caidan">
+                <div id="u49208_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49209" class="text" style="visibility: visible;">
+                  <p><span>基本资料</span></p>
+                </div>
+              </div>
+
+              <!-- xz_jia (Rectangle) -->
+              <div id="u49210" class="ax_default shape" data-label="xz_jia" selectiongroup="u49193erji_caidan">
+                <div id="u49210_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49211" class="text" style="visibility: visible;">
+                  <p><span>安全设置</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- xz_yiji_caidan (Rectangle) -->
+        <div id="u49212" class="ax_default shape" data-label="xz_yiji_caidan" selectiongroup="u49193yijicaidan">
+          <div id="u49212_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u49213" class="text" style="visibility: visible;">
+            <p><span>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 个人账户</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- img_wuliu (Image) -->
+      <div id="u49214" class="ax_default image" data-label="img_wuliu">
+        <img id="u49214_img" class="img " src="images/我的彩票/img_wuliu_u47199.png"/>
+        <!-- Unnamed () -->
+        <div id="u49215" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u49216" class="ax_default">
+
+        <!-- 账户资产 (Dynamic Panel) -->
+        <div id="u49217" class="ax_default" data-label="账户资产">
+          <div id="u49217_state0" class="panel_state" data-label="State1">
+            <div id="u49217_state0_content" class="panel_state_content">
+
+              <!-- xz_jia (Rectangle) -->
+              <div id="u49218" class="ax_default shape" data-label="xz_jia" selectiongroup="u49193erji_caidan">
+                <div id="u49218_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49219" class="text" style="visibility: visible;">
+                  <p><span>站内通知</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- xz_yiji_caidan (Rectangle) -->
+        <div id="u49220" class="ax_default shape" data-label="xz_yiji_caidan" selectiongroup="u49193yijicaidan">
+          <div id="u49220_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u49221" class="text" style="visibility: visible;">
+            <p><span>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 系统管理</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- img_wuliu (Image) -->
+      <div id="u49222" class="ax_default image" data-label="img_wuliu">
+        <img id="u49222_img" class="img " src="images/我的彩票/img_wuliu_u47199.png"/>
+        <!-- Unnamed () -->
+        <div id="u49223" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49224" class="ax_default box_1">
+        <div id="u49224_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49225" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49226" class="ax_default label">
+        <div id="u49226_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49227" class="text" style="visibility: visible;">
+          <p><span>足彩彩神</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49228" class="ax_default label">
+        <div id="u49228_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49229" class="text" style="visibility: visible;">
+          <p><span>余额：</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49230" class="ax_default label">
+        <div id="u49230_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49231" class="text" style="visibility: visible;">
+          <p><span>100元</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49232" class="ax_default label">
+        <div id="u49232_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49233" class="text" style="visibility: visible;">
+          <p><span>金币：</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49234" class="ax_default label">
+        <div id="u49234_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49235" class="text" style="visibility: visible;">
+          <p><span>50</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49236" class="ax_default box_2">
+        <div id="u49236_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49237" class="text" style="visibility: visible;">
+          <p><span>充值</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49238" class="ax_default label">
+        <div id="u49238_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49239" class="text" style="visibility: visible;">
+          <p><span>提现</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u49240" class="ax_default image">
+        <img id="u49240_img" class="img " src="images/我的彩票/u47235.png"/>
+        <!-- Unnamed () -->
+        <div id="u49241" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u49242" class="ax_default icon">
+        <img id="u49242_img" class="img " src="images/我的彩票/u47237.png"/>
+        <!-- Unnamed () -->
+        <div id="u49243" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49244" class="ax_default primary_button">
+        <div id="u49244_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49245" class="text" style="visibility: visible;">
+          <p><span>首页</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49246" class="ax_default primary_button">
+        <div id="u49246_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49247" class="text" style="visibility: visible;">
+          <p><span>购彩大厅</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49248" class="ax_default primary_button">
+        <div id="u49248_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49249" class="text" style="visibility: visible;">
+          <p><span>开奖公告</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49250" class="ax_default primary_button">
+        <div id="u49250_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49251" class="text" style="visibility: visible;">
+          <p><span>中奖排行</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49252" class="ax_default primary_button">
+        <div id="u49252_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49253" class="text" style="visibility: visible;">
+          <p><span>赛事数据</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49254" class="ax_default primary_button">
+        <div id="u49254_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49255" class="text" style="visibility: visible;">
+          <p><span>神算</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49256" class="ax_default box_2">
+        <div id="u49256_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49257" class="text" style="visibility: visible;">
+          <p><span>钻石专享</span></p>
+        </div>
+      </div>
+
+      <!-- 站内通知 (Dynamic Panel) -->
+      <div id="u49258" class="ax_default" data-label="站内通知">
+        <div id="u49258_state0" class="panel_state" data-label="全部">
+          <div id="u49258_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49259" class="ax_default box_2">
+              <div id="u49259_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49260" class="text" style="visibility: visible;">
+                <p><span>全部</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49261" class="ax_default box_2">
+              <div id="u49261_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49262" class="text" style="visibility: visible;">
+                <p><span>特惠</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Horizontal Line) -->
+            <div id="u49263" class="ax_default line">
+              <img id="u49263_img" class="img " src="images/我的彩票/u47243.png"/>
+              <!-- Unnamed () -->
+              <div id="u49264" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49265" class="ax_default box_2">
+              <div id="u49265_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49266" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49267" class="ax_default box_2">
+              <div id="u49267_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49268" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49269" class="ax_default box_2">
+              <div id="u49269_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49270" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49271" class="ax_default label">
+              <div id="u49271_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49272" class="text" style="visibility: visible;">
+                <p><span>时间</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49273" class="ax_default label">
+              <div id="u49273_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49274" class="text" style="visibility: visible;">
+                <p><span>状态</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49275" class="ax_default label">
+              <div id="u49275_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49276" class="text" style="visibility: visible;">
+                <p><span>类型</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49277" class="ax_default label">
+              <div id="u49277_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49278" class="text" style="visibility: visible;">
+                <p><span>标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49279" class="ax_default box_2">
+              <div id="u49279_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49280" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49281" class="ax_default box_2">
+              <div id="u49281_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49282" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49283" class="ax_default label">
+              <div id="u49283_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49284" class="text" style="visibility: visible;">
+                <p><span>2018-05-19 22:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49285" class="ax_default label">
+              <div id="u49285_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49286" class="text" style="visibility: visible;">
+                <p><span>未读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49287" class="ax_default label">
+              <div id="u49287_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49288" class="text" style="visibility: visible;">
+                <p><span>2018-05-19 10:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49289" class="ax_default box_2">
+              <div id="u49289_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49290" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49291" class="ax_default box_2">
+              <div id="u49291_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49292" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49293" class="ax_default label">
+              <div id="u49293_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49294" class="text" style="visibility: visible;">
+                <p><span>2018-05-18 22:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49295" class="ax_default label">
+              <div id="u49295_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49296" class="text" style="visibility: visible;">
+                <p><span>2018-05-17 10:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49297" class="ax_default box_2">
+              <div id="u49297_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49298" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49299" class="ax_default label">
+              <div id="u49299_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49300" class="text" style="visibility: visible;">
+                <p><span>2018-05-16 22:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Image) -->
+            <div id="u49301" class="ax_default image">
+              <img id="u49301_img" class="img " src="images/神算/u46304.png"/>
+              <!-- Unnamed () -->
+              <div id="u49302" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- 最近三月 (Group) -->
+            <div id="u49303" class="ax_default" data-label="最近三月">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49304" class="ax_default box_2">
+                <div id="u49304_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49305" class="text" style="visibility: visible;">
+                  <p><span>状态</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Shape) -->
+              <div id="u49306" class="ax_default icon_lighttheme_default">
+                <img id="u49306_img" class="img " src="images/双色球投注/u1351.png"/>
+                <!-- Unnamed () -->
+                <div id="u49307" class="text" style="display: none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 状态拉框 (Group) -->
+            <div id="u49308" class="ax_default ax_default_hidden" data-label="状态拉框" style="display: none; visibility: hidden">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49309" class="ax_default box_2">
+                <div id="u49309_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49310" class="text" style="visibility: visible;">
+                  <p><span>全部</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49311" class="ax_default box_2">
+                <div id="u49311_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49312" class="text" style="visibility: visible;">
+                  <p><span>未读</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49313" class="ax_default box_2">
+                <div id="u49313_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49314" class="text" style="visibility: visible;">
+                  <p><span>已读</span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49315" class="ax_default label">
+              <div id="u49315_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49316" class="text" style="visibility: visible;">
+                <p><span>特惠</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49317" class="ax_default label">
+              <div id="u49317_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49318" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49319" class="ax_default label">
+              <div id="u49319_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49320" class="text" style="visibility: visible;">
+                <p><span>中奖通知</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49321" class="ax_default label">
+              <div id="u49321_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49322" class="text" style="visibility: visible;">
+                <p><span>活动</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49323" class="ax_default label">
+              <div id="u49323_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49324" class="text" style="visibility: visible;">
+                <p><span>其他</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49325" class="ax_default label">
+              <div id="u49325_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49326" class="text" style="visibility: visible;">
+                <p><span>中奖通知</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49327" class="ax_default box_2">
+              <div id="u49327_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49328" class="text" style="visibility: visible;">
+                <p><span>中奖通知</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49329" class="ax_default box_2">
+              <div id="u49329_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49330" class="text" style="visibility: visible;">
+                <p><span>活动</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49331" class="ax_default box_2">
+              <div id="u49331_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49332" class="text" style="visibility: visible;">
+                <p><span>其他</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49333" class="ax_default label">
+              <div id="u49333_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49334" class="text" style="visibility: visible;">
+                <p><span>已读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49335" class="ax_default label">
+              <div id="u49335_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49336" class="text" style="visibility: visible;">
+                <p><span>未读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49337" class="ax_default label">
+              <div id="u49337_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49338" class="text" style="visibility: visible;">
+                <p><span>已读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49339" class="ax_default label">
+              <div id="u49339_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49340" class="text" style="visibility: visible;">
+                <p><span>已读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49341" class="ax_default label">
+              <div id="u49341_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49342" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49343" class="ax_default label">
+              <div id="u49343_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49344" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49345" class="ax_default label">
+              <div id="u49345_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49346" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49347" class="ax_default label">
+              <div id="u49347_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49348" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49349" class="ax_default label">
+              <div id="u49349_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49350" class="text" style="visibility: visible;">
+                <p><span>正文</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49351" class="ax_default label">
+              <div id="u49351_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49352" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49353" class="ax_default label">
+              <div id="u49353_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49354" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49355" class="ax_default label">
+              <div id="u49355_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49356" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49357" class="ax_default label">
+              <div id="u49357_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49358" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49359" class="ax_default label">
+              <div id="u49359_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49360" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="u49258_state1" class="panel_state" data-label="特惠">
+          <div id="u49258_state1_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49361" class="ax_default box_2">
+              <div id="u49361_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49362" class="text" style="visibility: visible;">
+                <p><span>全部</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49363" class="ax_default box_2">
+              <div id="u49363_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49364" class="text" style="visibility: visible;">
+                <p><span>特惠</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Horizontal Line) -->
+            <div id="u49365" class="ax_default line">
+              <img id="u49365_img" class="img " src="images/我的彩票/u47243.png"/>
+              <!-- Unnamed () -->
+              <div id="u49366" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49367" class="ax_default box_2">
+              <div id="u49367_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49368" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49369" class="ax_default box_2">
+              <div id="u49369_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49370" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49371" class="ax_default box_2">
+              <div id="u49371_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49372" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49373" class="ax_default label">
+              <div id="u49373_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49374" class="text" style="visibility: visible;">
+                <p><span>时间</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49375" class="ax_default label">
+              <div id="u49375_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49376" class="text" style="visibility: visible;">
+                <p><span>状态</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49377" class="ax_default label">
+              <div id="u49377_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49378" class="text" style="visibility: visible;">
+                <p><span>类型</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49379" class="ax_default label">
+              <div id="u49379_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49380" class="text" style="visibility: visible;">
+                <p><span>标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49381" class="ax_default box_2">
+              <div id="u49381_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49382" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49383" class="ax_default box_2">
+              <div id="u49383_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49384" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49385" class="ax_default label">
+              <div id="u49385_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49386" class="text" style="visibility: visible;">
+                <p><span>2018-05-19 22:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49387" class="ax_default label">
+              <div id="u49387_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49388" class="text" style="visibility: visible;">
+                <p><span>未读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49389" class="ax_default label">
+              <div id="u49389_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49390" class="text" style="visibility: visible;">
+                <p><span>2018-05-19 10:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49391" class="ax_default box_2">
+              <div id="u49391_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49392" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49393" class="ax_default box_2">
+              <div id="u49393_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49394" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49395" class="ax_default label">
+              <div id="u49395_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49396" class="text" style="visibility: visible;">
+                <p><span>2018-05-18 22:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49397" class="ax_default label">
+              <div id="u49397_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49398" class="text" style="visibility: visible;">
+                <p><span>2018-05-17 10:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49399" class="ax_default box_2">
+              <div id="u49399_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49400" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49401" class="ax_default label">
+              <div id="u49401_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49402" class="text" style="visibility: visible;">
+                <p><span>2018-05-16 22:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Image) -->
+            <div id="u49403" class="ax_default image">
+              <img id="u49403_img" class="img " src="images/神算/u46304.png"/>
+              <!-- Unnamed () -->
+              <div id="u49404" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- 最近三月 (Group) -->
+            <div id="u49405" class="ax_default" data-label="最近三月">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49406" class="ax_default box_2">
+                <div id="u49406_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49407" class="text" style="visibility: visible;">
+                  <p><span>状态</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Shape) -->
+              <div id="u49408" class="ax_default icon_lighttheme_default">
+                <img id="u49408_img" class="img " src="images/双色球投注/u1351.png"/>
+                <!-- Unnamed () -->
+                <div id="u49409" class="text" style="display: none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 状态拉框 (Group) -->
+            <div id="u49410" class="ax_default ax_default_hidden" data-label="状态拉框" style="display: none; visibility: hidden">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49411" class="ax_default box_2">
+                <div id="u49411_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49412" class="text" style="visibility: visible;">
+                  <p><span>全部</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49413" class="ax_default box_2">
+                <div id="u49413_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49414" class="text" style="visibility: visible;">
+                  <p><span>未读</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49415" class="ax_default box_2">
+                <div id="u49415_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49416" class="text" style="visibility: visible;">
+                  <p><span>已读</span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49417" class="ax_default label">
+              <div id="u49417_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49418" class="text" style="visibility: visible;">
+                <p><span>特惠</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49419" class="ax_default label">
+              <div id="u49419_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49420" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49421" class="ax_default label">
+              <div id="u49421_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49422" class="text" style="visibility: visible;">
+                <p><span>特惠</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49423" class="ax_default label">
+              <div id="u49423_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49424" class="text" style="visibility: visible;">
+                <p><span>特惠</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49425" class="ax_default label">
+              <div id="u49425_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49426" class="text" style="visibility: visible;">
+                <p><span>特惠</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49427" class="ax_default label">
+              <div id="u49427_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49428" class="text" style="visibility: visible;">
+                <p><span>特惠</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49429" class="ax_default box_2">
+              <div id="u49429_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49430" class="text" style="visibility: visible;">
+                <p><span>中奖通知</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49431" class="ax_default box_2">
+              <div id="u49431_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49432" class="text" style="visibility: visible;">
+                <p><span>活动</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49433" class="ax_default box_2">
+              <div id="u49433_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49434" class="text" style="visibility: visible;">
+                <p><span>其他</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49435" class="ax_default label">
+              <div id="u49435_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49436" class="text" style="visibility: visible;">
+                <p><span>已读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49437" class="ax_default label">
+              <div id="u49437_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49438" class="text" style="visibility: visible;">
+                <p><span>未读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49439" class="ax_default label">
+              <div id="u49439_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49440" class="text" style="visibility: visible;">
+                <p><span>已读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49441" class="ax_default label">
+              <div id="u49441_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49442" class="text" style="visibility: visible;">
+                <p><span>已读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49443" class="ax_default label">
+              <div id="u49443_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49444" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49445" class="ax_default label">
+              <div id="u49445_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49446" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49447" class="ax_default label">
+              <div id="u49447_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49448" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49449" class="ax_default label">
+              <div id="u49449_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49450" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49451" class="ax_default label">
+              <div id="u49451_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49452" class="text" style="visibility: visible;">
+                <p><span>正文</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49453" class="ax_default label">
+              <div id="u49453_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49454" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49455" class="ax_default label">
+              <div id="u49455_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49456" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49457" class="ax_default label">
+              <div id="u49457_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49458" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49459" class="ax_default label">
+              <div id="u49459_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49460" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49461" class="ax_default label">
+              <div id="u49461_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49462" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="u49258_state2" class="panel_state" data-label="中奖通知">
+          <div id="u49258_state2_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49463" class="ax_default box_2">
+              <div id="u49463_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49464" class="text" style="visibility: visible;">
+                <p><span>全部</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49465" class="ax_default box_2">
+              <div id="u49465_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49466" class="text" style="visibility: visible;">
+                <p><span>特惠</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Horizontal Line) -->
+            <div id="u49467" class="ax_default line">
+              <img id="u49467_img" class="img " src="images/我的彩票/u47243.png"/>
+              <!-- Unnamed () -->
+              <div id="u49468" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49469" class="ax_default box_2">
+              <div id="u49469_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49470" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49471" class="ax_default box_2">
+              <div id="u49471_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49472" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49473" class="ax_default box_2">
+              <div id="u49473_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49474" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49475" class="ax_default label">
+              <div id="u49475_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49476" class="text" style="visibility: visible;">
+                <p><span>时间</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49477" class="ax_default label">
+              <div id="u49477_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49478" class="text" style="visibility: visible;">
+                <p><span>状态</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49479" class="ax_default label">
+              <div id="u49479_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49480" class="text" style="visibility: visible;">
+                <p><span>类型</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49481" class="ax_default label">
+              <div id="u49481_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49482" class="text" style="visibility: visible;">
+                <p><span>标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49483" class="ax_default box_2">
+              <div id="u49483_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49484" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49485" class="ax_default box_2">
+              <div id="u49485_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49486" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49487" class="ax_default label">
+              <div id="u49487_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49488" class="text" style="visibility: visible;">
+                <p><span>2018-05-19 22:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49489" class="ax_default label">
+              <div id="u49489_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49490" class="text" style="visibility: visible;">
+                <p><span>未读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49491" class="ax_default label">
+              <div id="u49491_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49492" class="text" style="visibility: visible;">
+                <p><span>2018-05-19 10:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49493" class="ax_default box_2">
+              <div id="u49493_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49494" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49495" class="ax_default box_2">
+              <div id="u49495_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49496" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49497" class="ax_default label">
+              <div id="u49497_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49498" class="text" style="visibility: visible;">
+                <p><span>2018-05-18 22:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49499" class="ax_default label">
+              <div id="u49499_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49500" class="text" style="visibility: visible;">
+                <p><span>2018-05-17 10:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49501" class="ax_default box_2">
+              <div id="u49501_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49502" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49503" class="ax_default label">
+              <div id="u49503_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49504" class="text" style="visibility: visible;">
+                <p><span>2018-05-16 22:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Image) -->
+            <div id="u49505" class="ax_default image">
+              <img id="u49505_img" class="img " src="images/神算/u46304.png"/>
+              <!-- Unnamed () -->
+              <div id="u49506" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- 最近三月 (Group) -->
+            <div id="u49507" class="ax_default" data-label="最近三月">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49508" class="ax_default box_2">
+                <div id="u49508_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49509" class="text" style="visibility: visible;">
+                  <p><span>状态</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Shape) -->
+              <div id="u49510" class="ax_default icon_lighttheme_default">
+                <img id="u49510_img" class="img " src="images/双色球投注/u1351.png"/>
+                <!-- Unnamed () -->
+                <div id="u49511" class="text" style="display: none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 状态拉框 (Group) -->
+            <div id="u49512" class="ax_default ax_default_hidden" data-label="状态拉框" style="display: none; visibility: hidden">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49513" class="ax_default box_2">
+                <div id="u49513_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49514" class="text" style="visibility: visible;">
+                  <p><span>全部</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49515" class="ax_default box_2">
+                <div id="u49515_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49516" class="text" style="visibility: visible;">
+                  <p><span>未读</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49517" class="ax_default box_2">
+                <div id="u49517_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49518" class="text" style="visibility: visible;">
+                  <p><span>已读</span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49519" class="ax_default label">
+              <div id="u49519_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49520" class="text" style="visibility: visible;">
+                <p><span>中奖通知</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49521" class="ax_default label">
+              <div id="u49521_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49522" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49523" class="ax_default box_2">
+              <div id="u49523_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49524" class="text" style="visibility: visible;">
+                <p><span>中奖通知</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49525" class="ax_default box_2">
+              <div id="u49525_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49526" class="text" style="visibility: visible;">
+                <p><span>活动</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49527" class="ax_default box_2">
+              <div id="u49527_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49528" class="text" style="visibility: visible;">
+                <p><span>其他</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49529" class="ax_default label">
+              <div id="u49529_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49530" class="text" style="visibility: visible;">
+                <p><span>已读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49531" class="ax_default label">
+              <div id="u49531_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49532" class="text" style="visibility: visible;">
+                <p><span>未读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49533" class="ax_default label">
+              <div id="u49533_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49534" class="text" style="visibility: visible;">
+                <p><span>已读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49535" class="ax_default label">
+              <div id="u49535_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49536" class="text" style="visibility: visible;">
+                <p><span>已读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49537" class="ax_default label">
+              <div id="u49537_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49538" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49539" class="ax_default label">
+              <div id="u49539_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49540" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49541" class="ax_default label">
+              <div id="u49541_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49542" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49543" class="ax_default label">
+              <div id="u49543_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49544" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49545" class="ax_default label">
+              <div id="u49545_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49546" class="text" style="visibility: visible;">
+                <p><span>正文</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49547" class="ax_default label">
+              <div id="u49547_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49548" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49549" class="ax_default label">
+              <div id="u49549_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49550" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49551" class="ax_default label">
+              <div id="u49551_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49552" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49553" class="ax_default label">
+              <div id="u49553_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49554" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49555" class="ax_default label">
+              <div id="u49555_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49556" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49557" class="ax_default label">
+              <div id="u49557_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49558" class="text" style="visibility: visible;">
+                <p><span>中奖通知</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49559" class="ax_default label">
+              <div id="u49559_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49560" class="text" style="visibility: visible;">
+                <p><span>中奖通知</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49561" class="ax_default label">
+              <div id="u49561_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49562" class="text" style="visibility: visible;">
+                <p><span>中奖通知</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49563" class="ax_default label">
+              <div id="u49563_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49564" class="text" style="visibility: visible;">
+                <p><span>中奖通知</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="u49258_state3" class="panel_state" data-label="活动">
+          <div id="u49258_state3_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49565" class="ax_default box_2">
+              <div id="u49565_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49566" class="text" style="visibility: visible;">
+                <p><span>全部</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49567" class="ax_default box_2">
+              <div id="u49567_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49568" class="text" style="visibility: visible;">
+                <p><span>特惠</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Horizontal Line) -->
+            <div id="u49569" class="ax_default line">
+              <img id="u49569_img" class="img " src="images/我的彩票/u47243.png"/>
+              <!-- Unnamed () -->
+              <div id="u49570" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49571" class="ax_default box_2">
+              <div id="u49571_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49572" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49573" class="ax_default box_2">
+              <div id="u49573_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49574" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49575" class="ax_default box_2">
+              <div id="u49575_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49576" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49577" class="ax_default label">
+              <div id="u49577_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49578" class="text" style="visibility: visible;">
+                <p><span>时间</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49579" class="ax_default label">
+              <div id="u49579_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49580" class="text" style="visibility: visible;">
+                <p><span>状态</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49581" class="ax_default label">
+              <div id="u49581_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49582" class="text" style="visibility: visible;">
+                <p><span>类型</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49583" class="ax_default label">
+              <div id="u49583_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49584" class="text" style="visibility: visible;">
+                <p><span>标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49585" class="ax_default box_2">
+              <div id="u49585_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49586" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49587" class="ax_default box_2">
+              <div id="u49587_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49588" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49589" class="ax_default label">
+              <div id="u49589_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49590" class="text" style="visibility: visible;">
+                <p><span>2018-05-19 22:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49591" class="ax_default label">
+              <div id="u49591_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49592" class="text" style="visibility: visible;">
+                <p><span>未读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49593" class="ax_default label">
+              <div id="u49593_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49594" class="text" style="visibility: visible;">
+                <p><span>2018-05-19 10:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49595" class="ax_default box_2">
+              <div id="u49595_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49596" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49597" class="ax_default box_2">
+              <div id="u49597_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49598" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49599" class="ax_default label">
+              <div id="u49599_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49600" class="text" style="visibility: visible;">
+                <p><span>2018-05-18 22:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49601" class="ax_default label">
+              <div id="u49601_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49602" class="text" style="visibility: visible;">
+                <p><span>2018-05-17 10:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49603" class="ax_default box_2">
+              <div id="u49603_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49604" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49605" class="ax_default label">
+              <div id="u49605_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49606" class="text" style="visibility: visible;">
+                <p><span>2018-05-16 22:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Image) -->
+            <div id="u49607" class="ax_default image">
+              <img id="u49607_img" class="img " src="images/神算/u46304.png"/>
+              <!-- Unnamed () -->
+              <div id="u49608" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- 最近三月 (Group) -->
+            <div id="u49609" class="ax_default" data-label="最近三月">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49610" class="ax_default box_2">
+                <div id="u49610_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49611" class="text" style="visibility: visible;">
+                  <p><span>状态</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Shape) -->
+              <div id="u49612" class="ax_default icon_lighttheme_default">
+                <img id="u49612_img" class="img " src="images/双色球投注/u1351.png"/>
+                <!-- Unnamed () -->
+                <div id="u49613" class="text" style="display: none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 状态拉框 (Group) -->
+            <div id="u49614" class="ax_default ax_default_hidden" data-label="状态拉框" style="display: none; visibility: hidden">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49615" class="ax_default box_2">
+                <div id="u49615_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49616" class="text" style="visibility: visible;">
+                  <p><span>全部</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49617" class="ax_default box_2">
+                <div id="u49617_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49618" class="text" style="visibility: visible;">
+                  <p><span>未读</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49619" class="ax_default box_2">
+                <div id="u49619_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49620" class="text" style="visibility: visible;">
+                  <p><span>已读</span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49621" class="ax_default label">
+              <div id="u49621_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49622" class="text" style="visibility: visible;">
+                <p><span>活动</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49623" class="ax_default label">
+              <div id="u49623_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49624" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49625" class="ax_default box_2">
+              <div id="u49625_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49626" class="text" style="visibility: visible;">
+                <p><span>中奖通知</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49627" class="ax_default box_2">
+              <div id="u49627_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49628" class="text" style="visibility: visible;">
+                <p><span>活动</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49629" class="ax_default box_2">
+              <div id="u49629_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49630" class="text" style="visibility: visible;">
+                <p><span>其他</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49631" class="ax_default label">
+              <div id="u49631_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49632" class="text" style="visibility: visible;">
+                <p><span>已读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49633" class="ax_default label">
+              <div id="u49633_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49634" class="text" style="visibility: visible;">
+                <p><span>未读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49635" class="ax_default label">
+              <div id="u49635_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49636" class="text" style="visibility: visible;">
+                <p><span>已读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49637" class="ax_default label">
+              <div id="u49637_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49638" class="text" style="visibility: visible;">
+                <p><span>已读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49639" class="ax_default label">
+              <div id="u49639_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49640" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49641" class="ax_default label">
+              <div id="u49641_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49642" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49643" class="ax_default label">
+              <div id="u49643_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49644" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49645" class="ax_default label">
+              <div id="u49645_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49646" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49647" class="ax_default label">
+              <div id="u49647_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49648" class="text" style="visibility: visible;">
+                <p><span>正文</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49649" class="ax_default label">
+              <div id="u49649_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49650" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49651" class="ax_default label">
+              <div id="u49651_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49652" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49653" class="ax_default label">
+              <div id="u49653_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49654" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49655" class="ax_default label">
+              <div id="u49655_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49656" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49657" class="ax_default label">
+              <div id="u49657_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49658" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49659" class="ax_default label">
+              <div id="u49659_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49660" class="text" style="visibility: visible;">
+                <p><span>活动</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49661" class="ax_default label">
+              <div id="u49661_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49662" class="text" style="visibility: visible;">
+                <p><span>活动</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49663" class="ax_default label">
+              <div id="u49663_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49664" class="text" style="visibility: visible;">
+                <p><span>活动</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49665" class="ax_default label">
+              <div id="u49665_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49666" class="text" style="visibility: visible;">
+                <p><span>活动</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="u49258_state4" class="panel_state" data-label="其他">
+          <div id="u49258_state4_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49667" class="ax_default box_2">
+              <div id="u49667_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49668" class="text" style="visibility: visible;">
+                <p><span>全部</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49669" class="ax_default box_2">
+              <div id="u49669_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49670" class="text" style="visibility: visible;">
+                <p><span>特惠</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Horizontal Line) -->
+            <div id="u49671" class="ax_default line">
+              <img id="u49671_img" class="img " src="images/我的彩票/u47243.png"/>
+              <!-- Unnamed () -->
+              <div id="u49672" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49673" class="ax_default box_2">
+              <div id="u49673_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49674" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49675" class="ax_default box_2">
+              <div id="u49675_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49676" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49677" class="ax_default box_2">
+              <div id="u49677_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49678" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49679" class="ax_default label">
+              <div id="u49679_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49680" class="text" style="visibility: visible;">
+                <p><span>时间</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49681" class="ax_default label">
+              <div id="u49681_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49682" class="text" style="visibility: visible;">
+                <p><span>状态</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49683" class="ax_default label">
+              <div id="u49683_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49684" class="text" style="visibility: visible;">
+                <p><span>类型</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49685" class="ax_default label">
+              <div id="u49685_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49686" class="text" style="visibility: visible;">
+                <p><span>标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49687" class="ax_default box_2">
+              <div id="u49687_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49688" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49689" class="ax_default box_2">
+              <div id="u49689_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49690" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49691" class="ax_default label">
+              <div id="u49691_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49692" class="text" style="visibility: visible;">
+                <p><span>2018-05-19 22:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49693" class="ax_default label">
+              <div id="u49693_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49694" class="text" style="visibility: visible;">
+                <p><span>未读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49695" class="ax_default label">
+              <div id="u49695_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49696" class="text" style="visibility: visible;">
+                <p><span>2018-05-19 10:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49697" class="ax_default box_2">
+              <div id="u49697_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49698" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49699" class="ax_default box_2">
+              <div id="u49699_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49700" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49701" class="ax_default label">
+              <div id="u49701_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49702" class="text" style="visibility: visible;">
+                <p><span>2018-05-18 22:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49703" class="ax_default label">
+              <div id="u49703_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49704" class="text" style="visibility: visible;">
+                <p><span>2018-05-17 10:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49705" class="ax_default box_2">
+              <div id="u49705_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49706" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49707" class="ax_default label">
+              <div id="u49707_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49708" class="text" style="visibility: visible;">
+                <p><span>2018-05-16 22:09</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Image) -->
+            <div id="u49709" class="ax_default image">
+              <img id="u49709_img" class="img " src="images/神算/u46304.png"/>
+              <!-- Unnamed () -->
+              <div id="u49710" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- 最近三月 (Group) -->
+            <div id="u49711" class="ax_default" data-label="最近三月">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49712" class="ax_default box_2">
+                <div id="u49712_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49713" class="text" style="visibility: visible;">
+                  <p><span>状态</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Shape) -->
+              <div id="u49714" class="ax_default icon_lighttheme_default">
+                <img id="u49714_img" class="img " src="images/双色球投注/u1351.png"/>
+                <!-- Unnamed () -->
+                <div id="u49715" class="text" style="display: none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 状态拉框 (Group) -->
+            <div id="u49716" class="ax_default ax_default_hidden" data-label="状态拉框" style="display: none; visibility: hidden">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49717" class="ax_default box_2">
+                <div id="u49717_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49718" class="text" style="visibility: visible;">
+                  <p><span>全部</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49719" class="ax_default box_2">
+                <div id="u49719_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49720" class="text" style="visibility: visible;">
+                  <p><span>未读</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49721" class="ax_default box_2">
+                <div id="u49721_div" class=""></div>
+                <!-- Unnamed () -->
+                <div id="u49722" class="text" style="visibility: visible;">
+                  <p><span>已读</span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49723" class="ax_default label">
+              <div id="u49723_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49724" class="text" style="visibility: visible;">
+                <p><span>其他</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49725" class="ax_default label">
+              <div id="u49725_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49726" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49727" class="ax_default box_2">
+              <div id="u49727_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49728" class="text" style="visibility: visible;">
+                <p><span>中奖通知</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49729" class="ax_default box_2">
+              <div id="u49729_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49730" class="text" style="visibility: visible;">
+                <p><span>活动</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49731" class="ax_default box_2">
+              <div id="u49731_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49732" class="text" style="visibility: visible;">
+                <p><span>其他</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49733" class="ax_default label">
+              <div id="u49733_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49734" class="text" style="visibility: visible;">
+                <p><span>已读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49735" class="ax_default label">
+              <div id="u49735_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49736" class="text" style="visibility: visible;">
+                <p><span>未读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49737" class="ax_default label">
+              <div id="u49737_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49738" class="text" style="visibility: visible;">
+                <p><span>已读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49739" class="ax_default label">
+              <div id="u49739_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49740" class="text" style="visibility: visible;">
+                <p><span>已读</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49741" class="ax_default label">
+              <div id="u49741_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49742" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49743" class="ax_default label">
+              <div id="u49743_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49744" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49745" class="ax_default label">
+              <div id="u49745_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49746" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49747" class="ax_default label">
+              <div id="u49747_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49748" class="text" style="visibility: visible;">
+                <p><span>消息标题消息标题消息标题</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49749" class="ax_default label">
+              <div id="u49749_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49750" class="text" style="visibility: visible;">
+                <p><span>正文</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49751" class="ax_default label">
+              <div id="u49751_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49752" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49753" class="ax_default label">
+              <div id="u49753_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49754" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49755" class="ax_default label">
+              <div id="u49755_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49756" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49757" class="ax_default label">
+              <div id="u49757_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49758" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49759" class="ax_default label">
+              <div id="u49759_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49760" class="text" style="visibility: visible;">
+                <p><span>消息正文消息正文消息正文消息正文消息正文...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49761" class="ax_default label">
+              <div id="u49761_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49762" class="text" style="visibility: visible;">
+                <p><span>其他</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49763" class="ax_default label">
+              <div id="u49763_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49764" class="text" style="visibility: visible;">
+                <p><span>其他</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49765" class="ax_default label">
+              <div id="u49765_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49766" class="text" style="visibility: visible;">
+                <p><span>其他</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u49767" class="ax_default label">
+              <div id="u49767_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u49768" class="text" style="visibility: visible;">
+                <p><span>其他</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u49769" class="ax_default label">
+        <div id="u49769_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49770" class="text" style="visibility: visible;">
+          <p><span>多彩缤纷 &gt; 站内通知 </span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

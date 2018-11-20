@@ -1,0 +1,58 @@
+var LOCATION = window.location.protocol + "//" + window.location.host;
+var pathNameList = window.location.pathname.split("/");
+var URL = LOCATION + "/" + (pathNameList.slice(1, pathNameList.length - 1)).join("/") + "/";
+
+// 将获得的用户信息保存在全局中
+var USERINFO = utility.getLocalStorage("userInfo") || null;
+
+// 获取用户信息
+if (!!USERINFO) {
+    utility.getUserInfo({
+        appType: 2,
+        callback: function (data) {
+            var userToken = USERINFO["userToken"];
+            USERINFO = data;
+            USERINFO["userToken"] = userToken;
+
+            utility.getShopOrderStat(function(data) {
+                USERINFO["totalUntreatedOrders"] = data.data.totalUntreatedOrders;
+                USERINFO["totalReceivedOrders"] = data.data.totalReceivedOrders;
+                USERINFO["totalPrintedOrders"] = data.data.totalPrintedOrders;
+                USERINFO["totalOrders"] = data.data.totalOrders;
+                USERINFO["totalRejectedOrders"] = data.data.totalRejectedOrders;
+            });
+    
+            // 获取接单信息
+            // utility.interactWithServer({
+            //     async: false,
+            //     headerInfo: {
+            //         appType: 2,
+            //         userId: (typeof USERINFO != 'undefined' && !!USERINFO) ? USERINFO["userId"] : "",
+            //         userToken: (typeof USERINFO != 'undefined' && !!USERINFO) ? USERINFO["userToken"] : "",
+            //         actionUrl: utility.formatActionUrl(CONFIG.SERVICE.commonOrderService, CONFIG.ACTION.getShopOrderStat, {
+            //             sysOpStr: "sss@2018",
+            //             action: CONFIG.ACTION.getShopOrderStat
+            //         })
+            //     },
+            //     url: CONFIG.HOST + CONFIG.SERVICE.commonOrderService,
+            //     dataObj: {
+            //         sysOpStr: "sss@2018",
+            //         action: CONFIG.ACTION.getShopOrderStat
+            //     },
+            //     successCallback: function (data) {
+            //         if (data.code == 200) {
+            //             USERINFO["totalUntreatedOrders"] = data.data.totalUntreatedOrders;
+            //             USERINFO["totalReceivedOrders"] = data.data.totalReceivedOrders;
+            //             USERINFO["totalPrintedOrders"] = data.data.totalPrintedOrders;
+            //             USERINFO["totalOrders"] = data.data.totalOrders;
+            //             USERINFO["totalRejectedOrders"] = data.data.totalRejectedOrders;
+            //         }
+            //     },
+            // });
+        }
+    });
+} else {
+    if((window.location.href.indexOf('login') != -1 && window.location.href.indexOf('register') != -1)) {
+        window.location.replace(URL+"login.html");
+    }
+}

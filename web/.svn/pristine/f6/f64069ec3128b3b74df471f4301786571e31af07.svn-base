@@ -1,0 +1,111 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="view/me.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">彩票详情</div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="order-detail">
+    <div id="js-orderDetail" class="page-content">
+        <template v-if="!!orderDetail">
+            <div class="list-block payList">
+                <ul>
+                    <li class="item-divider">订单ID：
+                        <span v-text="orderDetail.orderCode"></span>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="payInfo">
+                                    <h2>
+                                        <span v-text="orderDetail.orderName"></span>
+                                    </h2>
+                                    <p v-if="!!orderDetail.awardTime" v-text="'（开奖时间：'+ orderDetail.awardTime +'）'"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="payInfo">
+                                    <p>
+                                        共购买
+                                        <strong v-text="orderDetail.betsNum"></strong>注， 投注
+                                        <strong v-text="orderDetail.multipleNum"></strong>倍，共计
+                                        <strong v-text="orderDetail.orderPrice"></strong>元</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="resultWrap" style="background-color: white; padding-bottom: 1rem;">
+                <div class="numList">
+                    <table>
+                        <tbody>
+                            <template v-if="!!orderDetail.digitalOrderItems">
+                                <template v-for="(item, index) in orderDetail.digitalOrderItems">
+                                    <tr>
+                                        <td v-text="item.betsNumCount+'注'" style="width: 2rem;"></td>
+                                        <td v-text="item.betDesc"></td>
+                                        <td v-text="item.subOrderPrice+'元'"></td>
+                                    </tr>
+                                </template>
+                            </template>
+                            <template v-if="!!orderDetail.matchList">
+                                <template v-for="(item, index) in orderDetail.ballSubOrders">
+                                    <tr class="bMatch">
+                                        <td style="width: 1.5rem;" v-text="index+1"></td>
+                                        <td>
+                                            <template v-for="m in item.betDesc.split(',')">
+                                                <p style="text-align:left;" v-text="m"></p>
+                                            </template>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="">
+                    <p style="text-align: left; padding-top: .5rem; padding-left: .75rem;">订单状态：
+                        <span v-text="statu['s_'+orderDetail.orderStatus]"></span>
+                    </p>
+                    <template v-if="!!downTimeInfo">
+                        <p style="text-align: left; padding-top: .5rem; padding-left: .75rem;">开奖剩余时间：
+                            <template v-if="downTimeInfo.seconds<0">已开奖</template>
+                            <template v-else>
+                                {{downTimeInfo.days}}天{{downTimeInfo.hours}}时{{downTimeInfo.minutes}}分{{downTimeInfo.seconds}}秒
+                            </template>
+                        </p>
+                    </template>
+                </div>
+            </div>
+
+            <template v-if="orderDetail.orderStatus==1">
+                <div class="buyAction">
+
+                    <template v-if="!!downTimeInfo">
+                        <template v-if="downTimeInfo.seconds<0">
+                            <p class="theme-gray">
+                                <button class="button button-big button-round active">已经开奖</button>
+                            </p>
+                        </template>
+                        <template v-else>
+                            <p class="theme-yellow">
+                                <button @click="submitOrder" class="button button-big button-round active">确认支付</button>
+                            </p>
+                        </template>
+                    </template>
+                </div>
+            </template>
+
+        </template>
+    </div>
+</div>

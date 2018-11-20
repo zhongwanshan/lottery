@@ -1,0 +1,90 @@
+// Initialize your app
+var app = new Framework7({
+    pushState: true,
+    uniqueHistory: true,
+    pushStateSeparator: '#page/',
+    modalTitle: "消息提示",
+    modalButtonOk: "确认",
+    modalButtonCancel: "关闭",
+    modalPreloaderTitle: "加载中...",
+    // Hide and show indicator during ajax requests
+    onAjaxStart: function (xhr) {
+        app.showIndicator();
+    },
+    onAjaxComplete: function (xhr) {
+        app.hideIndicator();
+    }
+});
+
+// Export selectors engine
+var $ = Dom7;
+
+// Add view
+var mainView = app.addView('.view-main', {
+    // Because we use fixed-through navbar we can enable dynamic navbar
+    dynamicNavbar: true,
+    animatePages: false
+});
+mainView.router.loadPage('view/index.html');
+
+// 重新设置导航当前状态
+$(document).on('pageInit', function (event) {
+    setTimeout(function () {
+        var pageList = window.location.href.split('#page/')[1].split('/');
+        var pageName = pageList[pageList.length - 1].split('.')[0];
+
+        $('.tabWrap .link').removeClass('active');
+        $('#' + pageName).addClass('active');
+
+        // 重新设置轮播图
+        if (!!$('body').find('.swiper-container')) {
+            var mySwiper = app.swiper('body .swiper-container', {
+                speed: 400,
+                spaceBetween: 100,
+                pagination: '.swiper-pagination'
+            });
+        }
+    }, 100);
+});
+
+$(document).on('pageInit', function (event) {
+    var actionJs;
+    var page = event.detail.page;
+    var pageName = page.name;
+
+    actionJs = URL + "action/" + pageName.replace(/-/g, "/") + ".js";
+
+    // 将获得的用户信息保存在全局中
+    PAGE = page;
+    USERINFO = utility.getLocalStorage("userInfo") || null;
+
+    // 防止重复加载同样的脚本
+    $("script").each(function (index, item) {
+        var self = $(this);
+        var src = self.attr("src");
+
+        if (src.indexOf("action") != -1) {
+            self.remove();
+        }
+    });
+
+    // 获取用户信息
+    if (!!USERINFO) {
+        utility.getUserInfo({
+            appType: "1",
+            callback: function (data) {
+                var userToken = USERINFO["userToken"];
+                USERINFO = data;
+                USERINFO["userToken"] = userToken;
+            }
+        });
+    } else {
+        // 如果还没有登录，则隐藏消息模块
+        $("body").find(".js-message").hide();
+    }
+
+    $LAB.script(actionJs + "?v=" + Date.parse(new Date())).wait(function () {
+        utility.setiScroll("page-" + pageName);
+    });
+
+});

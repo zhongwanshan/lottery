@@ -1,0 +1,87 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="../prize.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">开奖详情</div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="detail-digital">
+    <div id="js-detailDigital" class="page-content">
+        <template v-if="!!digitalData">
+
+            <div class="lotteryType">
+                <div class="item">
+                    <div class="header">
+                        <span class="label" v-text="!!digitalData?digitalData.lottoName+'  '+digitalData.issueName:''"></span>
+                    </div>
+                    <div class="content">
+                        <p class="numberType">
+                            <template v-if="!!digitalData" v-for="rItem in digitalData.number.split(',')">
+                                <span class="circle redBall" v-text="rItem"></span>
+                            </template>
+
+                            <template v-if="!!digitalData && !!digitalData.refernumber" v-for="bItem in digitalData.refernumber.split(',')">
+                                <span class="circle blueBall" v-text="bItem"></span>
+                            </template>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="lotteryList">
+                <table class="prizeDetail">
+                    <tbody>
+                        <tr>
+                            <td style="width: 50%;">
+                                <div class="item">
+                                    <p class="txt">
+                                        <span class="title">销售额（元）</span>
+                                        <span class="statu" v-if="!!digitalData" v-text="digitalData.saleamount||''"></span>
+                                    </p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="item">
+                                    <p class="txt">
+                                        <span class="title">奖池（元）</span>
+                                        <span class="statu" v-if="!!digitalData" v-text="digitalData.totalmoney||''"></span>
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="detailTable">
+                <table v-if="digitalData.prize.length>0">
+                    <thead>
+                        <tr>
+                            <th>奖项</th>
+                            <th>中奖注数</th>
+                            <th>每注奖金（元）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template v-if="!!digitalData" v-for="item in digitalData.prize">
+                            <tr>
+                                <td v-text="item.prizename"></td>
+                                <td v-text="item.num"></td>
+                                <td v-text="item.singlebonus"></td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </template>
+        
+        <div class="buyAction">
+            <p class="theme-yellow">
+                <a :href="'view/buy/'+type['lottoId'+lottoid]+'.html'" class="button button-big button-round active">投注</a>
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,700 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>数彩类-订单详情页-未中奖</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="data/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/数彩类-订单详情页-未中奖/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/ie.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="files/数彩类-订单详情页-未中奖/data.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (首页布局已登录) -->
+
+      <!-- Unnamed (Placeholder) -->
+      <div id="u3011" class="ax_default placeholder">
+        <img id="u3011_img" class="img " src="images/首页（未登录）/u5.png"/>
+        <!-- Unnamed () -->
+        <div id="u3012" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3013" class="ax_default box_2">
+        <div id="u3013_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3014" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3015" class="ax_default label">
+        <div id="u3015_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3016" class="text" style="visibility: visible;">
+          <p><span>安全退出</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3017" class="ax_default label">
+        <div id="u3017_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3018" class="text" style="visibility: visible;">
+          <p><span>个人中心</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3019" class="ax_default label">
+        <div id="u3019_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3020" class="text" style="visibility: visible;">
+          <p><span>帮助</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3021" class="ax_default box_1">
+        <div id="u3021_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3022" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3023" class="ax_default label">
+        <div id="u3023_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3024" class="text" style="visibility: visible;">
+          <p><span>下午好，管理员！</span></p>
+        </div>
+      </div>
+
+      <!-- 个人中心 (Group) -->
+      <div id="u3025" class="ax_default ax_default_hidden" data-label="个人中心" style="display: none; visibility: hidden">
+
+        <!-- 竞彩足球 (Rectangle) -->
+        <div id="u3026" class="ax_default box_2" data-label="竞彩足球">
+          <img id="u3026_img" class="img " src="images/订单管理/竞彩足球_u117.png"/>
+          <!-- Unnamed () -->
+          <div id="u3027" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+          </div>
+        </div>
+
+        <!-- 胜平负 (Rectangle) -->
+        <div id="u3028" class="ax_default box_2" data-label="胜平负">
+          <img id="u3028_img" class="img " src="images/订单管理/胜平负_u119.png"/>
+          <!-- Unnamed () -->
+          <div id="u3029" class="text" style="visibility: visible;">
+            <p><span>订单管理</span></p>
+          </div>
+        </div>
+
+        <!-- 比分 (Rectangle) -->
+        <div id="u3030" class="ax_default box_2" data-label="比分">
+          <img id="u3030_img" class="img " src="images/订单管理/胜平负_u119.png"/>
+          <!-- Unnamed () -->
+          <div id="u3031" class="text" style="visibility: visible;">
+            <p><span>充值提现明细</span></p>
+          </div>
+        </div>
+
+        <!-- 半全场 (Rectangle) -->
+        <div id="u3032" class="ax_default box_2" data-label="半全场">
+          <img id="u3032_img" class="img " src="images/订单管理/胜平负_u119.png"/>
+          <!-- Unnamed () -->
+          <div id="u3033" class="text" style="visibility: visible;">
+            <p><span>金币明细</span></p>
+          </div>
+        </div>
+
+        <!-- 总进球 (Rectangle) -->
+        <div id="u3034" class="ax_default box_2" data-label="总进球">
+          <img id="u3034_img" class="img " src="images/订单管理/胜平负_u119.png"/>
+          <!-- Unnamed () -->
+          <div id="u3035" class="text" style="visibility: visible;">
+            <p><span>消息管理</span></p>
+          </div>
+        </div>
+
+        <!-- 总进球 (Rectangle) -->
+        <div id="u3036" class="ax_default box_2" data-label="总进球">
+          <img id="u3036_img" class="img " src="images/订单管理/胜平负_u119.png"/>
+          <!-- Unnamed () -->
+          <div id="u3037" class="text" style="visibility: visible;">
+            <p><span>订单统计</span></p>
+          </div>
+        </div>
+
+        <!-- 总进球 (Rectangle) -->
+        <div id="u3038" class="ax_default box_2" data-label="总进球">
+          <img id="u3038_img" class="img " src="images/订单管理/胜平负_u119.png"/>
+          <!-- Unnamed () -->
+          <div id="u3039" class="text" style="visibility: visible;">
+            <p><span>基本资料</span></p>
+          </div>
+        </div>
+
+        <!-- 总进球 (Rectangle) -->
+        <div id="u3040" class="ax_default box_2" data-label="总进球">
+          <img id="u3040_img" class="img " src="images/订单管理/胜平负_u119.png"/>
+          <!-- Unnamed () -->
+          <div id="u3041" class="text" style="visibility: visible;">
+            <p><span>安全设置</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u3042" class="ax_default icon">
+        <img id="u3042_img" class="img " src="images/订单管理/u133.png"/>
+        <!-- Unnamed () -->
+        <div id="u3043" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Ellipse) -->
+      <div id="u3044" class="ax_default ellipse">
+        <img id="u3044_img" class="img " src="images/订单管理/u135.png"/>
+        <!-- Unnamed () -->
+        <div id="u3045" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Hot Spot) -->
+      <div id="u3046" class="ax_default">
+      </div>
+
+      <!-- Unnamed (底部版权) -->
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3048" class="ax_default label">
+        <div id="u3048_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3049" class="text" style="visibility: visible;">
+          <p><span>版权所有：xxxxxxx发展有限公司 Copyright © 2006-2014 粤ICP备B2-288888-2号 增值电信业务经营许可证：粤B2-2888888 粤网文[2017]8888-8888号</span></p><p><span>公司地址：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx楼&nbsp;&nbsp; 客服热线：400-888-8888 (8:30-12:00 14:30-18:00)</span></p><p><span>多彩缤纷提示您：理性购彩，健康生活。不向未满18周岁的青少年出售彩票。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u3050" class="ax_default image">
+        <img id="u3050_img" class="img " src="images/首页（未登录）/u3.png"/>
+        <!-- Unnamed () -->
+        <div id="u3051" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3052" class="ax_default box_1">
+        <div id="u3052_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3053" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3054" class="ax_default label">
+        <div id="u3054_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3055" class="text" style="visibility: visible;">
+          <p><span>未中奖订单</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3056" class="ax_default box_1">
+        <div id="u3056_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3057" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3058" class="ax_default box_1">
+        <div id="u3058_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3059" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3060" class="ax_default paragraph">
+        <div id="u3060_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3061" class="text" style="visibility: visible;">
+          <p><span>订单编号：DD20181215121212989877</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3062" class="ax_default paragraph">
+        <div id="u3062_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3063" class="text" style="visibility: visible;">
+          <p><span>发起时间：2018-05-22 09：33：22</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3064" class="ax_default paragraph">
+        <div id="u3064_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3065" class="text" style="visibility: visible;">
+          <p><span>客户：逢投必中</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3066" class="ax_default box_1">
+        <div id="u3066_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3067" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3068" class="ax_default paragraph">
+        <div id="u3068_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3069" class="text" style="visibility: visible;">
+          <p><span>彩种：双色球</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3070" class="ax_default paragraph">
+        <div id="u3070_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3071" class="text" style="visibility: visible;">
+          <p><span>开奖时间：2018-05-23 21：15</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Table) -->
+      <div id="u3072" class="ax_default">
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u3073" class="ax_default table_cell">
+          <img id="u3073_img" class="img " src="images/数彩类-订单详情页-待开奖/u2815.png"/>
+          <!-- Unnamed () -->
+          <div id="u3074" class="text" style="visibility: visible;">
+            <p><span>投注方式</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u3075" class="ax_default table_cell">
+          <img id="u3075_img" class="img " src="images/数彩类-订单详情页-待开奖/u2817.png"/>
+          <!-- Unnamed () -->
+          <div id="u3076" class="text" style="visibility: visible;">
+            <p><span>投注号码</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u3077" class="ax_default table_cell">
+          <img id="u3077_img" class="img " src="images/数彩类-订单详情页-待开奖/u2819.png"/>
+          <!-- Unnamed () -->
+          <div id="u3078" class="text" style="visibility: visible;">
+            <p><span>每项金额</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Text Area) -->
+      <div id="u3079" class="ax_default text_area">
+        <textarea id="u3079_input"></textarea>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3080" class="ax_default paragraph">
+        <div id="u3080_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3081" class="text" style="visibility: visible;">
+          <p><span>选号明细</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3082" class="ax_default paragraph">
+        <div id="u3082_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3083" class="text" style="visibility: visible;">
+          <p style="font-size:20px;"><span style="font-size:14px;color:#000000;">选择了：23注，系数为1倍，共23注，投注总金额：</span><span style="color:#CC0033;">46.00</span><span style="font-size:14px;color:#000000;">元</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Horizontal Line) -->
+      <div id="u3084" class="ax_default line">
+        <img id="u3084_img" class="img " src="images/数彩类-订单详情页-待开奖/u2826.png"/>
+        <!-- Unnamed () -->
+        <div id="u3085" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3086" class="ax_default label">
+        <div id="u3086_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3087" class="text" style="visibility: visible;">
+          <p><span>复式</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3088" class="ax_default label">
+        <div id="u3088_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3089" class="text" style="visibility: visible;">
+          <p><span>[2注 4元]</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3090" class="ax_default label">
+        <div id="u3090_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3091" class="text" style="visibility: visible;">
+          <p><span style="color:#CC0000;">06 08 12 15 22 26</span><span> </span><span style="color:#A1A1A1;">|</span><span> </span><span style="color:#0000FF;">04 12</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Horizontal Line) -->
+      <div id="u3092" class="ax_default line">
+        <img id="u3092_img" class="img " src="images/数彩类-订单详情页-待开奖/u2826.png"/>
+        <!-- Unnamed () -->
+        <div id="u3093" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3094" class="ax_default label">
+        <div id="u3094_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3095" class="text" style="visibility: visible;">
+          <p><span>单式</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3096" class="ax_default label">
+        <div id="u3096_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3097" class="text" style="visibility: visible;">
+          <p><span>[1注 2元]</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3098" class="ax_default label">
+        <div id="u3098_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3099" class="text" style="visibility: visible;">
+          <p><span style="color:#CC0000;">05 09 12 18 19 33</span><span> </span><span style="color:#A1A1A1;">|</span><span> </span><span style="color:#0000FF;">12</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Horizontal Line) -->
+      <div id="u3100" class="ax_default line">
+        <img id="u3100_img" class="img " src="images/数彩类-订单详情页-待开奖/u2826.png"/>
+        <!-- Unnamed () -->
+        <div id="u3101" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3102" class="ax_default label">
+        <div id="u3102_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3103" class="text" style="visibility: visible;">
+          <p><span>胆拖</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3104" class="ax_default label">
+        <div id="u3104_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3105" class="text" style="visibility: visible;">
+          <p><span>[20注 40元]</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3106" class="ax_default label">
+        <div id="u3106_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3107" class="text" style="visibility: visible;">
+          <p><span style="color:#CC0000;">（04 09 26）06 18 19 25 27 </span><span style="color:#A1A1A1;">|</span><span> </span><span style="color:#0000FF;">05 07</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3108" class="ax_default box_1">
+        <div id="u3108_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3109" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3110" class="ax_default box_2">
+        <div id="u3110_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3111" class="text" style="visibility: visible;">
+          <p><span>返回</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3112" class="ax_default label">
+        <div id="u3112_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3113" class="text" style="visibility: visible;">
+          <p><span>开奖剩余时间：</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3114" class="ax_default label">
+        <div id="u3114_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3115" class="text" style="visibility: visible;">
+          <p><span>天</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3116" class="ax_default label">
+        <div id="u3116_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3117" class="text" style="visibility: visible;">
+          <p><span>时</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3118" class="ax_default label">
+        <div id="u3118_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3119" class="text" style="visibility: visible;">
+          <p><span>01</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3120" class="ax_default label">
+        <div id="u3120_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3121" class="text" style="visibility: visible;">
+          <p><span>20</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3122" class="ax_default box_1">
+        <div id="u3122_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3123" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3124" class="ax_default paragraph">
+        <div id="u3124_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3125" class="text" style="visibility: visible;">
+          <p><span>中奖明细</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3126" class="ax_default box_1">
+        <div id="u3126_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3127" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3128" class="ax_default paragraph">
+        <div id="u3128_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3129" class="text" style="visibility: visible;">
+          <p><span>猜中了：0注，继续努力吧。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3130" class="ax_default box_1">
+        <div id="u3130_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3131" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3132" class="ax_default label">
+        <div id="u3132_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3133" class="text" style="visibility: visible;">
+          <p><span>红球号码：</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3134" class="ax_default label">
+        <div id="u3134_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3135" class="text" style="visibility: visible;">
+          <p><span>蓝球号码：</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3136" class="ax_default box_2">
+        <div id="u3136_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3137" class="text" style="visibility: visible;">
+          <p><span>03</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3138" class="ax_default box_2">
+        <div id="u3138_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3139" class="text" style="visibility: visible;">
+          <p><span>06</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3140" class="ax_default box_2">
+        <div id="u3140_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3141" class="text" style="visibility: visible;">
+          <p><span>11</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3142" class="ax_default box_2">
+        <div id="u3142_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3143" class="text" style="visibility: visible;">
+          <p><span>17</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3144" class="ax_default box_2">
+        <div id="u3144_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3145" class="text" style="visibility: visible;">
+          <p><span>19</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3146" class="ax_default box_2">
+        <div id="u3146_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3147" class="text" style="visibility: visible;">
+          <p><span>22</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3148" class="ax_default box_2">
+        <div id="u3148_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3149" class="text" style="visibility: visible;">
+          <p><span>06</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3150" class="ax_default label">
+        <div id="u3150_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3151" class="text" style="visibility: visible;">
+          <p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">第</span><span style="font-family:'Arial Negreta', 'Arial';font-weight:700;">2018059</span><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">期中奖号码</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u3152" class="ax_default label">
+        <div id="u3152_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3153" class="text" style="visibility: visible;">
+          <p><span>查看详细开奖公告</span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

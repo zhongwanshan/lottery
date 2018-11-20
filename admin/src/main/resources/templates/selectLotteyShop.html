@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>选择用户</title>
+<style type="text/css">
+/*初始化页面  */
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset,
+	legend, input, textarea, select {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font: 14px "微软雅黑", "Arial Narrow", HELVETICA;
+	background: #fff;
+	-webkit-text-size-adjust: 100%;
+}
+
+a {
+	color: #2d374b;
+	text-decoration: none
+}
+
+a:hover {
+	color: #cd0200;
+	text-decoration: underline
+}
+
+em {
+	font-style: normal
+}
+
+li {
+	list-style: none
+}
+
+img {
+	border: 0;
+	vertical-align: middle
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+p {
+	word-wrap: break-word
+}
+/* 页面css*/
+#searchCondition ul li {
+	float: left;
+	margin-left: 29px;
+	margin-top: 35px;
+	font-size: 13px;
+}
+
+#searchCondition ul li select {
+	display: inline-block;
+	width: 143px;
+	height: 26px
+}
+
+#searchCondition ul li input {
+	display: inline-block;
+	width: 165px;
+	height: 22px
+}
+
+#searchCondition ul li input#cx {
+	display: inline-block;
+	width: 80px;
+	height: 26px;
+	background-color: #5978A6;
+	color: white;
+	border-radius: 3px;
+	box-shadow: none;
+}
+
+#messageLlist {
+	clear: both;
+	margin-left: 29px;
+	padding-top: 15px;
+}
+
+#messageLlist #messageData td {
+	display: inline-block;
+	width: 128px;
+	text-align: center;
+	line-height: 40px;
+	border: none;
+	border-bottom: 1px;
+}
+
+#messageLlist #messageData td:first-child {
+	width: 60px;
+}
+
+#messageLlist #messageData td:last-child {
+	width: 128px;
+}
+
+#messageLlist #messageData thead td {
+	background-color: #F2F2F2;
+}
+
+#messageLlist #messageData tbody tr {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #E7E7E7;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #E7E7E7;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #E7E7E7;
+}
+
+#messageLlist #messageData thead tr {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #E7E7E7;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #E7E7E7;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #E7E7E7;
+}
+
+#messageLlist #messageData tbody tr:hover {
+	background-color: #F2F2F2;
+}
+
+#funtionList {
+	height: 30px;
+	width: 100%;
+	clear: both;
+	margin-top: 10px;
+}
+
+#funtionList ul li {
+	float: left;
+	display: inline-block;
+	height: 26px;
+	width: 80px;
+	line-height: 26px;
+	border: 1px solid #c3adad;
+	border-radius: 3px;
+	margin-left: 30px;
+	text-align: center;
+	background-color: #5978A6;
+	color: white;
+}
+
+#funtionList ul {
+	padding-top: 20px;
+}
+
+#funtionList ul li:hover {
+	cursor: pointer;
+}
+
+#funtionList ul li:active {
+	background-color: #c3adad;
+}
+
+#pageLimit span {
+	float: left;
+	display: inline-block;
+	height: 20px;
+	width: 47px;
+	line-height: 20px;
+	text-align: center;
+	border: 1px solid #BDBFBE;
+	border-radius: 3px;
+	background-color: #159ADD;
+	margin-right: 5px;
+	color: white;
+}
+
+#pageLimit span:active {
+	color: black;
+	background-color: white;
+}
+
+#pageLimit span:hover {
+	cursor: pointer;
+}
+
+#pageLimit {
+	margin-left: 300px;
+	margin-top: 20px;
+}
+
+#pageLimit span:nth-child(7) {
+	width: 80px;
+}
+
+#pageLimit span:nth-child(7) input {
+	width: 20px;
+}
+
+#pageLimit span:nth-child(8) {
+	height: 25px;
+	width: 50px;
+	line-height: 25px;
+	border: 1px solid #c3adad;
+	border-radius: 3px;
+}
+
+#searchCondition ul li span {
+	float: left;
+	display: inline-block;
+	height: 26px;
+	width: 80px;
+	line-height: 26px;
+	border: 1px solid #c3adad;
+	border-radius: 3px;
+	margin-left: 30px;
+	text-align: center;
+	background-color: #169CD1;
+	color: white;
+}
+
+#searchCondition div:first-child {
+	height: 51px;
+	line-height: 51px;
+	margin: 0 7px;
+	border-bottom: 3px solid #797979;
+	"
+}
+
+#searchCondition div:first-child span {
+	padding-left: 22px;
+}
+
+#functionListTow {
+	clear: both;
+}
+
+#functionListTow ul li span {
+	margin-left: 0px;
+}
+
+#searchCondition ul li span:hover {
+	cursor: pointer;
+}
+
+#searchCondition ul li span:active {
+	background-color: white;
+	color: black;
+}
+
+#messageLlist #messageData tbody tr span {
+	/* 	float: left; */
+	display: inline-block;
+	height: 20px;
+	width: 77px;
+	line-height: 20px;
+	text-align: center;
+	border: 1px solid #BDBFBE;
+	border-radius: 3px;
+	background-color: #159ADD;
+	margin-right: 5px;
+	color: white;
+}
+
+#messageLlist #messageData tbody tr span:nth-child(3) {
+	background-color: #009C00;
+}
+
+#messageLlist #messageData tbody tr span:nth-child(4) {
+	background-color: #FD9A00;
+}
+
+#messageLlist #messageData tbody tr span:hover {
+	cursor: pointer;
+}
+
+#messageLlist #messageData tbody tr span:active {
+	background-color: white;
+	color: black;
+}
+
+#messageLlist #messageData tbody tr div {
+	display: inline-block;
+}
+
+#searchCondition table {
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+#searchCondition table tr td {
+	border: 1px solid #BDBFBE;
+	height: 38px;
+	line-height: 38px;
+}
+
+#searchCondition table tr td:first-child {
+	width: 132px;
+	text-align: right;
+}
+
+#searchCondition table tr td:last-child {
+	width: 640px;
+	text-align: left;
+}
+
+#searchCondition table tr td input {
+	display: inline-block;
+	line-height: 28px;
+	height: 28px;
+	margin-left: 1px;
+}
+
+#searchCondition table tr td select {
+	display: inline-block;
+	height: 38px;
+	line-height: 33px;
+	height: 33px;
+	margin-left: 1px;
+	width: 174px;
+}
+
+#searchCondition table tr:last-child td {
+	text-align: center;
+}
+
+#searchCondition table tr:last-child td span {
+	border: 1px solid #BDBFBE;
+	display: inline-block;
+	width: 68px;
+	height: 31px;
+	line-height: 31px;
+	border-radius: 3px;
+	background-color: #199BD7;
+	color: white;
+}
+
+#searchCondition table tr:last-child td span:hover {
+	cursor: pointer;
+}
+
+#searchCondition table tr:last-child td span:active {
+	color: black;
+	background-color: white;
+}
+#searchCondition ul li span:hover {
+	background-color:#00d9d9;
+}
+</style>
+
+<script src="/lottery/js/jquery-1.8.2.js" type="text/javascript"
+	charset="utf-8"></script>
+<script src="/lottery/js/layer/layer.min.js" type="text/javascript"
+	charset="utf-8"></script>
+
+</head>
+<body>
+	<div id="searchCondition"
+		style="height: 150px; border: 1px solid #BDBFBE; background-color: #F2F2F2">
+		<div>
+			<span>选择用户</span>
+		</div>
+		<div>
+			<ul>
+				<li>用户名称：<input type="text">
+				</li>
+				<li><span onclick="searchMeassages(0)">查询</span> <span onclick="save()">保存</span></li>
+			</ul>
+		</div>
+	</div>
+	<div
+		style="border: 1px solid #BDBFBE; margin-top: 13px; height: 450px;">
+		<div id="messageLlist">
+			<table id="messageData" style="border-collapse: collapse;">
+				<thead>
+					<td>操作</td>
+					<td>用户名</td>
+					<td>手机号码</td>
+					<td>省份</td>
+					<td>城市</td>
+					<td>区县</td>
+				</thead>
+				<tbody>
+					<tr th:each="entries,stat:${dataList}">
+						<td th:if="${entries['checkRemall']==1}"><input type="checkbox" th:attr="idValue=${entries['id']}" checked="checked"></td>
+												<td th:if="${entries['checkRemall']!=1}"><input type="checkbox" th:attr="idValue=${entries['id']}"></td>
+						<td th:text="${entries['userCode']}"></td>
+						<td th:text="${entries['phone']}"></td>
+					<td th:text="${entries['provinceName']}"></td>
+						<td th:text="${entries['cityName']}"></td>
+						<td th:text="${entries['districtName']}"></td>	
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div id="idValue" hidden="true">[[${id}]]</div>
+	<script type="text/javascript">
+	Date.prototype.format = function (format) {
+        var args = {
+            "M+": this.getMonth() + 1,
+            "d+": this.getDate(),
+            "h+": this.getHours(),
+            "m+": this.getMinutes(),
+            "s+": this.getSeconds(),
+            "q+": Math.floor((this.getMonth() + 3) / 3),  //quarter
+            "S": this.getMilliseconds()
+        };
+        if (/(y+)/.test(format))
+            format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var i in args) {
+            var n = args[i];
+            if (new RegExp("(" + i + ")").test(format))
+                format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? n : ("00" + n).substr(("" + n).length));
+        }
+        return format;
+    };
+
+    
+    //保存选择的彩票店主id
+    var idList=[];
+	   //根据条件查询信息
+		function searchMeassages(pageNum) {
+			var userCode = $("#searchCondition ul li:nth-child(1) input").val();
+			$.ajax({
+				type : "GET",
+				url : "/lottery/lotteryOrderRoute/queryLotteyShopList",
+				data : {
+					"userCode" : userCode,
+					"pageNum" : parseInt(pageNum)*10
+				},
+				dataType : "json",
+				success : function(data) {
+					$('#messageLlist #messageData tbody').empty();
+					var html = "";
+					for (var i = 0, l = data.dataList.length; i < l; i++) {			
+						html += "<tr>";	
+						html += "<td ><input type='checkbox' idValue="+data.dataList[i]['id'] + "></td>";
+						html += "<td>" + data.dataList[i]['userCode'] + "</td>";
+						html += "<td>" + data.dataList[i]['phone'] + "</td>";
+						html += "<td>"+ data.dataList[i]['cityName']+"</td>";
+						html += "</tr>";
+					}
+					$('#messageLlist #messageData tbody').html(html);
+				}
+			});
+		}
+	   
+	   
+	   
+		//保存选择用户
+		function save() {
+			$("#messageLlist #messageData td input:checked").each(function(){
+				idList.push($(this).attr("idValue"))
+			})
+			var lotteryShopIds = idList.join(',')
+			var ruleId =$("#idValue").text();
+			if(lotteryShopIds!=null&&lotteryShopIds!=''){
+				$.ajax({
+					type : "GET",
+					url : "/lottery/lotteryOrderRoute/addLotteryUser",
+					data : {
+						"id" : ruleId,
+						"lotteryShopIds" : lotteryShopIds
+						
+					},
+					success : function(data) {
+						if ("sucess" == data) {
+							alert("修改成功")
+							var index = parent.layer
+									.getFrameIndex(window.name);
+							parent.layer.close(index);
+						} else {
+							alert("修改失败，请重新保存，谢谢")
+						}
+						 
+					}
+				});
+				
+			}else{
+				alert("请填写规则的信息，谢谢！")
+				
+			}
+	  }　
+
+ 
+	</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+(function(){var t=utility.getQueryParams();new Vue({el:"#js-pageContent",data:{userInfo:USERINFO,digitalData:null,contentInfo:null},methods:{userLogout:function(){utility.userLogout(function(){window.location.replace(CONFIG.HOST+"/www/index.html")})}},created:function(){var n=this;utility.findByContentId({contentId:t.contentId,callback:function(t){n.contentInfo=t.data}})}})})();

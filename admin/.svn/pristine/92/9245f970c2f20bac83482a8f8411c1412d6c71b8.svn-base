@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>新增子菜单</title>
+<style type="text/css">
+/*初始化页面  */
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset,
+	legend, input, textarea, select {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font: 12px "宋体", "Arial Narrow", HELVETICA;
+	background: #fff;
+	-webkit-text-size-adjust: 100%;
+}
+
+a {
+	color: #2d374b;
+	text-decoration: none
+}
+
+a:hover {
+	color: #cd0200;
+	text-decoration: underline
+}
+
+em {
+	font-style: normal
+}
+
+li {
+	list-style: none
+}
+
+img {
+	border: 0;
+	vertical-align: middle
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+p {
+	word-wrap: break-word
+}
+/* 页面css*/
+#addmenu tr td {
+	display: inline-block;
+	line-height: 37px;
+	height: 37px;
+	width: 300px;
+	text-align: center;
+	border: 1px solid #c3adad;
+	margin-top: 10px;
+}
+
+#addmenu table {
+	margin-left: 50px;
+}
+
+#menuTitle {
+	text-align: center;
+	height: 40px;
+	font-size: 15px;
+}
+
+#sumbmitmenu span {
+	margin-left: 167px;
+	display: inline-block;
+	height: 30px;
+	width: 80px;
+	line-height: 30px;
+	text-align: center;
+	border: 1px solid #c3adad;
+	margin-top: 10px;
+	font-size: 15px;
+	border-radius: 3px;
+}
+
+#sumbmitmenu span:hover {
+	cursor: pointer;
+}
+
+#sumbmitmenu span:active {
+	background-color: #c3adad;
+}
+
+#menuTitle span:hover {
+	cursor: pointer;
+}
+
+#menuTitle span:active {
+	background-color: #c3adad;
+}
+
+#menuTitle span {
+	margin-left: -515px;
+	display: inline-block;
+	height: 30px;
+	width: 80px;
+	line-height: 30px;
+	text-align: center;
+	border: 1px solid #c3adad;
+	margin-top: 10px;
+	font-size: 15px;
+	border-radius: 3px;
+}
+
+#menuTitle {
+	margin-bottom: 5px;
+}
+}
+</style>
+<script src="/lottery/js/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
+<script src="/lottery/js/layer/layer.min.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+<!-- 	<div id="menuTitle">
+		<span>新增子菜单</span>
+	</div> -->
+	<div id="addmenu">
+		<table style="border-collapse: collapse;">
+		 
+			<tr>
+				<td>*菜单名称</td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td>*菜单编码</td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td>*菜单层级</td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td>*上级菜单ID</td>
+				<td><input type="text" th:value="${pid}" readonly="readonly"></td>
+			</tr>
+			<tr>
+				<td>*上级菜单编码</td>
+				<td><input type="text" th:value="${menuCode}" readonly="readonly"></td>
+			</tr>
+			<tr>
+				<td>*菜单在同级排序号</td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td>*菜单对应管理页面ID</td>
+				<td><input type="text"></td>
+			</tr>
+
+			<tr>
+				<td>*菜单跳转URL前缀</td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td>*菜单跳转js脚本</td>
+				<td><input type="text"></td>
+			</tr>
+
+			<tr>
+				<td>*配置时间</td>
+				<td><input type="date"></td>
+			</tr>
+			<tr>
+			<td>*是否删除</td>
+			<td><select>
+					<option value="1">有效</option>
+					<option value="0">无效</option>
+			</select></td>
+			</tr>
+			<tr hidden="true">
+				<td>*菜单id</td>
+				<td><input type="text" ></td>
+			</tr>
+		</table>
+
+	</div>
+	<div id="sumbmitmenu">
+		<span>保存</span>
+	</div>
+	<script type="text/javascript">
+	   $("#sumbmitmenu span").click(function(){
+		   var menuName = $('#addmenu table tr:nth-child(1) td input').val();
+		   var menuCode = $('#addmenu table tr:nth-child(2) td input').val();
+		   var menuLevel = $('#addmenu table tr:nth-child(3) td input').val();
+		   var paraMenuId = $('#addmenu table tr:nth-child(4) td input').val();
+		   var paraMenuCode = $('#addmenu table tr:nth-child(5) td input').val();
+		   var sortNum = $('#addmenu table tr:nth-child(6) td input').val();
+		   var pageId = $('#addmenu table tr:nth-child(7) td input').val();
+		   var urlPrefix = $('#addmenu table tr:nth-child(8) td input').val();
+		   var jsActionName = $('#addmenu table tr:nth-child(9) td input').val();
+		   var configTime = $('#addmenu table tr:nth-child(10) td input').val();
+		   var isDel = $('#addmenu table tr:nth-child(11) td select option:selected').val();
+		   var id = $('#addmenu table tr:nth-child(12) td input').val();
+			if(menuName==null||menuName==""||menuCode==null||menuCode==""||menuLevel==null||menuLevel==""||paraMenuId==null||paraMenuId==""||paraMenuCode==null||paraMenuCode==""||sortNum==null||sortNum==""||pageId==null||pageId==""||jsActionName==null||jsActionName==""||pageId==null||pageId==""||urlPrefix==null||urlPrefix==""||configTime==null||configTime==""||isDel==null||isDel==""){
+			alert("需要填写信息不能为空，请重新填写");
+			}else{
+                 
+			$.ajax({
+				type : "Get",
+				url : "/menuManager/addMenu",
+				data : {
+					"menuName" : menuName,
+					"menuCode" : menuCode,
+					"menuLevel" : menuLevel,
+					"paraMenuId" : paraMenuId,
+					"paraMenuCode" : paraMenuCode,
+					"sortNum" : sortNum,
+					"pageId" : pageId,
+					"urlPrefix" : urlPrefix,
+					"jsActionName" : jsActionName,
+					"configTime" : configTime,
+					"isDel" : isDel,
+					"id" : id
+				},
+				/* dataType : "json", */
+				success : function(data) {
+					if("sucess"==data){
+					 alert("新增成功")
+					 var index=parent.layer.getFrameIndex(window.name);
+					 parent.layer.close(index);
+					}else{
+						alert("保存失败，请重新保存，谢谢")
+					}
+				}
+			});
+			}
+		   });
+</script>
+</body>
+</html>

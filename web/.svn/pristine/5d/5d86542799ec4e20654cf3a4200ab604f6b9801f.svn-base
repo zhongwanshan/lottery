@@ -1,0 +1,97 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="../hall.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">十四场胜负(含任选9)</div>
+        <div class="right">
+            <a>
+                <i class="glyphicon glyphicon-option-vertical"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="sf14-sf14">
+    <div class="page-content">
+        <div class="lotteryType">
+            <div class="item">
+                <div class="header">
+                    <span class="label">第847382期 2018-12-29（周二）</span>
+                    <span class="dot">
+                        <i class="glyphicon glyphicon-heart-empty"></i>
+                    </span>
+                </div>
+                <a href="view/detail/ssq.html" class="content">
+                    <p class="numberType">
+                        <span class="circle">1</span>
+                        <span class="circle">2</span>
+                        <span class="circle">3</span>
+                        <span class="circle">4</span>
+                        <span class="circle">5</span>
+                        <span class="circle">6</span>
+                        <span class="circle blue">7</span>
+                    </p>
+                </a>
+                <span class="toword glyphicon glyphicon-menu-right"></span>
+            </div>
+            <div class="item">
+                <div class="header">
+                    <span class="label">第847382期 2018-12-29（周二）</span>
+                    <span class="dot">
+                        <i class="glyphicon glyphicon-heart-empty"></i>
+                    </span>
+                </div>
+                <a href="view/detail/ssq.html" class="content">
+                    <p class="numberType">
+                        <span class="circle">1</span>
+                        <span class="circle">2</span>
+                        <span class="circle">3</span>
+                        <span class="circle">4</span>
+                        <span class="circle">5</span>
+                        <span class="circle">6</span>
+                        <span class="circle blue">7</span>
+                    </p>
+                </a>
+                <span class="toword glyphicon glyphicon-menu-right"></span>
+            </div>
+            <div class="item">
+                <div class="header">
+                    <span class="label">第847382期 2018-12-29（周二）</span>
+                    <span class="dot">
+                        <i class="glyphicon glyphicon-heart-empty"></i>
+                    </span>
+                </div>
+                <a href="view/detail/ssq.html" class="content">
+                    <p class="numberType">
+                        <span class="circle">1</span>
+                        <span class="circle">2</span>
+                        <span class="circle">3</span>
+                        <span class="circle">4</span>
+                        <span class="circle">5</span>
+                        <span class="circle">6</span>
+                        <span class="circle blue">7</span>
+                    </p>
+                </a>
+                <span class="toword glyphicon glyphicon-menu-right"></span>
+            </div>
+
+        </div>
+        <div class="buyAction">
+            <div class="row">
+                <div class="col-50">
+                    <p class="theme-yellow">
+                        <a href="view/buy/sf14.html" class="button button-fill button-round">投注胜负彩</a>
+                    </p>
+                </div>
+                <div class="col-50">
+                    <p class="theme-yellow">
+                        <a href="view/buy/rs9.html" class="button button-fill button-round">投注任选九</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

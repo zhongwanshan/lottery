@@ -1,0 +1,174 @@
+<!-- Page, "data-page" contains page name -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="../index.html" class="back">
+                <i class="glyphicon glyphicon-menu-left"></i>
+            </a>
+        </div>
+        <div class="center">提现</div>
+        <div class="right">
+            <a style="width: auto;" href="view/account/depHistory.html">提现历史</a>
+        </div>
+    </div>
+</div>
+<div class="page no-toolbar" data-page="account-deposit">
+    <div id="js-pageDeposit" class="page-content listBlock">
+        <p class="infoTips">温馨提示：所有提现匀需提出申请并平台审核通过后才可以到账
+            <!-- <a href="view/account/depInfo.html">查看更多提现说明</a> -->
+        </p>
+        <p class="addBank theme-pink">
+            <button data-popup=".popup-about" class="button button-fill open-popup">+添加银行卡</button>
+        </p>
+        <div class="list-block">
+            <ul>
+
+                <template v-for="item in myCarList">
+                    <li>
+                        <label class="label-checkbox item-content">
+                            <input type="radio" name="radio" v-model="depositInfo.bindBankCardId" :value="item.bindBankCardId">
+                            <div class="item-media">
+                                <i class="icon icon-form-checkbox"></i>
+                            </div>
+                            <div class="item-inner">
+                                <div class="bankItem" :class="item.isDefault==1?'theme-green': ''">
+                                    <img :src="item.bankLogo" style="width: 8rem;" />
+                                    <span>尾号{{item.cardEndNo}}</span>
+                                    <template v-if="item.isDefault==1">
+                                        <button class="button button-fill">已为默认</button>
+                                    </template>
+                                    <template v-if="item.isDefault==0">
+                                        <button @click="setDefaultBankCard(item.bindBankCardId)" class="button">设为默认</button>
+                                    </template>
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+                </template>
+            </ul>
+        </div>
+        <div class="list-block">
+            <ul>
+                <li class="item">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">提现金额:</div>
+                            <div class="item-input">
+                                <input type="text" v-model="amount" placeholder="请输入提现金额">
+                            </div>
+                            <div class="item-label">元</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">支付密码:</div>
+                            <div class="item-input">
+                                <input type="password" v-model="depositPwd" placeholder="请输入支付密码">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">备注信息:</div>
+                            <div class="item-input">
+                                <input type="text" v-model="remark" placeholder="请输入备注信息">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="action">
+            <button @click="depositAction" class="button button-fill">提现</button>
+        </div>
+
+        <!-- 添加银行卡 -->
+        <div class="popup popup-about">
+            <div class="list-block">
+                <ul>
+                    <template v-for="item in allCarList">
+                        <li>
+                            <label class="label-checkbox item-content">
+                                <input type="radio" v-model="bindCarInfo.bankId" name="radio" :value="item.bankId">
+                                <div class="item-media">
+                                    <i class="icon icon-form-checkbox"></i>
+                                </div>
+                                <div class="item-inner">
+                                    <div class="bankItem theme-green">
+                                        <img :src="item.bankLogo" />
+                                        <span v-text="item.bankName"></span>
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+            <div class="list-block">
+                <ul>
+                    <li class="item">
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title">银行卡号:</div>
+                                <div class="item-input">
+                                    <input type="text" v-model="bindCarInfo.cardNo" placeholder="请输入银行卡号">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title">银行账户名:</div>
+                                <div class="item-input">
+                                    <input type="text" v-model="bankAccountName" placeholder="请输入银行账户名">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title">银行支行名:</div>
+                                <div class="item-input">
+                                    <input type="text" v-model="subBankName" placeholder="请输入银行支行名">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title">支付密码:</div>
+                                <div class="item-input">
+                                    <input type="password" v-model="payPwd" placeholder="请输入支付密码">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="list-block-label">
+                    <label>
+                        没有支付密码？
+                        <a href="view/user/payPass.html">设置支付密码</a>
+                    </label>
+                </div>
+            </div>
+
+            <div class="action">
+                <div class="row">
+                    <div class="col-50">
+                        <button class="button button-fill button-gray close-popup">取消</button>
+                    </div>
+                    <div class="col-50">
+                        <button @click="bindBankCard" class="button button-fill">添加</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
